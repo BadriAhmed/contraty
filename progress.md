@@ -35,14 +35,17 @@
 - [x] Git repo initialized (local only — `gh` CLI not available)
 - [x] FastAPI project scaffold — config, models, services (LLM router, RAG, PDF), API routes
 - [x] Next.js 14 project scaffold — App Router, Tailwind, shadcn/ui, RTL support
-- [x] Backend verified: 22 templates loaded, health + templates endpoints working
+- [x] Backend verified: 22 templates loaded, 76 tests passing, all endpoints working
 - [x] Frontend build passing: SSG for [lang]/ and [lang]/contracts, dynamic for generate/ wizard
+- [x] Frontend rebuilt with design-attempt visual system (MD3 tokens, Inter + Noto Naskh Arabic, category-colored cards, progress stepper wizard, preview/export page)
+- [x] **Template detail endpoint** returns sections/articles/fields for FE wizard form building
+- [x] **Wizard field validation** — Next button blocked until all current-step fields filled, red error borders + per-field error messages
 - [x] Supabase DB schema (`app/db/schema.sql`) — templates, template_chunks (pgvector), contracts
 - [x] Repository layer — ABC + InMemory (dev/test) + Supabase (prod) implementations
 - [x] Template seed script (`app/db/seed.py`) — loads 22 JSON templates into repository
 - [x] Template service layer (`app/services/template_service.py`) — business logic abstraction
 - [x] API contract doc (`API.md`) — 5 endpoints with request/response JSON shapes
-- [x] **75 tests passing** — health, templates CRUD, generation, PDF, LLM router, fallback, repository, seed, template service
+- [x] **76 tests passing** — health, templates CRUD, generation, PDF, LLM router, fallback, repository, seed, template service
 - [ ] Supabase project (DB + Auth) — schema ready, need Supabase instance
 - [ ] Railway project (backend deploy)
 - [ ] Vercel project (frontend deploy)
@@ -50,9 +53,11 @@
 
 ## Phase 0 — Design
 
-- [ ] Logo + brand colors
-- [ ] Figma wireframes (landing, wizard, PDF preview, download)
-- [ ] AR + FR UI mockups (RTL tested)
+- [x] Design system extracted from design-attempt/ (MD3 tokens, typography scale, component specs)
+- [x] Logo + brand colors — primary #004ac6, 6 category accent colors
+- [x] Home page (hero + search + featured grid), Contracts listing (sidebar + bento grid), Wizard (progress stepper + section-grouped form), Preview/Export (contract render + PDF/JSON/e-sign actions)
+- [x] AR + FR RTL-ready layouts with Inter + Noto Naskh Arabic fonts
+- [ ] Figma wireframes (refer to design-attempt HTML screens as reference)
 
 ## Phase 0 — Admin
 
@@ -62,18 +67,52 @@
 
 ---
 
+## Phase 1 — Running Status
+
+| Service | URL | Status |
+|---|---|---|
+| Backend API | `http://localhost:8000` | Running, 22 templates, Swagger at /docs |
+| Frontend | `http://localhost:3000` | Running, live at /fr and /ar |
+
+### Pages implemented
+
+| Route | Type | Description |
+|---|---|---|
+| `/[lang]` | SSG | Landing hero + AI badge + search + category-colored featured grid |
+| `/[lang]/contracts` | SSG | Sidebar domain filter + bento card grid + breadcrumbs |
+| `/[lang]/contracts/[type]` | Dynamic | Sections preview with field badges, legal basis, CTA |
+| `/[lang]/generate/[type]` | Dynamic | 4-step progress stepper, section-grouped fields, validation, disclaimer, preview/export with PDF download + JSON copy + e-sign upsell |
+
+### What's wired vs. placeholder
+
+| Feature | Status |
+|---|---|
+| Template listing + search | Fully wired to backend |
+| Template field discovery | Fully wired (`GET /templates/{slug}` returns sections) |
+| Contract generation POST | Wired, needs API keys (Mistral/OpenAI/Gemini) in backend/.env |
+| PDF download | Wired (calls generate/pdf endpoint) |
+| Field validation | Implemented — red borders + per-field error messages |
+| JSON copy to clipboard | Implemented |
+| Login / Sign Up | Links render, pages not built (Phase 1) |
+| Pricing / Resources / Enterprise | Links render, pages not built |
+| e-Signature upsell | Button renders, flow is placeholder |
+| Search bar filtering | Links to /contracts page, query filtering not implemented |
+
+---
+
 ## Test Coverage Summary
 
 ```
-75 passed, 0 failed, 1 warning
+76 passed, 0 failed, 1 warning
 
 Test files (8):
-  test_fallback.py     8 tests  — LLM fallback chain, JSON extraction, error handling
-  test_generate.py     8 tests  — Contract generation endpoint (success, failure, edge cases)
-  test_health.py       3 tests  — Health endpoint, startup lifecycle
-  test_llm_router.py   8 tests  — Model selection, parsing, async calls
-  test_pdf.py          5 tests  — PDF generation, binary output, validation
-  test_repository.py   14 tests — CRUD operations, domain filtering, immutability
-  test_seed.py         9 tests  — Complexity calc, field dedup, chunking, seed script
-  test_template_service.py 14 tests — Business logic, LLM integration, PDF rendering
+  test_fallback.py            8 tests  — LLM fallback chain, JSON extraction, error handling
+  test_generate.py            8 tests  — Contract generation endpoint (success, failure, edge cases)
+  test_health.py              3 tests  — Health endpoint, startup lifecycle
+  test_llm_router.py          8 tests  — Model selection, parsing, async calls
+  test_pdf.py                 5 tests  — PDF generation, binary output, validation
+  test_repository.py         14 tests  — CRUD operations, domain filtering, immutability
+  test_seed.py                9 tests  — Complexity calc, field dedup, chunking, seed script
+  test_template_service.py   14 tests  — Business logic, LLM integration, PDF rendering
+  test_templates.py          10 tests  — List, detail, wizard fields, complexity validation
 ```

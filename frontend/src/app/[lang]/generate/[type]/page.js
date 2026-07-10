@@ -19,6 +19,7 @@ export default function GeneratePage() {
   const [generating, setGenerating] = useState(false);
   const [error, setError] = useState(null);
   const [activeSection, setActiveSection] = useState(null);
+  const [validationErrors, setValidationErrors] = useState(new Set());
 
   useEffect(() => {
     fetchTemplate(type)
@@ -91,7 +92,22 @@ export default function GeneratePage() {
       handleGenerate();
       return;
     }
+
+    const missing = currentFields.filter(
+      (f) => !fieldValues[f.name] || fieldValues[f.name].trim() === ""
+    );
+    if (missing.length > 0) {
+      setValidationErrors(new Set(missing.map((f) => f.name)));
+      setError(
+        lang === "ar"
+          ? `يرجى ملء ${missing.length} حقل مطلوب`
+          : `Veuillez remplir ${missing.length} champ(s) obligatoire(s)`
+      );
+      return;
+    }
+
     setError(null);
+    setValidationErrors(new Set());
     setCurrentStep((s) => s + 1);
   };
 
@@ -372,16 +388,33 @@ export default function GeneratePage() {
                         key={field.name}
                         className={field.label.length > 25 ? "md:col-span-2" : ""}
                       >
-                        <label className="label-text">{field.label}</label>
+                        <label className="label-text">
+                          {field.label}
+                          <span className="text-error"> *</span>
+                        </label>
                         <input
                           type="text"
                           value={fieldValues[field.name] || ""}
-                          onChange={(e) =>
-                            setFieldValues((prev) => ({ ...prev, [field.name]: e.target.value }))
-                          }
+                          onChange={(e) => {
+                            setFieldValues((prev) => ({ ...prev, [field.name]: e.target.value }));
+                            setValidationErrors((prev) => {
+                              const next = new Set(prev);
+                              next.delete(field.name);
+                              return next;
+                            });
+                          }}
                           placeholder={field.label}
-                          className="input-field"
+                          className={`input-field ${
+                            validationErrors.has(field.name)
+                              ? "border-error focus:ring-error"
+                              : ""
+                          }`}
                         />
+                        {validationErrors.has(field.name) && (
+                          <p className="text-xs text-error mt-1">
+                            {lang === "ar" ? "هذا الحقل مطلوب" : "Ce champ est obligatoire"}
+                          </p>
+                        )}
                       </div>
                     ))}
                   </div>
