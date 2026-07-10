@@ -1,6 +1,6 @@
 from pydantic import BaseModel, Field
 from typing import Optional
-from app.models.contract import Language, ContractResponse
+from app.models.contract import Language, ContractResponse, TemplateSection
 
 
 class GenerateRequest(BaseModel):
@@ -37,3 +37,14 @@ class TemplateSummary(BaseModel):
     domain: str
     complexity: str = "medium"
     field_count: int = 0
+
+
+class TemplateDetail(TemplateSummary):
+    """Full template returned to the FE wizard for building the form.
+
+    Includes sections/articles/fields so the wizard knows which
+    placeholders to render as input fields and how to group them.
+    """
+    legal_basis: str = ""
+    disclaimer: str = ""
+    sections: list[TemplateSection] = Field(default_factory=list)

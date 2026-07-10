@@ -41,6 +41,13 @@ async def test_get_template_by_slug(client):
     assert data["slug"] == "bail-habitation"
     assert data["domain"] == "logement"
     assert data["field_count"] == 5
+    assert "sections" in data
+    assert len(data["sections"]) >= 1
+    # First section has articles with fields
+    assert "articles" in data["sections"][0]
+    assert len(data["sections"][0]["articles"]) >= 1
+    assert "fields" in data["sections"][0]["articles"][0]
+    assert isinstance(data["sections"][0]["articles"][0]["fields"], list)
 
 
 @pytest.mark.unit
@@ -66,7 +73,31 @@ async def test_list_templates_with_language_param(client):
 
 
 @pytest.mark.unit
-async def test_template_summary_has_valid_complexity(client):
+async def test_template_detail_has_valid_complexity(client):
     response = await client.get("/api/v1/contracts/templates/bail-habitation")
     data = response.json()
     assert data["complexity"] in ("low", "medium", "high")
+
+
+@pytest.mark.unit
+async def test_template_detail_has_wizard_fields(client):
+    """FE wizard needs sections with articles and deduplicated field list."""
+    response = await client.get("/api/v1/contracts/templates/bail-habitation")
+    data = response.json()
+
+    # Collect all unique field names across all articles
+    seen = set()
+    for section in data["sections"]:
+        assert "id" in section
+        assert "title_ar" in section
+        assert "title_fr" in section
+        for article in section.get("articles", []):
+            assert "id" in article
+            assert "text_ar" in article
+            assert "text_fr" in article
+            assert "fields" in article
+            for field in article["fields"]:
+                seen.add(field)
+
+    # Deduplicated count should match field_count
+    assert len(seen) == data["field_count"]
