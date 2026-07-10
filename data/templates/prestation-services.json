@@ -1,0 +1,186 @@
+{
+  "id": "prestation-services-v1",
+  "title_ar": "عقد تقديم خدمات",
+  "title_fr": "Contrat de Prestation de Services",
+  "slug": "prestation-services",
+  "language": "both",
+  "category": "entreprise",
+  "legal_basis": "Code des Obligations et des Contrats, articles 828 à 953 (Louage d'ouvrage)",
+  "version": "1.0",
+  "reviewed_by": null,
+  "review_date": null,
+  "source": "public_examples",
+  "disclaimer": "Modèle indicatif — non révisé par un avocat. Voir avertissement légal. / نموذج إرشادي — لم يراجعه محامٍ. راجع إخلاء المسؤولية القانونية.",
+  "sections": [
+    {
+      "id": "sec-parties",
+      "title_ar": "الأطراف",
+      "title_fr": "Parties",
+      "articles": [
+        {
+          "id": "art-client",
+          "text_ar": "شركة [NOM_CLIENT]، الكائنة بـ [ADRESSE_CLIENT]، ويمثلها السيد/ة [REPRESENTANT_CLIENT]، يشار إليها بـ « الحريف ».",
+          "text_fr": "La société [NOM_CLIENT], sise [ADRESSE_CLIENT], représentée par M./Mme [REPRESENTANT_CLIENT], ci-après dénommée « le Client ».",
+          "fields": [
+            "NOM_CLIENT",
+            "ADRESSE_CLIENT",
+            "REPRESENTANT_CLIENT"
+          ]
+        },
+        {
+          "id": "art-prestataire",
+          "text_ar": "شركة [NOM_PRESTATAIRE]، الكائنة بـ [ADRESSE_PRESTATAIRE]، ويمثلها السيد/ة [REPRESENTANT_PRESTATAIRE]، يشار إليها بـ « مقدم الخدمات ».",
+          "text_fr": "La société [NOM_PRESTATAIRE], sise [ADRESSE_PRESTATAIRE], représentée par M./Mme [REPRESENTANT_PRESTATAIRE], ci-après dénommée « le Prestataire ».",
+          "fields": [
+            "NOM_PRESTATAIRE",
+            "ADRESSE_PRESTATAIRE",
+            "REPRESENTANT_PRESTATAIRE"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-objet",
+      "title_ar": "موضوع العقد",
+      "title_fr": "Objet du contrat",
+      "articles": [
+        {
+          "id": "art-prestations",
+          "text_ar": "يلتزم مقدم الخدمات بإنجاز الخدمات التالية: [DESCRIPTION_PRESTATIONS].",
+          "text_fr": "Le Prestataire s'engage à réaliser les prestations suivantes : [DESCRIPTION_PRESTATIONS]. ",
+          "fields": [
+            "DESCRIPTION_PRESTATIONS"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-prix",
+      "title_ar": "المقابل",
+      "title_fr": "Rémunération",
+      "articles": [
+        {
+          "id": "art-honoraires",
+          "text_ar": "مقابل الخدمات، يدفع الحريف لمقدم الخدمات مبلغ [MONTANT_TOTAL] ديناراً تونسياً (دون الأداء)، حسب الطرق التالية: [MODALITES_PAIEMENT].",
+          "text_fr": "En contrepartie des prestations, le Client versera au Prestataire la somme de [MONTANT_TOTAL] dinars tunisiens (HT), payable selon les modalités suivantes : [MODALITES_PAIEMENT].",
+          "fields": [
+            "MONTANT_TOTAL",
+            "MODALITES_PAIEMENT"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-duree",
+      "title_ar": "المدة",
+      "title_fr": "Durée",
+      "articles": [
+        {
+          "id": "art-duree",
+          "text_ar": "يبرم هذا العقد لمدة [DUREE] ابتداءً من [DATE_DEBUT].",
+          "text_fr": "Le présent contrat est conclu pour une durée de [DUREE] à compter du [DATE_DEBUT]. Le louage d'ouvrage est régi par les dispositions générales des articles 828 à 834 inclus et par les dispositions ci-après. L'entreprise de construction et tous autres contrats dans lesquels l'ouvrier ou artisan fournit la matière sont considérés comme louage d'ouvrage.",
+          "fields": [
+            "DUREE",
+            "DATE_DEBUT"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-obligations",
+      "title_ar": "التزامات الأطراف",
+      "title_fr": "Obligations",
+      "articles": [
+        {
+          "id": "art-obligations-prestataire",
+          "text_ar": "يلتزم مقدم الخدمات بتنفيذ الخدمات طبقاً لأصول المهنة.",
+          "text_fr": "Le Prestataire s'engage à exécuter les prestations conformément aux règles de l'art. La loi considère comme louage d'industrie les services que les personnes exerçant une profession ou un art libéral rendent à leurs clients, ainsi que ceux des professeurs et maîtres de sciences, arts métiers. Le louage d'ouvrages et celui de services ne sont valables que si les parties contractantes ont la capacité de s'obliger ; l'interdit et le mineur doivent être assistés par les personnes sous l'autorité desquelles ils sont placés.",
+          "fields": []
+        },
+        {
+          "id": "art-obligations-client",
+          "text_ar": "يلتزم الحريف بتوفير جميع المعلومات الضرورية لمقدم الخدمات وضمان ولوجه إلى الأماكن.",
+          "text_fr": "Le Client s'engage à fournir au Prestataire toutes les informations nécessaires et à lui assurer l'accès aux locaux.",
+          "fields": []
+        }
+      ]
+    },
+    {
+      "id": "sec-responsabilite",
+      "title_ar": "المسؤولية",
+      "title_fr": "Responsabilité",
+      "articles": [
+        {
+          "id": "art-garantie",
+          "text_ar": "يلتزم مقدم الخدمات ببذل العناية اللازمة دون ضمان نتيجة.",
+          "text_fr": "Le Prestataire est tenu à une obligation de moyens.   Sont sans effet toutes clauses et conventions ayant pour objet de restreindre ou d'écarter la responsabilité établie par les articles 856 et 857 à la charge des maîtres ou employeurs.",
+          "fields": []
+        }
+      ]
+    },
+    {
+      "id": "sec-resiliation",
+      "title_ar": "الإنهاء",
+      "title_fr": "Résiliation",
+      "articles": [
+        {
+          "id": "art-resiliation",
+          "text_ar": "يمكن لكل من الطرفين إنهاء العقد بعد إعلام مسبق بـ [PREAVIS_JOURS] يوماً، بمكتوب مضمون الوصول مع الإعلام بالبلوغ.",
+          "text_fr": "Le contrat peut être résilié par l'une ou l'autre des parties moyennant un préavis de [PREAVIS_JOURS] jours, par lettre recommandée avec accusé de réception.",
+          "fields": [
+            "PREAVIS_JOURS"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-divers",
+      "title_ar": "أحكام عامة",
+      "title_fr": "Dispositions diverses",
+      "articles": [
+        {
+          "id": "art-confidentialite",
+          "text_ar": "يلتزم الطرفان باحترام سرية المعلومات المتبادلة.",
+          "text_fr": "Les parties s'engagent à respecter la confidentialité des informations échangées.",
+          "fields": []
+        },
+        {
+          "id": "art-juridiction",
+          "text_ar": "كل نزاع يعرض على محاكم [TRIBUNAL].",
+          "text_fr": "Tout litige sera soumis aux tribunaux de [TRIBUNAL].",
+          "fields": [
+            "TRIBUNAL"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-signatures",
+      "title_ar": "التوقيع",
+      "title_fr": "Signatures",
+      "articles": [
+        {
+          "id": "art-date-lieu",
+          "text_ar": "حرر بـ [LIEU_SIGNATURE]، بتاريخ [DATE_SIGNATURE].",
+          "text_fr": "Fait à [LIEU_SIGNATURE], le [DATE_SIGNATURE].",
+          "fields": [
+            "LIEU_SIGNATURE",
+            "DATE_SIGNATURE"
+          ]
+        },
+        {
+          "id": "art-sign-client",
+          "text_ar": "الحريف\n[REPRESENTANT_CLIENT]",
+          "text_fr": "Le Client\n[REPRESENTANT_CLIENT]",
+          "fields": []
+        },
+        {
+          "id": "art-sign-prestataire",
+          "text_ar": "مقدم الخدمات\n[REPRESENTANT_PRESTATAIRE]",
+          "text_fr": "Le Prestataire\n[REPRESENTANT_PRESTATAIRE]",
+          "fields": []
+        }
+      ]
+    }
+  ]
+}

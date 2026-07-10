@@ -1,0 +1,196 @@
+{
+  "id": "bail-habitation-v1",
+  "title_ar": "عقد كراء مسكن",
+  "title_fr": "Contrat de Bail d'Habitation",
+  "slug": "bail-habitation",
+  "language": "both",
+  "category": "logement",
+  "legal_basis": "Code des Obligations et des Contrats, articles 727 à 827",
+  "version": "1.0",
+  "reviewed_by": null,
+  "review_date": null,
+  "source": "public_examples",
+  "disclaimer": "Modèle indicatif — non révisé par un avocat. Voir avertissement légal. / نموذج إرشادي — لم يراجعه محامٍ. راجع إخلاء المسؤولية القانونية.",
+  "sections": [
+    {
+      "id": "sec-parties",
+      "title_ar": "الأطراف",
+      "title_fr": "Parties",
+      "articles": [
+        {
+          "id": "art-bailleur",
+          "text_ar": "السيد/ة [NOM_BAILLEUR]، تونسي/ة الجنسية، بطاقة تعريف وطنية عدد [CIN_BAILLEUR]، قاطن/ة بـ [ADRESSE_BAILLEUR]، يشار إليه/ا فيما يلي بـ « المكري ».",
+          "text_fr": "M./Mme [NOM_BAILLEUR], de nationalité tunisienne, titulaire de la CIN n° [CIN_BAILLEUR], demeurant à [ADRESSE_BAILLEUR], ci-après dénommé(e) « le Bailleur ».",
+          "fields": [
+            "NOM_BAILLEUR",
+            "CIN_BAILLEUR",
+            "ADRESSE_BAILLEUR"
+          ]
+        },
+        {
+          "id": "art-preneur",
+          "text_ar": "السيد/ة [NOM_PRENEUR]، تونسي/ة الجنسية، بطاقة تعريف وطنية عدد [CIN_PRENEUR]، قاطن/ة بـ [ADRESSE_PRENEUR]، يشار إليه/ا فيما يلي بـ « المكتري ».",
+          "text_fr": "M./Mme [NOM_PRENEUR], de nationalité tunisienne, titulaire de la CIN n° [CIN_PRENEUR], demeurant à [ADRESSE_PRENEUR], ci-après dénommé(e) « le Preneur ».",
+          "fields": [
+            "NOM_PRENEUR",
+            "CIN_PRENEUR",
+            "ADRESSE_PRENEUR"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-objet",
+      "title_ar": "موضوع العقد",
+      "title_fr": "Objet du contrat",
+      "articles": [
+        {
+          "id": "art-objet",
+          "text_ar": "يمنح المكري للمكتري الذي يقبل، العقار المعد للسكن الكائن بـ [ADRESSE_BIEN]، والمتكون من [DESCRIPTION_BIEN].",
+          "text_fr": "Le Bailleur donne à bail au Preneur, qui accepte, le bien immobilier à usage d'habitation situé à [ADRESSE_BIEN], composé de [DESCRIPTION_BIEN].",
+          "fields": [
+            "ADRESSE_BIEN",
+            "DESCRIPTION_BIEN"
+          ]
+        },
+        {
+          "id": "art-destination",
+          "text_ar": "العقار المكرى مخصص حصراً لسكن المكتري وعائلته. يشترط أن يكون عقد الكراء مكتوباً إذا زادت مدته عن سنة.",
+          "text_fr": "Le bien loué est destiné exclusivement à l'habitation du Preneur et de sa famille. Les baux d'immeubles excédant une année n'ont d'effet au regard des tiers que s'ils sont enregistrés dans les conditions déterminées par la loi. Néanmoins, les baux d'immeubles et de droits immobiliers doivent être constatés par écrit s'ils sont faits pour plus d'une année. A défaut d'acte écrit, le bail ':st censé fait pour un temps indéterminé. Les baux d'immeubles excédant une année n'ont d'effet au regard des tiers que s'ils sont enregistrés dans les conditions déterminées par la loi.",
+          "fields": []
+        }
+      ]
+    },
+    {
+      "id": "sec-duree",
+      "title_ar": "المدة",
+      "title_fr": "Durée",
+      "articles": [
+        {
+          "id": "art-duree",
+          "text_ar": "يبرم عقد الكراء هذا لمدة [DUREE_BAIL] ابتداءً من [DATE_DEBUT].",
+          "text_fr": "Le présent bail est consenti pour une durée de [DUREE_BAIL] à compter du [DATE_DEBUT].",
+          "fields": [
+            "DUREE_BAIL",
+            "DATE_DEBUT"
+          ]
+        },
+        {
+          "id": "art-tacite-reconduction",
+          "text_ar": "إذا لم يوجه أي طرف إعلاماً بالإنهاء قبل [PREAVIS_MOIS] أشهر من انتهاء المدة، يجدد العقد ضمنياً.",
+          "text_fr": "Si aucun terme n'a été établi, le louage est censé fait à l'année, au semestre, au mois, à la semaine ou au jour, selon que le prix a été fixé à tant par an, par semestre, par mois, etc..., et le contrat cesse à l'expiration de chacun de ces termes, sans qu'il soit nécessaire de donner congé, à moins d'usage contraire. ART 793. - Au cas où, à l'expiration du contrat, le preneur reste en possession, le contrat est renouvelé dans les mêmes conditions, et pour la même période, si le contrat a été fait pour une période déterminée ; s'il est fait sans détermination d'époque, chacune des parties peut résilier le bail ; le preneur aura cependant droit au délai fixé par l'usage local pour vider les lieux. A défaut de congé donné par l'une des parties [PREAVIS_MOIS] mois avant l'échéance, le bail sera reconduit tacitement.",
+          "fields": [
+            "PREAVIS_MOIS"
+          ]
+        },
+        {
+          "id": "art-resiliation",
+          "text_ar": "ينتهي عقد الكراء بانقضاء المدة المتفق عليها. وفي حالة الإخلال الجسيم من قبل أحد الطرفين بالتزاماته، يمكن للطرف الآخر طلب فسخ العقد.",
+          "text_fr": "Le louage de choses cesse de plein droit à l'expiration du terme établi par les parties, sans qu'il soit nécessaire de donner congé, s'il n'y a convention contraire ou sauf les dispositions spéciales aux baux à ferme. En cas de manquement grave par l'une des parties à ses obligations, l'autre partie pourra demander la résiliation du bail.",
+          "fields": []
+        }
+      ]
+    },
+    {
+      "id": "sec-financier",
+      "title_ar": "الأحكام المالية",
+      "title_fr": "Dispositions financières",
+      "articles": [
+        {
+          "id": "art-loyer",
+          "text_ar": "يحدد مبلغ الكراء الشهري بـ [MONTANT_LOYER] ديناراً تونسياً، يدفع في [JOUR_PAIEMENT] من كل شهر.",
+          "text_fr": "Le loyer mensuel est fixé à [MONTANT_LOYER] dinars tunisiens, payable le [JOUR_PAIEMENT] de chaque mois. Dans les baux de biens ruraux, on peut stipuler que le preneur, outre une somme déterminée en numéraire, ou une redevance en produits, sera tenu de faire certains travaux déterminés considérés comme faisant partie du prix. Le prix doit être déterminé ; il peut être établi soit en numéraire, soit en produits, denrées, ou autres choses mobilières, déterminés quant à la quotité et à la qualité ; Il peut consister aussi en une portion ou part indivise des produits de la chose louée. Dans les baux de biens ruraux, on peut stipuler que le preneur, outre une somme déterminée en numéraire, ou une redevance en produits, sera tenu de faire certains travaux déterminés considérés comme faisant partie du prix. Lorsque le prix de louage n'a pas été déterminé par les parties elles sont présumées ensuite s'en être remises au prix courant pratiqué pour les choses de même nature dans le lieu du contrat ; s'il existe une taxe ou un tarif, elles sont censées s'être rapportées au tarif ou à la taxe.",
+          "fields": [
+            "MONTANT_LOYER",
+            "JOUR_PAIEMENT"
+          ]
+        },
+        {
+          "id": "art-caution",
+          "text_ar": "يدفع المكتري للمكري عند التوقيع مبلغ [MONTANT_CAUTION] ديناراً تونسياً كضمان. يسترجع هذا المبلغ عند انتهاء الكراء بعد خصم الأضرار والمبالغ غير المدفوعة.",
+          "text_fr": "Le Preneur verse au Bailleur, à la signature des présentes, une somme de [MONTANT_CAUTION] dinars tunisiens à titre de caution. Cette somme sera restituée au Preneur en fin de bail, déduction faite des éventuelles dégradations et des loyers impayés.",
+          "fields": [
+            "MONTANT_CAUTION"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-obligations",
+      "title_ar": "التزامات الأطراف",
+      "title_fr": "Obligations des parties",
+      "articles": [
+        {
+          "id": "art-obligations-bailleur",
+          "text_ar": "يلتزم المكري بتسليم العقار في حالة جيدة وضمان التمتع الهادئ به.",
+          "text_fr": "Le Bailleur est tenu de délivrer le bien en bon état d'usage et d'en assurer la jouissance paisible. La délivrance de la chose louée est régie par les dispositions établies pour la délivrance de la chose vendue.  - Les défauts qui n'empêchent la jouissance de la chose louée ou ne la diminuent que d'une manière insignifiante ne donnent lieu à aucun recours en faveur du preneur : il en est de même de ceux tolérés par l'usage. Le bailleur est tenu envers le preneur pour tous les vices et défauts de la chose louée qui en diminuent sensiblement la jouissance, ou la rendent impropre à l'usage auquel elle était destinée, d'après sa nature ou d'après le contrat. Il répond également de l'absence des qualités expressément promises par lui, ou requises par la destination de la chose. Les défauts qui n'empêchent la jouissance de la chose louée ou ne la diminuent que d'une manière insignifiante ne donnent lieu à aucun recours en faveur du preneur ; il en est de même de ceux tolérés par l'usage.",
+          "fields": []
+        },
+        {
+          "id": "art-obligations-preneur",
+          "text_ar": "يلتزم المكتري باستعمال العقار استعمالاً معقولاً وبدفع معين الكراء في الآجال المتفق عليها وبصيانة العقار.",
+          "text_fr": "Le Preneur est tenu d'user du bien en bon père de famille, de payer le loyer aux termes convenus et d'entretenir le bien. Le preneur est tenu de deux obligations principales : a) De payer le prix du louage ; b) De conserver la chose louée et d'en user sans excès ni abus suivant sa destination naturelle, ou celle qui lui a été donnée par le contrat.",
+          "fields": []
+        },
+        {
+          "id": "art-charges",
+          "text_ar": "تشمل أعباء الكراء: [CHARGES_INCLUSES]. ويبقى على عاتق المكتري الأعباء التالية: [CHARGES_PRENEUR].",
+          "text_fr": "Les charges locatives comprennent : [CHARGES_INCLUSES]. Les charges suivantes restent à la charge du Preneur : [CHARGES_PRENEUR].",
+          "fields": [
+            "CHARGES_INCLUSES",
+            "CHARGES_PRENEUR"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-divers",
+      "title_ar": "أحكام عامة",
+      "title_fr": "Dispositions diverses",
+      "articles": [
+        {
+          "id": "art-domicile",
+          "text_ar": "لتنفيذ هذا العقد، يتخذ الطرفان موطناً لهما بعنوانيهما المذكورين أعلاه.",
+          "text_fr": "Pour l'exécution des présentes, les parties font élection de domicile à leurs adresses respectives indiquées ci-dessus.",
+          "fields": []
+        },
+        {
+          "id": "art-juridiction",
+          "text_ar": "كل نزاع يتعلق بهذا العقد يكون من اختصاص محاكم [TRIBUNAL].",
+          "text_fr": "Tout litige relatif au présent contrat sera de la compétence des tribunaux de [TRIBUNAL].",
+          "fields": [
+            "TRIBUNAL"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-signatures",
+      "title_ar": "التوقيع",
+      "title_fr": "Signatures",
+      "articles": [
+        {
+          "id": "art-date-lieu",
+          "text_ar": "حرر بـ [LIEU_SIGNATURE]، بتاريخ [DATE_SIGNATURE]، في نظيرين أصليين.",
+          "text_fr": "Fait à [LIEU_SIGNATURE], le [DATE_SIGNATURE], en deux exemplaires originaux.",
+          "fields": [
+            "LIEU_SIGNATURE",
+            "DATE_SIGNATURE"
+          ]
+        },
+        {
+          "id": "art-sign-bailleur",
+          "text_ar": "المكري\n[NOM_BAILLEUR]\n(إمضاء مسبوق بعبارة « قرأت وأوافق »)",
+          "text_fr": "Le Bailleur\n[NOM_BAILLEUR]\n(Signature précédée de la mention « Lu et approuvé »)",
+          "fields": []
+        },
+        {
+          "id": "art-sign-preneur",
+          "text_ar": "المكتري\n[NOM_PRENEUR]\n(إمضاء مسبوق بعبارة « قرأت وأوافق »)",
+          "text_fr": "Le Preneur\n[NOM_PRENEUR]\n(Signature précédée de la mention « Lu et approuvé »)",
+          "fields": []
+        }
+      ]
+    }
+  ]
+}

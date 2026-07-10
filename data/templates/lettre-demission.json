@@ -1,0 +1,118 @@
+{
+  "id": "lettre-demission-v1",
+  "title_ar": "رسالة استقالة",
+  "title_fr": "Lettre de Démission",
+  "slug": "lettre-demission",
+  "language": "both",
+  "category": "travail",
+  "legal_basis": "Code du Travail — Rupture du contrat de travail à l'initiative du salarié",
+  "version": "1.0",
+  "reviewed_by": null,
+  "review_date": null,
+  "source": "public_examples",
+  "disclaimer": "Modèle indicatif — non révisé par un avocat. / نموذج إرشادي — لم يراجعه محامٍ.",
+  "sections": [
+    {
+      "id": "sec-header",
+      "title_ar": "المرسل والمرسل إليه",
+      "title_fr": "Expéditeur / Destinataire",
+      "articles": [
+        {
+          "id": "art-exp",
+          "text_ar": "[NOM_SALARIE]\n[ADRESSE_SALARIE]\nالهاتف: [TEL_SALARIE]\nالخطة: [POSTE]",
+          "text_fr": "[NOM_SALARIE]\n[ADRESSE_SALARIE]\nTél : [TEL_SALARIE]\nPoste : [POSTE]",
+          "fields": [
+            "NOM_SALARIE",
+            "ADRESSE_SALARIE",
+            "TEL_SALARIE",
+            "POSTE"
+          ]
+        },
+        {
+          "id": "art-dest",
+          "text_ar": "إلى السيد/ة [DESTINATAIRE]\n[NOM_ENTREPRISE]\n[ADRESSE_ENTREPRISE]",
+          "text_fr": "À l'attention de [DESTINATAIRE]\n[NOM_ENTREPRISE]\n[ADRESSE_ENTREPRISE]",
+          "fields": [
+            "DESTINATAIRE",
+            "NOM_ENTREPRISE",
+            "ADRESSE_ENTREPRISE"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-objet",
+      "title_ar": "الموضوع",
+      "title_fr": "Objet",
+      "articles": [
+        {
+          "id": "art-objet",
+          "text_ar": "الموضوع: استقالة",
+          "text_fr": "Objet : Démission",
+          "fields": []
+        }
+      ]
+    },
+    {
+      "id": "sec-corps",
+      "title_ar": "متن الرسالة",
+      "title_fr": "Corps de la lettre",
+      "articles": [
+        {
+          "id": "art-annonce",
+          "text_ar": "أعلمكم بموجب هذه الرسالة قراري بالاستقالة من خطتي كـ [POSTE] بـ [NOM_ENTREPRISE]، التي أشغلها منذ [DATE_EMBAUCHE].",
+          "text_fr": "Par la présente, je vous informe de ma décision de démissionner de mon poste de [POSTE] au sein de [NOM_ENTREPRISE], que j'occupe depuis le [DATE_EMBAUCHE].",
+          "fields": [
+            "DATE_EMBAUCHE"
+          ]
+        },
+        {
+          "id": "art-preavis",
+          "text_ar": "سأحترم أجل الإعلام المسبق القانوني وقدره [DUREE_PREAVIS]، الذي يبدأ سريانه من [DATE_EFFET_PREAVIS]. وبالتالي سيكون آخر يوم عمل لي هو [DATE_DERNIER_JOUR].",
+          "text_fr": "Je respecterai le préavis légal de [DUREE_PREAVIS], qui prendra effet à compter du [DATE_EFFET_PREAVIS]. Mon dernier jour de travail sera donc le [DATE_DERNIER_JOUR].",
+          "fields": [
+            "DUREE_PREAVIS",
+            "DATE_EFFET_PREAVIS",
+            "DATE_DERNIER_JOUR"
+          ]
+        },
+        {
+          "id": "art-motif",
+          "text_ar": "(اختياري) أغادر المؤسسة للسبب التالي: [MOTIF_DEMISSION].",
+          "text_fr": "(Facultatif) Je quitte l'entreprise pour le motif suivant : [MOTIF_DEMISSION].",
+          "fields": [
+            "MOTIF_DEMISSION"
+          ]
+        },
+        {
+          "id": "art-remerciements",
+          "text_ar": "أشكركم على الثقة والفرص التي منحتموني إياها طيلة مسيرتي داخل المؤسسة.",
+          "text_fr": "Je vous remercie pour la confiance et les opportunités que vous m'avez accordées durant mon parcours au sein de l'entreprise.",
+          "fields": []
+        },
+        {
+          "id": "art-documents",
+          "text_ar": "أرجو التكرم بتسليمي شهادة العمل ووصل المخالصة النهائية وشهادة انتهاء العمل الموجهة للصندوق الوطني للضمان الاجتماعي.",
+          "text_fr": "Je vous saurais gré de bien vouloir me remettre mon certificat de travail, mon solde de tout compte, et l'attestation de cessation d'emploi destinée à la CNSS.",
+          "fields": []
+        }
+      ]
+    },
+    {
+      "id": "sec-signatures",
+      "title_ar": "التوقيع",
+      "title_fr": "Signature",
+      "articles": [
+        {
+          "id": "art-date-lieu",
+          "text_ar": "حرر بـ [LIEU]، بتاريخ [DATE].\n\n[NOM_SALARIE]\n(إمضاء)",
+          "text_fr": "Fait à [LIEU], le [DATE].\n\n[NOM_SALARIE]\n(Signature)",
+          "fields": [
+            "LIEU",
+            "DATE"
+          ]
+        }
+      ]
+    }
+  ]
+}

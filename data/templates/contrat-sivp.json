@@ -1,0 +1,176 @@
+{
+  "id": "contrat-sivp-v1",
+  "title_ar": "عقد صيغ — إدماج في الحياة المهنية",
+  "title_fr": "Contrat SIVP — Stage d'Insertion à la Vie Professionnelle",
+  "slug": "contrat-sivp",
+  "language": "both",
+  "category": "travail",
+  "legal_basis": "Loi n° 93-11 du 17 février 1993 et Décret n° 2009-349 du 9 février 2009 — Programme SIVP",
+  "version": "1.0",
+  "reviewed_by": null,
+  "review_date": null,
+  "source": "public_examples",
+  "disclaimer": "Modèle indicatif — non révisé par un avocat. / نموذج إرشادي — لم يراجعه محامٍ.",
+  "sections": [
+    {
+      "id": "sec-cadre",
+      "title_ar": "الإطار القانوني",
+      "title_fr": "Cadre légal",
+      "articles": [
+        {
+          "id": "art-cadre",
+          "text_ar": "يخضع هذا العقد لبرنامج صيغ (إدماج في الحياة المهنية) المحدث بمقتضى القانون عدد 11 لسنة 1993 المؤرخ في 17 فيفري 1993 ونصوصه التطبيقية وخاصة الأمر عدد 349 لسنة 2009 المؤرخ في 9 فيفري 2009. عقد صيغ هو عقد تربص ثلاثي الأطراف بين الوكالة التونسية للتشغيل والمؤسسة المستقبلة والمتربص من خريجي التعليم العالي.",
+          "text_fr": "Le présent contrat est régi par le programme SIVP (Stage d'Insertion à la Vie Professionnelle) institué par la loi n° 93-11 du 17 février 1993 et ses textes d'application, notamment le décret n° 2009-349 du 9 février 2009. Le contrat SIVP est un contrat de stage tripartite entre l'Agence Tunisienne de l'Emploi (ATE), l'entreprise d'accueil et le stagiaire diplômé de l'enseignement supérieur.",
+          "fields": []
+        }
+      ]
+    },
+    {
+      "id": "sec-parties",
+      "title_ar": "الأطراف",
+      "title_fr": "Parties",
+      "articles": [
+        {
+          "id": "art-entreprise",
+          "text_ar": "المؤسسة [NOM_ENTREPRISE]، س.و.م عدد [RNE]، الكائنة بـ [ADRESSE_ENTREPRISE]، يمثلها [REPRESENTANT]، يشار إليها بـ « المؤسسة المستقبلة ».",
+          "text_fr": "L'entreprise [NOM_ENTREPRISE], RNE n° [RNE], sise [ADRESSE_ENTREPRISE], représentée par [REPRESENTANT], ci-après « l'Entreprise d'accueil ».",
+          "fields": [
+            "NOM_ENTREPRISE",
+            "RNE",
+            "ADRESSE_ENTREPRISE",
+            "REPRESENTANT"
+          ]
+        },
+        {
+          "id": "art-stagiaire",
+          "text_ar": "السيد/ة [NOM_STAGIAIRE]، ب.ت.و عدد [CIN_STAGIAIRE]، متحصل/ة على [DIPLOME] سنة [ANNEE_DIPLOME]، القاطن/ة بـ [ADRESSE_STAGIAIRE]، يشار إليه/ا بـ « المتربص ».",
+          "text_fr": "M./Mme [NOM_STAGIAIRE], CIN n° [CIN_STAGIAIRE], titulaire du diplôme [DIPLOME] obtenu en [ANNEE_DIPLOME], demeurant à [ADRESSE_STAGIAIRE], ci-après « le Stagiaire ».",
+          "fields": [
+            "NOM_STAGIAIRE",
+            "CIN_STAGIAIRE",
+            "DIPLOME",
+            "ANNEE_DIPLOME",
+            "ADRESSE_STAGIAIRE"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-objet",
+      "title_ar": "موضوع التربص",
+      "title_fr": "Objet du stage",
+      "articles": [
+        {
+          "id": "art-objet",
+          "text_ar": "يهدف التربص إلى إدماج المتربص في الحياة المهنية في مجال [DOMAINE]، تحت إشراف مؤطر تعينه المؤسسة.",
+          "text_fr": "Le stage a pour objet l'insertion du Stagiaire dans la vie professionnelle dans le domaine de [DOMAINE], sous la supervision d'un tuteur désigné par l'Entreprise.",
+          "fields": [
+            "DOMAINE"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-duree",
+      "title_ar": "المدة",
+      "title_fr": "Durée",
+      "articles": [
+        {
+          "id": "art-duree",
+          "text_ar": "يبرم عقد صيغ هذا لمدة [DUREE_MOIS] شهراً، من [DATE_DEBUT] إلى [DATE_FIN]. يمكن تجديد عقد صيغ مرة واحدة فقط في حدود سنتين كحد أقصى.",
+          "text_fr": "Le présent contrat SIVP est conclu pour une durée de [DUREE_MOIS] mois, du [DATE_DEBUT] au [DATE_FIN]. Le contrat SIVP peut être reconduit une seule fois dans la limite maximale de deux ans.",
+          "fields": [
+            "DUREE_MOIS",
+            "DATE_DEBUT",
+            "DATE_FIN"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-bourse",
+      "title_ar": "المنحة",
+      "title_fr": "Bourse et avantages",
+      "articles": [
+        {
+          "id": "art-bourse",
+          "text_ar": "يتقاضى المتربص منحة شهرية قدرها [MONTANT_BOURSE] د.ت، تتحمل الدولة عن طريق الوكالة التونسية للتشغيل منها [PART_ETAT] د.ت وتتحمل المؤسسة [PART_ENTREPRISE] د.ت. الجزء الممول من الدولة معفى من جميع المساهمات الاجتماعية والجبائية. يتمتع المتربص براحة سنوية مدتها 15 يوم عمل (الفصل 7 من عقد صيغ). يغطى المتربص بنظام الضمان الاجتماعي في حوادث الشغل.",
+          "text_fr": "Le Stagiaire perçoit une bourse mensuelle de [MONTANT_BOURSE] DT, dont [PART_ETAT] DT sont pris en charge par l'État via l'ATE et [PART_ENTREPRISE] DT par l'Entreprise d'accueil. La partie à la charge de l'État est exonérée de toutes charges sociales et fiscales (TFP, FOPROLOS). Le Stagiaire bénéficie d'un congé annuel de 15 jours ouvrables (article 7 du contrat SIVP). Le Stagiaire est couvert par le régime de sécurité sociale pour les accidents du travail.",
+          "fields": [
+            "MONTANT_BOURSE",
+            "PART_ETAT",
+            "PART_ENTREPRISE"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-obligations",
+      "title_ar": "الالتزامات",
+      "title_fr": "Obligations",
+      "articles": [
+        {
+          "id": "art-entreprise-ob",
+          "text_ar": "تلتزم المؤسسة بضمان تكوين تطبيقي للمتربص ملائم لاختصاصه، وتعيين مؤطر، وتسليم شهادة تربص عند انتهاء العقد.",
+          "text_fr": "L'Entreprise s'engage à assurer au Stagiaire une formation pratique adaptée à sa spécialité, à désigner un tuteur, et à délivrer une attestation de stage en fin de contrat.",
+          "fields": []
+        },
+        {
+          "id": "art-stagiaire-ob",
+          "text_ar": "يلتزم المتربص باتباع تعليمات المؤطر واحترام النظام الداخلي والمحافظة على السر المهني.",
+          "text_fr": "Le Stagiaire s'engage à suivre les instructions du tuteur, à respecter le règlement intérieur et à observer la discrétion professionnelle.",
+          "fields": []
+        }
+      ]
+    },
+    {
+      "id": "sec-rupture",
+      "title_ar": "الإنهاء",
+      "title_fr": "Rupture",
+      "articles": [
+        {
+          "id": "art-rupture",
+          "text_ar": "في حالة إنهاء المؤسسة للعقد قبل انتهاء مدته لسبب غير الخطأ الجسيم من المتربص، تلتزم المؤسسة بدفع تعويض (الفصل 11 من عقد صيغ). يمكن للمتربص فسخ العقد مع احترام أجل إعلام بـ [PREAVIS_JOURS] يوماً.",
+          "text_fr": "En cas de rupture du contrat par l'Entreprise avant son terme pour un motif autre que la faute grave du Stagiaire, l'Entreprise est tenue au paiement de dommages et intérêts (article 11 du contrat SIVP). Le Stagiaire peut rompre le contrat moyennant un préavis de [PREAVIS_JOURS] jours.",
+          "fields": [
+            "PREAVIS_JOURS"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-signatures",
+      "title_ar": "التوقيع",
+      "title_fr": "Signatures",
+      "articles": [
+        {
+          "id": "art-note",
+          "text_ar": "يخضع هذا العقد للتأشيرة المسبقة من مكتب التشغيل المختص. يحرر في ثلاث نظائر: نسخة للوكالة التونسية للتشغيل، نسخة للمؤسسة، نسخة للمتربص.",
+          "text_fr": "Le présent contrat est soumis au visa préalable du Bureau de l'Emploi compétent. Il est établi en trois exemplaires : un pour l'ATE, un pour l'Entreprise, un pour le Stagiaire.",
+          "fields": []
+        },
+        {
+          "id": "art-date-lieu",
+          "text_ar": "حرر بـ [LIEU_SIGNATURE]، بتاريخ [DATE_SIGNATURE].",
+          "text_fr": "Fait à [LIEU_SIGNATURE], le [DATE_SIGNATURE].",
+          "fields": [
+            "LIEU_SIGNATURE",
+            "DATE_SIGNATURE"
+          ]
+        },
+        {
+          "id": "art-sign-e",
+          "text_ar": "المؤسسة\n[REPRESENTANT]",
+          "text_fr": "Entreprise\n[REPRESENTANT]",
+          "fields": []
+        },
+        {
+          "id": "art-sign-s",
+          "text_ar": "المتربص\n[NOM_STAGIAIRE]",
+          "text_fr": "Stagiaire\n[NOM_STAGIAIRE]",
+          "fields": []
+        }
+      ]
+    }
+  ]
+}

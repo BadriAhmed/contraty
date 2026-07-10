@@ -1,0 +1,168 @@
+{
+  "id": "vente-voiture-v1",
+  "title_ar": "عقد بيع سيارة",
+  "title_fr": "Contrat de Vente de Véhicule Automobile",
+  "slug": "vente-voiture",
+  "language": "both",
+  "category": "vehicules",
+  "legal_basis": "Code des Obligations et des Contrats, articles 564 à 717 (Vente)",
+  "version": "1.0",
+  "reviewed_by": null,
+  "review_date": null,
+  "source": "public_examples",
+  "disclaimer": "Modèle indicatif — non révisé par un avocat. / نموذج إرشادي — لم يراجعه محامٍ.",
+  "sections": [
+    {
+      "id": "sec-parties",
+      "title_ar": "الأطراف",
+      "title_fr": "Parties",
+      "articles": [
+        {
+          "id": "art-vendeur",
+          "text_ar": "السيد/ة [NOM_VENDEUR]، ب.ت.و عدد [CIN_VENDEUR]، القاطن/ة بـ [ADRESSE_VENDEUR]، يشار إليه/ا بـ « البائع ».",
+          "text_fr": "M./Mme [NOM_VENDEUR], CIN n° [CIN_VENDEUR], demeurant à [ADRESSE_VENDEUR], ci-après dénommé(e) « le Vendeur ».",
+          "fields": [
+            "NOM_VENDEUR",
+            "CIN_VENDEUR",
+            "ADRESSE_VENDEUR"
+          ]
+        },
+        {
+          "id": "art-acquereur",
+          "text_ar": "السيد/ة [NOM_ACQUEREUR]، ب.ت.و عدد [CIN_ACQUEREUR]، القاطن/ة بـ [ADRESSE_ACQUEREUR]، يشار إليه/ا بـ « المشتري ».",
+          "text_fr": "M./Mme [NOM_ACQUEREUR], CIN n° [CIN_ACQUEREUR], demeurant à [ADRESSE_ACQUEREUR], ci-après dénommé(e) « l'Acquéreur ».",
+          "fields": [
+            "NOM_ACQUEREUR",
+            "CIN_ACQUEREUR",
+            "ADRESSE_ACQUEREUR"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-objet",
+      "title_ar": "موضوع العقد",
+      "title_fr": "Objet du contrat",
+      "articles": [
+        {
+          "id": "art-vehicule",
+          "text_ar": "يبيع البائع للمشتري الذي يقبل، السيارة التالية:\nالعلامة: [MARQUE]\nالطراز: [MODELE]\nرقم التسجيل: [IMMATRICULATION]\nرقم الهيكل: [NUM_CHASSIS]\nسنة أول استعمال: [ANNEE_MEC]\nالوقود: [CARBURANT]\nالقوة الجبائية: [PUISSANCE_FISCALE] حصان\nعدد الكيلومترات: [KILOMETRAGE] كم",
+          "text_fr": "Le Vendeur vend à l'Acquéreur, qui accepte, le véhicule automobile suivant :\nMarque : [MARQUE]\nType/Modèle : [MODELE]\nImmatriculation : [IMMATRICULATION]\nN° de série (châssis) : [NUM_CHASSIS]\nAnnée de mise en circulation : [ANNEE_MEC]\nCarburant : [CARBURANT]\nPuissance fiscale : [PUISSANCE_FISCALE] CV\nKilométrage : [KILOMETRAGE] km",
+          "fields": [
+            "MARQUE",
+            "MODELE",
+            "IMMATRICULATION",
+            "NUM_CHASSIS",
+            "ANNEE_MEC",
+            "CARBURANT",
+            "PUISSANCE_FISCALE",
+            "KILOMETRAGE"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-prix",
+      "title_ar": "الثمن",
+      "title_fr": "Prix de vente",
+      "articles": [
+        {
+          "id": "art-prix",
+          "text_ar": "حدد ثمن البيع بـ [PRIX] ديناراً تونسياً، يدفع نقداً عند توقيع هذا العقد.",
+          "text_fr": "Le prix de vente est fixé à [PRIX] dinars tunisiens, payé comptant à la signature des présentes. ",
+          "fields": [
+            "PRIX"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-etat",
+      "title_ar": "حالة السيارة",
+      "title_fr": "État du véhicule",
+      "articles": [
+        {
+          "id": "art-etat",
+          "text_ar": "يصرح المشتري بأنه عاين السيارة وقبلها على حالتها. يصرح البائع بأن السيارة خالية من أي تقييد أو رهن أو حجز.",
+          "text_fr": "L'Acquéreur déclare avoir examiné le véhicule et l'accepter dans l'état où il se trouve. La nullité du contrat ne peut jamais être opposée par le vendeur, à raison de ce que la chose était à autrui. La vente de la chose d'autrui est valable : si le maître la ratifie ; si le vendeur acquiert ensuite la propriété de la chose ; Dans le cas où le maître refuse de ratifier, l'acquéreur peut demander la résolution de la vente; le vendeur est tenu, en outre, des dommages-intérêts, lorsque l'acquéreur ignorait, au moment de la vente que la chose était à autrui. La nullité du contrat ne peut jamais être opposée par le vendeur, à raison de ce que la chose était à autrui. Le Vendeur déclare que le véhicule n'est grevé d'aucune inscription, gage ou opposition.",
+          "fields": []
+        }
+      ]
+    },
+    {
+      "id": "sec-garantie",
+      "title_ar": "الضمان",
+      "title_fr": "Garantie",
+      "articles": [
+        {
+          "id": "art-vices-caches",
+          "text_ar": "البائع ملزم بضمان العيوب الخفية طبق ما يقتضيه القانون.",
+          "text_fr": "Le Vendeur est tenu de la garantie des vices cachés dans les conditions prévues par la loi.   ",
+          "fields": []
+        }
+      ]
+    },
+    {
+      "id": "sec-transferts",
+      "title_ar": "نقل الملكية والإجراءات",
+      "title_fr": "Transfert de propriété",
+      "articles": [
+        {
+          "id": "art-transfert",
+          "text_ar": "تنتقل ملكية السيارة للمشتري ابتداءً من توقيع هذا العقد. يلتزم المشتري بالقيام بإجراءات التحويل لدى المصالح المختصة في أجل [DELAI_MUTATION_JOURS] يوماً. يسلم البائع للمشتري: بطاقة التسجيل، شهادة الوضعية الإدارية لم يمض على تاريخها أكثر من 15 يوماً، شهادة المخالصة الجبائية، ومحاضر الفحص الفني السارية.",
+          "text_fr": "La propriété du véhicule est transférée à l'Acquéreur à compter de la signature des présentes. L'Acquéreur s'engage à accomplir les formalités de mutation auprès des services compétents dans un délai de [DELAI_MUTATION_JOURS] jours. Le Vendeur remet à l'Acquéreur : la carte grise, le certificat de situation administrative datant de moins de 15 jours, le quitus fiscal, et les procès-verbaux de visite technique en cours de validité.",
+          "fields": [
+            "DELAI_MUTATION_JOURS"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-divers",
+      "title_ar": "أحكام عامة",
+      "title_fr": "Dispositions diverses",
+      "articles": [
+        {
+          "id": "art-frais",
+          "text_ar": "تكون معاليم التحويل على عاتق المشتري.",
+          "text_fr": "Les frais de mutation sont à la charge de l'Acquéreur.",
+          "fields": []
+        },
+        {
+          "id": "art-contraventions",
+          "text_ar": "يصرح البائع بأنه دفع جميع المخالفات والخطايا المتعلقة بالسيارة السابقة لتاريخ البيع.",
+          "text_fr": "Le Vendeur déclare avoir acquitté toutes les contraventions et amendes relatives au véhicule antérieures à la date de vente.",
+          "fields": []
+        }
+      ]
+    },
+    {
+      "id": "sec-signatures",
+      "title_ar": "التوقيع",
+      "title_fr": "Signatures",
+      "articles": [
+        {
+          "id": "art-date-lieu",
+          "text_ar": "حرر بـ [LIEU_SIGNATURE]، بتاريخ [DATE_SIGNATURE]، في نظيرين.",
+          "text_fr": "Fait à [LIEU_SIGNATURE], le [DATE_SIGNATURE], en deux exemplaires.",
+          "fields": [
+            "LIEU_SIGNATURE",
+            "DATE_SIGNATURE"
+          ]
+        },
+        {
+          "id": "art-sign-vendeur",
+          "text_ar": "البائع\n[NOM_VENDEUR]\n(إمضاء مسبوق بعبارة « قرأت وأوافق — صحيح لبيع »)",
+          "text_fr": "Le Vendeur\n[NOM_VENDEUR]\n(Signature précédée de « Lu et approuvé — Bon pour vente »)",
+          "fields": []
+        },
+        {
+          "id": "art-sign-acquereur",
+          "text_ar": "المشتري\n[NOM_ACQUEREUR]\n(إمضاء مسبوق بعبارة « قرأت وأوافق — صحيح لشراء »)",
+          "text_fr": "L'Acquéreur\n[NOM_ACQUEREUR]\n(Signature précédée de « Lu et approuvé — Bon pour achat »)",
+          "fields": []
+        }
+      ]
+    }
+  ]
+}

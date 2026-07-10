@@ -1,0 +1,131 @@
+{
+  "id": "rupture-conventionnelle-v1",
+  "title_ar": "اتفاقية إنهاء علاقة الشغل",
+  "title_fr": "Rupture Conventionnelle du Contrat de Travail (CDI)",
+  "slug": "rupture-conventionnelle",
+  "language": "both",
+  "category": "travail",
+  "legal_basis": "Code du Travail — Rupture conventionnelle du contrat à durée indéterminée",
+  "version": "1.0",
+  "reviewed_by": null,
+  "review_date": null,
+  "source": "public_examples",
+  "disclaimer": "Modèle indicatif — non révisé par un avocat. / نموذج إرشادي — لم يراجعه محامٍ.",
+  "sections": [
+    {
+      "id": "sec-parties",
+      "title_ar": "الأطراف",
+      "title_fr": "Parties",
+      "articles": [
+        {
+          "id": "art-employeur",
+          "text_ar": "شركة [NOM_ENTREPRISE]، س.و.م عدد [RNE]، الكائنة بـ [ADRESSE_ENTREPRISE]، يمثلها [REPRESENTANT]، يشار إليها بـ « المؤجر ».",
+          "text_fr": "La société [NOM_ENTREPRISE], RNE n° [RNE], sise [ADRESSE_ENTREPRISE], représentée par [REPRESENTANT], ci-après « l'Employeur ».",
+          "fields": [
+            "NOM_ENTREPRISE",
+            "RNE",
+            "ADRESSE_ENTREPRISE",
+            "REPRESENTANT"
+          ]
+        },
+        {
+          "id": "art-salarie",
+          "text_ar": "السيد/ة [NOM_SALARIE]، ب.ت.و عدد [CIN_SALARIE]، انتدب/ت بعقد غير محدد المدة بتاريخ [DATE_CDI] بصفة [POSTE]، يشار إليه/ا بـ « الأجير ».",
+          "text_fr": "M./Mme [NOM_SALARIE], CIN n° [CIN_SALARIE], engagé(e) par CDI du [DATE_CDI] en qualité de [POSTE], ci-après « le Salarié ».",
+          "fields": [
+            "NOM_SALARIE",
+            "CIN_SALARIE",
+            "DATE_CDI",
+            "POSTE"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-accord",
+      "title_ar": "الاتفاق",
+      "title_fr": "Accord",
+      "articles": [
+        {
+          "id": "art-accord",
+          "text_ar": "يتفق الطرفان بالتراضي على إنهاء علاقة الشغل غير محددة المدة التي تربطهما. يسري إنهاء العلاقة الشغلية ابتداءً من [DATE_RUPTURE].",
+          "text_fr": "Les parties conviennent d'un commun accord de rompre le contrat de travail à durée indéterminée qui les lie. La rupture prendra effet le [DATE_RUPTURE].",
+          "fields": [
+            "DATE_RUPTURE"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-indemnite",
+      "title_ar": "التعويضات",
+      "title_fr": "Indemnités",
+      "articles": [
+        {
+          "id": "art-indemnite",
+          "text_ar": "يتقاضى الأجير منحة إنهاء بالتراضي قدرها [INDEMNITE] د.ت، محسوبة على أساس [BASE_CALCUL]، إضافة إلى مخالصته النهائية التي تشمل: الأجر المستحق إلى تاريخ الإنهاء، والتعويض عن أيام الراحة غير المستخلصة ([JOURS_CONGES_DUS] يوم)، وكل مبلغ آخر مستحق.",
+          "text_fr": "Le Salarié percevra une indemnité de rupture conventionnelle d'un montant de [INDEMNITE] DT, calculée sur la base de [BASE_CALCUL], en sus de son solde de tout compte comprenant : salaire dû jusqu'à la date de rupture, indemnité compensatrice de congés payés ([JOURS_CONGES_DUS] jours), et toute autre somme due.",
+          "fields": [
+            "INDEMNITE",
+            "BASE_CALCUL",
+            "JOURS_CONGES_DUS"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-renonciation",
+      "title_ar": "الإبراء",
+      "title_fr": "Renonciation",
+      "articles": [
+        {
+          "id": "art-renonciation",
+          "text_ar": "يصرح الأجير بأنه استوفى كامل حقوقه ويتنازل عن كل مطالبة أو دعوى قضائية تتعلق بتنفيذ أو إنهاء عقد الشغل.",
+          "text_fr": "Le Salarié déclare être rempli de l'intégralité de ses droits et renonce à toute réclamation ou action judiciaire relative à l'exécution ou à la rupture du contrat de travail.",
+          "fields": []
+        }
+      ]
+    },
+    {
+      "id": "sec-documents",
+      "title_ar": "الوثائق",
+      "title_fr": "Documents",
+      "articles": [
+        {
+          "id": "art-documents",
+          "text_ar": "يسلم المؤجر للأجير: شهادة العمل، وشهادة انتهاء العمل (للصندوق الوطني للضمان الاجتماعي)، ووصل مخالصة نهائية.",
+          "text_fr": "L'Employeur remet au Salarié : le certificat de travail, l'attestation de cessation d'emploi (CNSS), et le reçu pour solde de tout compte.",
+          "fields": []
+        }
+      ]
+    },
+    {
+      "id": "sec-signatures",
+      "title_ar": "التوقيع",
+      "title_fr": "Signatures",
+      "articles": [
+        {
+          "id": "art-date-lieu",
+          "text_ar": "حرر بـ [LIEU]، بتاريخ [DATE]، في نظيرين.",
+          "text_fr": "Fait à [LIEU], le [DATE], en deux exemplaires.",
+          "fields": [
+            "LIEU",
+            "DATE"
+          ]
+        },
+        {
+          "id": "art-sign-e",
+          "text_ar": "المؤجر\n[REPRESENTANT]",
+          "text_fr": "L'Employeur\n[REPRESENTANT]",
+          "fields": []
+        },
+        {
+          "id": "art-sign-s",
+          "text_ar": "الأجير\n[NOM_SALARIE]\n(قرأت وأوافق — صحيح للاتفاق)",
+          "text_fr": "Le Salarié\n[NOM_SALARIE]\n(Lu et approuvé — Bon pour accord)",
+          "fields": []
+        }
+      ]
+    }
+  ]
+}

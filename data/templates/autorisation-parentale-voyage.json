@@ -1,0 +1,101 @@
+{
+  "id": "autorisation-parentale-voyage-v1",
+  "title_ar": "إذن سفر للقاصر",
+  "title_fr": "Autorisation Parentale de Voyage",
+  "slug": "autorisation-parentale-voyage",
+  "language": "both",
+  "category": "demarches",
+  "legal_basis": "Code du Statut Personnel — Autorité parentale et Code de la Nationalité Tunisienne",
+  "version": "1.0",
+  "reviewed_by": null,
+  "review_date": null,
+  "source": "public_examples",
+  "disclaimer": "Modèle indicatif — non révisé par un avocat. / نموذج إرشادي — لم يراجعه محامٍ.",
+  "sections": [
+    {
+      "id": "sec-parent",
+      "title_ar": "الولي",
+      "title_fr": "Parent / Tuteur",
+      "articles": [
+        {
+          "id": "art-parent",
+          "text_ar": "أنا الممضي أسفله، السيد/ة [NOM_PARENT]، ب.ت.و عدد [CIN_PARENT]، القاطن/ة بـ [ADRESSE_PARENT]، بصفتي [QUALITE] (أب / أم / ولي شرعي) للطفل القاصر المذكور أسفله.",
+          "text_fr": "Je soussigné(e), M./Mme [NOM_PARENT], CIN n° [CIN_PARENT], demeurant à [ADRESSE_PARENT], agissant en qualité de [QUALITE] (père / mère / tuteur légal) de l'enfant mineur désigné ci-dessous.",
+          "fields": [
+            "NOM_PARENT",
+            "CIN_PARENT",
+            "ADRESSE_PARENT",
+            "QUALITE"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-enfant",
+      "title_ar": "الطفل",
+      "title_fr": "Enfant",
+      "articles": [
+        {
+          "id": "art-enfant",
+          "text_ar": "الاسم واللقب: [NOM_ENFANT]\nتاريخ الولادة: [DATE_NAISSANCE_ENFANT] بـ [LIEU_NAISSANCE_ENFANT]\nعدد مضمون الولادة: [NUM_EXTRAIT_NAISSANCE]\nالجنسية: تونسية\nجواز سفر / ب.ت.و عدد: [NUM_PIECE_ENFANT]",
+          "text_fr": "Nom et prénom : [NOM_ENFANT]\nNé(e) le : [DATE_NAISSANCE_ENFANT] à [LIEU_NAISSANCE_ENFANT]\nN° extrait de naissance : [NUM_EXTRAIT_NAISSANCE]\nNationalité : Tunisienne\nPasseport / CIN n° : [NUM_PIECE_ENFANT]",
+          "fields": [
+            "NOM_ENFANT",
+            "DATE_NAISSANCE_ENFANT",
+            "LIEU_NAISSANCE_ENFANT",
+            "NUM_EXTRAIT_NAISSANCE",
+            "NUM_PIECE_ENFANT"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-autorisation",
+      "title_ar": "الإذن",
+      "title_fr": "Autorisation",
+      "articles": [
+        {
+          "id": "art-autorisation",
+          "text_ar": "آذن لابني/لابنتي بالسفر إلى [DESTINATION]، مرفوقاً/ة بالسيد/ة [NOM_ACCOMPAGNATEUR]، ب.ت.و عدد [CIN_ACCOMPAGNATEUR]، من [DATE_DEPART] إلى [DATE_RETOUR].",
+          "text_fr": "J'autorise mon enfant à voyager à destination de [DESTINATION], accompagné(e) de M./Mme [NOM_ACCOMPAGNATEUR], CIN n° [CIN_ACCOMPAGNATEUR], du [DATE_DEPART] au [DATE_RETOUR].",
+          "fields": [
+            "DESTINATION",
+            "NOM_ACCOMPAGNATEUR",
+            "CIN_ACCOMPAGNATEUR",
+            "DATE_DEPART",
+            "DATE_RETOUR"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-engagement",
+      "title_ar": "التعهد",
+      "title_fr": "Engagement",
+      "articles": [
+        {
+          "id": "art-engagement",
+          "text_ar": "أعفي السلطات من كل مسؤولية طيلة مدة السفر. يسلم هذا الإذن على ورق عادي ويمكن التصديق عليه لدى البلدية أو مركز الأمن.",
+          "text_fr": "Je dégage toute responsabilité des autorités pour la durée du voyage. La présente autorisation est délivrée sur papier libre et peut être légalisée à la mairie ou au commissariat.",
+          "fields": []
+        }
+      ]
+    },
+    {
+      "id": "sec-signatures",
+      "title_ar": "التوقيع",
+      "title_fr": "Signature",
+      "articles": [
+        {
+          "id": "art-date-lieu",
+          "text_ar": "حرر بـ [LIEU]، بتاريخ [DATE].\n\n[NOM_PARENT]\n(إمضاء)",
+          "text_fr": "Fait à [LIEU], le [DATE].\n\n[NOM_PARENT]\n(Signature)",
+          "fields": [
+            "LIEU",
+            "DATE"
+          ]
+        }
+      ]
+    }
+  ]
+}

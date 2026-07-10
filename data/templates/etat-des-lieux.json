@@ -1,0 +1,171 @@
+{
+  "id": "etat-des-lieux-v1",
+  "title_ar": "محضر معاينة (دخول / خروج)",
+  "title_fr": "État des Lieux (Entrée / Sortie)",
+  "slug": "etat-des-lieux",
+  "language": "both",
+  "category": "logement",
+  "legal_basis": "Code des Obligations et des Contrats, articles 727 à 827 (Louage des choses)",
+  "version": "1.0",
+  "reviewed_by": null,
+  "review_date": null,
+  "source": "public_examples",
+  "disclaimer": "Modèle indicatif — non révisé par un avocat. / نموذج إرشادي — لم يراجعه محامٍ.",
+  "sections": [
+    {
+      "id": "sec-parties",
+      "title_ar": "الأطراف",
+      "title_fr": "Parties",
+      "articles": [
+        {
+          "id": "art-bailleur",
+          "text_ar": "المكري: السيد/ة [NOM_BAILLEUR]، ب.ت.و عدد [CIN_BAILLEUR].",
+          "text_fr": "Bailleur : M./Mme [NOM_BAILLEUR], CIN n° [CIN_BAILLEUR].",
+          "fields": [
+            "NOM_BAILLEUR",
+            "CIN_BAILLEUR"
+          ]
+        },
+        {
+          "id": "art-preneur",
+          "text_ar": "المكتري: السيد/ة [NOM_PRENEUR]، ب.ت.و عدد [CIN_PRENEUR].",
+          "text_fr": "Preneur : M./Mme [NOM_PRENEUR], CIN n° [CIN_PRENEUR].",
+          "fields": [
+            "NOM_PRENEUR",
+            "CIN_PRENEUR"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-bien",
+      "title_ar": "العقار",
+      "title_fr": "Bien concerné",
+      "articles": [
+        {
+          "id": "art-adresse",
+          "text_ar": "العقار الكائن بـ [ADRESSE_BIEN]. نوع المعاينة: [TYPE_ETAT] (دخول / خروج).",
+          "text_fr": "Bien situé à [ADRESSE_BIEN]. Type d'état des lieux : [TYPE_ETAT] (Entrée / Sortie).",
+          "fields": [
+            "ADRESSE_BIEN",
+            "TYPE_ETAT"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-pieces",
+      "title_ar": "معاينة الغرف",
+      "title_fr": "État pièce par pièce",
+      "articles": [
+        {
+          "id": "art-salon",
+          "text_ar": "غرفة الجلوس: الأرضية: [SOL_SALON] | الجدران: [MURS_SALON] | السقف: [PLAFOND_SALON] | النوافذ: [FENETRES_SALON] | ملاحظات: [OBS_SALON]",
+          "text_fr": "Salon / Séjour : Sols : [SOL_SALON] | Murs : [MURS_SALON] | Plafond : [PLAFOND_SALON] | Fenêtres : [FENETRES_SALON] | Observations : [OBS_SALON]",
+          "fields": [
+            "SOL_SALON",
+            "MURS_SALON",
+            "PLAFOND_SALON",
+            "FENETRES_SALON",
+            "OBS_SALON"
+          ]
+        },
+        {
+          "id": "art-chambres",
+          "text_ar": "غرفة/غرف النوم ([NB_CHAMBRES]): الأرضية: [SOL_CHAMBRES] | الجدران: [MURS_CHAMBRES] | الخزائن: [PLACARDS_CHAMBRES] | ملاحظات: [OBS_CHAMBRES]",
+          "text_fr": "Chambre(s) ([NB_CHAMBRES]) : Sols : [SOL_CHAMBRES] | Murs : [MURS_CHAMBRES] | Placards : [PLACARDS_CHAMBRES] | Observations : [OBS_CHAMBRES]",
+          "fields": [
+            "NB_CHAMBRES",
+            "SOL_CHAMBRES",
+            "MURS_CHAMBRES",
+            "PLACARDS_CHAMBRES",
+            "OBS_CHAMBRES"
+          ]
+        },
+        {
+          "id": "art-cuisine",
+          "text_ar": "المطبخ: الأرضية: [SOL_CUISINE] | الجدران: [MURS_CUISINE] | حوض الغسيل: [EVIER] | الأثاث: [MEUBLES_CUISINE] | ملاحظات: [OBS_CUISINE]",
+          "text_fr": "Cuisine : Sols : [SOL_CUISINE] | Murs : [MURS_CUISINE] | Évier : [EVIER] | Meubles : [MEUBLES_CUISINE] | Observations : [OBS_CUISINE]",
+          "fields": [
+            "SOL_CUISINE",
+            "MURS_CUISINE",
+            "EVIER",
+            "MEUBLES_CUISINE",
+            "OBS_CUISINE"
+          ]
+        },
+        {
+          "id": "art-sdb",
+          "text_ar": "الحمام/ات ([NB_SDB]): الأرضية: [SOL_SDB] | الجدران: [MURS_SDB] | الأدوات الصحية: [SANITAIRES] | الحنفيات: [ROBINETTERIE] | ملاحظات: [OBS_SDB]",
+          "text_fr": "Salle de bain(s) ([NB_SDB]) : Sols : [SOL_SDB] | Murs : [MURS_SDB] | Sanitaires : [SANITAIRES] | Robinetterie : [ROBINETTERIE] | Observations : [OBS_SDB]",
+          "fields": [
+            "NB_SDB",
+            "SOL_SDB",
+            "MURS_SDB",
+            "SANITAIRES",
+            "ROBINETTERIE",
+            "OBS_SDB"
+          ]
+        },
+        {
+          "id": "art-autres",
+          "text_ar": "غرف أخرى ([AUTRES_PIECES]): [DESCRIPTION_AUTRES_PIECES]",
+          "text_fr": "Autres pièces ([AUTRES_PIECES]) : [DESCRIPTION_AUTRES_PIECES]",
+          "fields": [
+            "AUTRES_PIECES",
+            "DESCRIPTION_AUTRES_PIECES"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-compteurs",
+      "title_ar": "العدادات",
+      "title_fr": "Compteurs et clés",
+      "articles": [
+        {
+          "id": "art-compteurs",
+          "text_ar": "مؤشرات العدادات:\nكهرباء: [INDEX_ELEC] — عداد عدد [NUM_COMPTEUR_ELEC]\nماء: [INDEX_EAU] — عداد عدد [NUM_COMPTEUR_EAU]\nغاز: [INDEX_GAZ] — عداد عدد [NUM_COMPTEUR_GAZ]\nعدد المفاتيح المسلمة: [NB_CLES]",
+          "text_fr": "Relevés des compteurs :\nÉlectricité : [INDEX_ELEC] — Compteur n° [NUM_COMPTEUR_ELEC]\nEau : [INDEX_EAU] — Compteur n° [NUM_COMPTEUR_EAU]\nGaz : [INDEX_GAZ] — Compteur n° [NUM_COMPTEUR_GAZ]\nNombre de clés remises : [NB_CLES]",
+          "fields": [
+            "INDEX_ELEC",
+            "NUM_COMPTEUR_ELEC",
+            "INDEX_EAU",
+            "NUM_COMPTEUR_EAU",
+            "INDEX_GAZ",
+            "NUM_COMPTEUR_GAZ",
+            "NB_CLES"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-signatures",
+      "title_ar": "التوقيع",
+      "title_fr": "Signatures",
+      "articles": [
+        {
+          "id": "art-date",
+          "text_ar": "حرر بـ [LIEU]، بتاريخ [DATE].",
+          "text_fr": "Fait à [LIEU], le [DATE].",
+          "fields": [
+            "LIEU",
+            "DATE"
+          ]
+        },
+        {
+          "id": "art-sign-b",
+          "text_ar": "المكري\n[NOM_BAILLEUR]",
+          "text_fr": "Le Bailleur\n[NOM_BAILLEUR]",
+          "fields": []
+        },
+        {
+          "id": "art-sign-p",
+          "text_ar": "المكتري\n[NOM_PRENEUR]",
+          "text_fr": "Le Preneur\n[NOM_PRENEUR]",
+          "fields": []
+        }
+      ]
+    }
+  ]
+}

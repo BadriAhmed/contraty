@@ -1,0 +1,195 @@
+{
+  "id": "contrat-cdi-v1",
+  "title_ar": "عقد عمل غير محدد المدة",
+  "title_fr": "Contrat de Travail à Durée Indéterminée",
+  "slug": "contrat-cdi",
+  "language": "both",
+  "category": "travail",
+  "legal_basis": "Code du Travail (Loi n° 66-27 du 30 avril 1966) et Code des Obligations et des Contrats, articles 828 à 953",
+  "version": "1.0",
+  "reviewed_by": null,
+  "review_date": null,
+  "source": "public_examples",
+  "disclaimer": "Modèle indicatif — non révisé par un avocat. Voir avertissement légal. / نموذج إرشادي — لم يراجعه محامٍ. راجع إخلاء المسؤولية القانونية.",
+  "sections": [
+    {
+      "id": "sec-parties",
+      "title_ar": "الأطراف",
+      "title_fr": "Parties",
+      "articles": [
+        {
+          "id": "art-employeur",
+          "text_ar": "شركة [NOM_ENTREPRISE]، رأس مالها [CAPITAL] ديناراً، مسجلة بالسجل الوطني للمؤسسات تحت عدد [RNE]، الكائنة بـ [ADRESSE_ENTREPRISE]، ويمثلها السيد/ة [REPRESENTANT]، يشار إليها فيما يلي بـ « المؤجر ».",
+          "text_fr": "La société [NOM_ENTREPRISE], au capital de [CAPITAL] dinars, inscrite au RNE sous le n° [RNE], sise [ADRESSE_ENTREPRISE], représentée par M./Mme [REPRESENTANT], ci-après dénommée « l'Employeur ».",
+          "fields": [
+            "NOM_ENTREPRISE",
+            "CAPITAL",
+            "RNE",
+            "ADRESSE_ENTREPRISE",
+            "REPRESENTANT"
+          ]
+        },
+        {
+          "id": "art-salarie",
+          "text_ar": "السيد/ة [NOM_SALARIE]، ب.ت.و عدد [CIN_SALARIE]، القاطن/ة بـ [ADRESSE_SALARIE]، يشار إليه/ا فيما يلي بـ « الأجير ».",
+          "text_fr": "M./Mme [NOM_SALARIE], CIN n° [CIN_SALARIE], demeurant à [ADRESSE_SALARIE], ci-après dénommé(e) « le Salarié ».",
+          "fields": [
+            "NOM_SALARIE",
+            "CIN_SALARIE",
+            "ADRESSE_SALARIE"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-engagement",
+      "title_ar": "الالتزام بالعمل",
+      "title_fr": "Engagement",
+      "articles": [
+        {
+          "id": "art-embauche",
+          "text_ar": "يلتحق الأجير بعمله ابتداءً من [DATE_DEBUT] بصفة [POSTE]، تحت التصنيف المهني [CLASSIFICATION].",
+          "text_fr": "Le Salarié est engagé à compter du [DATE_DEBUT] en qualité de [POSTE], sous la classification professionnelle [CLASSIFICATION].",
+          "fields": [
+            "DATE_DEBUT",
+            "POSTE",
+            "CLASSIFICATION"
+          ]
+        },
+        {
+          "id": "art-lieu",
+          "text_ar": "يحدد مكان العمل بـ [LIEU_TRAVAIL].",
+          "text_fr": "Le lieu de travail est fixé à [LIEU_TRAVAIL].",
+          "fields": [
+            "LIEU_TRAVAIL"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-periode-essai",
+      "title_ar": "فترة الاختبار",
+      "title_fr": "Période d'essai",
+      "articles": [
+        {
+          "id": "art-essai",
+          "text_ar": "يخضع الأجير لفترة اختبار مدتها [DUREE_ESSAI] أشهر، يمكن خلالها لكل من الطرفين إنهاء العقد دون تعويض.",
+          "text_fr": "Le Salarié est soumis à une période d'essai de [DUREE_ESSAI] mois, au cours de laquelle chacune des parties pourra rompre le contrat sans indemnité.",
+          "fields": [
+            "DUREE_ESSAI"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-remuneration",
+      "title_ar": "الأجر",
+      "title_fr": "Rémunération",
+      "articles": [
+        {
+          "id": "art-salaire",
+          "text_ar": "يحدد الأجر الشهري الخام بـ [SALAIRE] ديناراً تونسياً، يدفع في [JOUR_PAIE] من كل شهر.",
+          "text_fr": "Le salaire mensuel brut est fixé à [SALAIRE] dinars tunisiens, payable le [JOUR_PAIE] de chaque mois. ",
+          "fields": [
+            "SALAIRE",
+            "JOUR_PAIE"
+          ]
+        },
+        {
+          "id": "art-avantages",
+          "text_ar": "يتمتع الأجير بالامتيازات التالية: [AVANTAGES].",
+          "text_fr": "Le Salarié bénéficie des avantages suivants : [AVANTAGES].",
+          "fields": [
+            "AVANTAGES"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-duree-travail",
+      "title_ar": "مدة العمل",
+      "title_fr": "Durée du travail",
+      "articles": [
+        {
+          "id": "art-horaires",
+          "text_ar": "المدة الأسبوعية للعمل هي [HEURES_SEMAINE] ساعة، توزع كالتالي: [HORAIRES].",
+          "text_fr": "La durée hebdomadaire de travail est de [HEURES_SEMAINE] heures, réparties comme suit : [HORAIRES].",
+          "fields": [
+            "HEURES_SEMAINE",
+            "HORAIRES"
+          ]
+        },
+        {
+          "id": "art-conges",
+          "text_ar": "يحق للأجير التمتع براحة سنوية مدفوعة الأجر مدتها [JOURS_CONGES] يوم عمل.",
+          "text_fr": "Le Salarié a droit à un congé annuel payé de [JOURS_CONGES] jours ouvrables.",
+          "fields": [
+            "JOURS_CONGES"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-obligations",
+      "title_ar": "التزامات الأطراف",
+      "title_fr": "Obligations",
+      "articles": [
+        {
+          "id": "art-obligations-salarie",
+          "text_ar": "يلتزم الأجير بأداء مهامه بكل جد وإخلاص واحترام النظام الداخلي والمحافظة على السر المهني.",
+          "text_fr": "Le Salarié s'engage à exercer ses fonctions avec diligence et loyauté, à respecter le règlement intérieur et à observer le secret professionnel.  Le maître est affranchi de l'obligation établie en l' article précédent , lorsque le locateur de services peut se faire donner les soins nécessaires et l'assistance médicale par les associations de secours mutuels dont il fait partie, les compagnies d'assurances auprès desquelles il est assuré, ou par l'assistance publique. Art. 856. - Le patron ou maître et généralement tout employeur est tenu : de veiller à ce que les chambres, ateliers et généralement tous les locaux qu'il fournit à ses ouvriers, gens de service et employés, présentent toutes les conditions de salubrité et de sécurité nécessaires ; il doit les entretenir au même état pendant la durée du contrat ; de veiller à ce que les appareils, machines, instruments et généralement tous autres objets qu'il fournit, et au moyen desquels doit s'accomplir le travail, soient en état de garantir contre tout danger la vie ou la santé de ceux qu'il emploie, dans la mesure où le comporte la nature des services à prêter par eux ; il est tenu de les entretenir au même état pendant la durée du contrat ; de prendre toutes les mesures de précaution nécessaires afin de garantir la vie et la santé de ses ouvriers, gens de service et employés, dans l'accomplissement des travaux qu'ils exécutent sous sa direction ou pour son compte. Le maître répond de toute contravention aux dispositions du présent article, d'après les dispositions établies pour les délits et quasi-délits. Art. 857. - Il répond également des accidents ou sinistres dont l'ouvrier travaillant avec lui est victime en exécutant le travail qui lui a été confié, lorsque l'accident ou le sinistre a pour cause la violation ou l'inobservation par l'employeur des règlements spéciaux relatifs à l'exercice de son industrie ou de son art.",
+          "fields": []
+        },
+        {
+          "id": "art-obligations-employeur",
+          "text_ar": "يلتزم المؤجر بتوفير الوسائل الضرورية للأجير لأداء عمله وباحترام أحكام مجلة الشغل.",
+          "text_fr": "L'Employeur s'engage à fournir au Salarié les moyens nécessaires à l'exécution de son travail et à respecter les dispositions du Code du Travail.  ",
+          "fields": []
+        }
+      ]
+    },
+    {
+      "id": "sec-rupture",
+      "title_ar": "إنهاء العقد",
+      "title_fr": "Rupture du contrat",
+      "articles": [
+        {
+          "id": "art-preavis",
+          "text_ar": "في حالة إنهاء العقد، يجب احترام أجل إعلام مسبق بـ [PREAVIS_MOIS] أشهر، ما لم تكن هناك خطأ جسيم.",
+          "text_fr": "En cas de rupture du contrat, un préavis de [PREAVIS_MOIS] mois devra être respecté, sauf faute grave.",
+          "fields": [
+            "PREAVIS_MOIS"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-signatures",
+      "title_ar": "التوقيع",
+      "title_fr": "Signatures",
+      "articles": [
+        {
+          "id": "art-date-lieu",
+          "text_ar": "حرر بـ [LIEU_SIGNATURE]، بتاريخ [DATE_SIGNATURE]، في نظيرين.",
+          "text_fr": "Fait à [LIEU_SIGNATURE], le [DATE_SIGNATURE], en deux exemplaires.",
+          "fields": [
+            "LIEU_SIGNATURE",
+            "DATE_SIGNATURE"
+          ]
+        },
+        {
+          "id": "art-sign-employeur",
+          "text_ar": "المؤجر\n[REPRESENTANT]",
+          "text_fr": "L'Employeur\n[REPRESENTANT]",
+          "fields": []
+        },
+        {
+          "id": "art-sign-salarie",
+          "text_ar": "الأجير\n[NOM_SALARIE]",
+          "text_fr": "Le Salarié\n[NOM_SALARIE]",
+          "fields": []
+        }
+      ]
+    }
+  ]
+}

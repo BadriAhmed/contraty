@@ -1,0 +1,157 @@
+{
+  "id": "nda-confidentialite-v1",
+  "title_ar": "اتفاقية سرية",
+  "title_fr": "Accord de Confidentialité (NDA)",
+  "slug": "nda-confidentialite",
+  "language": "both",
+  "category": "entreprise",
+  "legal_basis": "Code des Obligations et des Contrats, Livre Premier (Obligations en général)",
+  "version": "1.0",
+  "reviewed_by": null,
+  "review_date": null,
+  "source": "public_examples",
+  "disclaimer": "Modèle indicatif — non révisé par un avocat. Voir avertissement légal. / نموذج إرشادي — لم يراجعه محامٍ. راجع إخلاء المسؤولية القانونية.",
+  "sections": [
+    {
+      "id": "sec-parties",
+      "title_ar": "الأطراف",
+      "title_fr": "Parties",
+      "articles": [
+        {
+          "id": "art-divulgant",
+          "text_ar": "شركة [NOM_PARTIE_A]، الكائنة بـ [ADRESSE_PARTIE_A]، ويمثلها السيد/ة [REPRESENTANT_A]، يشار إليها بـ « الطرف المفصح ».",
+          "text_fr": "La société [NOM_PARTIE_A], sise [ADRESSE_PARTIE_A], représentée par M./Mme [REPRESENTANT_A], ci-après dénommée « la Partie Divulgante ».",
+          "fields": [
+            "NOM_PARTIE_A",
+            "ADRESSE_PARTIE_A",
+            "REPRESENTANT_A"
+          ]
+        },
+        {
+          "id": "art-recepteur",
+          "text_ar": "شركة [NOM_PARTIE_B]، الكائنة بـ [ADRESSE_PARTIE_B]، ويمثلها السيد/ة [REPRESENTANT_B]، يشار إليها بـ « الطرف المتلقي ».",
+          "text_fr": "La société [NOM_PARTIE_B], sise [ADRESSE_PARTIE_B], représentée par M./Mme [REPRESENTANT_B], ci-après dénommée « la Partie Réceptrice ».",
+          "fields": [
+            "NOM_PARTIE_B",
+            "ADRESSE_PARTIE_B",
+            "REPRESENTANT_B"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-definitions",
+      "title_ar": "تعاريف",
+      "title_fr": "Définitions",
+      "articles": [
+        {
+          "id": "art-info-confidentielle",
+          "text_ar": "يقصد بـ « المعلومات السرية » كل معلومة أياً كانت طبيعتها، يبلغها الطرف المفصح للطرف المتلقي، وخاصة: [SCOPE_INFOS].",
+          "text_fr": "Par « Information Confidentielle », on entend toute information de quelque nature que ce soit, communiquée par la Partie Divulgante à la Partie Réceptrice, notamment : [SCOPE_INFOS].",
+          "fields": [
+            "SCOPE_INFOS"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-obligations",
+      "title_ar": "الالتزامات",
+      "title_fr": "Obligations",
+      "articles": [
+        {
+          "id": "art-engagement",
+          "text_ar": "يلتزم الطرف المتلقي بما يلي: (أ) عدم إفشاء المعلومات السرية للغير؛ (ب) عدم استعمال المعلومات السرية لأغراض غير [OBJET_COLLABORATION]؛ (ج) اتخاذ جميع التدابير اللازمة للمحافظة على سريتها.",
+          "text_fr": "La Partie Réceptrice s'engage à : (a) ne pas divulguer les Informations Confidentielles à des tiers ; (b) ne pas utiliser les Informations Confidentielles à d'autres fins que [OBJET_COLLABORATION] ; (c) prendre toutes les mesures nécessaires pour en préserver la confidentialité.",
+          "fields": [
+            "OBJET_COLLABORATION"
+          ]
+        },
+        {
+          "id": "art-exceptions",
+          "text_ar": "تستثنى من نطاق السرية المعلومات: (أ) التي هي في الملك العمومي؛ (ب) التي يعلم بها الطرف المتلقي قبل إبلاغها له؛ (ج) التي تحصل عليها من الغير بطريقة مشروعة؛ (د) التي يفرض القانون الإفصاح عنها.",
+          "text_fr": "Sont exclues du champ de la confidentialité les informations : (a) déjà dans le domaine public ; (b) déjà connues de la Partie Réceptrice avant leur communication ; (c) obtenues de tiers de manière légitime ; (d) dont la divulgation est imposée par la loi.",
+          "fields": []
+        }
+      ]
+    },
+    {
+      "id": "sec-duree",
+      "title_ar": "المدة",
+      "title_fr": "Durée",
+      "articles": [
+        {
+          "id": "art-duree-engagement",
+          "text_ar": "يسري التعهد بالسرية ابتداءً من [DATE_EFFET] ويبقى نافذاً لمدة [DUREE_ANNEE] سنوات من تاريخ انتهاء المناقشات بين الطرفين.",
+          "text_fr": "Le présent engagement de confidentialité prend effet à compter du [DATE_EFFET] et reste en vigueur pendant une durée de [DUREE_ANNEE] années à compter de la fin des discussions entre les Parties.",
+          "fields": [
+            "DATE_EFFET",
+            "DUREE_ANNEE"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-sanctions",
+      "title_ar": "الجزاءات",
+      "title_fr": "Sanctions",
+      "articles": [
+        {
+          "id": "art-dommages",
+          "text_ar": "كل خرق لهذا التعهد يعرض الطرف المتلقي للمطالبة بالتعويض عن الأضرار، مع عدم الإخلال بأي حق آخر في التقاضي.",
+          "text_fr": "Toute violation du présent engagement expose la Partie Réceptrice à des dommages et intérêts, sans préjudice de toute autre action en justice.",
+          "fields": []
+        }
+      ]
+    },
+    {
+      "id": "sec-divers",
+      "title_ar": "أحكام ختامية",
+      "title_fr": "Dispositions finales",
+      "articles": [
+        {
+          "id": "art-restitution",
+          "text_ar": "عند انتهاء المناقشات أو بمجرد طلب الطرف المفصح، يقوم الطرف المتلقي بإرجاع جميع الوثائق والحوامل المتضمنة معلومات سرية.",
+          "text_fr": "À l'issue des discussions ou sur simple demande de la Partie Divulgante, la Partie Réceptrice restituera tous les documents et supports contenant des Informations Confidentielles.",
+          "fields": []
+        },
+        {
+          "id": "art-juridiction",
+          "text_ar": "كل نزاع يكون من اختصاص محاكم [TRIBUNAL].",
+          "text_fr": "Tout litige sera de la compétence des tribunaux de [TRIBUNAL].",
+          "fields": [
+            "TRIBUNAL"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-signatures",
+      "title_ar": "التوقيع",
+      "title_fr": "Signatures",
+      "articles": [
+        {
+          "id": "art-date-lieu",
+          "text_ar": "حرر بـ [LIEU_SIGNATURE]، بتاريخ [DATE_SIGNATURE]، في نظيرين.",
+          "text_fr": "Fait à [LIEU_SIGNATURE], le [DATE_SIGNATURE], en deux exemplaires.",
+          "fields": [
+            "LIEU_SIGNATURE",
+            "DATE_SIGNATURE"
+          ]
+        },
+        {
+          "id": "art-sign-A",
+          "text_ar": "الطرف المفصح\n[REPRESENTANT_A]",
+          "text_fr": "Partie Divulgante\n[REPRESENTANT_A]",
+          "fields": []
+        },
+        {
+          "id": "art-sign-B",
+          "text_ar": "الطرف المتلقي\n[REPRESENTANT_B]",
+          "text_fr": "Partie Réceptrice\n[REPRESENTANT_B]",
+          "fields": []
+        }
+      ]
+    }
+  ]
+}

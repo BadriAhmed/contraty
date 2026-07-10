@@ -1,0 +1,122 @@
+{
+  "id": "mise-en-demeure-v1",
+  "title_ar": "إنذار قانوني",
+  "title_fr": "Mise en Demeure",
+  "slug": "mise-en-demeure",
+  "language": "both",
+  "category": "demarches",
+  "legal_basis": "Code des Obligations et des Contrats, articles 226 à 360 (Extinction des obligations)",
+  "version": "1.0",
+  "reviewed_by": null,
+  "review_date": null,
+  "source": "public_examples",
+  "disclaimer": "Modèle indicatif — non révisé par un avocat. / نموذج إرشادي — لم يراجعه محامٍ.",
+  "sections": [
+    {
+      "id": "sec-expediteur",
+      "title_ar": "المرسل",
+      "title_fr": "Expéditeur",
+      "articles": [
+        {
+          "id": "art-exp",
+          "text_ar": "أنا الممضي أسفله، السيد/ة [NOM_EXPEDITEUR]، ب.ت.و عدد [CIN_EXPEDITEUR]، القاطن/ة بـ [ADRESSE_EXPEDITEUR].",
+          "text_fr": "Je soussigné(e), M./Mme [NOM_EXPEDITEUR], CIN n° [CIN_EXPEDITEUR], demeurant à [ADRESSE_EXPEDITEUR].",
+          "fields": [
+            "NOM_EXPEDITEUR",
+            "CIN_EXPEDITEUR",
+            "ADRESSE_EXPEDITEUR"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-destinataire",
+      "title_ar": "المرسل إليه",
+      "title_fr": "Destinataire",
+      "articles": [
+        {
+          "id": "art-dest",
+          "text_ar": "إلى السيد/ة [NOM_DESTINATAIRE]، ب.ت.و عدد [CIN_DESTINATAIRE]، القاطن/ة بـ [ADRESSE_DESTINATAIRE]، أو إلى شركة [SOCIETE_DESTINATAIRE].",
+          "text_fr": "À M./Mme [NOM_DESTINATAIRE], CIN n° [CIN_DESTINATAIRE], demeurant à [ADRESSE_DESTINATAIRE], ou à la société [SOCIETE_DESTINATAIRE].",
+          "fields": [
+            "NOM_DESTINATAIRE",
+            "CIN_DESTINATAIRE",
+            "ADRESSE_DESTINATAIRE",
+            "SOCIETE_DESTINATAIRE"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-objet",
+      "title_ar": "الموضوع",
+      "title_fr": "Objet",
+      "articles": [
+        {
+          "id": "art-objet",
+          "text_ar": "الموضوع: إنذار — [OBJET_SOMMAIRE]",
+          "text_fr": "Objet : Mise en demeure — [OBJET_SOMMAIRE]",
+          "fields": [
+            "OBJET_SOMMAIRE"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-corps",
+      "title_ar": "المتن",
+      "title_fr": "Corps",
+      "articles": [
+        {
+          "id": "art-rappel",
+          "text_ar": "بموجب [ACTE_ORIGINE] المؤرخ في [DATE_ACTE_ORIGINE]، التزمتم بـ: [OBLIGATION_INITIALE].",
+          "text_fr": "Par [ACTE_ORIGINE] en date du [DATE_ACTE_ORIGINE], vous vous êtes engagé(e) à : [OBLIGATION_INITIALE].",
+          "fields": [
+            "ACTE_ORIGINE",
+            "DATE_ACTE_ORIGINE",
+            "OBLIGATION_INITIALE"
+          ]
+        },
+        {
+          "id": "art-manquement",
+          "text_ar": "غير أنكم إلى هذا التاريخ لم تنفذوا التزامكم، حيث أن: [MANQUEMENT_CONSTATE].",
+          "text_fr": "Or, à ce jour, vous n'avez pas exécuté votre obligation, en ce que : [MANQUEMENT_CONSTATE]. La subrogation a lieu, de droit, dans les cas suivants au profit du créancier soit hypothécaire ou gagiste, soit chirographaire, remboursant un autre créancier même postérieur en date, qui lui est préférable à raison de ses privilèges, de ses hypothèques ou de son gage ; au profit de l'acquéreur d'un immeuble, jusqu'à concurrence du prix de son acquisition, lorsque ce prix a servi à payer des créanciers auxquels cet immeuble était hypothéqué ; au profit de celui qui a payé une dette dont il était ténu avec le débiteur, ou pour lui, comme débiteur solidaire, caution, cofidéjusseur, commissionnaire ; au profit de celui qui, sans être tenu personnellement de la dette, avait intérêt à son extinction, et, par exemple, en faveur de celui qui a fourni le gage ou l'hypothèque. La subrogation établie aux articles précédents a lieu tant contre les cautions que contre le débiteur. Le créancier qui a été payé en partie, et le tiers qui l'a payé, concourent ensemble dans l'exercice de leurs droits contre le débiteur, à proportion de ce qui est dô à chacun. La subrogation est régie quant à ses effets, par les principes établis aux articles 200 - 203 - 204 - 205 - 206 - 213 ci-dessus",
+          "fields": [
+            "MANQUEMENT_CONSTATE"
+          ]
+        },
+        {
+          "id": "art-sommation",
+          "text_ar": "بموجب هذا الإنذار، أطلب منكم: [SOMMATION]، وذلك في أجل [DELAI_JOURS] يوماً من تاريخ توصلكم بهذا الإنذار.",
+          "text_fr": "Par la présente, je vous mets en demeure de : [SOMMATION], dans un délai de [DELAI_JOURS] jours à compter de la réception des présentes.",
+          "fields": [
+            "SOMMATION",
+            "DELAI_JOURS"
+          ]
+        },
+        {
+          "id": "art-menace",
+          "text_ar": "في حالة عدم التنفيذ داخل الأجل المحدد، أحتفظ بحقي في مباشرة جميع الإجراءات القضائية اللازمة دون سابق إعلام للمحافظة على حقوقي وعلى نفقتكم.",
+          "text_fr": "À défaut d'exécution dans le délai imparti, je me réserve le droit d'engager toutes les procédures judiciaires nécessaires, sans autre avertissement, pour la sauvegarde de mes droits, et à vos frais.",
+          "fields": []
+        }
+      ]
+    },
+    {
+      "id": "sec-signatures",
+      "title_ar": "التوقيع",
+      "title_fr": "Signature",
+      "articles": [
+        {
+          "id": "art-date-lieu",
+          "text_ar": "حرر بـ [LIEU]، بتاريخ [DATE].\n\n[NOM_EXPEDITEUR]\n(إمضاء)",
+          "text_fr": "Fait à [LIEU], le [DATE].\n\n[NOM_EXPEDITEUR]\n(Signature)",
+          "fields": [
+            "LIEU",
+            "DATE"
+          ]
+        }
+      ]
+    }
+  ]
+}

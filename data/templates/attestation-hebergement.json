@@ -1,0 +1,90 @@
+{
+  "id": "attestation-hebergement-v1",
+  "title_ar": "شهادة إيواء",
+  "title_fr": "Attestation d'Hébergement",
+  "slug": "attestation-hebergement",
+  "language": "both",
+  "category": "demarches",
+  "legal_basis": "Déclaration unilatérale — usage administratif (carte de séjour, CNSS, inscription scolaire)",
+  "version": "1.0",
+  "reviewed_by": null,
+  "review_date": null,
+  "source": "public_examples",
+  "disclaimer": "Modèle indicatif — non révisé par un avocat. / نموذج إرشادي — لم يراجعه محامٍ.",
+  "sections": [
+    {
+      "id": "sec-hebergeant",
+      "title_ar": "المؤوي",
+      "title_fr": "Hébergeant",
+      "articles": [
+        {
+          "id": "art-hebergeant",
+          "text_ar": "أنا الممضي أسفله، السيد/ة [NOM_HEBERGEANT]، ب.ت.و عدد [CIN_HEBERGEANT]، القاطن/ة بـ [ADRESSE_HEBERGEANT].",
+          "text_fr": "Je soussigné(e), M./Mme [NOM_HEBERGEANT], CIN n° [CIN_HEBERGEANT], demeurant à [ADRESSE_HEBERGEANT].",
+          "fields": [
+            "NOM_HEBERGEANT",
+            "CIN_HEBERGEANT",
+            "ADRESSE_HEBERGEANT"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-declaration",
+      "title_ar": "التصريح",
+      "title_fr": "Déclaration",
+      "articles": [
+        {
+          "id": "art-declaration",
+          "text_ar": "أشهد بأني أوي بمقر سكني الكائن بـ [ADRESSE_HEBERGEMENT]، بصفة مجانية، السيد/ة [NOM_HEBERGE]، ب.ت.و عدد [CIN_HEBERGE]، وذلك منذ [DATE_DEBUT_HEBERGEMENT].",
+          "text_fr": "Atteste héberger à mon domicile sis [ADRESSE_HEBERGEMENT], à titre gratuit, M./Mme [NOM_HEBERGE], CIN n° [CIN_HEBERGE], depuis le [DATE_DEBUT_HEBERGEMENT].",
+          "fields": [
+            "ADRESSE_HEBERGEMENT",
+            "NOM_HEBERGE",
+            "CIN_HEBERGE",
+            "DATE_DEBUT_HEBERGEMENT"
+          ]
+        },
+        {
+          "id": "art-lien",
+          "text_ar": "صلة القرابة بالمؤوى: [LIEN] (زوج/ة، أصل، فرع، حاشية، صديق/ة، إلخ).",
+          "text_fr": "Lien avec l'hébergé(e) : [LIEN] (conjoint, ascendant, descendant, collatéral, ami, etc.).",
+          "fields": [
+            "LIEN"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-destination",
+      "title_ar": "الغرض",
+      "title_fr": "Objet",
+      "articles": [
+        {
+          "id": "art-destination",
+          "text_ar": "تسلم هذه الشهادة للمعني/ة بالأمر لتقديمها لمن يهمه الأمر وخاصة لدى: [DESTINATION].",
+          "text_fr": "La présente attestation est délivrée à l'intéressé(e) pour servir et valoir ce que de droit, notamment auprès de : [DESTINATION].",
+          "fields": [
+            "DESTINATION"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-signatures",
+      "title_ar": "التوقيع",
+      "title_fr": "Signature",
+      "articles": [
+        {
+          "id": "art-date-lieu",
+          "text_ar": "حرر بـ [LIEU]، بتاريخ [DATE].\n\n[NOM_HEBERGEANT]\n(إمضاء)",
+          "text_fr": "Fait à [LIEU], le [DATE].\n\n[NOM_HEBERGEANT]\n(Signature)",
+          "fields": [
+            "LIEU",
+            "DATE"
+          ]
+        }
+      ]
+    }
+  ]
+}

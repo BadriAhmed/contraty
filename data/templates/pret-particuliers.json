@@ -1,0 +1,170 @@
+{
+  "id": "pret-particuliers-v1",
+  "title_ar": "عقد قرض بين الخواص",
+  "title_fr": "Contrat de Prêt entre Particuliers",
+  "slug": "pret-particuliers",
+  "language": "both",
+  "category": "argent",
+  "legal_basis": "Code des Obligations et des Contrats, articles 1054 à 1103 (Prêt)",
+  "version": "1.0",
+  "reviewed_by": null,
+  "review_date": null,
+  "source": "public_examples",
+  "disclaimer": "Modèle indicatif — non révisé par un avocat. Voir avertissement légal. / نموذج إرشادي — لم يراجعه محامٍ. راجع إخلاء المسؤولية القانونية.",
+  "sections": [
+    {
+      "id": "sec-parties",
+      "title_ar": "الأطراف",
+      "title_fr": "Parties",
+      "articles": [
+        {
+          "id": "art-preteur",
+          "text_ar": "السيد/ة [NOM_PRETEUR]، ب.ت.و عدد [CIN_PRETEUR]، القاطن/ة بـ [ADRESSE_PRETEUR]، يشار إليه/ا بـ « المقرض ».",
+          "text_fr": "M./Mme [NOM_PRETEUR], CIN n° [CIN_PRETEUR], demeurant à [ADRESSE_PRETEUR], ci-après dénommé(e) « le Prêteur ».",
+          "fields": [
+            "NOM_PRETEUR",
+            "CIN_PRETEUR",
+            "ADRESSE_PRETEUR"
+          ]
+        },
+        {
+          "id": "art-emprunteur",
+          "text_ar": "السيد/ة [NOM_EMPRUNTEUR]، ب.ت.و عدد [CIN_EMPRUNTEUR]، القاطن/ة بـ [ADRESSE_EMPRUNTEUR]، يشار إليه/ا بـ « المقترض ».",
+          "text_fr": "M./Mme [NOM_EMPRUNTEUR], CIN n° [CIN_EMPRUNTEUR], demeurant à [ADRESSE_EMPRUNTEUR], ci-après dénommé(e) « l'Emprunteur ».",
+          "fields": [
+            "NOM_EMPRUNTEUR",
+            "CIN_EMPRUNTEUR",
+            "ADRESSE_EMPRUNTEUR"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-objet",
+      "title_ar": "موضوع القرض",
+      "title_fr": "Objet du prêt",
+      "articles": [
+        {
+          "id": "art-montant",
+          "text_ar": "يقرض المقرض للمقترض الذي يقبل، مبلغ [MONTANT] ديناراً تونسياً.",
+          "text_fr": "Le Prêteur prête à l'Emprunteur, qui accepte, la somme de [MONTANT] dinars tunisiens. Il y a deux espèces de prêt : le prêt à usage ou commodat (âria) et le prêt de consommation (kardh ou salaf) Le prêt de consommation est un contrat par lequel l'une des parties remet à une autre des choses qui se consomment par l'usage, ou d'autre choses mobilières, pour s'en servir à charge par l'emprunteur de lui en restituer autant de même espèce et qualité, à l'expiration du délai convenu.",
+          "fields": [
+            "MONTANT"
+          ]
+        },
+        {
+          "id": "art-destination",
+          "text_ar": "يخصص هذا القرض لـ: [DESTINATION_PRET].",
+          "text_fr": "Ce prêt est destiné à : [DESTINATION_PRET].",
+          "fields": [
+            "DESTINATION_PRET"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-remboursement",
+      "title_ar": "السداد",
+      "title_fr": "Remboursement",
+      "articles": [
+        {
+          "id": "art-modalites",
+          "text_ar": "يلتزم المقترض بسداد القرض حسب الطرق التالية: [MODALITES]. تاريخ وضع الأموال على ذمة المقترض: [DATE_DEBLOCAGE]. يجب أن يتم السداد الكامل في أجل أقصاه [DATE_ECHEANCE_FINALE].",
+          "text_fr": "L'Emprunteur s'engage à rembourser le prêt selon les modalités suivantes : [MODALITES]. La date de mise à disposition des fonds est fixée au [DATE_DEBLOCAGE]. Le remboursement intégral devra intervenir au plus tard le [DATE_ECHEANCE_FINALE].",
+          "fields": [
+            "MODALITES",
+            "DATE_DEBLOCAGE",
+            "DATE_ECHEANCE_FINALE"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-interets",
+      "title_ar": "الفائدة",
+      "title_fr": "Intérêts",
+      "articles": [
+        {
+          "id": "art-taux",
+          "text_ar": "القرض [AVEC_INTERET] (بفائدة / بدون فائدة). إذا كان القرض بفائدة، يحدد النسب السنوي بـ [TAUX] %.",
+          "text_fr": "Le prêt est [AVEC_INTERET] (consenti avec / sans intérêt). Si le prêt est avec intérêt, le taux annuel est fixé à [TAUX] %. Note Abrogé par Loi n° 59-148 du 7 novembre 1959, modifiant certains articles du Code des Obligations et des Contrats, articles 278 (alinéas 2, 3, 4 et 5), 1095 et 1096. (JORT Rectificatif n° 59 du 1er décembre 1959, page 1337) . Les intérêts des sommes portées en compte courant sont dus de plein droit par celle des parties au débit de laquelle elles figurent, à partir du jour des avances constatées. Art. 1098 (nouveau) Note Ainsi modifié par la Loi n°2000-57 du 13 juin 2000 - Jort n°48 du 16 juin 2000, page 1456 . - Les intérêts ne peuvent être calculés que sur la taxe d'une année entière. En matière commerciale, ils peuvent être calculés au mois. Les intérêts non payés seront capitalisés avec la somme principale conformément aux dispositions prescrites à l'article suivant. Art. 1099 (nouveau) Note Ainsi modifié par la Loi n°2000-57 du 13 juin 2000 - Jort n°48 du 16 juin 2000, page 1456 . - Les intérêts non payés peuvent être capitalisés avec la somme principale et seront productifs d'intérêts si les parties l'ont prévu par écrit. En matière civile, les intérêts non payés prévus à l'alinéa précédent ne peuvent être capitalisés avec la somme principale qu'à la fin de chaque année et à condition que le défaut de paiement n'est pas dô au créancier. En matière commerciale, les intérêts arrivés à échéance et non payés sont capitalisés avec la somme principale et produisent des intérêts du jour de l'échéance selon les prescriptions du premier paragraphe à condition que le retard du paiement n'est pas dô au créancier. Contrairement aux dispositions du premier paragraphe et en matière de compte courant les intérêts non payés sont capitalisés avec la somme principale et seront productifs eux mêmes d'intérêts tout en respectant les délais qu'exige l'usage et ce jusqu'à la clôture du compte à moins qu'il n'y ait une stipulation contraire. Art. 1100 Note Loi n° 83-14, portant modification de certains articles du Code des Obligations et des Contrats, article 1100 (rajouté et modifié) et 1101 (alinéa 1 modifié) Décret du 20 août 1935 sur l'intérêt légal abrogé. (JORT n° 13 du 18 février 1983, page 464) . - 2) en matière commerciale, il est égal au taux maximum des découverts bancaires, fixé par la Banque Centrale de Tunisie, majoré d'un demi-point. Lorsque les parties n'ont pas déterminé le taux des intérêts, le taux de l'intérêt légal qui s'applique est le suivant : en matière civile, il est calculé à raison de 7 % l'an ; en matière commerciale, il est égal aux taux maximum des découverts bancaires, fixé par la Banque Centrale, majoré d'un demi point.    Note Loi n° 83-14, portant modification de certains articles du Code des Obligations et des Contrats, article 1100 (rajouté et modifié) et 1101 (alinéa 1 modifié) Décret du 20 août 1935 sur l'intérêt légal abrogé. (JORT n° 13 du 18 février 1983, page 464) . - Le présent article ne s'applique pas aux dettes contractées par l'Etat, les communes et les autres personnes morales, dans les formes établies par la loi. Lorsque les intérêts stipulés dépassent les taux ci-dessus établis, le débiteur aura toujours le droit de rembourser le capital après une année de la date du contrat, toute clause contraire est sans effet. Il devra toutefois prévenir le créancier deux mois à l'avance, et par écrit, de son intention de payer. Cet avis emportera de plein droit renonciation au terme le plus long qui aurait été convenu. Le présent article ne s'applique pas aux dettes contractées par l'état, les communes et autres personnes morales, dans les formes établies par la loi. La disposition de l'article 1101 s'applique tant au cas où les intérêts ont été stipulés directement, qu'à celui où la stipulation d'intérêts prend la forme d'antichrèse, de contrat pignoratif, de retenue sur le capital au moment du prêt, de commission prise en sus des intérêts. Celui qui, abusant des besoins, de la faiblesse d'esprit ou de l'inexpérience d'une autre personne, se fait promettre, pour consentir un prêt ou le renouveler à l'échéance, des intérêts ou autres avantages qui excèdent notablement le taux normal de l'intérêt, et la valeur du service rendu, selon les lieux et les circonstances de l'affaire, sera l'objet de poursuites pénales. Les clauses et conventions passées en contravention du présent article pourront être annulées, à la requête de la partie et même d'office, le taux stipulé pourra être réduit, et le débiteur pourra répéter, comme indô, ce qu'il lui aurait payé au¬dessus du taux qui sera fixé par le tribunal. S'il y a plusieurs créanciers, ils seront tenus solidairement",
+          "fields": [
+            "AVEC_INTERET",
+            "TAUX"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-garanties",
+      "title_ar": "الضمانات",
+      "title_fr": "Garanties",
+      "articles": [
+        {
+          "id": "art-garanties",
+          "text_ar": "ضماناً لسداد القرض، [GARANTIES_PRET].",
+          "text_fr": "En garantie du remboursement, [GARANTIES_PRET].",
+          "fields": [
+            "GARANTIES_PRET"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-remboursement-anticipe",
+      "title_ar": "السداد المسبق",
+      "title_fr": "Remboursement anticipé",
+      "articles": [
+        {
+          "id": "art-anticipe",
+          "text_ar": "يمكن للمقترض أن يسدد القرض كلياً أو جزئياً قبل الأجل، [CONDITIONS_ANTICIPE].",
+          "text_fr": "L'Emprunteur pourra se libérer par anticipation, en totalité ou en partie, [CONDITIONS_ANTICIPE].",
+          "fields": [
+            "CONDITIONS_ANTICIPE"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-defaut",
+      "title_ar": "الإخلال بشروط السداد",
+      "title_fr": "Défaut de paiement",
+      "articles": [
+        {
+          "id": "art-defaut",
+          "text_ar": "في حالة عدم السداد في الأجل، يحق للمقرض المطالبة بالسداد الفوري للمبلغ المتبقي دون حاجة إلى توجيه إنذار مسبق.",
+          "text_fr": "En cas de défaut de paiement à l'échéance, le Prêteur pourra exiger le remboursement immédiat du solde restant dû, sans mise en demeure préalable.",
+          "fields": []
+        }
+      ]
+    },
+    {
+      "id": "sec-signatures",
+      "title_ar": "التوقيع",
+      "title_fr": "Signatures",
+      "articles": [
+        {
+          "id": "art-date-lieu",
+          "text_ar": "حرر بـ [LIEU_SIGNATURE]، بتاريخ [DATE_SIGNATURE]، في نظيرين.",
+          "text_fr": "Fait à [LIEU_SIGNATURE], le [DATE_SIGNATURE], en deux exemplaires.",
+          "fields": [
+            "LIEU_SIGNATURE",
+            "DATE_SIGNATURE"
+          ]
+        },
+        {
+          "id": "art-sign-preteur",
+          "text_ar": "المقرض\n[NOM_PRETEUR]\n(إمضاء مسبوق بعبارة « أقرضت مبلغ [MONTANT] ديناراً »)",
+          "text_fr": "Le Prêteur\n[NOM_PRETEUR]\n(Signature précédée de « Bon pour prêt de [MONTANT] dinars »)",
+          "fields": []
+        },
+        {
+          "id": "art-sign-emprunteur",
+          "text_ar": "المقترض\n[NOM_EMPRUNTEUR]\n(إمضاء مسبوق بعبارة « أقر وتعهد بسداد مبلغ [MONTANT] ديناراً »)",
+          "text_fr": "L'Emprunteur\n[NOM_EMPRUNTEUR]\n(Signature précédée de « Bon pour reconnaissance de dette de [MONTANT] dinars »)",
+          "fields": []
+        }
+      ]
+    }
+  ]
+}

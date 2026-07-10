@@ -1,0 +1,151 @@
+{
+  "id": "statuts-sarl-v1",
+  "title_ar": "القانون الأساسي لشركة ذات مسؤولية محدودة",
+  "title_fr": "Statuts de SARL",
+  "slug": "statuts-sarl",
+  "language": "both",
+  "category": "entreprise",
+  "legal_basis": "Code des Sociétés Commerciales, articles 90 à 159 et Code des Obligations et des Contrats, articles 1226 à 1451",
+  "version": "1.0",
+  "reviewed_by": null,
+  "review_date": null,
+  "source": "public_examples",
+  "disclaimer": "Modèle indicatif — non révisé par un avocat. Voir avertissement légal. / نموذج إرشادي — لم يراجعه محامٍ. راجع إخلاء المسؤولية القانونية.",
+  "sections": [
+    {
+      "id": "sec-constitution",
+      "title_ar": "التأسيس",
+      "title_fr": "Constitution",
+      "articles": [
+        {
+          "id": "art-forme",
+          "text_ar": "تتكون بين الممضين أسفله شركة ذات مسؤولية محدودة تخضع لأحكام مجلة الشركات التجارية.",
+          "text_fr": "Il est formé entre les soussignés une Société à Responsabilité Limitée régie par le Code des Sociétés Commerciales. La société à responsabilité limitée est constituée entre deux ou plusieurs personnes qui ne supportent les pertes que jusqu'à concurrence de leurs apports. Lorsque la société à responsabilité limitée peut ne comporter qu'un seul associé elle est dénommée \" société unipersonnelle à responsabilité limitée \". Cet associé exerce les mêmes pouvoirs dévolus au gérant de la société conformément aux dispositions prévues par le présent livre.",
+          "fields": []
+        },
+        {
+          "id": "art-denomination",
+          "text_ar": "تسمية الشركة: « [DENOMINATION] ».",
+          "text_fr": "La société a pour dénomination : « [DENOMINATION] ».",
+          "fields": [
+            "DENOMINATION"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-objet",
+      "title_ar": "الغرض",
+      "title_fr": "Objet social",
+      "articles": [
+        {
+          "id": "art-objet",
+          "text_ar": "غرض الشركة: [OBJET_SOCIAL].",
+          "text_fr": "La société a pour objet : [OBJET_SOCIAL].",
+          "fields": [
+            "OBJET_SOCIAL"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-siege-duree",
+      "title_ar": "المقر والمدة",
+      "title_fr": "Siège — Durée",
+      "articles": [
+        {
+          "id": "art-siege",
+          "text_ar": "يقع المقر الاجتماعي للشركة بـ [SIEGE].",
+          "text_fr": "Le siège social est fixé à [SIEGE].",
+          "fields": [
+            "SIEGE"
+          ]
+        },
+        {
+          "id": "art-duree",
+          "text_ar": "تحدد مدة الشركة بـ [DUREE_ANNEE] سنة ابتداءً من تسجيلها بالسجل الوطني للمؤسسات.",
+          "text_fr": "La durée de la société est fixée à [DUREE_ANNEE] années à compter de son immatriculation au RNE.",
+          "fields": [
+            "DUREE_ANNEE"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-capital",
+      "title_ar": "رأس المال",
+      "title_fr": "Capital social",
+      "articles": [
+        {
+          "id": "art-capital",
+          "text_ar": "يحدد رأس مال الشركة بـ [CAPITAL] ديناراً تونسياً، مقسم إلى [NB_PARTS] حصة اجتماعية قيمة كل منها [VALEUR_NOMINALE] ديناراً.",
+          "text_fr": "Le capital social est fixé à [CAPITAL] dinars tunisiens, divisé en [NB_PARTS] parts sociales de [VALEUR_NOMINALE] dinars chacune. Les apports peuvent être soit en numéraire soit en nature, soit en industrie. L'ensemble de ces apports, à l'exception de l'apport en industrie, constitue le capital de la société. Ce dernier est le gage exclusif des créanciers sociaux.",
+          "fields": [
+            "CAPITAL",
+            "NB_PARTS",
+            "VALEUR_NOMINALE"
+          ]
+        },
+        {
+          "id": "art-repartition",
+          "text_ar": "توزع الحصص كما يلي: [REPARTITION_PARTS].",
+          "text_fr": "Les parts sont réparties comme suit : [REPARTITION_PARTS].",
+          "fields": [
+            "REPARTITION_PARTS"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-gerance",
+      "title_ar": "التسيير",
+      "title_fr": "Gérance",
+      "articles": [
+        {
+          "id": "art-gerant",
+          "text_ar": "تدار الشركة من قبل السيد/ة [NOM_GERANT]، بصفته/ا متصرفاً، لمدة [DUREE_MANDAT_GERANT].",
+          "text_fr": "La société est administrée par [NOM_GERANT], gérant, nommé pour une durée [DUREE_MANDAT_GERANT]. La société à responsabilité limitée est gérée par une ou plusieurs personnes physiques. Le ou les gérants peuvent être désignés dans les statuts ou par un acte postérieur, et ce, parmi les associés ou parmi des tiers. En cas de silence des statuts ou de la décision de nomination, la durée du mandat du gérant sera de trois ans renouvelables. Le gérant représente la société vis-à-vis des tiers et devant les juridictions en tant que demanderesse ou défenderesse.",
+          "fields": [
+            "NOM_GERANT",
+            "DUREE_MANDAT_GERANT"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-exercice",
+      "title_ar": "السنة المالية",
+      "title_fr": "Exercice social",
+      "articles": [
+        {
+          "id": "art-exercice",
+          "text_ar": "تبدأ السنة المالية للشركة في 1 جانفي وتنتهي في 31 ديسمبر من كل سنة.",
+          "text_fr": "L'exercice social commence le 1er janvier et se termine le 31 décembre de chaque année.",
+          "fields": []
+        }
+      ]
+    },
+    {
+      "id": "sec-signatures",
+      "title_ar": "التوقيع",
+      "title_fr": "Signatures",
+      "articles": [
+        {
+          "id": "art-date-lieu",
+          "text_ar": "حرر بـ [LIEU_SIGNATURE]، بتاريخ [DATE_SIGNATURE].",
+          "text_fr": "Fait à [LIEU_SIGNATURE], le [DATE_SIGNATURE].",
+          "fields": [
+            "LIEU_SIGNATURE",
+            "DATE_SIGNATURE"
+          ]
+        },
+        {
+          "id": "art-sign-associes",
+          "text_ar": "الشركاء\n[REPARTITION_PARTS]\n(إمضاءات مسبوقة بعبارة « قرأت وأوافق »)",
+          "text_fr": "Les Associés\n[REPARTITION_PARTS]\n(Signatures précédées de la mention « Lu et approuvé »)",
+          "fields": []
+        }
+      ]
+    }
+  ]
+}

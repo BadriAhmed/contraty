@@ -1,0 +1,176 @@
+{
+  "id": "contrat-karama-v1",
+  "title_ar": "عقد عمل مدعم — برنامج كرامة",
+  "title_fr": "Contrat de Travail Aidé — Programme Karama",
+  "slug": "contrat-karama",
+  "language": "both",
+  "category": "travail",
+  "legal_basis": "Programme national de promotion de l'emploi — Contrat de travail aidé (insertion professionnelle des demandeurs d'emploi de longue durée) et Code du Travail",
+  "version": "1.0",
+  "reviewed_by": null,
+  "review_date": null,
+  "source": "public_examples",
+  "disclaimer": "Modèle indicatif — non révisé par un avocat. / نموذج إرشادي — لم يراجعه محامٍ.",
+  "sections": [
+    {
+      "id": "sec-cadre",
+      "title_ar": "الإطار",
+      "title_fr": "Cadre du programme",
+      "articles": [
+        {
+          "id": "art-cadre",
+          "text_ar": "يبرم هذا العقد في إطار البرامج النشيطة للتشغيل للدولة التونسية. وهو عقد عمل مدعم موجه لطالبي الشغل قصد تشجيع إدماجهم المهني المستدام. المدة النموذجية هي سنتان، ويشكل جسراً بين آليات الإدماج (صيغ) والعمل القار (عقد غير محدد المدة).",
+          "text_fr": "Le présent contrat est conclu dans le cadre des programmes actifs de l'emploi de l'État tunisien. Il s'agit d'un contrat de travail aidé destiné aux demandeurs d'emploi pour favoriser leur insertion professionnelle durable. La durée typique est de 2 ans, constituant un pont entre les dispositifs d'insertion (SIVP) et l'emploi permanent (CDI).",
+          "fields": []
+        }
+      ]
+    },
+    {
+      "id": "sec-parties",
+      "title_ar": "الأطراف",
+      "title_fr": "Parties",
+      "articles": [
+        {
+          "id": "art-employeur",
+          "text_ar": "شركة [NOM_ENTREPRISE]، س.و.م عدد [RNE]، الكائنة بـ [ADRESSE_ENTREPRISE]، يمثلها [REPRESENTANT]، يشار إليها بـ « المؤجر ».",
+          "text_fr": "La société [NOM_ENTREPRISE], RNE n° [RNE], sise [ADRESSE_ENTREPRISE], représentée par [REPRESENTANT], ci-après « l'Employeur ».",
+          "fields": [
+            "NOM_ENTREPRISE",
+            "RNE",
+            "ADRESSE_ENTREPRISE",
+            "REPRESENTANT"
+          ]
+        },
+        {
+          "id": "art-salarie",
+          "text_ar": "السيد/ة [NOM_SALARIE]، ب.ت.و عدد [CIN_SALARIE]، مولود/ة بـ [DATE_NAISSANCE]، القاطن/ة بـ [ADRESSE_SALARIE]، مسجل/ة بمكتب التشغيل تحت عدد [NUM_DEMANDEUR]، يشار إليه/ا بـ « الأجير ».",
+          "text_fr": "M./Mme [NOM_SALARIE], CIN n° [CIN_SALARIE], né(e) le [DATE_NAISSANCE], demeurant à [ADRESSE_SALARIE], inscrit(e) au Bureau de l'Emploi sous le n° [NUM_DEMANDEUR], ci-après « le Salarié ».",
+          "fields": [
+            "NOM_SALARIE",
+            "CIN_SALARIE",
+            "DATE_NAISSANCE",
+            "ADRESSE_SALARIE",
+            "NUM_DEMANDEUR"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-objet",
+      "title_ar": "موضوع العقد",
+      "title_fr": "Objet",
+      "articles": [
+        {
+          "id": "art-engagement",
+          "text_ar": "يشغل المؤجر الأجير في إطار برنامج التشغيل المدعم بصفة [POSTE]، لمدة [DUREE_ANNEE] سنوات، ابتداءً من [DATE_DEBUT].",
+          "text_fr": "L'Employeur engage le Salarié, dans le cadre du programme de l'emploi aidé, en qualité de [POSTE], pour une durée de [DUREE_ANNEE] années, à compter du [DATE_DEBUT].",
+          "fields": [
+            "POSTE",
+            "DUREE_ANNEE",
+            "DATE_DEBUT"
+          ]
+        },
+        {
+          "id": "art-lieu",
+          "text_ar": "مكان العمل: [LIEU_TRAVAIL].",
+          "text_fr": "Lieu de travail : [LIEU_TRAVAIL].",
+          "fields": [
+            "LIEU_TRAVAIL"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-remuneration",
+      "title_ar": "الأجر",
+      "title_fr": "Rémunération",
+      "articles": [
+        {
+          "id": "art-salaire",
+          "text_ar": "الأجر الشهري الخام: [SALAIRE] د.ت. تتحمل الدولة جزءاً من هذا الأجر قدره [SUBVENTION_ETAT] د.ت شهرياً طيلة مدة العقد. والجزء المكمل المقدر بـ [COMPLEMENT_ENTREPRISE] د.ت على عاتق المؤجر. يتمتع الأجير بالتغطية الاجتماعية لدى الصندوق الوطني للضمان الاجتماعي (مرض، حوادث شغل، تقاعد).",
+          "text_fr": "Le salaire mensuel brut est de [SALAIRE] DT. L'État prend en charge une partie de ce salaire à hauteur de [SUBVENTION_ETAT] DT par mois pendant la durée du contrat. Le complément de [COMPLEMENT_ENTREPRISE] DT est à la charge de l'Employeur. Le Salarié bénéficie de la couverture sociale CNSS (maladie, accidents du travail, retraite).",
+          "fields": [
+            "SALAIRE",
+            "SUBVENTION_ETAT",
+            "COMPLEMENT_ENTREPRISE"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-droits",
+      "title_ar": "الحقوق",
+      "title_fr": "Droits du Salarié",
+      "articles": [
+        {
+          "id": "art-droits",
+          "text_ar": "يتمتع الأجير بنفس الحقوق المخولة للأجراء القارين، وخاصة: راحة سنوية مدتها [JOURS_CONGES] يوم عمل، أيام الأعياد المدفوعة الأجر، الحماية الاجتماعية، والحق في التكوين المهني.",
+          "text_fr": "Le Salarié bénéficie des mêmes droits que les salariés permanents, notamment : congé annuel de [JOURS_CONGES] jours ouvrables, jours fériés payés, protection sociale, et droit à la formation professionnelle.",
+          "fields": [
+            "JOURS_CONGES"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-obligations",
+      "title_ar": "الالتزامات",
+      "title_fr": "Obligations",
+      "articles": [
+        {
+          "id": "art-employeur-ob",
+          "text_ar": "يلتزم المؤجر بتأمين تكوين مؤهل للأجير، واحترام مجلة الشغل، وإعطاء الأولوية لتشغيل الأجير بعقد غير محدد المدة عند انتهاء العقد المدعم إذا سمحت حاجيات المؤسسة بذلك.",
+          "text_fr": "L'Employeur s'engage à assurer une formation qualifiante au Salarié, à respecter le Code du Travail, et à privilégier le recrutement du Salarié en CDI à l'issue du contrat aidé si les besoins de l'entreprise le permettent.",
+          "fields": []
+        },
+        {
+          "id": "art-salarie-ob",
+          "text_ar": "يلتزم الأجير بأداء مهامه بكل جد، ومتابعة التكوينات المقترحة، واحترام النظام الداخلي.",
+          "text_fr": "Le Salarié s'engage à exercer ses fonctions avec diligence, à suivre les formations proposées, et à respecter le règlement intérieur. ",
+          "fields": []
+        }
+      ]
+    },
+    {
+      "id": "sec-fin",
+      "title_ar": "انتهاء العقد",
+      "title_fr": "Fin du contrat",
+      "articles": [
+        {
+          "id": "art-fin",
+          "text_ar": "عند انتهاء العقد، يتمتع الأجير بأولوية الانتداب بعقد غير محدد المدة داخل المؤسسة. في حالة عدم التجديد، يسلم المؤجر للأجير شهادة عمل ووصل مخالصة نهائية.",
+          "text_fr": "A l'expiration du contrat, le Salarié bénéficie d'une priorité d'embauche en CDI au sein de l'entreprise. En cas de non-renouvellement, l'Employeur remet au Salarié un certificat de travail et un solde de tout compte.",
+          "fields": []
+        }
+      ]
+    },
+    {
+      "id": "sec-signatures",
+      "title_ar": "التوقيع",
+      "title_fr": "Signatures",
+      "articles": [
+        {
+          "id": "art-date-lieu",
+          "text_ar": "حرر بـ [LIEU_SIGNATURE]، بتاريخ [DATE_SIGNATURE]، في ثلاث نظائر (المؤسسة، الأجير، مكتب التشغيل).",
+          "text_fr": "Fait à [LIEU_SIGNATURE], le [DATE_SIGNATURE], en trois exemplaires (Entreprise, Salarié, Bureau de l'Emploi).",
+          "fields": [
+            "LIEU_SIGNATURE",
+            "DATE_SIGNATURE"
+          ]
+        },
+        {
+          "id": "art-sign-e",
+          "text_ar": "المؤجر\n[REPRESENTANT]",
+          "text_fr": "L'Employeur\n[REPRESENTANT]",
+          "fields": []
+        },
+        {
+          "id": "art-sign-s",
+          "text_ar": "الأجير\n[NOM_SALARIE]",
+          "text_fr": "Le Salarié\n[NOM_SALARIE]",
+          "fields": []
+        }
+      ]
+    }
+  ]
+}

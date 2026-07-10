@@ -1,0 +1,81 @@
+{
+  "id": "quittance-loyer-v1",
+  "title_ar": "وصل كراء",
+  "title_fr": "Quittance de Loyer",
+  "slug": "quittance-loyer",
+  "language": "both",
+  "category": "logement",
+  "legal_basis": "Code des Obligations et des Contrats, articles 727 à 827 (Louage)",
+  "version": "1.0",
+  "reviewed_by": null,
+  "review_date": null,
+  "source": "public_examples",
+  "disclaimer": "Modèle indicatif — non révisé par un avocat. / نموذج إرشادي — لم يراجعه محامٍ.",
+  "sections": [
+    {
+      "id": "sec-parties",
+      "title_ar": "الأطراف",
+      "title_fr": "Parties",
+      "articles": [
+        {
+          "id": "art-bailleur",
+          "text_ar": "أنا الممضي أسفله، السيد/ة [NOM_BAILLEUR]، ب.ت.و عدد [CIN_BAILLEUR]، المكري، أشهد بأني تسلمت من السيد/ة [NOM_PRENEUR]، المكتري.",
+          "text_fr": "Je soussigné(e), M./Mme [NOM_BAILLEUR], CIN n° [CIN_BAILLEUR], Bailleur, reconnaît avoir reçu de M./Mme [NOM_PRENEUR], Preneur.",
+          "fields": [
+            "NOM_BAILLEUR",
+            "CIN_BAILLEUR",
+            "NOM_PRENEUR"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-paiement",
+      "title_ar": "الدفع",
+      "title_fr": "Paiement",
+      "articles": [
+        {
+          "id": "art-paiement",
+          "text_ar": "مبلغ [MONTANT] ديناراً تونسياً، مقابل معين كراء شهر [MOIS] [ANNEE]، للعقار الكائن بـ [ADRESSE_BIEN]. طريقة الدفع: [MODE_PAIEMENT].",
+          "text_fr": "La somme de [MONTANT] dinars tunisiens, correspondant au loyer du mois de [MOIS] [ANNEE], pour le bien sis à [ADRESSE_BIEN]. Mode de paiement : [MODE_PAIEMENT].",
+          "fields": [
+            "MONTANT",
+            "MOIS",
+            "ANNEE",
+            "ADRESSE_BIEN",
+            "MODE_PAIEMENT"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-decharge",
+      "title_ar": "الإبراء",
+      "title_fr": "Décharge",
+      "articles": [
+        {
+          "id": "art-decharge",
+          "text_ar": "يصرح المكري باستيفاء حقوقه عن الشهر المعني ويسلم وصلاً للمكتري.",
+          "text_fr": "Le Bailleur déclare être rempli de ses droits pour le mois concerné et donne quittance au Preneur.",
+          "fields": []
+        }
+      ]
+    },
+    {
+      "id": "sec-signatures",
+      "title_ar": "التوقيع",
+      "title_fr": "Signature",
+      "articles": [
+        {
+          "id": "art-date",
+          "text_ar": "حرر بـ [LIEU]، بتاريخ [DATE].\n\n[NOM_BAILLEUR]\n(إمضاء)",
+          "text_fr": "Fait à [LIEU], le [DATE].\n\n[NOM_BAILLEUR]\n(Signature)",
+          "fields": [
+            "LIEU",
+            "DATE"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "id": "vente-moto-v1",
+  "title_ar": "عقد بيع دراجة نارية",
+  "title_fr": "Contrat de Vente de Motocyclette",
+  "slug": "vente-moto",
+  "language": "both",
+  "category": "vehicules",
+  "legal_basis": "Code des Obligations et des Contrats, articles 564 à 717 (Vente)",
+  "version": "1.0",
+  "reviewed_by": null,
+  "review_date": null,
+  "source": "public_examples",
+  "disclaimer": "Modèle indicatif — non révisé par un avocat. / نموذج إرشادي — لم يراجعه محامٍ.",
+  "sections": [
+    {
+      "id": "sec-parties",
+      "title_ar": "الأطراف",
+      "title_fr": "Parties",
+      "articles": [
+        {
+          "id": "art-vendeur",
+          "text_ar": "السيد/ة [NOM_VENDEUR]، ب.ت.و عدد [CIN_VENDEUR]، القاطن/ة بـ [ADRESSE_VENDEUR]، يشار إليه/ا بـ « البائع ».",
+          "text_fr": "M./Mme [NOM_VENDEUR], CIN n° [CIN_VENDEUR], demeurant à [ADRESSE_VENDEUR], ci-après dénommé(e) « le Vendeur ».",
+          "fields": [
+            "NOM_VENDEUR",
+            "CIN_VENDEUR",
+            "ADRESSE_VENDEUR"
+          ]
+        },
+        {
+          "id": "art-acquereur",
+          "text_ar": "السيد/ة [NOM_ACQUEREUR]، ب.ت.و عدد [CIN_ACQUEREUR]، القاطن/ة بـ [ADRESSE_ACQUEREUR]، يشار إليه/ا بـ « المشتري ».",
+          "text_fr": "M./Mme [NOM_ACQUEREUR], CIN n° [CIN_ACQUEREUR], demeurant à [ADRESSE_ACQUEREUR], ci-après dénommé(e) « l'Acquéreur ».",
+          "fields": [
+            "NOM_ACQUEREUR",
+            "CIN_ACQUEREUR",
+            "ADRESSE_ACQUEREUR"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-objet",
+      "title_ar": "موضوع العقد",
+      "title_fr": "Objet",
+      "articles": [
+        {
+          "id": "art-moto",
+          "text_ar": "يبيع البائع للمشتري الذي يقبل، الدراجة النارية التالية:\nالعلامة: [MARQUE]\nالطراز: [MODELE]\nرقم التسجيل: [IMMATRICULATION]\nرقم الهيكل: [NUM_CADRE]\nرقم المحرك: [NUM_MOTEUR]\nالسعة الأسطوانية: [CYLINDREE] سم³\nالسنة: [ANNEE_MEC]\nعدد الكيلومترات: [KILOMETRAGE] كم",
+          "text_fr": "Le Vendeur vend à l'Acquéreur, qui accepte, la motocyclette suivante :\nMarque : [MARQUE]\nModèle : [MODELE]\nImmatriculation : [IMMATRICULATION]\nN° de série (cadre) : [NUM_CADRE]\nMoteur n° : [NUM_MOTEUR]\nCylindrée : [CYLINDREE] cm³\nAnnée : [ANNEE_MEC]\nKilométrage : [KILOMETRAGE] km",
+          "fields": [
+            "MARQUE",
+            "MODELE",
+            "IMMATRICULATION",
+            "NUM_CADRE",
+            "NUM_MOTEUR",
+            "CYLINDREE",
+            "ANNEE_MEC",
+            "KILOMETRAGE"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-prix",
+      "title_ar": "الثمن",
+      "title_fr": "Prix",
+      "articles": [
+        {
+          "id": "art-prix",
+          "text_ar": "حدد ثمن البيع بـ [PRIX] ديناراً تونسياً، يدفع نقداً.",
+          "text_fr": "Le prix de vente est fixé à [PRIX] dinars tunisiens, payé comptant. ",
+          "fields": [
+            "PRIX"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-etat",
+      "title_ar": "حالة الدراجة",
+      "title_fr": "État",
+      "articles": [
+        {
+          "id": "art-etat",
+          "text_ar": "يصرح المشتري بأنه عاين الدراجة النارية وقبلها على حالتها. يضمن البائع خلو الدراجة من أي تقييد أو رهن أو حجز.",
+          "text_fr": "L'Acquéreur déclare avoir examiné la motocyclette et l'accepter dans l'état où elle se trouve. Le Vendeur garantit que la motocyclette est libre de toute inscription, gage ou opposition. La nullité du contrat ne peut jamais être opposée par le vendeur, à raison de ce que la chose était à autrui. La vente de la chose d'autrui est valable : si le maître la ratifie ; si le vendeur acquiert ensuite la propriété de la chose ; Dans le cas où le maître refuse de ratifier, l'acquéreur peut demander la résolution de la vente; le vendeur est tenu, en outre, des dommages-intérêts, lorsque l'acquéreur ignorait, au moment de la vente que la chose était à autrui. La nullité du contrat ne peut jamais être opposée par le vendeur, à raison de ce que la chose était à autrui.",
+          "fields": []
+        }
+      ]
+    },
+    {
+      "id": "sec-transfert",
+      "title_ar": "نقل الملكية",
+      "title_fr": "Transfert",
+      "articles": [
+        {
+          "id": "art-transfert",
+          "text_ar": "تنتقل الملكية عند التوقيع. يقوم المشتري بإجراءات التحويل في أجل [DELAI_JOURS] يوماً. الوثائق المسلمة: بطاقة التسجيل، المخالصة الجبائية، شهادة الوضعية الإدارية.",
+          "text_fr": "La propriété est transférée à la signature. L'Acquéreur accomplira les formalités de mutation dans les [DELAI_JOURS] jours. Documents remis : carte grise, quitus fiscal, certificat de situation administrative.",
+          "fields": [
+            "DELAI_JOURS"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-signatures",
+      "title_ar": "التوقيع",
+      "title_fr": "Signatures",
+      "articles": [
+        {
+          "id": "art-date-lieu",
+          "text_ar": "حرر بـ [LIEU_SIGNATURE]، بتاريخ [DATE_SIGNATURE]، في نظيرين.",
+          "text_fr": "Fait à [LIEU_SIGNATURE], le [DATE_SIGNATURE], en deux exemplaires.",
+          "fields": [
+            "LIEU_SIGNATURE",
+            "DATE_SIGNATURE"
+          ]
+        },
+        {
+          "id": "art-sign-vendeur",
+          "text_ar": "البائع\n[NOM_VENDEUR]",
+          "text_fr": "Le Vendeur\n[NOM_VENDEUR]",
+          "fields": []
+        },
+        {
+          "id": "art-sign-acquereur",
+          "text_ar": "المشتري\n[NOM_ACQUEREUR]",
+          "text_fr": "L'Acquéreur\n[NOM_ACQUEREUR]",
+          "fields": []
+        }
+      ]
+    }
+  ]
+}

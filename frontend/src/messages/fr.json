@@ -1,0 +1,38 @@
+{
+  "site": {
+    "title": "Contraty — Contrats juridiques tunisiens",
+    "description": "Créez facilement des contrats juridiques tunisiens bilingues. 22 modèles couvrant le logement, le travail, l'argent, les véhicules, l'entreprise et les démarches administratives.",
+    "disclaimer": "Avertissement : les modèles fournis sont indicatifs et n'ont pas été révisés par un avocat. Ils ne constituent pas un conseil juridique. Consultez un avocat avant utilisation.",
+    "disclaimerCheckbox": "Je reconnais que ce modèle est indicatif, n'a pas été révisé par un avocat, et ne remplace pas une consultation juridique."
+  },
+  "nav": {
+    "home": "Accueil",
+    "contracts": "Contrats",
+    "generate": "Générer un contrat",
+    "language": "العربية"
+  },
+  "home": {
+    "hero": "Contrats juridiques tunisiens",
+    "heroSub": "22 modèles bilingues — créez votre contrat en quelques minutes",
+    "cta": "Choisir un modèle",
+    "domains": "Choisissez un domaine",
+    "popular": "Les plus demandés"
+  },
+  "wizard": {
+    "title": "Créer un contrat",
+    "step": "Étape {current} sur {total}",
+    "next": "Suivant",
+    "back": "Retour",
+    "generate": "Générer le contrat",
+    "downloadPdf": "Télécharger le PDF",
+    "fieldRequired": "Ce champ est obligatoire",
+    "disclaimerRequired": "Vous devez accepter l'avertissement légal"
+  },
+  "contract": {
+    "legalBasis": "Base légale",
+    "fields": "Nombre de champs",
+    "generateThis": "Générer ce contrat",
+    "modelUsed": "Modèle utilisé",
+    "generationTime": "Temps de génération"
+  }
+}
