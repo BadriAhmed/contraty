@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Real Estate Contracts - Contraty</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#ffffff",
+                        "cat-employment": "#16a34a",
+                        "primary-container": "#2563eb",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "on-tertiary": "#ffffff",
+                        "cat-documents": "#94a3b8",
+                        "cat-real-estate": "#0ea5e9",
+                        "on-tertiary-fixed": "#2a1700",
+                        "cat-services": "#3b82f6",
+                        "surface": "#faf8ff",
+                        "on-tertiary-container": "#ffeedd",
+                        "tertiary-container": "#996100",
+                        "error-container": "#ffdad6",
+                        "on-error": "#ffffff",
+                        "background": "#faf8ff",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "on-primary-fixed": "#00174b",
+                        "success-light": "#dcfce7",
+                        "surface-container-highest": "#e1e2ed",
+                        "on-secondary-fixed-variant": "#41455f",
+                        "inverse-on-surface": "#f0f0fb",
+                        "secondary-fixed": "#dde1ff",
+                        "surface-container-low": "#f3f3fe",
+                        "outline-variant": "#c3c6d7",
+                        "bg-page": "#f7f7fb",
+                        "outline": "#737686",
+                        "cat-family": "#eab308",
+                        "primary": "#004ac6",
+                        "surface-dim": "#d9d9e5",
+                        "inverse-surface": "#2e3039",
+                        "primary-fixed": "#dbe1ff",
+                        "tertiary": "#784b00",
+                        "surface-variant": "#e1e2ed",
+                        "on-error-container": "#93000a",
+                        "on-primary": "#ffffff",
+                        "on-surface": "#191b23",
+                        "success-green": "#16a34a",
+                        "on-secondary-container": "#5c617c",
+                        "border-slate": "#e2e8f0",
+                        "cat-business": "#8b5cf6",
+                        "surface-bright": "#faf8ff",
+                        "on-surface-variant": "#434655",
+                        "surface-tint": "#0053db",
+                        "error": "#ba1a1a",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#c1c5e3",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "tertiary-fixed": "#ffddb8",
+                        "text-secondary": "#64748b",
+                        "surface-container-high": "#e7e7f3",
+                        "secondary": "#585d77",
+                        "surface-container": "#ededf9",
+                        "inverse-primary": "#b4c5ff",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "secondary-container": "#dadefd",
+                        "on-primary-container": "#eeefff",
+                        "on-secondary-fixed": "#151a31",
+                        "on-background": "#191b23"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "grid-gap": "1.5rem",
+                        "margin-mobile": "1rem",
+                        "section-gap": "3rem",
+                        "margin-page": "2rem",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "headline-hero-mobile": ["Inter"],
+                        "body": ["Inter"],
+                        "headline-hero": ["Inter"],
+                        "card-title": ["Inter"],
+                        "headline-section": ["Inter"],
+                        "subtitle": ["Inter"],
+                        "mono": ["JetBrains Mono"],
+                        "small": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-hero-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-hero": ["48px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "card-title": ["18px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "headline-section": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "subtitle": ["20px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "mono": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "small": ["14px", { "lineHeight": "1.4", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined[data-weight="fill"] {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        .bento-card {
+            transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .bento-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(14, 165, 233, 0.1), 0 8px 10px -6px rgba(14, 165, 233, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-bg-page text-on-surface font-body antialiased min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="bg-surface border-b border-outline-variant shadow-sm docked full-width top-0 z-50 sticky">
+<div class="flex justify-between items-center h-20 w-full px-margin-page max-w-container-max mx-auto">
+<!-- Brand -->
+<a class="font-headline-section text-headline-section font-bold text-primary flex items-center gap-2" href="#">
+<span class="material-symbols-outlined" data-weight="fill">gavel</span>
+                Contraty
+            </a>
+<!-- Navigation (Desktop) -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-primary border-b-2 border-primary font-semibold pb-1 hover:text-primary transition-colors duration-200" href="#">Templates</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#">Pricing</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#">Resources</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#">Enterprise</a>
+</nav>
+<!-- Actions (Desktop) -->
+<div class="hidden md:flex items-center gap-4">
+<button class="font-body text-body font-medium text-primary hover:bg-surface-container-low px-4 py-2 rounded-DEFAULT transition-colors">Login</button>
+<button class="font-body text-body font-semibold text-on-primary bg-primary hover:bg-primary-fixed-dim px-6 py-2 rounded-DEFAULT transition-colors">Sign up</button>
+</div>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-on-surface hover:text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-page py-section-gap">
+<!-- Breadcrumbs -->
+<nav aria-label="Breadcrumb" class="flex items-center gap-2 font-small text-small text-on-surface-variant mb-8">
+<a class="hover:text-cat-real-estate transition-colors" href="#">Home</a>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<a class="hover:text-cat-real-estate transition-colors" href="#">Templates</a>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span aria-current="page" class="text-on-surface font-medium">Real Estate</span>
+</nav>
+<!-- Page Header -->
+<div class="mb-12">
+<div class="flex items-center gap-3 mb-4">
+<div class="bg-cat-real-estate/10 p-3 rounded-xl text-cat-real-estate flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl" data-weight="fill">real_estate_agent</span>
+</div>
+<h1 class="font-headline-hero text-headline-hero-mobile md:text-headline-hero text-on-surface">Real Estate Contracts</h1>
+</div>
+<p class="font-subtitle text-subtitle text-on-surface-variant max-w-3xl">
+                Professionally drafted agreements for property leasing, sales, and management. Ensure your real estate transactions are legally sound and compliant.
+            </p>
+</div>
+<div class="flex flex-col lg:flex-row gap-grid-gap">
+<!-- Sidebar (Filters) -->
+<aside class="w-full lg:w-64 flex-shrink-0 space-y-8">
+<!-- Search -->
+<div>
+<label class="sr-only" for="search-contracts">Search Real Estate Contracts</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-on-surface-variant">
+<span class="material-symbols-outlined text-lg">search</span>
+</div>
+<input class="w-full pl-10 pr-3 py-2 border border-outline-variant rounded-DEFAULT focus:ring-cat-real-estate focus:border-cat-real-estate bg-surface font-body text-body" id="search-contracts" placeholder="Search templates..." type="text"/>
+</div>
+</div>
+<!-- Sub-category Filter -->
+<div>
+<h3 class="font-card-title text-card-title text-on-surface mb-4">Filter by Type</h3>
+<div class="space-y-2">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="form-checkbox h-5 w-5 text-cat-real-estate border-outline-variant rounded rounded-sm focus:ring-cat-real-estate" type="checkbox"/>
+<span class="font-body text-body text-on-surface group-hover:text-cat-real-estate transition-colors">All Types</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="form-checkbox h-5 w-5 text-cat-real-estate border-outline-variant rounded rounded-sm focus:ring-cat-real-estate" type="checkbox"/>
+<span class="font-body text-body text-on-surface-variant group-hover:text-cat-real-estate transition-colors">Lease Agreements</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="form-checkbox h-5 w-5 text-cat-real-estate border-outline-variant rounded rounded-sm focus:ring-cat-real-estate" type="checkbox"/>
+<span class="font-body text-body text-on-surface-variant group-hover:text-cat-real-estate transition-colors">Purchase &amp; Sale</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="form-checkbox h-5 w-5 text-cat-real-estate border-outline-variant rounded rounded-sm focus:ring-cat-real-estate" type="checkbox"/>
+<span class="font-body text-body text-on-surface-variant group-hover:text-cat-real-estate transition-colors">Property Management</span>
+</label>
+</div>
+</div>
+<!-- Complexity Filter -->
+<div>
+<h3 class="font-card-title text-card-title text-on-surface mb-4">Complexity</h3>
+<div class="space-y-2">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="form-radio h-5 w-5 text-cat-real-estate border-outline-variant focus:ring-cat-real-estate" name="complexity" type="radio"/>
+<span class="font-body text-body text-on-surface group-hover:text-cat-real-estate transition-colors">Any</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="form-radio h-5 w-5 text-cat-real-estate border-outline-variant focus:ring-cat-real-estate" name="complexity" type="radio"/>
+<span class="font-body text-body text-on-surface-variant group-hover:text-cat-real-estate transition-colors">Simple (Standard)</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="form-radio h-5 w-5 text-cat-real-estate border-outline-variant focus:ring-cat-real-estate" name="complexity" type="radio"/>
+<span class="font-body text-body text-on-surface-variant group-hover:text-cat-real-estate transition-colors">Professional (Detailed)</span>
+</label>
+</div>
+</div>
+<!-- Region Info -->
+<div class="p-4 bg-surface-container rounded-lg border border-outline-variant/50">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-on-surface-variant mt-0.5">info</span>
+<div>
+<h4 class="font-small text-small font-semibold text-on-surface mb-1">Jurisdiction Note</h4>
+<p class="font-small text-small text-on-surface-variant">Real estate laws vary significantly by state/region. Ensure you select the correct jurisdiction when configuring your document.</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Grid -->
+<div class="flex-grow">
+<!-- Active Filters Display -->
+<div class="flex flex-wrap items-center gap-2 mb-6">
+<span class="font-small text-small text-on-surface-variant mr-2">Active filters:</span>
+<span class="inline-flex items-center gap-1 px-3 py-1 bg-cat-real-estate/10 text-cat-real-estate font-small text-small rounded-full">
+                        Category: Real Estate
+                        <button class="hover:text-on-surface ml-1"><span class="material-symbols-outlined text-[14px]">close</span></button>
+</span>
+<button class="font-small text-small text-on-surface-variant hover:text-on-surface underline">Clear all</button>
+</div>
+<!-- Bento Grid for Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="bento-card bg-surface rounded-xl border border-outline-variant p-6 flex flex-col h-full relative overflow-hidden group cursor-pointer">
+<div class="absolute top-0 right-0 w-24 h-24 bg-cat-real-estate/5 rounded-bl-[100px] -z-10 transition-transform group-hover:scale-110"></div>
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-cat-real-estate/10 rounded-lg text-cat-real-estate">
+<span class="material-symbols-outlined">home</span>
+</div>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-surface-container-highest text-on-surface-variant">
+                                Lease
+                            </span>
+</div>
+<h3 class="font-card-title text-card-title text-on-surface mb-2 group-hover:text-cat-real-estate transition-colors">Residential Lease Agreement</h3>
+<p class="font-body text-body text-on-surface-variant text-sm mb-6 flex-grow">
+                            Standard contract establishing the terms and conditions of a rental agreement between a landlord and tenant for residential property.
+                        </p>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-outline-variant/30">
+<div class="flex items-center gap-1 text-on-surface-variant font-small text-small">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 10 min setup
+                            </div>
+<span class="text-cat-real-estate font-medium text-sm flex items-center gap-1">
+                                Customize <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bento-card bg-surface rounded-xl border border-outline-variant p-6 flex flex-col h-full relative overflow-hidden group cursor-pointer">
+<div class="absolute top-0 right-0 w-24 h-24 bg-cat-real-estate/5 rounded-bl-[100px] -z-10 transition-transform group-hover:scale-110"></div>
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-cat-real-estate/10 rounded-lg text-cat-real-estate">
+<span class="material-symbols-outlined">storefront</span>
+</div>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-surface-container-highest text-on-surface-variant">
+                                Lease
+                            </span>
+</div>
+<h3 class="font-card-title text-card-title text-on-surface mb-2 group-hover:text-cat-real-estate transition-colors">Commercial Lease Agreement</h3>
+<p class="font-body text-body text-on-surface-variant text-sm mb-6 flex-grow">
+                            Comprehensive agreement for renting commercial property (retail, office, or industrial space). Includes provisions for NNN, maintenance, and zoning.
+                        </p>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-outline-variant/30">
+<div class="flex items-center gap-1 text-on-surface-variant font-small text-small">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 20 min setup
+                            </div>
+<span class="text-cat-real-estate font-medium text-sm flex items-center gap-1">
+                                Customize <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bento-card bg-surface rounded-xl border border-outline-variant p-6 flex flex-col h-full relative overflow-hidden group cursor-pointer">
+<div class="absolute top-0 right-0 w-24 h-24 bg-cat-real-estate/5 rounded-bl-[100px] -z-10 transition-transform group-hover:scale-110"></div>
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-cat-real-estate/10 rounded-lg text-cat-real-estate">
+<span class="material-symbols-outlined">manage_accounts</span>
+</div>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-surface-container-highest text-on-surface-variant">
+                                Management
+                            </span>
+</div>
+<h3 class="font-card-title text-card-title text-on-surface mb-2 group-hover:text-cat-real-estate transition-colors">Property Management Agreement</h3>
+<p class="font-body text-body text-on-surface-variant text-sm mb-6 flex-grow">
+                            Contract outlining the relationship, responsibilities, and fee structure between a property owner and a professional management company.
+                        </p>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-outline-variant/30">
+<div class="flex items-center gap-1 text-on-surface-variant font-small text-small">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 15 min setup
+                            </div>
+<span class="text-cat-real-estate font-medium text-sm flex items-center gap-1">
+                                Customize <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bento-card bg-surface rounded-xl border border-outline-variant p-6 flex flex-col h-full relative overflow-hidden group cursor-pointer">
+<div class="absolute top-0 right-0 w-24 h-24 bg-cat-real-estate/5 rounded-bl-[100px] -z-10 transition-transform group-hover:scale-110"></div>
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-cat-real-estate/10 rounded-lg text-cat-real-estate">
+<span class="material-symbols-outlined">handshake</span>
+</div>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-surface-container-highest text-on-surface-variant">
+                                Sale
+                            </span>
+</div>
+<h3 class="font-card-title text-card-title text-on-surface mb-2 group-hover:text-cat-real-estate transition-colors">Real Estate Purchase Agreement</h3>
+<p class="font-body text-body text-on-surface-variant text-sm mb-6 flex-grow">
+                            Legally binding contract detailing the terms of a residential property sale, including contingencies, earnest money, and closing details.
+                        </p>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-outline-variant/30">
+<div class="flex items-center gap-1 text-on-surface-variant font-small text-small">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 25 min setup
+                            </div>
+<span class="text-cat-real-estate font-medium text-sm flex items-center gap-1">
+                                Customize <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</span>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="bento-card bg-surface rounded-xl border border-outline-variant p-6 flex flex-col h-full relative overflow-hidden group cursor-pointer">
+<div class="absolute top-0 right-0 w-24 h-24 bg-cat-real-estate/5 rounded-bl-[100px] -z-10 transition-transform group-hover:scale-110"></div>
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-cat-real-estate/10 rounded-lg text-cat-real-estate">
+<span class="material-symbols-outlined">apartment</span>
+</div>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-surface-container-highest text-on-surface-variant">
+                                Lease
+                            </span>
+</div>
+<h3 class="font-card-title text-card-title text-on-surface mb-2 group-hover:text-cat-real-estate transition-colors">Sublease Agreement</h3>
+<p class="font-body text-body text-on-surface-variant text-sm mb-6 flex-grow">
+                            Allows a current tenant (sublessor) to rent out part or all of their leased space to a new tenant (sublessee), with original landlord consent.
+                        </p>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-outline-variant/30">
+<div class="flex items-center gap-1 text-on-surface-variant font-small text-small">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 10 min setup
+                            </div>
+<span class="text-cat-real-estate font-medium text-sm flex items-center gap-1">
+                                Customize <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</span>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="bento-card bg-surface rounded-xl border border-outline-variant p-6 flex flex-col h-full relative overflow-hidden group cursor-pointer">
+<div class="absolute top-0 right-0 w-24 h-24 bg-cat-real-estate/5 rounded-bl-[100px] -z-10 transition-transform group-hover:scale-110"></div>
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-cat-real-estate/10 rounded-lg text-cat-real-estate">
+<span class="material-symbols-outlined">assignment</span>
+</div>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-surface-container-highest text-on-surface-variant">
+                                Addendum
+                            </span>
+</div>
+<h3 class="font-card-title text-card-title text-on-surface mb-2 group-hover:text-cat-real-estate transition-colors">Lease Amendment / Extension</h3>
+<p class="font-body text-body text-on-surface-variant text-sm mb-6 flex-grow">
+                            Formal document used to modify existing terms or extend the duration of an active residential or commercial lease agreement.
+                        </p>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-outline-variant/30">
+<div class="flex items-center gap-1 text-on-surface-variant font-small text-small">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 5 min setup
+                            </div>
+<span class="text-cat-real-estate font-medium text-sm flex items-center gap-1">
+                                Customize <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</span>
+</div>
+</div>
+</div>
+<!-- Load More / Empty State area (Hidden by default, structure provided) -->
+<div class="mt-8 text-center hidden">
+<button class="px-6 py-2 border border-outline-variant rounded text-on-surface-variant font-body hover:bg-surface-container-low transition-colors">
+                        Load More Templates
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-inverse-surface w-full">
+<div class="w-full py-section-gap px-margin-page max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-grid-gap">
+<div class="flex flex-col items-center md:items-start gap-4">
+<a class="font-headline-section text-headline-section font-bold text-on-secondary flex items-center gap-2" href="#">
+<span class="material-symbols-outlined" data-weight="fill">gavel</span>
+                    Contraty
+                </a>
+<p class="font-small text-small text-on-secondary-fixed-variant">© 2024 Contraty. Modern Legal Technology. All rights reserved.</p>
+</div>
+<nav class="flex flex-wrap justify-center gap-6">
+<a class="font-body text-body text-on-secondary-fixed-variant hover:text-primary-fixed-dim transition-colors duration-200" href="#">Terms of Service</a>
+<a class="font-body text-body text-on-secondary-fixed-variant hover:text-primary-fixed-dim transition-colors duration-200" href="#">Privacy Policy</a>
+<a class="font-body text-body text-on-secondary-fixed-variant hover:text-primary-fixed-dim transition-colors duration-200" href="#">Cookie Policy</a>
+<a class="font-body text-body text-on-secondary-fixed-variant hover:text-primary-fixed-dim transition-colors duration-200" href="#">Support</a>
+<a class="font-body text-body text-on-secondary-fixed-variant hover:text-primary-fixed-dim transition-colors duration-200" href="#">API</a>
+</nav>
+</div>
+</footer>
+</body></html>

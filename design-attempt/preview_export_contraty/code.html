@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contract Preview &amp; Export</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#ffffff",
+                        "cat-employment": "#16a34a",
+                        "primary-container": "#2563eb",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "on-tertiary": "#ffffff",
+                        "cat-documents": "#94a3b8",
+                        "cat-real-estate": "#0ea5e9",
+                        "on-tertiary-fixed": "#2a1700",
+                        "cat-services": "#3b82f6",
+                        "surface": "#faf8ff",
+                        "on-tertiary-container": "#ffeedd",
+                        "tertiary-container": "#996100",
+                        "error-container": "#ffdad6",
+                        "on-error": "#ffffff",
+                        "background": "#faf8ff",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "on-primary-fixed": "#00174b",
+                        "success-light": "#dcfce7",
+                        "surface-container-highest": "#e1e2ed",
+                        "on-secondary-fixed-variant": "#41455f",
+                        "inverse-on-surface": "#f0f0fb",
+                        "secondary-fixed": "#dde1ff",
+                        "surface-container-low": "#f3f3fe",
+                        "outline-variant": "#c3c6d7",
+                        "bg-page": "#f7f7fb",
+                        "outline": "#737686",
+                        "cat-family": "#eab308",
+                        "primary": "#004ac6",
+                        "surface-dim": "#d9d9e5",
+                        "inverse-surface": "#2e3039",
+                        "primary-fixed": "#dbe1ff",
+                        "tertiary": "#784b00",
+                        "surface-variant": "#e1e2ed",
+                        "on-error-container": "#93000a",
+                        "on-primary": "#ffffff",
+                        "on-surface": "#191b23",
+                        "success-green": "#16a34a",
+                        "on-secondary-container": "#5c617c",
+                        "border-slate": "#e2e8f0",
+                        "cat-business": "#8b5cf6",
+                        "surface-bright": "#faf8ff",
+                        "on-surface-variant": "#434655",
+                        "surface-tint": "#0053db",
+                        "error": "#ba1a1a",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#c1c5e3",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "tertiary-fixed": "#ffddb8",
+                        "text-secondary": "#64748b",
+                        "surface-container-high": "#e7e7f3",
+                        "secondary": "#585d77",
+                        "surface-container": "#ededf9",
+                        "inverse-primary": "#b4c5ff",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "secondary-container": "#dadefd",
+                        "on-primary-container": "#eeefff",
+                        "on-secondary-fixed": "#151a31",
+                        "on-background": "#191b23"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "grid-gap": "1.5rem",
+                        "margin-mobile": "1rem",
+                        "section-gap": "3rem",
+                        "margin-page": "2rem",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "headline-hero-mobile": ["Inter"],
+                        "body": ["Inter"],
+                        "headline-hero": ["Inter"],
+                        "card-title": ["Inter"],
+                        "headline-section": ["Inter"],
+                        "subtitle": ["Inter"],
+                        "mono": ["JetBrains Mono"],
+                        "small": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-hero-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-hero": ["48px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "card-title": ["18px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "headline-section": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "subtitle": ["20px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "mono": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "small": ["14px", { "lineHeight": "1.4", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .hover-card-shadow:hover {
+            box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+        .paper-shadow {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+    </style>
+</head>
+<body class="bg-background min-h-screen flex flex-col font-body text-body text-on-background">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-inverse-surface border-b border-outline-variant dark:border-outline shadow-sm dark:shadow-none sticky top-0 z-50">
+<div class="flex justify-between items-center h-20 w-full px-margin-page max-w-container-max mx-auto">
+<div class="flex items-center gap-8">
+<a class="font-headline-section text-headline-section font-bold text-primary dark:text-inverse-primary tracking-tight" href="#">Contraty</a>
+<nav class="hidden md:flex gap-6">
+<a class="text-on-surface-variant dark:text-surface-variant font-medium hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">Templates</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-medium hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">Pricing</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-medium hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">Resources</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-medium hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="#">Enterprise</a>
+</nav>
+</div>
+<div class="hidden md:flex items-center gap-4">
+<button class="font-body text-body text-on-surface-variant hover:text-primary transition-colors font-medium">Login</button>
+<button class="font-body text-body bg-primary text-on-primary px-4 py-2 rounded font-semibold hover:bg-primary-container transition-colors">Sign up</button>
+</div>
+<button class="md:hidden text-on-surface"><span class="material-symbols-outlined">menu</span></button>
+</div>
+</header>
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-page py-section-gap flex flex-col gap-grid-gap">
+<!-- Success Message -->
+<div class="bg-success-light border border-success-green/20 rounded-lg p-4 flex items-center gap-3">
+<span class="material-symbols-outlined text-success-green">check_circle</span>
+<p class="font-body text-body text-success-green font-medium">Contract generated successfully!</p>
+</div>
+<div class="flex flex-col lg:flex-row gap-grid-gap">
+<!-- Left: Contract Preview -->
+<div class="w-full lg:w-1/2 flex flex-col gap-4">
+<h2 class="font-headline-section text-headline-section text-on-surface">Contract Preview</h2>
+<div class="bg-surface-container-lowest border border-border-slate rounded-lg paper-shadow p-8 flex-grow h-[600px] overflow-y-auto">
+<div class="max-w-2xl mx-auto flex flex-col gap-6 text-on-surface-variant">
+<h1 class="font-headline-section text-headline-section text-center text-on-surface mb-4">INDEPENDENT CONTRACTOR AGREEMENT</h1>
+<p class="font-body text-body">This Independent Contractor Agreement (this "Agreement") is made effective as of <span class="bg-secondary-fixed text-on-secondary-fixed px-1 rounded">January 1, 2025</span>, by and between <span class="bg-secondary-fixed text-on-secondary-fixed px-1 rounded">Acme Corp</span> ("Client"), and <span class="bg-secondary-fixed text-on-secondary-fixed px-1 rounded">Jane Doe</span> ("Contractor").</p>
+<h3 class="font-card-title text-card-title text-on-surface mt-4">1. DESCRIPTION OF SERVICES.</h3>
+<p class="font-body text-body">Beginning on the effective date above, Contractor will provide the following services (collectively, the "Services"): Software Development and Consulting.</p>
+<h3 class="font-card-title text-card-title text-on-surface mt-4">2. PAYMENT.</h3>
+<p class="font-body text-body">Client will pay Contractor for the Services at the rate of $150.00 per hour. Payments will be made monthly within 15 days of receiving an invoice.</p>
+<div class="mt-12 flex justify-between">
+<div class="w-5/12 border-t border-outline-variant pt-2">
+<p class="font-small text-small text-on-surface-variant">Client Signature</p>
+</div>
+<div class="w-5/12 border-t border-outline-variant pt-2">
+<p class="font-small text-small text-on-surface-variant">Contractor Signature</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right: JSON Schema & Actions -->
+<div class="w-full lg:w-1/2 flex flex-col gap-4">
+<div class="flex justify-between items-center">
+<h2 class="font-headline-section text-headline-section text-on-surface">Data Schema</h2>
+<span class="bg-surface-container px-2 py-1 rounded text-small font-small text-on-surface-variant border border-outline-variant">JSON</span>
+</div>
+<div class="bg-[#1e1e2e] rounded-lg p-6 flex-grow h-[400px] overflow-y-auto border border-surface-dim shadow-inner">
+<pre class="font-mono text-mono text-gray-300"><span class="text-cat-business">{</span>
+  <span class="text-cat-real-estate">"document_type"</span>: <span class="text-cat-employment">"Independent Contractor Agreement"</span>,
+  <span class="text-cat-real-estate">"metadata"</span>: <span class="text-cat-business">{</span>
+    <span class="text-cat-real-estate">"effective_date"</span>: <span class="text-cat-employment">"2025-01-01"</span>,
+    <span class="text-cat-real-estate">"jurisdiction"</span>: <span class="text-cat-employment">"California, USA"</span>
+  <span class="text-cat-business">}</span>,
+  <span class="text-cat-real-estate">"parties"</span>: <span class="text-cat-business">[</span>
+    <span class="text-cat-business">{</span>
+      <span class="text-cat-real-estate">"role"</span>: <span class="text-cat-employment">"Client"</span>,
+      <span class="text-cat-real-estate">"name"</span>: <span class="text-cat-employment">"Acme Corp"</span>,
+      <span class="text-cat-real-estate">"type"</span>: <span class="text-cat-employment">"Corporation"</span>
+    <span class="text-cat-business">}</span>,
+    <span class="text-cat-business">{</span>
+      <span class="text-cat-real-estate">"role"</span>: <span class="text-cat-employment">"Contractor"</span>,
+      <span class="text-cat-real-estate">"name"</span>: <span class="text-cat-employment">"Jane Doe"</span>,
+      <span class="text-cat-real-estate">"type"</span>: <span class="text-cat-employment">"Individual"</span>
+    <span class="text-cat-business">}</span>
+  <span class="text-cat-business">]</span>,
+  <span class="text-cat-real-estate">"terms"</span>: <span class="text-cat-business">{</span>
+    <span class="text-cat-real-estate">"services_description"</span>: <span class="text-cat-employment">"Software Development and Consulting"</span>,
+    <span class="text-cat-real-estate">"compensation"</span>: <span class="text-cat-business">{</span>
+      <span class="text-cat-real-estate">"rate"</span>: <span class="text-cat-employment">150.00</span>,
+      <span class="text-cat-real-estate">"currency"</span>: <span class="text-cat-employment">"USD"</span>,
+      <span class="text-cat-real-estate">"type"</span>: <span class="text-cat-employment">"Hourly"</span>
+    <span class="text-cat-business">}</span>
+  <span class="text-cat-business">}</span>
+<span class="text-cat-business">}</span>
+</pre>
+</div>
+<!-- Action Sidebar (Bottom on mobile, bottom of right column on desktop) -->
+<div class="bg-surface-container-lowest border border-border-slate rounded-lg p-6 flex flex-col gap-4 mt-auto">
+<h3 class="font-card-title text-card-title text-on-surface">Export Options</h3>
+<div class="flex flex-col gap-3">
+<button class="w-full flex items-center justify-center gap-2 bg-primary text-on-primary font-body text-body font-semibold py-3 px-4 rounded hover:bg-primary-container transition-colors shadow-sm">
+<span class="material-symbols-outlined">download</span>
+                            Download PDF
+                        </button>
+<button class="w-full flex items-center justify-center gap-2 bg-transparent border-2 border-primary text-primary font-body text-body font-semibold py-3 px-4 rounded hover:bg-primary-fixed transition-colors">
+<span class="material-symbols-outlined">content_copy</span>
+                            Copy to Clipboard
+                        </button>
+<div class="relative mt-2">
+<div aria-hidden="true" class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-outline-variant"></div>
+</div>
+<div class="relative flex justify-center">
+<span class="bg-surface-container-lowest px-2 text-small font-small text-on-surface-variant">Premium Feature</span>
+</div>
+</div>
+<button class="w-full flex items-center justify-center gap-2 bg-cat-family text-on-tertiary-fixed font-body text-body font-semibold py-3 px-4 rounded hover:brightness-110 transition-all shadow-sm">
+<span class="material-symbols-outlined">signature</span>
+                            Upgrade to Premium for e-Signature
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-inverse-surface dark:bg-surface-dim w-full mt-auto">
+<div class="w-full py-section-gap px-margin-page max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-grid-gap">
+<div class="font-headline-section text-headline-section font-bold text-on-secondary">Contraty</div>
+<nav class="flex flex-wrap justify-center gap-6">
+<a class="text-on-secondary-fixed-variant dark:text-on-surface-variant font-body text-body hover:text-primary-fixed-dim transition-colors duration-200" href="#">Terms of Service</a>
+<a class="text-on-secondary-fixed-variant dark:text-on-surface-variant font-body text-body hover:text-primary-fixed-dim transition-colors duration-200" href="#">Privacy Policy</a>
+<a class="text-on-secondary-fixed-variant dark:text-on-surface-variant font-body text-body hover:text-primary-fixed-dim transition-colors duration-200" href="#">Cookie Policy</a>
+<a class="text-on-secondary-fixed-variant dark:text-on-surface-variant font-body text-body hover:text-primary-fixed-dim transition-colors duration-200" href="#">Support</a>
+<a class="text-on-secondary-fixed-variant dark:text-on-surface-variant font-body text-body hover:text-primary-fixed-dim transition-colors duration-200" href="#">API</a>
+</nav>
+<div class="text-on-secondary-fixed-variant dark:text-on-surface-variant font-small text-small">
+                © 2024 Contraty. Modern Legal Technology. All rights reserved.
+            </div>
+</div>
+</footer>
+</body></html>
