@@ -13,9 +13,11 @@ settings = get_settings()
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     logger.info("Starting Contraty API (env=%s)", settings.app_env)
-    from app.services.rag import rag_service
-    rag_service._ensure_loaded()
-    logger.info("Loaded %d templates", rag_service.template_count())
+    from app.services.template_service import ensure_seeded, get_template_repo
+    await ensure_seeded()
+    repo = get_template_repo()
+    templates = await repo.list_all()
+    logger.info("Loaded %d templates", len(templates))
     yield
     logger.info("Shutting down Contraty API")
 
@@ -40,5 +42,6 @@ app.include_router(api_router, prefix="/api/v1")
 
 @app.get("/health")
 async def health():
-    from app.services.rag import rag_service
-    return {"status": "ok", "templates_loaded": rag_service.template_count()}
+    from app.services.template_service import list_templates
+    templates = await list_templates()
+    return {"status": "ok", "templates_loaded": len(templates)}

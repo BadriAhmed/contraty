@@ -15,11 +15,19 @@ settings = get_settings()
 
 
 def _extract_json(text: str) -> str:
+    if not text:
+        return ""
     text = text.strip()
-    if text.startswith("```"):
-        lines = text.split("\n")
-        end = next((i for i in range(len(lines) - 1, 0, -1) if lines[i].strip() == "```"), len(lines))
-        text = "\n".join(lines[1:end]).strip()
+    start = text.find("```")
+    if start != -1:
+        after_start = text.find("\n", start)
+        if after_start == -1:
+            return text[:start].strip()
+        end = text.rfind("```")
+        if end > after_start:
+            text = text[after_start:end].strip()
+        else:
+            text = text[after_start:].strip()
     return text
 
 

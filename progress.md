@@ -37,7 +37,13 @@
 - [x] Next.js 14 project scaffold — App Router, Tailwind, shadcn/ui, RTL support
 - [x] Backend verified: 22 templates loaded, health + templates endpoints working
 - [x] Frontend build passing: SSG for [lang]/ and [lang]/contracts, dynamic for generate/ wizard
-- [ ] Supabase project (DB + Auth)
+- [x] Supabase DB schema (`app/db/schema.sql`) — templates, template_chunks (pgvector), contracts
+- [x] Repository layer — ABC + InMemory (dev/test) + Supabase (prod) implementations
+- [x] Template seed script (`app/db/seed.py`) — loads 22 JSON templates into repository
+- [x] Template service layer (`app/services/template_service.py`) — business logic abstraction
+- [x] API contract doc (`API.md`) — 5 endpoints with request/response JSON shapes
+- [x] **75 tests passing** — health, templates CRUD, generation, PDF, LLM router, fallback, repository, seed, template service
+- [ ] Supabase project (DB + Auth) — schema ready, need Supabase instance
 - [ ] Railway project (backend deploy)
 - [ ] Vercel project (frontend deploy)
 - [ ] CI/CD (GitHub Actions)
@@ -53,3 +59,21 @@
 - [ ] Domain purchase
 - [ ] Paddle account + product setup
 - [ ] Google AdSense application
+
+---
+
+## Test Coverage Summary
+
+```
+75 passed, 0 failed, 1 warning
+
+Test files (8):
+  test_fallback.py     8 tests  — LLM fallback chain, JSON extraction, error handling
+  test_generate.py     8 tests  — Contract generation endpoint (success, failure, edge cases)
+  test_health.py       3 tests  — Health endpoint, startup lifecycle
+  test_llm_router.py   8 tests  — Model selection, parsing, async calls
+  test_pdf.py          5 tests  — PDF generation, binary output, validation
+  test_repository.py   14 tests — CRUD operations, domain filtering, immutability
+  test_seed.py         9 tests  — Complexity calc, field dedup, chunking, seed script
+  test_template_service.py 14 tests — Business logic, LLM integration, PDF rendering
+```
