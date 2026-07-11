@@ -146,6 +146,7 @@ async def review_contract(
     filled_contract: dict,
     language: Language,
     user_fields: dict[str, str],
+    extra_notes: str = "",
 ) -> list[ContractWarning]:
     """Review a filled contract with Gemini Flash for common user errors."""
     if not settings.gemini_api_key:
@@ -166,6 +167,7 @@ async def review_contract(
 
     title = filled_contract.get("title_fr" if language == Language.fr else "title_ar", "")
     fields_str = ", ".join(f"{k}={v}" for k, v in list(user_fields.items())[:20])
+    notes_str = f"\nNotes de l'utilisateur: {extra_notes}" if extra_notes else ""
 
     prompt = f"""Avocat tunisien. Ce contrat vient d'être rempli. Signale UNIQUEMENT les vrais problèmes:
 1. Champs obligatoires vides [CHAMP] dans le texte final
@@ -181,7 +183,7 @@ Format de réponse pour chaque problème (JSON array uniquement, pas de markdown
 [{{"field":"NOM","severity":"error","message_fr":"...","message_ar":"...","suggestion_fr":"...","suggestion_ar":"..."}}]
 
 Contrat: {title}
-Champs fournis: {fields_str}
+Champs fournis: {fields_str}{notes_str}
 Texte: {contract_text}"""
 
     try:

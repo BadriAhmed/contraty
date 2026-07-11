@@ -8,8 +8,8 @@ export function Footer({ lang, disclaimer }) {
     <footer className="bg-inverse-surface text-inverse-on-surface mt-auto">
       <div className="max-w-container-max mx-auto px-4 py-12">
         {/* Disclaimer */}
-        <div className="border border-error/30 rounded-lg bg-error/10 p-4 mb-10">
-          <p className="text-xs text-error font-semibold leading-relaxed">
+        <div className="border border-error/40 rounded-lg bg-error/15 p-4 mb-10">
+          <p className="text-xs text-error font-semibold leading-relaxed opacity-90">
             {disclaimer || msg.site?.disclaimer}
           </p>
         </div>
@@ -20,7 +20,7 @@ export function Footer({ lang, disclaimer }) {
             <Link href={`/${lang}`} className="text-lg font-bold text-inverse-on-surface">
               Contraty
             </Link>
-            <p className="text-sm text-on-secondary-fixed-variant mt-2 max-w-xs">
+            <p className="text-sm text-inverse-on-surface/60 mt-2 max-w-xs">
               {lang === "ar"
                 ? "عقود قانونية تونسية ثنائية اللغة — أنشئ عقدك في دقائق"
                 : "Contrats juridiques tunisiens bilingues — créez votre contrat en quelques minutes"}
@@ -29,7 +29,7 @@ export function Footer({ lang, disclaimer }) {
 
           <div>
             <h4 className="text-sm font-semibold mb-3">{lang === "ar" ? "نماذج" : "Modèles"}</h4>
-            <div className="space-y-2 text-sm text-on-secondary-fixed-variant">
+            <div className="space-y-2 text-sm text-inverse-on-surface/60">
               <Link href={`/${lang}/contracts?domain=logement`} className="block hover:text-inverse-on-surface transition-colors">
                 {lang === "ar" ? "سكن" : "Logement"}
               </Link>
@@ -44,7 +44,7 @@ export function Footer({ lang, disclaimer }) {
 
           <div>
             <h4 className="text-sm font-semibold mb-3">{lang === "ar" ? "الشركة" : "Société"}</h4>
-            <div className="space-y-2 text-sm text-on-secondary-fixed-variant">
+            <div className="space-y-2 text-sm text-inverse-on-surface/60">
               <Link href={`/${lang}/about`} className="block hover:text-inverse-on-surface transition-colors">
                 {lang === "ar" ? "من نحن" : "À propos"}
               </Link>
@@ -59,7 +59,7 @@ export function Footer({ lang, disclaimer }) {
 
           <div>
             <h4 className="text-sm font-semibold mb-3">{lang === "ar" ? "قانوني" : "Légal"}</h4>
-            <div className="space-y-2 text-sm text-on-secondary-fixed-variant">
+            <div className="space-y-2 text-sm text-inverse-on-surface/60">
               <Link href={`/${lang}/terms`} className="block hover:text-inverse-on-surface transition-colors">
                 {lang === "ar" ? "شروط الاستخدام" : "Conditions"}
               </Link>
@@ -71,7 +71,7 @@ export function Footer({ lang, disclaimer }) {
         </div>
 
         {/* Copyright */}
-        <div className="border-t border-on-secondary-fixed/20 pt-6 text-center text-xs text-on-secondary-fixed-variant">
+        <div className="border-t border-on-secondary-fixed/20 pt-6 text-center text-xs text-inverse-on-surface/60">
           &copy; {new Date().getFullYear()} Contraty. {lang === "ar" ? "جميع الحقوق محفوظة" : "Tous droits réservés."}
         </div>
       </div>

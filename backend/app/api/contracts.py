@@ -10,6 +10,7 @@ from app.services.template_service import (
     generate_pdf,
     review_contract,
 )
+from app.services.docx import docx_renderer as _docx
 
 router = APIRouter()
 logger = logging.getLogger(__name__)
@@ -78,7 +79,7 @@ async def generate_contract_endpoint(req: GenerateRequest):
 
     if req.review and result.get("contract"):
         t0 = time.monotonic()
-        warnings = await review_contract(result["contract"], req.language, req.user_fields)
+        warnings = await review_contract(result["contract"], req.language, req.user_fields, req.extra_notes)
         response.review_time_ms = int((time.monotonic() - t0) * 1000)
         response.warnings = warnings
 
@@ -100,5 +101,24 @@ async def generate_pdf_endpoint(req: PDFRequest):
     return Response(
         content=pdf_bytes,
         media_type="application/pdf",
+        headers={"Content-Disposition": f'attachment; filename="{filename}"'},
+    )
+
+
+@router.post("/generate/docx")
+async def generate_docx_endpoint(req: PDFRequest):
+    from fastapi.responses import Response
+
+    try:
+        contract = Contract(**req.contract_json)
+    except Exception as e:
+        raise HTTPException(status_code=400, detail=f"Invalid contract JSON: {e}")
+
+    docx_bytes = _docx.render_contract(contract, req.language)
+    filename = f"{req.contract_slug}-{req.language.value}.docx"
+
+    return Response(
+        content=docx_bytes,
+        media_type="application/vnd.openxmlformats-officedocument.wordprocessingml.document",
         headers={"Content-Disposition": f'attachment; filename="{filename}"'},
     )

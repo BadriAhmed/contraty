@@ -21,6 +21,7 @@ class GenerateRequest(BaseModel):
         examples=[{"NOM_LOCATAIRE": "Ali Ben Salah", "ADRESSE_LOGEMENT": "Rue Habib Bourguiba, Tunis"}],
     )
     review: bool = False
+    extra_notes: str = ""
 
 
 class GenerateResponse(ContractResponse):

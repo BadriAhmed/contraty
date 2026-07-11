@@ -55,7 +55,6 @@ class PDFRenderer:
 <html lang="{language.value}" dir="{direction}">
 <head><meta charset="utf-8"><style>{self._base_css}</style></head>
 <body>
-<div class="disclaimer">{contract.disclaimer}</div>
 <h1>{title}</h1>
 {body}
 </body>

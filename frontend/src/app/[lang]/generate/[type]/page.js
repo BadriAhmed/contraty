@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback, useMemo } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import { fetchTemplate } from "@/lib/constants";
-import { Lock, ArrowRight, ArrowLeft, CheckCircle2, Download, Loader2, X, AlertCircle } from "lucide-react";
+import { Lock, ArrowRight, ArrowLeft, CheckCircle2, Download, FileText, Loader2, X, AlertCircle } from "lucide-react";
 
 const PATTERNS = {
   cin: /^\d{8}$/,
@@ -82,6 +82,7 @@ export default function GeneratePage() {
   const [generating, setGenerating] = useState(false);
   const [error, setError] = useState(null);
   const [fieldErrors, setFieldErrors] = useState({});
+  const [extraNotes, setExtraNotes] = useState("");
 
   useEffect(() => {
     fetchTemplate(type)
@@ -143,10 +144,11 @@ export default function GeneratePage() {
     return s;
   }, [fieldsBySection, lang]);
 
-  const totalSteps = steps.length + 1; // + disclaimer
-  const isDisclaimerStep = currentStep >= steps.length;
-  const isPreviewStep = currentStep > steps.length;
-  const currentSection = !isDisclaimerStep && !isPreviewStep ? steps[currentStep] : null;
+  const totalSteps = steps.length + 2; // + extra notes + disclaimer
+  const isExtraNotesStep = currentStep === steps.length;
+  const isDisclaimerStep = currentStep === steps.length + 1;
+  const isPreviewStep = currentStep > steps.length + 1;
+  const currentSection = !isExtraNotesStep && !isDisclaimerStep && !isPreviewStep ? steps[currentStep] : null;
 
   const handleBlur = (field) => {
     const value = fieldValues[field.name] || "";
@@ -206,6 +208,7 @@ export default function GeneratePage() {
           language: lang,
           user_fields: fieldValues,
           review: true,
+          extra_notes: extraNotes,
         }),
       });
       if (!res.ok) throw new Error((await res.json()).detail || "Generation failed");
@@ -219,10 +222,11 @@ export default function GeneratePage() {
     }
   };
 
-  const handleDownload = async () => {
+  const handleDownload = async (format) => {
     if (!generated?.contract) return;
     try {
-      const res = await fetch("http://localhost:8000/api/v1/contracts/generate/pdf", {
+      const endpoint = format === "docx" ? "generate/docx" : "generate/pdf";
+      const res = await fetch(`http://localhost:8000/api/v1/contracts/${endpoint}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -231,11 +235,11 @@ export default function GeneratePage() {
           contract_json: generated.contract,
         }),
       });
-      if (!res.ok) throw new Error("PDF failed");
+      if (!res.ok) throw new Error(`${format} failed`);
       const blob = await res.blob();
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
-      a.href = url; a.download = `${type}-${lang}.pdf`; a.click();
+      a.href = url; a.download = `${type}-${lang}.${format}`; a.click();
       URL.revokeObjectURL(url);
     } catch (e) { setError(e.message); }
   };
@@ -364,14 +368,55 @@ export default function GeneratePage() {
                 ))}
               </div>
 
-              <button onClick={handleDownload} className="w-full flex items-center justify-center gap-2 bg-primary text-on-primary font-semibold py-3 px-4 rounded-lg hover:bg-surface-tint transition-colors shadow-sm">
-                <Download size={16} />
-                {lang === "ar" ? "تحميل PDF" : "Télécharger le PDF"}
-              </button>
+              <div className="flex gap-3 pt-2">
+                <button onClick={() => handleDownload("pdf")} className="flex-1 flex items-center justify-center gap-2 bg-primary text-on-primary font-semibold py-3 px-4 rounded-lg hover:bg-surface-tint transition-colors shadow-sm">
+                  <Download size={16} />
+                  PDF
+                </button>
+                <button onClick={() => handleDownload("docx")} className="flex-1 flex items-center justify-center gap-2 border-2 border-primary text-primary font-semibold py-3 px-4 rounded-lg hover:bg-primary-fixed transition-colors">
+                  <FileText size={16} />
+                  Word
+                </button>
+              </div>
 
               <button onClick={handlePrevious} className="text-sm text-text-secondary hover:text-primary transition-colors">
                 {isRtl ? "→" : "←"} {lang === "ar" ? "العودة للنموذج" : "Retour au formulaire"}
               </button>
+            </div>
+          ) : isExtraNotesStep ? (
+            <div className="space-y-5">
+              <div>
+                <h3 className="text-sm font-semibold text-primary mb-1">
+                  {lang === "ar" ? "ملاحظات إضافية" : "Remarques supplémentaires"}
+                </h3>
+                <p className="text-xs text-text-secondary mb-3">
+                  {lang === "ar"
+                    ? "أي تفاصيل أخرى تود إضافتها للعقد؟ (اختياري)"
+                    : "Des détails supplémentaires à ajouter au contrat ? (optionnel)"}
+                </p>
+                <textarea
+                  value={extraNotes}
+                  onChange={(e) => setExtraNotes(e.target.value)}
+                  rows={4}
+                  className="input-field min-h-[100px]"
+                  placeholder={lang === "ar" ? "مثال: أريد إضافة شرط يمنع تربية الحيوانات في المسكن..." : "Ex: Je souhaite ajouter une clause interdisant les animaux dans le logement..."}
+                />
+              </div>
+
+              {error && (
+                <p className="text-sm text-error flex items-center gap-1">
+                  <AlertCircle size={14} />{error}
+                </p>
+              )}
+
+              <div className="flex gap-3 pt-4 border-t border-border-slate">
+                <button onClick={handlePrevious} className="flex items-center gap-2 border border-primary text-primary font-semibold px-5 py-2.5 rounded-lg hover:bg-primary-fixed transition-colors">
+                  <ArrowLeft size={16} />{lang === "ar" ? "السابق" : "Retour"}
+                </button>
+                <button onClick={handleNext} className="flex items-center gap-2 bg-primary text-on-primary font-semibold px-5 py-2.5 rounded-lg hover:bg-surface-tint transition-colors shadow-sm ms-auto">
+                  {lang === "ar" ? "التالي" : "Suivant"}<ArrowRight size={16} />
+                </button>
+              </div>
             </div>
           ) : isDisclaimerStep ? (
             <div className="space-y-6">
