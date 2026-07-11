@@ -165,7 +165,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Nom complet de la personne concernée (prénom et nom de famille).",
+      "help_ar": "الاسم الكامل للشخص المعني (الاسم واللقب)."
     },
     "ADRESSE_PARTIE_A": {
       "type": "text",
@@ -177,7 +179,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Adresse complète du domicile (rue, numéro, ville, code postal).",
+      "help_ar": "العنوان الكامل للسكن (النهج، الرقم، المدينة، الترقيم البريدي)."
     },
     "REPRESENTANT_A": {
       "type": "text",
@@ -189,7 +193,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Nom du représentant légal de la société.",
+      "help_ar": "اسم الممثل القانوني للشركة."
     },
     "NOM_PARTIE_B": {
       "type": "text",
@@ -201,7 +207,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Nom complet de la personne concernée (prénom et nom de famille).",
+      "help_ar": "الاسم الكامل للشخص المعني (الاسم واللقب)."
     },
     "ADRESSE_PARTIE_B": {
       "type": "text",
@@ -213,7 +221,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Adresse complète du domicile (rue, numéro, ville, code postal).",
+      "help_ar": "العنوان الكامل للسكن (النهج، الرقم، المدينة، الترقيم البريدي)."
     },
     "REPRESENTANT_B": {
       "type": "text",
@@ -225,7 +235,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Nom du représentant légal de la société.",
+      "help_ar": "اسم الممثل القانوني للشركة."
     },
     "SCOPE_INFOS": {
       "type": "text",
@@ -237,7 +249,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Veuillez renseigner scope infos.",
+      "help_ar": "يرجى إدخال مجال المعلومات."
     },
     "OBJET_COLLABORATION": {
       "type": "text",
@@ -249,7 +263,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Objet ou but du contrat/document.",
+      "help_ar": "موضوع أو غرض العقد/الوثيقة."
     },
     "DATE_EFFET": {
       "type": "date",
@@ -260,7 +276,9 @@
       "required": true,
       "hint_ar": "يوم/شهر/سنة",
       "hint_fr": "JJ/MM/AAAA",
-      "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
+      "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$",
+      "help_fr": "Date au format jour/mois/année (ex: 01/01/2026).",
+      "help_ar": "التاريخ بصيغة يوم/شهر/سنة (مثال: 01/01/2026)."
     },
     "DUREE_ANNEE": {
       "type": "text",
@@ -272,7 +290,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Durée en années ou en mois (ex: 3 ans, 6 mois).",
+      "help_ar": "المدة بالسنوات أو الأشهر (مثال: 3 سنوات، 6 أشهر)."
     },
     "TRIBUNAL": {
       "type": "text",
@@ -284,7 +304,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Tribunal territorialement compétent en cas de litige.",
+      "help_ar": "المحكمة المختصة ترابيًا في حالة النزاع."
     },
     "LIEU_SIGNATURE": {
       "type": "text",
@@ -296,7 +318,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Lieu ou date de signature du contrat.",
+      "help_ar": "مكان أو تاريخ إمضاء العقد."
     },
     "DATE_SIGNATURE": {
       "type": "date",
@@ -307,7 +331,9 @@
       "required": true,
       "hint_ar": "يوم/شهر/سنة",
       "hint_fr": "JJ/MM/AAAA",
-      "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
+      "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$",
+      "help_fr": "Date au format jour/mois/année (ex: 01/01/2026).",
+      "help_ar": "التاريخ بصيغة يوم/شهر/سنة (مثال: 01/01/2026)."
     }
   },
   "description_ar": "إتفاق قانوني باش تحمي بيه أسرار الخدمة والمعلومات الحساسة وميخرجوش للناس لخرين.",

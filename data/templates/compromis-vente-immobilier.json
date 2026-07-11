@@ -163,7 +163,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Nom complet de la personne concernée (prénom et nom de famille).",
+      "help_ar": "الاسم الكامل للشخص المعني (الاسم واللقب)."
     },
     "CIN_VENDEUR": {
       "type": "cin",
@@ -176,7 +178,9 @@
       "hint_fr": "8 chiffres",
       "pattern": "^\\d{8}$",
       "min_length": 8,
-      "max_length": 8
+      "max_length": 8,
+      "help_fr": "Numéro à 8 chiffres figurant sur la carte d'identité nationale.",
+      "help_ar": "الرقم المكون من 8 أرقام الموجود على بطاقة التعريف الوطنية."
     },
     "ETAT_CIVIL_VENDEUR": {
       "type": "text",
@@ -188,7 +192,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "État civil complet (célibataire, marié(e), divorcé(e), veuf/veuve).",
+      "help_ar": "الحالة المدنية الكاملة (أعزب، متزوج/ة، مطلق/ة، أرمل/ة)."
     },
     "ADRESSE_VENDEUR": {
       "type": "text",
@@ -200,7 +206,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Adresse complète du domicile (rue, numéro, ville, code postal).",
+      "help_ar": "العنوان الكامل للسكن (النهج، الرقم، المدينة، الترقيم البريدي)."
     },
     "NOM_ACQUEREUR": {
       "type": "text",
@@ -212,7 +220,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Nom complet de la personne concernée (prénom et nom de famille).",
+      "help_ar": "الاسم الكامل للشخص المعني (الاسم واللقب)."
     },
     "CIN_ACQUEREUR": {
       "type": "cin",
@@ -225,7 +235,9 @@
       "hint_fr": "8 chiffres",
       "pattern": "^\\d{8}$",
       "min_length": 8,
-      "max_length": 8
+      "max_length": 8,
+      "help_fr": "Numéro à 8 chiffres figurant sur la carte d'identité nationale.",
+      "help_ar": "الرقم المكون من 8 أرقام الموجود على بطاقة التعريف الوطنية."
     },
     "ETAT_CIVIL_ACQUEREUR": {
       "type": "text",
@@ -237,7 +249,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "État civil complet (célibataire, marié(e), divorcé(e), veuf/veuve).",
+      "help_ar": "الحالة المدنية الكاملة (أعزب، متزوج/ة، مطلق/ة، أرمل/ة)."
     },
     "ADRESSE_ACQUEREUR": {
       "type": "text",
@@ -249,7 +263,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Adresse complète du domicile (rue, numéro, ville, code postal).",
+      "help_ar": "العنوان الكامل للسكن (النهج، الرقم، المدينة، الترقيم البريدي)."
     },
     "NATURE": {
       "type": "text",
@@ -261,7 +277,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Veuillez renseigner nature.",
+      "help_ar": "يرجى إدخال الطبيعة."
     },
     "NB_PIECES": {
       "type": "text",
@@ -273,7 +291,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Veuillez renseigner nb pieces.",
+      "help_ar": "يرجى إدخال عدد الغرف."
     },
     "ADRESSE_BIEN": {
       "type": "text",
@@ -285,7 +305,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Adresse complète du domicile (rue, numéro, ville, code postal).",
+      "help_ar": "العنوان الكامل للسكن (النهج، الرقم، المدينة، الترقيم البريدي)."
     },
     "TITRE_FONCIER": {
       "type": "text",
@@ -297,7 +319,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Veuillez renseigner titre foncier.",
+      "help_ar": "يرجى إدخال الرسم العقاري."
     },
     "SUPERFICIE": {
       "type": "text",
@@ -309,7 +333,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Veuillez renseigner superficie.",
+      "help_ar": "يرجى إدخال المساحة."
     },
     "ORIGINE_PROPRIETE": {
       "type": "text",
@@ -321,7 +347,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Veuillez renseigner origine propriete.",
+      "help_ar": "يرجى إدخال أصل الملكية."
     },
     "PRIX_TOTAL": {
       "type": "number",
@@ -333,7 +361,9 @@
       "hint_ar": "رقم",
       "hint_fr": "Nombre",
       "pattern": "^-?\\d+([\\.\\,]\\d+)?$",
-      "min_value": 0
+      "min_value": 0,
+      "help_fr": "Montant en dinars tunisiens (ex: 500).",
+      "help_ar": "المبلغ بالدينار التونسي (مثال: 500)."
     },
     "AVANCE": {
       "type": "text",
@@ -345,7 +375,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Veuillez renseigner avance.",
+      "help_ar": "يرجى إدخال التسبيق."
     },
     "SOLDE": {
       "type": "text",
@@ -357,7 +389,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Veuillez renseigner solde.",
+      "help_ar": "يرجى إدخال باقي الثمن."
     },
     "MONTANT_PRET": {
       "type": "number",
@@ -369,7 +403,9 @@
       "hint_ar": "رقم",
       "hint_fr": "Nombre",
       "pattern": "^-?\\d+([\\.\\,]\\d+)?$",
-      "min_value": 0
+      "min_value": 0,
+      "help_fr": "Montant en dinars tunisiens (ex: 500).",
+      "help_ar": "المبلغ بالدينار التونسي (مثال: 500)."
     },
     "DATE_LIMITE_PRET": {
       "type": "date",
@@ -380,7 +416,9 @@
       "required": true,
       "hint_ar": "يوم/شهر/سنة",
       "hint_fr": "JJ/MM/AAAA",
-      "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
+      "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$",
+      "help_fr": "Date au format jour/mois/année (ex: 01/01/2026).",
+      "help_ar": "التاريخ بصيغة يوم/شهر/سنة (مثال: 01/01/2026)."
     },
     "AUTRES_CONDITIONS": {
       "type": "text",
@@ -392,7 +430,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Conditions particulières à préciser.",
+      "help_ar": "شروط خاصة يجب تحديدها."
     },
     "DATE_LIMITE_VENTE": {
       "type": "date",
@@ -403,7 +443,9 @@
       "required": true,
       "hint_ar": "يوم/شهر/سنة",
       "hint_fr": "JJ/MM/AAAA",
-      "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
+      "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$",
+      "help_fr": "Date au format jour/mois/année (ex: 01/01/2026).",
+      "help_ar": "التاريخ بصيغة يوم/شهر/سنة (مثال: 01/01/2026)."
     },
     "LIEU_SIGNATURE": {
       "type": "text",
@@ -415,7 +457,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Lieu ou date de signature du contrat.",
+      "help_ar": "مكان أو تاريخ إمضاء العقد."
     },
     "DATE_SIGNATURE": {
       "type": "date",
@@ -426,7 +470,9 @@
       "required": true,
       "hint_ar": "يوم/شهر/سنة",
       "hint_fr": "JJ/MM/AAAA",
-      "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
+      "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$",
+      "help_fr": "Date au format jour/mois/année (ex: 01/01/2026).",
+      "help_ar": "التاريخ بصيغة يوم/شهر/سنة (مثال: 01/01/2026)."
     }
   },
   "description_ar": "كاتب يربط الشاري والبايع قبل العقد النهائي، يحدد السوم، العربون وأجل الخلاص.",

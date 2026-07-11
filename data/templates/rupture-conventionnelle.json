@@ -139,7 +139,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Nom complet de la personne concernée (prénom et nom de famille).",
+      "help_ar": "الاسم الكامل للشخص المعني (الاسم واللقب)."
     },
     "RNE": {
       "type": "text",
@@ -151,7 +153,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Numéro unique du Registre National des Entreprises.",
+      "help_ar": "الرقم الموحد للسجل الوطني للمؤسسات."
     },
     "ADRESSE_ENTREPRISE": {
       "type": "text",
@@ -163,7 +167,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Adresse complète du domicile (rue, numéro, ville, code postal).",
+      "help_ar": "العنوان الكامل للسكن (النهج، الرقم، المدينة، الترقيم البريدي)."
     },
     "REPRESENTANT": {
       "type": "text",
@@ -175,7 +181,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Nom du représentant légal de la société.",
+      "help_ar": "اسم الممثل القانوني للشركة."
     },
     "NOM_SALARIE": {
       "type": "text",
@@ -187,7 +195,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Nom complet de la personne concernée (prénom et nom de famille).",
+      "help_ar": "الاسم الكامل للشخص المعني (الاسم واللقب)."
     },
     "CIN_SALARIE": {
       "type": "cin",
@@ -200,7 +210,9 @@
       "hint_fr": "8 chiffres",
       "pattern": "^\\d{8}$",
       "min_length": 8,
-      "max_length": 8
+      "max_length": 8,
+      "help_fr": "Numéro à 8 chiffres figurant sur la carte d'identité nationale.",
+      "help_ar": "الرقم المكون من 8 أرقام الموجود على بطاقة التعريف الوطنية."
     },
     "DATE_CDI": {
       "type": "date",
@@ -211,7 +223,9 @@
       "required": true,
       "hint_ar": "يوم/شهر/سنة",
       "hint_fr": "JJ/MM/AAAA",
-      "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
+      "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$",
+      "help_fr": "Date au format jour/mois/année (ex: 01/01/2026).",
+      "help_ar": "التاريخ بصيغة يوم/شهر/سنة (مثال: 01/01/2026)."
     },
     "POSTE": {
       "type": "text",
@@ -223,7 +237,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Intitulé exact du poste ou de la fonction occupée.",
+      "help_ar": "التسمية الدقيقة للمنصب أو الوظيفة."
     },
     "DATE_RUPTURE": {
       "type": "date",
@@ -234,7 +250,9 @@
       "required": true,
       "hint_ar": "يوم/شهر/سنة",
       "hint_fr": "JJ/MM/AAAA",
-      "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
+      "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$",
+      "help_fr": "Date au format jour/mois/année (ex: 01/01/2026).",
+      "help_ar": "التاريخ بصيغة يوم/شهر/سنة (مثال: 01/01/2026)."
     },
     "INDEMNITE": {
       "type": "text",
@@ -246,7 +264,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Veuillez renseigner indemnite.",
+      "help_ar": "يرجى إدخال التعويض."
     },
     "BASE_CALCUL": {
       "type": "text",
@@ -258,7 +278,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Veuillez renseigner base calcul.",
+      "help_ar": "يرجى إدخال قاعدة الاحتساب."
     },
     "JOURS_CONGES_DUS": {
       "type": "text",
@@ -270,7 +292,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Nombre de jours de congés payés par an.",
+      "help_ar": "عدد أيام الراحة مدفوعة الأجر في السنة."
     },
     "LIEU": {
       "type": "text",
@@ -282,7 +306,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Veuillez renseigner lieu.",
+      "help_ar": "يرجى إدخال المكان."
     },
     "DATE": {
       "type": "date",
@@ -293,7 +319,9 @@
       "required": true,
       "hint_ar": "يوم/شهر/سنة",
       "hint_fr": "JJ/MM/AAAA",
-      "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
+      "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$",
+      "help_fr": "Date au format jour/mois/année (ex: 01/01/2026).",
+      "help_ar": "التاريخ بصيغة يوم/شهر/سنة (مثال: 01/01/2026)."
     }
   },
   "description_ar": "إتفاق بالتراضي بين الخدّام والشركة باش يقصو الخدمة مع تحديد الهبوط والتعويضات.",

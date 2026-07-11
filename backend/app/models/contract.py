@@ -41,6 +41,8 @@ class FieldMetadata(BaseModel):
     max_value: Optional[float] = None
     hint_ar: str = ""
     hint_fr: str = ""
+    help_ar: str = ""
+    help_fr: str = ""
 
 
 class TemplateArticle(BaseModel):

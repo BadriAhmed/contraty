@@ -420,21 +420,27 @@ export default function GeneratePage() {
                   <h3 className="text-sm font-semibold text-primary mb-4 pb-2 border-b border-border-slate">
                     {currentSection.title}
                   </h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="space-y-5">
                     {(currentSection.fields || []).map((field) => {
                       const errKey = fieldErrors[field.name];
                       const hasError = !!errKey;
                       const md = field.metadata;
                       const inputType = md ? getInputType(md.type) : "text";
+                      const help = lang === "ar" ? (md?.help_ar || "") : (md?.help_fr || "");
 
                       return (
-                        <div key={field.name} className={field.label.length > 25 ? "md:col-span-2" : ""}>
-                          <label className="label-text flex items-center gap-1">
-                            {field.label}
-                            {md?.required !== false && <span className="text-error">*</span>}
-                            {md?.hint_ar && lang === "ar" && <span className="text-xs text-text-secondary font-normal">({md.hint_ar})</span>}
-                            {md?.hint_fr && lang === "fr" && <span className="text-xs text-text-secondary font-normal">({md.hint_fr})</span>}
+                        <div key={field.name}>
+                          <label className="block mb-1.5">
+                            <span className="text-sm font-medium text-on-surface">
+                              {field.label}
+                              {md?.required !== false && <span className="text-error ms-0.5">*</span>}
+                            </span>
+                            {md?.hint_ar && lang === "ar" && <span className="text-xs text-text-secondary ms-1">({md.hint_ar})</span>}
+                            {md?.hint_fr && lang === "fr" && <span className="text-xs text-text-secondary ms-1">({md.hint_fr})</span>}
                           </label>
+                          {help && (
+                            <p className="text-xs text-text-secondary mb-1.5 leading-relaxed">{help}</p>
+                          )}
                           <input
                             type={inputType}
                             value={fieldValues[field.name] || ""}

@@ -204,7 +204,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Nom complet de la personne concernée (prénom et nom de famille).",
+      "help_ar": "الاسم الكامل للشخص المعني (الاسم واللقب)."
     },
     "CIN_BAILLEUR": {
       "type": "cin",
@@ -217,7 +219,9 @@
       "hint_fr": "8 chiffres",
       "pattern": "^\\d{8}$",
       "min_length": 8,
-      "max_length": 8
+      "max_length": 8,
+      "help_fr": "Numéro à 8 chiffres figurant sur la carte d'identité nationale.",
+      "help_ar": "الرقم المكون من 8 أرقام الموجود على بطاقة التعريف الوطنية."
     },
     "ADRESSE_BAILLEUR": {
       "type": "text",
@@ -229,7 +233,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Adresse complète du domicile (rue, numéro, ville, code postal).",
+      "help_ar": "العنوان الكامل للسكن (النهج، الرقم، المدينة، الترقيم البريدي)."
     },
     "NOM_PRENEUR": {
       "type": "text",
@@ -241,7 +247,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Nom complet de la personne concernée (prénom et nom de famille).",
+      "help_ar": "الاسم الكامل للشخص المعني (الاسم واللقب)."
     },
     "CIN_PRENEUR": {
       "type": "cin",
@@ -254,7 +262,9 @@
       "hint_fr": "8 chiffres",
       "pattern": "^\\d{8}$",
       "min_length": 8,
-      "max_length": 8
+      "max_length": 8,
+      "help_fr": "Numéro à 8 chiffres figurant sur la carte d'identité nationale.",
+      "help_ar": "الرقم المكون من 8 أرقام الموجود على بطاقة التعريف الوطنية."
     },
     "ADRESSE_PRENEUR": {
       "type": "text",
@@ -266,7 +276,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Adresse complète du domicile (rue, numéro, ville, code postal).",
+      "help_ar": "العنوان الكامل للسكن (النهج، الرقم، المدينة، الترقيم البريدي)."
     },
     "ADRESSE_BIEN": {
       "type": "text",
@@ -278,7 +290,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Adresse complète du domicile (rue, numéro, ville, code postal).",
+      "help_ar": "العنوان الكامل للسكن (النهج، الرقم، المدينة، الترقيم البريدي)."
     },
     "DESCRIPTION_BIEN": {
       "type": "text",
@@ -290,7 +304,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Description détaillée du bien, service ou objet concerné.",
+      "help_ar": "وصف مفصل للشيء أو الخدمة أو الغرض المعني."
     },
     "DUREE_BAIL": {
       "type": "text",
@@ -302,7 +318,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Durée en années ou en mois (ex: 3 ans, 6 mois).",
+      "help_ar": "المدة بالسنوات أو الأشهر (مثال: 3 سنوات، 6 أشهر)."
     },
     "DATE_DEBUT": {
       "type": "date",
@@ -313,7 +331,9 @@
       "required": true,
       "hint_ar": "يوم/شهر/سنة",
       "hint_fr": "JJ/MM/AAAA",
-      "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
+      "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$",
+      "help_fr": "Date au format jour/mois/année (ex: 01/01/2026).",
+      "help_ar": "التاريخ بصيغة يوم/شهر/سنة (مثال: 01/01/2026)."
     },
     "PREAVIS_MOIS": {
       "type": "text",
@@ -325,7 +345,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Délai de préavis en mois avant résiliation (ex: 1, 2, 3).",
+      "help_ar": "مهلة الإعلام المسبق بالأشهر قبل إنهاء العقد (مثال: 1، 2، 3)."
     },
     "MONTANT_LOYER": {
       "type": "number",
@@ -337,7 +359,9 @@
       "hint_ar": "رقم",
       "hint_fr": "Nombre",
       "pattern": "^-?\\d+([\\.\\,]\\d+)?$",
-      "min_value": 0
+      "min_value": 0,
+      "help_fr": "Montant en dinars tunisiens (ex: 500).",
+      "help_ar": "المبلغ بالدينار التونسي (مثال: 500)."
     },
     "JOUR_PAIEMENT": {
       "type": "text",
@@ -349,7 +373,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Veuillez renseigner jour paiement.",
+      "help_ar": "يرجى إدخال تاريخ استحقاق الدفع الشهري."
     },
     "MONTANT_CAUTION": {
       "type": "number",
@@ -361,7 +387,9 @@
       "hint_ar": "رقم",
       "hint_fr": "Nombre",
       "pattern": "^-?\\d+([\\.\\,]\\d+)?$",
-      "min_value": 0
+      "min_value": 0,
+      "help_fr": "Montant en dinars tunisiens (ex: 500).",
+      "help_ar": "المبلغ بالدينار التونسي (مثال: 500)."
     },
     "CHARGES_INCLUSES": {
       "type": "text",
@@ -373,7 +401,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Charges incluses dans le loyer (eau, électricité, etc.).",
+      "help_ar": "المصاريف المشمولة في الكراء (ماء، كهرباء، إلخ)."
     },
     "CHARGES_PRENEUR": {
       "type": "text",
@@ -385,7 +415,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Charges incluses dans le loyer (eau, électricité, etc.).",
+      "help_ar": "المصاريف المشمولة في الكراء (ماء، كهرباء، إلخ)."
     },
     "TRIBUNAL": {
       "type": "text",
@@ -397,7 +429,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Tribunal territorialement compétent en cas de litige.",
+      "help_ar": "المحكمة المختصة ترابيًا في حالة النزاع."
     },
     "LIEU_SIGNATURE": {
       "type": "text",
@@ -409,7 +443,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Lieu ou date de signature du contrat.",
+      "help_ar": "مكان أو تاريخ إمضاء العقد."
     },
     "DATE_SIGNATURE": {
       "type": "date",
@@ -420,7 +456,9 @@
       "required": true,
       "hint_ar": "يوم/شهر/سنة",
       "hint_fr": "JJ/MM/AAAA",
-      "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
+      "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$",
+      "help_fr": "Date au format jour/mois/année (ex: 01/01/2026).",
+      "help_ar": "التاريخ بصيغة يوم/شهر/سنة (مثال: 01/01/2026)."
     }
   },
   "description_ar": "إتفاقية بين الملاك والكاري تحدد السوم الشهري، الضمان وشروط السكنى في الدار.",

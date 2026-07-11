@@ -102,7 +102,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Nom complet de la personne concernée (prénom et nom de famille).",
+      "help_ar": "الاسم الكامل للشخص المعني (الاسم واللقب)."
     },
     "CIN_MANDANT": {
       "type": "cin",
@@ -115,7 +117,9 @@
       "hint_fr": "8 chiffres",
       "pattern": "^\\d{8}$",
       "min_length": 8,
-      "max_length": 8
+      "max_length": 8,
+      "help_fr": "Numéro à 8 chiffres figurant sur la carte d'identité nationale.",
+      "help_ar": "الرقم المكون من 8 أرقام الموجود على بطاقة التعريف الوطنية."
     },
     "ADRESSE_MANDANT": {
       "type": "text",
@@ -127,7 +131,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Adresse complète du domicile (rue, numéro, ville, code postal).",
+      "help_ar": "العنوان الكامل للسكن (النهج، الرقم، المدينة، الترقيم البريدي)."
     },
     "NOM_MANDATAIRE": {
       "type": "text",
@@ -139,7 +145,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Nom complet de la personne concernée (prénom et nom de famille).",
+      "help_ar": "الاسم الكامل للشخص المعني (الاسم واللقب)."
     },
     "CIN_MANDATAIRE": {
       "type": "cin",
@@ -152,7 +160,9 @@
       "hint_fr": "8 chiffres",
       "pattern": "^\\d{8}$",
       "min_length": 8,
-      "max_length": 8
+      "max_length": 8,
+      "help_fr": "Numéro à 8 chiffres figurant sur la carte d'identité nationale.",
+      "help_ar": "الرقم المكون من 8 أرقام الموجود على بطاقة التعريف الوطنية."
     },
     "ADRESSE_MANDATAIRE": {
       "type": "text",
@@ -164,7 +174,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Adresse complète du domicile (rue, numéro, ville, code postal).",
+      "help_ar": "العنوان الكامل للسكن (النهج، الرقم، المدينة، الترقيم البريدي)."
     },
     "MISSION_SPECIALE": {
       "type": "text",
@@ -176,7 +188,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Veuillez renseigner mission speciale.",
+      "help_ar": "يرجى إدخال المهمة الخاصة."
     },
     "DATE_FIN": {
       "type": "date",
@@ -187,7 +201,9 @@
       "required": true,
       "hint_ar": "يوم/شهر/سنة",
       "hint_fr": "JJ/MM/AAAA",
-      "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
+      "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$",
+      "help_fr": "Date au format jour/mois/année (ex: 01/01/2026).",
+      "help_ar": "التاريخ بصيغة يوم/شهر/سنة (مثال: 01/01/2026)."
     },
     "LIEU_SIGNATURE": {
       "type": "text",
@@ -199,7 +215,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Lieu ou date de signature du contrat.",
+      "help_ar": "مكان أو تاريخ إمضاء العقد."
     },
     "DATE_SIGNATURE": {
       "type": "date",
@@ -210,7 +228,9 @@
       "required": true,
       "hint_ar": "يوم/شهر/سنة",
       "hint_fr": "JJ/MM/AAAA",
-      "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
+      "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$",
+      "help_fr": "Date au format jour/mois/année (ex: 01/01/2026).",
+      "help_ar": "التاريخ بصيغة يوم/شهر/سنة (مثال: 01/01/2026)."
     }
   },
   "description_ar": "توكيل لشخص أخر باش يقضي قضاء معين في بلاصتك ومصادق عليه في البلدية بمدة محددة.",

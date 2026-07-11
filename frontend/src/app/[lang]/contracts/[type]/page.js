@@ -60,6 +60,7 @@ export default async function ContractDetailPage({ params }) {
             name: field,
             label: lang === "ar" ? (meta.label_ar || field) : (meta.label_fr || field.replace(/_/g, " ")),
             type: meta.type || "text",
+            help: lang === "ar" ? (meta.help_ar || "") : (meta.help_fr || ""),
           });
         }
       }
@@ -98,15 +99,18 @@ export default async function ContractDetailPage({ params }) {
             {Object.entries(fieldsBySection).map(([secTitle, fields]) => (
               <div key={secTitle} className="bg-surface-container-lowest border border-border-slate rounded-lg p-4">
                 <h3 className="text-sm font-semibold text-primary mb-3">{secTitle}</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2">
+                <div className="space-y-3">
                   {fields.map((f) => (
-                    <div key={f.name} className="flex items-center gap-2">
-                      <FileText size={12} className="text-text-secondary shrink-0" />
-                      <div className="min-w-0">
+                    <div key={f.name} className="flex items-start gap-2">
+                      <FileText size={14} className="text-text-secondary shrink-0 mt-0.5" />
+                      <div className="min-w-0 flex-1">
                         <span className="text-sm font-medium text-on-surface">{f.label}</span>
                         <span className="text-xs text-text-secondary ms-1.5">
                           ({typeLabel[f.type] || f.type})
                         </span>
+                        {f.help && (
+                          <p className="text-xs text-text-secondary mt-0.5 leading-relaxed opacity-80">{f.help}</p>
+                        )}
                       </div>
                     </div>
                   ))}

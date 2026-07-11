@@ -176,7 +176,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Nom complet de la personne concernée (prénom et nom de famille).",
+      "help_ar": "الاسم الكامل للشخص المعني (الاسم واللقب)."
     },
     "CIN_VENDEUR": {
       "type": "cin",
@@ -189,7 +191,9 @@
       "hint_fr": "8 chiffres",
       "pattern": "^\\d{8}$",
       "min_length": 8,
-      "max_length": 8
+      "max_length": 8,
+      "help_fr": "Numéro à 8 chiffres figurant sur la carte d'identité nationale.",
+      "help_ar": "الرقم المكون من 8 أرقام الموجود على بطاقة التعريف الوطنية."
     },
     "ADRESSE_VENDEUR": {
       "type": "text",
@@ -201,7 +205,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Adresse complète du domicile (rue, numéro, ville, code postal).",
+      "help_ar": "العنوان الكامل للسكن (النهج، الرقم، المدينة، الترقيم البريدي)."
     },
     "NOM_ACQUEREUR": {
       "type": "text",
@@ -213,7 +219,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Nom complet de la personne concernée (prénom et nom de famille).",
+      "help_ar": "الاسم الكامل للشخص المعني (الاسم واللقب)."
     },
     "CIN_ACQUEREUR": {
       "type": "cin",
@@ -226,7 +234,9 @@
       "hint_fr": "8 chiffres",
       "pattern": "^\\d{8}$",
       "min_length": 8,
-      "max_length": 8
+      "max_length": 8,
+      "help_fr": "Numéro à 8 chiffres figurant sur la carte d'identité nationale.",
+      "help_ar": "الرقم المكون من 8 أرقام الموجود على بطاقة التعريف الوطنية."
     },
     "ADRESSE_ACQUEREUR": {
       "type": "text",
@@ -238,7 +248,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Adresse complète du domicile (rue, numéro, ville, code postal).",
+      "help_ar": "العنوان الكامل للسكن (النهج، الرقم، المدينة، الترقيم البريدي)."
     },
     "MARQUE": {
       "type": "text",
@@ -250,7 +262,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Veuillez renseigner marque.",
+      "help_ar": "يرجى إدخال العلامة."
     },
     "MODELE": {
       "type": "text",
@@ -262,7 +276,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Précisez les conditions ou la méthode (ex: virement, espèces, chèque).",
+      "help_ar": "حدد الشروط أو الطريقة (مثال: تحويل، نقدًا، صك)."
     },
     "IMMATRICULATION": {
       "type": "text",
@@ -274,7 +290,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Numéro d'immatriculation figurant sur la carte grise.",
+      "help_ar": "رقم الماتركل الموجود على البطاقة الرمادية."
     },
     "NUM_CHASSIS": {
       "type": "text",
@@ -286,7 +304,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Numéro de série du châssis (VIN) gravé sur le véhicule.",
+      "help_ar": "الرقم التسلسلي للشاصي (VIN) المحفور على العربة."
     },
     "ANNEE_MEC": {
       "type": "text",
@@ -298,7 +318,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Veuillez renseigner annee mec.",
+      "help_ar": "يرجى إدخال سنة أول جولان."
     },
     "CARBURANT": {
       "type": "text",
@@ -310,7 +332,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Type d'énergie ou de carburant du véhicule.",
+      "help_ar": "نوع الطاقة أو الوقود للعربة."
     },
     "PUISSANCE_FISCALE": {
       "type": "text",
@@ -322,7 +346,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Veuillez renseigner puissance fiscale.",
+      "help_ar": "يرجى إدخال القوة الجبائية."
     },
     "KILOMETRAGE": {
       "type": "text",
@@ -334,7 +360,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Kilométrage actuel du véhicule au compteur.",
+      "help_ar": "المسافة المقطوعة الحالية للعربة بالعداد."
     },
     "PRIX": {
       "type": "number",
@@ -346,7 +374,9 @@
       "hint_ar": "رقم",
       "hint_fr": "Nombre",
       "pattern": "^-?\\d+([\\.\\,]\\d+)?$",
-      "min_value": 0
+      "min_value": 0,
+      "help_fr": "Montant en dinars tunisiens (ex: 500).",
+      "help_ar": "المبلغ بالدينار التونسي (مثال: 500)."
     },
     "DELAI_MUTATION_JOURS": {
       "type": "text",
@@ -358,7 +388,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Veuillez renseigner delai mutation jours.",
+      "help_ar": "يرجى إدخال أجل نقل الملكية بالأيام."
     },
     "LIEU_SIGNATURE": {
       "type": "text",
@@ -370,7 +402,9 @@
       "hint_ar": "",
       "hint_fr": "",
       "min_length": 2,
-      "max_length": 500
+      "max_length": 500,
+      "help_fr": "Lieu ou date de signature du contrat.",
+      "help_ar": "مكان أو تاريخ إمضاء العقد."
     },
     "DATE_SIGNATURE": {
       "type": "date",
@@ -381,7 +415,9 @@
       "required": true,
       "hint_ar": "يوم/شهر/سنة",
       "hint_fr": "JJ/MM/AAAA",
-      "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
+      "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$",
+      "help_fr": "Date au format jour/mois/année (ex: 01/01/2026).",
+      "help_ar": "التاريخ بصيغة يوم/شهر/سنة (مثال: 01/01/2026)."
     }
   },
   "description_ar": "كاتب لبيع وشرا كرهبة، يحدد سومها، نومرو الشاسي باش تبدل الكارطة غريز باسمك في تونس.",
