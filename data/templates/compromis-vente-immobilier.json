@@ -428,5 +428,7 @@
       "hint_fr": "JJ/MM/AAAA",
       "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
     }
-  }
+  },
+  "description_ar": "وعد بالبيع العقاري يحدد التزام البائع والمشتري قبل إبرام عقد البيع النهائي — يشمل وصف العقار، الثمن، شروط الدفع، والآجال.",
+  "description_fr": "Promesse de vente immobilière engageant le vendeur et l'acheteur avant la signature de l'acte définitif — inclut la description du bien, le prix, les modalités de paiement et les délais."
 }

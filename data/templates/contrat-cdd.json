@@ -402,5 +402,7 @@
       "hint_fr": "JJ/MM/AAAA",
       "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
     }
-  }
+  },
+  "description_ar": "عقد عمل محدد المدة لمشروع أو مهمة مؤقتة — يحدد مدة العقد، سبب التحديد، الأجر، وشروط إنهاء العقد قبل أوانه.",
+  "description_fr": "Contrat de travail à durée déterminée pour un projet ou une mission temporaire — définit la durée, le motif de la durée déterminée, le salaire et les conditions de rupture anticipée."
 }

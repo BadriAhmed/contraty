@@ -456,5 +456,7 @@
       "hint_fr": "JJ/MM/AAAA",
       "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
     }
-  }
+  },
+  "description_ar": "عقد عمل غير محدد المدة بين مشغل وأجير — يحدد الوظيفة، الأجر، ساعات العمل، الإجازات، وفترة التجربة طبقًا لمجلة الشغل التونسية.",
+  "description_fr": "Contrat de travail à durée indéterminée entre un employeur et un employé — définit le poste, le salaire, les horaires, les congés et la période d'essai selon le Code du Travail tunisien."
 }

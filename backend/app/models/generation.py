@@ -46,6 +46,8 @@ class TemplateDetail(TemplateSummary):
     placeholders to render as input fields and how to group them.
     field_metadata provides per-field validation rules (type, pattern, constraints).
     """
+    description_ar: str = ""
+    description_fr: str = ""
     legal_basis: str = ""
     disclaimer: str = ""
     sections: list[TemplateSection] = Field(default_factory=list)

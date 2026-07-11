@@ -309,5 +309,7 @@
       "hint_fr": "JJ/MM/AAAA",
       "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
     }
-  }
+  },
+  "description_ar": "اتفاقية سرية (NDA) لحماية المعلومات الحساسة بين الأطراف — تحدد نطاق السرية، مدة الالتزام، والجزاءات عند الإخلال.",
+  "description_fr": "Accord de confidentialité (NDA) pour la protection des informations sensibles entre les parties — définit le périmètre de la confidentialité, la durée de l'engagement et les sanctions en cas de violation."
 }

@@ -626,5 +626,7 @@
       "hint_fr": "JJ/MM/AAAA",
       "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
     }
-  }
+  },
+  "description_ar": "محضر معاينة دخول أو خروج يصف حالة العقار عند بداية أو نهاية عقد الكراء — يوثق حالة الغرف، التجهيزات، والأضرار إن وجدت.",
+  "description_fr": "État des lieux d'entrée ou de sortie décrivant l'état du bien au début ou à la fin du bail — documente l'état des pièces, des équipements et des éventuels dégâts."
 }

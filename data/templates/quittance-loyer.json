@@ -199,5 +199,7 @@
       "hint_fr": "JJ/MM/AAAA",
       "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
     }
-  }
+  },
+  "description_ar": "وصل كراء يثبت دفع المستأجر للأجرة الشهرية — وثيقة بسيطة يوقعها المكري لتأكيد استلام مبلغ الكراء عن فترة محددة.",
+  "description_fr": "Quittance de loyer attestant du paiement du loyer par le locataire — document simple signé par le bailleur confirmant la réception du loyer pour une période donnée."
 }

@@ -89,7 +89,7 @@ export default async function ContractsPage({ params, searchParams }) {
                 return (
                   <Link
                     key={t.slug}
-                    href={`/${lang}/generate/${t.slug}`}
+                    href={`/${lang}/contracts/${t.slug}`}
                     className="group bg-surface-container-lowest border border-border-slate rounded-lg p-4 hover:border-primary/40 hover:shadow-sm transition-all duration-150 flex items-start gap-3"
                     style={{ borderInlineStartWidth: "3px", borderInlineStartColor: meta.color }}
                   >

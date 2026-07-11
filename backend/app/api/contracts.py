@@ -35,6 +35,8 @@ def _to_detail(t: dict) -> TemplateDetail:
         slug=t.get("slug", ""),
         title_ar=t.get("title_ar", ""),
         title_fr=t.get("title_fr", ""),
+        description_ar=t.get("description_ar", ""),
+        description_fr=t.get("description_fr", ""),
         domain=t.get("domain", ""),
         complexity=t.get("complexity", "medium"),
         field_count=t.get("field_count", 0),

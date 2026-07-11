@@ -62,6 +62,8 @@ class Contract(BaseModel):
     slug: str
     title_ar: str = ""
     title_fr: str = ""
+    description_ar: str = ""
+    description_fr: str = ""
     language: Union[str, list[str]] = "both"
     category: Optional[str] = None
     domain: Optional[Domain] = None

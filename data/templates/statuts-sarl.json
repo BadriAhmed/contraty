@@ -292,5 +292,7 @@
       "hint_fr": "JJ/MM/AAAA",
       "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
     }
-  }
+  },
+  "description_ar": "القانون الأساسي لشركة ذات مسؤولية محدودة (SARL) — يحدد تسمية الشركة، غرضها، رأس مالها، وتسييرها طبقًا لمجلة الشركات التجارية.",
+  "description_fr": "Statuts de Société à Responsabilité Limitée (SARL) — définissent la dénomination, l'objet social, le capital et la gestion de la société selon le Code des Sociétés Commerciales."
 }

@@ -362,5 +362,7 @@
       "hint_fr": "JJ/MM/AAAA",
       "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
     }
-  }
+  },
+  "description_ar": "عقد تقديم خدمات بين مزود خدمة وعميل — يحدد طبيعة الخدمة، مدة العقد، المقابل المالي، وشروط المسؤولية.",
+  "description_fr": "Contrat de prestation de services entre un prestataire et un client — définit la nature de la prestation, la durée, la rémunération et les conditions de responsabilité."
 }

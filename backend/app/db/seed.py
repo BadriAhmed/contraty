@@ -81,6 +81,8 @@ async def seed_templates(repository=None):
             "slug": data["slug"],
             "title_ar": data.get("title_ar", ""),
             "title_fr": data.get("title_fr", ""),
+            "description_ar": data.get("description_ar", ""),
+            "description_fr": data.get("description_fr", ""),
             "domain": data.get("category", "logement"),
             "legal_basis": data.get("legal_basis", ""),
             "version": data.get("version", "1.0"),

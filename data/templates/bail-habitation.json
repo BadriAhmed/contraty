@@ -422,5 +422,7 @@
       "hint_fr": "JJ/MM/AAAA",
       "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
     }
-  }
+  },
+  "description_ar": "عقد كراء مسكن بين مكري ومكتري — يحدد مدة الكراء، مبلغ الكراء الشهري، التأمين، والتزامات الطرفين وفقًا لمجلة الالتزامات والعقود.",
+  "description_fr": "Contrat de location d'habitation entre un bailleur et un locataire — définit la durée du bail, le loyer mensuel, la caution, et les obligations des deux parties selon le Code des Obligations et des Contrats."
 }
