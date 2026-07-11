@@ -296,6 +296,6 @@
       "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
     }
   },
-  "description_ar": "اتفاقية إنهاء علاقة الشغل بالتراضي بين المشغل والأجير — تحدد تعويضات نهاية الخدمة وشروط المغادرة الطوعية.",
-  "description_fr": "Rupture conventionnelle du contrat de travail d'un commun accord entre l'employeur et l'employé — définit les indemnités de fin de service et les conditions de départ volontaire."
+  "description_ar": "إتفاق بالتراضي بين الخدّام والشركة باش يقصو الخدمة مع تحديد الهبوط والتعويضات.",
+  "description_fr": "Mettez fin à un contrat de travail à l'amiable avec l'accord de votre employeur."
 }

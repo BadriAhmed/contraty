@@ -372,6 +372,6 @@
       "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
     }
   },
-  "description_ar": "عقد قرض بين الخواص — يحدد مبلغ القرض، مدة السداد، والفائدة إن وجدت بين شخصين طبيعيين.",
-  "description_fr": "Contrat de prêt entre particuliers — définit le montant du prêt, la durée de remboursement et les intérêts éventuels entre deux personnes physiques."
+  "description_ar": "كاتب سلف يضمن حق الزوز من الناس، يوثق قداش تسلفت، كيفاش ومتى باش ترجع الفلوس.",
+  "description_fr": "Sécurisez un prêt d'argent entre proches en fixant les conditions de remboursement."
 }

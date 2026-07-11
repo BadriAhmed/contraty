@@ -233,6 +233,6 @@
       "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
     }
   },
-  "description_ar": "شهادة على الشرف — إقرار كتابي يوقعه صاحبه يشهد فيه بواقعة أو وضعية معينة — وثيقة إدارية شائعة في تونس.",
-  "description_fr": "Attestation sur l'honneur — déclaration écrite signée par son auteur attestant d'un fait ou d'une situation — document administratif courant en Tunisie."
+  "description_ar": "تصريح مصحح ومصادق عليه تشهد فيه بصحة معلومة تهمك لقضاء شؤون إدارية.",
+  "description_fr": "Déclarez officiellement un fait ou une situation pour vos démarches administratives."
 }

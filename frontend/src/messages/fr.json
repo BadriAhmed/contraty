@@ -7,8 +7,8 @@
   },
   "nav": {
     "home": "Accueil",
-    "contracts": "Contrats",
-    "generate": "Générer un contrat",
+    "contracts": "Modèles",
+    "generate": "Créer un contrat",
     "language": "العربية"
   },
   "home": {
@@ -23,16 +23,16 @@
     "step": "Étape {current} sur {total}",
     "next": "Suivant",
     "back": "Retour",
-    "generate": "Générer le contrat",
+    "generate": "Créer le contrat",
     "downloadPdf": "Télécharger le PDF",
     "fieldRequired": "Ce champ est obligatoire",
     "disclaimerRequired": "Vous devez accepter l'avertissement légal"
   },
   "contract": {
-    "legalBasis": "Base légale",
+    "legalBasis": "Cadre juridique",
     "fields": "Nombre de champs",
-    "generateThis": "Générer ce contrat",
+    "generateThis": "Créer ce contrat",
     "modelUsed": "Modèle utilisé",
-    "generationTime": "Temps de génération"
+    "generationTime": "Temps de création"
   }
 }

@@ -281,6 +281,6 @@
       "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
     }
   },
-  "description_ar": "رسالة استقالة رسمية يوجهها الأجير إلى مشغله لإنهاء عقد العمل — تحدد تاريخ الإستقالة ومدة الإخطار المسبق.",
-  "description_fr": "Lettre de démission formelle adressée par l'employé à son employeur pour mettre fin au contrat de travail — précise la date de démission et la durée du préavis."
+  "description_ar": "جواب رسمي تبعثو للعرفك باش تعلمو بوقوفك على الخدمة وتحدد فيه تاريخ الخروج والمهلة.",
+  "description_fr": "Informez officiellement votre employeur de votre départ et fixez le préavis."
 }

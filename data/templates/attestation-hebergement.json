@@ -221,6 +221,6 @@
       "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
     }
   },
-  "description_ar": "شهادة إيواء — وثيقة يقر فيها شخص بأنه يستضيف شخصًا آخر في مسكنه — مطلوبة للإجراءات الإدارية كتجديد بطاقة التعريف.",
-  "description_fr": "Attestation d'hébergement — document par lequel une personne déclare héberger une autre personne à son domicile — requise pour certaines démarches administratives comme le renouvellement de la CIN."
+  "description_ar": "ورقة يصححها شكون مستضيفك في داره، تستحقها كي تجدد بطاقة التعريف أو أوراق أخرى.",
+  "description_fr": "Prouve que vous logez quelqu'un chez vous. Utile pour renouveler sa carte d'identité (CIN)."
 }

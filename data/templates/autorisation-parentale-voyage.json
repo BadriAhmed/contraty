@@ -290,6 +290,6 @@
       "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
     }
   },
-  "description_ar": "إذن سفر للقاصر — وثيقة يوقعها الولي يسمح فيها لطفله القاصر بالسفر بمفرده أو مع شخص آخر.",
-  "description_fr": "Autorisation parentale de voyage pour mineur — document signé par le tuteur légal autorisant son enfant mineur à voyager seul ou accompagné d'une autre personne."
+  "description_ar": "ترخيص مصحح ومصادق عليه من الولي يسمح للطفل القاصر بالسفر لبرا وحده أو مع غيره.",
+  "description_fr": "Permet à votre enfant mineur de voyager seul ou accompagné hors de Tunisie."
 }

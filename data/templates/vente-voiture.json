@@ -384,6 +384,6 @@
       "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
     }
   },
-  "description_ar": "عقد بيع سيارة بين بائع ومشتري — يحدد مواصفات السيارة، ثمن البيع، رقم الشاسي، وشهادة نقل الملكية (البطاقة الرمادية).",
-  "description_fr": "Contrat de vente de véhicule automobile entre un vendeur et un acheteur — précise les caractéristiques du véhicule, le prix de vente, le numéro de châssis et le certificat de cession (carte grise)."
+  "description_ar": "كاتب لبيع وشرا كرهبة، يحدد سومها، نومرو الشاسي باش تبدل الكارطة غريز باسمك في تونس.",
+  "description_fr": "Vendez ou achetez un véhicule d'occasion en enregistrant les détails administratifs."
 }

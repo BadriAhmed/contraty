@@ -401,6 +401,6 @@
       "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
     }
   },
-  "description_ar": "عقد صيغ — إدماج في الحياة المهنية — عقد تدريب بين مؤسسة ومتربص تحت إشراف الوكالة التونسية للتشغيل (ATE) لمدة محددة.",
-  "description_fr": "Contrat SIVP — Stage d'Insertion à la Vie Professionnelle — contrat de stage entre une entreprise et un stagiaire sous la tutelle de l'Agence Tunisienne pour l'Emploi (ATE) pour une durée déterminée."
+  "description_ar": "تربص إعداد للحياة المهنية للخرجين الجدد، بالتنسيق مع مكتب التشغيل وممول من الدولة.",
+  "description_fr": "Intégrez un jeune diplômé en stage de préparation à l'emploi avec l'aide de l'ANETI."
 }

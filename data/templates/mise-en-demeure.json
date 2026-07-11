@@ -313,6 +313,6 @@
       "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
     }
   },
-  "description_ar": "إنذار قانوني — رسالة رسمية يوجهها شخص إلى آخر لإلزامه بالوفاء بالتزام تعاقدي أو قانوني قبل اللجوء إلى القضاء.",
-  "description_fr": "Mise en demeure — lettre formelle adressée par une personne à une autre pour la contraindre à respecter une obligation contractuelle ou légale avant de saisir la justice."
+  "description_ar": "جواب تنبيه رسمي ومسوقر يتبعت باش تطالب بحقك وتنذر الطرف الآخر قبل ما تمشي للمحكمة.",
+  "description_fr": "Demandez formellement à quelqu'un de respecter ses engagements avant de le poursuivre."
 }

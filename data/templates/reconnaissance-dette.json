@@ -330,6 +330,6 @@
       "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
     }
   },
-  "description_ar": "اعتراف بدين — وثيقة يقر فيها المدين بمبلغ مستحق للدائن مع تحديد أجل السداد وشروطه — سند قانوني قابل للتنفيذ.",
-  "description_fr": "Reconnaissance de dette — document par lequel le débiteur reconnaît devoir une somme au créancier avec l'échéance et les conditions de remboursement — titre exécutoire."
+  "description_ar": "كاتب يصحح فيه المطلوب يلتزم فيه بالفلوس إلي سالوهالو وباش يرجعها في تاريخ معين.",
+  "description_fr": "Prouve par écrit qu'une personne vous doit de l'argent et s'engage à vous rembourser."
 }

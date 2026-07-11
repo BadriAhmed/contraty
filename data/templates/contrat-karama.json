@@ -401,6 +401,6 @@
       "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
     }
   },
-  "description_ar": "عقد عمل مدعم ضمن برنامج كرامة — عقد تشغيل للأشخاص ذوي الإعاقة بدعم من الدولة التونسية.",
-  "description_fr": "Contrat de travail aidé dans le cadre du programme Karama — contrat d'emploi pour les personnes en situation de handicap avec un soutien de l'État tunisien."
+  "description_ar": "كونترا خدمة مدعم من الدولة وموجه لحاملي الشهادات العليا باش يسهل دخولهم لسوق الشغل.",
+  "description_fr": "Recrutez un jeune diplômé et bénéficiez de la prise en charge financière de l'État."
 }

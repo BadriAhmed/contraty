@@ -363,6 +363,6 @@
       "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
     }
   },
-  "description_ar": "عقد تقديم خدمات بين مزود خدمة وعميل — يحدد طبيعة الخدمة، مدة العقد، المقابل المالي، وشروط المسؤولية.",
-  "description_fr": "Contrat de prestation de services entre un prestataire et un client — définit la nature de la prestation, la durée, la rémunération et les conditions de responsabilité."
+  "description_ar": "كونترا خدمة بين شكون يقدم في خدمة وحريف، يحدد شنوة المطلوب، الوقت، وسوم الخلاص.",
+  "description_fr": "Fixez le prix, les délais et les conditions d'un service rendu par un professionnel."
 }

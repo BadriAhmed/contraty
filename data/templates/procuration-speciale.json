@@ -213,6 +213,6 @@
       "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
     }
   },
-  "description_ar": "وكالة خاصة تخول شخصًا (الوكيل) القيام بإجراء محدد نيابة عن شخص آخر (الموكل) — محددة الغرض والمدة.",
-  "description_fr": "Procuration spéciale autorisant une personne (le mandataire) à accomplir un acte déterminé au nom d'une autre personne (le mandant) — limitée dans son objet et sa durée."
+  "description_ar": "توكيل لشخص أخر باش يقضي قضاء معين في بلاصتك ومصادق عليه في البلدية بمدة محددة.",
+  "description_fr": "Donnez pouvoir à une personne de confiance pour réaliser une démarche précise pour vous."
 }
