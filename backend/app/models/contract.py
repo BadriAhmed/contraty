@@ -17,6 +17,32 @@ class Domain(str, Enum):
     demarches = "demarches"
 
 
+class FieldType(str, Enum):
+    text = "text"
+    number = "number"
+    cin = "cin"
+    email = "email"
+    phone = "phone"
+    date = "date"
+    percentage = "percentage"
+
+
+class FieldMetadata(BaseModel):
+    type: FieldType = FieldType.text
+    label_ar: str = ""
+    label_fr: str = ""
+    placeholder_ar: str = ""
+    placeholder_fr: str = ""
+    required: bool = True
+    pattern: Optional[str] = None
+    min_length: Optional[int] = None
+    max_length: Optional[int] = None
+    min_value: Optional[float] = None
+    max_value: Optional[float] = None
+    hint_ar: str = ""
+    hint_fr: str = ""
+
+
 class TemplateArticle(BaseModel):
     id: str
     text_ar: str = ""
@@ -46,6 +72,7 @@ class Contract(BaseModel):
     source: str = ""
     disclaimer: str = ""
     sections: list[TemplateSection] = Field(default_factory=list)
+    field_metadata: dict[str, FieldMetadata] = Field(default_factory=dict)
 
     @model_validator(mode="after")
     def normalize_fields(self):

@@ -86,5 +86,151 @@
         }
       ]
     }
-  ]
+  ],
+  "field_metadata": {
+    "NOM": {
+      "type": "text",
+      "label_ar": "الاسم",
+      "label_fr": "Nom",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "DATE_NAISSANCE": {
+      "type": "date",
+      "label_ar": "تاريخ (naissance)",
+      "label_fr": "Date Naissance",
+      "placeholder_ar": "يوم/شهر/سنة",
+      "placeholder_fr": "JJ/MM/AAAA",
+      "required": true,
+      "hint_ar": "يوم/شهر/سنة",
+      "hint_fr": "JJ/MM/AAAA",
+      "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
+    },
+    "LIEU_NAISSANCE": {
+      "type": "text",
+      "label_ar": "المكان (naissance)",
+      "label_fr": "Lieu Naissance",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "NATIONALITE": {
+      "type": "text",
+      "label_ar": "Nationalite",
+      "label_fr": "Nationalite",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "CIN": {
+      "type": "cin",
+      "label_ar": "بطاقة التعريف",
+      "label_fr": "Cin",
+      "placeholder_ar": "12345678",
+      "placeholder_fr": "12345678",
+      "required": true,
+      "hint_ar": "8 أرقام",
+      "hint_fr": "8 chiffres",
+      "pattern": "^\\d{8}$",
+      "min_length": 8,
+      "max_length": 8
+    },
+    "DATE_CIN": {
+      "type": "cin",
+      "label_ar": "تاريخ (cin)",
+      "label_fr": "Date Cin",
+      "placeholder_ar": "12345678",
+      "placeholder_fr": "12345678",
+      "required": true,
+      "hint_ar": "8 أرقام",
+      "hint_fr": "8 chiffres",
+      "pattern": "^\\d{8}$",
+      "min_length": 8,
+      "max_length": 8
+    },
+    "ADRESSE": {
+      "type": "text",
+      "label_ar": "العنوان",
+      "label_fr": "Adresse",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "PROFESSION": {
+      "type": "text",
+      "label_ar": "Profession",
+      "label_fr": "Profession",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "DECLARATION": {
+      "type": "text",
+      "label_ar": "Declaration",
+      "label_fr": "Declaration",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "DESTINATION": {
+      "type": "text",
+      "label_ar": "Destination",
+      "label_fr": "Destination",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "LIEU": {
+      "type": "text",
+      "label_ar": "المكان",
+      "label_fr": "Lieu",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "DATE": {
+      "type": "date",
+      "label_ar": "تاريخ",
+      "label_fr": "Date",
+      "placeholder_ar": "يوم/شهر/سنة",
+      "placeholder_fr": "JJ/MM/AAAA",
+      "required": true,
+      "hint_ar": "يوم/شهر/سنة",
+      "hint_fr": "JJ/MM/AAAA",
+      "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
+    }
+  }
 }

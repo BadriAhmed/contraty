@@ -118,5 +118,199 @@
         }
       ]
     }
-  ]
+  ],
+  "field_metadata": {
+    "NOM_EXPEDITEUR": {
+      "type": "text",
+      "label_ar": "الاسم (expediteur)",
+      "label_fr": "Nom Expediteur",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "CIN_EXPEDITEUR": {
+      "type": "cin",
+      "label_ar": "بطاقة التعريف (expediteur)",
+      "label_fr": "Cin Expediteur",
+      "placeholder_ar": "12345678",
+      "placeholder_fr": "12345678",
+      "required": true,
+      "hint_ar": "8 أرقام",
+      "hint_fr": "8 chiffres",
+      "pattern": "^\\d{8}$",
+      "min_length": 8,
+      "max_length": 8
+    },
+    "ADRESSE_EXPEDITEUR": {
+      "type": "text",
+      "label_ar": "العنوان (expediteur)",
+      "label_fr": "Adresse Expediteur",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "NOM_DESTINATAIRE": {
+      "type": "text",
+      "label_ar": "الاسم (destinataire)",
+      "label_fr": "Nom Destinataire",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "CIN_DESTINATAIRE": {
+      "type": "cin",
+      "label_ar": "بطاقة التعريف (destinataire)",
+      "label_fr": "Cin Destinataire",
+      "placeholder_ar": "12345678",
+      "placeholder_fr": "12345678",
+      "required": true,
+      "hint_ar": "8 أرقام",
+      "hint_fr": "8 chiffres",
+      "pattern": "^\\d{8}$",
+      "min_length": 8,
+      "max_length": 8
+    },
+    "ADRESSE_DESTINATAIRE": {
+      "type": "text",
+      "label_ar": "العنوان (destinataire)",
+      "label_fr": "Adresse Destinataire",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "SOCIETE_DESTINATAIRE": {
+      "type": "text",
+      "label_ar": "Societe Destinataire",
+      "label_fr": "Societe Destinataire",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "OBJET_SOMMAIRE": {
+      "type": "text",
+      "label_ar": "Objet Sommaire",
+      "label_fr": "Objet Sommaire",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "ACTE_ORIGINE": {
+      "type": "text",
+      "label_ar": "Acte Origine",
+      "label_fr": "Acte Origine",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "DATE_ACTE_ORIGINE": {
+      "type": "date",
+      "label_ar": "تاريخ (acte origine)",
+      "label_fr": "Date Acte Origine",
+      "placeholder_ar": "يوم/شهر/سنة",
+      "placeholder_fr": "JJ/MM/AAAA",
+      "required": true,
+      "hint_ar": "يوم/شهر/سنة",
+      "hint_fr": "JJ/MM/AAAA",
+      "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
+    },
+    "OBLIGATION_INITIALE": {
+      "type": "text",
+      "label_ar": "Obligation Initiale",
+      "label_fr": "Obligation Initiale",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "MANQUEMENT_CONSTATE": {
+      "type": "text",
+      "label_ar": "Manquement Constate",
+      "label_fr": "Manquement Constate",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "SOMMATION": {
+      "type": "text",
+      "label_ar": "Sommation",
+      "label_fr": "Sommation",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "DELAI_JOURS": {
+      "type": "text",
+      "label_ar": "Delai Jours",
+      "label_fr": "Delai Jours",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "LIEU": {
+      "type": "text",
+      "label_ar": "المكان",
+      "label_fr": "Lieu",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "DATE": {
+      "type": "date",
+      "label_ar": "تاريخ",
+      "label_fr": "Date",
+      "placeholder_ar": "يوم/شهر/سنة",
+      "placeholder_fr": "JJ/MM/AAAA",
+      "required": true,
+      "hint_ar": "يوم/شهر/سنة",
+      "hint_fr": "JJ/MM/AAAA",
+      "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
+    }
+  }
 }

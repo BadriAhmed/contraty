@@ -127,5 +127,173 @@
         }
       ]
     }
-  ]
+  ],
+  "field_metadata": {
+    "NOM_ENTREPRISE": {
+      "type": "text",
+      "label_ar": "الاسم (entreprise)",
+      "label_fr": "Nom Entreprise",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "RNE": {
+      "type": "text",
+      "label_ar": "Rne",
+      "label_fr": "Rne",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "ADRESSE_ENTREPRISE": {
+      "type": "text",
+      "label_ar": "العنوان (entreprise)",
+      "label_fr": "Adresse Entreprise",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "REPRESENTANT": {
+      "type": "text",
+      "label_ar": "Representant",
+      "label_fr": "Representant",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "NOM_SALARIE": {
+      "type": "text",
+      "label_ar": "الاسم (salarie)",
+      "label_fr": "Nom Salarie",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "CIN_SALARIE": {
+      "type": "cin",
+      "label_ar": "بطاقة التعريف (salarie)",
+      "label_fr": "Cin Salarie",
+      "placeholder_ar": "12345678",
+      "placeholder_fr": "12345678",
+      "required": true,
+      "hint_ar": "8 أرقام",
+      "hint_fr": "8 chiffres",
+      "pattern": "^\\d{8}$",
+      "min_length": 8,
+      "max_length": 8
+    },
+    "DATE_CDI": {
+      "type": "date",
+      "label_ar": "تاريخ (cdi)",
+      "label_fr": "Date Cdi",
+      "placeholder_ar": "يوم/شهر/سنة",
+      "placeholder_fr": "JJ/MM/AAAA",
+      "required": true,
+      "hint_ar": "يوم/شهر/سنة",
+      "hint_fr": "JJ/MM/AAAA",
+      "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
+    },
+    "POSTE": {
+      "type": "text",
+      "label_ar": "Poste",
+      "label_fr": "Poste",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "DATE_RUPTURE": {
+      "type": "date",
+      "label_ar": "تاريخ (rupture)",
+      "label_fr": "Date Rupture",
+      "placeholder_ar": "يوم/شهر/سنة",
+      "placeholder_fr": "JJ/MM/AAAA",
+      "required": true,
+      "hint_ar": "يوم/شهر/سنة",
+      "hint_fr": "JJ/MM/AAAA",
+      "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
+    },
+    "INDEMNITE": {
+      "type": "text",
+      "label_ar": "Indemnite",
+      "label_fr": "Indemnite",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "BASE_CALCUL": {
+      "type": "text",
+      "label_ar": "Base Calcul",
+      "label_fr": "Base Calcul",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "JOURS_CONGES_DUS": {
+      "type": "text",
+      "label_ar": "Jours Conges Dus",
+      "label_fr": "Jours Conges Dus",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "LIEU": {
+      "type": "text",
+      "label_ar": "المكان",
+      "label_fr": "Lieu",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "DATE": {
+      "type": "date",
+      "label_ar": "تاريخ",
+      "label_fr": "Date",
+      "placeholder_ar": "يوم/شهر/سنة",
+      "placeholder_fr": "JJ/MM/AAAA",
+      "required": true,
+      "hint_ar": "يوم/شهر/سنة",
+      "hint_fr": "JJ/MM/AAAA",
+      "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
+    }
+  }
 }

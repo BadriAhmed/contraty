@@ -132,5 +132,224 @@
         }
       ]
     }
-  ]
+  ],
+  "field_metadata": {
+    "NOM_VENDEUR": {
+      "type": "text",
+      "label_ar": "الاسم (vendeur)",
+      "label_fr": "Nom Vendeur",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "CIN_VENDEUR": {
+      "type": "cin",
+      "label_ar": "بطاقة التعريف (vendeur)",
+      "label_fr": "Cin Vendeur",
+      "placeholder_ar": "12345678",
+      "placeholder_fr": "12345678",
+      "required": true,
+      "hint_ar": "8 أرقام",
+      "hint_fr": "8 chiffres",
+      "pattern": "^\\d{8}$",
+      "min_length": 8,
+      "max_length": 8
+    },
+    "ADRESSE_VENDEUR": {
+      "type": "text",
+      "label_ar": "العنوان (vendeur)",
+      "label_fr": "Adresse Vendeur",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "NOM_ACQUEREUR": {
+      "type": "text",
+      "label_ar": "الاسم (acquereur)",
+      "label_fr": "Nom Acquereur",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "CIN_ACQUEREUR": {
+      "type": "cin",
+      "label_ar": "بطاقة التعريف (acquereur)",
+      "label_fr": "Cin Acquereur",
+      "placeholder_ar": "12345678",
+      "placeholder_fr": "12345678",
+      "required": true,
+      "hint_ar": "8 أرقام",
+      "hint_fr": "8 chiffres",
+      "pattern": "^\\d{8}$",
+      "min_length": 8,
+      "max_length": 8
+    },
+    "ADRESSE_ACQUEREUR": {
+      "type": "text",
+      "label_ar": "العنوان (acquereur)",
+      "label_fr": "Adresse Acquereur",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "MARQUE": {
+      "type": "text",
+      "label_ar": "العلامة",
+      "label_fr": "Marque",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "MODELE": {
+      "type": "text",
+      "label_ar": "Modele",
+      "label_fr": "Modele",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "IMMATRICULATION": {
+      "type": "text",
+      "label_ar": "الماتركل",
+      "label_fr": "Immatriculation",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "NUM_CADRE": {
+      "type": "text",
+      "label_ar": "Num Cadre",
+      "label_fr": "Num Cadre",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "NUM_MOTEUR": {
+      "type": "text",
+      "label_ar": "Num Moteur",
+      "label_fr": "Num Moteur",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "CYLINDREE": {
+      "type": "text",
+      "label_ar": "Cylindree",
+      "label_fr": "Cylindree",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "ANNEE_MEC": {
+      "type": "text",
+      "label_ar": "Annee Mec",
+      "label_fr": "Annee Mec",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "KILOMETRAGE": {
+      "type": "text",
+      "label_ar": "Kilometrage",
+      "label_fr": "Kilometrage",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "PRIX": {
+      "type": "number",
+      "label_ar": "الثمن",
+      "label_fr": "Prix",
+      "placeholder_ar": "0",
+      "placeholder_fr": "0",
+      "required": true,
+      "hint_ar": "رقم",
+      "hint_fr": "Nombre",
+      "pattern": "^-?\\d+([\\.\\,]\\d+)?$",
+      "min_value": 0
+    },
+    "DELAI_JOURS": {
+      "type": "text",
+      "label_ar": "Delai Jours",
+      "label_fr": "Delai Jours",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "LIEU_SIGNATURE": {
+      "type": "text",
+      "label_ar": "المكان (signature)",
+      "label_fr": "Lieu Signature",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "DATE_SIGNATURE": {
+      "type": "date",
+      "label_ar": "تاريخ (signature)",
+      "label_fr": "Date Signature",
+      "placeholder_ar": "يوم/شهر/سنة",
+      "placeholder_fr": "JJ/MM/AAAA",
+      "required": true,
+      "hint_ar": "يوم/شهر/سنة",
+      "hint_fr": "JJ/MM/AAAA",
+      "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
+    }
+  }
 }

@@ -114,5 +114,171 @@
         }
       ]
     }
-  ]
+  ],
+  "field_metadata": {
+    "NOM_SALARIE": {
+      "type": "text",
+      "label_ar": "الاسم (salarie)",
+      "label_fr": "Nom Salarie",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "ADRESSE_SALARIE": {
+      "type": "text",
+      "label_ar": "العنوان (salarie)",
+      "label_fr": "Adresse Salarie",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "TEL_SALARIE": {
+      "type": "text",
+      "label_ar": "الهاتف (salarie)",
+      "label_fr": "Tel Salarie",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "POSTE": {
+      "type": "text",
+      "label_ar": "Poste",
+      "label_fr": "Poste",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "DESTINATAIRE": {
+      "type": "text",
+      "label_ar": "Destinataire",
+      "label_fr": "Destinataire",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "NOM_ENTREPRISE": {
+      "type": "text",
+      "label_ar": "الاسم (entreprise)",
+      "label_fr": "Nom Entreprise",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "ADRESSE_ENTREPRISE": {
+      "type": "text",
+      "label_ar": "العنوان (entreprise)",
+      "label_fr": "Adresse Entreprise",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "DATE_EMBAUCHE": {
+      "type": "date",
+      "label_ar": "تاريخ (embauche)",
+      "label_fr": "Date Embauche",
+      "placeholder_ar": "يوم/شهر/سنة",
+      "placeholder_fr": "JJ/MM/AAAA",
+      "required": true,
+      "hint_ar": "يوم/شهر/سنة",
+      "hint_fr": "JJ/MM/AAAA",
+      "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
+    },
+    "DUREE_PREAVIS": {
+      "type": "text",
+      "label_ar": "المدة (preavis)",
+      "label_fr": "Duree Preavis",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "DATE_EFFET_PREAVIS": {
+      "type": "date",
+      "label_ar": "تاريخ (effet preavis)",
+      "label_fr": "Date Effet Preavis",
+      "placeholder_ar": "يوم/شهر/سنة",
+      "placeholder_fr": "JJ/MM/AAAA",
+      "required": true,
+      "hint_ar": "يوم/شهر/سنة",
+      "hint_fr": "JJ/MM/AAAA",
+      "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
+    },
+    "DATE_DERNIER_JOUR": {
+      "type": "date",
+      "label_ar": "تاريخ (dernier jour)",
+      "label_fr": "Date Dernier Jour",
+      "placeholder_ar": "يوم/شهر/سنة",
+      "placeholder_fr": "JJ/MM/AAAA",
+      "required": true,
+      "hint_ar": "يوم/شهر/سنة",
+      "hint_fr": "JJ/MM/AAAA",
+      "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
+    },
+    "MOTIF_DEMISSION": {
+      "type": "text",
+      "label_ar": "Motif Demission",
+      "label_fr": "Motif Demission",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "LIEU": {
+      "type": "text",
+      "label_ar": "المكان",
+      "label_fr": "Lieu",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "DATE": {
+      "type": "date",
+      "label_ar": "تاريخ",
+      "label_fr": "Date",
+      "placeholder_ar": "يوم/شهر/سنة",
+      "placeholder_fr": "JJ/MM/AAAA",
+      "required": true,
+      "hint_ar": "يوم/شهر/سنة",
+      "hint_fr": "JJ/MM/AAAA",
+      "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
+    }
+  }
 }

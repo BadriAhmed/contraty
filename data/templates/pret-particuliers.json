@@ -166,5 +166,210 @@
         }
       ]
     }
-  ]
+  ],
+  "field_metadata": {
+    "NOM_PRETEUR": {
+      "type": "text",
+      "label_ar": "الاسم (preteur)",
+      "label_fr": "Nom Preteur",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "CIN_PRETEUR": {
+      "type": "cin",
+      "label_ar": "بطاقة التعريف (preteur)",
+      "label_fr": "Cin Preteur",
+      "placeholder_ar": "12345678",
+      "placeholder_fr": "12345678",
+      "required": true,
+      "hint_ar": "8 أرقام",
+      "hint_fr": "8 chiffres",
+      "pattern": "^\\d{8}$",
+      "min_length": 8,
+      "max_length": 8
+    },
+    "ADRESSE_PRETEUR": {
+      "type": "text",
+      "label_ar": "العنوان (preteur)",
+      "label_fr": "Adresse Preteur",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "NOM_EMPRUNTEUR": {
+      "type": "text",
+      "label_ar": "الاسم (emprunteur)",
+      "label_fr": "Nom Emprunteur",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "CIN_EMPRUNTEUR": {
+      "type": "cin",
+      "label_ar": "بطاقة التعريف (emprunteur)",
+      "label_fr": "Cin Emprunteur",
+      "placeholder_ar": "12345678",
+      "placeholder_fr": "12345678",
+      "required": true,
+      "hint_ar": "8 أرقام",
+      "hint_fr": "8 chiffres",
+      "pattern": "^\\d{8}$",
+      "min_length": 8,
+      "max_length": 8
+    },
+    "ADRESSE_EMPRUNTEUR": {
+      "type": "text",
+      "label_ar": "العنوان (emprunteur)",
+      "label_fr": "Adresse Emprunteur",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "MONTANT": {
+      "type": "number",
+      "label_ar": "المبلغ",
+      "label_fr": "Montant",
+      "placeholder_ar": "0",
+      "placeholder_fr": "0",
+      "required": true,
+      "hint_ar": "رقم",
+      "hint_fr": "Nombre",
+      "pattern": "^-?\\d+([\\.\\,]\\d+)?$",
+      "min_value": 0
+    },
+    "DESTINATION_PRET": {
+      "type": "text",
+      "label_ar": "Destination Pret",
+      "label_fr": "Destination Pret",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "MODALITES": {
+      "type": "text",
+      "label_ar": "Modalites",
+      "label_fr": "Modalites",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "DATE_DEBLOCAGE": {
+      "type": "date",
+      "label_ar": "تاريخ (deblocage)",
+      "label_fr": "Date Deblocage",
+      "placeholder_ar": "يوم/شهر/سنة",
+      "placeholder_fr": "JJ/MM/AAAA",
+      "required": true,
+      "hint_ar": "يوم/شهر/سنة",
+      "hint_fr": "JJ/MM/AAAA",
+      "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
+    },
+    "DATE_ECHEANCE_FINALE": {
+      "type": "date",
+      "label_ar": "تاريخ (echeance finale)",
+      "label_fr": "Date Echeance Finale",
+      "placeholder_ar": "يوم/شهر/سنة",
+      "placeholder_fr": "JJ/MM/AAAA",
+      "required": true,
+      "hint_ar": "يوم/شهر/سنة",
+      "hint_fr": "JJ/MM/AAAA",
+      "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
+    },
+    "AVEC_INTERET": {
+      "type": "text",
+      "label_ar": "Avec Interet",
+      "label_fr": "Avec Interet",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "TAUX": {
+      "type": "number",
+      "label_ar": "النسبة",
+      "label_fr": "Taux",
+      "placeholder_ar": "0",
+      "placeholder_fr": "0",
+      "required": true,
+      "hint_ar": "رقم",
+      "hint_fr": "Nombre",
+      "pattern": "^-?\\d+([\\.\\,]\\d+)?$",
+      "min_value": 0
+    },
+    "GARANTIES_PRET": {
+      "type": "text",
+      "label_ar": "Garanties Pret",
+      "label_fr": "Garanties Pret",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "CONDITIONS_ANTICIPE": {
+      "type": "text",
+      "label_ar": "Conditions Anticipe",
+      "label_fr": "Conditions Anticipe",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "LIEU_SIGNATURE": {
+      "type": "text",
+      "label_ar": "المكان (signature)",
+      "label_fr": "Lieu Signature",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "DATE_SIGNATURE": {
+      "type": "date",
+      "label_ar": "تاريخ (signature)",
+      "label_fr": "Date Signature",
+      "placeholder_ar": "يوم/شهر/سنة",
+      "placeholder_fr": "JJ/MM/AAAA",
+      "required": true,
+      "hint_ar": "يوم/شهر/سنة",
+      "hint_fr": "JJ/MM/AAAA",
+      "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
+    }
+  }
 }

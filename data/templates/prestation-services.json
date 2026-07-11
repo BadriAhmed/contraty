@@ -182,5 +182,185 @@
         }
       ]
     }
-  ]
+  ],
+  "field_metadata": {
+    "NOM_CLIENT": {
+      "type": "text",
+      "label_ar": "الاسم (client)",
+      "label_fr": "Nom Client",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "ADRESSE_CLIENT": {
+      "type": "text",
+      "label_ar": "العنوان (client)",
+      "label_fr": "Adresse Client",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "REPRESENTANT_CLIENT": {
+      "type": "text",
+      "label_ar": "Representant Client",
+      "label_fr": "Representant Client",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "NOM_PRESTATAIRE": {
+      "type": "text",
+      "label_ar": "الاسم (prestataire)",
+      "label_fr": "Nom Prestataire",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "ADRESSE_PRESTATAIRE": {
+      "type": "text",
+      "label_ar": "العنوان (prestataire)",
+      "label_fr": "Adresse Prestataire",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "REPRESENTANT_PRESTATAIRE": {
+      "type": "text",
+      "label_ar": "Representant Prestataire",
+      "label_fr": "Representant Prestataire",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "DESCRIPTION_PRESTATIONS": {
+      "type": "text",
+      "label_ar": "الوصف (prestations)",
+      "label_fr": "Description Prestations",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "MONTANT_TOTAL": {
+      "type": "number",
+      "label_ar": "المبلغ (total)",
+      "label_fr": "Montant Total",
+      "placeholder_ar": "0",
+      "placeholder_fr": "0",
+      "required": true,
+      "hint_ar": "رقم",
+      "hint_fr": "Nombre",
+      "pattern": "^-?\\d+([\\.\\,]\\d+)?$",
+      "min_value": 0
+    },
+    "MODALITES_PAIEMENT": {
+      "type": "text",
+      "label_ar": "Modalites Paiement",
+      "label_fr": "Modalites Paiement",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "DUREE": {
+      "type": "text",
+      "label_ar": "المدة",
+      "label_fr": "Duree",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "DATE_DEBUT": {
+      "type": "date",
+      "label_ar": "تاريخ (debut)",
+      "label_fr": "Date Debut",
+      "placeholder_ar": "يوم/شهر/سنة",
+      "placeholder_fr": "JJ/MM/AAAA",
+      "required": true,
+      "hint_ar": "يوم/شهر/سنة",
+      "hint_fr": "JJ/MM/AAAA",
+      "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
+    },
+    "PREAVIS_JOURS": {
+      "type": "text",
+      "label_ar": "مهلة الإعلام (jours)",
+      "label_fr": "Preavis Jours",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "TRIBUNAL": {
+      "type": "text",
+      "label_ar": "المحكمة",
+      "label_fr": "Tribunal",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "LIEU_SIGNATURE": {
+      "type": "text",
+      "label_ar": "المكان (signature)",
+      "label_fr": "Lieu Signature",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "DATE_SIGNATURE": {
+      "type": "date",
+      "label_ar": "تاريخ (signature)",
+      "label_fr": "Date Signature",
+      "placeholder_ar": "يوم/شهر/سنة",
+      "placeholder_fr": "JJ/MM/AAAA",
+      "required": true,
+      "hint_ar": "يوم/شهر/سنة",
+      "hint_fr": "JJ/MM/AAAA",
+      "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
+    }
+  }
 }

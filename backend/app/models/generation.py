@@ -1,6 +1,6 @@
 from pydantic import BaseModel, Field
 from typing import Optional
-from app.models.contract import Language, ContractResponse, TemplateSection
+from app.models.contract import Language, ContractResponse, TemplateSection, FieldMetadata
 
 
 class GenerateRequest(BaseModel):
@@ -44,7 +44,9 @@ class TemplateDetail(TemplateSummary):
 
     Includes sections/articles/fields so the wizard knows which
     placeholders to render as input fields and how to group them.
+    field_metadata provides per-field validation rules (type, pattern, constraints).
     """
     legal_basis: str = ""
     disclaimer: str = ""
     sections: list[TemplateSection] = Field(default_factory=list)
+    field_metadata: dict[str, FieldMetadata] = Field(default_factory=dict)

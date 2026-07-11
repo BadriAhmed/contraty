@@ -153,5 +153,161 @@
         }
       ]
     }
-  ]
+  ],
+  "field_metadata": {
+    "NOM_PARTIE_A": {
+      "type": "text",
+      "label_ar": "الاسم (partie a)",
+      "label_fr": "Nom Partie A",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "ADRESSE_PARTIE_A": {
+      "type": "text",
+      "label_ar": "العنوان (partie a)",
+      "label_fr": "Adresse Partie A",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "REPRESENTANT_A": {
+      "type": "text",
+      "label_ar": "Representant A",
+      "label_fr": "Representant A",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "NOM_PARTIE_B": {
+      "type": "text",
+      "label_ar": "الاسم (partie b)",
+      "label_fr": "Nom Partie B",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "ADRESSE_PARTIE_B": {
+      "type": "text",
+      "label_ar": "العنوان (partie b)",
+      "label_fr": "Adresse Partie B",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "REPRESENTANT_B": {
+      "type": "text",
+      "label_ar": "Representant B",
+      "label_fr": "Representant B",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "SCOPE_INFOS": {
+      "type": "text",
+      "label_ar": "Scope Infos",
+      "label_fr": "Scope Infos",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "OBJET_COLLABORATION": {
+      "type": "text",
+      "label_ar": "Objet Collaboration",
+      "label_fr": "Objet Collaboration",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "DATE_EFFET": {
+      "type": "date",
+      "label_ar": "تاريخ (effet)",
+      "label_fr": "Date Effet",
+      "placeholder_ar": "يوم/شهر/سنة",
+      "placeholder_fr": "JJ/MM/AAAA",
+      "required": true,
+      "hint_ar": "يوم/شهر/سنة",
+      "hint_fr": "JJ/MM/AAAA",
+      "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
+    },
+    "DUREE_ANNEE": {
+      "type": "text",
+      "label_ar": "المدة (annee)",
+      "label_fr": "Duree Annee",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "TRIBUNAL": {
+      "type": "text",
+      "label_ar": "المحكمة",
+      "label_fr": "Tribunal",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "LIEU_SIGNATURE": {
+      "type": "text",
+      "label_ar": "المكان (signature)",
+      "label_fr": "Lieu Signature",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "DATE_SIGNATURE": {
+      "type": "date",
+      "label_ar": "تاريخ (signature)",
+      "label_fr": "Date Signature",
+      "placeholder_ar": "يوم/شهر/سنة",
+      "placeholder_fr": "JJ/MM/AAAA",
+      "required": true,
+      "hint_ar": "يوم/شهر/سنة",
+      "hint_fr": "JJ/MM/AAAA",
+      "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
+    }
+  }
 }

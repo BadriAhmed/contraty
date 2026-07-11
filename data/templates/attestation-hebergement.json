@@ -86,5 +86,139 @@
         }
       ]
     }
-  ]
+  ],
+  "field_metadata": {
+    "NOM_HEBERGEANT": {
+      "type": "text",
+      "label_ar": "الاسم (hebergeant)",
+      "label_fr": "Nom Hebergeant",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "CIN_HEBERGEANT": {
+      "type": "cin",
+      "label_ar": "بطاقة التعريف (hebergeant)",
+      "label_fr": "Cin Hebergeant",
+      "placeholder_ar": "12345678",
+      "placeholder_fr": "12345678",
+      "required": true,
+      "hint_ar": "8 أرقام",
+      "hint_fr": "8 chiffres",
+      "pattern": "^\\d{8}$",
+      "min_length": 8,
+      "max_length": 8
+    },
+    "ADRESSE_HEBERGEANT": {
+      "type": "text",
+      "label_ar": "العنوان (hebergeant)",
+      "label_fr": "Adresse Hebergeant",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "ADRESSE_HEBERGEMENT": {
+      "type": "text",
+      "label_ar": "العنوان (hebergement)",
+      "label_fr": "Adresse Hebergement",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "NOM_HEBERGE": {
+      "type": "text",
+      "label_ar": "الاسم (heberge)",
+      "label_fr": "Nom Heberge",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "CIN_HEBERGE": {
+      "type": "cin",
+      "label_ar": "بطاقة التعريف (heberge)",
+      "label_fr": "Cin Heberge",
+      "placeholder_ar": "12345678",
+      "placeholder_fr": "12345678",
+      "required": true,
+      "hint_ar": "8 أرقام",
+      "hint_fr": "8 chiffres",
+      "pattern": "^\\d{8}$",
+      "min_length": 8,
+      "max_length": 8
+    },
+    "DATE_DEBUT_HEBERGEMENT": {
+      "type": "date",
+      "label_ar": "تاريخ (debut hebergement)",
+      "label_fr": "Date Debut Hebergement",
+      "placeholder_ar": "يوم/شهر/سنة",
+      "placeholder_fr": "JJ/MM/AAAA",
+      "required": true,
+      "hint_ar": "يوم/شهر/سنة",
+      "hint_fr": "JJ/MM/AAAA",
+      "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
+    },
+    "LIEN": {
+      "type": "text",
+      "label_ar": "Lien",
+      "label_fr": "Lien",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "DESTINATION": {
+      "type": "text",
+      "label_ar": "Destination",
+      "label_fr": "Destination",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "LIEU": {
+      "type": "text",
+      "label_ar": "المكان",
+      "label_fr": "Lieu",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "DATE": {
+      "type": "date",
+      "label_ar": "تاريخ",
+      "label_fr": "Date",
+      "placeholder_ar": "يوم/شهر/سنة",
+      "placeholder_fr": "JJ/MM/AAAA",
+      "required": true,
+      "hint_ar": "يوم/شهر/سنة",
+      "hint_fr": "JJ/MM/AAAA",
+      "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
+    }
+  }
 }

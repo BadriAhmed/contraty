@@ -147,5 +147,150 @@
         }
       ]
     }
-  ]
+  ],
+  "field_metadata": {
+    "DENOMINATION": {
+      "type": "text",
+      "label_ar": "Denomination",
+      "label_fr": "Denomination",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "OBJET_SOCIAL": {
+      "type": "text",
+      "label_ar": "Objet Social",
+      "label_fr": "Objet Social",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "SIEGE": {
+      "type": "text",
+      "label_ar": "Siege",
+      "label_fr": "Siege",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "DUREE_ANNEE": {
+      "type": "text",
+      "label_ar": "المدة (annee)",
+      "label_fr": "Duree Annee",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "CAPITAL": {
+      "type": "number",
+      "label_ar": "رأس المال",
+      "label_fr": "Capital",
+      "placeholder_ar": "0",
+      "placeholder_fr": "0",
+      "required": true,
+      "hint_ar": "رقم",
+      "hint_fr": "Nombre",
+      "pattern": "^-?\\d+([\\.\\,]\\d+)?$",
+      "min_value": 0
+    },
+    "NB_PARTS": {
+      "type": "text",
+      "label_ar": "NB Parts",
+      "label_fr": "NB Parts",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "VALEUR_NOMINALE": {
+      "type": "text",
+      "label_ar": "Valeur Nominale",
+      "label_fr": "Valeur Nominale",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "REPARTITION_PARTS": {
+      "type": "text",
+      "label_ar": "Repartition Parts",
+      "label_fr": "Repartition Parts",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "NOM_GERANT": {
+      "type": "text",
+      "label_ar": "الاسم (gerant)",
+      "label_fr": "Nom Gerant",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "DUREE_MANDAT_GERANT": {
+      "type": "text",
+      "label_ar": "المدة (mandat gerant)",
+      "label_fr": "Duree Mandat Gerant",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "LIEU_SIGNATURE": {
+      "type": "text",
+      "label_ar": "المكان (signature)",
+      "label_fr": "Lieu Signature",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "DATE_SIGNATURE": {
+      "type": "date",
+      "label_ar": "تاريخ (signature)",
+      "label_fr": "Date Signature",
+      "placeholder_ar": "يوم/شهر/سنة",
+      "placeholder_fr": "JJ/MM/AAAA",
+      "required": true,
+      "hint_ar": "يوم/شهر/سنة",
+      "hint_fr": "JJ/MM/AAAA",
+      "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
+    }
+  }
 }

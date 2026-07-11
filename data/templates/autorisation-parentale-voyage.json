@@ -97,5 +97,197 @@
         }
       ]
     }
-  ]
+  ],
+  "field_metadata": {
+    "NOM_PARENT": {
+      "type": "text",
+      "label_ar": "الاسم (parent)",
+      "label_fr": "Nom Parent",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "CIN_PARENT": {
+      "type": "cin",
+      "label_ar": "بطاقة التعريف (parent)",
+      "label_fr": "Cin Parent",
+      "placeholder_ar": "12345678",
+      "placeholder_fr": "12345678",
+      "required": true,
+      "hint_ar": "8 أرقام",
+      "hint_fr": "8 chiffres",
+      "pattern": "^\\d{8}$",
+      "min_length": 8,
+      "max_length": 8
+    },
+    "ADRESSE_PARENT": {
+      "type": "text",
+      "label_ar": "العنوان (parent)",
+      "label_fr": "Adresse Parent",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "QUALITE": {
+      "type": "text",
+      "label_ar": "Qualite",
+      "label_fr": "Qualite",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "NOM_ENFANT": {
+      "type": "text",
+      "label_ar": "الاسم (enfant)",
+      "label_fr": "Nom Enfant",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "DATE_NAISSANCE_ENFANT": {
+      "type": "date",
+      "label_ar": "تاريخ (naissance enfant)",
+      "label_fr": "Date Naissance Enfant",
+      "placeholder_ar": "يوم/شهر/سنة",
+      "placeholder_fr": "JJ/MM/AAAA",
+      "required": true,
+      "hint_ar": "يوم/شهر/سنة",
+      "hint_fr": "JJ/MM/AAAA",
+      "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
+    },
+    "LIEU_NAISSANCE_ENFANT": {
+      "type": "text",
+      "label_ar": "المكان (naissance enfant)",
+      "label_fr": "Lieu Naissance Enfant",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "NUM_EXTRAIT_NAISSANCE": {
+      "type": "text",
+      "label_ar": "Num Extrait Naissance",
+      "label_fr": "Num Extrait Naissance",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "NUM_PIECE_ENFANT": {
+      "type": "text",
+      "label_ar": "Num Piece Enfant",
+      "label_fr": "Num Piece Enfant",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "DESTINATION": {
+      "type": "text",
+      "label_ar": "Destination",
+      "label_fr": "Destination",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "NOM_ACCOMPAGNATEUR": {
+      "type": "text",
+      "label_ar": "الاسم (accompagnateur)",
+      "label_fr": "Nom Accompagnateur",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "CIN_ACCOMPAGNATEUR": {
+      "type": "cin",
+      "label_ar": "بطاقة التعريف (accompagnateur)",
+      "label_fr": "Cin Accompagnateur",
+      "placeholder_ar": "12345678",
+      "placeholder_fr": "12345678",
+      "required": true,
+      "hint_ar": "8 أرقام",
+      "hint_fr": "8 chiffres",
+      "pattern": "^\\d{8}$",
+      "min_length": 8,
+      "max_length": 8
+    },
+    "DATE_DEPART": {
+      "type": "date",
+      "label_ar": "تاريخ (depart)",
+      "label_fr": "Date Depart",
+      "placeholder_ar": "يوم/شهر/سنة",
+      "placeholder_fr": "JJ/MM/AAAA",
+      "required": true,
+      "hint_ar": "يوم/شهر/سنة",
+      "hint_fr": "JJ/MM/AAAA",
+      "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
+    },
+    "DATE_RETOUR": {
+      "type": "date",
+      "label_ar": "تاريخ (retour)",
+      "label_fr": "Date Retour",
+      "placeholder_ar": "يوم/شهر/سنة",
+      "placeholder_fr": "JJ/MM/AAAA",
+      "required": true,
+      "hint_ar": "يوم/شهر/سنة",
+      "hint_fr": "JJ/MM/AAAA",
+      "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
+    },
+    "LIEU": {
+      "type": "text",
+      "label_ar": "المكان",
+      "label_fr": "Lieu",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "DATE": {
+      "type": "date",
+      "label_ar": "تاريخ",
+      "label_fr": "Date",
+      "placeholder_ar": "يوم/شهر/سنة",
+      "placeholder_fr": "JJ/MM/AAAA",
+      "required": true,
+      "hint_ar": "يوم/شهر/سنة",
+      "hint_fr": "JJ/MM/AAAA",
+      "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
+    }
+  }
 }

@@ -172,5 +172,233 @@
         }
       ]
     }
-  ]
+  ],
+  "field_metadata": {
+    "NOM_ENTREPRISE": {
+      "type": "text",
+      "label_ar": "الاسم (entreprise)",
+      "label_fr": "Nom Entreprise",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "RNE": {
+      "type": "text",
+      "label_ar": "Rne",
+      "label_fr": "Rne",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "ADRESSE_ENTREPRISE": {
+      "type": "text",
+      "label_ar": "العنوان (entreprise)",
+      "label_fr": "Adresse Entreprise",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "REPRESENTANT": {
+      "type": "text",
+      "label_ar": "Representant",
+      "label_fr": "Representant",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "NOM_STAGIAIRE": {
+      "type": "text",
+      "label_ar": "الاسم (stagiaire)",
+      "label_fr": "Nom Stagiaire",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "CIN_STAGIAIRE": {
+      "type": "cin",
+      "label_ar": "بطاقة التعريف (stagiaire)",
+      "label_fr": "Cin Stagiaire",
+      "placeholder_ar": "12345678",
+      "placeholder_fr": "12345678",
+      "required": true,
+      "hint_ar": "8 أرقام",
+      "hint_fr": "8 chiffres",
+      "pattern": "^\\d{8}$",
+      "min_length": 8,
+      "max_length": 8
+    },
+    "DIPLOME": {
+      "type": "text",
+      "label_ar": "Diplome",
+      "label_fr": "Diplome",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "ANNEE_DIPLOME": {
+      "type": "text",
+      "label_ar": "Annee Diplome",
+      "label_fr": "Annee Diplome",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "ADRESSE_STAGIAIRE": {
+      "type": "text",
+      "label_ar": "العنوان (stagiaire)",
+      "label_fr": "Adresse Stagiaire",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "DOMAINE": {
+      "type": "text",
+      "label_ar": "Domaine",
+      "label_fr": "Domaine",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "DUREE_MOIS": {
+      "type": "text",
+      "label_ar": "المدة (mois)",
+      "label_fr": "Duree Mois",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "DATE_DEBUT": {
+      "type": "date",
+      "label_ar": "تاريخ (debut)",
+      "label_fr": "Date Debut",
+      "placeholder_ar": "يوم/شهر/سنة",
+      "placeholder_fr": "JJ/MM/AAAA",
+      "required": true,
+      "hint_ar": "يوم/شهر/سنة",
+      "hint_fr": "JJ/MM/AAAA",
+      "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
+    },
+    "DATE_FIN": {
+      "type": "date",
+      "label_ar": "تاريخ (fin)",
+      "label_fr": "Date Fin",
+      "placeholder_ar": "يوم/شهر/سنة",
+      "placeholder_fr": "JJ/MM/AAAA",
+      "required": true,
+      "hint_ar": "يوم/شهر/سنة",
+      "hint_fr": "JJ/MM/AAAA",
+      "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
+    },
+    "MONTANT_BOURSE": {
+      "type": "number",
+      "label_ar": "المبلغ (bourse)",
+      "label_fr": "Montant Bourse",
+      "placeholder_ar": "0",
+      "placeholder_fr": "0",
+      "required": true,
+      "hint_ar": "رقم",
+      "hint_fr": "Nombre",
+      "pattern": "^-?\\d+([\\.\\,]\\d+)?$",
+      "min_value": 0
+    },
+    "PART_ETAT": {
+      "type": "text",
+      "label_ar": "Part Etat",
+      "label_fr": "Part Etat",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "PART_ENTREPRISE": {
+      "type": "text",
+      "label_ar": "Part Entreprise",
+      "label_fr": "Part Entreprise",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "PREAVIS_JOURS": {
+      "type": "text",
+      "label_ar": "مهلة الإعلام (jours)",
+      "label_fr": "Preavis Jours",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "LIEU_SIGNATURE": {
+      "type": "text",
+      "label_ar": "المكان (signature)",
+      "label_fr": "Lieu Signature",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "DATE_SIGNATURE": {
+      "type": "date",
+      "label_ar": "تاريخ (signature)",
+      "label_fr": "Date Signature",
+      "placeholder_ar": "يوم/شهر/سنة",
+      "placeholder_fr": "JJ/MM/AAAA",
+      "required": true,
+      "hint_ar": "يوم/شهر/سنة",
+      "hint_fr": "JJ/MM/AAAA",
+      "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
+    }
+  }
 }

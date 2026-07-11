@@ -1,7 +1,7 @@
 import logging
 from fastapi import APIRouter, HTTPException
 from app.models.generation import GenerateRequest, GenerateResponse, PDFRequest, TemplateSummary, TemplateDetail
-from app.models.contract import Language, Contract, TemplateSection
+from app.models.contract import Language, Contract, TemplateSection, FieldMetadata
 from app.services.template_service import (
     list_templates,
     get_template,
@@ -27,6 +27,10 @@ def _to_summary(t: dict) -> TemplateSummary:
 def _to_detail(t: dict) -> TemplateDetail:
     sections_raw = t.get("sections", [])
     sections = [TemplateSection(**s) for s in sections_raw]
+
+    meta_raw = t.get("field_metadata", {})
+    field_metadata = {k: FieldMetadata(**v) if isinstance(v, dict) else v for k, v in meta_raw.items()}
+
     return TemplateDetail(
         slug=t.get("slug", ""),
         title_ar=t.get("title_ar", ""),
@@ -37,6 +41,7 @@ def _to_detail(t: dict) -> TemplateDetail:
         legal_basis=t.get("legal_basis", ""),
         disclaimer=t.get("disclaimer", ""),
         sections=sections,
+        field_metadata=field_metadata,
     )
 
 

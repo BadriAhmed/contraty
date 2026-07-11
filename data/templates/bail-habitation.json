@@ -192,5 +192,235 @@
         }
       ]
     }
-  ]
+  ],
+  "field_metadata": {
+    "NOM_BAILLEUR": {
+      "type": "text",
+      "label_ar": "الاسم (bailleur)",
+      "label_fr": "Nom Bailleur",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "CIN_BAILLEUR": {
+      "type": "cin",
+      "label_ar": "بطاقة التعريف (bailleur)",
+      "label_fr": "Cin Bailleur",
+      "placeholder_ar": "12345678",
+      "placeholder_fr": "12345678",
+      "required": true,
+      "hint_ar": "8 أرقام",
+      "hint_fr": "8 chiffres",
+      "pattern": "^\\d{8}$",
+      "min_length": 8,
+      "max_length": 8
+    },
+    "ADRESSE_BAILLEUR": {
+      "type": "text",
+      "label_ar": "العنوان (bailleur)",
+      "label_fr": "Adresse Bailleur",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "NOM_PRENEUR": {
+      "type": "text",
+      "label_ar": "الاسم (preneur)",
+      "label_fr": "Nom Preneur",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "CIN_PRENEUR": {
+      "type": "cin",
+      "label_ar": "بطاقة التعريف (preneur)",
+      "label_fr": "Cin Preneur",
+      "placeholder_ar": "12345678",
+      "placeholder_fr": "12345678",
+      "required": true,
+      "hint_ar": "8 أرقام",
+      "hint_fr": "8 chiffres",
+      "pattern": "^\\d{8}$",
+      "min_length": 8,
+      "max_length": 8
+    },
+    "ADRESSE_PRENEUR": {
+      "type": "text",
+      "label_ar": "العنوان (preneur)",
+      "label_fr": "Adresse Preneur",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "ADRESSE_BIEN": {
+      "type": "text",
+      "label_ar": "العنوان (bien)",
+      "label_fr": "Adresse Bien",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "DESCRIPTION_BIEN": {
+      "type": "text",
+      "label_ar": "الوصف (bien)",
+      "label_fr": "Description Bien",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "DUREE_BAIL": {
+      "type": "text",
+      "label_ar": "المدة (bail)",
+      "label_fr": "Duree Bail",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "DATE_DEBUT": {
+      "type": "date",
+      "label_ar": "تاريخ (debut)",
+      "label_fr": "Date Debut",
+      "placeholder_ar": "يوم/شهر/سنة",
+      "placeholder_fr": "JJ/MM/AAAA",
+      "required": true,
+      "hint_ar": "يوم/شهر/سنة",
+      "hint_fr": "JJ/MM/AAAA",
+      "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
+    },
+    "PREAVIS_MOIS": {
+      "type": "text",
+      "label_ar": "مهلة الإعلام (mois)",
+      "label_fr": "Preavis Mois",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "MONTANT_LOYER": {
+      "type": "number",
+      "label_ar": "المبلغ (loyer)",
+      "label_fr": "Montant Loyer",
+      "placeholder_ar": "0",
+      "placeholder_fr": "0",
+      "required": true,
+      "hint_ar": "رقم",
+      "hint_fr": "Nombre",
+      "pattern": "^-?\\d+([\\.\\,]\\d+)?$",
+      "min_value": 0
+    },
+    "JOUR_PAIEMENT": {
+      "type": "text",
+      "label_ar": "Jour Paiement",
+      "label_fr": "Jour Paiement",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "MONTANT_CAUTION": {
+      "type": "number",
+      "label_ar": "المبلغ (caution)",
+      "label_fr": "Montant Caution",
+      "placeholder_ar": "0",
+      "placeholder_fr": "0",
+      "required": true,
+      "hint_ar": "رقم",
+      "hint_fr": "Nombre",
+      "pattern": "^-?\\d+([\\.\\,]\\d+)?$",
+      "min_value": 0
+    },
+    "CHARGES_INCLUSES": {
+      "type": "text",
+      "label_ar": "Charges Incluses",
+      "label_fr": "Charges Incluses",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "CHARGES_PRENEUR": {
+      "type": "text",
+      "label_ar": "Charges Preneur",
+      "label_fr": "Charges Preneur",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "TRIBUNAL": {
+      "type": "text",
+      "label_ar": "المحكمة",
+      "label_fr": "Tribunal",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "LIEU_SIGNATURE": {
+      "type": "text",
+      "label_ar": "المكان (signature)",
+      "label_fr": "Lieu Signature",
+      "placeholder_ar": "",
+      "placeholder_fr": "",
+      "required": true,
+      "hint_ar": "",
+      "hint_fr": "",
+      "min_length": 2,
+      "max_length": 500
+    },
+    "DATE_SIGNATURE": {
+      "type": "date",
+      "label_ar": "تاريخ (signature)",
+      "label_fr": "Date Signature",
+      "placeholder_ar": "يوم/شهر/سنة",
+      "placeholder_fr": "JJ/MM/AAAA",
+      "required": true,
+      "hint_ar": "يوم/شهر/سنة",
+      "hint_fr": "JJ/MM/AAAA",
+      "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$"
+    }
+  }
 }
