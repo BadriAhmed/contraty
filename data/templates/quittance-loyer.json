@@ -81,7 +81,7 @@
   "field_metadata": {
     "NOM_BAILLEUR": {
       "type": "text",
-      "label_ar": "الاسم (bailleur)",
+      "label_ar": "الاسم (المسوغ)",
       "label_fr": "Nom Bailleur",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -93,7 +93,7 @@
     },
     "CIN_BAILLEUR": {
       "type": "cin",
-      "label_ar": "بطاقة التعريف (bailleur)",
+      "label_ar": "رقم بطاقة التعريف الوطنية (المسوغ)",
       "label_fr": "Cin Bailleur",
       "placeholder_ar": "12345678",
       "placeholder_fr": "12345678",
@@ -106,7 +106,7 @@
     },
     "NOM_PRENEUR": {
       "type": "text",
-      "label_ar": "الاسم (preneur)",
+      "label_ar": "الاسم (المتسوغ)",
       "label_fr": "Nom Preneur",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -130,7 +130,7 @@
     },
     "MOIS": {
       "type": "text",
-      "label_ar": "Mois",
+      "label_ar": "الشهر",
       "label_fr": "Mois",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -142,7 +142,7 @@
     },
     "ANNEE": {
       "type": "text",
-      "label_ar": "Annee",
+      "label_ar": "السنة",
       "label_fr": "Annee",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -154,7 +154,7 @@
     },
     "ADRESSE_BIEN": {
       "type": "text",
-      "label_ar": "العنوان (bien)",
+      "label_ar": "عنوان العقار المسوغ",
       "label_fr": "Adresse Bien",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -166,7 +166,7 @@
     },
     "MODE_PAIEMENT": {
       "type": "text",
-      "label_ar": "Mode Paiement",
+      "label_ar": "طريقة الخلاص",
       "label_fr": "Mode Paiement",
       "placeholder_ar": "",
       "placeholder_fr": "",

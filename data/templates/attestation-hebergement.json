@@ -90,7 +90,7 @@
   "field_metadata": {
     "NOM_HEBERGEANT": {
       "type": "text",
-      "label_ar": "الاسم (hebergeant)",
+      "label_ar": "الاسم",
       "label_fr": "Nom Hebergeant",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -102,7 +102,7 @@
     },
     "CIN_HEBERGEANT": {
       "type": "cin",
-      "label_ar": "بطاقة التعريف (hebergeant)",
+      "label_ar": "بطاقة التعريف",
       "label_fr": "Cin Hebergeant",
       "placeholder_ar": "12345678",
       "placeholder_fr": "12345678",
@@ -115,7 +115,7 @@
     },
     "ADRESSE_HEBERGEANT": {
       "type": "text",
-      "label_ar": "العنوان (hebergeant)",
+      "label_ar": "العنوان",
       "label_fr": "Adresse Hebergeant",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -127,7 +127,7 @@
     },
     "ADRESSE_HEBERGEMENT": {
       "type": "text",
-      "label_ar": "العنوان (hebergement)",
+      "label_ar": "العنوان",
       "label_fr": "Adresse Hebergement",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -139,7 +139,7 @@
     },
     "NOM_HEBERGE": {
       "type": "text",
-      "label_ar": "الاسم (heberge)",
+      "label_ar": "الاسم",
       "label_fr": "Nom Heberge",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -151,7 +151,7 @@
     },
     "CIN_HEBERGE": {
       "type": "cin",
-      "label_ar": "بطاقة التعريف (heberge)",
+      "label_ar": "بطاقة التعريف",
       "label_fr": "Cin Heberge",
       "placeholder_ar": "12345678",
       "placeholder_fr": "12345678",
@@ -164,7 +164,7 @@
     },
     "DATE_DEBUT_HEBERGEMENT": {
       "type": "date",
-      "label_ar": "تاريخ (debut hebergement)",
+      "label_ar": "تاريخ",
       "label_fr": "Date Debut Hebergement",
       "placeholder_ar": "يوم/شهر/سنة",
       "placeholder_fr": "JJ/MM/AAAA",
@@ -175,7 +175,7 @@
     },
     "LIEN": {
       "type": "text",
-      "label_ar": "Lien",
+      "label_ar": "الصلة",
       "label_fr": "Lien",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -187,7 +187,7 @@
     },
     "DESTINATION": {
       "type": "text",
-      "label_ar": "Destination",
+      "label_ar": "التخصيص",
       "label_fr": "Destination",
       "placeholder_ar": "",
       "placeholder_fr": "",

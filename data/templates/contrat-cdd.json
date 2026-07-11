@@ -178,7 +178,7 @@
   "field_metadata": {
     "NOM_ENTREPRISE": {
       "type": "text",
-      "label_ar": "الاسم (entreprise)",
+      "label_ar": "الاسم",
       "label_fr": "Nom Entreprise",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -190,7 +190,7 @@
     },
     "RNE": {
       "type": "text",
-      "label_ar": "Rne",
+      "label_ar": "السجل الوطني للمؤسسات",
       "label_fr": "Rne",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -202,7 +202,7 @@
     },
     "ADRESSE_ENTREPRISE": {
       "type": "text",
-      "label_ar": "العنوان (entreprise)",
+      "label_ar": "العنوان",
       "label_fr": "Adresse Entreprise",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -214,7 +214,7 @@
     },
     "REPRESENTANT": {
       "type": "text",
-      "label_ar": "Representant",
+      "label_ar": "الممثل القانوني",
       "label_fr": "Representant",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -226,7 +226,7 @@
     },
     "NOM_SALARIE": {
       "type": "text",
-      "label_ar": "الاسم (salarie)",
+      "label_ar": "الاسم",
       "label_fr": "Nom Salarie",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -238,7 +238,7 @@
     },
     "CIN_SALARIE": {
       "type": "cin",
-      "label_ar": "بطاقة التعريف (salarie)",
+      "label_ar": "بطاقة التعريف",
       "label_fr": "Cin Salarie",
       "placeholder_ar": "12345678",
       "placeholder_fr": "12345678",
@@ -251,7 +251,7 @@
     },
     "ADRESSE_SALARIE": {
       "type": "text",
-      "label_ar": "العنوان (salarie)",
+      "label_ar": "العنوان",
       "label_fr": "Adresse Salarie",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -263,7 +263,7 @@
     },
     "MOTIF_CDD": {
       "type": "text",
-      "label_ar": "Motif Cdd",
+      "label_ar": "موجب إبرام عقد محدد المدة",
       "label_fr": "Motif Cdd",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -275,7 +275,7 @@
     },
     "POSTE": {
       "type": "text",
-      "label_ar": "Poste",
+      "label_ar": "الخطة الوظيفية",
       "label_fr": "Poste",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -287,7 +287,7 @@
     },
     "CLASSIFICATION": {
       "type": "text",
-      "label_ar": "Classification",
+      "label_ar": "التصنيف المهني",
       "label_fr": "Classification",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -299,7 +299,7 @@
     },
     "DATE_DEBUT": {
       "type": "date",
-      "label_ar": "تاريخ (debut)",
+      "label_ar": "تاريخ مفعول العقد",
       "label_fr": "Date Debut",
       "placeholder_ar": "يوم/شهر/سنة",
       "placeholder_fr": "JJ/MM/AAAA",
@@ -310,7 +310,7 @@
     },
     "LIEU_TRAVAIL": {
       "type": "text",
-      "label_ar": "المكان (travail)",
+      "label_ar": "المكان",
       "label_fr": "Lieu Travail",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -334,7 +334,7 @@
     },
     "DATE_FIN": {
       "type": "date",
-      "label_ar": "تاريخ (fin)",
+      "label_ar": "تاريخ",
       "label_fr": "Date Fin",
       "placeholder_ar": "يوم/شهر/سنة",
       "placeholder_fr": "JJ/MM/AAAA",
@@ -345,7 +345,7 @@
     },
     "INDEMNITE_POURCENTAGE": {
       "type": "number",
-      "label_ar": "Indemnite Pourcentage",
+      "label_ar": "نسبة المنحة",
       "label_fr": "Indemnite Pourcentage",
       "placeholder_ar": "0",
       "placeholder_fr": "0",
@@ -369,7 +369,7 @@
     },
     "JOUR_PAIE": {
       "type": "text",
-      "label_ar": "Jour Paie",
+      "label_ar": "يوم دفع الأجر",
       "label_fr": "Jour Paie",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -381,7 +381,7 @@
     },
     "LIEU_SIGNATURE": {
       "type": "text",
-      "label_ar": "المكان (signature)",
+      "label_ar": "مكان الإمضاء",
       "label_fr": "Lieu Signature",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -393,7 +393,7 @@
     },
     "DATE_SIGNATURE": {
       "type": "date",
-      "label_ar": "تاريخ (signature)",
+      "label_ar": "تاريخ الإمضاء",
       "label_fr": "Date Signature",
       "placeholder_ar": "يوم/شهر/سنة",
       "placeholder_fr": "JJ/MM/AAAA",

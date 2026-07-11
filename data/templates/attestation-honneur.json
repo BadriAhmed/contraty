@@ -102,7 +102,7 @@
     },
     "DATE_NAISSANCE": {
       "type": "date",
-      "label_ar": "تاريخ (naissance)",
+      "label_ar": "تاريخ",
       "label_fr": "Date Naissance",
       "placeholder_ar": "يوم/شهر/سنة",
       "placeholder_fr": "JJ/MM/AAAA",
@@ -113,7 +113,7 @@
     },
     "LIEU_NAISSANCE": {
       "type": "text",
-      "label_ar": "المكان (naissance)",
+      "label_ar": "المكان",
       "label_fr": "Lieu Naissance",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -125,7 +125,7 @@
     },
     "NATIONALITE": {
       "type": "text",
-      "label_ar": "Nationalite",
+      "label_ar": "الجنسية",
       "label_fr": "Nationalite",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -150,7 +150,7 @@
     },
     "DATE_CIN": {
       "type": "cin",
-      "label_ar": "تاريخ (cin)",
+      "label_ar": "تاريخ",
       "label_fr": "Date Cin",
       "placeholder_ar": "12345678",
       "placeholder_fr": "12345678",
@@ -175,7 +175,7 @@
     },
     "PROFESSION": {
       "type": "text",
-      "label_ar": "Profession",
+      "label_ar": "المهنة",
       "label_fr": "Profession",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -187,7 +187,7 @@
     },
     "DECLARATION": {
       "type": "text",
-      "label_ar": "Declaration",
+      "label_ar": "التصريح",
       "label_fr": "Declaration",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -199,7 +199,7 @@
     },
     "DESTINATION": {
       "type": "text",
-      "label_ar": "Destination",
+      "label_ar": "التخصيص",
       "label_fr": "Destination",
       "placeholder_ar": "",
       "placeholder_fr": "",

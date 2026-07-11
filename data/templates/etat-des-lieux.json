@@ -171,7 +171,7 @@
   "field_metadata": {
     "NOM_BAILLEUR": {
       "type": "text",
-      "label_ar": "الاسم (bailleur)",
+      "label_ar": "الاسم (المسوغ)",
       "label_fr": "Nom Bailleur",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -183,7 +183,7 @@
     },
     "CIN_BAILLEUR": {
       "type": "cin",
-      "label_ar": "بطاقة التعريف (bailleur)",
+      "label_ar": "رقم بطاقة التعريف الوطنية (المسوغ)",
       "label_fr": "Cin Bailleur",
       "placeholder_ar": "12345678",
       "placeholder_fr": "12345678",
@@ -196,7 +196,7 @@
     },
     "NOM_PRENEUR": {
       "type": "text",
-      "label_ar": "الاسم (preneur)",
+      "label_ar": "الاسم (المتسوغ)",
       "label_fr": "Nom Preneur",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -208,7 +208,7 @@
     },
     "CIN_PRENEUR": {
       "type": "cin",
-      "label_ar": "بطاقة التعريف (preneur)",
+      "label_ar": "رقم بطاقة التعريف الوطنية (المتسوغ)",
       "label_fr": "Cin Preneur",
       "placeholder_ar": "12345678",
       "placeholder_fr": "12345678",
@@ -221,7 +221,7 @@
     },
     "ADRESSE_BIEN": {
       "type": "text",
-      "label_ar": "العنوان (bien)",
+      "label_ar": "عنوان العقار المسوغ",
       "label_fr": "Adresse Bien",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -233,7 +233,7 @@
     },
     "TYPE_ETAT": {
       "type": "text",
-      "label_ar": "Type Etat",
+      "label_ar": "نوع مساهمة الدولة",
       "label_fr": "Type Etat",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -245,7 +245,7 @@
     },
     "SOL_SALON": {
       "type": "text",
-      "label_ar": "Sol Salon",
+      "label_ar": "أرضية الصالون",
       "label_fr": "Sol Salon",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -257,7 +257,7 @@
     },
     "MURS_SALON": {
       "type": "text",
-      "label_ar": "Murs Salon",
+      "label_ar": "جدران الصالون",
       "label_fr": "Murs Salon",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -269,7 +269,7 @@
     },
     "PLAFOND_SALON": {
       "type": "text",
-      "label_ar": "Plafond Salon",
+      "label_ar": "سقف الصالون",
       "label_fr": "Plafond Salon",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -281,7 +281,7 @@
     },
     "FENETRES_SALON": {
       "type": "text",
-      "label_ar": "Fenetres Salon",
+      "label_ar": "نوافذ الصالون",
       "label_fr": "Fenetres Salon",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -293,7 +293,7 @@
     },
     "OBS_SALON": {
       "type": "text",
-      "label_ar": "Obs Salon",
+      "label_ar": "ملاحظات الصالون",
       "label_fr": "Obs Salon",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -305,8 +305,8 @@
     },
     "NB_CHAMBRES": {
       "type": "text",
-      "label_ar": "NB Chambres",
-      "label_fr": "NB Chambres",
+      "label_ar": "عدد غرف النوم",
+      "label_fr": "Nb Chambres",
       "placeholder_ar": "",
       "placeholder_fr": "",
       "required": true,
@@ -317,7 +317,7 @@
     },
     "SOL_CHAMBRES": {
       "type": "text",
-      "label_ar": "Sol Chambres",
+      "label_ar": "أرضية غرف النوم",
       "label_fr": "Sol Chambres",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -329,7 +329,7 @@
     },
     "MURS_CHAMBRES": {
       "type": "text",
-      "label_ar": "Murs Chambres",
+      "label_ar": "جدران غرف النوم",
       "label_fr": "Murs Chambres",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -341,7 +341,7 @@
     },
     "PLACARDS_CHAMBRES": {
       "type": "text",
-      "label_ar": "Placards Chambres",
+      "label_ar": "خزائن غرف النوم",
       "label_fr": "Placards Chambres",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -353,7 +353,7 @@
     },
     "OBS_CHAMBRES": {
       "type": "text",
-      "label_ar": "Obs Chambres",
+      "label_ar": "ملاحظات غرف النوم",
       "label_fr": "Obs Chambres",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -365,7 +365,7 @@
     },
     "SOL_CUISINE": {
       "type": "text",
-      "label_ar": "Sol Cuisine",
+      "label_ar": "أرضية المطبخ",
       "label_fr": "Sol Cuisine",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -377,7 +377,7 @@
     },
     "MURS_CUISINE": {
       "type": "text",
-      "label_ar": "Murs Cuisine",
+      "label_ar": "جدران المطبخ",
       "label_fr": "Murs Cuisine",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -389,7 +389,7 @@
     },
     "EVIER": {
       "type": "text",
-      "label_ar": "Evier",
+      "label_ar": "حوض غسيل المطبخ",
       "label_fr": "Evier",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -401,7 +401,7 @@
     },
     "MEUBLES_CUISINE": {
       "type": "text",
-      "label_ar": "Meubles Cuisine",
+      "label_ar": "أثاث المطبخ",
       "label_fr": "Meubles Cuisine",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -413,7 +413,7 @@
     },
     "OBS_CUISINE": {
       "type": "text",
-      "label_ar": "Obs Cuisine",
+      "label_ar": "ملاحظات المطبخ",
       "label_fr": "Obs Cuisine",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -425,8 +425,8 @@
     },
     "NB_SDB": {
       "type": "text",
-      "label_ar": "NB Sdb",
-      "label_fr": "NB Sdb",
+      "label_ar": "عدد قاعات الاستحمام",
+      "label_fr": "Nb Sdb",
       "placeholder_ar": "",
       "placeholder_fr": "",
       "required": true,
@@ -437,7 +437,7 @@
     },
     "SOL_SDB": {
       "type": "text",
-      "label_ar": "Sol Sdb",
+      "label_ar": "أرضية قاعة الاستحمام",
       "label_fr": "Sol Sdb",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -449,7 +449,7 @@
     },
     "MURS_SDB": {
       "type": "text",
-      "label_ar": "Murs Sdb",
+      "label_ar": "جدران قاعة الاستحمام",
       "label_fr": "Murs Sdb",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -461,7 +461,7 @@
     },
     "SANITAIRES": {
       "type": "text",
-      "label_ar": "Sanitaires",
+      "label_ar": "التجهيزات الصحية",
       "label_fr": "Sanitaires",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -473,7 +473,7 @@
     },
     "ROBINETTERIE": {
       "type": "text",
-      "label_ar": "Robinetterie",
+      "label_ar": "الحنفيات",
       "label_fr": "Robinetterie",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -485,7 +485,7 @@
     },
     "OBS_SDB": {
       "type": "text",
-      "label_ar": "Obs Sdb",
+      "label_ar": "ملاحظات قاعة الاستحمام",
       "label_fr": "Obs Sdb",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -497,7 +497,7 @@
     },
     "AUTRES_PIECES": {
       "type": "text",
-      "label_ar": "Autres Pieces",
+      "label_ar": "أجزاء أخرى",
       "label_fr": "Autres Pieces",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -509,7 +509,7 @@
     },
     "DESCRIPTION_AUTRES_PIECES": {
       "type": "text",
-      "label_ar": "الوصف (autres pieces)",
+      "label_ar": "الوصف",
       "label_fr": "Description Autres Pieces",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -521,7 +521,7 @@
     },
     "INDEX_ELEC": {
       "type": "text",
-      "label_ar": "Index Elec",
+      "label_ar": "مؤشر عداد الكهرباء",
       "label_fr": "Index Elec",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -533,7 +533,7 @@
     },
     "NUM_COMPTEUR_ELEC": {
       "type": "text",
-      "label_ar": "Num Compteur Elec",
+      "label_ar": "رقم عداد الكهرباء",
       "label_fr": "Num Compteur Elec",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -545,7 +545,7 @@
     },
     "INDEX_EAU": {
       "type": "text",
-      "label_ar": "Index Eau",
+      "label_ar": "مؤشر عداد الماء",
       "label_fr": "Index Eau",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -557,7 +557,7 @@
     },
     "NUM_COMPTEUR_EAU": {
       "type": "text",
-      "label_ar": "Num Compteur Eau",
+      "label_ar": "رقم عداد الماء",
       "label_fr": "Num Compteur Eau",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -569,7 +569,7 @@
     },
     "INDEX_GAZ": {
       "type": "text",
-      "label_ar": "Index Gaz",
+      "label_ar": "مؤشر عداد الغاز",
       "label_fr": "Index Gaz",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -581,7 +581,7 @@
     },
     "NUM_COMPTEUR_GAZ": {
       "type": "text",
-      "label_ar": "Num Compteur Gaz",
+      "label_ar": "رقم عداد الغاز",
       "label_fr": "Num Compteur Gaz",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -593,8 +593,8 @@
     },
     "NB_CLES": {
       "type": "text",
-      "label_ar": "NB Cles",
-      "label_fr": "NB Cles",
+      "label_ar": "عدد المفاتيح",
+      "label_fr": "Nb Cles",
       "placeholder_ar": "",
       "placeholder_fr": "",
       "required": true,

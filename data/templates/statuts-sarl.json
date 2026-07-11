@@ -151,7 +151,7 @@
   "field_metadata": {
     "DENOMINATION": {
       "type": "text",
-      "label_ar": "Denomination",
+      "label_ar": "التسمية الاجتماعية",
       "label_fr": "Denomination",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -163,7 +163,7 @@
     },
     "OBJET_SOCIAL": {
       "type": "text",
-      "label_ar": "Objet Social",
+      "label_ar": "الغرض الاجتماعي",
       "label_fr": "Objet Social",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -175,7 +175,7 @@
     },
     "SIEGE": {
       "type": "text",
-      "label_ar": "Siege",
+      "label_ar": "المقر الاجتماعي",
       "label_fr": "Siege",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -187,7 +187,7 @@
     },
     "DUREE_ANNEE": {
       "type": "text",
-      "label_ar": "المدة (annee)",
+      "label_ar": "المدة",
       "label_fr": "Duree Annee",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -211,8 +211,8 @@
     },
     "NB_PARTS": {
       "type": "text",
-      "label_ar": "NB Parts",
-      "label_fr": "NB Parts",
+      "label_ar": "عدد الحصص الاجتماعية",
+      "label_fr": "Nb Parts",
       "placeholder_ar": "",
       "placeholder_fr": "",
       "required": true,
@@ -223,7 +223,7 @@
     },
     "VALEUR_NOMINALE": {
       "type": "text",
-      "label_ar": "Valeur Nominale",
+      "label_ar": "القيمة الاسمية للحصة",
       "label_fr": "Valeur Nominale",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -235,7 +235,7 @@
     },
     "REPARTITION_PARTS": {
       "type": "text",
-      "label_ar": "Repartition Parts",
+      "label_ar": "توزيع الحصص الاجتماعية",
       "label_fr": "Repartition Parts",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -247,7 +247,7 @@
     },
     "NOM_GERANT": {
       "type": "text",
-      "label_ar": "الاسم (gerant)",
+      "label_ar": "الاسم",
       "label_fr": "Nom Gerant",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -259,7 +259,7 @@
     },
     "DUREE_MANDAT_GERANT": {
       "type": "text",
-      "label_ar": "المدة (mandat gerant)",
+      "label_ar": "المدة",
       "label_fr": "Duree Mandat Gerant",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -271,7 +271,7 @@
     },
     "LIEU_SIGNATURE": {
       "type": "text",
-      "label_ar": "المكان (signature)",
+      "label_ar": "مكان الإمضاء",
       "label_fr": "Lieu Signature",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -283,7 +283,7 @@
     },
     "DATE_SIGNATURE": {
       "type": "date",
-      "label_ar": "تاريخ (signature)",
+      "label_ar": "تاريخ الإمضاء",
       "label_fr": "Date Signature",
       "placeholder_ar": "يوم/شهر/سنة",
       "placeholder_fr": "JJ/MM/AAAA",

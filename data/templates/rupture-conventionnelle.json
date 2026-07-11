@@ -131,7 +131,7 @@
   "field_metadata": {
     "NOM_ENTREPRISE": {
       "type": "text",
-      "label_ar": "الاسم (entreprise)",
+      "label_ar": "الاسم",
       "label_fr": "Nom Entreprise",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -143,7 +143,7 @@
     },
     "RNE": {
       "type": "text",
-      "label_ar": "Rne",
+      "label_ar": "السجل الوطني للمؤسسات",
       "label_fr": "Rne",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -155,7 +155,7 @@
     },
     "ADRESSE_ENTREPRISE": {
       "type": "text",
-      "label_ar": "العنوان (entreprise)",
+      "label_ar": "العنوان",
       "label_fr": "Adresse Entreprise",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -167,7 +167,7 @@
     },
     "REPRESENTANT": {
       "type": "text",
-      "label_ar": "Representant",
+      "label_ar": "الممثل القانوني",
       "label_fr": "Representant",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -179,7 +179,7 @@
     },
     "NOM_SALARIE": {
       "type": "text",
-      "label_ar": "الاسم (salarie)",
+      "label_ar": "الاسم",
       "label_fr": "Nom Salarie",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -191,7 +191,7 @@
     },
     "CIN_SALARIE": {
       "type": "cin",
-      "label_ar": "بطاقة التعريف (salarie)",
+      "label_ar": "بطاقة التعريف",
       "label_fr": "Cin Salarie",
       "placeholder_ar": "12345678",
       "placeholder_fr": "12345678",
@@ -204,7 +204,7 @@
     },
     "DATE_CDI": {
       "type": "date",
-      "label_ar": "تاريخ (cdi)",
+      "label_ar": "تاريخ",
       "label_fr": "Date Cdi",
       "placeholder_ar": "يوم/شهر/سنة",
       "placeholder_fr": "JJ/MM/AAAA",
@@ -215,7 +215,7 @@
     },
     "POSTE": {
       "type": "text",
-      "label_ar": "Poste",
+      "label_ar": "الخطة الوظيفية",
       "label_fr": "Poste",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -227,7 +227,7 @@
     },
     "DATE_RUPTURE": {
       "type": "date",
-      "label_ar": "تاريخ (rupture)",
+      "label_ar": "تاريخ",
       "label_fr": "Date Rupture",
       "placeholder_ar": "يوم/شهر/سنة",
       "placeholder_fr": "JJ/MM/AAAA",
@@ -238,7 +238,7 @@
     },
     "INDEMNITE": {
       "type": "text",
-      "label_ar": "Indemnite",
+      "label_ar": "التعويض",
       "label_fr": "Indemnite",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -250,7 +250,7 @@
     },
     "BASE_CALCUL": {
       "type": "text",
-      "label_ar": "Base Calcul",
+      "label_ar": "قاعدة الاحتساب",
       "label_fr": "Base Calcul",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -262,7 +262,7 @@
     },
     "JOURS_CONGES_DUS": {
       "type": "text",
-      "label_ar": "Jours Conges Dus",
+      "label_ar": "أيام الإجازة المستحقة",
       "label_fr": "Jours Conges Dus",
       "placeholder_ar": "",
       "placeholder_fr": "",

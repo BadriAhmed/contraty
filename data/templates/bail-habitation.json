@@ -196,7 +196,7 @@
   "field_metadata": {
     "NOM_BAILLEUR": {
       "type": "text",
-      "label_ar": "الاسم (bailleur)",
+      "label_ar": "الاسم (المسوغ)",
       "label_fr": "Nom Bailleur",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -208,7 +208,7 @@
     },
     "CIN_BAILLEUR": {
       "type": "cin",
-      "label_ar": "بطاقة التعريف (bailleur)",
+      "label_ar": "رقم بطاقة التعريف الوطنية (المسوغ)",
       "label_fr": "Cin Bailleur",
       "placeholder_ar": "12345678",
       "placeholder_fr": "12345678",
@@ -221,7 +221,7 @@
     },
     "ADRESSE_BAILLEUR": {
       "type": "text",
-      "label_ar": "العنوان (bailleur)",
+      "label_ar": "العنوان (المسوغ)",
       "label_fr": "Adresse Bailleur",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -233,7 +233,7 @@
     },
     "NOM_PRENEUR": {
       "type": "text",
-      "label_ar": "الاسم (preneur)",
+      "label_ar": "الاسم (المتسوغ)",
       "label_fr": "Nom Preneur",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -245,7 +245,7 @@
     },
     "CIN_PRENEUR": {
       "type": "cin",
-      "label_ar": "بطاقة التعريف (preneur)",
+      "label_ar": "رقم بطاقة التعريف الوطنية (المتسوغ)",
       "label_fr": "Cin Preneur",
       "placeholder_ar": "12345678",
       "placeholder_fr": "12345678",
@@ -258,7 +258,7 @@
     },
     "ADRESSE_PRENEUR": {
       "type": "text",
-      "label_ar": "العنوان (preneur)",
+      "label_ar": "العنوان (المتسوغ)",
       "label_fr": "Adresse Preneur",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -270,7 +270,7 @@
     },
     "ADRESSE_BIEN": {
       "type": "text",
-      "label_ar": "العنوان (bien)",
+      "label_ar": "عنوان العقار المسوغ",
       "label_fr": "Adresse Bien",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -282,7 +282,7 @@
     },
     "DESCRIPTION_BIEN": {
       "type": "text",
-      "label_ar": "الوصف (bien)",
+      "label_ar": "وصف العين الكرائية",
       "label_fr": "Description Bien",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -294,7 +294,7 @@
     },
     "DUREE_BAIL": {
       "type": "text",
-      "label_ar": "المدة (bail)",
+      "label_ar": "مدة التسويغ",
       "label_fr": "Duree Bail",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -306,7 +306,7 @@
     },
     "DATE_DEBUT": {
       "type": "date",
-      "label_ar": "تاريخ (debut)",
+      "label_ar": "تاريخ مفعول العقد",
       "label_fr": "Date Debut",
       "placeholder_ar": "يوم/شهر/سنة",
       "placeholder_fr": "JJ/MM/AAAA",
@@ -317,7 +317,7 @@
     },
     "PREAVIS_MOIS": {
       "type": "text",
-      "label_ar": "مهلة الإعلام (mois)",
+      "label_ar": "أجل الإعلام المسبق بإنهاء الكراء (بالأشهر)",
       "label_fr": "Preavis Mois",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -329,7 +329,7 @@
     },
     "MONTANT_LOYER": {
       "type": "number",
-      "label_ar": "المبلغ (loyer)",
+      "label_ar": "المبلغ (معين الكراء الشهري)",
       "label_fr": "Montant Loyer",
       "placeholder_ar": "0",
       "placeholder_fr": "0",
@@ -341,7 +341,7 @@
     },
     "JOUR_PAIEMENT": {
       "type": "text",
-      "label_ar": "Jour Paiement",
+      "label_ar": "تاريخ استحقاق الدفع الشهري",
       "label_fr": "Jour Paiement",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -353,7 +353,7 @@
     },
     "MONTANT_CAUTION": {
       "type": "number",
-      "label_ar": "المبلغ (caution)",
+      "label_ar": "المبلغ (الضمان الكرائي)",
       "label_fr": "Montant Caution",
       "placeholder_ar": "0",
       "placeholder_fr": "0",
@@ -365,7 +365,7 @@
     },
     "CHARGES_INCLUSES": {
       "type": "text",
-      "label_ar": "Charges Incluses",
+      "label_ar": "التكاليف المشمولة بمعين الكراء",
       "label_fr": "Charges Incluses",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -377,7 +377,7 @@
     },
     "CHARGES_PRENEUR": {
       "type": "text",
-      "label_ar": "Charges Preneur",
+      "label_ar": "التكاليف المحمولة على المتسوغ",
       "label_fr": "Charges Preneur",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -389,7 +389,7 @@
     },
     "TRIBUNAL": {
       "type": "text",
-      "label_ar": "المحكمة",
+      "label_ar": "المحكمة المختصة ترابياً",
       "label_fr": "Tribunal",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -401,7 +401,7 @@
     },
     "LIEU_SIGNATURE": {
       "type": "text",
-      "label_ar": "المكان (signature)",
+      "label_ar": "مكان الإمضاء",
       "label_fr": "Lieu Signature",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -413,7 +413,7 @@
     },
     "DATE_SIGNATURE": {
       "type": "date",
-      "label_ar": "تاريخ (signature)",
+      "label_ar": "تاريخ الإمضاء",
       "label_fr": "Date Signature",
       "placeholder_ar": "يوم/شهر/سنة",
       "placeholder_fr": "JJ/MM/AAAA",

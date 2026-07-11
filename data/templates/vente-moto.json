@@ -136,7 +136,7 @@
   "field_metadata": {
     "NOM_VENDEUR": {
       "type": "text",
-      "label_ar": "الاسم (vendeur)",
+      "label_ar": "الاسم",
       "label_fr": "Nom Vendeur",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -148,7 +148,7 @@
     },
     "CIN_VENDEUR": {
       "type": "cin",
-      "label_ar": "بطاقة التعريف (vendeur)",
+      "label_ar": "بطاقة التعريف",
       "label_fr": "Cin Vendeur",
       "placeholder_ar": "12345678",
       "placeholder_fr": "12345678",
@@ -161,7 +161,7 @@
     },
     "ADRESSE_VENDEUR": {
       "type": "text",
-      "label_ar": "العنوان (vendeur)",
+      "label_ar": "العنوان",
       "label_fr": "Adresse Vendeur",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -173,7 +173,7 @@
     },
     "NOM_ACQUEREUR": {
       "type": "text",
-      "label_ar": "الاسم (acquereur)",
+      "label_ar": "الاسم",
       "label_fr": "Nom Acquereur",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -185,7 +185,7 @@
     },
     "CIN_ACQUEREUR": {
       "type": "cin",
-      "label_ar": "بطاقة التعريف (acquereur)",
+      "label_ar": "بطاقة التعريف",
       "label_fr": "Cin Acquereur",
       "placeholder_ar": "12345678",
       "placeholder_fr": "12345678",
@@ -198,7 +198,7 @@
     },
     "ADRESSE_ACQUEREUR": {
       "type": "text",
-      "label_ar": "العنوان (acquereur)",
+      "label_ar": "العنوان",
       "label_fr": "Adresse Acquereur",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -222,7 +222,7 @@
     },
     "MODELE": {
       "type": "text",
-      "label_ar": "Modele",
+      "label_ar": "الطراز",
       "label_fr": "Modele",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -246,7 +246,7 @@
     },
     "NUM_CADRE": {
       "type": "text",
-      "label_ar": "Num Cadre",
+      "label_ar": "رقم الإطار",
       "label_fr": "Num Cadre",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -258,7 +258,7 @@
     },
     "NUM_MOTEUR": {
       "type": "text",
-      "label_ar": "Num Moteur",
+      "label_ar": "رقم المحرك",
       "label_fr": "Num Moteur",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -270,7 +270,7 @@
     },
     "CYLINDREE": {
       "type": "text",
-      "label_ar": "Cylindree",
+      "label_ar": "سعة الأسطوانة",
       "label_fr": "Cylindree",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -282,7 +282,7 @@
     },
     "ANNEE_MEC": {
       "type": "text",
-      "label_ar": "Annee Mec",
+      "label_ar": "سنة أول جولان",
       "label_fr": "Annee Mec",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -294,7 +294,7 @@
     },
     "KILOMETRAGE": {
       "type": "text",
-      "label_ar": "Kilometrage",
+      "label_ar": "المسافة المقطوعة",
       "label_fr": "Kilometrage",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -318,7 +318,7 @@
     },
     "DELAI_JOURS": {
       "type": "text",
-      "label_ar": "Delai Jours",
+      "label_ar": "الأجل بالأيام",
       "label_fr": "Delai Jours",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -330,7 +330,7 @@
     },
     "LIEU_SIGNATURE": {
       "type": "text",
-      "label_ar": "المكان (signature)",
+      "label_ar": "مكان الإمضاء",
       "label_fr": "Lieu Signature",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -342,7 +342,7 @@
     },
     "DATE_SIGNATURE": {
       "type": "date",
-      "label_ar": "تاريخ (signature)",
+      "label_ar": "تاريخ الإمضاء",
       "label_fr": "Date Signature",
       "placeholder_ar": "يوم/شهر/سنة",
       "placeholder_fr": "JJ/MM/AAAA",

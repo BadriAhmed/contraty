@@ -94,7 +94,7 @@
   "field_metadata": {
     "NOM_MANDANT": {
       "type": "text",
-      "label_ar": "الاسم (mandant)",
+      "label_ar": "الاسم",
       "label_fr": "Nom Mandant",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -106,7 +106,7 @@
     },
     "CIN_MANDANT": {
       "type": "cin",
-      "label_ar": "بطاقة التعريف (mandant)",
+      "label_ar": "بطاقة التعريف",
       "label_fr": "Cin Mandant",
       "placeholder_ar": "12345678",
       "placeholder_fr": "12345678",
@@ -119,7 +119,7 @@
     },
     "ADRESSE_MANDANT": {
       "type": "text",
-      "label_ar": "العنوان (mandant)",
+      "label_ar": "العنوان",
       "label_fr": "Adresse Mandant",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -131,7 +131,7 @@
     },
     "NOM_MANDATAIRE": {
       "type": "text",
-      "label_ar": "الاسم (mandataire)",
+      "label_ar": "الاسم",
       "label_fr": "Nom Mandataire",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -143,7 +143,7 @@
     },
     "CIN_MANDATAIRE": {
       "type": "cin",
-      "label_ar": "بطاقة التعريف (mandataire)",
+      "label_ar": "بطاقة التعريف",
       "label_fr": "Cin Mandataire",
       "placeholder_ar": "12345678",
       "placeholder_fr": "12345678",
@@ -156,7 +156,7 @@
     },
     "ADRESSE_MANDATAIRE": {
       "type": "text",
-      "label_ar": "العنوان (mandataire)",
+      "label_ar": "العنوان",
       "label_fr": "Adresse Mandataire",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -168,7 +168,7 @@
     },
     "MISSION_SPECIALE": {
       "type": "text",
-      "label_ar": "Mission Speciale",
+      "label_ar": "المهمة الخاصة",
       "label_fr": "Mission Speciale",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -180,7 +180,7 @@
     },
     "DATE_FIN": {
       "type": "date",
-      "label_ar": "تاريخ (fin)",
+      "label_ar": "تاريخ",
       "label_fr": "Date Fin",
       "placeholder_ar": "يوم/شهر/سنة",
       "placeholder_fr": "JJ/MM/AAAA",
@@ -191,7 +191,7 @@
     },
     "LIEU_SIGNATURE": {
       "type": "text",
-      "label_ar": "المكان (signature)",
+      "label_ar": "مكان الإمضاء",
       "label_fr": "Lieu Signature",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -203,7 +203,7 @@
     },
     "DATE_SIGNATURE": {
       "type": "date",
-      "label_ar": "تاريخ (signature)",
+      "label_ar": "تاريخ الإمضاء",
       "label_fr": "Date Signature",
       "placeholder_ar": "يوم/شهر/سنة",
       "placeholder_fr": "JJ/MM/AAAA",

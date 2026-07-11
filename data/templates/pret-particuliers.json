@@ -170,7 +170,7 @@
   "field_metadata": {
     "NOM_PRETEUR": {
       "type": "text",
-      "label_ar": "الاسم (preteur)",
+      "label_ar": "الاسم",
       "label_fr": "Nom Preteur",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -182,7 +182,7 @@
     },
     "CIN_PRETEUR": {
       "type": "cin",
-      "label_ar": "بطاقة التعريف (preteur)",
+      "label_ar": "بطاقة التعريف",
       "label_fr": "Cin Preteur",
       "placeholder_ar": "12345678",
       "placeholder_fr": "12345678",
@@ -195,7 +195,7 @@
     },
     "ADRESSE_PRETEUR": {
       "type": "text",
-      "label_ar": "العنوان (preteur)",
+      "label_ar": "العنوان",
       "label_fr": "Adresse Preteur",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -207,7 +207,7 @@
     },
     "NOM_EMPRUNTEUR": {
       "type": "text",
-      "label_ar": "الاسم (emprunteur)",
+      "label_ar": "الاسم",
       "label_fr": "Nom Emprunteur",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -219,7 +219,7 @@
     },
     "CIN_EMPRUNTEUR": {
       "type": "cin",
-      "label_ar": "بطاقة التعريف (emprunteur)",
+      "label_ar": "بطاقة التعريف",
       "label_fr": "Cin Emprunteur",
       "placeholder_ar": "12345678",
       "placeholder_fr": "12345678",
@@ -232,7 +232,7 @@
     },
     "ADRESSE_EMPRUNTEUR": {
       "type": "text",
-      "label_ar": "العنوان (emprunteur)",
+      "label_ar": "العنوان",
       "label_fr": "Adresse Emprunteur",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -256,7 +256,7 @@
     },
     "DESTINATION_PRET": {
       "type": "text",
-      "label_ar": "Destination Pret",
+      "label_ar": "غاية القرض",
       "label_fr": "Destination Pret",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -268,7 +268,7 @@
     },
     "MODALITES": {
       "type": "text",
-      "label_ar": "Modalites",
+      "label_ar": "الصيغ والترتيبات",
       "label_fr": "Modalites",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -280,7 +280,7 @@
     },
     "DATE_DEBLOCAGE": {
       "type": "date",
-      "label_ar": "تاريخ (deblocage)",
+      "label_ar": "تاريخ",
       "label_fr": "Date Deblocage",
       "placeholder_ar": "يوم/شهر/سنة",
       "placeholder_fr": "JJ/MM/AAAA",
@@ -291,7 +291,7 @@
     },
     "DATE_ECHEANCE_FINALE": {
       "type": "date",
-      "label_ar": "تاريخ (echeance finale)",
+      "label_ar": "تاريخ",
       "label_fr": "Date Echeance Finale",
       "placeholder_ar": "يوم/شهر/سنة",
       "placeholder_fr": "JJ/MM/AAAA",
@@ -302,7 +302,7 @@
     },
     "AVEC_INTERET": {
       "type": "text",
-      "label_ar": "Avec Interet",
+      "label_ar": "بالفائض",
       "label_fr": "Avec Interet",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -326,7 +326,7 @@
     },
     "GARANTIES_PRET": {
       "type": "text",
-      "label_ar": "Garanties Pret",
+      "label_ar": "ضمانات القرض",
       "label_fr": "Garanties Pret",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -338,7 +338,7 @@
     },
     "CONDITIONS_ANTICIPE": {
       "type": "text",
-      "label_ar": "Conditions Anticipe",
+      "label_ar": "شروط السداد المبكر",
       "label_fr": "Conditions Anticipe",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -350,7 +350,7 @@
     },
     "LIEU_SIGNATURE": {
       "type": "text",
-      "label_ar": "المكان (signature)",
+      "label_ar": "مكان الإمضاء",
       "label_fr": "Lieu Signature",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -362,7 +362,7 @@
     },
     "DATE_SIGNATURE": {
       "type": "date",
-      "label_ar": "تاريخ (signature)",
+      "label_ar": "تاريخ الإمضاء",
       "label_fr": "Date Signature",
       "placeholder_ar": "يوم/شهر/سنة",
       "placeholder_fr": "JJ/MM/AAAA",

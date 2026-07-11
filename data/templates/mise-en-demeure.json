@@ -122,7 +122,7 @@
   "field_metadata": {
     "NOM_EXPEDITEUR": {
       "type": "text",
-      "label_ar": "الاسم (expediteur)",
+      "label_ar": "الاسم",
       "label_fr": "Nom Expediteur",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -134,7 +134,7 @@
     },
     "CIN_EXPEDITEUR": {
       "type": "cin",
-      "label_ar": "بطاقة التعريف (expediteur)",
+      "label_ar": "بطاقة التعريف",
       "label_fr": "Cin Expediteur",
       "placeholder_ar": "12345678",
       "placeholder_fr": "12345678",
@@ -147,7 +147,7 @@
     },
     "ADRESSE_EXPEDITEUR": {
       "type": "text",
-      "label_ar": "العنوان (expediteur)",
+      "label_ar": "العنوان",
       "label_fr": "Adresse Expediteur",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -159,7 +159,7 @@
     },
     "NOM_DESTINATAIRE": {
       "type": "text",
-      "label_ar": "الاسم (destinataire)",
+      "label_ar": "الاسم",
       "label_fr": "Nom Destinataire",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -171,7 +171,7 @@
     },
     "CIN_DESTINATAIRE": {
       "type": "cin",
-      "label_ar": "بطاقة التعريف (destinataire)",
+      "label_ar": "بطاقة التعريف",
       "label_fr": "Cin Destinataire",
       "placeholder_ar": "12345678",
       "placeholder_fr": "12345678",
@@ -184,7 +184,7 @@
     },
     "ADRESSE_DESTINATAIRE": {
       "type": "text",
-      "label_ar": "العنوان (destinataire)",
+      "label_ar": "العنوان",
       "label_fr": "Adresse Destinataire",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -196,7 +196,7 @@
     },
     "SOCIETE_DESTINATAIRE": {
       "type": "text",
-      "label_ar": "Societe Destinataire",
+      "label_ar": "الشركة المرسل إليها",
       "label_fr": "Societe Destinataire",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -208,7 +208,7 @@
     },
     "OBJET_SOMMAIRE": {
       "type": "text",
-      "label_ar": "Objet Sommaire",
+      "label_ar": "ملخص الموضوع",
       "label_fr": "Objet Sommaire",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -220,7 +220,7 @@
     },
     "ACTE_ORIGINE": {
       "type": "text",
-      "label_ar": "Acte Origine",
+      "label_ar": "العقد الأصلي",
       "label_fr": "Acte Origine",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -232,7 +232,7 @@
     },
     "DATE_ACTE_ORIGINE": {
       "type": "date",
-      "label_ar": "تاريخ (acte origine)",
+      "label_ar": "تاريخ",
       "label_fr": "Date Acte Origine",
       "placeholder_ar": "يوم/شهر/سنة",
       "placeholder_fr": "JJ/MM/AAAA",
@@ -243,7 +243,7 @@
     },
     "OBLIGATION_INITIALE": {
       "type": "text",
-      "label_ar": "Obligation Initiale",
+      "label_ar": "الالتزام الأصلي",
       "label_fr": "Obligation Initiale",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -255,7 +255,7 @@
     },
     "MANQUEMENT_CONSTATE": {
       "type": "text",
-      "label_ar": "Manquement Constate",
+      "label_ar": "الإخلال المعاين",
       "label_fr": "Manquement Constate",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -267,7 +267,7 @@
     },
     "SOMMATION": {
       "type": "text",
-      "label_ar": "Sommation",
+      "label_ar": "التنبيه بالإيفاء",
       "label_fr": "Sommation",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -279,7 +279,7 @@
     },
     "DELAI_JOURS": {
       "type": "text",
-      "label_ar": "Delai Jours",
+      "label_ar": "الأجل بالأيام",
       "label_fr": "Delai Jours",
       "placeholder_ar": "",
       "placeholder_fr": "",

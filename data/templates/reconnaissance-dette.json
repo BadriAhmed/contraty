@@ -141,7 +141,7 @@
   "field_metadata": {
     "NOM_DEBITEUR": {
       "type": "text",
-      "label_ar": "الاسم (debiteur)",
+      "label_ar": "الاسم",
       "label_fr": "Nom Debiteur",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -153,7 +153,7 @@
     },
     "CIN_DEBITEUR": {
       "type": "cin",
-      "label_ar": "بطاقة التعريف (debiteur)",
+      "label_ar": "بطاقة التعريف",
       "label_fr": "Cin Debiteur",
       "placeholder_ar": "12345678",
       "placeholder_fr": "12345678",
@@ -166,7 +166,7 @@
     },
     "ADRESSE_DEBITEUR": {
       "type": "text",
-      "label_ar": "العنوان (debiteur)",
+      "label_ar": "العنوان",
       "label_fr": "Adresse Debiteur",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -178,7 +178,7 @@
     },
     "NOM_CREANCIER": {
       "type": "text",
-      "label_ar": "الاسم (creancier)",
+      "label_ar": "الاسم",
       "label_fr": "Nom Creancier",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -190,7 +190,7 @@
     },
     "CIN_CREANCIER": {
       "type": "cin",
-      "label_ar": "بطاقة التعريف (creancier)",
+      "label_ar": "بطاقة التعريف",
       "label_fr": "Cin Creancier",
       "placeholder_ar": "12345678",
       "placeholder_fr": "12345678",
@@ -203,7 +203,7 @@
     },
     "ADRESSE_CREANCIER": {
       "type": "text",
-      "label_ar": "العنوان (creancier)",
+      "label_ar": "العنوان",
       "label_fr": "Adresse Creancier",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -215,7 +215,7 @@
     },
     "MONTANT_DETTE": {
       "type": "number",
-      "label_ar": "المبلغ (dette)",
+      "label_ar": "المبلغ",
       "label_fr": "Montant Dette",
       "placeholder_ar": "0",
       "placeholder_fr": "0",
@@ -227,7 +227,7 @@
     },
     "MOTIF_DETTE": {
       "type": "text",
-      "label_ar": "Motif Dette",
+      "label_ar": "سبب الدين",
       "label_fr": "Motif Dette",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -239,7 +239,7 @@
     },
     "DATE_REMISE": {
       "type": "date",
-      "label_ar": "تاريخ (remise)",
+      "label_ar": "تاريخ",
       "label_fr": "Date Remise",
       "placeholder_ar": "يوم/شهر/سنة",
       "placeholder_fr": "JJ/MM/AAAA",
@@ -250,7 +250,7 @@
     },
     "MODALITES_REMBOURSEMENT": {
       "type": "text",
-      "label_ar": "Modalites Remboursement",
+      "label_ar": "طرق التسديد",
       "label_fr": "Modalites Remboursement",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -262,7 +262,7 @@
     },
     "DATE_ECHEANCE": {
       "type": "date",
-      "label_ar": "تاريخ (echeance)",
+      "label_ar": "تاريخ",
       "label_fr": "Date Echeance",
       "placeholder_ar": "يوم/شهر/سنة",
       "placeholder_fr": "JJ/MM/AAAA",
@@ -273,7 +273,7 @@
     },
     "TAUX_INTERET": {
       "type": "number",
-      "label_ar": "النسبة (interet)",
+      "label_ar": "النسبة",
       "label_fr": "Taux Interet",
       "placeholder_ar": "0",
       "placeholder_fr": "0",
@@ -285,7 +285,7 @@
     },
     "DATE_DEBUT_INTERETS": {
       "type": "date",
-      "label_ar": "تاريخ (debut interets)",
+      "label_ar": "تاريخ",
       "label_fr": "Date Debut Interets",
       "placeholder_ar": "يوم/شهر/سنة",
       "placeholder_fr": "JJ/MM/AAAA",
@@ -296,7 +296,7 @@
     },
     "GARANTIES_EVENTUELLES": {
       "type": "text",
-      "label_ar": "Garanties Eventuelles",
+      "label_ar": "الضمانات عند الاقتضاء",
       "label_fr": "Garanties Eventuelles",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -308,7 +308,7 @@
     },
     "LIEU_SIGNATURE": {
       "type": "text",
-      "label_ar": "المكان (signature)",
+      "label_ar": "مكان الإمضاء",
       "label_fr": "Lieu Signature",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -320,7 +320,7 @@
     },
     "DATE_SIGNATURE": {
       "type": "date",
-      "label_ar": "تاريخ (signature)",
+      "label_ar": "تاريخ الإمضاء",
       "label_fr": "Date Signature",
       "placeholder_ar": "يوم/شهر/سنة",
       "placeholder_fr": "JJ/MM/AAAA",

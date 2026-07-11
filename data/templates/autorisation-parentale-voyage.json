@@ -101,7 +101,7 @@
   "field_metadata": {
     "NOM_PARENT": {
       "type": "text",
-      "label_ar": "الاسم (parent)",
+      "label_ar": "الاسم",
       "label_fr": "Nom Parent",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -113,7 +113,7 @@
     },
     "CIN_PARENT": {
       "type": "cin",
-      "label_ar": "بطاقة التعريف (parent)",
+      "label_ar": "بطاقة التعريف",
       "label_fr": "Cin Parent",
       "placeholder_ar": "12345678",
       "placeholder_fr": "12345678",
@@ -126,7 +126,7 @@
     },
     "ADRESSE_PARENT": {
       "type": "text",
-      "label_ar": "العنوان (parent)",
+      "label_ar": "العنوان",
       "label_fr": "Adresse Parent",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -138,7 +138,7 @@
     },
     "QUALITE": {
       "type": "text",
-      "label_ar": "Qualite",
+      "label_ar": "الصفة",
       "label_fr": "Qualite",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -150,7 +150,7 @@
     },
     "NOM_ENFANT": {
       "type": "text",
-      "label_ar": "الاسم (enfant)",
+      "label_ar": "الاسم",
       "label_fr": "Nom Enfant",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -162,7 +162,7 @@
     },
     "DATE_NAISSANCE_ENFANT": {
       "type": "date",
-      "label_ar": "تاريخ (naissance enfant)",
+      "label_ar": "تاريخ",
       "label_fr": "Date Naissance Enfant",
       "placeholder_ar": "يوم/شهر/سنة",
       "placeholder_fr": "JJ/MM/AAAA",
@@ -173,7 +173,7 @@
     },
     "LIEU_NAISSANCE_ENFANT": {
       "type": "text",
-      "label_ar": "المكان (naissance enfant)",
+      "label_ar": "المكان",
       "label_fr": "Lieu Naissance Enfant",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -185,7 +185,7 @@
     },
     "NUM_EXTRAIT_NAISSANCE": {
       "type": "text",
-      "label_ar": "Num Extrait Naissance",
+      "label_ar": "رقم مضمون الولادة",
       "label_fr": "Num Extrait Naissance",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -197,7 +197,7 @@
     },
     "NUM_PIECE_ENFANT": {
       "type": "text",
-      "label_ar": "Num Piece Enfant",
+      "label_ar": "رقم وثيقة هوية الطفل",
       "label_fr": "Num Piece Enfant",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -209,7 +209,7 @@
     },
     "DESTINATION": {
       "type": "text",
-      "label_ar": "Destination",
+      "label_ar": "التخصيص",
       "label_fr": "Destination",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -221,7 +221,7 @@
     },
     "NOM_ACCOMPAGNATEUR": {
       "type": "text",
-      "label_ar": "الاسم (accompagnateur)",
+      "label_ar": "الاسم",
       "label_fr": "Nom Accompagnateur",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -233,7 +233,7 @@
     },
     "CIN_ACCOMPAGNATEUR": {
       "type": "cin",
-      "label_ar": "بطاقة التعريف (accompagnateur)",
+      "label_ar": "بطاقة التعريف",
       "label_fr": "Cin Accompagnateur",
       "placeholder_ar": "12345678",
       "placeholder_fr": "12345678",
@@ -246,7 +246,7 @@
     },
     "DATE_DEPART": {
       "type": "date",
-      "label_ar": "تاريخ (depart)",
+      "label_ar": "تاريخ",
       "label_fr": "Date Depart",
       "placeholder_ar": "يوم/شهر/سنة",
       "placeholder_fr": "JJ/MM/AAAA",
@@ -257,7 +257,7 @@
     },
     "DATE_RETOUR": {
       "type": "date",
-      "label_ar": "تاريخ (retour)",
+      "label_ar": "تاريخ",
       "label_fr": "Date Retour",
       "placeholder_ar": "يوم/شهر/سنة",
       "placeholder_fr": "JJ/MM/AAAA",

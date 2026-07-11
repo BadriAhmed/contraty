@@ -186,7 +186,7 @@
   "field_metadata": {
     "NOM_CLIENT": {
       "type": "text",
-      "label_ar": "الاسم (client)",
+      "label_ar": "الاسم",
       "label_fr": "Nom Client",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -198,7 +198,7 @@
     },
     "ADRESSE_CLIENT": {
       "type": "text",
-      "label_ar": "العنوان (client)",
+      "label_ar": "العنوان",
       "label_fr": "Adresse Client",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -210,7 +210,7 @@
     },
     "REPRESENTANT_CLIENT": {
       "type": "text",
-      "label_ar": "Representant Client",
+      "label_ar": "ممثل الحريف",
       "label_fr": "Representant Client",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -222,7 +222,7 @@
     },
     "NOM_PRESTATAIRE": {
       "type": "text",
-      "label_ar": "الاسم (prestataire)",
+      "label_ar": "الاسم",
       "label_fr": "Nom Prestataire",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -234,7 +234,7 @@
     },
     "ADRESSE_PRESTATAIRE": {
       "type": "text",
-      "label_ar": "العنوان (prestataire)",
+      "label_ar": "العنوان",
       "label_fr": "Adresse Prestataire",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -246,7 +246,7 @@
     },
     "REPRESENTANT_PRESTATAIRE": {
       "type": "text",
-      "label_ar": "Representant Prestataire",
+      "label_ar": "ممثل مسدي الخدمات",
       "label_fr": "Representant Prestataire",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -258,7 +258,7 @@
     },
     "DESCRIPTION_PRESTATIONS": {
       "type": "text",
-      "label_ar": "الوصف (prestations)",
+      "label_ar": "الوصف",
       "label_fr": "Description Prestations",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -270,7 +270,7 @@
     },
     "MONTANT_TOTAL": {
       "type": "number",
-      "label_ar": "المبلغ (total)",
+      "label_ar": "المبلغ",
       "label_fr": "Montant Total",
       "placeholder_ar": "0",
       "placeholder_fr": "0",
@@ -282,7 +282,7 @@
     },
     "MODALITES_PAIEMENT": {
       "type": "text",
-      "label_ar": "Modalites Paiement",
+      "label_ar": "طرق الخلاص",
       "label_fr": "Modalites Paiement",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -306,7 +306,7 @@
     },
     "DATE_DEBUT": {
       "type": "date",
-      "label_ar": "تاريخ (debut)",
+      "label_ar": "تاريخ مفعول العقد",
       "label_fr": "Date Debut",
       "placeholder_ar": "يوم/شهر/سنة",
       "placeholder_fr": "JJ/MM/AAAA",
@@ -317,7 +317,7 @@
     },
     "PREAVIS_JOURS": {
       "type": "text",
-      "label_ar": "مهلة الإعلام (jours)",
+      "label_ar": "مهلة الإعلام",
       "label_fr": "Preavis Jours",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -329,7 +329,7 @@
     },
     "TRIBUNAL": {
       "type": "text",
-      "label_ar": "المحكمة",
+      "label_ar": "المحكمة المختصة ترابياً",
       "label_fr": "Tribunal",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -341,7 +341,7 @@
     },
     "LIEU_SIGNATURE": {
       "type": "text",
-      "label_ar": "المكان (signature)",
+      "label_ar": "مكان الإمضاء",
       "label_fr": "Lieu Signature",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -353,7 +353,7 @@
     },
     "DATE_SIGNATURE": {
       "type": "date",
-      "label_ar": "تاريخ (signature)",
+      "label_ar": "تاريخ الإمضاء",
       "label_fr": "Date Signature",
       "placeholder_ar": "يوم/شهر/سنة",
       "placeholder_fr": "JJ/MM/AAAA",

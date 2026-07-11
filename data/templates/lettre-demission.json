@@ -118,7 +118,7 @@
   "field_metadata": {
     "NOM_SALARIE": {
       "type": "text",
-      "label_ar": "الاسم (salarie)",
+      "label_ar": "الاسم",
       "label_fr": "Nom Salarie",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -130,7 +130,7 @@
     },
     "ADRESSE_SALARIE": {
       "type": "text",
-      "label_ar": "العنوان (salarie)",
+      "label_ar": "العنوان",
       "label_fr": "Adresse Salarie",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -142,7 +142,7 @@
     },
     "TEL_SALARIE": {
       "type": "text",
-      "label_ar": "الهاتف (salarie)",
+      "label_ar": "الهاتف",
       "label_fr": "Tel Salarie",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -154,7 +154,7 @@
     },
     "POSTE": {
       "type": "text",
-      "label_ar": "Poste",
+      "label_ar": "الخطة الوظيفية",
       "label_fr": "Poste",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -166,7 +166,7 @@
     },
     "DESTINATAIRE": {
       "type": "text",
-      "label_ar": "Destinataire",
+      "label_ar": "المرسل إليه",
       "label_fr": "Destinataire",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -178,7 +178,7 @@
     },
     "NOM_ENTREPRISE": {
       "type": "text",
-      "label_ar": "الاسم (entreprise)",
+      "label_ar": "الاسم",
       "label_fr": "Nom Entreprise",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -190,7 +190,7 @@
     },
     "ADRESSE_ENTREPRISE": {
       "type": "text",
-      "label_ar": "العنوان (entreprise)",
+      "label_ar": "العنوان",
       "label_fr": "Adresse Entreprise",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -202,7 +202,7 @@
     },
     "DATE_EMBAUCHE": {
       "type": "date",
-      "label_ar": "تاريخ (embauche)",
+      "label_ar": "تاريخ",
       "label_fr": "Date Embauche",
       "placeholder_ar": "يوم/شهر/سنة",
       "placeholder_fr": "JJ/MM/AAAA",
@@ -213,7 +213,7 @@
     },
     "DUREE_PREAVIS": {
       "type": "text",
-      "label_ar": "المدة (preavis)",
+      "label_ar": "المدة",
       "label_fr": "Duree Preavis",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -225,7 +225,7 @@
     },
     "DATE_EFFET_PREAVIS": {
       "type": "date",
-      "label_ar": "تاريخ (effet preavis)",
+      "label_ar": "تاريخ",
       "label_fr": "Date Effet Preavis",
       "placeholder_ar": "يوم/شهر/سنة",
       "placeholder_fr": "JJ/MM/AAAA",
@@ -236,7 +236,7 @@
     },
     "DATE_DERNIER_JOUR": {
       "type": "date",
-      "label_ar": "تاريخ (dernier jour)",
+      "label_ar": "تاريخ",
       "label_fr": "Date Dernier Jour",
       "placeholder_ar": "يوم/شهر/سنة",
       "placeholder_fr": "JJ/MM/AAAA",
@@ -247,7 +247,7 @@
     },
     "MOTIF_DEMISSION": {
       "type": "text",
-      "label_ar": "Motif Demission",
+      "label_ar": "سبب الاستقالة",
       "label_fr": "Motif Demission",
       "placeholder_ar": "",
       "placeholder_fr": "",

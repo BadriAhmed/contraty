@@ -155,7 +155,7 @@
   "field_metadata": {
     "NOM_VENDEUR": {
       "type": "text",
-      "label_ar": "الاسم (vendeur)",
+      "label_ar": "الاسم",
       "label_fr": "Nom Vendeur",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -167,7 +167,7 @@
     },
     "CIN_VENDEUR": {
       "type": "cin",
-      "label_ar": "بطاقة التعريف (vendeur)",
+      "label_ar": "بطاقة التعريف",
       "label_fr": "Cin Vendeur",
       "placeholder_ar": "12345678",
       "placeholder_fr": "12345678",
@@ -180,7 +180,7 @@
     },
     "ETAT_CIVIL_VENDEUR": {
       "type": "text",
-      "label_ar": "Etat Civil Vendeur",
+      "label_ar": "الحالة المدنية للبائع",
       "label_fr": "Etat Civil Vendeur",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -192,7 +192,7 @@
     },
     "ADRESSE_VENDEUR": {
       "type": "text",
-      "label_ar": "العنوان (vendeur)",
+      "label_ar": "العنوان",
       "label_fr": "Adresse Vendeur",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -204,7 +204,7 @@
     },
     "NOM_ACQUEREUR": {
       "type": "text",
-      "label_ar": "الاسم (acquereur)",
+      "label_ar": "الاسم",
       "label_fr": "Nom Acquereur",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -216,7 +216,7 @@
     },
     "CIN_ACQUEREUR": {
       "type": "cin",
-      "label_ar": "بطاقة التعريف (acquereur)",
+      "label_ar": "بطاقة التعريف",
       "label_fr": "Cin Acquereur",
       "placeholder_ar": "12345678",
       "placeholder_fr": "12345678",
@@ -229,7 +229,7 @@
     },
     "ETAT_CIVIL_ACQUEREUR": {
       "type": "text",
-      "label_ar": "Etat Civil Acquereur",
+      "label_ar": "الحالة المدنية للمشتري",
       "label_fr": "Etat Civil Acquereur",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -241,7 +241,7 @@
     },
     "ADRESSE_ACQUEREUR": {
       "type": "text",
-      "label_ar": "العنوان (acquereur)",
+      "label_ar": "العنوان",
       "label_fr": "Adresse Acquereur",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -253,7 +253,7 @@
     },
     "NATURE": {
       "type": "text",
-      "label_ar": "Nature",
+      "label_ar": "الطبيعة",
       "label_fr": "Nature",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -265,8 +265,8 @@
     },
     "NB_PIECES": {
       "type": "text",
-      "label_ar": "NB Pieces",
-      "label_fr": "NB Pieces",
+      "label_ar": "عدد الغرف",
+      "label_fr": "Nb Pieces",
       "placeholder_ar": "",
       "placeholder_fr": "",
       "required": true,
@@ -277,7 +277,7 @@
     },
     "ADRESSE_BIEN": {
       "type": "text",
-      "label_ar": "العنوان (bien)",
+      "label_ar": "عنوان العقار المسوغ",
       "label_fr": "Adresse Bien",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -289,7 +289,7 @@
     },
     "TITRE_FONCIER": {
       "type": "text",
-      "label_ar": "Titre Foncier",
+      "label_ar": "الرسم العقاري",
       "label_fr": "Titre Foncier",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -301,7 +301,7 @@
     },
     "SUPERFICIE": {
       "type": "text",
-      "label_ar": "Superficie",
+      "label_ar": "المساحة",
       "label_fr": "Superficie",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -313,7 +313,7 @@
     },
     "ORIGINE_PROPRIETE": {
       "type": "text",
-      "label_ar": "Origine Propriete",
+      "label_ar": "أصل الملكية",
       "label_fr": "Origine Propriete",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -325,7 +325,7 @@
     },
     "PRIX_TOTAL": {
       "type": "number",
-      "label_ar": "الثمن (total)",
+      "label_ar": "الثمن",
       "label_fr": "Prix Total",
       "placeholder_ar": "0",
       "placeholder_fr": "0",
@@ -337,7 +337,7 @@
     },
     "AVANCE": {
       "type": "text",
-      "label_ar": "Avance",
+      "label_ar": "التسبيق",
       "label_fr": "Avance",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -349,7 +349,7 @@
     },
     "SOLDE": {
       "type": "text",
-      "label_ar": "Solde",
+      "label_ar": "باقي الثمن",
       "label_fr": "Solde",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -361,7 +361,7 @@
     },
     "MONTANT_PRET": {
       "type": "number",
-      "label_ar": "المبلغ (pret)",
+      "label_ar": "المبلغ",
       "label_fr": "Montant Pret",
       "placeholder_ar": "0",
       "placeholder_fr": "0",
@@ -373,7 +373,7 @@
     },
     "DATE_LIMITE_PRET": {
       "type": "date",
-      "label_ar": "تاريخ (limite pret)",
+      "label_ar": "تاريخ",
       "label_fr": "Date Limite Pret",
       "placeholder_ar": "يوم/شهر/سنة",
       "placeholder_fr": "JJ/MM/AAAA",
@@ -384,7 +384,7 @@
     },
     "AUTRES_CONDITIONS": {
       "type": "text",
-      "label_ar": "Autres Conditions",
+      "label_ar": "شروط أخرى",
       "label_fr": "Autres Conditions",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -396,7 +396,7 @@
     },
     "DATE_LIMITE_VENTE": {
       "type": "date",
-      "label_ar": "تاريخ (limite vente)",
+      "label_ar": "تاريخ",
       "label_fr": "Date Limite Vente",
       "placeholder_ar": "يوم/شهر/سنة",
       "placeholder_fr": "JJ/MM/AAAA",
@@ -407,7 +407,7 @@
     },
     "LIEU_SIGNATURE": {
       "type": "text",
-      "label_ar": "المكان (signature)",
+      "label_ar": "مكان الإمضاء",
       "label_fr": "Lieu Signature",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -419,7 +419,7 @@
     },
     "DATE_SIGNATURE": {
       "type": "date",
-      "label_ar": "تاريخ (signature)",
+      "label_ar": "تاريخ الإمضاء",
       "label_fr": "Date Signature",
       "placeholder_ar": "يوم/شهر/سنة",
       "placeholder_fr": "JJ/MM/AAAA",

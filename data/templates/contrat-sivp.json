@@ -176,7 +176,7 @@
   "field_metadata": {
     "NOM_ENTREPRISE": {
       "type": "text",
-      "label_ar": "الاسم (entreprise)",
+      "label_ar": "الاسم",
       "label_fr": "Nom Entreprise",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -188,7 +188,7 @@
     },
     "RNE": {
       "type": "text",
-      "label_ar": "Rne",
+      "label_ar": "السجل الوطني للمؤسسات",
       "label_fr": "Rne",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -200,7 +200,7 @@
     },
     "ADRESSE_ENTREPRISE": {
       "type": "text",
-      "label_ar": "العنوان (entreprise)",
+      "label_ar": "العنوان",
       "label_fr": "Adresse Entreprise",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -212,7 +212,7 @@
     },
     "REPRESENTANT": {
       "type": "text",
-      "label_ar": "Representant",
+      "label_ar": "الممثل القانوني",
       "label_fr": "Representant",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -224,7 +224,7 @@
     },
     "NOM_STAGIAIRE": {
       "type": "text",
-      "label_ar": "الاسم (stagiaire)",
+      "label_ar": "الاسم",
       "label_fr": "Nom Stagiaire",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -236,7 +236,7 @@
     },
     "CIN_STAGIAIRE": {
       "type": "cin",
-      "label_ar": "بطاقة التعريف (stagiaire)",
+      "label_ar": "بطاقة التعريف",
       "label_fr": "Cin Stagiaire",
       "placeholder_ar": "12345678",
       "placeholder_fr": "12345678",
@@ -249,7 +249,7 @@
     },
     "DIPLOME": {
       "type": "text",
-      "label_ar": "Diplome",
+      "label_ar": "الشهادة العلمية",
       "label_fr": "Diplome",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -261,7 +261,7 @@
     },
     "ANNEE_DIPLOME": {
       "type": "text",
-      "label_ar": "Annee Diplome",
+      "label_ar": "سنة الحصول على الشهادة",
       "label_fr": "Annee Diplome",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -273,7 +273,7 @@
     },
     "ADRESSE_STAGIAIRE": {
       "type": "text",
-      "label_ar": "العنوان (stagiaire)",
+      "label_ar": "العنوان",
       "label_fr": "Adresse Stagiaire",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -285,7 +285,7 @@
     },
     "DOMAINE": {
       "type": "text",
-      "label_ar": "Domaine",
+      "label_ar": "الاختصاص",
       "label_fr": "Domaine",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -297,7 +297,7 @@
     },
     "DUREE_MOIS": {
       "type": "text",
-      "label_ar": "المدة (mois)",
+      "label_ar": "المدة",
       "label_fr": "Duree Mois",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -309,7 +309,7 @@
     },
     "DATE_DEBUT": {
       "type": "date",
-      "label_ar": "تاريخ (debut)",
+      "label_ar": "تاريخ مفعول العقد",
       "label_fr": "Date Debut",
       "placeholder_ar": "يوم/شهر/سنة",
       "placeholder_fr": "JJ/MM/AAAA",
@@ -320,7 +320,7 @@
     },
     "DATE_FIN": {
       "type": "date",
-      "label_ar": "تاريخ (fin)",
+      "label_ar": "تاريخ",
       "label_fr": "Date Fin",
       "placeholder_ar": "يوم/شهر/سنة",
       "placeholder_fr": "JJ/MM/AAAA",
@@ -331,7 +331,7 @@
     },
     "MONTANT_BOURSE": {
       "type": "number",
-      "label_ar": "المبلغ (bourse)",
+      "label_ar": "المبلغ",
       "label_fr": "Montant Bourse",
       "placeholder_ar": "0",
       "placeholder_fr": "0",
@@ -343,7 +343,7 @@
     },
     "PART_ETAT": {
       "type": "text",
-      "label_ar": "Part Etat",
+      "label_ar": "حصة الدولة",
       "label_fr": "Part Etat",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -355,7 +355,7 @@
     },
     "PART_ENTREPRISE": {
       "type": "text",
-      "label_ar": "Part Entreprise",
+      "label_ar": "حصة المؤسسة",
       "label_fr": "Part Entreprise",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -367,7 +367,7 @@
     },
     "PREAVIS_JOURS": {
       "type": "text",
-      "label_ar": "مهلة الإعلام (jours)",
+      "label_ar": "مهلة الإعلام",
       "label_fr": "Preavis Jours",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -379,7 +379,7 @@
     },
     "LIEU_SIGNATURE": {
       "type": "text",
-      "label_ar": "المكان (signature)",
+      "label_ar": "مكان الإمضاء",
       "label_fr": "Lieu Signature",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -391,7 +391,7 @@
     },
     "DATE_SIGNATURE": {
       "type": "date",
-      "label_ar": "تاريخ (signature)",
+      "label_ar": "تاريخ الإمضاء",
       "label_fr": "Date Signature",
       "placeholder_ar": "يوم/شهر/سنة",
       "placeholder_fr": "JJ/MM/AAAA",
