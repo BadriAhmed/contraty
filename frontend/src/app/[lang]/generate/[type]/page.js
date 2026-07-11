@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback, useMemo } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
-import { fetchTemplate } from "@/lib/constants";
+import { fetchTemplate, API_BASE } from "@/lib/constants";
 import { Lock, ArrowRight, ArrowLeft, CheckCircle2, Download, FileText, Loader2, X, AlertCircle } from "lucide-react";
 
 const PATTERNS = {
@@ -200,7 +200,7 @@ export default function GeneratePage() {
     setGenerating(true);
     setError(null);
     try {
-      const res = await fetch(`http://localhost:8000/api/v1/contracts/generate`, {
+      const res = await fetch(`${API_BASE}/contracts/generate`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -226,7 +226,7 @@ export default function GeneratePage() {
     if (!generated?.contract) return;
     try {
       const endpoint = format === "docx" ? "generate/docx" : "generate/pdf";
-      const res = await fetch(`http://localhost:8000/api/v1/contracts/${endpoint}`, {
+      const res = await fetch(`${API_BASE}/contracts/${endpoint}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
