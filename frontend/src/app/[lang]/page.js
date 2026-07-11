@@ -2,181 +2,157 @@ import Link from "next/link";
 import { fetchTemplates, DOMAINS } from "@/lib/constants";
 import {
   Home, Briefcase, Coins, Car, Building2, FileText,
-  ArrowUpRight, Search,
+  ArrowUpRight,
 } from "lucide-react";
 
 const domainMeta = {
-  logement: { icon: Home, cat: "real-estate", popularity: 5 },
-  travail: { icon: Briefcase, cat: "employment", popularity: 5 },
-  argent: { icon: Coins, cat: "family", popularity: 4 },
-  vehicules: { icon: Car, cat: "services", popularity: 3 },
-  entreprise: { icon: Building2, cat: "business", popularity: 5 },
-  demarches: { icon: FileText, cat: "documents", popularity: 4 },
+  logement: { icon: Home, cat: "real-estate" },
+  travail: { icon: Briefcase, cat: "employment" },
+  argent: { icon: Coins, cat: "family" },
+  vehicules: { icon: Car, cat: "services" },
+  entreprise: { icon: Building2, cat: "business" },
+  demarches: { icon: FileText, cat: "documents" },
+};
+
+const complexityLabel = {
+  ar: { low: "بسيط", medium: "متوسط", high: "معقد" },
+  fr: { low: "Simple", medium: "Moyen", high: "Complexe" },
 };
 
 export default async function HomePage({ params }) {
   const { lang } = params;
   const templates = await fetchTemplates({ language: lang });
 
-  const featured = templates.filter((t) =>
-    ["bail-habitation", "contrat-cdi", "contrat-cdd", "vente-voiture", "prestation-services", "reconnaissance-dette"].includes(t.slug)
-  );
+  // Group by domain for sectioned display
+  const byDomain = {};
+  for (const t of templates) {
+    if (!byDomain[t.domain]) byDomain[t.domain] = [];
+    byDomain[t.domain].push(t);
+  }
+  const domainOrder = ["logement", "travail", "argent", "vehicules", "entreprise", "demarches"];
 
   return (
     <div className="max-w-container-max mx-auto px-4 md:px-6">
       {/* Hero */}
-      <section className="py-16 md:py-20 text-center relative">
+      <section className="py-12 md:py-16 text-center relative">
         <div className="absolute top-0 start-1/4 w-72 h-72 bg-primary-fixed-dim/20 rounded-full blur-3xl" />
         <div className="absolute top-10 end-1/4 w-64 h-64 bg-secondary-fixed/30 rounded-full blur-3xl" />
 
         <div className="relative max-w-2xl mx-auto">
-          {/* AI badge */}
-          <div className="inline-flex items-center gap-2 bg-surface border border-border-slate rounded-full px-4 py-1.5 text-xs text-on-surface-variant mb-6">
-            <span className="w-2 h-2 rounded-full bg-success-green" />
-            {lang === "ar" ? "مدعوم بالذكاء الاصطناعي" : "Powered by AI"}
-          </div>
-
-          <h1 className="text-headline-hero-mobile md:text-headline-hero text-on-surface mb-4">
+          <h1 className="text-headline-hero-mobile md:text-headline-hero text-on-surface mb-4 leading-tight">
             {lang === "ar" ? (
               <>
                 أنشئ عقودًا <span className="text-primary">قانونية</span> تونسية
               </>
             ) : (
               <>
-                Create <span className="text-primary">legal contracts</span> for Tunisia
+                Créez vos contrats <span className="text-primary">juridiques</span> tunisiens
               </>
             )}
           </h1>
 
-          <p className="text-subtitle text-text-secondary mb-8 max-w-xl mx-auto">
+          <p className="text-lg text-text-secondary mb-8 max-w-xl mx-auto">
             {lang === "ar"
               ? "أكثر من 22 نموذجًا قانونيًا بالعربية والفرنسية. اختر نموذجك واملأ الحقول واحصل على عقدك الجاهز في دقائق."
-              : "Over 22 bilingual legal templates. Choose a contract type, fill in the blanks, and get your ready-to-sign document in minutes."}
+              : "Plus de 22 modèles juridiques bilingues. Choisissez un type de contrat, remplissez les champs et obtenez votre document prêt à signer en quelques minutes."}
           </p>
 
-          {/* Search bar */}
-          <div className="relative max-w-lg mx-auto mb-6">
-            <div className="flex border-2 border-border-slate rounded-xl overflow-hidden focus-within:border-primary transition-colors">
-              <div className="flex items-center ps-4 text-text-secondary">
-                <Search size={18} />
-              </div>
-              <input
-                type="text"
-                placeholder={lang === "ar" ? "ابحث عن نموذج..." : "Search templates..."}
-                className="flex-1 px-3 py-3 bg-transparent outline-none text-on-surface placeholder:text-text-secondary text-sm"
-              />
-              <Link
-                href={`/${lang}/contracts`}
-                className="bg-primary text-on-primary font-semibold text-sm px-5 py-3 hover:bg-surface-tint transition-colors"
-              >
-                {lang === "ar" ? "بحث" : "Search"}
-              </Link>
-            </div>
-          </div>
-
-          {/* Popular quick links */}
+          {/* Quick links */}
           <div className="flex items-center justify-center gap-2 flex-wrap text-sm text-text-secondary">
-            <span className="font-medium">{lang === "ar" ? "الشائع:" : "Popular:"}</span>
-            {featured.slice(0, 5).map((t) => (
-              <Link
-                key={t.slug}
-                href={`/${lang}/generate/${t.slug}`}
-                className="text-primary hover:text-primary-container underline underline-offset-2"
-              >
-                {lang === "ar" ? t.title_ar : t.title_fr}
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Templates grid */}
-      <section className="bg-background-page -mx-4 md:-mx-6 px-4 md:px-6 py-12 md:py-16 rounded-3xl">
-        <div className="max-w-container-max mx-auto">
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8 gap-4">
-            <div>
-              <h2 className="text-headline-section text-on-surface">
-                {lang === "ar" ? "جميع النماذج" : "All Templates"}
-              </h2>
-              <p className="text-sm text-text-secondary mt-1">
-                {lang === "ar"
-                  ? `${templates.length} نموذجًا قانونيًا`
-                  : `${templates.length} legal templates`}
-              </p>
-            </div>
-          </div>
-
-          {/* Domain filter pills */}
-          <div className="flex flex-wrap gap-2 mb-8">
-            <Link href={`/${lang}/contracts`}>
-              <button className="filter-pill active">
-                {lang === "ar" ? "الكل" : "All"}
-              </button>
-            </Link>
-            {Object.entries(DOMAINS).map(([key, dom]) => (
-              <Link key={key} href={`/${lang}/contracts?domain=${key}`}>
-                <button className="filter-pill">
-                  {lang === "ar" ? dom.ar : dom.fr}
-                </button>
-              </Link>
-            ))}
-          </div>
-
-          {/* Card grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-grid-gap">
-            {featured.map((t) => {
-              const meta = domainMeta[t.domain] || domainMeta.demarches;
-              const Icon = meta.icon;
-              const title = lang === "ar" ? t.title_ar : t.title_fr;
-              const catColor = `var(--cat-${meta.cat})`;
-
+            <span className="font-medium">
+              {lang === "ar" ? "الأكثر استخدامًا :" : "Les plus demandés :"}
+            </span>
+            {["bail-habitation", "contrat-cdi", "contrat-cdd", "vente-voiture", "reconnaissance-dette"].map((slug) => {
+              const t = templates.find((x) => x.slug === slug);
+              if (!t) return null;
               return (
                 <Link
-                  key={t.slug}
-                  href={`/${lang}/generate/${t.slug}`}
-                  className="bento-card bg-surface-container-lowest border-border-slate rounded-xl p-6 relative overflow-hidden group"
-                  style={{ "--cat-hover": catColor }}
+                  key={slug}
+                  href={`/${lang}/generate/${slug}`}
+                  className="text-primary hover:text-primary-container underline underline-offset-2"
                 >
-                  {/* Corner decoration */}
-                  <div
-                    className="absolute top-0 end-0 w-20 h-20 rounded-bl-[80px] opacity-10 group-hover:scale-150 transition-transform duration-300"
-                    style={{ background: catColor }}
-                  />
-
-                  <div className="relative">
-                    <div className="flex items-start justify-between mb-4">
-                      <div
-                        className="w-11 h-11 rounded-lg flex items-center justify-center"
-                        style={{ background: `${catColor}14` }}
-                      >
-                        <Icon size={20} style={{ color: catColor }} />
-                      </div>
-                      <ArrowUpRight
-                        size={18}
-                        className="text-outline group-hover:text-primary transition-colors"
-                      />
-                    </div>
-
-                    {/* Category badge */}
-                    <span
-                      className="inline-block px-2.5 py-0.5 rounded-md text-xs font-semibold mb-3"
-                      style={{ background: `${catColor}18`, color: catColor }}
-                    >
-                      {DOMAINS[t.domain] ? (lang === "ar" ? DOMAINS[t.domain].ar : DOMAINS[t.domain].fr) : t.domain}
-                    </span>
-
-                    <h3 className="text-card-title text-on-surface mb-2 group-hover:text-primary transition-colors">
-                      {title}
-                    </h3>
-                    <p className="text-sm text-text-secondary">
-                      {t.field_count} {lang === "ar" ? "حقل" : "champs"} &middot; {t.complexity === "low" ? (lang === "ar" ? "بسيط" : "Simple") : t.complexity === "high" ? (lang === "ar" ? "معقد" : "Complexe") : (lang === "ar" ? "متوسط" : "Moyen")}
-                    </p>
-                  </div>
+                  {lang === "ar" ? t.title_ar : t.title_fr}
                 </Link>
               );
             })}
           </div>
         </div>
+      </section>
+
+      {/* All templates by domain */}
+      <section className="pb-16">
+        {domainOrder.map((domain) => {
+          const items = byDomain[domain];
+          if (!items || items.length === 0) return null;
+          const meta = domainMeta[domain];
+          const Icon = meta.icon;
+          const catColor = `var(--cat-${meta.cat})`;
+          const domainLabel = lang === "ar" ? DOMAINS[domain].ar : DOMAINS[domain].fr;
+
+          return (
+            <div key={domain} className="mb-10">
+              {/* Domain header */}
+              <div className="flex items-center gap-3 mb-4">
+                <div
+                  className="w-8 h-8 rounded-lg flex items-center justify-center"
+                  style={{ background: `${catColor}18` }}
+                >
+                  <Icon size={16} style={{ color: catColor }} />
+                </div>
+                <h2 className="text-lg font-bold text-on-surface">
+                  {domainLabel}
+                </h2>
+                <span className="text-xs text-text-secondary">
+                  ({items.length})
+                </span>
+              </div>
+
+              {/* Cards */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                {items.map((t) => {
+                  const title = lang === "ar" ? t.title_ar : t.title_fr;
+                  const isRtl = lang === "ar";
+
+                  return (
+                    <Link
+                      key={t.slug}
+                      href={`/${lang}/generate/${t.slug}`}
+                      className="group bg-surface-container-lowest border border-border-slate rounded-xl p-5 hover:border-primary/30 hover:shadow-card-hover transition-all duration-200"
+                      style={{ borderInlineStartWidth: "3px", borderInlineStartColor: catColor }}
+                    >
+                      <div className="flex items-start justify-between mb-2">
+                        <h3 className="text-base font-bold text-on-surface group-hover:text-primary transition-colors leading-snug pe-2">
+                          {title}
+                        </h3>
+                        <ArrowUpRight
+                          size={18}
+                          className={`text-outline group-hover:text-primary transition-colors shrink-0 ${isRtl ? "rotate-180" : ""}`}
+                        />
+                      </div>
+
+                      <p className="text-sm text-text-secondary mb-3 leading-relaxed">
+                        {t.field_count} {lang === "ar" ? "حقل" : "champs"} &middot;{" "}
+                        {complexityLabel[lang][t.complexity] || t.complexity}
+                      </p>
+
+                      {/* Field preview */}
+                      <div className="flex flex-wrap gap-1">
+                        {items[0] === t && (
+                          <span
+                            className="px-2 py-0.5 text-xs rounded font-medium"
+                            style={{ background: `${catColor}12`, color: catColor }}
+                          >
+                            {lang === "ar" ? "الأكثر طلبًا" : "Le plus demandé"}
+                          </span>
+                        )}
+                      </div>
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+          );
+        })}
       </section>
     </div>
   );

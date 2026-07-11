@@ -2,7 +2,7 @@ import Link from "next/link";
 import { fetchTemplates, DOMAINS } from "@/lib/constants";
 import {
   Home, Briefcase, Coins, Car, Building2, FileText,
-  ArrowUpRight, ChevronRight, Clock,
+  ArrowUpRight, ChevronRight, ChevronLeft,
 } from "lucide-react";
 
 const domainMeta = {
@@ -14,10 +14,17 @@ const domainMeta = {
   demarches: { icon: FileText, cat: "documents", color: "var(--cat-documents)" },
 };
 
+const complexityLabel = {
+  ar: { low: "بسيط", medium: "متوسط", high: "معقد" },
+  fr: { low: "Simple", medium: "Moyen", high: "Complexe" },
+};
+
 export default async function ContractsPage({ params, searchParams }) {
   const { lang } = params;
   const domain = searchParams?.domain;
   const templates = await fetchTemplates({ domain, language: lang });
+  const isRtl = lang === "ar";
+  const Chevron = isRtl ? ChevronLeft : ChevronRight;
 
   const domainLabel = domain && DOMAINS[domain]
     ? (lang === "ar" ? DOMAINS[domain].ar : DOMAINS[domain].fr)
@@ -28,15 +35,15 @@ export default async function ContractsPage({ params, searchParams }) {
       {/* Breadcrumbs */}
       <nav className="flex items-center gap-2 text-sm text-text-secondary mb-6">
         <Link href={`/${lang}`} className="hover:text-primary transition-colors">
-          {lang === "ar" ? "الرئيسية" : "Home"}
+          {lang === "ar" ? "الرئيسية" : "Accueil"}
         </Link>
-        <ChevronRight size={14} />
+        <Chevron size={14} />
         <Link href={`/${lang}/contracts`} className="hover:text-primary transition-colors">
-          {lang === "ar" ? "النماذج" : "Templates"}
+          {lang === "ar" ? "النماذج" : "Modèles"}
         </Link>
         {domainLabel && (
           <>
-            <ChevronRight size={14} />
+            <Chevron size={14} />
             <span className="text-on-surface font-medium">{domainLabel}</span>
           </>
         )}
@@ -48,7 +55,8 @@ export default async function ContractsPage({ params, searchParams }) {
           {domainLabel || (lang === "ar" ? "جميع النماذج القانونية" : "Tous les modèles juridiques")}
         </h1>
         <p className="text-text-secondary">
-          {templates.length} {lang === "ar" ? "نموذج" : "modèle"}{templates.length > 1 ? "s" : ""} {lang === "ar" ? "متاح" : "disponible"}{templates.length > 1 ? "s" : ""}
+          {templates.length} {lang === "ar" ? "نموذج" : "modèle"}{templates.length > 1 ? "s" : ""}{" "}
+          {lang === "ar" ? "متاح" : "disponible"}{templates.length > 1 ? "s" : ""}
         </p>
       </div>
 
@@ -94,10 +102,10 @@ export default async function ContractsPage({ params, searchParams }) {
             </div>
 
             <div className="p-3 bg-surface-container rounded-lg border border-outline-variant/50">
-              <p className="text-xs text-on-surface-variant">
+              <p className="text-xs text-on-surface-variant leading-relaxed">
                 {lang === "ar"
-                  ? "📌 جميع النماذج مبنية على القوانين التونسية (م.إ.ع، م.ش، م.ش.ت)"
-                  : "📌 Tous les modèles sont basés sur les codes juridiques tunisiens (COC, CT, CS)"}
+                  ? "جميع النماذج مبنية على القوانين التونسية (م.إ.ع، م.ش، م.ش.ت)"
+                  : "Tous les modèles sont basés sur les codes juridiques tunisiens (COC, CT, CS)"}
               </p>
             </div>
           </div>
@@ -115,7 +123,7 @@ export default async function ContractsPage({ params, searchParams }) {
               </Link>
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-grid-gap">
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
               {templates.map((t) => {
                 const meta = domainMeta[t.domain] || domainMeta.demarches;
                 const Icon = meta.icon;
@@ -125,47 +133,36 @@ export default async function ContractsPage({ params, searchParams }) {
                   <Link
                     key={t.slug}
                     href={`/${lang}/generate/${t.slug}`}
-                    className="bento-card bg-surface border-border-slate rounded-xl p-5 flex flex-col relative overflow-hidden group"
-                    style={{ "--cat-hover": meta.color }}
+                    className="group bg-surface-container-lowest border border-border-slate rounded-xl p-5 hover:border-primary/30 hover:shadow-card-hover transition-all duration-200 flex flex-col"
+                    style={{ borderInlineStartWidth: "3px", borderInlineStartColor: meta.color }}
                   >
-                    <div
-                      className="absolute top-0 end-0 w-16 h-16 rounded-bl-[60px] opacity-10 group-hover:scale-150 transition-transform duration-300"
-                      style={{ background: meta.color }}
-                    />
-
-                    <div className="relative flex-1">
-                      <div className="flex items-start justify-between mb-3">
+                    <div className="flex items-start justify-between mb-2">
+                      <div className="flex items-center gap-2 min-w-0">
                         <div
-                          className="w-10 h-10 rounded-lg flex items-center justify-center"
+                          className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0"
                           style={{ background: `${meta.color}15` }}
                         >
-                          <Icon size={18} style={{ color: meta.color }} />
+                          <Icon size={16} style={{ color: meta.color }} />
                         </div>
-                        <ArrowUpRight
-                          size={16}
-                          className="text-outline group-hover:text-primary transition-colors shrink-0"
-                        />
+                        <h3 className="text-base font-bold text-on-surface group-hover:text-primary transition-colors leading-snug truncate">
+                          {title}
+                        </h3>
                       </div>
+                      <ArrowUpRight
+                        size={16}
+                        className={`text-outline group-hover:text-primary transition-colors shrink-0 ${isRtl ? "rotate-180" : ""}`}
+                      />
+                    </div>
 
-                      <span className="inline-block px-2 py-0.5 rounded text-xs font-medium bg-surface-container-highest text-on-surface-variant mb-2">
-                        {lang === "ar"
-                          ? (DOMAINS[t.domain]?.ar || t.domain)
-                          : (DOMAINS[t.domain]?.fr || t.domain)}
+                    <p className="text-sm text-text-secondary mb-2">
+                      {t.field_count} {lang === "ar" ? "حقل" : "champs"} &middot;{" "}
+                      {complexityLabel[lang][t.complexity] || t.complexity}
+                    </p>
+
+                    <div className="flex items-center gap-2 text-xs text-text-secondary mt-auto pt-2 border-t border-border-slate/50">
+                      <span className="text-primary font-medium group-hover:underline">
+                        {lang === "ar" ? "أنشئ هذا العقد ←" : "→ Créer ce contrat"}
                       </span>
-
-                      <h3 className="text-sm font-semibold text-on-surface mb-1 group-hover:text-primary transition-colors">
-                        {title}
-                      </h3>
-
-                      <div className="flex items-center gap-3 text-xs text-text-secondary mt-3 pt-3 border-t border-border-slate/50">
-                        <span className="flex items-center gap-1">
-                          <Clock size={12} />
-                          {t.field_count} {lang === "ar" ? "حقل" : "champs"}
-                        </span>
-                        <span className="text-primary font-medium group-hover:translate-x-1 transition-transform">
-                          {lang === "ar" ? "تخصيص ←" : "→ Personnaliser"}
-                        </span>
-                      </div>
                     </div>
                   </Link>
                 );
