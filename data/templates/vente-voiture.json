@@ -46,7 +46,7 @@
       "articles": [
         {
           "id": "art-vehicule",
-          "text_ar": "يبيع البائع للمشتري الذي يقبل، السيارة التالية:\nالعلامة: [MARQUE]\nالطراز: [MODELE]\nرقم التسجيل: [IMMATRICULATION]\nرقم الهيكل: [NUM_CHASSIS]\nسنة أول استعمال: [ANNEE_MEC]\nالوقود: [CARBURANT]\nالقوة الجبائية: [PUISSANCE_FISCALE] حصان\nعدد الكيلومترات: [KILOMETRAGE] كم",
+          "text_ar": "يبيع البائع للمشتري الذي يقبل، السيارة التالية:\nالعلامة: [MARQUE]\nالطراز: [MODELE]\nالرقم المنجمي: [IMMATRICULATION]\nرقم الهيكل: [NUM_CHASSIS]\nتاريخ أول وضع في الجولان: [ANNEE_MEC]\nالوقود: [CARBURANT]\nالقوة الجبائية: [PUISSANCE_FISCALE] حصان\nعدد الكيلومترات: [KILOMETRAGE] كم",
           "text_fr": "Le Vendeur vend à l'Acquéreur, qui accepte, le véhicule automobile suivant :\nMarque : [MARQUE]\nType/Modèle : [MODELE]\nImmatriculation : [IMMATRICULATION]\nN° de série (châssis) : [NUM_CHASSIS]\nAnnée de mise en circulation : [ANNEE_MEC]\nCarburant : [CARBURANT]\nPuissance fiscale : [PUISSANCE_FISCALE] CV\nKilométrage : [KILOMETRAGE] km",
           "fields": [
             "MARQUE",
@@ -68,8 +68,8 @@
       "articles": [
         {
           "id": "art-prix",
-          "text_ar": "حدد ثمن البيع بـ [PRIX] ديناراً تونسياً، يدفع نقداً عند توقيع هذا العقد.",
-          "text_fr": "Le prix de vente est fixé à [PRIX] dinars tunisiens, payé comptant à la signature des présentes. ",
+          "text_ar": "حدد ثمن البيع بـ [PRIX] ديناراً تونسياً، يدفع بموجب شيك مشهود بتوفير رصيده (Chèque certifié) أو بموجب تحويل بنكي عند توقيع هذا العقد.",
+          "text_fr": "Le prix de vente est fixé à [PRIX] dinars tunisiens, payé par chèque certifié ou par virement bancaire à la signature des présentes. ",
           "fields": [
             "PRIX"
           ]
@@ -96,7 +96,7 @@
       "articles": [
         {
           "id": "art-vices-caches",
-          "text_ar": "البائع ملزم بضمان العيوب الخفية طبق ما يقتضيه القانون.",
+          "text_ar": "البائع ملزم بضمان العيوب الخفية طبقاً لأحكام الفصل 648 وما بعده من مجلة الالتزامات والعقود التونسية.",
           "text_fr": "Le Vendeur est tenu de la garantie des vices cachés dans les conditions prévues par la loi.   ",
           "fields": []
         }
@@ -124,7 +124,7 @@
       "articles": [
         {
           "id": "art-frais",
-          "text_ar": "تكون معاليم التحويل على عاتق المشتري.",
+          "text_ar": "تكون معاليم تسجيل العقد وإعادة ترسيمه على عاتق المشتري.",
           "text_fr": "Les frais de mutation sont à la charge de l'Acquéreur.",
           "fields": []
         },
@@ -152,14 +152,14 @@
         },
         {
           "id": "art-sign-vendeur",
-          "text_ar": "البائع\n[NOM_VENDEUR]\n(إمضاء مسبوق بعبارة « قرأت وأوافق — صحيح لبيع »)",
-          "text_fr": "Le Vendeur\n[NOM_VENDEUR]\n(Signature précédée de « Lu et approuvé — Bon pour vente »)",
+          "text_ar": "البائع\n[NOM_VENDEUR]\n(إمضاء بخط اليد مسبوق بعبارة « صالح للتفويت »)",
+          "text_fr": "Le Vendeur\n[NOM_VENDEUR]\n(Signature précédée de « Lu et approuvé — Lu, certifié et approuvé pour la vente »)",
           "fields": []
         },
         {
           "id": "art-sign-acquereur",
-          "text_ar": "المشتري\n[NOM_ACQUEREUR]\n(إمضاء مسبوق بعبارة « قرأت وأوافق — صحيح لشراء »)",
-          "text_fr": "L'Acquéreur\n[NOM_ACQUEREUR]\n(Signature précédée de « Lu et approuvé — Bon pour achat »)",
+          "text_ar": "المشتري\n[NOM_ACQUEREUR]\n(إمضاء بخط اليد مسبوق بعبارة « صالح للشراء »)",
+          "text_fr": "L'Acquéreur\n[NOM_ACQUEREUR]\n(Signature précédée de « Lu et approuvé — Lu, certifié et approuvé pour l'achat »)",
           "fields": []
         }
       ]

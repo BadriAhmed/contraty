@@ -19,8 +19,8 @@
       "articles": [
         {
           "id": "art-divulgant",
-          "text_ar": "شركة [NOM_PARTIE_A]، الكائنة بـ [ADRESSE_PARTIE_A]، ويمثلها السيد/ة [REPRESENTANT_A]، يشار إليها بـ « الطرف المفصح ».",
-          "text_fr": "La société [NOM_PARTIE_A], sise [ADRESSE_PARTIE_A], représentée par M./Mme [REPRESENTANT_A], ci-après dénommée « la Partie Divulgante ».",
+          "text_ar": "شركة [NOM_PARTIE_A]، في حقها ممثلها القانوني السيد/ة [REPRESENTANT_A]، ومقرها الاجتماعي الكائن بـ [ADRESSE_PARTIE_A]، ويشار إليها بـ « الطرف المفصح ».",
+          "text_fr": "La société [NOM_PARTIE_A], ayant son siège social à [ADRESSE_PARTIE_A], représentée par M./Mme [REPRESENTANT_A], ci-après dénommée « la Partie Divulgante ».",
           "fields": [
             "NOM_PARTIE_A",
             "ADRESSE_PARTIE_A",
@@ -29,8 +29,8 @@
         },
         {
           "id": "art-recepteur",
-          "text_ar": "شركة [NOM_PARTIE_B]، الكائنة بـ [ADRESSE_PARTIE_B]، ويمثلها السيد/ة [REPRESENTANT_B]، يشار إليها بـ « الطرف المتلقي ».",
-          "text_fr": "La société [NOM_PARTIE_B], sise [ADRESSE_PARTIE_B], représentée par M./Mme [REPRESENTANT_B], ci-après dénommée « la Partie Réceptrice ».",
+          "text_ar": "شركة [NOM_PARTIE_B]، في حقها ممثلها القانوني السيد/ة [REPRESENTANT_B]، ومقرها الاجتماعي الكائن بـ [ADRESSE_PARTIE_B]، ويشار إليها بـ « الطرف المتلقي ».",
+          "text_fr": "La société [NOM_PARTIE_B], ayant son siège social à [ADRESSE_PARTIE_B], représentée par M./Mme [REPRESENTANT_B], ci-après dénommée « la Partie Réceptrice ». La Partie Divulgante et la Partie Réceptrice étant collectivement dénommées « les Parties » et individuellement « la Partie ».",
           "fields": [
             "NOM_PARTIE_B",
             "ADRESSE_PARTIE_B",
@@ -47,7 +47,7 @@
         {
           "id": "art-info-confidentielle",
           "text_ar": "يقصد بـ « المعلومات السرية » كل معلومة أياً كانت طبيعتها، يبلغها الطرف المفصح للطرف المتلقي، وخاصة: [SCOPE_INFOS].",
-          "text_fr": "Par « Information Confidentielle », on entend toute information de quelque nature que ce soit, communiquée par la Partie Divulgante à la Partie Réceptrice, notamment : [SCOPE_INFOS].",
+          "text_fr": "Par « Information Confidentielle », on entend toute information ou donnée de quelque nature que ce soit (notamment technique, commerciale, financière ou juridique), communiquée par la Partie Divulgante à la Partie Réceptrice par tout moyen écrit, oral ou électronique, incluant notamment : [SCOPE_INFOS].",
           "fields": [
             "SCOPE_INFOS"
           ]
@@ -62,15 +62,15 @@
         {
           "id": "art-engagement",
           "text_ar": "يلتزم الطرف المتلقي بما يلي: (أ) عدم إفشاء المعلومات السرية للغير؛ (ب) عدم استعمال المعلومات السرية لأغراض غير [OBJET_COLLABORATION]؛ (ج) اتخاذ جميع التدابير اللازمة للمحافظة على سريتها.",
-          "text_fr": "La Partie Réceptrice s'engage à : (a) ne pas divulguer les Informations Confidentielles à des tiers ; (b) ne pas utiliser les Informations Confidentielles à d'autres fins que [OBJET_COLLABORATION] ; (c) prendre toutes les mesures nécessaires pour en préserver la confidentialité.",
+          "text_fr": "La Partie Réceptrice s'engage à : (a) maintenir la plus stricte confidentialité et ne pas divulguer les Informations Confidentielles à des tiers ; (b) ne pas utiliser les Informations Confidentielles à d'autres fins que l'évaluation et la réalisation de [OBJET_COLLABORATION] ; (c) prendre toutes les mesures de sécurité nécessaires pour en préserver la confidentialité, au moins équivalentes à celles qu'elle applique pour protéger ses propres informations confidentielles.",
           "fields": [
             "OBJET_COLLABORATION"
           ]
         },
         {
           "id": "art-exceptions",
-          "text_ar": "تستثنى من نطاق السرية المعلومات: (أ) التي هي في الملك العمومي؛ (ب) التي يعلم بها الطرف المتلقي قبل إبلاغها له؛ (ج) التي تحصل عليها من الغير بطريقة مشروعة؛ (د) التي يفرض القانون الإفصاح عنها.",
-          "text_fr": "Sont exclues du champ de la confidentialité les informations : (a) déjà dans le domaine public ; (b) déjà connues de la Partie Réceptrice avant leur communication ; (c) obtenues de tiers de manière légitime ; (d) dont la divulgation est imposée par la loi.",
+          "text_ar": "تستثنى من نطاق السرية المعلومات: (أ) التي أصبحت شائعة بين العموم دون إخلال بهذا الاتفاق؛ (ب) التي يعلم بها الطرف المتلقي قبل إبلاغها له؛ (ج) التي تحصل عليها من الغير بطريقة مشروعة؛ (د) التي يفرض القانون الإفصاح عنها.",
+          "text_fr": "Sont exclues du champ de la confidentialité les informations pour lesquelles la Partie Réceptrice peut prouver qu'elles : (a) sont tombées dans le domaine public sans manquement aux termes du présent accord ; (b) étaient déjà connues de la Partie Réceptrice de manière licite avant leur communication ; (c) ont été obtenues de tiers de manière légitime et libre de toute obligation de secret ; (d) doivent être divulguées en vertu d'une obligation légale ou d'une décision de justice devenue exécutoire.",
           "fields": []
         }
       ]
@@ -83,7 +83,7 @@
         {
           "id": "art-duree-engagement",
           "text_ar": "يسري التعهد بالسرية ابتداءً من [DATE_EFFET] ويبقى نافذاً لمدة [DUREE_ANNEE] سنوات من تاريخ انتهاء المناقشات بين الطرفين.",
-          "text_fr": "Le présent engagement de confidentialité prend effet à compter du [DATE_EFFET] et reste en vigueur pendant une durée de [DUREE_ANNEE] années à compter de la fin des discussions entre les Parties.",
+          "text_fr": "Le présent accord prend effet à compter du [DATE_EFFET] et reste en vigueur pendant une durée de [DUREE] ans. Nonobstant l'expiration ou la résiliation du présent accord pour quelque cause que ce soit, les obligations de confidentialité et de non-utilisation des Informations Confidentielles survivront et resteront pleinement applicables pour une durée de [DUREE] ans à compter de la date de cette expiration ou résiliation.",
           "fields": [
             "DATE_EFFET",
             "DUREE_ANNEE"
@@ -98,8 +98,8 @@
       "articles": [
         {
           "id": "art-dommages",
-          "text_ar": "كل خرق لهذا التعهد يعرض الطرف المتلقي للمطالبة بالتعويض عن الأضرار، مع عدم الإخلال بأي حق آخر في التقاضي.",
-          "text_fr": "Toute violation du présent engagement expose la Partie Réceptrice à des dommages et intérêts, sans préjudice de toute autre action en justice.",
+          "text_ar": "كل إخلال بهذا التعهد يعرض الطرف المتلقي للمطالبة بالتعويض عن الأضرار، مع عدم الإخلال بأي حق آخر في التقاضي.",
+          "text_fr": "Toute violation du présent engagement expose la Partie Réceptrice à réparer l'intégralité du préjudice subi par la Partie Divulgante sous forme de dommages et intérêts, sans préjudice de son droit de solliciter en justice toute mesure conservatoire ou injonction nécessaire.",
           "fields": []
         }
       ]
@@ -111,14 +111,14 @@
       "articles": [
         {
           "id": "art-restitution",
-          "text_ar": "عند انتهاء المناقشات أو بمجرد طلب الطرف المفصح، يقوم الطرف المتلقي بإرجاع جميع الوثائق والحوامل المتضمنة معلومات سرية.",
-          "text_fr": "À l'issue des discussions ou sur simple demande de la Partie Divulgante, la Partie Réceptrice restituera tous les documents et supports contenant des Informations Confidentielles.",
+          "text_ar": "عند انتهاء المناقشات أو بمجرد طلب الطرف المفصح، يقوم الطرف المتلقي بإرجاع جميع الوثائق والدعائم التي تحتوي على معلومات سرية.",
+          "text_fr": "À l'issue des discussions, à l'expiration du présent accord ou sur simple demande écrite de la Partie Divulgante, la Partie Réceptrice devra immédiatement, et au choix de la Partie Divulgante : (i) restituer tous les documents et supports physiques contenant des Informations Confidentielles, et (ii) détruire de manière complète et irréversible toutes les copies numériques et fichiers électroniques contenant lesdites informations. La Partie Réceptrice s'engage à fournir à la Partie Divulgante, dans un délai de dix (10) jours à compter de la demande, une attestation écrite certifiant cette destruction intégrale, signée par un représentant légal dûment habilité.",
           "fields": []
         },
         {
           "id": "art-juridiction",
           "text_ar": "كل نزاع يكون من اختصاص محاكم [TRIBUNAL].",
-          "text_fr": "Tout litige sera de la compétence des tribunaux de [TRIBUNAL].",
+          "text_fr": "Le présent accord est régi et interprété conformément au droit tunisien. Tout litige relatif à sa validité, son interprétation ou son exécution, qui ne pourrait être résolu à l'amiable dans un délai de trente (30) jours, sera soumis à la compétence exclusive des tribunaux de [TRIBUNAL].",
           "fields": [
             "TRIBUNAL"
           ]
@@ -132,8 +132,8 @@
       "articles": [
         {
           "id": "art-date-lieu",
-          "text_ar": "حرر بـ [LIEU_SIGNATURE]، بتاريخ [DATE_SIGNATURE]، في نظيرين.",
-          "text_fr": "Fait à [LIEU_SIGNATURE], le [DATE_SIGNATURE], en deux exemplaires.",
+          "text_ar": "حرر بـ [LIEU_SIGNATURE]، بتاريخ [DATE_SIGNATURE]، في نظيرين أصليين تلقى كل طرف نسخة منها للعمل بها عند الاقتضاء.",
+          "text_fr": "Fait à [LIEU_SIGNATURE], le [DATE_SIGNATURE], en deux (2) exemplaires originaux.",
           "fields": [
             "LIEU_SIGNATURE",
             "DATE_SIGNATURE"
@@ -142,13 +142,13 @@
         {
           "id": "art-sign-A",
           "text_ar": "الطرف المفصح\n[REPRESENTANT_A]",
-          "text_fr": "Partie Divulgante\n[REPRESENTANT_A]",
+          "text_fr": "Pour la Partie Divulgante\n[REPRESENTANT_A]\nMention manuscrite « Lu et approuvé » :\n\nSignature :",
           "fields": []
         },
         {
           "id": "art-sign-B",
           "text_ar": "الطرف المتلقي\n[REPRESENTANT_B]",
-          "text_fr": "Partie Réceptrice\n[REPRESENTANT_B]",
+          "text_fr": "Pour la Partie Réceptrice\n[REPRESENTANT_B]\nMention manuscrite « Lu et approuvé » :\n\nSignature :",
           "fields": []
         }
       ]

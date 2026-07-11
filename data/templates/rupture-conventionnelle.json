@@ -19,8 +19,8 @@
       "articles": [
         {
           "id": "art-employeur",
-          "text_ar": "شركة [NOM_ENTREPRISE]، س.و.م عدد [RNE]، الكائنة بـ [ADRESSE_ENTREPRISE]، يمثلها [REPRESENTANT]، يشار إليها بـ « المؤجر ».",
-          "text_fr": "La société [NOM_ENTREPRISE], RNE n° [RNE], sise [ADRESSE_ENTREPRISE], représentée par [REPRESENTANT], ci-après « l'Employeur ».",
+          "text_ar": "شركة [NOM_ENTREPRISE]، المسجلة بالسجل الوطني للمؤسسات تحت المعرف الوحيد عدد [RNE]، الكائن مقرها الاجتماعي بـ [ADRESSE_ENTREPRISE]، يمثلها [REPRESENTANT]، يشار إليها بـ « المؤجر ».",
+          "text_fr": "La société [NOM_ENTREPRISE], immatriculée au Registre National des Entreprises (RNE) sous le n° [RNE], ayant son siège social sis à [ADRESSE_ENTREPRISE], représentée par M./Mme [REPRESENTANT], en sa qualité de [QUALITE], ci-après désignée « l'Employeur ».",
           "fields": [
             "NOM_ENTREPRISE",
             "RNE",
@@ -31,7 +31,7 @@
         {
           "id": "art-salarie",
           "text_ar": "السيد/ة [NOM_SALARIE]، ب.ت.و عدد [CIN_SALARIE]، انتدب/ت بعقد غير محدد المدة بتاريخ [DATE_CDI] بصفة [POSTE]، يشار إليه/ا بـ « الأجير ».",
-          "text_fr": "M./Mme [NOM_SALARIE], CIN n° [CIN_SALARIE], engagé(e) par CDI du [DATE_CDI] en qualité de [POSTE], ci-après « le Salarié ».",
+          "text_fr": "M./Mme [NOM_SALARIE], titulaire de la CIN n° [CIN_SALARIE] délivrée le [DATE_CIN], demeurant à [ADRESSE_SALARIE], engagé(e) dans le cadre d'un contrat de travail à durée indéterminée (CDI) en date du [DATE_CDI] en qualité de [POSTE], ci-après désigné(e) « le Salarié ».",
           "fields": [
             "NOM_SALARIE",
             "CIN_SALARIE",
@@ -63,7 +63,7 @@
       "articles": [
         {
           "id": "art-indemnite",
-          "text_ar": "يتقاضى الأجير منحة إنهاء بالتراضي قدرها [INDEMNITE] د.ت، محسوبة على أساس [BASE_CALCUL]، إضافة إلى مخالصته النهائية التي تشمل: الأجر المستحق إلى تاريخ الإنهاء، والتعويض عن أيام الراحة غير المستخلصة ([JOURS_CONGES_DUS] يوم)، وكل مبلغ آخر مستحق.",
+          "text_ar": "يتقاضى الأجير منحة إنهاء بالتراضي قدرها [INDEMNITE] د.ت، محسوبة على أساس [BASE_CALCUL]، إضافة إلى تصفية حسابه التي تشمل: الأجر المستحق إلى تاريخ الإنهاء، والمكافأة التعويضية عن أيام العطلة السنوية غير المستهلكة ([JOURS_CONGES_DUS] يوم)، وكل مبلغ آخر مستحق.",
           "text_fr": "Le Salarié percevra une indemnité de rupture conventionnelle d'un montant de [INDEMNITE] DT, calculée sur la base de [BASE_CALCUL], en sus de son solde de tout compte comprenant : salaire dû jusqu'à la date de rupture, indemnité compensatrice de congés payés ([JOURS_CONGES_DUS] jours), et toute autre somme due.",
           "fields": [
             "INDEMNITE",
@@ -93,7 +93,7 @@
       "articles": [
         {
           "id": "art-documents",
-          "text_ar": "يسلم المؤجر للأجير: شهادة العمل، وشهادة انتهاء العمل (للصندوق الوطني للضمان الاجتماعي)، ووصل مخالصة نهائية.",
+          "text_ar": "يسلم المؤجر للأجير: شهادة العمل، ومطبوعة التصريح بمغادرة أجير (للصندوق الوطني للضمان الاجتماعي)، ووصل تصفية حساب.",
           "text_fr": "L'Employeur remet au Salarié : le certificat de travail, l'attestation de cessation d'emploi (CNSS), et le reçu pour solde de tout compte.",
           "fields": []
         }
@@ -121,7 +121,7 @@
         },
         {
           "id": "art-sign-s",
-          "text_ar": "الأجير\n[NOM_SALARIE]\n(قرأت وأوافق — صحيح للاتفاق)",
+          "text_ar": "الأجير\n[NOM_SALARIE]\n(إمضاء معرف به)",
           "text_fr": "Le Salarié\n[NOM_SALARIE]\n(Lu et approuvé — Bon pour accord)",
           "fields": []
         }

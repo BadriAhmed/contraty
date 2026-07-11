@@ -19,8 +19,8 @@
       "articles": [
         {
           "id": "art-employeur",
-          "text_ar": "شركة [NOM_ENTREPRISE]، س.و.م عدد [RNE]، الكائنة بـ [ADRESSE_ENTREPRISE]، يمثلها [REPRESENTANT]، يشار إليها بـ « المؤجر ».",
-          "text_fr": "La société [NOM_ENTREPRISE], RNE n° [RNE], sise [ADRESSE_ENTREPRISE], représentée par [REPRESENTANT], ci-après « l'Employeur ».",
+          "text_ar": "شركة [NOM_ENTREPRISE]، المسجلة بالسجل الوطني للمؤسسات تحت المعرّف الوحيد عدد [RNE]، الكائنة بـ [ADRESSE_ENTREPRISE]، يمثلها [REPRESENTANT]، يشار إليها بـ « المؤجر ».",
+          "text_fr": "La société [NOM_ENTREPRISE], immatriculée au Registre National des Entreprises (RNE) sous le numéro [RNE], sise [ADRESSE_ENTREPRISE], représentée par [REPRESENTANT], ci-après désignée « l'Employeur ».",
           "fields": [
             "NOM_ENTREPRISE",
             "RNE",
@@ -30,8 +30,8 @@
         },
         {
           "id": "art-salarie",
-          "text_ar": "السيد/ة [NOM_SALARIE]، ب.ت.و عدد [CIN_SALARIE]، القاطن/ة بـ [ADRESSE_SALARIE]، يشار إليه/ا بـ « الأجير ».",
-          "text_fr": "M./Mme [NOM_SALARIE], CIN n° [CIN_SALARIE], demeurant à [ADRESSE_SALARIE], ci-après « le Salarié ».",
+          "text_ar": "السيد/ة [NOM_SALARIE]، حامل/ة لبطاقة التعريف الوطنية عدد [CIN_SALARIE]، القاطن/ة بـ [ADRESSE_SALARIE]، يشار إليه/ا بـ « الأجير ».",
+          "text_fr": "M./Mme [NOM_SALARIE], titulaire de la Carte d'Identité Nationale (CIN) n° [CIN_SALARIE], demeurant à [ADRESSE_SALARIE], ci-après désigné(e) « le Salarié ».",
           "fields": [
             "NOM_SALARIE",
             "CIN_SALARIE",
@@ -48,7 +48,7 @@
         {
           "id": "art-motif",
           "text_ar": "يبرم عقد العمل محدد المدة هذا للسبب التالي: [MOTIF_CDD] (تعويض أجير غائب، زيادة وقتية في النشاط، عمل موسمي، عقد مدعم، أو سبب آخر ينص عليه القانون). يجب أن يبرم عقد العمل محدد المدة كتابة مع ذكر سبب اللجوء إليه، وإلا اعتبر عقداً غير محدد المدة.",
-          "text_fr": "Le présent CDD est conclu pour le motif suivant : [MOTIF_CDD] (remplacement d'un salarié absent, accroissement temporaire d'activité, emploi saisonnier, contrat aidé, ou autre motif prévu par la loi). Le contrat de travail à durée déterminée doit être conclu par écrit et mentionner obligatoirement le motif du recours. A défaut, le contrat est réputé conclu pour une durée indéterminée.",
+          "text_fr": "Le présent contrat de travail à durée déterminée est conclu pour le motif légal suivant : [MOTIF_CDD], conformément aux dispositions de l'article 6-4 du Code du Travail Tunisien.",
           "fields": [
             "MOTIF_CDD"
           ]
@@ -63,7 +63,7 @@
         {
           "id": "art-poste",
           "text_ar": "يلتحق الأجير بعمله بصفة [POSTE]، تصنيف [CLASSIFICATION]، ابتداءً من [DATE_DEBUT].",
-          "text_fr": "Le Salarié est engagé en qualité de [POSTE], classification [CLASSIFICATION], à compter du [DATE_DEBUT].",
+          "text_fr": "Le Salarié est engagé en qualité de [POSTE], classification [CLASSIFICATION], conformément aux dispositions de la Convention Collective Sectorielle de [CONVENTION_COLLECTIVE] et du Code du Travail Tunisien, à compter du [DATE_DEBUT].",
           "fields": [
             "POSTE",
             "CLASSIFICATION",
@@ -73,7 +73,7 @@
         {
           "id": "art-lieu",
           "text_ar": "مكان العمل: [LIEU_TRAVAIL].",
-          "text_fr": "Le lieu de travail est : [LIEU_TRAVAIL].",
+          "text_fr": "Le lieu de travail est fixé à : [LIEU_TRAVAIL].",
           "fields": [
             "LIEU_TRAVAIL"
           ]
@@ -87,7 +87,7 @@
       "articles": [
         {
           "id": "art-duree",
-          "text_ar": "يبرم هذا العقد لمدة [DUREE]، وينتهي في [DATE_FIN]. لا تجوز فترة اختبار في عقد العمل محدد المدة.",
+          "text_ar": "يبرم هذا العقد لمدة [DUREE]، وينتهي في [DATE_FIN]. لا تجوز فترة تجربة في عقد العمل محدد المدة.",
           "text_fr": "Le présent contrat est conclu pour une durée de [DUREE], prenant fin le [DATE_FIN]. Il ne peut être prévu de période d'essai dans un CDD.",
           "fields": [
             "DUREE",
@@ -111,8 +111,8 @@
       "articles": [
         {
           "id": "art-salaire",
-          "text_ar": "الأجر الشهري الخام: [SALAIRE] د.ت، يدفع في [JOUR_PAIE] من كل شهر.",
-          "text_fr": "Le salaire mensuel brut est fixé à [SALAIRE] DT, payable le [JOUR_PAIE] de chaque mois. ",
+          "text_ar": "يتقاضى الأجير لقاء عمله أجراً شهرياً إجمالياً قدره [SALAIRE] د.ت (دينار تونسي)، يدفع في أجل أقصاه يوم [JOUR_PAIE] من كل شهر.",
+          "text_fr": "En contrepartie de l'accomplissement de ses fonctions, le Salarié percevra un salaire mensuel brut de [SALAIRE] DT (Dinars Tunisiens), payable le [JOUR_PAIE] de chaque mois, sous déduction des retenues fiscales et des cotisations sociales en vigueur en Tunisie.",
           "fields": [
             "SALAIRE",
             "JOUR_PAIE"
@@ -128,7 +128,7 @@
         {
           "id": "art-loyaute",
           "text_ar": "يلتزم الأجير بأداء مهامه بكل جد وإخلاص.",
-          "text_fr": "Le Salarié s'engage à exercer ses fonctions avec diligence et loyauté. ",
+          "text_fr": "Le Salarié s'engage à exercer ses fonctions avec diligence, loyauté, et à respecter une obligation stricte de discrétion professionnelle.",
           "fields": []
         }
       ]
@@ -140,8 +140,8 @@
       "articles": [
         {
           "id": "art-rupture",
-          "text_ar": "لا يمكن إنهاء العقد محدد المدة قبل حلول الأجل إلا باتفاق الطرفين أو لخطأ جسيم أو لقوة قاهرة. يترتب عن الإنهاء المبكر غير القانوني تعويض.",
-          "text_fr": "Le CDD ne peut être rompu avant l'échéance du terme que par accord des parties, pour faute grave, ou pour force majeure. Toute rupture anticipée irrégulière donne lieu à des dommages et intérêts.",
+          "text_ar": "لا يمكن إنهاء العقد محدد المدة قبل حلول الأجل إلا باتفاق الطرفين أو لخطأ جسيم أو لقوة قاهرة. ويترتب عن الفسخ التعسفي للعقد قبل حلول أجله من أحد الطرفين، منح الطرف الآخر تعويضاً يساوي الأجور المقابلة للمدة المتبقية من العقد أو الضرر الحاصل.",
+          "text_fr": "Le présent contrat ne pourra être rompu avant l'échéance de son terme que par accord commun des parties, pour faute grave, ou en cas de force majeure. Toute rupture anticipée en dehors de ces cas légaux ouvre droit à des dommages et intérêts conformément au Code du Travail Tunisien.",
           "fields": []
         }
       ]
@@ -154,7 +154,7 @@
         {
           "id": "art-date-lieu",
           "text_ar": "حرر بـ [LIEU_SIGNATURE]، بتاريخ [DATE_SIGNATURE]، في نظيرين.",
-          "text_fr": "Fait à [LIEU_SIGNATURE], le [DATE_SIGNATURE], en deux exemplaires.",
+          "text_fr": "Fait à [LIEU_SIGNATURE], le [DATE_SIGNATURE], en deux exemplaires originaux destinés à chacune des parties pour valoir ce que de droit.",
           "fields": [
             "LIEU_SIGNATURE",
             "DATE_SIGNATURE"
@@ -163,13 +163,13 @@
         {
           "id": "art-sign-e",
           "text_ar": "المؤجر\n[REPRESENTANT]",
-          "text_fr": "L'Employeur\n[REPRESENTANT]",
+          "text_fr": "Pour l'Employeur\n[REPRESENTANT]\n(Signature légalisée)",
           "fields": []
         },
         {
           "id": "art-sign-s",
           "text_ar": "الأجير\n[NOM_SALARIE]",
-          "text_fr": "Le Salarié\n[NOM_SALARIE]",
+          "text_fr": "Le Salarié\n[NOM_SALARIE]\n(Signature légalisée)",
           "fields": []
         }
       ]

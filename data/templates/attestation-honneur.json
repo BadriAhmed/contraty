@@ -20,7 +20,7 @@
         {
           "id": "art-declarant",
           "text_ar": "أنا الممضي أسفله، السيد/ة [NOM]، مولود/ة بتاريخ [DATE_NAISSANCE] بـ [LIEU_NAISSANCE]، [NATIONALITE] الجنسية، ب.ت.و عدد [CIN]، المسلمة بتاريخ [DATE_CIN]، القاطن/ة بـ [ADRESSE]، والمزاول/ة لمهنة [PROFESSION].",
-          "text_fr": "Je soussigné(e), M./Mme [NOM], né(e) le [DATE_NAISSANCE] à [LIEU_NAISSANCE], de nationalité [NATIONALITE], CIN n° [CIN], délivrée le [DATE_CIN], demeurant à [ADRESSE], exerçant la profession de [PROFESSION].",
+          "text_fr": "Je soussigné(e), M./Mme [NOM], né(e) le [DATE_NAISSANCE] à [LIEU_NAISSANCE], de nationalité [NATIONALITE], titulaire de la CIN n° [CIN], délivrée le [DATE_CIN] par [AUTORITÉ DE DÉLIVRANCE], demeurant à [ADRESSE], exerçant la profession de [PROFESSION],",
           "fields": [
             "NOM",
             "DATE_NAISSANCE",
@@ -42,7 +42,7 @@
         {
           "id": "art-texte",
           "text_ar": "أشهد على شرفي بأن: [DECLARATION].",
-          "text_fr": "Atteste sur l'honneur que : [DECLARATION].",
+          "text_fr": "atteste par la présente sur l'honneur que : [DECLARATION].",
           "fields": [
             "DECLARATION"
           ]
@@ -65,7 +65,7 @@
         {
           "id": "art-sanction",
           "text_ar": "أعلم بأن كل تصريح مخالف للحقيقة يعرضني للعقوبات المنصوص عليها بالقانون الجزائي.",
-          "text_fr": "Je suis informé(e) que toute fausse déclaration m'expose aux sanctions prévues par le Code Pénal.",
+          "text_fr": "Je suis informé(e) que toute fausse déclaration m'expose aux sanctions pénales prévues par la législation en vigueur, notamment le Code Pénal tunisien (articles relatifs au faux et usage de faux).",
           "fields": []
         }
       ]
@@ -78,7 +78,7 @@
         {
           "id": "art-date-lieu",
           "text_ar": "حرر بـ [LIEU]، بتاريخ [DATE].\n\n[NOM]\n(إمضاء)",
-          "text_fr": "Fait à [LIEU], le [DATE].\n\n[NOM]\n(Signature)",
+          "text_fr": "Fait à [LIEU], le [DATE].\n\n[NOM]\n(Signature légalisée à la Municipalité)",
           "fields": [
             "LIEU",
             "DATE"

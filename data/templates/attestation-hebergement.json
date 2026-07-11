@@ -77,7 +77,7 @@
       "articles": [
         {
           "id": "art-date-lieu",
-          "text_ar": "حرر بـ [LIEU]، بتاريخ [DATE].\n\n[NOM_HEBERGEANT]\n(إمضاء)",
+          "text_ar": "حرر بـ [LIEU]، بتاريخ [DATE].\n\n[NOM_HEBERGEANT]\n(إمضاء معرّف به)",
           "text_fr": "Fait à [LIEU], le [DATE].\n\n[NOM_HEBERGEANT]\n(Signature)",
           "fields": [
             "LIEU",

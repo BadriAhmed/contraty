@@ -19,8 +19,8 @@
       "articles": [
         {
           "id": "art-mandant",
-          "text_ar": "أنا الممضي أسفله، السيد/ة [NOM_MANDANT]، ب.ت.و عدد [CIN_MANDANT]، القاطن/ة بـ [ADRESSE_MANDANT]، أوكل بموجب هذه الوكالة الخاصة للسيد/ة [NOM_MANDATAIRE]، ب.ت.و عدد [CIN_MANDATAIRE]، القاطن/ة بـ [ADRESSE_MANDATAIRE].",
-          "text_fr": "Je soussigné(e), M./Mme [NOM_MANDANT], CIN n° [CIN_MANDANT], demeurant à [ADRESSE_MANDANT], constitue pour mon mandataire spécial M./Mme [NOM_MANDATAIRE], CIN n° [CIN_MANDATAIRE], demeurant à [ADRESSE_MANDATAIRE]. Le mandat est un contrat par lequel une personne charge une autre d'accomplir un acte licite pour le compte du commettant. Le mandat peut être donné aussi dans l'intérêt du mandant et du mandataire, ou dans celui du mandant et d'un tiers, et même exclusivement dans l'intérêt d'un tiers. Pour donner mandat, il faut être capable de faire par soi¬même l'acte qui en est l'objet. La même capacité n'est pas requise chez le mandataire ; il suffit que celui-ci soit doué de discernement et de ses facultés mentales, quoiqu'il n'ait pas la capacité d'accomplir l'acte pour lui-même. Il peut valablement faire au nom d'autrui ce qu'il ne pourrait accomplir en son propre nom. Le mandat de représenter une maison ou raison de commerce ne peut être donné que par le titulaire du fonds de commerce ou par son représentant à ce dôment autorisé. Le mandat est nul : a) S'il a un objet impossible, ou trop indéterminé ; b) s'il a pour objet des actes contraires à l'ordre public, aux bonnes moeurs, ou aux bonnes moeurs, ou aux lois civiles ou religieuses.",
+          "text_ar": "أنا الممضي أسفله، السيد/ة [NOM_MANDANT]، الحامل(ة) لبطاقة التعريف الوطنية عدد [CIN_MANDANT]، القاطن/ة بـ [ADRESSE_MANDANT]، أوكل بموجب هذه الوكالة الخاصة للسيد/ة [NOM_MANDATAIRE]، الحامل(ة) لبطاقة التعريف الوطنية عدد [CIN_MANDATAIRE]، القاطن/ة بـ [ADRESSE_MANDATAIRE].",
+          "text_fr": "Je soussigné(e), M./Mme [NOM_MANDANT], de nationalité [nationalité], titulaire de la carte d'identité nationale tunisienne n° [CIN_MANDANT] délivrée le [Date de délivrance] à [Lieu de délivrance], demeurant à [ADRESSE_MANDANT], constitue par la présente pour mon mandataire spécial : M./Mme [NOM_MANDATAIRE], de nationalité [nationalité], titulaire de la carte d'identité nationale tunisienne n° [CIN_MANDATAIRE] délivrée le [Date de délivrance] à [Lieu de délivrance], demeurant à [ADRESSE_MANDATAIRE].",
           "fields": [
             "NOM_MANDANT",
             "CIN_MANDANT",
@@ -40,7 +40,7 @@
         {
           "id": "art-mission",
           "text_ar": "للوكيل صلاحية القيام، باسم الموكل ولحسابه، بما يلي: [MISSION_SPECIALE].",
-          "text_fr": "Le mandataire a pouvoir de, au nom et pour le compte du mandant : [MISSION_SPECIALE]. Le mandat peut être spécial ou général. Art. 1117. -Il ne donne pouvoir d'agir que dans les affaires ou pour les actes qu'il spécifie, et leurs suites nécessaires, selon la nature de l'affaire et l'usage. Le mandat spécial est celui qui est donné pour une ou plusieurs affaires déterminées, ou qui ne confère que des pouvoirs spéciaux. Il ne donne pouvoir d'agir que dans les affaires ou pour les actes qu'il spécifie, et leurs suites nécessaires, selon la nature de l'affaire et l'usage. , sauf les clauses exprimées dans l'acte qui le nomme. Le mandat d'ester en justice est un mandat spécial ; il est régi par les dispositions de la présente loi. Il ne donne pouvoir d'agir que pour les actes qu'il spécifie, et ne confère pas, notamment, le pouvoir de recevoir un paiement, de passer des aveux, de reconnaître une dette, de transiger, si ces pouvoirs ne sont exprimés. Il doit être fait par acte authentique. Cependant, le mandataire, s'il est autorisé de par la loi et porteur des pièces d'un plaideur, est présumé avoir reçu mandat de le représenter en justice pour l'affaire à laquelle lesdites pièces se rapportent - et ce, même s'il ne produit pas la procuration y afférent.",
+          "text_fr": "Le mandataire aura, au nom et pour le compte du mandant, le pouvoir exclusif d'accomplir les actes suivants : [MISSION_SPECIALE]. À cet effet, le mandataire pourra signer tout document, formulaire, procès-verbal ou registre nécessaire, élire domicile, et généralement faire tout ce qui sera juridiquement et administrativement requis pour l'accomplissement de la mission spéciale susmentionnée.",
           "fields": [
             "MISSION_SPECIALE"
           ]
@@ -54,8 +54,8 @@
       "articles": [
         {
           "id": "art-duree",
-          "text_ar": "هذه الوكالة صالحة إلى غاية [DATE_FIN].",
-          "text_fr": "La présente procuration est valable jusqu'au [DATE_FIN]. Le régisseur d'un bien rural est un mandataire salarié ; ses droits et ses obligations sont régis par les règles du mandat et par les dispositions spéciales du présent titre. A défaut de convention, le salaire du régisseur sera déterminé ainsi qu'il suit : si l'exploitation compte de trois à dix méchias, il aura droit à un cafis de blé et autant d'orge ; si le régisseur a été engagé seulement pour l'été ou pour l'hiver, il aura droit à un demi cafis de blé et un demi cafis d'orge ; lorsque le régisseur demeure sur la ferme avec sa famille, il recevra les deux cafis dont il a été parlé et il aura le droit, en outre, de cultiver pour son compte une maouna (parcelle supplémentaire en dehors de l'exploitation) de deux ouibas de blé et de deux ouibas d'orge.",
+          "text_ar": "هذه الوكالة صالحة لغاية يوم [DATE_FIN].",
+          "text_fr": "La présente procuration est spéciale et strictement limitée à l'objet décrit ci-dessus. Elle est valable à compter de sa signature jusqu'au [DATE_FIN], ou jusqu'à l'accomplissement définitif de ladite mission.",
           "fields": [
             "DATE_FIN"
           ]
@@ -69,14 +69,14 @@
       "articles": [
         {
           "id": "art-legalisation",
-          "text_ar": "يجب التصديق على إمضاء الموكل لدى السلط المختصة.",
-          "text_fr": "La signature du mandant doit être légalisée par les autorités compétentes.",
+          "text_ar": "يتعين التعريف بإمضاء الموكل لدى السلط الإدارية المعنية.",
+          "text_fr": "La signature du mandant doit être dûment légalisée auprès des autorités municipales tunisiennes compétentes.",
           "fields": []
         },
         {
           "id": "art-date-lieu",
           "text_ar": "حرر بـ [LIEU_SIGNATURE]، بتاريخ [DATE_SIGNATURE].",
-          "text_fr": "Fait à [LIEU_SIGNATURE], le [DATE_SIGNATURE].",
+          "text_fr": "Fait à [LIEU_SIGNATURE], le [DATE_SIGNATURE], en trois exemplaires originaux.",
           "fields": [
             "LIEU_SIGNATURE",
             "DATE_SIGNATURE"
@@ -84,8 +84,8 @@
         },
         {
           "id": "art-sign-mandant",
-          "text_ar": "الموكل\n[NOM_MANDANT]\n(إمضاء مسبوق بعبارة « وكالة صحيحة »)",
-          "text_fr": "Le Mandant\n[NOM_MANDANT]\n(Signature précédée de « Bon pour procuration »)",
+          "text_ar": "الموكل\n[NOM_MANDANT]\n(إمضاء مسبوق بعبارة « صالح للتوكيل »)",
+          "text_fr": "Le Mandant\n[NOM_MANDANT]\n(Signature précédée de la mention manuscrite « Bon pour procuration »)",
           "fields": []
         }
       ]

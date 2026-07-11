@@ -20,7 +20,7 @@
         {
           "id": "art-cadre",
           "text_ar": "يبرم هذا العقد في إطار البرامج النشيطة للتشغيل للدولة التونسية. وهو عقد عمل مدعم موجه لطالبي الشغل قصد تشجيع إدماجهم المهني المستدام. المدة النموذجية هي سنتان، ويشكل جسراً بين آليات الإدماج (صيغ) والعمل القار (عقد غير محدد المدة).",
-          "text_fr": "Le présent contrat est conclu dans le cadre des programmes actifs de l'emploi de l'État tunisien. Il s'agit d'un contrat de travail aidé destiné aux demandeurs d'emploi pour favoriser leur insertion professionnelle durable. La durée typique est de 2 ans, constituant un pont entre les dispositifs d'insertion (SIVP) et l'emploi permanent (CDI).",
+          "text_fr": "Le présent contrat est conclu dans le cadre des programmes actifs de l'emploi de l'État tunisien (Programme Karama régi par le décret gouvernemental n° 2017-342 du 10 mars 2017). Il s'agit d'un contrat de travail aidé destiné aux demandeurs d'emploi pour favoriser leur insertion professionnelle durable. La durée du contrat est fixée impérativement à deux (2) ans non renouvelables.",
           "fields": []
         }
       ]
@@ -32,8 +32,8 @@
       "articles": [
         {
           "id": "art-employeur",
-          "text_ar": "شركة [NOM_ENTREPRISE]، س.و.م عدد [RNE]، الكائنة بـ [ADRESSE_ENTREPRISE]، يمثلها [REPRESENTANT]، يشار إليها بـ « المؤجر ».",
-          "text_fr": "La société [NOM_ENTREPRISE], RNE n° [RNE], sise [ADRESSE_ENTREPRISE], représentée par [REPRESENTANT], ci-après « l'Employeur ».",
+          "text_ar": "شركة [NOM_ENTREPRISE]، المسجلة بالسجل الوطني للمؤسسات تحت المعرف الوحيد رقم [RNE]، الكائنة بـ [ADRESSE_ENTREPRISE]، يمثلها [REPRESENTANT]، يشار إليها بـ « المؤجر ».",
+          "text_fr": "La société [NOM_ENTREPRISE], immatriculée au Registre National des Entreprises (RNE) sous le numéro [RNE], titulaire du Matricule Fiscal n° [MATRICULE_FISCAL], affiliée à la CNSS sous le n° [NUM_CNSS], sise [ADRESSE_ENTREPRISE], représentée par [REPRESENTANT], ci-après « l'Employeur ».",
           "fields": [
             "NOM_ENTREPRISE",
             "RNE",
@@ -43,7 +43,7 @@
         },
         {
           "id": "art-salarie",
-          "text_ar": "السيد/ة [NOM_SALARIE]، ب.ت.و عدد [CIN_SALARIE]، مولود/ة بـ [DATE_NAISSANCE]، القاطن/ة بـ [ADRESSE_SALARIE]، مسجل/ة بمكتب التشغيل تحت عدد [NUM_DEMANDEUR]، يشار إليه/ا بـ « الأجير ».",
+          "text_ar": "السيد/ة [NOM_SALARIE]، بطاقة التعريف الوطنية عدد [CIN_SALARIE]، مولود/ة بـ [DATE_NAISSANCE]، القاطن/ة بـ [ADRESSE_SALARIE]، مسجل/ة بمكتب التشغيل والعمل المستقل بـ [LIEU_BUREAU] تحت عدد [NUM_DEMANDEUR]، يشار إليه/ا بـ « الأجير ».",
           "text_fr": "M./Mme [NOM_SALARIE], CIN n° [CIN_SALARIE], né(e) le [DATE_NAISSANCE], demeurant à [ADRESSE_SALARIE], inscrit(e) au Bureau de l'Emploi sous le n° [NUM_DEMANDEUR], ci-après « le Salarié ».",
           "fields": [
             "NOM_SALARIE",
@@ -63,7 +63,7 @@
         {
           "id": "art-engagement",
           "text_ar": "يشغل المؤجر الأجير في إطار برنامج التشغيل المدعم بصفة [POSTE]، لمدة [DUREE_ANNEE] سنوات، ابتداءً من [DATE_DEBUT].",
-          "text_fr": "L'Employeur engage le Salarié, dans le cadre du programme de l'emploi aidé, en qualité de [POSTE], pour une durée de [DUREE_ANNEE] années, à compter du [DATE_DEBUT].",
+          "text_fr": "L'Employeur engage le Salarié, dans le cadre du programme de l'emploi aidé (Karama), en qualité de [POSTE], pour une durée déterminée de deux (2) ans non renouvelable, à compter du [DATE_DEBUT].",
           "fields": [
             "POSTE",
             "DUREE_ANNEE",
@@ -87,8 +87,8 @@
       "articles": [
         {
           "id": "art-salaire",
-          "text_ar": "الأجر الشهري الخام: [SALAIRE] د.ت. تتحمل الدولة جزءاً من هذا الأجر قدره [SUBVENTION_ETAT] د.ت شهرياً طيلة مدة العقد. والجزء المكمل المقدر بـ [COMPLEMENT_ENTREPRISE] د.ت على عاتق المؤجر. يتمتع الأجير بالتغطية الاجتماعية لدى الصندوق الوطني للضمان الاجتماعي (مرض، حوادث شغل، تقاعد).",
-          "text_fr": "Le salaire mensuel brut est de [SALAIRE] DT. L'État prend en charge une partie de ce salaire à hauteur de [SUBVENTION_ETAT] DT par mois pendant la durée du contrat. Le complément de [COMPLEMENT_ENTREPRISE] DT est à la charge de l'Employeur. Le Salarié bénéficie de la couverture sociale CNSS (maladie, accidents du travail, retraite).",
+          "text_ar": "الأجر الشهري الخام: [SALAIRE] دينار تونسي. تتحمل الدولة جزءاً من هذا الأجر قدره [SUBVENTION_ETAT] دينار تونسي شهرياً طيلة مدة العقد. والجزء المكمل المقدر بـ [COMPLEMENT_ENTREPRISE] دينار تونسي على عاتق المؤجر. يتمتع الأجير بالتغطية الاجتماعية لدى الصندوق الوطني للضمان الاجتماعي (مرض، حوادث شغل، تقاعد).",
+          "text_fr": "La rémunération mensuelle nette globale est fixée à [SALAIRE_NET] DT (minimum 600 DT net). Conformément aux dispositions du Programme Karama, cette rémunération est composée de : - Une indemnité de prise en charge directe versée par l'ANETI au Salarié d'un montant de 400 DT net par mois. - Un complément de salaire net de [COMPLEMENT_ENTREPRISE_NET] DT par mois versé par l'Employeur. Le Salarié bénéficie de la couverture sociale CNSS (maladie, accidents du travail, retraite).",
           "fields": [
             "SALAIRE",
             "SUBVENTION_ETAT",
@@ -104,7 +104,7 @@
       "articles": [
         {
           "id": "art-droits",
-          "text_ar": "يتمتع الأجير بنفس الحقوق المخولة للأجراء القارين، وخاصة: راحة سنوية مدتها [JOURS_CONGES] يوم عمل، أيام الأعياد المدفوعة الأجر، الحماية الاجتماعية، والحق في التكوين المهني.",
+          "text_ar": "يتمتع الأجير بنفس الحقوق المخولة للأجراء القارين، وخاصة: رخصة سنوية للاستراحة مدتها [JOURS_CONGES] يوم عمل، أيام الأعياد المدفوعة الأجر، الحماية الاجتماعية، والحق في التكوين المهني.",
           "text_fr": "Le Salarié bénéficie des mêmes droits que les salariés permanents, notamment : congé annuel de [JOURS_CONGES] jours ouvrables, jours fériés payés, protection sociale, et droit à la formation professionnelle.",
           "fields": [
             "JOURS_CONGES"
@@ -126,7 +126,7 @@
         {
           "id": "art-salarie-ob",
           "text_ar": "يلتزم الأجير بأداء مهامه بكل جد، ومتابعة التكوينات المقترحة، واحترام النظام الداخلي.",
-          "text_fr": "Le Salarié s'engage à exercer ses fonctions avec diligence, à suivre les formations proposées, et à respecter le règlement intérieur. ",
+          "text_fr": "Le Salarié s'engage à exercer ses fonctions avec diligence, à suivre les formations proposées, et à respecter le règlement intérieur.",
           "fields": []
         }
       ]
@@ -138,8 +138,8 @@
       "articles": [
         {
           "id": "art-fin",
-          "text_ar": "عند انتهاء العقد، يتمتع الأجير بأولوية الانتداب بعقد غير محدد المدة داخل المؤسسة. في حالة عدم التجديد، يسلم المؤجر للأجير شهادة عمل ووصل مخالصة نهائية.",
-          "text_fr": "A l'expiration du contrat, le Salarié bénéficie d'une priorité d'embauche en CDI au sein de l'entreprise. En cas de non-renouvellement, l'Employeur remet au Salarié un certificat de travail et un solde de tout compte.",
+          "text_ar": "عند انتهاء العقد، يتمتع الأجير بأولوية الانتداب بعقد غير معين المدة داخل المؤسسة. في حالة عدم التجديد، يسلم المؤجر للأجير شهادة عمل ووصل تبرئة ذمة.",
+          "text_fr": "A l'expiration du contrat, le Salarié bénéficie d'une priorité d'embauche en CDI au sein de l'entreprise. L'Employeur remet au Salarié un certificat de travail et un solde de tout compte.",
           "fields": []
         }
       ]
@@ -151,7 +151,7 @@
       "articles": [
         {
           "id": "art-date-lieu",
-          "text_ar": "حرر بـ [LIEU_SIGNATURE]، بتاريخ [DATE_SIGNATURE]، في ثلاث نظائر (المؤسسة، الأجير، مكتب التشغيل).",
+          "text_ar": "حرر بـ [LIEU_SIGNATURE]، بتاريخ [DATE_SIGNATURE]، في ثلاثة أصول (المؤسسة، الأجير، مكتب التشغيل والعمل المستقل بـ [LIEU_BUREAU]).",
           "text_fr": "Fait à [LIEU_SIGNATURE], le [DATE_SIGNATURE], en trois exemplaires (Entreprise, Salarié, Bureau de l'Emploi).",
           "fields": [
             "LIEU_SIGNATURE",

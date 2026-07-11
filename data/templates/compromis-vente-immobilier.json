@@ -19,7 +19,7 @@
       "articles": [
         {
           "id": "art-promettant",
-          "text_ar": "السيد/ة [NOM_VENDEUR]، ب.ت.و عدد [CIN_VENDEUR]، الحالة المدنية: [ETAT_CIVIL_VENDEUR]، القاطن/ة بـ [ADRESSE_VENDEUR]، يشار إليه/ا بـ « الواعد ».",
+          "text_ar": "السيد/ة [NOM_VENDEUR]، صاحب/ة بطاقة التعريف الوطنية عدد [CIN_VENDEUR]، حالته/ا المدنية: [ETAT_CIVIL_VENDEUR]، القاطن/ة بـ [ADRESSE_VENDEUR]، ويشار إليه/ا في هذا العقد بـ «الواعد بالبيع».",
           "text_fr": "M./Mme [NOM_VENDEUR], CIN n° [CIN_VENDEUR], état civil : [ETAT_CIVIL_VENDEUR], demeurant à [ADRESSE_VENDEUR], ci-après « le Promettant ».",
           "fields": [
             "NOM_VENDEUR",
@@ -30,7 +30,7 @@
         },
         {
           "id": "art-beneficiaire",
-          "text_ar": "السيد/ة [NOM_ACQUEREUR]، ب.ت.و عدد [CIN_ACQUEREUR]، الحالة المدنية: [ETAT_CIVIL_ACQUEREUR]، القاطن/ة بـ [ADRESSE_ACQUEREUR]، يشار إليه/ا بـ « الموعود له ».",
+          "text_ar": "السيد/ة [NOM_ACQUEREUR]، صاحب/ة بطاقة التعريف الوطنية عدد [CIN_ACQUEREUR]، حالته/ا المدنية: [ETAT_CIVIL_ACQUEREUR]، القاطن/ة بـ [ADRESSE_ACQUEREUR]، ويشار إليه/ا في هذا العقد بـ «الواعد بالشراء».",
           "text_fr": "M./Mme [NOM_ACQUEREUR], CIN n° [CIN_ACQUEREUR], état civil : [ETAT_CIVIL_ACQUEREUR], demeurant à [ADRESSE_ACQUEREUR], ci-après « le Bénéficiaire ».",
           "fields": [
             "NOM_ACQUEREUR",
@@ -49,7 +49,7 @@
         {
           "id": "art-bien",
           "text_ar": "يتعهد الواعد ببيع العقار التالي للموعود له الذي يتعهد بشرائه:\nالنوع: [NATURE] ([NB_PIECES] غرف)\nالعنوان: [ADRESSE_BIEN]\nالرسم العقاري عدد: [TITRE_FONCIER]\nالمساحة: [SUPERFICIE] م²\nأصل الملكية: [ORIGINE_PROPRIETE]",
-          "text_fr": "Le Promettant s'engage à vendre au Bénéficiaire, qui s'engage à acquérir, le bien immobilier suivant :\nNature : [NATURE] ([NB_PIECES] pièces)\nAdresse : [ADRESSE_BIEN]\nTitre foncier n° : [TITRE_FONCIER]\nSuperficie : [SUPERFICIE] m²\nOrigine de propriété : [ORIGINE_PROPRIETE]",
+          "text_fr": "Le Promettant s'engage à vendre au Bénéficiaire, qui s'engage à acquérir, sous réserve des conditions suspensives stipulées ci-après, le bien immobilier suivant :\n- Nature : [NATURE] ([NB_PIECES] pièces)\n- Adresse : [ADRESSE_BIEN]\n- Numéro du Titre Foncier (Titre Bleu) : [TITRE_FONCIER] dépendant de la Conservation de la Propriété Foncière de [CPF_LIEU]\n- Superficie : [SUPERFICIE] m²\n- Origine de propriété : [ORIGINE_PROPRIETE]",
           "fields": [
             "NATURE",
             "NB_PIECES",
@@ -68,8 +68,8 @@
       "articles": [
         {
           "id": "art-prix",
-          "text_ar": "حدد ثمن البيع بـ [PRIX_TOTAL] ديناراً تونسياً. يدفع تقدمة قدرها [AVANCE] د.ت هذا اليوم كعربون. يدفع باقي الثمن وقدره [SOLDE] د.ت عند توقيع العقد النهائي.",
-          "text_fr": "Le prix de vente est fixé à [PRIX_TOTAL] dinars tunisiens. Une avance de [AVANCE] DT est versée ce jour à titre d'arrhes. La vente est parfaite entre les parties, dès qu'il y a consentement des contractants, l'un pour vendre, l'autre pour acheter, et qu'ils sont d'accord sur la chose, sur le prix et sur les autres clauses du contrat. Le solde de [SOLDE] DT sera payé à la signature de l'acte définitif.",
+          "text_ar": "حدد ثمن البيع الجملي والنهائي بـ [PRIX_TOTAL] ديناراً تونسياً. يدفع الواعد بالشراء هذا اليوم تسبقة من الثمن قدرها [AVANCE] د.ت بموجب هذا العقد، ويُدفع باقي الثمن وقدره [SOLDE] د.ت عند توقيع العقد النهائي للبيع.",
+          "text_fr": "Le prix de vente est fixé à [PRIX_TOTAL] dinars tunisiens. Une avance de [AVANCE] DT est versée ce jour par chèque certifié (ou virement bancaire) à titre d'acompte à valoir sur le prix global de la vente, lequel s'imputera sur le prix définitif au moment de la signature de l'acte de vente. Le présent acte constitue une promesse synallagmatique de vente qui ne vaut pas vente. Le transfert de propriété du bien immobilier n'aura lieu qu'à la date de la signature de l'acte définitif de vente et de son inscription sur le Titre Foncier auprès de la Conservation de la Propriété Foncière. Le solde de [SOLDE] DT sera payé à la signature de l'acte définitif obligatoirement par chèque certifié (ou virement bancaire), conformément à la législation fiscale tunisienne en vigueur interdisant le paiement en espèces des transactions immobilières au-delà des seuils légaux.",
           "fields": [
             "PRIX_TOTAL",
             "AVANCE",
@@ -86,7 +86,7 @@
         {
           "id": "art-conditions",
           "text_ar": "يعلق البيع النهائي على تحقق الشروط التالية:\nأ) حصول الموعود له على قرض بنكي قدره [MONTANT_PRET] د.ت قبل [DATE_LIMITE_PRET]؛\nب) تسليم شهادة تقسيم معماري مواتية؛\nج) إسقاط حق الشفعة عند الاقتضاء؛\nد) [AUTRES_CONDITIONS]",
-          "text_fr": "La vente définitive est subordonnée à la réalisation des conditions suspensives suivantes :\na) Obtention par le Bénéficiaire d'un prêt bancaire de [MONTANT_PRET] DT avant le [DATE_LIMITE_PRET] ;\nb) Délivrance d'un certificat d'urbanisme favorable ;\nc) Purge du droit de préemption éventuel ;\nd) [AUTRES_CONDITIONS]",
+          "text_fr": "La vente définitive est subordonnée à la réalisation des conditions suspensives suivantes :\na) Obtention par le Bénéficiaire d'un prêt bancaire d'un montant de [MONTANT_PRET] DT au plus tard le [DATE_LIMITE_PRET] ;\nb) Obtention de l'autorisation préalable du Gouverneur territorialement compétent (condition impérative d'ordre public si le Bénéficiaire est de nationalité étrangère), conformément à la loi n° 77-56 du 30 août 1977 ;\nc) Absence de toute inscription d'hypothèque, de charge ou de privilège grevant le bien au jour de la vente, autre que celles déclarées et devant être purgées ;\nd) Non-exercice d'un éventuel droit de préemption ou de retrait foncier (Chof'â) conformément aux dispositions du Code des Droits Réels.",
           "fields": [
             "MONTANT_PRET",
             "DATE_LIMITE_PRET",
@@ -103,7 +103,7 @@
         {
           "id": "art-delai",
           "text_ar": "يجب إبرام البيع النهائي بعقد موثق في أجل أقصاه [DATE_LIMITE_VENTE]. إذا لم تتحقق الشروط المعلقة في هذا التاريخ، يصبح الوعد بالبيع لاغياً بقوة القانون وتسترجع التقدمة للموعود له.",
-          "text_fr": "La vente définitive devra être conclue par acte notarié au plus tard le [DATE_LIMITE_VENTE]. A défaut de réalisation des conditions suspensives à cette date, le présent compromis sera caduc de plein droit et l'avance restituée au Bénéficiaire.",
+          "text_fr": "L'acte de vente définitif devra être rédigé par un rédacteur professionnel habilité conformément à la législation tunisienne en vigueur (notamment un avocat non stagiaire ou un notaire) au plus tard le [DATE_LIMITE_VENTE]. À défaut de réalisation des conditions suspensives à cette date sans faute de l'une des parties, le présent compromis sera caduc de plein droit et l'avance versée sera intégralement restituée au Bénéficiaire.",
           "fields": [
             "DATE_LIMITE_VENTE"
           ]
@@ -117,7 +117,7 @@
       "articles": [
         {
           "id": "art-documents",
-          "text_ar": "يتعهد الواعد بتقديم: شهادة ملكية، شهادة وضعية الرهن العقاري، شهادة عدم القيد بالسجل التجاري، شهادة جبائية، مخالصة بلدية، وكل وثيقة ضرورية لإتمام البيع النهائي.",
+          "text_ar": "يتعهد الواعد بالبيع بتقديم الوثائق التالية: شهادة ملكية حديثة، شهادة في وضعية العقار من إدارة الملكية العقارية تفيد خلوه من الرهون والتحملات، شهادة إبراء جبائي، مخالصة بلدية تفيد خلاص المعاليم البلدية، وكل وثيقة ضرورية مستوجبة قانوناً لإتمام البيع النهائي.",
           "text_fr": "Le Promettant s'engage à fournir : certificat de propriété, certificat de situation hypothécaire, certificat de non-inscription au registre du commerce, attestation fiscale, quitus de la municipalité, et tout document nécessaire à la vente définitive.",
           "fields": []
         }
@@ -130,7 +130,7 @@
       "articles": [
         {
           "id": "art-date-lieu",
-          "text_ar": "حرر بـ [LIEU_SIGNATURE]، بتاريخ [DATE_SIGNATURE]، في نظيرين.",
+          "text_ar": "حرر بـ [LIEU_SIGNATURE]، بتاريخ [DATE_SIGNATURE]، في نظيرين أصليين.",
           "text_fr": "Fait à [LIEU_SIGNATURE], le [DATE_SIGNATURE], en deux exemplaires.",
           "fields": [
             "LIEU_SIGNATURE",
@@ -139,13 +139,13 @@
         },
         {
           "id": "art-sign-v",
-          "text_ar": "الواعد\n[NOM_VENDEUR]\n(قرأت وأوافق — صحيح لوعد بالبيع)",
+          "text_ar": "الواعد بالبيع\n[NOM_VENDEUR]\n(إمضاء معرف به مسبوق بعبارة بخط اليد: \"مصادق عليه\")",
           "text_fr": "Le Promettant\n[NOM_VENDEUR]\n(Lu et approuvé — Bon pour compromis)",
           "fields": []
         },
         {
           "id": "art-sign-a",
-          "text_ar": "الموعود له\n[NOM_ACQUEREUR]\n(قرأت وأوافق — صحيح لوعد بالبيع)",
+          "text_ar": "الواعد بالشراء\n[NOM_ACQUEREUR]\n(إمضاء معرف به مسبوق بعبارة بخط اليد: \"مصادق عليه\")",
           "text_fr": "Le Bénéficiaire\n[NOM_ACQUEREUR]\n(Lu et approuvé — Bon pour compromis)",
           "fields": []
         }

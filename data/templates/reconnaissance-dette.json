@@ -19,8 +19,8 @@
       "articles": [
         {
           "id": "art-debiteur",
-          "text_ar": "أقر أنا الممضي أسفله، السيد/ة [NOM_DEBITEUR]، ب.ت.و عدد [CIN_DEBITEUR]، القاطن/ة بـ [ADRESSE_DEBITEUR]، بمديونيتي لفائدة السيد/ة [NOM_CREANCIER]، ب.ت.و عدد [CIN_CREANCIER]، القاطن/ة بـ [ADRESSE_CREANCIER]، بمبلغ [MONTANT_DETTE] ديناراً تونسياً.",
-          "text_fr": "Je soussigné(e), M./Mme [NOM_DEBITEUR], CIN n° [CIN_DEBITEUR], demeurant à [ADRESSE_DEBITEUR], reconnaît devoir à M./Mme [NOM_CREANCIER], CIN n° [CIN_CREANCIER], demeurant à [ADRESSE_CREANCIER], la somme de [MONTANT_DETTE] dinars tunisiens.",
+          "text_ar": "أقر أنا الممضي أسفله، السيد/ة [NOM_DEBITEUR]، حامل/ة لبطاقة التعريف الوطنية عدد [CIN_DEBITEUR]، القاطن/ة بـ [ADRESSE_DEBITEUR]، بمديونيتي لفائدة السيد/ة [NOM_CREANCIER]، حامل/ة لبطاقة التعريف الوطنية عدد [CIN_CREANCIER]، القاطن/ة بـ [ADRESSE_CREANCIER]، بمبلغ [MONTANT_DETTE] ديناراً تونسياً.",
+          "text_fr": "Je soussigné(e), M./Mme [NOM_DEBITEUR], titulaire de la carte d'identité nationale n° [CIN_DEBITEUR], demeurant à [ADRESSE_DEBITEUR], déclare par la présente reconnaître devoir de manière certaine, liquide et exigible à M./Mme [NOM_CREANCIER], titulaire de la carte d'identité nationale n° [CIN_CREANCIER], demeurant à [ADRESSE_CREANCIER], la somme de [MONTANT_DETTE] dinars tunisiens.",
           "fields": [
             "NOM_DEBITEUR",
             "CIN_DEBITEUR",
@@ -40,8 +40,8 @@
       "articles": [
         {
           "id": "art-cause",
-          "text_ar": "تم تسليمي هذا المبلغ على سبيل [MOTIF_DETTE] بتاريخ [DATE_REMISE].",
-          "text_fr": "Cette somme m'a été remise à titre de [MOTIF_DETTE] le [DATE_REMISE]. Le prêt de consommation est un contrat par lequel l'une des parties remet à une autre des choses qui se consomment par l'usage, ou d'autre choses mobilières, pour s'en servir à charge par l'emprunteur de lui en restituer autant de même espèce et qualité, à l'expiration du délai convenu.",
+          "text_ar": "والذي أقرّ بقبضه وتسلمه كاملاً من يد الدائن على وجه [MOTIF_DETTE] بتاريخ [DATE_REMISE].",
+          "text_fr": "Cette somme m'a été remise par le Créancier à titre de [MOTIF_DETTE] le [DATE_REMISE], à charge pour moi de lui en restituer l'équivalent conformément aux conditions du présent acte.",
           "fields": [
             "MOTIF_DETTE",
             "DATE_REMISE"
@@ -65,15 +65,15 @@
         {
           "id": "art-echeance",
           "text_ar": "يجب أن يتم السداد الكامل في أجل أقصاه [DATE_ECHEANCE].",
-          "text_fr": "Le remboursement intégral devra intervenir au plus tard le [DATE_ECHEANCE].",
+          "text_fr": "Le remboursement intégral de la somme due devra impérativement intervenir au plus tard le [DATE_ECHEANCE].",
           "fields": [
             "DATE_ECHEANCE"
           ]
         },
         {
           "id": "art-interets",
-          "text_ar": "عند الاقتضاء، يترتب على هذا الاعتراف بدين فائدة بنسبة [TAUX_INTERET] % سنوياً ابتداءً من [DATE_DEBUT_INTERETS].",
-          "text_fr": "Le cas échéant, la présente reconnaissance de dette porte intérêt au taux de [TAUX_INTERET] % par an à compter du [DATE_DEBUT_INTERETS]. Note Abrogé par Loi n° 59-148 du 7 novembre 1959, modifiant certains articles du Code des Obligations et des Contrats, articles 278 (alinéas 2, 3, 4 et 5), 1095 et 1096. (JORT Rectificatif n° 59 du 1er décembre 1959, page 1337) . Les intérêts des sommes portées en compte courant sont dus de plein droit par celle des parties au débit de laquelle elles figurent, à partir du jour des avances constatées. Art. 1098 (nouveau) Note Ainsi modifié par la Loi n°2000-57 du 13 juin 2000 - Jort n°48 du 16 juin 2000, page 1456 . - Les intérêts ne peuvent être calculés que sur la taxe d'une année entière. En matière commerciale, ils peuvent être calculés au mois. Les intérêts non payés seront capitalisés avec la somme principale conformément aux dispositions prescrites à l'article suivant. Art. 1099 (nouveau) Note Ainsi modifié par la Loi n°2000-57 du 13 juin 2000 - Jort n°48 du 16 juin 2000, page 1456 . - Les intérêts non payés peuvent être capitalisés avec la somme principale et seront productifs d'intérêts si les parties l'ont prévu par écrit. En matière civile, les intérêts non payés prévus à l'alinéa précédent ne peuvent être capitalisés avec la somme principale qu'à la fin de chaque année et à condition que le défaut de paiement n'est pas dô au créancier. En matière commerciale, les intérêts arrivés à échéance et non payés sont capitalisés avec la somme principale et produisent des intérêts du jour de l'échéance selon les prescriptions du premier paragraphe à condition que le retard du paiement n'est pas dô au créancier. Contrairement aux dispositions du premier paragraphe et en matière de compte courant les intérêts non payés sont capitalisés avec la somme principale et seront productifs eux mêmes d'intérêts tout en respectant les délais qu'exige l'usage et ce jusqu'à la clôture du compte à moins qu'il n'y ait une stipulation contraire. Art. 1100 Note Loi n° 83-14, portant modification de certains articles du Code des Obligations et des Contrats, article 1100 (rajouté et modifié) et 1101 (alinéa 1 modifié) Décret du 20 août 1935 sur l'intérêt légal abrogé. (JORT n° 13 du 18 février 1983, page 464) . - 2) en matière commerciale, il est égal au taux maximum des découverts bancaires, fixé par la Banque Centrale de Tunisie, majoré d'un demi-point. Lorsque les parties n'ont pas déterminé le taux des intérêts, le taux de l'intérêt légal qui s'applique est le suivant : en matière civile, il est calculé à raison de 7 % l'an ; en matière commerciale, il est égal aux taux maximum des découverts bancaires, fixé par la Banque Centrale, majoré d'un demi point.   ",
+          "text_ar": "عند الاقتضاء، يترتب على هذا الاعتراف بدين فوائض بنسبة [TAUX_INTERET] % سنوياً ابتداءً من [DATE_DEBUT_INTERETS].",
+          "text_fr": "Le cas échéant, la présente reconnaissance de dette porte intérêt au taux conventionnel de [TAUX_INTERET] % par an à compter du [DATE_DEBUT_INTERETS]. Conformément aux dispositions du Code des Obligations et des Contrats tunisien, les intérêts non payés ne pourront être capitalisés avec la somme principale qu'à la fin de chaque année, à condition que le retard dans le paiement ne soit pas dû au fait du créancier.",
           "fields": [
             "TAUX_INTERET",
             "DATE_DEBUT_INTERETS"
@@ -88,8 +88,8 @@
       "articles": [
         {
           "id": "art-garanties",
-          "text_ar": "ضماناً للسداد، قام المدين بـ [GARANTIES_EVENTUELLES].",
-          "text_fr": "En garantie du remboursement, le débiteur [GARANTIES_EVENTUELLES].",
+          "text_ar": "وضماناً للخلاص، فإني ألتزم بـ [GARANTIES_EVENTUELLES].",
+          "text_fr": "En garantie du remboursement de la somme due en principal et intérêts, le débiteur [GARANTIES_EVENTUELLES].",
           "fields": [
             "GARANTIES_EVENTUELLES"
           ]
@@ -103,8 +103,8 @@
       "articles": [
         {
           "id": "art-frais",
-          "text_ar": "في حالة الاستخلاص عن طريق القضاء، يتحمل المدين جميع المصاريف والمعاليم والأتعاب.",
-          "text_fr": "En cas de recouvrement contentieux, le débiteur supportera tous les frais, droits et honoraires.",
+          "text_ar": "في صورة عدم الخلاص واللجوء إلى التتبع القضائي، فإني أتحمل وحدي جميع المصاريف والمعاليم والأتعاب.",
+          "text_fr": "En cas de recours à une procédure de recouvrement contentieux, tous les frais, droits d'enregistrement, dépens et honoraires d'avocat ou d'huissier de justice seront intégralement supportés par le débiteur.",
           "fields": []
         }
       ]
@@ -117,7 +117,7 @@
         {
           "id": "art-date-lieu",
           "text_ar": "حرر بـ [LIEU_SIGNATURE]، بتاريخ [DATE_SIGNATURE].",
-          "text_fr": "Fait à [LIEU_SIGNATURE], le [DATE_SIGNATURE].",
+          "text_fr": "Fait à [LIEU_SIGNATURE], le [DATE_SIGNATURE], en autant d'exemplaires originaux que de droit, et sous réserve de la légalisation de signature auprès des autorités compétentes.",
           "fields": [
             "LIEU_SIGNATURE",
             "DATE_SIGNATURE"
@@ -125,14 +125,14 @@
         },
         {
           "id": "art-sign-debiteur",
-          "text_ar": "المدين\n[NOM_DEBITEUR]\n(إمضاء مسبوق بعبارة « أقر وأتعهد بدفع مبلغ [MONTANT_DETTE] ديناراً »)",
-          "text_fr": "Le Débiteur\n[NOM_DEBITEUR]\n(Signature précédée de la mention manuscrite « Bon pour reconnaissance de dette de la somme de [MONTANT_DETTE] dinars »)",
+          "text_ar": "المدين\n[NOM_DEBITEUR]\n(إمضاء مسبوق بخط اليد بعبارة « صالح لخلاص مبلغ [MONTANT_DETTE] ديناراً تونسياً »)",
+          "text_fr": "Le Débiteur\n[NOM_DEBITEUR]\n(Signature précédée de la mention manuscrite : « Bon pour reconnaissance de dette de la somme de [MONTANT_DETTE] dinars »)",
           "fields": []
         },
         {
           "id": "art-sign-creancier",
-          "text_ar": "الدائن\n[NOM_CREANCIER]\n(إمضاء مسبوق بعبارة « موافقة »)",
-          "text_fr": "Le Créancier\n[NOM_CREANCIER]\n(Signature précédée de la mention « Bon pour accord »)",
+          "text_ar": "الدائن\n[NOM_CREANCIER]\n(إمضاء مسبوق بخط اليد بعبارة « موافقة »)",
+          "text_fr": "Le Créancier\n[NOM_CREANCIER]\n(Signature précédée de la mention manuscrite : « Bon pour accord »)",
           "fields": []
         }
       ]

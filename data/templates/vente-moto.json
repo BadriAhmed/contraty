@@ -19,7 +19,7 @@
       "articles": [
         {
           "id": "art-vendeur",
-          "text_ar": "السيد/ة [NOM_VENDEUR]، ب.ت.و عدد [CIN_VENDEUR]، القاطن/ة بـ [ADRESSE_VENDEUR]، يشار إليه/ا بـ « البائع ».",
+          "text_ar": "السيد/ة [NOM_VENDEUR]، صاحب(ة) بطاقة التعريف الوطنية عدد [CIN_VENDEUR]، القاطن/ة بـ [ADRESSE_VENDEUR]، يشار إليه/ا بـ « البائع ».",
           "text_fr": "M./Mme [NOM_VENDEUR], CIN n° [CIN_VENDEUR], demeurant à [ADRESSE_VENDEUR], ci-après dénommé(e) « le Vendeur ».",
           "fields": [
             "NOM_VENDEUR",
@@ -29,7 +29,7 @@
         },
         {
           "id": "art-acquereur",
-          "text_ar": "السيد/ة [NOM_ACQUEREUR]، ب.ت.و عدد [CIN_ACQUEREUR]، القاطن/ة بـ [ADRESSE_ACQUEREUR]، يشار إليه/ا بـ « المشتري ».",
+          "text_ar": "السيد/ة [NOM_ACQUEREUR]، صاحب(ة) بطاقة التعريف الوطنية عدد [CIN_ACQUEREUR]، القاطن/ة بـ [ADRESSE_ACQUEREUR]، يشار إليه/ا بـ « المشتري ».",
           "text_fr": "M./Mme [NOM_ACQUEREUR], CIN n° [CIN_ACQUEREUR], demeurant à [ADRESSE_ACQUEREUR], ci-après dénommé(e) « l'Acquéreur ».",
           "fields": [
             "NOM_ACQUEREUR",
@@ -46,7 +46,7 @@
       "articles": [
         {
           "id": "art-moto",
-          "text_ar": "يبيع البائع للمشتري الذي يقبل، الدراجة النارية التالية:\nالعلامة: [MARQUE]\nالطراز: [MODELE]\nرقم التسجيل: [IMMATRICULATION]\nرقم الهيكل: [NUM_CADRE]\nرقم المحرك: [NUM_MOTEUR]\nالسعة الأسطوانية: [CYLINDREE] سم³\nالسنة: [ANNEE_MEC]\nعدد الكيلومترات: [KILOMETRAGE] كم",
+          "text_ar": "يبيع البائع للمشتري الذي يقبل، الدراجة النارية التالية:\nالعلامة: [MARQUE]\nالطراز: [MODELE]\nرقم التسجيل: [IMMATRICULATION]\nرقم الهيكل: [NUM_CADRE]\nرقم المحرك: [NUM_MOTEUR]\nالسعة الأسطوانية: [CYLINDREE] سم³\nتاريخ أول إذن بالجولان: [ANNEE_MEC]\nعدد الكيلومترات: [KILOMETRAGE] كم",
           "text_fr": "Le Vendeur vend à l'Acquéreur, qui accepte, la motocyclette suivante :\nMarque : [MARQUE]\nModèle : [MODELE]\nImmatriculation : [IMMATRICULATION]\nN° de série (cadre) : [NUM_CADRE]\nMoteur n° : [NUM_MOTEUR]\nCylindrée : [CYLINDREE] cm³\nAnnée : [ANNEE_MEC]\nKilométrage : [KILOMETRAGE] km",
           "fields": [
             "MARQUE",
@@ -68,8 +68,8 @@
       "articles": [
         {
           "id": "art-prix",
-          "text_ar": "حدد ثمن البيع بـ [PRIX] ديناراً تونسياً، يدفع نقداً.",
-          "text_fr": "Le prix de vente est fixé à [PRIX] dinars tunisiens, payé comptant. ",
+          "text_ar": "حدد ثمن البيع بـ [PRIX] ديناراً تونسياً، يدفع بموجب شيك مشهود بتوفير رصيده أو بتحويل بنكي. يقر البائع باستلام كامل الثمن ويعطي المشتري الإبراء التام والنهائي.",
+          "text_fr": "Le prix de vente est fixé à [PRIX] dinars tunisiens, payé par chèque certifié ou par virement bancaire. ",
           "fields": [
             "PRIX"
           ]
@@ -83,7 +83,7 @@
       "articles": [
         {
           "id": "art-etat",
-          "text_ar": "يصرح المشتري بأنه عاين الدراجة النارية وقبلها على حالتها. يضمن البائع خلو الدراجة من أي تقييد أو رهن أو حجز.",
+          "text_ar": "يصرح المشتري بأنه عاين الدراجة النارية وقبلها على حالتها. يضمن البائع خلو الدراجة من كل الرهون، التحجيرات، الديون، أو أي موانع أخرى تمنع نقل الملكية.",
           "text_fr": "L'Acquéreur déclare avoir examiné la motocyclette et l'accepter dans l'état où elle se trouve. Le Vendeur garantit que la motocyclette est libre de toute inscription, gage ou opposition. La nullité du contrat ne peut jamais être opposée par le vendeur, à raison de ce que la chose était à autrui. La vente de la chose d'autrui est valable : si le maître la ratifie ; si le vendeur acquiert ensuite la propriété de la chose ; Dans le cas où le maître refuse de ratifier, l'acquéreur peut demander la résolution de la vente; le vendeur est tenu, en outre, des dommages-intérêts, lorsque l'acquéreur ignorait, au moment de la vente que la chose était à autrui. La nullité du contrat ne peut jamais être opposée par le vendeur, à raison de ce que la chose était à autrui.",
           "fields": []
         }
@@ -96,7 +96,7 @@
       "articles": [
         {
           "id": "art-transfert",
-          "text_ar": "تنتقل الملكية عند التوقيع. يقوم المشتري بإجراءات التحويل في أجل [DELAI_JOURS] يوماً. الوثائق المسلمة: بطاقة التسجيل، المخالصة الجبائية، شهادة الوضعية الإدارية.",
+          "text_ar": "تنتقل الملكية عند التوقيع. يتعهد المشتري بإتمام إجراءات نقل الملكية واستخراج شهادة تسجيل باسمه لدى الوكالة الفنية للنقل البري في أجل [DELAI_JOURS] يوماً. الوثائق المسلمة: شهادة التسجيل (البطاقة الرمادية)، ووصولات خلاص معاليم الجولان (الفيشات/الطنبر)، وشهادة الوضعية الإدارية.",
           "text_fr": "La propriété est transférée à la signature. L'Acquéreur accomplira les formalités de mutation dans les [DELAI_JOURS] jours. Documents remis : carte grise, quitus fiscal, certificat de situation administrative.",
           "fields": [
             "DELAI_JOURS"

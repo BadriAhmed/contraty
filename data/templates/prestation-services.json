@@ -19,8 +19,8 @@
       "articles": [
         {
           "id": "art-client",
-          "text_ar": "شركة [NOM_CLIENT]، الكائنة بـ [ADRESSE_CLIENT]، ويمثلها السيد/ة [REPRESENTANT_CLIENT]، يشار إليها بـ « الحريف ».",
-          "text_fr": "La société [NOM_CLIENT], sise [ADRESSE_CLIENT], représentée par M./Mme [REPRESENTANT_CLIENT], ci-après dénommée « le Client ».",
+          "text_ar": "شركة [NOM_CLIENT]، الكائنة بـ [ADRESSE_CLIENT]، ممثلة في شخص مُمثلها القانوني السيد/ة [REPRESENTANT_CLIENT] بصفته/ا [QUALITE_REPRESENTANT_CLIENT]، يشار إليها بـ « الحريف ».",
+          "text_fr": "La société [NOM_CLIENT], (indiquer la forme sociale, ex: SARL/SUARL), au capital de [Montant] DT, sise à [ADRESSE_CLIENT], immatriculée au Registre National des Entreprises (RNE) sous le numéro [Numéro RNE], représentée par M./Mme [REPRESENTANT_CLIENT], en sa qualité de [Fonction], ci-après dénommée « le Client ».",
           "fields": [
             "NOM_CLIENT",
             "ADRESSE_CLIENT",
@@ -29,8 +29,8 @@
         },
         {
           "id": "art-prestataire",
-          "text_ar": "شركة [NOM_PRESTATAIRE]، الكائنة بـ [ADRESSE_PRESTATAIRE]، ويمثلها السيد/ة [REPRESENTANT_PRESTATAIRE]، يشار إليها بـ « مقدم الخدمات ».",
-          "text_fr": "La société [NOM_PRESTATAIRE], sise [ADRESSE_PRESTATAIRE], représentée par M./Mme [REPRESENTANT_PRESTATAIRE], ci-après dénommée « le Prestataire ».",
+          "text_ar": "شركة [NOM_PRESTATAIRE]، الكائنة بـ [ADRESSE_PRESTATAIRE]، ممثلة في شخص مُمثلها القانوني السيد/ة [REPRESENTANT_PRESTATAIRE] بصفته/ا [QUALITE_REPRESENTANT_PRESTATAIRE]، يشار إليها بـ « مقدم الخدمات ».",
+          "text_fr": "La société [NOM_PRESTATAIRE], (indiquer la forme sociale, ex: SARL/SUARL), au capital de [Montant] DT, sise à [ADRESSE_PRESTATAIRE], immatriculée au Registre National des Entreprises (RNE) sous le numéro [Numéro RNE], représentée par M./Mme [REPRESENTANT_PRESTATAIRE], en sa qualité de [Fonction], ci-après dénommée « le Prestataire ».",
           "fields": [
             "NOM_PRESTATAIRE",
             "ADRESSE_PRESTATAIRE",
@@ -47,7 +47,7 @@
         {
           "id": "art-prestations",
           "text_ar": "يلتزم مقدم الخدمات بإنجاز الخدمات التالية: [DESCRIPTION_PRESTATIONS].",
-          "text_fr": "Le Prestataire s'engage à réaliser les prestations suivantes : [DESCRIPTION_PRESTATIONS]. ",
+          "text_fr": "Le présent contrat est un contrat de louage d'ouvrage et de services, régi par le Code des Obligations et des Contrats tunisien (COC). Le Prestataire s'engage à réaliser pour le Client les prestations suivantes : [DESCRIPTION_PRESTATIONS].",
           "fields": [
             "DESCRIPTION_PRESTATIONS"
           ]
@@ -61,8 +61,8 @@
       "articles": [
         {
           "id": "art-honoraires",
-          "text_ar": "مقابل الخدمات، يدفع الحريف لمقدم الخدمات مبلغ [MONTANT_TOTAL] ديناراً تونسياً (دون الأداء)، حسب الطرق التالية: [MODALITES_PAIEMENT].",
-          "text_fr": "En contrepartie des prestations, le Client versera au Prestataire la somme de [MONTANT_TOTAL] dinars tunisiens (HT), payable selon les modalités suivantes : [MODALITES_PAIEMENT].",
+          "text_ar": "مقابل الخدمات، يدفع الحريف لمقدم الخدمات مبلغ [MONTANT_TOTAL] ديناراً تونسياً دون احتساب الأداء على القيمة المضافة (TVA)، حسب الطرق التالية: [MODALITES_PAIEMENT].",
+          "text_fr": "En contrepartie de la réalisation des prestations, le Client versera au Prestataire la somme de [MONTANT_TOTAL] dinars tunisiens (HT), payable selon les modalités de paiement suivantes : [MODALITES_PAIEMENT].",
           "fields": [
             "MONTANT_TOTAL",
             "MODALITES_PAIEMENT"
@@ -78,7 +78,7 @@
         {
           "id": "art-duree",
           "text_ar": "يبرم هذا العقد لمدة [DUREE] ابتداءً من [DATE_DEBUT].",
-          "text_fr": "Le présent contrat est conclu pour une durée de [DUREE] à compter du [DATE_DEBUT]. Le louage d'ouvrage est régi par les dispositions générales des articles 828 à 834 inclus et par les dispositions ci-après. L'entreprise de construction et tous autres contrats dans lesquels l'ouvrier ou artisan fournit la matière sont considérés comme louage d'ouvrage.",
+          "text_fr": "Le présent contrat est conclu pour une durée de [DUREE] à compter du [DATE_DEBUT].",
           "fields": [
             "DUREE",
             "DATE_DEBUT"
@@ -113,7 +113,7 @@
         {
           "id": "art-garantie",
           "text_ar": "يلتزم مقدم الخدمات ببذل العناية اللازمة دون ضمان نتيجة.",
-          "text_fr": "Le Prestataire est tenu à une obligation de moyens.   Sont sans effet toutes clauses et conventions ayant pour objet de restreindre ou d'écarter la responsabilité établie par les articles 856 et 857 à la charge des maîtres ou employeurs.",
+          "text_fr": "Le Prestataire est tenu à une obligation de moyens. La responsabilité du Prestataire est limitée aux seuls dommages directs et prévisibles subis par le Client résultant d'un manquement prouvé à ses obligations contractuelles.",
           "fields": []
         }
       ]
@@ -125,8 +125,8 @@
       "articles": [
         {
           "id": "art-resiliation",
-          "text_ar": "يمكن لكل من الطرفين إنهاء العقد بعد إعلام مسبق بـ [PREAVIS_JOURS] يوماً، بمكتوب مضمون الوصول مع الإعلام بالبلوغ.",
-          "text_fr": "Le contrat peut être résilié par l'une ou l'autre des parties moyennant un préavis de [PREAVIS_JOURS] jours, par lettre recommandée avec accusé de réception.",
+          "text_ar": "يمكن لكل من الطرفين إنهاء العقد بعد إعلام مسبق بـ [PREAVIS_JOURS] يوماً، بموجب رسالة مضمونة الوصول مع الإشعار بالتسلم.",
+          "text_fr": "Le présent contrat peut être résilié par l'une ou l'autre des Parties moyennant un préavis de [PREAVIS_JOURS] jours, notifié par lettre recommandée avec accusé de réception.",
           "fields": [
             "PREAVIS_JOURS"
           ]
@@ -141,13 +141,13 @@
         {
           "id": "art-confidentialite",
           "text_ar": "يلتزم الطرفان باحترام سرية المعلومات المتبادلة.",
-          "text_fr": "Les parties s'engagent à respecter la confidentialité des informations échangées.",
+          "text_fr": "Chacune des Parties s'engage à garder confidentielles toutes les données et informations de nature technique, commerciale ou financière reçues de l'autre Partie dans le cadre de l'exécution du présent contrat.",
           "fields": []
         },
         {
           "id": "art-juridiction",
-          "text_ar": "كل نزاع يعرض على محاكم [TRIBUNAL].",
-          "text_fr": "Tout litige sera soumis aux tribunaux de [TRIBUNAL].",
+          "text_ar": "يخضع هذا العقد للقانون التونسي، وفي صورة حدوث أي نزاع يتعلق بتأويله أو تنفيذه، يقع عرضه على الاختصاص الترابي الحصري للمحاكم المختصة بـ [TRIBUNAL].",
+          "text_fr": "Le présent contrat est régi et interprété conformément au droit tunisien. Tout différend relatif à sa validité, son interprétation ou son exécution qui ne pourrait être résolu à l'amiable sera soumis à la compétence exclusive des tribunaux de [TRIBUNAL].",
           "fields": [
             "TRIBUNAL"
           ]
@@ -162,7 +162,7 @@
         {
           "id": "art-date-lieu",
           "text_ar": "حرر بـ [LIEU_SIGNATURE]، بتاريخ [DATE_SIGNATURE].",
-          "text_fr": "Fait à [LIEU_SIGNATURE], le [DATE_SIGNATURE].",
+          "text_fr": "Fait à [LIEU_SIGNATURE], le [DATE_SIGNATURE], en deux (2) exemplaires originaux.",
           "fields": [
             "LIEU_SIGNATURE",
             "DATE_SIGNATURE"
@@ -171,13 +171,13 @@
         {
           "id": "art-sign-client",
           "text_ar": "الحريف\n[REPRESENTANT_CLIENT]",
-          "text_fr": "Le Client\n[REPRESENTANT_CLIENT]",
+          "text_fr": "Pour le Client\n[REPRESENTANT_CLIENT]",
           "fields": []
         },
         {
           "id": "art-sign-prestataire",
           "text_ar": "مقدم الخدمات\n[REPRESENTANT_PRESTATAIRE]",
-          "text_fr": "Le Prestataire\n[REPRESENTANT_PRESTATAIRE]",
+          "text_fr": "Pour le Prestataire\n[REPRESENTANT_PRESTATAIRE]",
           "fields": []
         }
       ]

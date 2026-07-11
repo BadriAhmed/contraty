@@ -79,7 +79,7 @@
         {
           "id": "art-capital",
           "text_ar": "يحدد رأس مال الشركة بـ [CAPITAL] ديناراً تونسياً، مقسم إلى [NB_PARTS] حصة اجتماعية قيمة كل منها [VALEUR_NOMINALE] ديناراً.",
-          "text_fr": "Le capital social est fixé à [CAPITAL] dinars tunisiens, divisé en [NB_PARTS] parts sociales de [VALEUR_NOMINALE] dinars chacune. Les apports peuvent être soit en numéraire soit en nature, soit en industrie. L'ensemble de ces apports, à l'exception de l'apport en industrie, constitue le capital de la société. Ce dernier est le gage exclusif des créanciers sociaux.",
+          "text_fr": "Le capital social est fixé à [CAPITAL] dinars tunisiens, divisé en [NB_PARTS] parts sociales de [VALEUR_NOMINALE] dinars chacune, entièrement libérées. Les apports peuvent être en numéraire, en nature ou en industrie. L'ensemble de ces apports, à l'exception de l'apport en industrie, constitue le capital de la société. Ce dernier constitue le gage commun des créanciers sociaux.",
           "fields": [
             "CAPITAL",
             "NB_PARTS",
@@ -89,7 +89,7 @@
         {
           "id": "art-repartition",
           "text_ar": "توزع الحصص كما يلي: [REPARTITION_PARTS].",
-          "text_fr": "Les parts sont réparties comme suit : [REPARTITION_PARTS].",
+          "text_fr": "Les parts sociales sont attribuées et réparties entre les associés comme suit : [REPARTITION_PARTS].",
           "fields": [
             "REPARTITION_PARTS"
           ]
@@ -103,8 +103,8 @@
       "articles": [
         {
           "id": "art-gerant",
-          "text_ar": "تدار الشركة من قبل السيد/ة [NOM_GERANT]، بصفته/ا متصرفاً، لمدة [DUREE_MANDAT_GERANT].",
-          "text_fr": "La société est administrée par [NOM_GERANT], gérant, nommé pour une durée [DUREE_MANDAT_GERANT]. La société à responsabilité limitée est gérée par une ou plusieurs personnes physiques. Le ou les gérants peuvent être désignés dans les statuts ou par un acte postérieur, et ce, parmi les associés ou parmi des tiers. En cas de silence des statuts ou de la décision de nomination, la durée du mandat du gérant sera de trois ans renouvelables. Le gérant représente la société vis-à-vis des tiers et devant les juridictions en tant que demanderesse ou défenderesse.",
+          "text_ar": "تدار الشركة من قبل السيد/ة [NOM_GERANT]، بصفته/ا وكيلاً، لمدة [DUREE_MANDAT_GERANT].",
+          "text_fr": "La société est administrée et représentée par [NOM_GERANT], en qualité de gérant, nommé pour une durée de [DUREE_MANDAT_GERANT]. Le gérant est investi des pouvoirs les plus étendus pour agir en toute circonstance au nom de la société dans la limite de l'objet social. Il représente légalement la société vis-à-vis des tiers et devant les juridictions, tant en demande qu'en défense.",
           "fields": [
             "NOM_GERANT",
             "DUREE_MANDAT_GERANT"
@@ -120,7 +120,7 @@
         {
           "id": "art-exercice",
           "text_ar": "تبدأ السنة المالية للشركة في 1 جانفي وتنتهي في 31 ديسمبر من كل سنة.",
-          "text_fr": "L'exercice social commence le 1er janvier et se termine le 31 décembre de chaque année.",
+          "text_fr": "L'exercice social commence le 1er janvier et se termine le 31 décembre de chaque année. Par exception, le premier exercice social commence à dater de la constitution définitive de la société pour se clôturer le 31 décembre de la même année.",
           "fields": []
         }
       ]
@@ -141,8 +141,8 @@
         },
         {
           "id": "art-sign-associes",
-          "text_ar": "الشركاء\n[REPARTITION_PARTS]\n(إمضاءات مسبوقة بعبارة « قرأت وأوافق »)",
-          "text_fr": "Les Associés\n[REPARTITION_PARTS]\n(Signatures précédées de la mention « Lu et approuvé »)",
+          "text_ar": "الشركاء\n[REPARTITION_PARTS]\n(إمضاءات مسبوقة بعبارة « مصادق عليه »)",
+          "text_fr": "Les Associés\n[REPARTITION_PARTS]\n(Signatures précédées de la mention manuscrite « Lu et approuvé »)",
           "fields": []
         }
       ]

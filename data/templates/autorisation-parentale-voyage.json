@@ -20,7 +20,7 @@
         {
           "id": "art-parent",
           "text_ar": "أنا الممضي أسفله، السيد/ة [NOM_PARENT]، ب.ت.و عدد [CIN_PARENT]، القاطن/ة بـ [ADRESSE_PARENT]، بصفتي [QUALITE] (أب / أم / ولي شرعي) للطفل القاصر المذكور أسفله.",
-          "text_fr": "Je soussigné(e), M./Mme [NOM_PARENT], CIN n° [CIN_PARENT], demeurant à [ADRESSE_PARENT], agissant en qualité de [QUALITE] (père / mère / tuteur légal) de l'enfant mineur désigné ci-dessous.",
+          "text_fr": "Je soussigné(e), M./Mme [NOM_PARENT], CIN n° [CIN_PARENT], demeurant à [ADRESSE_PARENT], agissant en qualité de tuteur légal (le père, ou le représentant légal désigné par décision de justice) de l'enfant mineur désigné ci-dessous.",
           "fields": [
             "NOM_PARENT",
             "CIN_PARENT",
@@ -38,7 +38,7 @@
         {
           "id": "art-enfant",
           "text_ar": "الاسم واللقب: [NOM_ENFANT]\nتاريخ الولادة: [DATE_NAISSANCE_ENFANT] بـ [LIEU_NAISSANCE_ENFANT]\nعدد مضمون الولادة: [NUM_EXTRAIT_NAISSANCE]\nالجنسية: تونسية\nجواز سفر / ب.ت.و عدد: [NUM_PIECE_ENFANT]",
-          "text_fr": "Nom et prénom : [NOM_ENFANT]\nNé(e) le : [DATE_NAISSANCE_ENFANT] à [LIEU_NAISSANCE_ENFANT]\nN° extrait de naissance : [NUM_EXTRAIT_NAISSANCE]\nNationalité : Tunisienne\nPasseport / CIN n° : [NUM_PIECE_ENFANT]",
+          "text_fr": "Nom et prénom : [NOM_ENFANT]\nNé(e) le : [DATE_NAISSANCE_ENFANT] à [LIEU_NAISSANCE_ENFANT]\nN° extrait de naissance : [NUM_EXTRAIT_NAISSANCE]\nNationalité : Tunisienne\nPasseport n° : [NUM_PASSEPORT_ENFANT]",
           "fields": [
             "NOM_ENFANT",
             "DATE_NAISSANCE_ENFANT",
@@ -57,7 +57,7 @@
         {
           "id": "art-autorisation",
           "text_ar": "آذن لابني/لابنتي بالسفر إلى [DESTINATION]، مرفوقاً/ة بالسيد/ة [NOM_ACCOMPAGNATEUR]، ب.ت.و عدد [CIN_ACCOMPAGNATEUR]، من [DATE_DEPART] إلى [DATE_RETOUR].",
-          "text_fr": "J'autorise mon enfant à voyager à destination de [DESTINATION], accompagné(e) de M./Mme [NOM_ACCOMPAGNATEUR], CIN n° [CIN_ACCOMPAGNATEUR], du [DATE_DEPART] au [DATE_RETOUR].",
+          "text_fr": "J'autorise mon enfant à voyager à destination de [DESTINATION], accompagné(e) de M./Mme [NOM_ACCOMPAGNATEUR], CIN ou Passeport n° : [NUM_PIECE_ACCOMPAGNATEUR], du [DATE_DEPART] au [DATE_RETOUR].",
           "fields": [
             "DESTINATION",
             "NOM_ACCOMPAGNATEUR",
@@ -76,7 +76,7 @@
         {
           "id": "art-engagement",
           "text_ar": "أعفي السلطات من كل مسؤولية طيلة مدة السفر. يسلم هذا الإذن على ورق عادي ويمكن التصديق عليه لدى البلدية أو مركز الأمن.",
-          "text_fr": "Je dégage toute responsabilité des autorités pour la durée du voyage. La présente autorisation est délivrée sur papier libre et peut être légalisée à la mairie ou au commissariat.",
+          "text_fr": "Je déclare assumer l'entière responsabilité légale, civile et financière de ce voyage. La présente autorisation doit faire l'objet d'une légalisation de signature auprès de la municipalité compétente.",
           "fields": []
         }
       ]

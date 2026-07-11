@@ -48,7 +48,7 @@
         {
           "id": "art-objet",
           "text_ar": "الموضوع: استقالة",
-          "text_fr": "Objet : Démission",
+          "text_fr": "Objet : Démission de mon poste de [POSTE]",
           "fields": []
         }
       ]
@@ -61,7 +61,7 @@
         {
           "id": "art-annonce",
           "text_ar": "أعلمكم بموجب هذه الرسالة قراري بالاستقالة من خطتي كـ [POSTE] بـ [NOM_ENTREPRISE]، التي أشغلها منذ [DATE_EMBAUCHE].",
-          "text_fr": "Par la présente, je vous informe de ma décision de démissionner de mon poste de [POSTE] au sein de [NOM_ENTREPRISE], que j'occupe depuis le [DATE_EMBAUCHE].",
+          "text_fr": "Par la présente, je vous informe de ma décision de démissionner de mon poste de [POSTE] au sein de votre entreprise [NOM_ENTREPRISE], que j'occupe depuis le [DATE_EMBAUCHE].",
           "fields": [
             "DATE_EMBAUCHE"
           ]
@@ -69,7 +69,7 @@
         {
           "id": "art-preavis",
           "text_ar": "سأحترم أجل الإعلام المسبق القانوني وقدره [DUREE_PREAVIS]، الذي يبدأ سريانه من [DATE_EFFET_PREAVIS]. وبالتالي سيكون آخر يوم عمل لي هو [DATE_DERNIER_JOUR].",
-          "text_fr": "Je respecterai le préavis légal de [DUREE_PREAVIS], qui prendra effet à compter du [DATE_EFFET_PREAVIS]. Mon dernier jour de travail sera donc le [DATE_DERNIER_JOUR].",
+          "text_fr": "Conformément aux dispositions régissant mon contrat de travail [Optionnel : et à la Convention Collective applicable], je respecterai un préavis de [DUREE_PREAVIS], qui prendra effet à compter de la date de notification de la présente lettre. Par conséquent, mon contrat de travail prendra fin le [DATE_DERNIER_JOUR] au soir.",
           "fields": [
             "DUREE_PREAVIS",
             "DATE_EFFET_PREAVIS",
@@ -87,13 +87,13 @@
         {
           "id": "art-remerciements",
           "text_ar": "أشكركم على الثقة والفرص التي منحتموني إياها طيلة مسيرتي داخل المؤسسة.",
-          "text_fr": "Je vous remercie pour la confiance et les opportunités que vous m'avez accordées durant mon parcours au sein de l'entreprise.",
+          "text_fr": "Je vous remercie pour la collaboration et l'expérience acquise au sein de votre entreprise durant mon parcours.",
           "fields": []
         },
         {
           "id": "art-documents",
           "text_ar": "أرجو التكرم بتسليمي شهادة العمل ووصل المخالصة النهائية وشهادة انتهاء العمل الموجهة للصندوق الوطني للضمان الاجتماعي.",
-          "text_fr": "Je vous saurais gré de bien vouloir me remettre mon certificat de travail, mon solde de tout compte, et l'attestation de cessation d'emploi destinée à la CNSS.",
+          "text_fr": "Je vous prie de bien vouloir préparer et me remettre, à la date de mon départ, mon reçu pour solde de tout compte, mon certificat de travail (conformément à l'article 27 du Code du travail tunisien), ainsi que l'attestation de cessation d'activité destinée à la CNSS.",
           "fields": []
         }
       ]
@@ -106,7 +106,7 @@
         {
           "id": "art-date-lieu",
           "text_ar": "حرر بـ [LIEU]، بتاريخ [DATE].\n\n[NOM_SALARIE]\n(إمضاء)",
-          "text_fr": "Fait à [LIEU], le [DATE].\n\n[NOM_SALARIE]\n(Signature)",
+          "text_fr": "Fait à [LIEU], le [DATE].\n\nEnvoyé par [Lettre recommandée avec accusé de réception / Remise en main propre contre décharge]\n\n[NOM_SALARIE]\n(Signature)",
           "fields": [
             "LIEU",
             "DATE"

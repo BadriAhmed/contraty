@@ -20,7 +20,7 @@
         {
           "id": "art-bailleur",
           "text_ar": "المكري: السيد/ة [NOM_BAILLEUR]، ب.ت.و عدد [CIN_BAILLEUR].",
-          "text_fr": "Bailleur : M./Mme [NOM_BAILLEUR], CIN n° [CIN_BAILLEUR].",
+          "text_fr": "Bailleur : M./Mme [NOM_BAILLEUR], titulaire de la CIN n° [CIN_BAILLEUR] délivrée le [DATE_DELIVRANCE_CIN_B] à [LIEU_DELIVRANCE_CIN_B].",
           "fields": [
             "NOM_BAILLEUR",
             "CIN_BAILLEUR"
@@ -29,7 +29,7 @@
         {
           "id": "art-preneur",
           "text_ar": "المكتري: السيد/ة [NOM_PRENEUR]، ب.ت.و عدد [CIN_PRENEUR].",
-          "text_fr": "Preneur : M./Mme [NOM_PRENEUR], CIN n° [CIN_PRENEUR].",
+          "text_fr": "Preneur : M./Mme [NOM_PRENEUR], titulaire de la CIN n° [CIN_PRENEUR] délivrée le [DATE_DELIVRANCE_CIN_P] à [LIEU_DELIVRANCE_CIN_P].",
           "fields": [
             "NOM_PRENEUR",
             "CIN_PRENEUR"
@@ -44,7 +44,7 @@
       "articles": [
         {
           "id": "art-adresse",
-          "text_ar": "العقار الكائن بـ [ADRESSE_BIEN]. نوع المعاينة: [TYPE_ETAT] (دخول / خروج).",
+          "text_ar": "العقار الكائن بـ [ADRESSE_BIEN]. طبيعة الكشف: [عند تسلّم الأماكن / عند إرجاع الأماكن].",
           "text_fr": "Bien situé à [ADRESSE_BIEN]. Type d'état des lieux : [TYPE_ETAT] (Entrée / Sortie).",
           "fields": [
             "ADRESSE_BIEN",
@@ -84,7 +84,7 @@
         },
         {
           "id": "art-cuisine",
-          "text_ar": "المطبخ: الأرضية: [SOL_CUISINE] | الجدران: [MURS_CUISINE] | حوض الغسيل: [EVIER] | الأثاث: [MEUBLES_CUISINE] | ملاحظات: [OBS_CUISINE]",
+          "text_ar": "المطبخ: الأرضية: [SOL_CUISINE] | الجدران: [MURS_CUISINE] | مجلى المطبخ: [EVIER] | الأثاث: [MEUBLES_CUISINE] | ملاحظات: [OBS_CUISINE]",
           "text_fr": "Cuisine : Sols : [SOL_CUISINE] | Murs : [MURS_CUISINE] | Évier : [EVIER] | Meubles : [MEUBLES_CUISINE] | Observations : [OBS_CUISINE]",
           "fields": [
             "SOL_CUISINE",
@@ -97,7 +97,7 @@
         {
           "id": "art-sdb",
           "text_ar": "الحمام/ات ([NB_SDB]): الأرضية: [SOL_SDB] | الجدران: [MURS_SDB] | الأدوات الصحية: [SANITAIRES] | الحنفيات: [ROBINETTERIE] | ملاحظات: [OBS_SDB]",
-          "text_fr": "Salle de bain(s) ([NB_SDB]) : Sols : [SOL_SDB] | Murs : [MURS_SDB] | Sanitaires : [SANITAIRES] | Robinetterie : [ROBINETTERIE] | Observations : [OBS_SDB]",
+          "text_fr": "Salle(s) de bains ([NB_SDB]) : Sols : [SOL_SDB] | Murs : [MURS_SDB] | Sanitaires : [SANITAIRES] | Robinetterie : [ROBINETTERIE] | Observations : [OBS_SDB]",
           "fields": [
             "NB_SDB",
             "SOL_SDB",
@@ -125,8 +125,8 @@
       "articles": [
         {
           "id": "art-compteurs",
-          "text_ar": "مؤشرات العدادات:\nكهرباء: [INDEX_ELEC] — عداد عدد [NUM_COMPTEUR_ELEC]\nماء: [INDEX_EAU] — عداد عدد [NUM_COMPTEUR_EAU]\nغاز: [INDEX_GAZ] — عداد عدد [NUM_COMPTEUR_GAZ]\nعدد المفاتيح المسلمة: [NB_CLES]",
-          "text_fr": "Relevés des compteurs :\nÉlectricité : [INDEX_ELEC] — Compteur n° [NUM_COMPTEUR_ELEC]\nEau : [INDEX_EAU] — Compteur n° [NUM_COMPTEUR_EAU]\nGaz : [INDEX_GAZ] — Compteur n° [NUM_COMPTEUR_GAZ]\nNombre de clés remises : [NB_CLES]",
+          "text_ar": "بيانات العدادات:\nكهرباء: [INDEX_ELEC] — عداد عدد [NUM_COMPTEUR_ELEC]\nماء: [INDEX_EAU] — عداد عدد [NUM_COMPTEUR_EAU]\nغاز: [INDEX_GAZ] — عداد عدد [NUM_COMPTEUR_GAZ]\nعدد المفاتيح المسلمة: [NB_CLES]",
+          "text_fr": "Relevé des compteurs :\nÉlectricité : [INDEX_ELEC] — Compteur n° [NUM_COMPTEUR_ELEC]\nEau : [INDEX_EAU] — Compteur n° [NUM_COMPTEUR_EAU]\nGaz (de ville ou GPL) : [INDEX_GAZ] — Compteur n° [NUM_COMPTEUR_GAZ]\nNombre de clés remises : [NB_CLES]",
           "fields": [
             "INDEX_ELEC",
             "NUM_COMPTEUR_ELEC",
@@ -147,7 +147,7 @@
         {
           "id": "art-date",
           "text_ar": "حرر بـ [LIEU]، بتاريخ [DATE].",
-          "text_fr": "Fait à [LIEU], le [DATE].",
+          "text_fr": "Fait à [LIEU], le [DATE] en autant d'exemplaires originaux que de parties.",
           "fields": [
             "LIEU",
             "DATE"
@@ -156,13 +156,13 @@
         {
           "id": "art-sign-b",
           "text_ar": "المكري\n[NOM_BAILLEUR]",
-          "text_fr": "Le Bailleur\n[NOM_BAILLEUR]",
+          "text_fr": "Le Bailleur\n[NOM_BAILLEUR]\n(Signature précédée de la mention manuscrite « Lu et approuvé » et soumise à la légalisation de signature auprès de la municipalité)",
           "fields": []
         },
         {
           "id": "art-sign-p",
           "text_ar": "المكتري\n[NOM_PRENEUR]",
-          "text_fr": "Le Preneur\n[NOM_PRENEUR]",
+          "text_fr": "Le Preneur\n[NOM_PRENEUR]\n(Signature précédée de la mention manuscrite « Lu et approuvé » et soumise à la légalisation de signature auprès de la municipalité)",
           "fields": []
         }
       ]

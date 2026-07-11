@@ -20,7 +20,7 @@
         {
           "id": "art-exp",
           "text_ar": "أنا الممضي أسفله، السيد/ة [NOM_EXPEDITEUR]، ب.ت.و عدد [CIN_EXPEDITEUR]، القاطن/ة بـ [ADRESSE_EXPEDITEUR].",
-          "text_fr": "Je soussigné(e), M./Mme [NOM_EXPEDITEUR], CIN n° [CIN_EXPEDITEUR], demeurant à [ADRESSE_EXPEDITEUR].",
+          "text_fr": "Je soussigné(e), M./Mme [NOM_EXPEDITEUR], titulaire de la CIN n° [CIN_EXPEDITEUR], demeurant à [ADRESSE_EXPEDITEUR].",
           "fields": [
             "NOM_EXPEDITEUR",
             "CIN_EXPEDITEUR",
@@ -37,7 +37,7 @@
         {
           "id": "art-dest",
           "text_ar": "إلى السيد/ة [NOM_DESTINATAIRE]، ب.ت.و عدد [CIN_DESTINATAIRE]، القاطن/ة بـ [ADRESSE_DESTINATAIRE]، أو إلى شركة [SOCIETE_DESTINATAIRE].",
-          "text_fr": "À M./Mme [NOM_DESTINATAIRE], CIN n° [CIN_DESTINATAIRE], demeurant à [ADRESSE_DESTINATAIRE], ou à la société [SOCIETE_DESTINATAIRE].",
+          "text_fr": "À l'attention de : M./Mme [NOM_DESTINATAIRE] (ou la société [SOCIETE_DESTINATAIRE]), demeurant à [ADRESSE_DESTINATAIRE] (CIN n° [CIN_DESTINATAIRE]).",
           "fields": [
             "NOM_DESTINATAIRE",
             "CIN_DESTINATAIRE",
@@ -55,7 +55,7 @@
         {
           "id": "art-objet",
           "text_ar": "الموضوع: إنذار — [OBJET_SOMMAIRE]",
-          "text_fr": "Objet : Mise en demeure — [OBJET_SOMMAIRE]",
+          "text_fr": "Objet : MISE EN DEMEURE — [OBJET_SOMMAIRE]",
           "fields": [
             "OBJET_SOMMAIRE"
           ]

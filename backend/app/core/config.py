@@ -17,7 +17,7 @@ class Settings(BaseSettings):
 
     openai_model: str = "gpt-4o-mini"
     mistral_model: str = "mistral-large-latest"
-    gemini_model: str = "gemini-2.5-pro-exp-03-25"
+    gemini_model: str = "gemini-flash-latest"
 
     embedding_model: str = "text-embedding-3-small"
     embedding_dimensions: int = 1536

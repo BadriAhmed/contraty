@@ -20,7 +20,7 @@
         {
           "id": "art-bailleur",
           "text_ar": "أنا الممضي أسفله، السيد/ة [NOM_BAILLEUR]، ب.ت.و عدد [CIN_BAILLEUR]، المكري، أشهد بأني تسلمت من السيد/ة [NOM_PRENEUR]، المكتري.",
-          "text_fr": "Je soussigné(e), M./Mme [NOM_BAILLEUR], CIN n° [CIN_BAILLEUR], Bailleur, reconnaît avoir reçu de M./Mme [NOM_PRENEUR], Preneur.",
+          "text_fr": "Je soussigné(e), M./Mme [NOM_BAILLEUR], titulaire de la CIN n° [CIN_BAILLEUR], agissant en qualité de Bailleur, reconnais avoir reçu de M./Mme [NOM_PRENEUR], titulaire de la CIN n° [CIN_PRENEUR], en sa qualité de Preneur,",
           "fields": [
             "NOM_BAILLEUR",
             "CIN_BAILLEUR",
@@ -37,7 +37,7 @@
         {
           "id": "art-paiement",
           "text_ar": "مبلغ [MONTANT] ديناراً تونسياً، مقابل معين كراء شهر [MOIS] [ANNEE]، للعقار الكائن بـ [ADRESSE_BIEN]. طريقة الدفع: [MODE_PAIEMENT].",
-          "text_fr": "La somme de [MONTANT] dinars tunisiens, correspondant au loyer du mois de [MOIS] [ANNEE], pour le bien sis à [ADRESSE_BIEN]. Mode de paiement : [MODE_PAIEMENT].",
+          "text_fr": "la somme de [MONTANT_EN_CHIFFRES] dinars tunisiens (soit [MONTANT_EN_LETTRES] DT), correspondant au loyer du mois de [MOIS] [ANNEE], pour le bien sis à [ADRESSE_BIEN], et ce, conformément au contrat de bail en date du [DATE_CONTRAT_BAIL]. Mode de paiement : [MODE_PAIEMENT].",
           "fields": [
             "MONTANT",
             "MOIS",
@@ -56,7 +56,7 @@
         {
           "id": "art-decharge",
           "text_ar": "يصرح المكري باستيفاء حقوقه عن الشهر المعني ويسلم وصلاً للمكتري.",
-          "text_fr": "Le Bailleur déclare être rempli de ses droits pour le mois concerné et donne quittance au Preneur.",
+          "text_fr": "Le Bailleur déclare être rempli de ses droits pour le mois concerné et donne quittance entière et définitive au Preneur pour cette période.",
           "fields": []
         }
       ]
