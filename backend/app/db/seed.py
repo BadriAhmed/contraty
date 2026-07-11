@@ -91,6 +91,7 @@ async def seed_templates(repository=None):
             "sections": data.get("sections", []),
             "complexity": complexity,
             "field_count": field_count,
+            "field_metadata": data.get("field_metadata", {}),
         }
 
         await repository.upsert(template)
