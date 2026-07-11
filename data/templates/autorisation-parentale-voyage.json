@@ -153,8 +153,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner qualite .",
-      "help_ar": "يرجى إدخال الصفة ."
+      "help_fr": "Qualité en laquelle la personne agit (ex: père, mère, tuteur légal).",
+      "help_ar": "الصفة التي تتصرف بها (مثال: أب، أم، ولي شرعي)."
     },
     "NOM_ENFANT": {
       "type": "text",
@@ -208,8 +208,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner num extrait naissance .",
-      "help_ar": "يرجى إدخال رقم مضمون الولادة ."
+      "help_fr": "Numéro d'identification officiel .",
+      "help_ar": "رقم تعريف رسمي ."
     },
     "NUM_PIECE_ENFANT": {
       "type": "text",
@@ -222,8 +222,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner num piece enfant .",
-      "help_ar": "يرجى إدخال رقم وثيقة هوية الطفل ."
+      "help_fr": "Numéro d'identification officiel .",
+      "help_ar": "رقم تعريف رسمي ."
     },
     "DESTINATION": {
       "type": "text",
@@ -236,8 +236,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner destination .",
-      "help_ar": "يرجى إدخال التخصيص ."
+      "help_fr": "But ou usage prévu pour ce document.",
+      "help_ar": "الغرض أو الاستعمال المقصود لهذه الوثيقة."
     },
     "NOM_ACCOMPAGNATEUR": {
       "type": "text",

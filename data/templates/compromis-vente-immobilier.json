@@ -193,8 +193,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner etat civil vendeur de la partie concernée.",
-      "help_ar": "يرجى إدخال الحالة المدنية للبائع للطرف المعني."
+      "help_fr": "État civil du vendeur (célibataire, marié(e), divorcé(e), veuf/veuve).",
+      "help_ar": "الحالة المدنية للبائع (أعزب، متزوج/ة، مطلق/ة، أرمل/ة)."
     },
     "ADRESSE_VENDEUR": {
       "type": "text",
@@ -250,8 +250,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner etat civil acquereur de la partie concernée.",
-      "help_ar": "يرجى إدخال الحالة المدنية للمشتري للطرف المعني."
+      "help_fr": "État civil de l'acquéreur (célibataire, marié(e), divorcé(e), veuf/veuve).",
+      "help_ar": "الحالة المدنية للمشتري (أعزب، متزوج/ة، مطلق/ة، أرمل/ة)."
     },
     "ADRESSE_ACQUEREUR": {
       "type": "text",
@@ -278,8 +278,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner nature .",
-      "help_ar": "يرجى إدخال الطبيعة ."
+      "help_fr": "Nature du bien (ex: appartement, villa, terrain).",
+      "help_ar": "طبيعة العقار (مثال: شقة، فيلا، أرض)."
     },
     "NB_PIECES": {
       "type": "text",
@@ -292,8 +292,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner nb pieces .",
-      "help_ar": "يرجى إدخال عدد الغرف ."
+      "help_fr": "Nombre .",
+      "help_ar": "العدد ."
     },
     "ADRESSE_BIEN": {
       "type": "text",
@@ -320,8 +320,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner titre foncier .",
-      "help_ar": "يرجى إدخال الرسم العقاري ."
+      "help_fr": "Numéro du titre foncier du bien immobilier.",
+      "help_ar": "رقم الرسم العقاري للعقار."
     },
     "SUPERFICIE": {
       "type": "text",
@@ -334,8 +334,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner superficie .",
-      "help_ar": "يرجى إدخال المساحة ."
+      "help_fr": "Surface du bien en mètres carrés.",
+      "help_ar": "مساحة العقار بالمتر المربع."
     },
     "ORIGINE_PROPRIETE": {
       "type": "text",
@@ -348,8 +348,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner origine propriete .",
-      "help_ar": "يرجى إدخال أصل الملكية ."
+      "help_fr": "Comment le vendeur a acquis le bien (ex: achat, héritage).",
+      "help_ar": "كيف تحصل البائع على العقار (مثال: شراء، إرث)."
     },
     "PRIX_TOTAL": {
       "type": "number",
@@ -376,8 +376,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner avance .",
-      "help_ar": "يرجى إدخال التسبيق ."
+      "help_fr": "Montant en dinars tunisiens .",
+      "help_ar": "المبلغ بالدينار التونسي ."
     },
     "SOLDE": {
       "type": "text",
@@ -390,8 +390,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner solde .",
-      "help_ar": "يرجى إدخال باقي الثمن ."
+      "help_fr": "Montant en dinars tunisiens .",
+      "help_ar": "المبلغ بالدينار التونسي ."
     },
     "MONTANT_PRET": {
       "type": "number",
@@ -431,8 +431,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner autres conditions .",
-      "help_ar": "يرجى إدخال شروط أخرى ."
+      "help_fr": "Conditions ou modalités particulières .",
+      "help_ar": "شروط أو كيفيات خاصة ."
     },
     "DATE_LIMITE_VENTE": {
       "type": "date",

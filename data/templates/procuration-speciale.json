@@ -189,8 +189,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner mission speciale .",
-      "help_ar": "يرجى إدخال المهمة الخاصة ."
+      "help_fr": "Décrivez brièvement mission speciale .",
+      "help_ar": "صف بإيجاز المهمة الخاصة ."
     },
     "DATE_FIN": {
       "type": "date",

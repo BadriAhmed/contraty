@@ -232,8 +232,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner rne de la partie concernée.",
-      "help_ar": "يرجى إدخال السجل الوطني للمؤسسات للطرف المعني."
+      "help_fr": "Numéro unique du Registre National des Entreprises.",
+      "help_ar": "الرقم الموحد للسجل الوطني للمؤسسات."
     },
     "ADRESSE_ENTREPRISE": {
       "type": "text",
@@ -330,8 +330,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner poste .",
-      "help_ar": "يرجى إدخال الخطة الوظيفية للمنصب وظروف العمل."
+      "help_fr": "Intitulé exact du poste ou de la fonction occupée.",
+      "help_ar": "التسمية الدقيقة للمنصب أو الوظيفة المشغولة."
     },
     "CLASSIFICATION": {
       "type": "text",
@@ -344,8 +344,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner classification .",
-      "help_ar": "يرجى إدخال التصنيف المهني للمنصب وظروف العمل."
+      "help_fr": "Classification professionnelle selon la convention collective (ex: cadre, agent de maîtrise).",
+      "help_ar": "التصنيف المهني حسب الاتفاقية المشتركة (مثال: إطار، عميل تنفيذ)."
     },
     "LIEU_TRAVAIL": {
       "type": "text",
@@ -400,8 +400,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner jour paie du salaire et des avantages.",
-      "help_ar": "يرجى إدخال يوم دفع الأجر للأجر والامتيازات."
+      "help_fr": "Jour du mois où le salaire est versé (ex: 28).",
+      "help_ar": "اليوم من الشهر الذي يدفع فيه الأجر (مثال: 28)."
     },
     "AVANTAGES": {
       "type": "text",
@@ -414,8 +414,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner avantages du salaire et des avantages.",
-      "help_ar": "يرجى إدخال الامتيازات للأجر والامتيازات."
+      "help_fr": "Avantages en nature ou primes (ex: voiture de fonction, 13e mois).",
+      "help_ar": "الامتيازات العينية أو المنح (مثال: سيارة وظيفية، الشهر 13)."
     },
     "HEURES_SEMAINE": {
       "type": "text",
@@ -428,8 +428,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner heures semaine des horaires et congés.",
-      "help_ar": "يرجى إدخال ساعات العمل الأسبوعية لأوقات العمل والراحة."
+      "help_fr": "Nombre d'heures de travail par semaine (ex: 40).",
+      "help_ar": "عدد ساعات العمل في الأسبوع (مثال: 40)."
     },
     "HORAIRES": {
       "type": "text",
@@ -442,8 +442,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner horaires des horaires et congés.",
-      "help_ar": "يرجى إدخال أوقات العمل لأوقات العمل والراحة."
+      "help_fr": "Horaires quotidiens de travail (ex: 8h-17h).",
+      "help_ar": "أوقات العمل اليومية (مثال: 8ص-5م)."
     },
     "JOURS_CONGES": {
       "type": "text",
@@ -456,8 +456,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner jours conges des horaires et congés.",
-      "help_ar": "يرجى إدخال أيام الإجازة لأوقات العمل والراحة."
+      "help_fr": "Nombre de jours de congés payés par an (ex: 30).",
+      "help_ar": "عدد أيام الراحة مدفوعة الأجر في السنة (مثال: 30)."
     },
     "PREAVIS_MOIS": {
       "type": "text",

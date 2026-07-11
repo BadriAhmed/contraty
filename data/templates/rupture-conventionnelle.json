@@ -140,8 +140,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Nom officiel de l'entreprise tel qu'enregistré au RNE.",
-      "help_ar": "الاسم الرسمي للشركة كما هو مسجل بالسجل الوطني للمؤسسات."
+      "help_fr": "Nom de l'employeur qui accepte la rupture conventionnelle.",
+      "help_ar": "اسم المشغل الذي يقبل الإنهاء الاتفاقي."
     },
     "RNE": {
       "type": "text",
@@ -154,8 +154,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner rne de la partie concernée.",
-      "help_ar": "يرجى إدخال السجل الوطني للمؤسسات للطرف المعني."
+      "help_fr": "Numéro unique du Registre National des Entreprises.",
+      "help_ar": "الرقم الموحد للسجل الوطني للمؤسسات."
     },
     "ADRESSE_ENTREPRISE": {
       "type": "text",
@@ -196,8 +196,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Nom complet de l'employé qui sera recruté.",
-      "help_ar": "الاسم الكامل للأجير الذي سيتم انتدابه."
+      "help_fr": "Nom complet du salarié concerné par la rupture conventionnelle.",
+      "help_ar": "الاسم الكامل للأجير المعني بالإنهاء الاتفاقي للعقد."
     },
     "CIN_SALARIE": {
       "type": "cin",
@@ -211,8 +211,8 @@
       "pattern": "^\\d{8}$",
       "min_length": 8,
       "max_length": 8,
-      "help_fr": "Numéro à 8 chiffres de la CIN de l'employé.",
-      "help_ar": "رقم بطاقة التعريف الوطنية للأجير."
+      "help_fr": "Numéro CIN du salarié concerné par la rupture.",
+      "help_ar": "رقم بطاقة تعريف الأجير المعني بالإنهاء."
     },
     "DATE_CDI": {
       "type": "date",
@@ -238,8 +238,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner poste de la partie concernée.",
-      "help_ar": "يرجى إدخال الخطة الوظيفية للطرف المعني."
+      "help_fr": "Intitulé exact du poste ou de la fonction occupée.",
+      "help_ar": "التسمية الدقيقة للمنصب أو الوظيفة المشغولة."
     },
     "DATE_RUPTURE": {
       "type": "date",
@@ -265,8 +265,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner indemnite .",
-      "help_ar": "يرجى إدخال التعويض ."
+      "help_fr": "Montant de l'indemnité de rupture en dinars tunisiens.",
+      "help_ar": "مبلغ تعويض الإنهاء بالدينار التونسي."
     },
     "BASE_CALCUL": {
       "type": "text",
@@ -279,8 +279,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner base calcul .",
-      "help_ar": "يرجى إدخال قاعدة الاحتساب ."
+      "help_fr": "Base de calcul de l'indemnité (ex: salaire brut mensuel × années d'ancienneté).",
+      "help_ar": "أساس احتساب التعويض (مثال: الأجر الخام الشهري × سنوات الأقدمية)."
     },
     "JOURS_CONGES_DUS": {
       "type": "text",
@@ -293,8 +293,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner jours conges dus .",
-      "help_ar": "يرجى إدخال أيام الإجازة المستحقة ."
+      "help_fr": "Nombre de jours de congés non pris et à payer au salarié.",
+      "help_ar": "عدد أيام الراحة غير المستعملة والمستحقة الدفع للأجير."
     },
     "LIEU": {
       "type": "text",

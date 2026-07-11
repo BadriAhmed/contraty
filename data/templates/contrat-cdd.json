@@ -201,8 +201,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner rne de la partie concernée.",
-      "help_ar": "يرجى إدخال السجل الوطني للمؤسسات للطرف المعني."
+      "help_fr": "Numéro unique du Registre National des Entreprises.",
+      "help_ar": "الرقم الموحد للسجل الوطني للمؤسسات."
     },
     "ADRESSE_ENTREPRISE": {
       "type": "text",
@@ -243,8 +243,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Nom complet de l'employé qui sera recruté.",
-      "help_ar": "الاسم الكامل للأجير الذي سيتم انتدابه."
+      "help_fr": "Nom complet du salarié recruté pour la mission à durée déterminée.",
+      "help_ar": "الاسم الكامل للأجير المنتدب للمهمة محددة المدة."
     },
     "CIN_SALARIE": {
       "type": "cin",
@@ -258,8 +258,8 @@
       "pattern": "^\\d{8}$",
       "min_length": 8,
       "max_length": 8,
-      "help_fr": "Numéro à 8 chiffres de la CIN de l'employé.",
-      "help_ar": "رقم بطاقة التعريف الوطنية للأجير."
+      "help_fr": "Numéro CIN du salarié en CDD.",
+      "help_ar": "رقم بطاقة تعريف الأجير بعقد محدد المدة."
     },
     "ADRESSE_SALARIE": {
       "type": "text",
@@ -286,8 +286,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner motif cdd .",
-      "help_ar": "يرجى إدخال موجب إبرام عقد محدد المدة ."
+      "help_fr": "Raison justifiant le recours à un contrat à durée déterminée (ex: remplacement, surcroît d'activité).",
+      "help_ar": "السبب المبرر للالتجاء إلى عقد محدد المدة (مثال: تعويض، ذروة نشاط)."
     },
     "POSTE": {
       "type": "text",
@@ -300,8 +300,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner poste .",
-      "help_ar": "يرجى إدخال الخطة الوظيفية للمنصب وظروف العمل."
+      "help_fr": "Intitulé exact du poste ou de la fonction occupée.",
+      "help_ar": "التسمية الدقيقة للمنصب أو الوظيفة المشغولة."
     },
     "CLASSIFICATION": {
       "type": "text",
@@ -314,8 +314,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner classification .",
-      "help_ar": "يرجى إدخال التصنيف المهني للمنصب وظروف العمل."
+      "help_fr": "Classification professionnelle selon la convention collective (ex: cadre, agent de maîtrise).",
+      "help_ar": "التصنيف المهني حسب الاتفاقية المشتركة (مثال: إطار، عميل تنفيذ)."
     },
     "DATE_DEBUT": {
       "type": "date",
@@ -355,8 +355,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Durée en années ou mois du contrat.",
-      "help_ar": "المدة بالسنوات أو الأشهر للعقد."
+      "help_fr": "Durée totale de la mission (ex: 6 mois, 1 an).",
+      "help_ar": "المدة الكاملة للمهمة (مثال: 6 أشهر، سنة)."
     },
     "DATE_FIN": {
       "type": "date",
@@ -368,8 +368,8 @@
       "hint_ar": "يوم/شهر/سنة",
       "hint_fr": "JJ/MM/AAAA",
       "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$",
-      "help_fr": "Date au format JJ/MM/AAAA du contrat.",
-      "help_ar": "التاريخ بصيغة يوم/شهر/سنة للعقد."
+      "help_fr": "Date de fin prévue de la mission.",
+      "help_ar": "التاريخ المتوقع لنهاية المهمة."
     },
     "INDEMNITE_POURCENTAGE": {
       "type": "number",
@@ -382,8 +382,8 @@
       "hint_fr": "Nombre",
       "pattern": "^-?\\d+([\\.\\,]\\d+)?$",
       "min_value": 0,
-      "help_fr": "Veuillez renseigner indemnite pourcentage du contrat.",
-      "help_ar": "يرجى إدخال نسبة المنحة للعقد."
+      "help_fr": "Montant en dinars tunisiens du contrat.",
+      "help_ar": "المبلغ بالدينار التونسي للعقد."
     },
     "SALAIRE": {
       "type": "number",
@@ -410,8 +410,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner jour paie du salaire et des avantages.",
-      "help_ar": "يرجى إدخال يوم دفع الأجر للأجر والامتيازات."
+      "help_fr": "Jour du mois où le salaire est versé (ex: 28).",
+      "help_ar": "اليوم من الشهر الذي يدفع فيه الأجر (مثال: 28)."
     },
     "LIEU_SIGNATURE": {
       "type": "text",

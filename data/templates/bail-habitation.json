@@ -374,8 +374,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner jour paiement .",
-      "help_ar": "يرجى إدخال تاريخ استحقاق الدفع الشهري ."
+      "help_fr": "Jour du mois où le loyer doit être payé (ex: le 5).",
+      "help_ar": "اليوم من الشهر الذي يدفع فيه الكراء (مثال: 5)."
     },
     "MONTANT_CAUTION": {
       "type": "number",
@@ -402,8 +402,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner charges incluses .",
-      "help_ar": "يرجى إدخال التكاليف المشمولة بمعين الكراء ."
+      "help_fr": "Charges payées par le propriétaire et incluses dans le loyer (eau, électricité, etc.).",
+      "help_ar": "المصاريف التي يدفعها المالك وهي مشمولة في الكراء (ماء، كهرباء...)."
     },
     "CHARGES_PRENEUR": {
       "type": "text",
@@ -416,8 +416,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner charges preneur .",
-      "help_ar": "يرجى إدخال التكاليف المحمولة على المتسوغ ."
+      "help_fr": "Charges à la charge du locataire, en plus du loyer.",
+      "help_ar": "المصاريف على عاتق المكتري، إضافة إلى الكراء."
     },
     "TRIBUNAL": {
       "type": "text",
@@ -430,8 +430,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner tribunal .",
-      "help_ar": "يرجى إدخال المحكمة المختصة ترابياً ."
+      "help_fr": "Tribunal territorialement compétent en cas de litige (ex: Tribunal de Tunis).",
+      "help_ar": "المحكمة المختصة ترابيًا في حالة النزاع (مثال: المحكمة الابتدائية بتونس)."
     },
     "LIEU_SIGNATURE": {
       "type": "text",

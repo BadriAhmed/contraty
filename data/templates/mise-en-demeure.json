@@ -203,8 +203,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Adresse complète (rue, numéro, ville) .",
-      "help_ar": "العنوان الكامل (النهج، الرقم، المدينة) ."
+      "help_fr": "Nom complet (prénom et nom de famille) .",
+      "help_ar": "الاسم الكامل (الاسم واللقب) ."
     },
     "SOCIETE_DESTINATAIRE": {
       "type": "text",
@@ -217,8 +217,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner societe destinataire .",
-      "help_ar": "يرجى إدخال الشركة المرسل إليها ."
+      "help_fr": "Nom complet (prénom et nom de famille) .",
+      "help_ar": "الاسم الكامل (الاسم واللقب) ."
     },
     "OBJET_SOMMAIRE": {
       "type": "text",
@@ -231,8 +231,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner objet sommaire .",
-      "help_ar": "يرجى إدخال ملخص الموضوع ."
+      "help_fr": "Décrivez brièvement objet sommaire .",
+      "help_ar": "صف بإيجاز ملخص الموضوع ."
     },
     "ACTE_ORIGINE": {
       "type": "text",
@@ -245,8 +245,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner acte origine .",
-      "help_ar": "يرجى إدخال العقد الأصلي ."
+      "help_fr": "Document ou contrat qui est à l'origine de l'obligation (ex: contrat de vente du 01/01/2024).",
+      "help_ar": "الوثيقة أو العقد الذي هو أصل الالتزام (مثال: عقد بيع بتاريخ 01/01/2024)."
     },
     "DATE_ACTE_ORIGINE": {
       "type": "date",
@@ -272,8 +272,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner obligation initiale .",
-      "help_ar": "يرجى إدخال الالتزام الأصلي ."
+      "help_fr": "Décrivez brièvement obligation initiale .",
+      "help_ar": "صف بإيجاز الالتزام الأصلي ."
     },
     "MANQUEMENT_CONSTATE": {
       "type": "text",
@@ -286,8 +286,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner manquement constate .",
-      "help_ar": "يرجى إدخال الإخلال المعاين ."
+      "help_fr": "Décrivez brièvement manquement constate .",
+      "help_ar": "صف بإيجاز الإخلال المعاين ."
     },
     "SOMMATION": {
       "type": "text",
@@ -300,8 +300,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner sommation .",
-      "help_ar": "يرجى إدخال التنبيه بالإيفاء ."
+      "help_fr": "Décrivez brièvement sommation .",
+      "help_ar": "صف بإيجاز التنبيه بالإيفاء ."
     },
     "DELAI_JOURS": {
       "type": "text",

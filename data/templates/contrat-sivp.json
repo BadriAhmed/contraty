@@ -185,8 +185,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Nom officiel de l'entreprise tel qu'enregistré au RNE.",
-      "help_ar": "الاسم الرسمي للشركة كما هو مسجل بالسجل الوطني للمؤسسات."
+      "help_fr": "Nom de l'entreprise d'accueil du stage SIVP.",
+      "help_ar": "اسم المؤسسة المستضيفة للتربص."
     },
     "RNE": {
       "type": "text",
@@ -199,8 +199,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner rne de la partie concernée.",
-      "help_ar": "يرجى إدخال السجل الوطني للمؤسسات للطرف المعني."
+      "help_fr": "Numéro unique du Registre National des Entreprises.",
+      "help_ar": "الرقم الموحد للسجل الوطني للمؤسسات."
     },
     "ADRESSE_ENTREPRISE": {
       "type": "text",
@@ -241,8 +241,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Nom complet (prénom et nom de famille) de la partie concernée.",
-      "help_ar": "الاسم الكامل (الاسم واللقب) للطرف المعني."
+      "help_fr": "Nom complet du stagiaire SIVP.",
+      "help_ar": "الاسم الكامل للمتربص في إطار صيغ."
     },
     "CIN_STAGIAIRE": {
       "type": "cin",
@@ -256,8 +256,8 @@
       "pattern": "^\\d{8}$",
       "min_length": 8,
       "max_length": 8,
-      "help_fr": "Numéro à 8 chiffres de la carte d'identité nationale de la partie concernée.",
-      "help_ar": "رقم بطاقة التعريف الوطنية المكون من 8 أرقام للطرف المعني."
+      "help_fr": "Numéro CIN du stagiaire SIVP.",
+      "help_ar": "رقم بطاقة تعريف المتربص."
     },
     "DIPLOME": {
       "type": "text",
@@ -270,8 +270,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner diplome de la partie concernée.",
-      "help_ar": "يرجى إدخال الشهادة العلمية للطرف المعني."
+      "help_fr": "Diplôme obtenu (ex: Licence en informatique).",
+      "help_ar": "الشهادة المتحصل عليها (مثال: إجازة في الإعلامية)."
     },
     "ANNEE_DIPLOME": {
       "type": "text",
@@ -284,8 +284,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner annee diplome de la partie concernée.",
-      "help_ar": "يرجى إدخال سنة الحصول على الشهادة للطرف المعني."
+      "help_fr": "Durée en années ou mois de la partie concernée.",
+      "help_ar": "المدة بالسنوات أو الأشهر للطرف المعني."
     },
     "ADRESSE_STAGIAIRE": {
       "type": "text",
@@ -298,8 +298,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Adresse complète (rue, numéro, ville) de la partie concernée.",
-      "help_ar": "العنوان الكامل (النهج، الرقم، المدينة) للطرف المعني."
+      "help_fr": "Adresse du stagiaire.",
+      "help_ar": "عنوان المتربص."
     },
     "DOMAINE": {
       "type": "text",
@@ -312,8 +312,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner domaine .",
-      "help_ar": "يرجى إدخال الاختصاص ."
+      "help_fr": "Domaine d'études ou de spécialité.",
+      "help_ar": "مجال الدراسة أو الاختصاص."
     },
     "DUREE_MOIS": {
       "type": "text",
@@ -339,8 +339,8 @@
       "hint_ar": "يوم/شهر/سنة",
       "hint_fr": "JJ/MM/AAAA",
       "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$",
-      "help_fr": "Date au format JJ/MM/AAAA du contrat.",
-      "help_ar": "التاريخ بصيغة يوم/شهر/سنة للعقد."
+      "help_fr": "Date de début du stage SIVP.",
+      "help_ar": "تاريخ بداية التربص."
     },
     "DATE_FIN": {
       "type": "date",
@@ -366,8 +366,8 @@
       "hint_fr": "Nombre",
       "pattern": "^-?\\d+([\\.\\,]\\d+)?$",
       "min_value": 0,
-      "help_fr": "Montant en dinars tunisiens .",
-      "help_ar": "المبلغ بالدينار التونسي ."
+      "help_fr": "Montant de la bourse mensuelle en dinars tunisiens.",
+      "help_ar": "مبلغ المنحة الشهرية بالدينار التونسي."
     },
     "PART_ETAT": {
       "type": "text",
@@ -380,8 +380,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner part etat .",
-      "help_ar": "يرجى إدخال حصة الدولة ."
+      "help_fr": "Part de la bourse prise en charge par l'État (%).",
+      "help_ar": "نسبة المنحة التي تتحملها الدولة (%)."
     },
     "PART_ENTREPRISE": {
       "type": "text",
@@ -394,8 +394,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner part entreprise .",
-      "help_ar": "يرجى إدخال حصة المؤسسة ."
+      "help_fr": "Part de la bourse prise en charge par l'entreprise (%).",
+      "help_ar": "نسبة المنحة التي تتحملها المؤسسة (%)."
     },
     "PREAVIS_JOURS": {
       "type": "text",

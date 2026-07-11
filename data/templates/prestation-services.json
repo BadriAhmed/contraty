@@ -195,8 +195,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Nom complet (prénom et nom de famille) de la partie concernée.",
-      "help_ar": "الاسم الكامل (الاسم واللقب) للطرف المعني."
+      "help_fr": "Nom du client qui commande la prestation.",
+      "help_ar": "اسم الحريف الذي يطلب الخدمة."
     },
     "ADRESSE_CLIENT": {
       "type": "text",
@@ -237,8 +237,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Nom complet (prénom et nom de famille) de la partie concernée.",
-      "help_ar": "الاسم الكامل (الاسم واللقب) للطرف المعني."
+      "help_fr": "Nom de la personne ou entreprise qui réalise la prestation.",
+      "help_ar": "اسم الشخص أو المؤسسة التي تنجز الخدمة."
     },
     "ADRESSE_PRESTATAIRE": {
       "type": "text",
@@ -279,8 +279,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner description prestations du contrat.",
-      "help_ar": "يرجى إدخال الوصف في العقد."
+      "help_fr": "Décrivez brièvement description prestations du contrat.",
+      "help_ar": "صف بإيجاز الوصف في العقد."
     },
     "MONTANT_TOTAL": {
       "type": "number",
@@ -307,8 +307,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner modalites paiement du salaire et des avantages.",
-      "help_ar": "يرجى إدخال طرق الخلاص للأجر والامتيازات."
+      "help_fr": "Comment et quand le paiement sera effectué (ex: 50% à la signature, 50% à la livraison).",
+      "help_ar": "كيف ومتى يتم الدفع (مثال: 50% عند التوقيع، 50% عند التسليم)."
     },
     "DUREE": {
       "type": "text",
@@ -362,8 +362,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner tribunal .",
-      "help_ar": "يرجى إدخال المحكمة المختصة ترابياً ."
+      "help_fr": "Tribunal territorialement compétent en cas de litige (ex: Tribunal de Tunis).",
+      "help_ar": "المحكمة المختصة ترابيًا في حالة النزاع (مثال: المحكمة الابتدائية بتونس)."
     },
     "LIEU_SIGNATURE": {
       "type": "text",

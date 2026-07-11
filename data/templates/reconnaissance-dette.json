@@ -277,8 +277,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner modalites remboursement .",
-      "help_ar": "يرجى إدخال طرق التسديد ."
+      "help_fr": "Comment la dette sera remboursée (ex: mensuellement, en une fois).",
+      "help_ar": "كيفية سداد الدين (مثال: شهريًا، دفعة واحدة)."
     },
     "DATE_ECHEANCE": {
       "type": "date",
@@ -304,8 +304,8 @@
       "hint_fr": "Nombre",
       "pattern": "^-?\\d+([\\.\\,]\\d+)?$",
       "min_value": 0,
-      "help_fr": "Veuillez renseigner taux interet .",
-      "help_ar": "يرجى إدخال النسبة ."
+      "help_fr": "Taux d'intérêt annuel en pourcentage (ex: 5 pour 5%).",
+      "help_ar": "نسبة الفائدة السنوية (مثال: 5 تعني 5%)."
     },
     "DATE_DEBUT_INTERETS": {
       "type": "date",
@@ -331,8 +331,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner garanties eventuelles des garanties du contrat.",
-      "help_ar": "يرجى إدخال الضمانات عند الاقتضاء لضمانات العقد."
+      "help_fr": "Conditions ou modalités particulières des garanties du contrat.",
+      "help_ar": "شروط أو كيفيات خاصة لضمانات العقد."
     },
     "LIEU_SIGNATURE": {
       "type": "text",

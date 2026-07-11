@@ -147,8 +147,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner mois pour cette période de location.",
-      "help_ar": "يرجى إدخال الشهر عن فترة الكراء."
+      "help_fr": "Mois concerné (ex: janvier, février).",
+      "help_ar": "الشهر المعني (مثال: جانفي، فيفري)."
     },
     "ANNEE": {
       "type": "text",
@@ -161,8 +161,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner annee pour cette période de location.",
-      "help_ar": "يرجى إدخال السنة عن فترة الكراء."
+      "help_fr": "Durée en années ou mois pour cette période de location.",
+      "help_ar": "المدة بالسنوات أو الأشهر عن فترة الكراء."
     },
     "ADRESSE_BIEN": {
       "type": "text",
@@ -189,8 +189,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner mode paiement pour cette période de location.",
-      "help_ar": "يرجى إدخال طريقة الخلاص عن فترة الكراء."
+      "help_fr": "Mode de paiement du loyer (ex: espèces, chèque, virement).",
+      "help_ar": "طريقة دفع الكراء (مثال: نقدًا، صك، تحويل)."
     },
     "LIEU": {
       "type": "text",

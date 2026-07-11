@@ -185,8 +185,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Nom officiel de l'entreprise tel qu'enregistré au RNE.",
-      "help_ar": "الاسم الرسمي للشركة كما هو مسجل بالسجل الوطني للمؤسسات."
+      "help_fr": "Nom de l'entreprise qui recrute via le programme Karama.",
+      "help_ar": "اسم المؤسسة المنتدبة في إطار برنامج كرامة."
     },
     "RNE": {
       "type": "text",
@@ -199,8 +199,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner rne de la partie concernée.",
-      "help_ar": "يرجى إدخال السجل الوطني للمؤسسات للطرف المعني."
+      "help_fr": "Numéro unique du Registre National des Entreprises.",
+      "help_ar": "الرقم الموحد للسجل الوطني للمؤسسات."
     },
     "ADRESSE_ENTREPRISE": {
       "type": "text",
@@ -241,8 +241,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Nom complet de l'employé qui sera recruté.",
-      "help_ar": "الاسم الكامل للأجير الذي سيتم انتدابه."
+      "help_fr": "Nom complet du bénéficiaire du programme Karama.",
+      "help_ar": "الاسم الكامل للمنتفع ببرنامج كرامة."
     },
     "CIN_SALARIE": {
       "type": "cin",
@@ -256,8 +256,8 @@
       "pattern": "^\\d{8}$",
       "min_length": 8,
       "max_length": 8,
-      "help_fr": "Numéro à 8 chiffres de la CIN de l'employé.",
-      "help_ar": "رقم بطاقة التعريف الوطنية للأجير."
+      "help_fr": "Numéro CIN du bénéficiaire.",
+      "help_ar": "رقم بطاقة تعريف المنتفع."
     },
     "DATE_NAISSANCE": {
       "type": "date",
@@ -283,8 +283,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Adresse personnelle de l'employé recruté.",
-      "help_ar": "العنوان الشخصي للأجير الذي تم انتدابه."
+      "help_fr": "Adresse du bénéficiaire.",
+      "help_ar": "عنوان المنتفع."
     },
     "NUM_DEMANDEUR": {
       "type": "text",
@@ -297,8 +297,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner num demandeur de la partie concernée.",
-      "help_ar": "يرجى إدخال رقم طالب الشغل للطرف المعني."
+      "help_fr": "Numéro d'identification du demandeur d'emploi (carte ANETI).",
+      "help_ar": "رقم تعريف طالب الشغل (بطاقة الوكالة الوطنية للتشغيل)."
     },
     "POSTE": {
       "type": "text",
@@ -311,8 +311,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner poste .",
-      "help_ar": "يرجى إدخال الخطة الوظيفية في العقد."
+      "help_fr": "Intitulé exact du poste ou de la fonction occupée.",
+      "help_ar": "التسمية الدقيقة للمنصب أو الوظيفة المشغولة."
     },
     "DUREE_ANNEE": {
       "type": "text",
@@ -380,8 +380,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner subvention etat du salaire et des avantages.",
-      "help_ar": "يرجى إدخال منحة الدولة للأجر والامتيازات."
+      "help_fr": "Montant de la subvention versée par l'État (programme Karama).",
+      "help_ar": "مبلغ الإعانة التي تدفعها الدولة (برنامج كرامة)."
     },
     "COMPLEMENT_ENTREPRISE": {
       "type": "text",
@@ -394,8 +394,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner complement entreprise du salaire et des avantages.",
-      "help_ar": "يرجى إدخال مساهمة المؤسسة للأجر والامتيازات."
+      "help_fr": "Complément de salaire payé par l'entreprise.",
+      "help_ar": "تكملة الأجر التي تدفعها المؤسسة."
     },
     "JOURS_CONGES": {
       "type": "text",
@@ -408,8 +408,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner jours conges .",
-      "help_ar": "يرجى إدخال أيام الإجازة ."
+      "help_fr": "Nombre de jours de congés payés par an (ex: 30).",
+      "help_ar": "عدد أيام الراحة مدفوعة الأجر في السنة (مثال: 30)."
     },
     "LIEU_SIGNATURE": {
       "type": "text",

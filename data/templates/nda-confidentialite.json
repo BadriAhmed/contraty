@@ -250,8 +250,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner scope infos .",
-      "help_ar": "يرجى إدخال مجال المعلومات ."
+      "help_fr": "Type d'informations couvertes par la confidentialité (ex: données clients, code source).",
+      "help_ar": "نوع المعلومات المشمولة بالسرية (مثال: بيانات حرفاء، شفرة مصدر)."
     },
     "OBJET_COLLABORATION": {
       "type": "text",
@@ -264,8 +264,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner objet collaboration selon les obligations légales.",
-      "help_ar": "يرجى إدخال موضوع التعاون حسب الالتزامات القانونية."
+      "help_fr": "But de la collaboration entre les parties.",
+      "help_ar": "هدف التعاون بين الأطراف."
     },
     "DATE_EFFET": {
       "type": "date",
@@ -305,8 +305,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner tribunal .",
-      "help_ar": "يرجى إدخال المحكمة المختصة ترابياً ."
+      "help_fr": "Tribunal territorialement compétent en cas de litige (ex: Tribunal de Tunis).",
+      "help_ar": "المحكمة المختصة ترابيًا في حالة النزاع (مثال: المحكمة الابتدائية بتونس)."
     },
     "LIEU_SIGNATURE": {
       "type": "text",

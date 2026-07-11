@@ -252,8 +252,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner type etat .",
-      "help_ar": "يرجى إدخال نوع مساهمة الدولة ."
+      "help_fr": "Précisez s'il s'agit d'un état des lieux d'entrée ou de sortie.",
+      "help_ar": "حدد ما إذا كان محضر معاينة دخول أو خروج."
     },
     "SOL_SALON": {
       "type": "text",
@@ -266,8 +266,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner sol salon .",
-      "help_ar": "يرجى إدخال أرضية الصالون ."
+      "help_fr": "État de cet élément à l'entrée ou à la sortie (bon, moyen, dégradé).",
+      "help_ar": "حالة هذا العنصر عند الدخول أو الخروج (جيد، متوسط، متدهور)."
     },
     "MURS_SALON": {
       "type": "text",
@@ -280,8 +280,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner murs salon .",
-      "help_ar": "يرجى إدخال جدران الصالون ."
+      "help_fr": "État de cet élément à l'entrée ou à la sortie (bon, moyen, dégradé).",
+      "help_ar": "حالة هذا العنصر عند الدخول أو الخروج (جيد، متوسط، متدهور)."
     },
     "PLAFOND_SALON": {
       "type": "text",
@@ -294,8 +294,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner plafond salon .",
-      "help_ar": "يرجى إدخال سقف الصالون ."
+      "help_fr": "État de cet élément à l'entrée ou à la sortie (bon, moyen, dégradé).",
+      "help_ar": "حالة هذا العنصر عند الدخول أو الخروج (جيد، متوسط، متدهور)."
     },
     "FENETRES_SALON": {
       "type": "text",
@@ -308,8 +308,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner fenetres salon .",
-      "help_ar": "يرجى إدخال نوافذ الصالون ."
+      "help_fr": "État de cet élément à l'entrée ou à la sortie (bon, moyen, dégradé).",
+      "help_ar": "حالة هذا العنصر عند الدخول أو الخروج (جيد، متوسط، متدهور)."
     },
     "OBS_SALON": {
       "type": "text",
@@ -322,8 +322,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner obs salon .",
-      "help_ar": "يرجى إدخال ملاحظات الصالون ."
+      "help_fr": "Décrivez brièvement obs salon .",
+      "help_ar": "صف بإيجاز ملاحظات الصالون ."
     },
     "NB_CHAMBRES": {
       "type": "text",
@@ -336,8 +336,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner nb chambres .",
-      "help_ar": "يرجى إدخال عدد غرف النوم ."
+      "help_fr": "Nombre .",
+      "help_ar": "العدد ."
     },
     "SOL_CHAMBRES": {
       "type": "text",
@@ -350,8 +350,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner sol chambres .",
-      "help_ar": "يرجى إدخال أرضية غرف النوم ."
+      "help_fr": "État de cet élément à l'entrée ou à la sortie (bon, moyen, dégradé).",
+      "help_ar": "حالة هذا العنصر عند الدخول أو الخروج (جيد، متوسط، متدهور)."
     },
     "MURS_CHAMBRES": {
       "type": "text",
@@ -364,8 +364,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner murs chambres .",
-      "help_ar": "يرجى إدخال جدران غرف النوم ."
+      "help_fr": "État de cet élément à l'entrée ou à la sortie (bon, moyen, dégradé).",
+      "help_ar": "حالة هذا العنصر عند الدخول أو الخروج (جيد، متوسط، متدهور)."
     },
     "PLACARDS_CHAMBRES": {
       "type": "text",
@@ -378,8 +378,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner placards chambres .",
-      "help_ar": "يرجى إدخال خزائن غرف النوم ."
+      "help_fr": "État de cet élément à l'entrée ou à la sortie (bon, moyen, dégradé).",
+      "help_ar": "حالة هذا العنصر عند الدخول أو الخروج (جيد، متوسط، متدهور)."
     },
     "OBS_CHAMBRES": {
       "type": "text",
@@ -392,8 +392,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner obs chambres .",
-      "help_ar": "يرجى إدخال ملاحظات غرف النوم ."
+      "help_fr": "Décrivez brièvement obs chambres .",
+      "help_ar": "صف بإيجاز ملاحظات غرف النوم ."
     },
     "SOL_CUISINE": {
       "type": "text",
@@ -406,8 +406,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner sol cuisine .",
-      "help_ar": "يرجى إدخال أرضية المطبخ ."
+      "help_fr": "État de cet élément à l'entrée ou à la sortie (bon, moyen, dégradé).",
+      "help_ar": "حالة هذا العنصر عند الدخول أو الخروج (جيد، متوسط، متدهور)."
     },
     "MURS_CUISINE": {
       "type": "text",
@@ -420,8 +420,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner murs cuisine .",
-      "help_ar": "يرجى إدخال جدران المطبخ ."
+      "help_fr": "État de cet élément à l'entrée ou à la sortie (bon, moyen, dégradé).",
+      "help_ar": "حالة هذا العنصر عند الدخول أو الخروج (جيد، متوسط، متدهور)."
     },
     "EVIER": {
       "type": "text",
@@ -434,8 +434,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner evier .",
-      "help_ar": "يرجى إدخال حوض غسيل المطبخ ."
+      "help_fr": "État de cet élément à l'entrée ou à la sortie (bon, moyen, dégradé).",
+      "help_ar": "حالة هذا العنصر عند الدخول أو الخروج (جيد، متوسط، متدهور)."
     },
     "MEUBLES_CUISINE": {
       "type": "text",
@@ -448,8 +448,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner meubles cuisine .",
-      "help_ar": "يرجى إدخال أثاث المطبخ ."
+      "help_fr": "État de cet élément à l'entrée ou à la sortie (bon, moyen, dégradé).",
+      "help_ar": "حالة هذا العنصر عند الدخول أو الخروج (جيد، متوسط، متدهور)."
     },
     "OBS_CUISINE": {
       "type": "text",
@@ -462,8 +462,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner obs cuisine .",
-      "help_ar": "يرجى إدخال ملاحظات المطبخ ."
+      "help_fr": "Décrivez brièvement obs cuisine .",
+      "help_ar": "صف بإيجاز ملاحظات المطبخ ."
     },
     "NB_SDB": {
       "type": "text",
@@ -476,8 +476,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner nb sdb .",
-      "help_ar": "يرجى إدخال عدد قاعات الاستحمام ."
+      "help_fr": "Nombre .",
+      "help_ar": "العدد ."
     },
     "SOL_SDB": {
       "type": "text",
@@ -490,8 +490,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner sol sdb .",
-      "help_ar": "يرجى إدخال أرضية قاعة الاستحمام ."
+      "help_fr": "État de cet élément à l'entrée ou à la sortie (bon, moyen, dégradé).",
+      "help_ar": "حالة هذا العنصر عند الدخول أو الخروج (جيد، متوسط، متدهور)."
     },
     "MURS_SDB": {
       "type": "text",
@@ -504,8 +504,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner murs sdb .",
-      "help_ar": "يرجى إدخال جدران قاعة الاستحمام ."
+      "help_fr": "État de cet élément à l'entrée ou à la sortie (bon, moyen, dégradé).",
+      "help_ar": "حالة هذا العنصر عند الدخول أو الخروج (جيد، متوسط، متدهور)."
     },
     "SANITAIRES": {
       "type": "text",
@@ -518,8 +518,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner sanitaires .",
-      "help_ar": "يرجى إدخال التجهيزات الصحية ."
+      "help_fr": "État de cet élément à l'entrée ou à la sortie (bon, moyen, dégradé).",
+      "help_ar": "حالة هذا العنصر عند الدخول أو الخروج (جيد، متوسط، متدهور)."
     },
     "ROBINETTERIE": {
       "type": "text",
@@ -532,8 +532,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner robinetterie .",
-      "help_ar": "يرجى إدخال الحنفيات ."
+      "help_fr": "État de cet élément à l'entrée ou à la sortie (bon, moyen, dégradé).",
+      "help_ar": "حالة هذا العنصر عند الدخول أو الخروج (جيد، متوسط، متدهور)."
     },
     "OBS_SDB": {
       "type": "text",
@@ -546,8 +546,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner obs sdb .",
-      "help_ar": "يرجى إدخال ملاحظات قاعة الاستحمام ."
+      "help_fr": "Décrivez brièvement obs sdb .",
+      "help_ar": "صف بإيجاز ملاحظات قاعة الاستحمام ."
     },
     "AUTRES_PIECES": {
       "type": "text",
@@ -560,8 +560,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner autres pieces .",
-      "help_ar": "يرجى إدخال أجزاء أخرى ."
+      "help_fr": "Conditions ou modalités particulières .",
+      "help_ar": "شروط أو كيفيات خاصة ."
     },
     "DESCRIPTION_AUTRES_PIECES": {
       "type": "text",
@@ -574,8 +574,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner description autres pieces .",
-      "help_ar": "يرجى إدخال الوصف ."
+      "help_fr": "Conditions ou modalités particulières .",
+      "help_ar": "شروط أو كيفيات خاصة ."
     },
     "INDEX_ELEC": {
       "type": "text",
@@ -588,8 +588,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner index elec .",
-      "help_ar": "يرجى إدخال مؤشر عداد الكهرباء ."
+      "help_fr": "Relevé du compteur .",
+      "help_ar": "قراءة العداد ."
     },
     "NUM_COMPTEUR_ELEC": {
       "type": "text",
@@ -602,8 +602,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner num compteur elec .",
-      "help_ar": "يرجى إدخال رقم عداد الكهرباء ."
+      "help_fr": "Numéro d'identification officiel .",
+      "help_ar": "رقم تعريف رسمي ."
     },
     "INDEX_EAU": {
       "type": "text",
@@ -616,8 +616,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner index eau .",
-      "help_ar": "يرجى إدخال مؤشر عداد الماء ."
+      "help_fr": "Relevé du compteur .",
+      "help_ar": "قراءة العداد ."
     },
     "NUM_COMPTEUR_EAU": {
       "type": "text",
@@ -630,8 +630,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner num compteur eau .",
-      "help_ar": "يرجى إدخال رقم عداد الماء ."
+      "help_fr": "Numéro d'identification officiel .",
+      "help_ar": "رقم تعريف رسمي ."
     },
     "INDEX_GAZ": {
       "type": "text",
@@ -644,8 +644,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner index gaz .",
-      "help_ar": "يرجى إدخال مؤشر عداد الغاز ."
+      "help_fr": "Relevé du compteur .",
+      "help_ar": "قراءة العداد ."
     },
     "NUM_COMPTEUR_GAZ": {
       "type": "text",
@@ -658,8 +658,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner num compteur gaz .",
-      "help_ar": "يرجى إدخال رقم عداد الغاز ."
+      "help_fr": "Numéro d'identification officiel .",
+      "help_ar": "رقم تعريف رسمي ."
     },
     "NB_CLES": {
       "type": "text",
@@ -672,8 +672,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner nb cles .",
-      "help_ar": "يرجى إدخال عدد المفاتيح ."
+      "help_fr": "Nombre .",
+      "help_ar": "العدد ."
     },
     "LIEU": {
       "type": "text",

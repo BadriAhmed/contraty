@@ -198,8 +198,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner lien .",
-      "help_ar": "يرجى إدخال الصلة ."
+      "help_fr": "Adresse internet (URL) du document ou du site de référence.",
+      "help_ar": "رابط الإنترنت للمرجع أو الوثيقة."
     },
     "DESTINATION": {
       "type": "text",
@@ -212,8 +212,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner destination .",
-      "help_ar": "يرجى إدخال التخصيص ."
+      "help_fr": "But ou usage prévu pour ce document.",
+      "help_ar": "الغرض أو الاستعمال المقصود لهذه الوثيقة."
     },
     "LIEU": {
       "type": "text",

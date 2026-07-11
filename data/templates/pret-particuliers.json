@@ -179,8 +179,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Nom complet (prénom et nom de famille) de la partie concernée.",
-      "help_ar": "الاسم الكامل (الاسم واللقب) للطرف المعني."
+      "help_fr": "Nom complet de la personne qui prête l'argent.",
+      "help_ar": "الاسم الكامل للشخص الذي يقرض المال."
     },
     "CIN_PRETEUR": {
       "type": "cin",
@@ -222,8 +222,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Nom complet (prénom et nom de famille) de la partie concernée.",
-      "help_ar": "الاسم الكامل (الاسم واللقب) للطرف المعني."
+      "help_fr": "Nom complet de la personne qui emprunte l'argent.",
+      "help_ar": "الاسم الكامل للشخص الذي يقترض المال."
     },
     "CIN_EMPRUNTEUR": {
       "type": "cin",
@@ -265,8 +265,8 @@
       "hint_fr": "Nombre",
       "pattern": "^-?\\d+([\\.\\,]\\d+)?$",
       "min_value": 0,
-      "help_fr": "Montant en dinars tunisiens .",
-      "help_ar": "المبلغ بالدينار التونسي ."
+      "help_fr": "Montant total du prêt en dinars tunisiens.",
+      "help_ar": "المبلغ الكامل للقرض بالدينار التونسي."
     },
     "DESTINATION_PRET": {
       "type": "text",
@@ -279,8 +279,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner destination pret .",
-      "help_ar": "يرجى إدخال غاية القرض ."
+      "help_fr": "Usage prévu pour l'argent emprunté (ex: achat véhicule, travaux).",
+      "help_ar": "الغرض من القرض (مثال: شراء عربة، أشغال)."
     },
     "MODALITES": {
       "type": "text",
@@ -293,8 +293,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner modalites .",
-      "help_ar": "يرجى إدخال الصيغ والترتيبات ."
+      "help_fr": "Conditions ou modalités particulières .",
+      "help_ar": "شروط أو كيفيات خاصة ."
     },
     "DATE_DEBLOCAGE": {
       "type": "date",
@@ -333,8 +333,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner avec interet .",
-      "help_ar": "يرجى إدخال بالفائض ."
+      "help_fr": "Indiquez si le prêt comporte des intérêts (oui/non).",
+      "help_ar": "حدد ما إذا كان القرض بفائدة (نعم/لا)."
     },
     "TAUX": {
       "type": "number",
@@ -347,8 +347,8 @@
       "hint_fr": "Nombre",
       "pattern": "^-?\\d+([\\.\\,]\\d+)?$",
       "min_value": 0,
-      "help_fr": "Veuillez renseigner taux .",
-      "help_ar": "يرجى إدخال النسبة ."
+      "help_fr": "Taux en pourcentage (ex: 10 pour 10%).",
+      "help_ar": "النسبة المئوية (مثال: 10 تعني 10%)."
     },
     "GARANTIES_PRET": {
       "type": "text",
@@ -361,8 +361,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner garanties pret des garanties du contrat.",
-      "help_ar": "يرجى إدخال ضمانات القرض لضمانات العقد."
+      "help_fr": "Garanties offertes pour le prêt (ex: caution solidaire, nantissement).",
+      "help_ar": "الضمانات المقدمة للقرض (مثال: كفالة تضامنية، رهن)."
     },
     "CONDITIONS_ANTICIPE": {
       "type": "text",
@@ -375,8 +375,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner conditions anticipe .",
-      "help_ar": "يرجى إدخال شروط السداد المبكر ."
+      "help_fr": "Conditions ou modalités particulières .",
+      "help_ar": "شروط أو كيفيات خاصة ."
     },
     "LIEU_SIGNATURE": {
       "type": "text",

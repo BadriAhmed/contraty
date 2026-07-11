@@ -127,8 +127,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Nom complet de l'employé qui sera recruté.",
-      "help_ar": "الاسم الكامل للأجير الذي سيتم انتدابه."
+      "help_fr": "Votre nom complet — le salarié qui présente sa démission.",
+      "help_ar": "اسمك الكامل — الأجير الذي يقدم استقالته."
     },
     "ADRESSE_SALARIE": {
       "type": "text",
@@ -141,8 +141,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Adresse personnelle de l'employé recruté.",
-      "help_ar": "العنوان الشخصي للأجير الذي تم انتدابه."
+      "help_fr": "Votre adresse personnelle actuelle.",
+      "help_ar": "عنوانك الشخصي الحالي."
     },
     "TEL_SALARIE": {
       "type": "text",
@@ -155,8 +155,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Numéro de téléphone tunisien (8 chiffres) .",
-      "help_ar": "رقم الهاتف التونسي (8 أرقام) ."
+      "help_fr": "Votre numéro de téléphone pour vous joindre si nécessaire.",
+      "help_ar": "رقم هاتفك للاتصال بك عند الحاجة."
     },
     "POSTE": {
       "type": "text",
@@ -169,8 +169,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner poste .",
-      "help_ar": "يرجى إدخال الخطة الوظيفية ."
+      "help_fr": "Le poste que vous occupez actuellement dans l'entreprise.",
+      "help_ar": "المنصب الذي تشغله حاليًا في المؤسسة."
     },
     "DESTINATAIRE": {
       "type": "text",
@@ -183,8 +183,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner destinataire .",
-      "help_ar": "يرجى إدخال المرسل إليه ."
+      "help_fr": "Nom du responsable ou du service RH à qui vous adressez cette lettre.",
+      "help_ar": "اسم المسؤول أو مصلحة الموارد البشرية الموجه إليها هذه الرسالة."
     },
     "NOM_ENTREPRISE": {
       "type": "text",
@@ -197,8 +197,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Nom officiel de l'entreprise tel qu'enregistré au RNE.",
-      "help_ar": "الاسم الرسمي للشركة كما هو مسجل بالسجل الوطني للمؤسسات."
+      "help_fr": "Nom de l'entreprise que vous quittez.",
+      "help_ar": "اسم المؤسسة التي تغادرها."
     },
     "ADRESSE_ENTREPRISE": {
       "type": "text",
@@ -224,8 +224,8 @@
       "hint_ar": "يوم/شهر/سنة",
       "hint_fr": "JJ/MM/AAAA",
       "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$",
-      "help_fr": "Date au format JJ/MM/AAAA .",
-      "help_ar": "التاريخ بصيغة يوم/شهر/سنة ."
+      "help_fr": "Date à laquelle vous avez été embauché(e) dans cette entreprise.",
+      "help_ar": "تاريخ انتدابك في هذه المؤسسة."
     },
     "DUREE_PREAVIS": {
       "type": "text",
@@ -238,8 +238,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Durée en années ou mois .",
-      "help_ar": "المدة بالسنوات أو الأشهر ."
+      "help_fr": "Durée du préavis que vous respectez avant votre départ.",
+      "help_ar": "مدة الإعلام المسبق التي تحترمها قبل مغادرتك."
     },
     "DATE_EFFET_PREAVIS": {
       "type": "date",
@@ -251,8 +251,8 @@
       "hint_ar": "يوم/شهر/سنة",
       "hint_fr": "JJ/MM/AAAA",
       "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$",
-      "help_fr": "Date au format JJ/MM/AAAA .",
-      "help_ar": "التاريخ بصيغة يوم/شهر/سنة ."
+      "help_fr": "Date à partir de laquelle le préavis commence à courir.",
+      "help_ar": "التاريخ الذي يبدأ منه سريان مهلة الإعلام المسبق."
     },
     "DATE_DERNIER_JOUR": {
       "type": "date",
@@ -264,8 +264,8 @@
       "hint_ar": "يوم/شهر/سنة",
       "hint_fr": "JJ/MM/AAAA",
       "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$",
-      "help_fr": "Date au format JJ/MM/AAAA .",
-      "help_ar": "التاريخ بصيغة يوم/شهر/سنة ."
+      "help_fr": "Date de votre dernier jour de travail (après la période de préavis).",
+      "help_ar": "تاريخ آخر يوم عمل لك (بعد انتهاء مهلة الإعلام المسبق)."
     },
     "MOTIF_DEMISSION": {
       "type": "text",
@@ -278,8 +278,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner motif demission .",
-      "help_ar": "يرجى إدخال سبب الاستقالة ."
+      "help_fr": "Raison de votre départ (optionnel, peut rester général).",
+      "help_ar": "سبب مغادرتك (اختياري، يمكن أن يكون عامًا)."
     },
     "LIEU": {
       "type": "text",
@@ -292,8 +292,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Adresse complète (rue, numéro, ville) pour la signature.",
-      "help_ar": "العنوان الكامل (النهج، الرقم، المدينة) للتوقيع."
+      "help_fr": "Lieu (ville) où vous rédigez cette lettre.",
+      "help_ar": "المكان (المدينة) الذي تحرر فيه هذه الرسالة."
     },
     "DATE": {
       "type": "date",
@@ -305,8 +305,8 @@
       "hint_ar": "يوم/شهر/سنة",
       "hint_fr": "JJ/MM/AAAA",
       "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$",
-      "help_fr": "Date au format JJ/MM/AAAA pour la signature.",
-      "help_ar": "التاريخ بصيغة يوم/شهر/سنة للتوقيع."
+      "help_fr": "Date à laquelle vous rédigez cette lettre de démission.",
+      "help_ar": "تاريخ تحرير رسالة الاستقالة."
     }
   },
   "description_ar": "جواب رسمي تبعثو للعرفك باش تعلمو بوقوفك على الخدمة وتحدد فيه تاريخ الخروج والمهلة.",

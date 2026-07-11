@@ -263,8 +263,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner marque du contrat.",
-      "help_ar": "يرجى إدخال العلامة في العقد."
+      "help_fr": "Caractéristique du véhicule du contrat.",
+      "help_ar": "خاصية فنية للعربة في العقد."
     },
     "MODELE": {
       "type": "text",
@@ -277,8 +277,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner modele du contrat.",
-      "help_ar": "يرجى إدخال الطراز في العقد."
+      "help_fr": "Caractéristique du véhicule du contrat.",
+      "help_ar": "خاصية فنية للعربة في العقد."
     },
     "IMMATRICULATION": {
       "type": "text",
@@ -291,8 +291,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner immatriculation du contrat.",
-      "help_ar": "يرجى إدخال الماتركل في العقد."
+      "help_fr": "Caractéristique du véhicule du contrat.",
+      "help_ar": "خاصية فنية للعربة في العقد."
     },
     "NUM_CHASSIS": {
       "type": "text",
@@ -305,8 +305,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner num chassis du contrat.",
-      "help_ar": "يرجى إدخال رقم الهيكل في العقد."
+      "help_fr": "Numéro d'identification officiel du contrat.",
+      "help_ar": "رقم تعريف رسمي في العقد."
     },
     "ANNEE_MEC": {
       "type": "text",
@@ -319,8 +319,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner annee mec du contrat.",
-      "help_ar": "يرجى إدخال سنة أول جولان في العقد."
+      "help_fr": "Durée en années ou mois du contrat.",
+      "help_ar": "المدة بالسنوات أو الأشهر في العقد."
     },
     "CARBURANT": {
       "type": "text",
@@ -333,8 +333,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner carburant du contrat.",
-      "help_ar": "يرجى إدخال نوع الوقود في العقد."
+      "help_fr": "Caractéristique du véhicule du contrat.",
+      "help_ar": "خاصية فنية للعربة في العقد."
     },
     "PUISSANCE_FISCALE": {
       "type": "text",
@@ -347,8 +347,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner puissance fiscale du contrat.",
-      "help_ar": "يرجى إدخال القوة الجبائية في العقد."
+      "help_fr": "Caractéristique du véhicule du contrat.",
+      "help_ar": "خاصية فنية للعربة في العقد."
     },
     "KILOMETRAGE": {
       "type": "text",
@@ -361,8 +361,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner kilometrage du contrat.",
-      "help_ar": "يرجى إدخال المسافة المقطوعة في العقد."
+      "help_fr": "Caractéristique du véhicule du contrat.",
+      "help_ar": "خاصية فنية للعربة في العقد."
     },
     "PRIX": {
       "type": "number",

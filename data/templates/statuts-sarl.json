@@ -174,8 +174,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner objet social .",
-      "help_ar": "يرجى إدخال الغرض الاجتماعي ."
+      "help_fr": "Activité principale de la société (ex: commerce de gros, services informatiques).",
+      "help_ar": "النشاط الرئيسي للشركة (مثال: تجارة الجملة، خدمات إعلامية)."
     },
     "SIEGE": {
       "type": "text",
@@ -188,8 +188,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner siege .",
-      "help_ar": "يرجى إدخال المقر الاجتماعي ."
+      "help_fr": "Adresse complète (rue, numéro, ville) .",
+      "help_ar": "العنوان الكامل (النهج، الرقم، المدينة) ."
     },
     "DUREE_ANNEE": {
       "type": "text",
@@ -230,8 +230,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner nb parts de la société.",
-      "help_ar": "يرجى إدخال عدد الحصص الاجتماعية للشركة."
+      "help_fr": "Nombre total de parts sociales de la SARL.",
+      "help_ar": "العدد الكلي للحصص الاجتماعية للشركة."
     },
     "VALEUR_NOMINALE": {
       "type": "text",
@@ -258,8 +258,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner repartition parts de la société.",
-      "help_ar": "يرجى إدخال توزيع الحصص الاجتماعية للشركة."
+      "help_fr": "Comment sont réparties les parts entre les associés (ex: 50/50).",
+      "help_ar": "كيفية توزيع الحصص بين الشركاء (مثال: 50/50)."
     },
     "NOM_GERANT": {
       "type": "text",

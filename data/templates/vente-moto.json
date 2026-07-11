@@ -231,8 +231,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner marque .",
-      "help_ar": "يرجى إدخال العلامة في العقد."
+      "help_fr": "Caractéristique du véhicule .",
+      "help_ar": "خاصية فنية للعربة في العقد."
     },
     "MODELE": {
       "type": "text",
@@ -245,8 +245,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner modele .",
-      "help_ar": "يرجى إدخال الطراز في العقد."
+      "help_fr": "Caractéristique du véhicule .",
+      "help_ar": "خاصية فنية للعربة في العقد."
     },
     "IMMATRICULATION": {
       "type": "text",
@@ -259,8 +259,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner immatriculation .",
-      "help_ar": "يرجى إدخال الماتركل في العقد."
+      "help_fr": "Caractéristique du véhicule .",
+      "help_ar": "خاصية فنية للعربة في العقد."
     },
     "NUM_CADRE": {
       "type": "text",
@@ -273,8 +273,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner num cadre .",
-      "help_ar": "يرجى إدخال رقم الإطار في العقد."
+      "help_fr": "Numéro d'identification officiel .",
+      "help_ar": "رقم تعريف رسمي في العقد."
     },
     "NUM_MOTEUR": {
       "type": "text",
@@ -287,8 +287,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner num moteur .",
-      "help_ar": "يرجى إدخال رقم المحرك في العقد."
+      "help_fr": "Numéro d'identification officiel .",
+      "help_ar": "رقم تعريف رسمي في العقد."
     },
     "CYLINDREE": {
       "type": "text",
@@ -301,8 +301,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner cylindree .",
-      "help_ar": "يرجى إدخال سعة الأسطوانة في العقد."
+      "help_fr": "Caractéristique du véhicule .",
+      "help_ar": "خاصية فنية للعربة في العقد."
     },
     "ANNEE_MEC": {
       "type": "text",
@@ -315,8 +315,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner annee mec .",
-      "help_ar": "يرجى إدخال سنة أول جولان في العقد."
+      "help_fr": "Durée en années ou mois .",
+      "help_ar": "المدة بالسنوات أو الأشهر في العقد."
     },
     "KILOMETRAGE": {
       "type": "text",
@@ -329,8 +329,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner kilometrage .",
-      "help_ar": "يرجى إدخال المسافة المقطوعة في العقد."
+      "help_fr": "Caractéristique du véhicule .",
+      "help_ar": "خاصية فنية للعربة في العقد."
     },
     "PRIX": {
       "type": "number",
