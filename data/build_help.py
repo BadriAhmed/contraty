@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
-"""Generate help_ar/help_fr for all field_metadata using field names + types.
+"""Generate contextual help_ar/help_fr for all fields, using section context.
 
-Falls back to Gemini only for fields that can't be auto-generated.
+Unlike the pattern-based approach, this understands WHO each field belongs to
+(bailleur vs preneur, employeur vs salarié, créancier vs débiteur, etc.)
+based on the section the field appears in.
 """
 
 import json
@@ -9,91 +11,202 @@ from pathlib import Path
 
 TEMPLATES_DIR = Path(__file__).resolve().parent.parent / "data" / "templates"
 
-# Pattern-based help text generation
-HELP_PATTERNS = {
-    # FR patterns: (keyword, help_fr, help_ar)
-    ("NOM",): ("Nom complet de la personne concernée (prénom et nom de famille).", "الاسم الكامل للشخص المعني (الاسم واللقب)."),
-    ("CIN",): ("Numéro à 8 chiffres figurant sur la carte d'identité nationale.", "الرقم المكون من 8 أرقام الموجود على بطاقة التعريف الوطنية."),
-    ("ADRESSE",): ("Adresse complète du domicile (rue, numéro, ville, code postal).", "العنوان الكامل للسكن (النهج، الرقم، المدينة، الترقيم البريدي)."),
-    ("EMAIL", "MAIL"): ("Adresse email valide pour recevoir les communications.", "عنوان بريد إلكتروني صالح لتلقي المراسلات."),
-    ("TELEPHONE", "TEL", "GSM"): ("Numéro de téléphone portable tunisien (8 chiffres).", "رقم الهاتف الجوال التونسي (8 أرقام)."),
-    ("DATE",): ("Date au format jour/mois/année (ex: 01/01/2026).", "التاريخ بصيغة يوم/شهر/سنة (مثال: 01/01/2026)."),
-    ("MONTANT", "PRIX", "SOMME"): ("Montant en dinars tunisiens (ex: 500).", "المبلغ بالدينار التونسي (مثال: 500)."),
-    ("DUREE",): ("Durée en années ou en mois (ex: 3 ans, 6 mois).", "المدة بالسنوات أو الأشهر (مثال: 3 سنوات، 6 أشهر)."),
-    ("DESCRIPTION",): ("Description détaillée du bien, service ou objet concerné.", "وصف مفصل للشيء أو الخدمة أو الغرض المعني."),
-    ("CAPITAL",): ("Montant du capital social en dinars tunisiens.", "مبلغ رأس المال بالدينار التونسي."),
-    ("SALAIRE", "REMUNERATION"): ("Salaire mensuel brut en dinars tunisiens.", "الأجر الشهري الخام بالدينار التونسي."),
-    ("POSTE", "FONCTION"): ("Intitulé exact du poste ou de la fonction occupée.", "التسمية الدقيقة للمنصب أو الوظيفة."),
-    ("IMMATRICULATION", "MATRICULE"): ("Numéro d'immatriculation figurant sur la carte grise.", "رقم الماتركل الموجود على البطاقة الرمادية."),
-    ("CHASSIS",): ("Numéro de série du châssis (VIN) gravé sur le véhicule.", "الرقم التسلسلي للشاصي (VIN) المحفور على العربة."),
-    ("MODALITES", "MODE"): ("Précisez les conditions ou la méthode (ex: virement, espèces, chèque).", "حدد الشروط أو الطريقة (مثال: تحويل، نقدًا، صك)."),
-    ("BANQUE",): ("Nom de la banque où le compte est domicilié.", "اسم البنك الذي يوجد به الحساب."),
-    ("TRIBUNAL",): ("Tribunal territorialement compétent en cas de litige.", "المحكمة المختصة ترابيًا في حالة النزاع."),
-    ("GOUVERNORAT",): ("Nom du gouvernorat concerné.", "اسم الولاية المعنية."),
-    ("DELEGATION",): ("Nom de la délégation concernée.", "اسم المعتمدية المعنية."),
-    ("SIGNATURE",): ("Lieu ou date de signature du contrat.", "مكان أو تاريخ إمضاء العقد."),
-    ("RNE",): ("Numéro unique du Registre National des Entreprises.", "الرقم الموحد للسجل الوطني للمؤسسات."),
-    ("RC",): ("Numéro du Registre de Commerce.", "رقم السجل التجاري."),
-    ("MATRICULE_FISCAL", "MF"): ("Identifiant fiscal de l'entreprise (matricule fiscal).", "المعرف الجبائي للمؤسسة (المعرف الجبائي)."),
-    ("NUMERO", "NUM_"): ("Numéro de référence du document ou de la pièce concernée.", "الرقم المرجعي للوثيقة أو القطعة المعنية."),
-    ("ETAT_CIVIL",): ("État civil complet (célibataire, marié(e), divorcé(e), veuf/veuve).", "الحالة المدنية الكاملة (أعزب، متزوج/ة، مطلق/ة، أرمل/ة)."),
-    ("NATIONALITE",): ("Nationalité de la personne (ex: Tunisienne).", "جنسية الشخص (مثال: تونسية)."),
-    ("PROFESSION",): ("Profession ou métier exercé.", "المهنة أو الحرفة التي يزاولها."),
-    ("QUALITE",): ("Qualité en laquelle la personne agit (ex: gérant, représentant légal).", "الصفة التي يتصرف بها الشخص (مثال: مسير، ممثل قانوني)."),
-    ("DEBUT",): ("Date de début d'effet du contrat ou de la prestation.", "تاريخ بدء سريان العقد أو الخدمة."),
-    ("FIN",): ("Date de fin du contrat ou de la prestation.", "تاريخ انتهاء العقد أو الخدمة."),
-    ("PREAVIS",): ("Délai de préavis en mois avant résiliation (ex: 1, 2, 3).", "مهلة الإعلام المسبق بالأشهر قبل إنهاء العقد (مثال: 1، 2، 3)."),
-    ("CAUTION",): ("Montant de la caution/garantie en dinars tunisiens.", "مبلغ التأمين/الضمان بالدينار التونسي."),
-    ("LOYER",): ("Montant du loyer mensuel en dinars tunisiens.", "مبلغ معين الكراء الشهري بالدينار التونسي."),
-    ("CHARGES",): ("Charges incluses dans le loyer (eau, électricité, etc.).", "المصاريف المشمولة في الكراء (ماء، كهرباء، إلخ)."),
-    ("HONORAIRE",): ("Montant des honoraires en dinars tunisiens.", "مبلغ الأتعاب بالدينار التونسي."),
-    ("TAUX",): ("Taux en pourcentage (ex: 10 pour 10%).", "النسبة المئوية (مثال: 10 تعني 10%)."),
-    ("CONDITIONS",): ("Conditions particulières à préciser.", "شروط خاصة يجب تحديدها."),
-    ("OBJET",): ("Objet ou but du contrat/document.", "موضوع أو غرض العقد/الوثيقة."),
-    ("DECLARATION",): ("Texte de la déclaration à certifier.", "نص التصريح المراد الشهادة به."),
-    ("REPRESENTANT",): ("Nom du représentant légal de la société.", "اسم الممثل القانوني للشركة."),
-    ("HEBERGEMENT", "HEBERGEANT", "HEBERGE",): ("Personne qui héberge / Personne hébergée — ne pas confondre.", "الشخص المستضيف / الشخص المستضاف — يجب عدم الخلط بينهما."),
-    ("DETTE",): ("Montant de la dette en dinars tunisiens.", "مبلغ الدين بالدينار التونسي."),
-    ("CREANCIER",): ("Nom complet de la personne à qui l'argent est dû.", "الاسم الكامل للشخص الذي يستحق المال."),
-    ("DEBITEUR",): ("Nom complet de la personne qui doit l'argent.", "الاسم الكامل للشخص الذي عليه المال."),
-    ("ASSUREUR",): ("Nom de la compagnie d'assurance.", "اسم شركة التأمين."),
-    ("POLICE",): ("Numéro de la police d'assurance.", "رقم وثيقة التأمين."),
-    ("ENERGIE", "CARBURANT",): ("Type d'énergie ou de carburant du véhicule.", "نوع الطاقة أو الوقود للعربة."),
-    ("KILOMETRAGE", "KM",): ("Kilométrage actuel du véhicule au compteur.", "المسافة المقطوعة الحالية للعربة بالعداد."),
-    ("CLASSIFICATION",): ("Classification professionnelle selon la convention collective.", "التصنيف المهني حسب الاتفاقية المشتركة."),
-    ("HORAIRES",): ("Horaires de travail (ex: 8h-17h, du lundi au vendredi).", "أوقات العمل (مثال: 8ص-5م، من الإثنين إلى الجمعة)."),
-    ("CONGES",): ("Nombre de jours de congés payés par an.", "عدد أيام الراحة مدفوعة الأجر في السنة."),
-    ("PERIODE", "PERIODE_"): ("Période concernée (ex: janvier 2026, trimestre 1).", "الفترة المعنية (مثال: جانفي 2026، الثلاثي الأول)."),
-    ("MOYEN",): ("Moyen ou méthode utilisé(e).", "الوسيلة أو الطريقة المستعملة."),
-    ("COMPTES",): ("Coordonnées bancaires complètes (RIB/IBAN).", "المعلومات البنكية الكاملة (RIB/IBAN)."),
+# Section title → (role_fr, role_ar) — maps section context to party labels
+ROLE_MAP = {
+    # Bail
+    "Parties": ("de la partie concernée", "للطرف المعني"),
+    "الأطراف": ("de la partie concernée", "للطرف المعني"),
+    "Objet du contrat": ("du contrat", "في العقد"),
+    "موضوع العقد": ("du contrat", "في العقد"),
+    "Objet de la vente": ("du véhicule vendu", "للعربة المباعة"),
+    "موضوع البيع": ("du véhicule vendu", "للعربة المباعة"),
+    "Prix de vente": ("de la transaction", "لعملية البيع"),
+    "ثمن البيع": ("de la transaction", "لعملية البيع"),
+    "Durée": ("du contrat", "للعقد"),
+    "المدة": ("du contrat", "للعقد"),
+    "Paiement": ("pour cette période de location", "عن فترة الكراء"),
+    "الدفع": ("pour cette période de location", "عن فترة الكراء"),
+    "Loyer et charges": ("pour le paiement du loyer", "لدفع معين الكراء"),
+    "معين الكراء والمصاريف": ("pour le paiement du loyer", "لدفع معين الكراء"),
+    "Caution": ("pour le dépôt de garantie", "للتأمين الكرائي"),
+    "التأمين": ("pour le dépôt de garantie", "للتأمين الكرائي"),
+    "Obligations": ("selon les obligations légales", "حسب الالتزامات القانونية"),
+    "الالتزامات": ("selon les obligations légales", "حسب الالتزامات القانونية"),
+    "Décharge": ("de cette décharge", "لهذا الإبراء"),
+    "الإبراء": ("de cette décharge", "لهذا الإبراء"),
+    "Résiliation": ("en cas de résiliation", "عند فسخ العقد"),
+    "فسخ العقد": ("en cas de résiliation", "عند فسخ العقد"),
+    "Litiges": ("en cas de litige", "في حالة النزاع"),
+    "النزاعات": ("en cas de litige", "في حالة النزاع"),
+    "Signature": ("pour la signature", "للتوقيع"),
+    "التوقيع": ("pour la signature", "للتوقيع"),
+    "Engagement au travail": ("du poste et des conditions de travail", "للمنصب وظروف العمل"),
+    "الالتزام بالعمل": ("du poste et des conditions de travail", "للمنصب وظروف العمل"),
+    "Rémunération": ("du salaire et des avantages", "للأجر والامتيازات"),
+    "الأجر": ("du salaire et des avantages", "للأجر والامتيازات"),
+    "Rupture": ("en cas de fin de contrat", "عند إنهاء العقد"),
+    "إنهاء العقد": ("en cas de fin de contrat", "عند إنهاء العقد"),
+    "Durée du travail": ("des horaires et congés", "لأوقات العمل والراحة"),
+    "مدة العمل": ("des horaires et congés", "لأوقات العمل والراحة"),
+    "Période d'essai": ("pour la période d'essai", "لفترة التجربة"),
+    "فترة التجربة": ("pour la période d'essai", "لفترة التجربة"),
+    "Confidentialité": ("relatif à la confidentialité", "متعلق بالسرية"),
+    "السرية": ("relatif à la confidentialité", "متعلق بالسرية"),
+    "Capital social": ("de la société", "للشركة"),
+    "رأس المال": ("de la société", "للشركة"),
+    "Gérance": ("du gérant de la société", "لمسير الشركة"),
+    "التسيير": ("du gérant de la société", "لمسير الشركة"),
+    "Véhicule": ("du véhicule concerné", "للعربة المعنية"),
+    "العربة": ("du véhicule concerné", "للعربة المعنية"),
+    "Garanties": ("des garanties du contrat", "لضمانات العقد"),
+    "الضمانات": ("des garanties du contrat", "لضمانات العقد"),
+    "Prêt": ("du prêt entre particuliers", "للقرض بين الخواص"),
+    "القرض": ("du prêt entre particuliers", "للقرض بين الخواص"),
 }
 
-def build_help(name: str, label_fr: str = "", label_ar: str = "") -> tuple[str, str]:
-    """Return (help_fr, help_ar) for a field name."""
+# Field keyword → (help_fr, help_ar) — disambiguates by field name
+FIELD_HINTS = {
+    "NOM_BAILLEUR": ("Nom complet du propriétaire qui met le bien en location.", "الاسم الكامل للمكري صاحب العقار الذي يؤجره."),
+    "CIN_BAILLEUR": ("Numéro à 8 chiffres de la CIN du propriétaire (celui qui loue).", "رقم بطاقة التعريف الوطنية للمكري (صاحب الدار)."),
+    "ADRESSE_BAILLEUR": ("Adresse personnelle du propriétaire (celui qui loue le bien).", "العنوان الشخصي للمكري صاحب العقار."),
+    "NOM_PRENEUR": ("Nom complet du locataire qui occupera le logement.", "الاسم الكامل للمكتري الذي سيسكن في الدار."),
+    "CIN_PRENEUR": ("Numéro à 8 chiffres de la CIN du locataire (celui qui habitera le bien).", "رقم بطاقة التعريف الوطنية للمكتري (الساكن)."),
+    "ADRESSE_PRENEUR": ("Adresse actuelle du locataire avant d'emménager.", "العنوان الحالي للمكتري قبل الانتقال للسكن."),
+    "ADRESSE_BIEN": ("Adresse complète du logement concerné par ce contrat.", "العنوان الكامل للمسكن موضوع عقد الكراء."),
+    "DESCRIPTION_BIEN": ("Description du logement (nombre de pièces, étage, équipements).", "وصف المسكن (عدد الغرف، الطابق، التجهيزات)."),
+    "DUREE_BAIL": ("Durée de la location (ex: 1 an, 3 ans renouvelable).", "مدة الكراء (مثال: سنة، 3 سنوات قابلة للتجديد)."),
+    "NOM_ENTREPRISE": ("Nom officiel de l'entreprise tel qu'enregistré au RNE.", "الاسم الرسمي للشركة كما هو مسجل بالسجل الوطني للمؤسسات."),
+    "NOM_SALARIE": ("Nom complet de l'employé qui sera recruté.", "الاسم الكامل للأجير الذي سيتم انتدابه."),
+    "CIN_SALARIE": ("Numéro à 8 chiffres de la CIN de l'employé.", "رقم بطاقة التعريف الوطنية للأجير."),
+    "ADRESSE_SALARIE": ("Adresse personnelle de l'employé recruté.", "العنوان الشخصي للأجير الذي تم انتدابه."),
+    "NOM_CREANCIER": ("Nom complet de la personne à qui l'argent est dû (le créancier).", "الاسم الكامل للشخص الذي يستحق المال (الدائن)."),
+    "NOM_DEBITEUR": ("Nom complet de la personne qui doit rembourser la dette (le débiteur).", "الاسم الكامل للشخص الذي عليه الدين (المدين)."),
+    "NOM_VENDEUR": ("Nom complet du vendeur du véhicule.", "الاسم الكامل للبائع صاحب العربة."),
+    "NOM_ACHETEUR": ("Nom complet de l'acheteur du véhicule.", "الاسم الكامل للمشتري الذي سيصبح مالك العربة."),
+    "NOM_HEBERGEANT": ("Nom complet de la personne qui héberge (celle qui déclare loger quelqu'un chez elle).", "الاسم الكامل للشخص المستضيف (الذي يأوي شخصًا آخر في منزله)."),
+    "NOM_HEBERGE": ("Nom complet de la personne hébergée (celle qui est logée chez l'hébergeant).", "الاسم الكامل للشخص المستضاف (الذي يسكن عند المستضيف)."),
+    "CIN_HEBERGEANT": ("Numéro CIN de la personne qui héberge (le propriétaire du logement).", "رقم بطاقة تعريف الشخص المستضيف (صاحب المسكن)."),
+    "CIN_HEBERGE": ("Numéro CIN de la personne hébergée (celle qui est logée).", "رقم بطاقة تعريف الشخص المستضاف (الساكن)."),
+    "ADRESSE_HEBERGEANT": ("Adresse du domicile de la personne qui héberge.", "عنوان منزل الشخص المستضيف."),
+    "ADRESSE_HEBERGEMENT": ("Adresse du logement où la personne est hébergée.", "عنوان المسكن الذي يقيم فيه الشخص المستضاف."),
+}
+
+
+def generate_help(name: str, label_fr: str, label_ar: str, section_fr: str, section_ar: str) -> tuple[str, str]:
+    """Generate contextual help text using section + field name context."""
+
+    # Use explicit hints for ambiguous fields first
+    if name in FIELD_HINTS:
+        return FIELD_HINTS[name]
+
+    # Determine role from section
+    role_fr = ROLE_MAP.get(section_fr, ("", ""))[0]
+    role_ar = ROLE_MAP.get(section_ar, ("", ""))[1]
+    if not role_ar:
+        role_ar = ROLE_MAP.get(section_fr, ("", ""))[1]
+
+    # Determine field type for context
     upper = name.upper().replace("[", "").replace("]", "")
+    ftype = _detect_type(upper)
 
-    for keywords, (hf, ha) in HELP_PATTERNS.items():
-        if any(kw in upper for kw in keywords):
-            return hf, ha
+    if ftype == "cin":
+        return (
+            f"Numéro à 8 chiffres de la carte d'identité nationale {role_fr}.".strip(),
+            f"رقم بطاقة التعريف الوطنية المكون من 8 أرقام {role_ar}.".strip(),
+        )
+    elif ftype == "name":
+        return (
+            f"Nom complet (prénom et nom de famille) {role_fr}.".strip(),
+            f"الاسم الكامل (الاسم واللقب) {role_ar}.".strip(),
+        )
+    elif ftype == "address":
+        return (
+            f"Adresse complète (rue, numéro, ville) {role_fr}.".strip(),
+            f"العنوان الكامل (النهج، الرقم، المدينة) {role_ar}.".strip(),
+        )
+    elif ftype == "date":
+        return (
+            f"Date au format JJ/MM/AAAA {role_fr}.".strip(),
+            f"التاريخ بصيغة يوم/شهر/سنة {role_ar}.".strip(),
+        )
+    elif ftype == "amount":
+        return (
+            f"Montant en dinars tunisiens {role_fr}.".strip(),
+            f"المبلغ بالدينار التونسي {role_ar}.".strip(),
+        )
+    elif ftype == "duration":
+        return (
+            f"Durée en années ou mois {role_fr}.".strip(),
+            f"المدة بالسنوات أو الأشهر {role_ar}.".strip(),
+        )
+    elif ftype == "email":
+        return (
+            f"Adresse email valide {role_fr} pour les communications.".strip(),
+            f"عنوان البريد الإلكتروني {role_ar} للمراسلات.".strip(),
+        )
+    elif ftype == "phone":
+        return (
+            f"Numéro de téléphone tunisien (8 chiffres) {role_fr}.".strip(),
+            f"رقم الهاتف التونسي (8 أرقام) {role_ar}.".strip(),
+        )
+    else:
+        # Generic with role context
+        return (
+            f"Veuillez renseigner {label_fr.lower()} {role_fr}.".strip(),
+            f"يرجى إدخال {label_ar} {role_ar}.".strip(),
+        )
 
-    # Generic fallback
-    return (
-        f"Veuillez renseigner {label_fr.lower() if label_fr else name.replace('_', ' ').lower()}.",
-        f"يرجى إدخال {label_ar if label_ar else name.replace('_', ' ')}.",
-    )
+
+def _detect_type(name: str) -> str:
+    upper = name.upper()
+    if "CIN" in upper or "IDENTIFIANT" in upper:
+        return "cin"
+    if "NOM" in upper or "PRENOM" in upper or "REPRESENTANT" in upper:
+        return "name"
+    if "ADRESSE" in upper or "LIEU" in upper:
+        return "address"
+    if "DATE" in upper:
+        return "date"
+    if any(w in upper for w in ["MONTANT", "PRIX", "LOYER", "CAUTION", "CAPITAL", "SALAIRE", "SOMME", "HONORAIRE", "DETTE"]):
+        return "amount"
+    if any(w in upper for w in ["DUREE", "PREAVIS", "DELAI", "PERIODE"]):
+        return "duration"
+    if "EMAIL" in upper or "MAIL" in upper:
+        return "email"
+    if "TELEPHONE" in upper or "TEL" in upper or "PHONE" in upper or "GSM" in upper:
+        return "phone"
+    return "text"
 
 
 def process_all():
     count = 0
     for path in sorted(TEMPLATES_DIR.glob("*.json")):
         data = json.loads(path.read_text(encoding="utf-8"))
+        # Build field→section lookup
+        field_section = {}
+        for s in data.get("sections", []):
+            for a in s.get("articles", []):
+                for f in a.get("fields", []):
+                    if f not in field_section:
+                        field_section[f] = (s.get("title_fr", ""), s.get("title_ar", ""))
+
         for name, meta in data.get("field_metadata", {}).items():
-            hf, ha = build_help(name, meta.get("label_fr", ""), meta.get("label_ar", ""))
+            sec_fr, sec_ar = field_section.get(name, ("", ""))
+            hf, ha = generate_help(
+                name,
+                meta.get("label_fr", name),
+                meta.get("label_ar", name),
+                sec_fr,
+                sec_ar,
+            )
             meta["help_fr"] = hf
             meta["help_ar"] = ha
+
         path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
         count += 1
-    print(f"Generated help texts for {count} templates")
+
+    print(f"Generated contextual help for {count} templates")
+
 
 if __name__ == "__main__":
     process_all()

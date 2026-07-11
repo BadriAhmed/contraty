@@ -99,8 +99,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Nom complet de la personne concernée (prénom et nom de famille).",
-      "help_ar": "الاسم الكامل للشخص المعني (الاسم واللقب)."
+      "help_fr": "Nom complet de la personne qui héberge (celle qui déclare loger quelqu'un chez elle).",
+      "help_ar": "الاسم الكامل للشخص المستضيف (الذي يأوي شخصًا آخر في منزله)."
     },
     "CIN_HEBERGEANT": {
       "type": "cin",
@@ -114,8 +114,8 @@
       "pattern": "^\\d{8}$",
       "min_length": 8,
       "max_length": 8,
-      "help_fr": "Numéro à 8 chiffres figurant sur la carte d'identité nationale.",
-      "help_ar": "الرقم المكون من 8 أرقام الموجود على بطاقة التعريف الوطنية."
+      "help_fr": "Numéro CIN de la personne qui héberge (le propriétaire du logement).",
+      "help_ar": "رقم بطاقة تعريف الشخص المستضيف (صاحب المسكن)."
     },
     "ADRESSE_HEBERGEANT": {
       "type": "text",
@@ -128,8 +128,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Adresse complète du domicile (rue, numéro, ville, code postal).",
-      "help_ar": "العنوان الكامل للسكن (النهج، الرقم، المدينة، الترقيم البريدي)."
+      "help_fr": "Adresse du domicile de la personne qui héberge.",
+      "help_ar": "عنوان منزل الشخص المستضيف."
     },
     "ADRESSE_HEBERGEMENT": {
       "type": "text",
@@ -142,8 +142,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Adresse complète du domicile (rue, numéro, ville, code postal).",
-      "help_ar": "العنوان الكامل للسكن (النهج، الرقم، المدينة، الترقيم البريدي)."
+      "help_fr": "Adresse du logement où la personne est hébergée.",
+      "help_ar": "عنوان المسكن الذي يقيم فيه الشخص المستضاف."
     },
     "NOM_HEBERGE": {
       "type": "text",
@@ -156,8 +156,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Nom complet de la personne concernée (prénom et nom de famille).",
-      "help_ar": "الاسم الكامل للشخص المعني (الاسم واللقب)."
+      "help_fr": "Nom complet de la personne hébergée (celle qui est logée chez l'hébergeant).",
+      "help_ar": "الاسم الكامل للشخص المستضاف (الذي يسكن عند المستضيف)."
     },
     "CIN_HEBERGE": {
       "type": "cin",
@@ -171,8 +171,8 @@
       "pattern": "^\\d{8}$",
       "min_length": 8,
       "max_length": 8,
-      "help_fr": "Numéro à 8 chiffres figurant sur la carte d'identité nationale.",
-      "help_ar": "الرقم المكون من 8 أرقام الموجود على بطاقة التعريف الوطنية."
+      "help_fr": "Numéro CIN de la personne hébergée (celle qui est logée).",
+      "help_ar": "رقم بطاقة تعريف الشخص المستضاف (الساكن)."
     },
     "DATE_DEBUT_HEBERGEMENT": {
       "type": "date",
@@ -184,8 +184,8 @@
       "hint_ar": "يوم/شهر/سنة",
       "hint_fr": "JJ/MM/AAAA",
       "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$",
-      "help_fr": "Date au format jour/mois/année (ex: 01/01/2026).",
-      "help_ar": "التاريخ بصيغة يوم/شهر/سنة (مثال: 01/01/2026)."
+      "help_fr": "Date au format JJ/MM/AAAA .",
+      "help_ar": "التاريخ بصيغة يوم/شهر/سنة ."
     },
     "LIEN": {
       "type": "text",
@@ -198,8 +198,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner lien.",
-      "help_ar": "يرجى إدخال الصلة."
+      "help_fr": "Veuillez renseigner lien .",
+      "help_ar": "يرجى إدخال الصلة ."
     },
     "DESTINATION": {
       "type": "text",
@@ -212,8 +212,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner destination.",
-      "help_ar": "يرجى إدخال التخصيص."
+      "help_fr": "Veuillez renseigner destination .",
+      "help_ar": "يرجى إدخال التخصيص ."
     },
     "LIEU": {
       "type": "text",
@@ -226,8 +226,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner lieu.",
-      "help_ar": "يرجى إدخال المكان."
+      "help_fr": "Adresse complète (rue, numéro, ville) pour la signature.",
+      "help_ar": "العنوان الكامل (النهج، الرقم، المدينة) للتوقيع."
     },
     "DATE": {
       "type": "date",
@@ -239,8 +239,8 @@
       "hint_ar": "يوم/شهر/سنة",
       "hint_fr": "JJ/MM/AAAA",
       "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$",
-      "help_fr": "Date au format jour/mois/année (ex: 01/01/2026).",
-      "help_ar": "التاريخ بصيغة يوم/شهر/سنة (مثال: 01/01/2026)."
+      "help_fr": "Date au format JJ/MM/AAAA pour la signature.",
+      "help_ar": "التاريخ بصيغة يوم/شهر/سنة للتوقيع."
     }
   },
   "description_ar": "ورقة يصححها شكون مستضيفك في داره، تستحقها كي تجدد بطاقة التعريف أو أوراق أخرى.",

@@ -185,8 +185,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Nom complet de la personne concernée (prénom et nom de famille).",
-      "help_ar": "الاسم الكامل للشخص المعني (الاسم واللقب)."
+      "help_fr": "Nom officiel de l'entreprise tel qu'enregistré au RNE.",
+      "help_ar": "الاسم الرسمي للشركة كما هو مسجل بالسجل الوطني للمؤسسات."
     },
     "RNE": {
       "type": "text",
@@ -199,8 +199,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Numéro unique du Registre National des Entreprises.",
-      "help_ar": "الرقم الموحد للسجل الوطني للمؤسسات."
+      "help_fr": "Veuillez renseigner rne de la partie concernée.",
+      "help_ar": "يرجى إدخال السجل الوطني للمؤسسات للطرف المعني."
     },
     "ADRESSE_ENTREPRISE": {
       "type": "text",
@@ -213,8 +213,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Adresse complète du domicile (rue, numéro, ville, code postal).",
-      "help_ar": "العنوان الكامل للسكن (النهج، الرقم، المدينة، الترقيم البريدي)."
+      "help_fr": "Adresse complète (rue, numéro, ville) de la partie concernée.",
+      "help_ar": "العنوان الكامل (النهج، الرقم، المدينة) للطرف المعني."
     },
     "REPRESENTANT": {
       "type": "text",
@@ -227,8 +227,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Nom du représentant légal de la société.",
-      "help_ar": "اسم الممثل القانوني للشركة."
+      "help_fr": "Nom complet (prénom et nom de famille) de la partie concernée.",
+      "help_ar": "الاسم الكامل (الاسم واللقب) للطرف المعني."
     },
     "NOM_STAGIAIRE": {
       "type": "text",
@@ -241,8 +241,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Nom complet de la personne concernée (prénom et nom de famille).",
-      "help_ar": "الاسم الكامل للشخص المعني (الاسم واللقب)."
+      "help_fr": "Nom complet (prénom et nom de famille) de la partie concernée.",
+      "help_ar": "الاسم الكامل (الاسم واللقب) للطرف المعني."
     },
     "CIN_STAGIAIRE": {
       "type": "cin",
@@ -256,8 +256,8 @@
       "pattern": "^\\d{8}$",
       "min_length": 8,
       "max_length": 8,
-      "help_fr": "Numéro à 8 chiffres figurant sur la carte d'identité nationale.",
-      "help_ar": "الرقم المكون من 8 أرقام الموجود على بطاقة التعريف الوطنية."
+      "help_fr": "Numéro à 8 chiffres de la carte d'identité nationale de la partie concernée.",
+      "help_ar": "رقم بطاقة التعريف الوطنية المكون من 8 أرقام للطرف المعني."
     },
     "DIPLOME": {
       "type": "text",
@@ -270,8 +270,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner diplome.",
-      "help_ar": "يرجى إدخال الشهادة العلمية."
+      "help_fr": "Veuillez renseigner diplome de la partie concernée.",
+      "help_ar": "يرجى إدخال الشهادة العلمية للطرف المعني."
     },
     "ANNEE_DIPLOME": {
       "type": "text",
@@ -284,8 +284,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner annee diplome.",
-      "help_ar": "يرجى إدخال سنة الحصول على الشهادة."
+      "help_fr": "Veuillez renseigner annee diplome de la partie concernée.",
+      "help_ar": "يرجى إدخال سنة الحصول على الشهادة للطرف المعني."
     },
     "ADRESSE_STAGIAIRE": {
       "type": "text",
@@ -298,8 +298,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Adresse complète du domicile (rue, numéro, ville, code postal).",
-      "help_ar": "العنوان الكامل للسكن (النهج، الرقم، المدينة، الترقيم البريدي)."
+      "help_fr": "Adresse complète (rue, numéro, ville) de la partie concernée.",
+      "help_ar": "العنوان الكامل (النهج، الرقم، المدينة) للطرف المعني."
     },
     "DOMAINE": {
       "type": "text",
@@ -312,8 +312,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner domaine.",
-      "help_ar": "يرجى إدخال الاختصاص."
+      "help_fr": "Veuillez renseigner domaine .",
+      "help_ar": "يرجى إدخال الاختصاص ."
     },
     "DUREE_MOIS": {
       "type": "text",
@@ -326,8 +326,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Durée en années ou en mois (ex: 3 ans, 6 mois).",
-      "help_ar": "المدة بالسنوات أو الأشهر (مثال: 3 سنوات، 6 أشهر)."
+      "help_fr": "Durée en années ou mois du contrat.",
+      "help_ar": "المدة بالسنوات أو الأشهر للعقد."
     },
     "DATE_DEBUT": {
       "type": "date",
@@ -339,8 +339,8 @@
       "hint_ar": "يوم/شهر/سنة",
       "hint_fr": "JJ/MM/AAAA",
       "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$",
-      "help_fr": "Date au format jour/mois/année (ex: 01/01/2026).",
-      "help_ar": "التاريخ بصيغة يوم/شهر/سنة (مثال: 01/01/2026)."
+      "help_fr": "Date au format JJ/MM/AAAA du contrat.",
+      "help_ar": "التاريخ بصيغة يوم/شهر/سنة للعقد."
     },
     "DATE_FIN": {
       "type": "date",
@@ -352,8 +352,8 @@
       "hint_ar": "يوم/شهر/سنة",
       "hint_fr": "JJ/MM/AAAA",
       "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$",
-      "help_fr": "Date au format jour/mois/année (ex: 01/01/2026).",
-      "help_ar": "التاريخ بصيغة يوم/شهر/سنة (مثال: 01/01/2026)."
+      "help_fr": "Date au format JJ/MM/AAAA du contrat.",
+      "help_ar": "التاريخ بصيغة يوم/شهر/سنة للعقد."
     },
     "MONTANT_BOURSE": {
       "type": "number",
@@ -366,8 +366,8 @@
       "hint_fr": "Nombre",
       "pattern": "^-?\\d+([\\.\\,]\\d+)?$",
       "min_value": 0,
-      "help_fr": "Montant en dinars tunisiens (ex: 500).",
-      "help_ar": "المبلغ بالدينار التونسي (مثال: 500)."
+      "help_fr": "Montant en dinars tunisiens .",
+      "help_ar": "المبلغ بالدينار التونسي ."
     },
     "PART_ETAT": {
       "type": "text",
@@ -380,8 +380,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner part etat.",
-      "help_ar": "يرجى إدخال حصة الدولة."
+      "help_fr": "Veuillez renseigner part etat .",
+      "help_ar": "يرجى إدخال حصة الدولة ."
     },
     "PART_ENTREPRISE": {
       "type": "text",
@@ -394,8 +394,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner part entreprise.",
-      "help_ar": "يرجى إدخال حصة المؤسسة."
+      "help_fr": "Veuillez renseigner part entreprise .",
+      "help_ar": "يرجى إدخال حصة المؤسسة ."
     },
     "PREAVIS_JOURS": {
       "type": "text",
@@ -408,8 +408,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Délai de préavis en mois avant résiliation (ex: 1, 2, 3).",
-      "help_ar": "مهلة الإعلام المسبق بالأشهر قبل إنهاء العقد (مثال: 1، 2، 3)."
+      "help_fr": "Durée en années ou mois en cas de fin de contrat.",
+      "help_ar": "المدة بالسنوات أو الأشهر عند إنهاء العقد."
     },
     "LIEU_SIGNATURE": {
       "type": "text",
@@ -422,8 +422,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Lieu ou date de signature du contrat.",
-      "help_ar": "مكان أو تاريخ إمضاء العقد."
+      "help_fr": "Adresse complète (rue, numéro, ville) .",
+      "help_ar": "العنوان الكامل (النهج، الرقم، المدينة) للتوقيع."
     },
     "DATE_SIGNATURE": {
       "type": "date",
@@ -435,8 +435,8 @@
       "hint_ar": "يوم/شهر/سنة",
       "hint_fr": "JJ/MM/AAAA",
       "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$",
-      "help_fr": "Date au format jour/mois/année (ex: 01/01/2026).",
-      "help_ar": "التاريخ بصيغة يوم/شهر/سنة (مثال: 01/01/2026)."
+      "help_fr": "Date au format JJ/MM/AAAA .",
+      "help_ar": "التاريخ بصيغة يوم/شهر/سنة للتوقيع."
     }
   },
   "description_ar": "تربص إعداد للحياة المهنية للخرجين الجدد، بالتنسيق مع مكتب التشغيل وممول من الدولة.",

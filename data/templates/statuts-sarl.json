@@ -160,8 +160,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Nom complet de la personne concernée (prénom et nom de famille).",
-      "help_ar": "الاسم الكامل للشخص المعني (الاسم واللقب)."
+      "help_fr": "Nom complet (prénom et nom de famille) .",
+      "help_ar": "الاسم الكامل (الاسم واللقب) ."
     },
     "OBJET_SOCIAL": {
       "type": "text",
@@ -174,8 +174,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Objet ou but du contrat/document.",
-      "help_ar": "موضوع أو غرض العقد/الوثيقة."
+      "help_fr": "Veuillez renseigner objet social .",
+      "help_ar": "يرجى إدخال الغرض الاجتماعي ."
     },
     "SIEGE": {
       "type": "text",
@@ -188,8 +188,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner siege.",
-      "help_ar": "يرجى إدخال المقر الاجتماعي."
+      "help_fr": "Veuillez renseigner siege .",
+      "help_ar": "يرجى إدخال المقر الاجتماعي ."
     },
     "DUREE_ANNEE": {
       "type": "text",
@@ -202,8 +202,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Durée en années ou en mois (ex: 3 ans, 6 mois).",
-      "help_ar": "المدة بالسنوات أو الأشهر (مثال: 3 سنوات، 6 أشهر)."
+      "help_fr": "Durée en années ou mois .",
+      "help_ar": "المدة بالسنوات أو الأشهر ."
     },
     "CAPITAL": {
       "type": "number",
@@ -216,8 +216,8 @@
       "hint_fr": "Nombre",
       "pattern": "^-?\\d+([\\.\\,]\\d+)?$",
       "min_value": 0,
-      "help_fr": "Montant du capital social en dinars tunisiens.",
-      "help_ar": "مبلغ رأس المال بالدينار التونسي."
+      "help_fr": "Montant en dinars tunisiens de la société.",
+      "help_ar": "المبلغ بالدينار التونسي للشركة."
     },
     "NB_PARTS": {
       "type": "text",
@@ -230,8 +230,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner nb parts.",
-      "help_ar": "يرجى إدخال عدد الحصص الاجتماعية."
+      "help_fr": "Veuillez renseigner nb parts de la société.",
+      "help_ar": "يرجى إدخال عدد الحصص الاجتماعية للشركة."
     },
     "VALEUR_NOMINALE": {
       "type": "text",
@@ -244,8 +244,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Nom complet de la personne concernée (prénom et nom de famille).",
-      "help_ar": "الاسم الكامل للشخص المعني (الاسم واللقب)."
+      "help_fr": "Nom complet (prénom et nom de famille) de la société.",
+      "help_ar": "الاسم الكامل (الاسم واللقب) للشركة."
     },
     "REPARTITION_PARTS": {
       "type": "text",
@@ -258,8 +258,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner repartition parts.",
-      "help_ar": "يرجى إدخال توزيع الحصص الاجتماعية."
+      "help_fr": "Veuillez renseigner repartition parts de la société.",
+      "help_ar": "يرجى إدخال توزيع الحصص الاجتماعية للشركة."
     },
     "NOM_GERANT": {
       "type": "text",
@@ -272,8 +272,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Nom complet de la personne concernée (prénom et nom de famille).",
-      "help_ar": "الاسم الكامل للشخص المعني (الاسم واللقب)."
+      "help_fr": "Nom complet (prénom et nom de famille) du gérant de la société.",
+      "help_ar": "الاسم الكامل (الاسم واللقب) لمسير الشركة."
     },
     "DUREE_MANDAT_GERANT": {
       "type": "text",
@@ -286,8 +286,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Durée en années ou en mois (ex: 3 ans, 6 mois).",
-      "help_ar": "المدة بالسنوات أو الأشهر (مثال: 3 سنوات، 6 أشهر)."
+      "help_fr": "Durée en années ou mois du gérant de la société.",
+      "help_ar": "المدة بالسنوات أو الأشهر لمسير الشركة."
     },
     "LIEU_SIGNATURE": {
       "type": "text",
@@ -300,8 +300,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Lieu ou date de signature du contrat.",
-      "help_ar": "مكان أو تاريخ إمضاء العقد."
+      "help_fr": "Adresse complète (rue, numéro, ville) .",
+      "help_ar": "العنوان الكامل (النهج، الرقم، المدينة) للتوقيع."
     },
     "DATE_SIGNATURE": {
       "type": "date",
@@ -313,8 +313,8 @@
       "hint_ar": "يوم/شهر/سنة",
       "hint_fr": "JJ/MM/AAAA",
       "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$",
-      "help_fr": "Date au format jour/mois/année (ex: 01/01/2026).",
-      "help_ar": "التاريخ بصيغة يوم/شهر/سنة (مثال: 01/01/2026)."
+      "help_fr": "Date au format JJ/MM/AAAA .",
+      "help_ar": "التاريخ بصيغة يوم/شهر/سنة للتوقيع."
     }
   },
   "description_ar": "لوراق الرسمية لتأسيس شركة ليميتد، تحدد راس المال، أسماء الشركاء وكيفاش تتسير.",

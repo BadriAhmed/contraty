@@ -179,8 +179,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Nom complet de la personne concernée (prénom et nom de famille).",
-      "help_ar": "الاسم الكامل للشخص المعني (الاسم واللقب)."
+      "help_fr": "Nom complet (prénom et nom de famille) de la partie concernée.",
+      "help_ar": "الاسم الكامل (الاسم واللقب) للطرف المعني."
     },
     "CIN_PRETEUR": {
       "type": "cin",
@@ -194,8 +194,8 @@
       "pattern": "^\\d{8}$",
       "min_length": 8,
       "max_length": 8,
-      "help_fr": "Numéro à 8 chiffres figurant sur la carte d'identité nationale.",
-      "help_ar": "الرقم المكون من 8 أرقام الموجود على بطاقة التعريف الوطنية."
+      "help_fr": "Numéro à 8 chiffres de la carte d'identité nationale de la partie concernée.",
+      "help_ar": "رقم بطاقة التعريف الوطنية المكون من 8 أرقام للطرف المعني."
     },
     "ADRESSE_PRETEUR": {
       "type": "text",
@@ -208,8 +208,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Adresse complète du domicile (rue, numéro, ville, code postal).",
-      "help_ar": "العنوان الكامل للسكن (النهج، الرقم، المدينة، الترقيم البريدي)."
+      "help_fr": "Adresse complète (rue, numéro, ville) de la partie concernée.",
+      "help_ar": "العنوان الكامل (النهج، الرقم، المدينة) للطرف المعني."
     },
     "NOM_EMPRUNTEUR": {
       "type": "text",
@@ -222,8 +222,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Nom complet de la personne concernée (prénom et nom de famille).",
-      "help_ar": "الاسم الكامل للشخص المعني (الاسم واللقب)."
+      "help_fr": "Nom complet (prénom et nom de famille) de la partie concernée.",
+      "help_ar": "الاسم الكامل (الاسم واللقب) للطرف المعني."
     },
     "CIN_EMPRUNTEUR": {
       "type": "cin",
@@ -237,8 +237,8 @@
       "pattern": "^\\d{8}$",
       "min_length": 8,
       "max_length": 8,
-      "help_fr": "Numéro à 8 chiffres figurant sur la carte d'identité nationale.",
-      "help_ar": "الرقم المكون من 8 أرقام الموجود على بطاقة التعريف الوطنية."
+      "help_fr": "Numéro à 8 chiffres de la carte d'identité nationale de la partie concernée.",
+      "help_ar": "رقم بطاقة التعريف الوطنية المكون من 8 أرقام للطرف المعني."
     },
     "ADRESSE_EMPRUNTEUR": {
       "type": "text",
@@ -251,8 +251,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Adresse complète du domicile (rue, numéro, ville, code postal).",
-      "help_ar": "العنوان الكامل للسكن (النهج، الرقم، المدينة، الترقيم البريدي)."
+      "help_fr": "Adresse complète (rue, numéro, ville) de la partie concernée.",
+      "help_ar": "العنوان الكامل (النهج، الرقم، المدينة) للطرف المعني."
     },
     "MONTANT": {
       "type": "number",
@@ -265,8 +265,8 @@
       "hint_fr": "Nombre",
       "pattern": "^-?\\d+([\\.\\,]\\d+)?$",
       "min_value": 0,
-      "help_fr": "Montant en dinars tunisiens (ex: 500).",
-      "help_ar": "المبلغ بالدينار التونسي (مثال: 500)."
+      "help_fr": "Montant en dinars tunisiens .",
+      "help_ar": "المبلغ بالدينار التونسي ."
     },
     "DESTINATION_PRET": {
       "type": "text",
@@ -279,8 +279,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner destination pret.",
-      "help_ar": "يرجى إدخال غاية القرض."
+      "help_fr": "Veuillez renseigner destination pret .",
+      "help_ar": "يرجى إدخال غاية القرض ."
     },
     "MODALITES": {
       "type": "text",
@@ -293,8 +293,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Précisez les conditions ou la méthode (ex: virement, espèces, chèque).",
-      "help_ar": "حدد الشروط أو الطريقة (مثال: تحويل، نقدًا، صك)."
+      "help_fr": "Veuillez renseigner modalites .",
+      "help_ar": "يرجى إدخال الصيغ والترتيبات ."
     },
     "DATE_DEBLOCAGE": {
       "type": "date",
@@ -306,8 +306,8 @@
       "hint_ar": "يوم/شهر/سنة",
       "hint_fr": "JJ/MM/AAAA",
       "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$",
-      "help_fr": "Date au format jour/mois/année (ex: 01/01/2026).",
-      "help_ar": "التاريخ بصيغة يوم/شهر/سنة (مثال: 01/01/2026)."
+      "help_fr": "Date au format JJ/MM/AAAA .",
+      "help_ar": "التاريخ بصيغة يوم/شهر/سنة ."
     },
     "DATE_ECHEANCE_FINALE": {
       "type": "date",
@@ -319,8 +319,8 @@
       "hint_ar": "يوم/شهر/سنة",
       "hint_fr": "JJ/MM/AAAA",
       "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$",
-      "help_fr": "Date au format jour/mois/année (ex: 01/01/2026).",
-      "help_ar": "التاريخ بصيغة يوم/شهر/سنة (مثال: 01/01/2026)."
+      "help_fr": "Date au format JJ/MM/AAAA .",
+      "help_ar": "التاريخ بصيغة يوم/شهر/سنة ."
     },
     "AVEC_INTERET": {
       "type": "text",
@@ -333,8 +333,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner avec interet.",
-      "help_ar": "يرجى إدخال بالفائض."
+      "help_fr": "Veuillez renseigner avec interet .",
+      "help_ar": "يرجى إدخال بالفائض ."
     },
     "TAUX": {
       "type": "number",
@@ -347,8 +347,8 @@
       "hint_fr": "Nombre",
       "pattern": "^-?\\d+([\\.\\,]\\d+)?$",
       "min_value": 0,
-      "help_fr": "Taux en pourcentage (ex: 10 pour 10%).",
-      "help_ar": "النسبة المئوية (مثال: 10 تعني 10%)."
+      "help_fr": "Veuillez renseigner taux .",
+      "help_ar": "يرجى إدخال النسبة ."
     },
     "GARANTIES_PRET": {
       "type": "text",
@@ -361,8 +361,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner garanties pret.",
-      "help_ar": "يرجى إدخال ضمانات القرض."
+      "help_fr": "Veuillez renseigner garanties pret des garanties du contrat.",
+      "help_ar": "يرجى إدخال ضمانات القرض لضمانات العقد."
     },
     "CONDITIONS_ANTICIPE": {
       "type": "text",
@@ -375,8 +375,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Conditions particulières à préciser.",
-      "help_ar": "شروط خاصة يجب تحديدها."
+      "help_fr": "Veuillez renseigner conditions anticipe .",
+      "help_ar": "يرجى إدخال شروط السداد المبكر ."
     },
     "LIEU_SIGNATURE": {
       "type": "text",
@@ -389,8 +389,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Lieu ou date de signature du contrat.",
-      "help_ar": "مكان أو تاريخ إمضاء العقد."
+      "help_fr": "Adresse complète (rue, numéro, ville) .",
+      "help_ar": "العنوان الكامل (النهج، الرقم، المدينة) للتوقيع."
     },
     "DATE_SIGNATURE": {
       "type": "date",
@@ -402,8 +402,8 @@
       "hint_ar": "يوم/شهر/سنة",
       "hint_fr": "JJ/MM/AAAA",
       "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$",
-      "help_fr": "Date au format jour/mois/année (ex: 01/01/2026).",
-      "help_ar": "التاريخ بصيغة يوم/شهر/سنة (مثال: 01/01/2026)."
+      "help_fr": "Date au format JJ/MM/AAAA .",
+      "help_ar": "التاريخ بصيغة يوم/شهر/سنة للتوقيع."
     }
   },
   "description_ar": "كاتب سلف يضمن حق الزوز من الناس، يوثق قداش تسلفت، كيفاش ومتى باش ترجع الفلوس.",

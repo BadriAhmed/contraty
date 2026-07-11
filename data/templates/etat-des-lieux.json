@@ -180,8 +180,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Nom complet de la personne concernée (prénom et nom de famille).",
-      "help_ar": "الاسم الكامل للشخص المعني (الاسم واللقب)."
+      "help_fr": "Nom complet du propriétaire qui met le bien en location.",
+      "help_ar": "الاسم الكامل للمكري صاحب العقار الذي يؤجره."
     },
     "CIN_BAILLEUR": {
       "type": "cin",
@@ -195,8 +195,8 @@
       "pattern": "^\\d{8}$",
       "min_length": 8,
       "max_length": 8,
-      "help_fr": "Numéro à 8 chiffres figurant sur la carte d'identité nationale.",
-      "help_ar": "الرقم المكون من 8 أرقام الموجود على بطاقة التعريف الوطنية."
+      "help_fr": "Numéro à 8 chiffres de la CIN du propriétaire (celui qui loue).",
+      "help_ar": "رقم بطاقة التعريف الوطنية للمكري (صاحب الدار)."
     },
     "NOM_PRENEUR": {
       "type": "text",
@@ -209,8 +209,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Nom complet de la personne concernée (prénom et nom de famille).",
-      "help_ar": "الاسم الكامل للشخص المعني (الاسم واللقب)."
+      "help_fr": "Nom complet du locataire qui occupera le logement.",
+      "help_ar": "الاسم الكامل للمكتري الذي سيسكن في الدار."
     },
     "CIN_PRENEUR": {
       "type": "cin",
@@ -224,8 +224,8 @@
       "pattern": "^\\d{8}$",
       "min_length": 8,
       "max_length": 8,
-      "help_fr": "Numéro à 8 chiffres figurant sur la carte d'identité nationale.",
-      "help_ar": "الرقم المكون من 8 أرقام الموجود على بطاقة التعريف الوطنية."
+      "help_fr": "Numéro à 8 chiffres de la CIN du locataire (celui qui habitera le bien).",
+      "help_ar": "رقم بطاقة التعريف الوطنية للمكتري (الساكن)."
     },
     "ADRESSE_BIEN": {
       "type": "text",
@@ -238,8 +238,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Adresse complète du domicile (rue, numéro, ville, code postal).",
-      "help_ar": "العنوان الكامل للسكن (النهج، الرقم، المدينة، الترقيم البريدي)."
+      "help_fr": "Adresse complète du logement concerné par ce contrat.",
+      "help_ar": "العنوان الكامل للمسكن موضوع عقد الكراء."
     },
     "TYPE_ETAT": {
       "type": "text",
@@ -252,8 +252,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner type etat.",
-      "help_ar": "يرجى إدخال نوع مساهمة الدولة."
+      "help_fr": "Veuillez renseigner type etat .",
+      "help_ar": "يرجى إدخال نوع مساهمة الدولة ."
     },
     "SOL_SALON": {
       "type": "text",
@@ -266,8 +266,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner sol salon.",
-      "help_ar": "يرجى إدخال أرضية الصالون."
+      "help_fr": "Veuillez renseigner sol salon .",
+      "help_ar": "يرجى إدخال أرضية الصالون ."
     },
     "MURS_SALON": {
       "type": "text",
@@ -280,8 +280,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner murs salon.",
-      "help_ar": "يرجى إدخال جدران الصالون."
+      "help_fr": "Veuillez renseigner murs salon .",
+      "help_ar": "يرجى إدخال جدران الصالون ."
     },
     "PLAFOND_SALON": {
       "type": "text",
@@ -294,8 +294,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner plafond salon.",
-      "help_ar": "يرجى إدخال سقف الصالون."
+      "help_fr": "Veuillez renseigner plafond salon .",
+      "help_ar": "يرجى إدخال سقف الصالون ."
     },
     "FENETRES_SALON": {
       "type": "text",
@@ -308,8 +308,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner fenetres salon.",
-      "help_ar": "يرجى إدخال نوافذ الصالون."
+      "help_fr": "Veuillez renseigner fenetres salon .",
+      "help_ar": "يرجى إدخال نوافذ الصالون ."
     },
     "OBS_SALON": {
       "type": "text",
@@ -322,8 +322,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner obs salon.",
-      "help_ar": "يرجى إدخال ملاحظات الصالون."
+      "help_fr": "Veuillez renseigner obs salon .",
+      "help_ar": "يرجى إدخال ملاحظات الصالون ."
     },
     "NB_CHAMBRES": {
       "type": "text",
@@ -336,8 +336,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner nb chambres.",
-      "help_ar": "يرجى إدخال عدد غرف النوم."
+      "help_fr": "Veuillez renseigner nb chambres .",
+      "help_ar": "يرجى إدخال عدد غرف النوم ."
     },
     "SOL_CHAMBRES": {
       "type": "text",
@@ -350,8 +350,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner sol chambres.",
-      "help_ar": "يرجى إدخال أرضية غرف النوم."
+      "help_fr": "Veuillez renseigner sol chambres .",
+      "help_ar": "يرجى إدخال أرضية غرف النوم ."
     },
     "MURS_CHAMBRES": {
       "type": "text",
@@ -364,8 +364,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner murs chambres.",
-      "help_ar": "يرجى إدخال جدران غرف النوم."
+      "help_fr": "Veuillez renseigner murs chambres .",
+      "help_ar": "يرجى إدخال جدران غرف النوم ."
     },
     "PLACARDS_CHAMBRES": {
       "type": "text",
@@ -378,8 +378,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner placards chambres.",
-      "help_ar": "يرجى إدخال خزائن غرف النوم."
+      "help_fr": "Veuillez renseigner placards chambres .",
+      "help_ar": "يرجى إدخال خزائن غرف النوم ."
     },
     "OBS_CHAMBRES": {
       "type": "text",
@@ -392,8 +392,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner obs chambres.",
-      "help_ar": "يرجى إدخال ملاحظات غرف النوم."
+      "help_fr": "Veuillez renseigner obs chambres .",
+      "help_ar": "يرجى إدخال ملاحظات غرف النوم ."
     },
     "SOL_CUISINE": {
       "type": "text",
@@ -406,8 +406,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner sol cuisine.",
-      "help_ar": "يرجى إدخال أرضية المطبخ."
+      "help_fr": "Veuillez renseigner sol cuisine .",
+      "help_ar": "يرجى إدخال أرضية المطبخ ."
     },
     "MURS_CUISINE": {
       "type": "text",
@@ -420,8 +420,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner murs cuisine.",
-      "help_ar": "يرجى إدخال جدران المطبخ."
+      "help_fr": "Veuillez renseigner murs cuisine .",
+      "help_ar": "يرجى إدخال جدران المطبخ ."
     },
     "EVIER": {
       "type": "text",
@@ -434,8 +434,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner evier.",
-      "help_ar": "يرجى إدخال حوض غسيل المطبخ."
+      "help_fr": "Veuillez renseigner evier .",
+      "help_ar": "يرجى إدخال حوض غسيل المطبخ ."
     },
     "MEUBLES_CUISINE": {
       "type": "text",
@@ -448,8 +448,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner meubles cuisine.",
-      "help_ar": "يرجى إدخال أثاث المطبخ."
+      "help_fr": "Veuillez renseigner meubles cuisine .",
+      "help_ar": "يرجى إدخال أثاث المطبخ ."
     },
     "OBS_CUISINE": {
       "type": "text",
@@ -462,8 +462,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner obs cuisine.",
-      "help_ar": "يرجى إدخال ملاحظات المطبخ."
+      "help_fr": "Veuillez renseigner obs cuisine .",
+      "help_ar": "يرجى إدخال ملاحظات المطبخ ."
     },
     "NB_SDB": {
       "type": "text",
@@ -476,8 +476,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner nb sdb.",
-      "help_ar": "يرجى إدخال عدد قاعات الاستحمام."
+      "help_fr": "Veuillez renseigner nb sdb .",
+      "help_ar": "يرجى إدخال عدد قاعات الاستحمام ."
     },
     "SOL_SDB": {
       "type": "text",
@@ -490,8 +490,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner sol sdb.",
-      "help_ar": "يرجى إدخال أرضية قاعة الاستحمام."
+      "help_fr": "Veuillez renseigner sol sdb .",
+      "help_ar": "يرجى إدخال أرضية قاعة الاستحمام ."
     },
     "MURS_SDB": {
       "type": "text",
@@ -504,8 +504,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner murs sdb.",
-      "help_ar": "يرجى إدخال جدران قاعة الاستحمام."
+      "help_fr": "Veuillez renseigner murs sdb .",
+      "help_ar": "يرجى إدخال جدران قاعة الاستحمام ."
     },
     "SANITAIRES": {
       "type": "text",
@@ -518,8 +518,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner sanitaires.",
-      "help_ar": "يرجى إدخال التجهيزات الصحية."
+      "help_fr": "Veuillez renseigner sanitaires .",
+      "help_ar": "يرجى إدخال التجهيزات الصحية ."
     },
     "ROBINETTERIE": {
       "type": "text",
@@ -532,8 +532,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner robinetterie.",
-      "help_ar": "يرجى إدخال الحنفيات."
+      "help_fr": "Veuillez renseigner robinetterie .",
+      "help_ar": "يرجى إدخال الحنفيات ."
     },
     "OBS_SDB": {
       "type": "text",
@@ -546,8 +546,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner obs sdb.",
-      "help_ar": "يرجى إدخال ملاحظات قاعة الاستحمام."
+      "help_fr": "Veuillez renseigner obs sdb .",
+      "help_ar": "يرجى إدخال ملاحظات قاعة الاستحمام ."
     },
     "AUTRES_PIECES": {
       "type": "text",
@@ -560,8 +560,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner autres pieces.",
-      "help_ar": "يرجى إدخال أجزاء أخرى."
+      "help_fr": "Veuillez renseigner autres pieces .",
+      "help_ar": "يرجى إدخال أجزاء أخرى ."
     },
     "DESCRIPTION_AUTRES_PIECES": {
       "type": "text",
@@ -574,8 +574,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Description détaillée du bien, service ou objet concerné.",
-      "help_ar": "وصف مفصل للشيء أو الخدمة أو الغرض المعني."
+      "help_fr": "Veuillez renseigner description autres pieces .",
+      "help_ar": "يرجى إدخال الوصف ."
     },
     "INDEX_ELEC": {
       "type": "text",
@@ -588,8 +588,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner index elec.",
-      "help_ar": "يرجى إدخال مؤشر عداد الكهرباء."
+      "help_fr": "Veuillez renseigner index elec .",
+      "help_ar": "يرجى إدخال مؤشر عداد الكهرباء ."
     },
     "NUM_COMPTEUR_ELEC": {
       "type": "text",
@@ -602,8 +602,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Numéro de référence du document ou de la pièce concernée.",
-      "help_ar": "الرقم المرجعي للوثيقة أو القطعة المعنية."
+      "help_fr": "Veuillez renseigner num compteur elec .",
+      "help_ar": "يرجى إدخال رقم عداد الكهرباء ."
     },
     "INDEX_EAU": {
       "type": "text",
@@ -616,8 +616,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner index eau.",
-      "help_ar": "يرجى إدخال مؤشر عداد الماء."
+      "help_fr": "Veuillez renseigner index eau .",
+      "help_ar": "يرجى إدخال مؤشر عداد الماء ."
     },
     "NUM_COMPTEUR_EAU": {
       "type": "text",
@@ -630,8 +630,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Numéro de référence du document ou de la pièce concernée.",
-      "help_ar": "الرقم المرجعي للوثيقة أو القطعة المعنية."
+      "help_fr": "Veuillez renseigner num compteur eau .",
+      "help_ar": "يرجى إدخال رقم عداد الماء ."
     },
     "INDEX_GAZ": {
       "type": "text",
@@ -644,8 +644,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner index gaz.",
-      "help_ar": "يرجى إدخال مؤشر عداد الغاز."
+      "help_fr": "Veuillez renseigner index gaz .",
+      "help_ar": "يرجى إدخال مؤشر عداد الغاز ."
     },
     "NUM_COMPTEUR_GAZ": {
       "type": "text",
@@ -658,8 +658,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Numéro de référence du document ou de la pièce concernée.",
-      "help_ar": "الرقم المرجعي للوثيقة أو القطعة المعنية."
+      "help_fr": "Veuillez renseigner num compteur gaz .",
+      "help_ar": "يرجى إدخال رقم عداد الغاز ."
     },
     "NB_CLES": {
       "type": "text",
@@ -672,8 +672,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner nb cles.",
-      "help_ar": "يرجى إدخال عدد المفاتيح."
+      "help_fr": "Veuillez renseigner nb cles .",
+      "help_ar": "يرجى إدخال عدد المفاتيح ."
     },
     "LIEU": {
       "type": "text",
@@ -686,8 +686,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner lieu.",
-      "help_ar": "يرجى إدخال المكان."
+      "help_fr": "Adresse complète (rue, numéro, ville) .",
+      "help_ar": "العنوان الكامل (النهج، الرقم، المدينة) للتوقيع."
     },
     "DATE": {
       "type": "date",
@@ -699,8 +699,8 @@
       "hint_ar": "يوم/شهر/سنة",
       "hint_fr": "JJ/MM/AAAA",
       "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$",
-      "help_fr": "Date au format jour/mois/année (ex: 01/01/2026).",
-      "help_ar": "التاريخ بصيغة يوم/شهر/سنة (مثال: 01/01/2026)."
+      "help_fr": "Date au format JJ/MM/AAAA .",
+      "help_ar": "التاريخ بصيغة يوم/شهر/سنة للتوقيع."
     }
   },
   "description_ar": "ورقة توصف حالة الدار بالتفصيل قبل ما تسكن والا كي تخرج، باش تحمي حقك في الماكول والضمان.",

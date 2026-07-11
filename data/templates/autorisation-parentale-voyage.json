@@ -110,8 +110,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Nom complet de la personne concernée (prénom et nom de famille).",
-      "help_ar": "الاسم الكامل للشخص المعني (الاسم واللقب)."
+      "help_fr": "Nom complet (prénom et nom de famille) .",
+      "help_ar": "الاسم الكامل (الاسم واللقب) ."
     },
     "CIN_PARENT": {
       "type": "cin",
@@ -125,8 +125,8 @@
       "pattern": "^\\d{8}$",
       "min_length": 8,
       "max_length": 8,
-      "help_fr": "Numéro à 8 chiffres figurant sur la carte d'identité nationale.",
-      "help_ar": "الرقم المكون من 8 أرقام الموجود على بطاقة التعريف الوطنية."
+      "help_fr": "Numéro à 8 chiffres de la carte d'identité nationale .",
+      "help_ar": "رقم بطاقة التعريف الوطنية المكون من 8 أرقام ."
     },
     "ADRESSE_PARENT": {
       "type": "text",
@@ -139,8 +139,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Adresse complète du domicile (rue, numéro, ville, code postal).",
-      "help_ar": "العنوان الكامل للسكن (النهج، الرقم، المدينة، الترقيم البريدي)."
+      "help_fr": "Adresse complète (rue, numéro, ville) .",
+      "help_ar": "العنوان الكامل (النهج، الرقم، المدينة) ."
     },
     "QUALITE": {
       "type": "text",
@@ -153,8 +153,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Qualité en laquelle la personne agit (ex: gérant, représentant légal).",
-      "help_ar": "الصفة التي يتصرف بها الشخص (مثال: مسير، ممثل قانوني)."
+      "help_fr": "Veuillez renseigner qualite .",
+      "help_ar": "يرجى إدخال الصفة ."
     },
     "NOM_ENFANT": {
       "type": "text",
@@ -167,8 +167,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Nom complet de la personne concernée (prénom et nom de famille).",
-      "help_ar": "الاسم الكامل للشخص المعني (الاسم واللقب)."
+      "help_fr": "Nom complet (prénom et nom de famille) .",
+      "help_ar": "الاسم الكامل (الاسم واللقب) ."
     },
     "DATE_NAISSANCE_ENFANT": {
       "type": "date",
@@ -180,8 +180,8 @@
       "hint_ar": "يوم/شهر/سنة",
       "hint_fr": "JJ/MM/AAAA",
       "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$",
-      "help_fr": "Date au format jour/mois/année (ex: 01/01/2026).",
-      "help_ar": "التاريخ بصيغة يوم/شهر/سنة (مثال: 01/01/2026)."
+      "help_fr": "Date au format JJ/MM/AAAA .",
+      "help_ar": "التاريخ بصيغة يوم/شهر/سنة ."
     },
     "LIEU_NAISSANCE_ENFANT": {
       "type": "text",
@@ -194,8 +194,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner lieu naissance enfant.",
-      "help_ar": "يرجى إدخال المكان."
+      "help_fr": "Adresse complète (rue, numéro, ville) .",
+      "help_ar": "العنوان الكامل (النهج، الرقم، المدينة) ."
     },
     "NUM_EXTRAIT_NAISSANCE": {
       "type": "text",
@@ -208,8 +208,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Numéro de référence du document ou de la pièce concernée.",
-      "help_ar": "الرقم المرجعي للوثيقة أو القطعة المعنية."
+      "help_fr": "Veuillez renseigner num extrait naissance .",
+      "help_ar": "يرجى إدخال رقم مضمون الولادة ."
     },
     "NUM_PIECE_ENFANT": {
       "type": "text",
@@ -222,8 +222,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Numéro de référence du document ou de la pièce concernée.",
-      "help_ar": "الرقم المرجعي للوثيقة أو القطعة المعنية."
+      "help_fr": "Veuillez renseigner num piece enfant .",
+      "help_ar": "يرجى إدخال رقم وثيقة هوية الطفل ."
     },
     "DESTINATION": {
       "type": "text",
@@ -236,8 +236,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner destination.",
-      "help_ar": "يرجى إدخال التخصيص."
+      "help_fr": "Veuillez renseigner destination .",
+      "help_ar": "يرجى إدخال التخصيص ."
     },
     "NOM_ACCOMPAGNATEUR": {
       "type": "text",
@@ -250,8 +250,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Nom complet de la personne concernée (prénom et nom de famille).",
-      "help_ar": "الاسم الكامل للشخص المعني (الاسم واللقب)."
+      "help_fr": "Nom complet (prénom et nom de famille) .",
+      "help_ar": "الاسم الكامل (الاسم واللقب) ."
     },
     "CIN_ACCOMPAGNATEUR": {
       "type": "cin",
@@ -265,8 +265,8 @@
       "pattern": "^\\d{8}$",
       "min_length": 8,
       "max_length": 8,
-      "help_fr": "Numéro à 8 chiffres figurant sur la carte d'identité nationale.",
-      "help_ar": "الرقم المكون من 8 أرقام الموجود على بطاقة التعريف الوطنية."
+      "help_fr": "Numéro à 8 chiffres de la carte d'identité nationale .",
+      "help_ar": "رقم بطاقة التعريف الوطنية المكون من 8 أرقام ."
     },
     "DATE_DEPART": {
       "type": "date",
@@ -278,8 +278,8 @@
       "hint_ar": "يوم/شهر/سنة",
       "hint_fr": "JJ/MM/AAAA",
       "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$",
-      "help_fr": "Date au format jour/mois/année (ex: 01/01/2026).",
-      "help_ar": "التاريخ بصيغة يوم/شهر/سنة (مثال: 01/01/2026)."
+      "help_fr": "Date au format JJ/MM/AAAA .",
+      "help_ar": "التاريخ بصيغة يوم/شهر/سنة ."
     },
     "DATE_RETOUR": {
       "type": "date",
@@ -291,8 +291,8 @@
       "hint_ar": "يوم/شهر/سنة",
       "hint_fr": "JJ/MM/AAAA",
       "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$",
-      "help_fr": "Date au format jour/mois/année (ex: 01/01/2026).",
-      "help_ar": "التاريخ بصيغة يوم/شهر/سنة (مثال: 01/01/2026)."
+      "help_fr": "Date au format JJ/MM/AAAA .",
+      "help_ar": "التاريخ بصيغة يوم/شهر/سنة ."
     },
     "LIEU": {
       "type": "text",
@@ -305,8 +305,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner lieu.",
-      "help_ar": "يرجى إدخال المكان."
+      "help_fr": "Adresse complète (rue, numéro, ville) pour la signature.",
+      "help_ar": "العنوان الكامل (النهج، الرقم، المدينة) للتوقيع."
     },
     "DATE": {
       "type": "date",
@@ -318,8 +318,8 @@
       "hint_ar": "يوم/شهر/سنة",
       "hint_fr": "JJ/MM/AAAA",
       "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$",
-      "help_fr": "Date au format jour/mois/année (ex: 01/01/2026).",
-      "help_ar": "التاريخ بصيغة يوم/شهر/سنة (مثال: 01/01/2026)."
+      "help_fr": "Date au format JJ/MM/AAAA pour la signature.",
+      "help_ar": "التاريخ بصيغة يوم/شهر/سنة للتوقيع."
     }
   },
   "description_ar": "ترخيص مصحح ومصادق عليه من الولي يسمح للطفل القاصر بالسفر لبرا وحده أو مع غيره.",

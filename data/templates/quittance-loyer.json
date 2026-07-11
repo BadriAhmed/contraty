@@ -90,8 +90,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Nom complet de la personne concernée (prénom et nom de famille).",
-      "help_ar": "الاسم الكامل للشخص المعني (الاسم واللقب)."
+      "help_fr": "Nom complet du propriétaire qui met le bien en location.",
+      "help_ar": "الاسم الكامل للمكري صاحب العقار الذي يؤجره."
     },
     "CIN_BAILLEUR": {
       "type": "cin",
@@ -105,8 +105,8 @@
       "pattern": "^\\d{8}$",
       "min_length": 8,
       "max_length": 8,
-      "help_fr": "Numéro à 8 chiffres figurant sur la carte d'identité nationale.",
-      "help_ar": "الرقم المكون من 8 أرقام الموجود على بطاقة التعريف الوطنية."
+      "help_fr": "Numéro à 8 chiffres de la CIN du propriétaire (celui qui loue).",
+      "help_ar": "رقم بطاقة التعريف الوطنية للمكري (صاحب الدار)."
     },
     "NOM_PRENEUR": {
       "type": "text",
@@ -119,8 +119,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Nom complet de la personne concernée (prénom et nom de famille).",
-      "help_ar": "الاسم الكامل للشخص المعني (الاسم واللقب)."
+      "help_fr": "Nom complet du locataire qui occupera le logement.",
+      "help_ar": "الاسم الكامل للمكتري الذي سيسكن في الدار."
     },
     "MONTANT": {
       "type": "number",
@@ -133,8 +133,8 @@
       "hint_fr": "Nombre",
       "pattern": "^-?\\d+([\\.\\,]\\d+)?$",
       "min_value": 0,
-      "help_fr": "Montant en dinars tunisiens (ex: 500).",
-      "help_ar": "المبلغ بالدينار التونسي (مثال: 500)."
+      "help_fr": "Montant en dinars tunisiens pour cette période de location.",
+      "help_ar": "المبلغ بالدينار التونسي عن فترة الكراء."
     },
     "MOIS": {
       "type": "text",
@@ -147,8 +147,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner mois.",
-      "help_ar": "يرجى إدخال الشهر."
+      "help_fr": "Veuillez renseigner mois pour cette période de location.",
+      "help_ar": "يرجى إدخال الشهر عن فترة الكراء."
     },
     "ANNEE": {
       "type": "text",
@@ -161,8 +161,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner annee.",
-      "help_ar": "يرجى إدخال السنة."
+      "help_fr": "Veuillez renseigner annee pour cette période de location.",
+      "help_ar": "يرجى إدخال السنة عن فترة الكراء."
     },
     "ADRESSE_BIEN": {
       "type": "text",
@@ -175,8 +175,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Adresse complète du domicile (rue, numéro, ville, code postal).",
-      "help_ar": "العنوان الكامل للسكن (النهج، الرقم، المدينة، الترقيم البريدي)."
+      "help_fr": "Adresse complète du logement concerné par ce contrat.",
+      "help_ar": "العنوان الكامل للمسكن موضوع عقد الكراء."
     },
     "MODE_PAIEMENT": {
       "type": "text",
@@ -189,8 +189,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Précisez les conditions ou la méthode (ex: virement, espèces, chèque).",
-      "help_ar": "حدد الشروط أو الطريقة (مثال: تحويل، نقدًا، صك)."
+      "help_fr": "Veuillez renseigner mode paiement pour cette période de location.",
+      "help_ar": "يرجى إدخال طريقة الخلاص عن فترة الكراء."
     },
     "LIEU": {
       "type": "text",
@@ -203,8 +203,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner lieu.",
-      "help_ar": "يرجى إدخال المكان."
+      "help_fr": "Adresse complète (rue, numéro, ville) pour la signature.",
+      "help_ar": "العنوان الكامل (النهج، الرقم، المدينة) للتوقيع."
     },
     "DATE": {
       "type": "date",
@@ -216,8 +216,8 @@
       "hint_ar": "يوم/شهر/سنة",
       "hint_fr": "JJ/MM/AAAA",
       "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$",
-      "help_fr": "Date au format jour/mois/année (ex: 01/01/2026).",
-      "help_ar": "التاريخ بصيغة يوم/شهر/سنة (مثال: 01/01/2026)."
+      "help_fr": "Date au format JJ/MM/AAAA pour la signature.",
+      "help_ar": "التاريخ بصيغة يوم/شهر/سنة للتوقيع."
     }
   },
   "description_ar": "توصيل يصحح فيه الملاك يثبت إلي الكاري خلص كراه في وقتو وبدون مشاكل.",

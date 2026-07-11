@@ -185,8 +185,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Nom complet de la personne concernée (prénom et nom de famille).",
-      "help_ar": "الاسم الكامل للشخص المعني (الاسم واللقب)."
+      "help_fr": "Nom officiel de l'entreprise tel qu'enregistré au RNE.",
+      "help_ar": "الاسم الرسمي للشركة كما هو مسجل بالسجل الوطني للمؤسسات."
     },
     "RNE": {
       "type": "text",
@@ -199,8 +199,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Numéro unique du Registre National des Entreprises.",
-      "help_ar": "الرقم الموحد للسجل الوطني للمؤسسات."
+      "help_fr": "Veuillez renseigner rne de la partie concernée.",
+      "help_ar": "يرجى إدخال السجل الوطني للمؤسسات للطرف المعني."
     },
     "ADRESSE_ENTREPRISE": {
       "type": "text",
@@ -213,8 +213,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Adresse complète du domicile (rue, numéro, ville, code postal).",
-      "help_ar": "العنوان الكامل للسكن (النهج، الرقم، المدينة، الترقيم البريدي)."
+      "help_fr": "Adresse complète (rue, numéro, ville) de la partie concernée.",
+      "help_ar": "العنوان الكامل (النهج، الرقم، المدينة) للطرف المعني."
     },
     "REPRESENTANT": {
       "type": "text",
@@ -227,8 +227,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Nom du représentant légal de la société.",
-      "help_ar": "اسم الممثل القانوني للشركة."
+      "help_fr": "Nom complet (prénom et nom de famille) de la partie concernée.",
+      "help_ar": "الاسم الكامل (الاسم واللقب) للطرف المعني."
     },
     "NOM_SALARIE": {
       "type": "text",
@@ -241,8 +241,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Nom complet de la personne concernée (prénom et nom de famille).",
-      "help_ar": "الاسم الكامل للشخص المعني (الاسم واللقب)."
+      "help_fr": "Nom complet de l'employé qui sera recruté.",
+      "help_ar": "الاسم الكامل للأجير الذي سيتم انتدابه."
     },
     "CIN_SALARIE": {
       "type": "cin",
@@ -256,8 +256,8 @@
       "pattern": "^\\d{8}$",
       "min_length": 8,
       "max_length": 8,
-      "help_fr": "Numéro à 8 chiffres figurant sur la carte d'identité nationale.",
-      "help_ar": "الرقم المكون من 8 أرقام الموجود على بطاقة التعريف الوطنية."
+      "help_fr": "Numéro à 8 chiffres de la CIN de l'employé.",
+      "help_ar": "رقم بطاقة التعريف الوطنية للأجير."
     },
     "DATE_NAISSANCE": {
       "type": "date",
@@ -269,8 +269,8 @@
       "hint_ar": "يوم/شهر/سنة",
       "hint_fr": "JJ/MM/AAAA",
       "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$",
-      "help_fr": "Date au format jour/mois/année (ex: 01/01/2026).",
-      "help_ar": "التاريخ بصيغة يوم/شهر/سنة (مثال: 01/01/2026)."
+      "help_fr": "Date au format JJ/MM/AAAA de la partie concernée.",
+      "help_ar": "التاريخ بصيغة يوم/شهر/سنة للطرف المعني."
     },
     "ADRESSE_SALARIE": {
       "type": "text",
@@ -283,8 +283,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Adresse complète du domicile (rue, numéro, ville, code postal).",
-      "help_ar": "العنوان الكامل للسكن (النهج، الرقم، المدينة، الترقيم البريدي)."
+      "help_fr": "Adresse personnelle de l'employé recruté.",
+      "help_ar": "العنوان الشخصي للأجير الذي تم انتدابه."
     },
     "NUM_DEMANDEUR": {
       "type": "text",
@@ -297,8 +297,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Numéro de référence du document ou de la pièce concernée.",
-      "help_ar": "الرقم المرجعي للوثيقة أو القطعة المعنية."
+      "help_fr": "Veuillez renseigner num demandeur de la partie concernée.",
+      "help_ar": "يرجى إدخال رقم طالب الشغل للطرف المعني."
     },
     "POSTE": {
       "type": "text",
@@ -311,8 +311,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Intitulé exact du poste ou de la fonction occupée.",
-      "help_ar": "التسمية الدقيقة للمنصب أو الوظيفة."
+      "help_fr": "Veuillez renseigner poste .",
+      "help_ar": "يرجى إدخال الخطة الوظيفية في العقد."
     },
     "DUREE_ANNEE": {
       "type": "text",
@@ -325,8 +325,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Durée en années ou en mois (ex: 3 ans, 6 mois).",
-      "help_ar": "المدة بالسنوات أو الأشهر (مثال: 3 سنوات، 6 أشهر)."
+      "help_fr": "Durée en années ou mois .",
+      "help_ar": "المدة بالسنوات أو الأشهر في العقد."
     },
     "DATE_DEBUT": {
       "type": "date",
@@ -338,8 +338,8 @@
       "hint_ar": "يوم/شهر/سنة",
       "hint_fr": "JJ/MM/AAAA",
       "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$",
-      "help_fr": "Date au format jour/mois/année (ex: 01/01/2026).",
-      "help_ar": "التاريخ بصيغة يوم/شهر/سنة (مثال: 01/01/2026)."
+      "help_fr": "Date au format JJ/MM/AAAA .",
+      "help_ar": "التاريخ بصيغة يوم/شهر/سنة في العقد."
     },
     "LIEU_TRAVAIL": {
       "type": "text",
@@ -352,8 +352,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner lieu travail.",
-      "help_ar": "يرجى إدخال المكان."
+      "help_fr": "Adresse complète (rue, numéro, ville) .",
+      "help_ar": "العنوان الكامل (النهج، الرقم، المدينة) في العقد."
     },
     "SALAIRE": {
       "type": "number",
@@ -366,8 +366,8 @@
       "hint_fr": "Nombre",
       "pattern": "^-?\\d+([\\.\\,]\\d+)?$",
       "min_value": 0,
-      "help_fr": "Salaire mensuel brut en dinars tunisiens.",
-      "help_ar": "الأجر الشهري الخام بالدينار التونسي."
+      "help_fr": "Montant en dinars tunisiens du salaire et des avantages.",
+      "help_ar": "المبلغ بالدينار التونسي للأجر والامتيازات."
     },
     "SUBVENTION_ETAT": {
       "type": "text",
@@ -380,8 +380,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner subvention etat.",
-      "help_ar": "يرجى إدخال منحة الدولة."
+      "help_fr": "Veuillez renseigner subvention etat du salaire et des avantages.",
+      "help_ar": "يرجى إدخال منحة الدولة للأجر والامتيازات."
     },
     "COMPLEMENT_ENTREPRISE": {
       "type": "text",
@@ -394,8 +394,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner complement entreprise.",
-      "help_ar": "يرجى إدخال مساهمة المؤسسة."
+      "help_fr": "Veuillez renseigner complement entreprise du salaire et des avantages.",
+      "help_ar": "يرجى إدخال مساهمة المؤسسة للأجر والامتيازات."
     },
     "JOURS_CONGES": {
       "type": "text",
@@ -408,8 +408,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Nombre de jours de congés payés par an.",
-      "help_ar": "عدد أيام الراحة مدفوعة الأجر في السنة."
+      "help_fr": "Veuillez renseigner jours conges .",
+      "help_ar": "يرجى إدخال أيام الإجازة ."
     },
     "LIEU_SIGNATURE": {
       "type": "text",
@@ -422,8 +422,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Lieu ou date de signature du contrat.",
-      "help_ar": "مكان أو تاريخ إمضاء العقد."
+      "help_fr": "Adresse complète (rue, numéro, ville) .",
+      "help_ar": "العنوان الكامل (النهج، الرقم، المدينة) للتوقيع."
     },
     "DATE_SIGNATURE": {
       "type": "date",
@@ -435,8 +435,8 @@
       "hint_ar": "يوم/شهر/سنة",
       "hint_fr": "JJ/MM/AAAA",
       "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$",
-      "help_fr": "Date au format jour/mois/année (ex: 01/01/2026).",
-      "help_ar": "التاريخ بصيغة يوم/شهر/سنة (مثال: 01/01/2026)."
+      "help_fr": "Date au format JJ/MM/AAAA .",
+      "help_ar": "التاريخ بصيغة يوم/شهر/سنة للتوقيع."
     }
   },
   "description_ar": "كونترا خدمة مدعم من الدولة وموجه لحاملي الشهادات العليا باش يسهل دخولهم لسوق الشغل.",

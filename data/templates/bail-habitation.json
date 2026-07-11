@@ -205,8 +205,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Nom complet de la personne concernée (prénom et nom de famille).",
-      "help_ar": "الاسم الكامل للشخص المعني (الاسم واللقب)."
+      "help_fr": "Nom complet du propriétaire qui met le bien en location.",
+      "help_ar": "الاسم الكامل للمكري صاحب العقار الذي يؤجره."
     },
     "CIN_BAILLEUR": {
       "type": "cin",
@@ -220,8 +220,8 @@
       "pattern": "^\\d{8}$",
       "min_length": 8,
       "max_length": 8,
-      "help_fr": "Numéro à 8 chiffres figurant sur la carte d'identité nationale.",
-      "help_ar": "الرقم المكون من 8 أرقام الموجود على بطاقة التعريف الوطنية."
+      "help_fr": "Numéro à 8 chiffres de la CIN du propriétaire (celui qui loue).",
+      "help_ar": "رقم بطاقة التعريف الوطنية للمكري (صاحب الدار)."
     },
     "ADRESSE_BAILLEUR": {
       "type": "text",
@@ -234,8 +234,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Adresse complète du domicile (rue, numéro, ville, code postal).",
-      "help_ar": "العنوان الكامل للسكن (النهج، الرقم، المدينة، الترقيم البريدي)."
+      "help_fr": "Adresse personnelle du propriétaire (celui qui loue le bien).",
+      "help_ar": "العنوان الشخصي للمكري صاحب العقار."
     },
     "NOM_PRENEUR": {
       "type": "text",
@@ -248,8 +248,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Nom complet de la personne concernée (prénom et nom de famille).",
-      "help_ar": "الاسم الكامل للشخص المعني (الاسم واللقب)."
+      "help_fr": "Nom complet du locataire qui occupera le logement.",
+      "help_ar": "الاسم الكامل للمكتري الذي سيسكن في الدار."
     },
     "CIN_PRENEUR": {
       "type": "cin",
@@ -263,8 +263,8 @@
       "pattern": "^\\d{8}$",
       "min_length": 8,
       "max_length": 8,
-      "help_fr": "Numéro à 8 chiffres figurant sur la carte d'identité nationale.",
-      "help_ar": "الرقم المكون من 8 أرقام الموجود على بطاقة التعريف الوطنية."
+      "help_fr": "Numéro à 8 chiffres de la CIN du locataire (celui qui habitera le bien).",
+      "help_ar": "رقم بطاقة التعريف الوطنية للمكتري (الساكن)."
     },
     "ADRESSE_PRENEUR": {
       "type": "text",
@@ -277,8 +277,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Adresse complète du domicile (rue, numéro, ville, code postal).",
-      "help_ar": "العنوان الكامل للسكن (النهج، الرقم، المدينة، الترقيم البريدي)."
+      "help_fr": "Adresse actuelle du locataire avant d'emménager.",
+      "help_ar": "العنوان الحالي للمكتري قبل الانتقال للسكن."
     },
     "ADRESSE_BIEN": {
       "type": "text",
@@ -291,8 +291,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Adresse complète du domicile (rue, numéro, ville, code postal).",
-      "help_ar": "العنوان الكامل للسكن (النهج، الرقم، المدينة، الترقيم البريدي)."
+      "help_fr": "Adresse complète du logement concerné par ce contrat.",
+      "help_ar": "العنوان الكامل للمسكن موضوع عقد الكراء."
     },
     "DESCRIPTION_BIEN": {
       "type": "text",
@@ -305,8 +305,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Description détaillée du bien, service ou objet concerné.",
-      "help_ar": "وصف مفصل للشيء أو الخدمة أو الغرض المعني."
+      "help_fr": "Description du logement (nombre de pièces, étage, équipements).",
+      "help_ar": "وصف المسكن (عدد الغرف، الطابق، التجهيزات)."
     },
     "DUREE_BAIL": {
       "type": "text",
@@ -319,8 +319,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Durée en années ou en mois (ex: 3 ans, 6 mois).",
-      "help_ar": "المدة بالسنوات أو الأشهر (مثال: 3 سنوات، 6 أشهر)."
+      "help_fr": "Durée de la location (ex: 1 an, 3 ans renouvelable).",
+      "help_ar": "مدة الكراء (مثال: سنة، 3 سنوات قابلة للتجديد)."
     },
     "DATE_DEBUT": {
       "type": "date",
@@ -332,8 +332,8 @@
       "hint_ar": "يوم/شهر/سنة",
       "hint_fr": "JJ/MM/AAAA",
       "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$",
-      "help_fr": "Date au format jour/mois/année (ex: 01/01/2026).",
-      "help_ar": "التاريخ بصيغة يوم/شهر/سنة (مثال: 01/01/2026)."
+      "help_fr": "Date au format JJ/MM/AAAA du contrat.",
+      "help_ar": "التاريخ بصيغة يوم/شهر/سنة للعقد."
     },
     "PREAVIS_MOIS": {
       "type": "text",
@@ -346,8 +346,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Délai de préavis en mois avant résiliation (ex: 1, 2, 3).",
-      "help_ar": "مهلة الإعلام المسبق بالأشهر قبل إنهاء العقد (مثال: 1، 2، 3)."
+      "help_fr": "Durée en années ou mois du contrat.",
+      "help_ar": "المدة بالسنوات أو الأشهر للعقد."
     },
     "MONTANT_LOYER": {
       "type": "number",
@@ -360,8 +360,8 @@
       "hint_fr": "Nombre",
       "pattern": "^-?\\d+([\\.\\,]\\d+)?$",
       "min_value": 0,
-      "help_fr": "Montant en dinars tunisiens (ex: 500).",
-      "help_ar": "المبلغ بالدينار التونسي (مثال: 500)."
+      "help_fr": "Montant en dinars tunisiens .",
+      "help_ar": "المبلغ بالدينار التونسي ."
     },
     "JOUR_PAIEMENT": {
       "type": "text",
@@ -374,8 +374,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Veuillez renseigner jour paiement.",
-      "help_ar": "يرجى إدخال تاريخ استحقاق الدفع الشهري."
+      "help_fr": "Veuillez renseigner jour paiement .",
+      "help_ar": "يرجى إدخال تاريخ استحقاق الدفع الشهري ."
     },
     "MONTANT_CAUTION": {
       "type": "number",
@@ -388,8 +388,8 @@
       "hint_fr": "Nombre",
       "pattern": "^-?\\d+([\\.\\,]\\d+)?$",
       "min_value": 0,
-      "help_fr": "Montant en dinars tunisiens (ex: 500).",
-      "help_ar": "المبلغ بالدينار التونسي (مثال: 500)."
+      "help_fr": "Montant en dinars tunisiens .",
+      "help_ar": "المبلغ بالدينار التونسي ."
     },
     "CHARGES_INCLUSES": {
       "type": "text",
@@ -402,8 +402,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Charges incluses dans le loyer (eau, électricité, etc.).",
-      "help_ar": "المصاريف المشمولة في الكراء (ماء، كهرباء، إلخ)."
+      "help_fr": "Veuillez renseigner charges incluses .",
+      "help_ar": "يرجى إدخال التكاليف المشمولة بمعين الكراء ."
     },
     "CHARGES_PRENEUR": {
       "type": "text",
@@ -416,8 +416,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Charges incluses dans le loyer (eau, électricité, etc.).",
-      "help_ar": "المصاريف المشمولة في الكراء (ماء، كهرباء، إلخ)."
+      "help_fr": "Veuillez renseigner charges preneur .",
+      "help_ar": "يرجى إدخال التكاليف المحمولة على المتسوغ ."
     },
     "TRIBUNAL": {
       "type": "text",
@@ -430,8 +430,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Tribunal territorialement compétent en cas de litige.",
-      "help_ar": "المحكمة المختصة ترابيًا في حالة النزاع."
+      "help_fr": "Veuillez renseigner tribunal .",
+      "help_ar": "يرجى إدخال المحكمة المختصة ترابياً ."
     },
     "LIEU_SIGNATURE": {
       "type": "text",
@@ -444,8 +444,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Lieu ou date de signature du contrat.",
-      "help_ar": "مكان أو تاريخ إمضاء العقد."
+      "help_fr": "Adresse complète (rue, numéro, ville) .",
+      "help_ar": "العنوان الكامل (النهج، الرقم، المدينة) للتوقيع."
     },
     "DATE_SIGNATURE": {
       "type": "date",
@@ -457,8 +457,8 @@
       "hint_ar": "يوم/شهر/سنة",
       "hint_fr": "JJ/MM/AAAA",
       "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$",
-      "help_fr": "Date au format jour/mois/année (ex: 01/01/2026).",
-      "help_ar": "التاريخ بصيغة يوم/شهر/سنة (مثال: 01/01/2026)."
+      "help_fr": "Date au format JJ/MM/AAAA .",
+      "help_ar": "التاريخ بصيغة يوم/شهر/سنة للتوقيع."
     }
   },
   "description_ar": "إتفاقية بين الملاك والكاري تحدد السوم الشهري، الضمان وشروط السكنى في الدار.",
