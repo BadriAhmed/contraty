@@ -7,7 +7,9 @@ RUN npm ci
 
 COPY . .
 
+ARG NEXT_PUBLIC_API_URL=https://contraty-backend-104286528986.europe-west1.run.app/api/v1
 ENV NEXT_TELEMETRY_DISABLED=1
+ENV NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL
 RUN npm run build
 
 # Production image
