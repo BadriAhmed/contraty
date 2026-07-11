@@ -18,6 +18,12 @@ from app.db.memory import InMemoryTemplateRepository
 logger = logging.getLogger(__name__)
 
 TEMPLATES_DIR = Path(__file__).resolve().parent.parent.parent.parent / "data" / "templates"
+if not TEMPLATES_DIR.exists():
+    # Docker fallback: templates are at /app/data/templates
+    TEMPLATES_DIR = Path("/app/data/templates")
+if not TEMPLATES_DIR.exists():
+    # Local development fallback
+    TEMPLATES_DIR = Path("data/templates")
 
 
 def compute_complexity(field_count: int) -> str:
