@@ -117,9 +117,8 @@ async def generate_contract(req: GenerateRequest) -> dict:
 
 def _fill_template(template: Contract, user_fields: dict[str, str], language: Language) -> dict:
     """Replace [PLACEHOLDER] tokens with user values. No LLM, no latency."""
-    import copy
-
     data = template.model_dump()
+    data["disclaimer"] = ""  # Remove disclaimer from output — user already accepted it
     for section in data["sections"]:
         for article in section["articles"]:
             text_key = "text_ar" if language == Language.ar else "text_fr"
@@ -127,7 +126,7 @@ def _fill_template(template: Contract, user_fields: dict[str, str], language: La
             for key, val in user_fields.items():
                 text = text.replace(f"[{key}]", str(val))
             article[text_key] = text
-            article["fields"] = []  # clear field markers after substitution
+            article["fields"] = []
     return data
 
 

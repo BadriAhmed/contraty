@@ -1,10 +1,10 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useMemo } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import { fetchTemplate } from "@/lib/constants";
-import { Lock, ArrowRight, ArrowLeft, CheckCircle2, Download, Copy, Loader2, X, AlertCircle } from "lucide-react";
+import { Lock, ArrowRight, ArrowLeft, CheckCircle2, Download, Loader2, X, AlertCircle } from "lucide-react";
 
 const PATTERNS = {
   cin: /^\d{8}$/,
@@ -28,30 +28,21 @@ function getInputType(ftype) {
 function validateField(value, meta) {
   if (!meta) return null;
   const trimmed = (value || "").trim();
-
   if (meta.required && !trimmed) return "required";
-
   if (trimmed && meta.pattern) {
-    try {
-      const re = new RegExp(meta.pattern);
-      if (!re.test(trimmed)) return "pattern";
-    } catch {}
+    try { const re = new RegExp(meta.pattern); if (!re.test(trimmed)) return "pattern"; } catch {}
   }
-
   if (trimmed && meta.type && PATTERNS[meta.type]) {
     if (!PATTERNS[meta.type].test(trimmed)) return "format";
   }
-
   if (trimmed && meta.min_length && trimmed.length < meta.min_length) return "min_length";
   if (trimmed && meta.max_length && trimmed.length > meta.max_length) return "max_length";
-
-  if (trimmed && meta.type === "number" || meta.type === "percentage") {
+  if (trimmed && (meta.type === "number" || meta.type === "percentage")) {
     const n = parseFloat(trimmed.replace(",", "."));
     if (isNaN(n)) return "format";
     if (meta.min_value !== undefined && meta.min_value !== null && n < meta.min_value) return "min_value";
     if (meta.max_value !== undefined && meta.max_value !== null && n > meta.max_value) return "max_value";
   }
-
   return null;
 }
 
@@ -95,73 +86,74 @@ export default function GeneratePage() {
   useEffect(() => {
     fetchTemplate(type)
       .then((t) => {
-        if (!t) {
-          setError("Template not found");
-          setLoading(false);
-          return;
-        }
+        if (!t) { setError("Template not found"); setLoading(false); return; }
         setTemplate(t);
         setLoading(false);
       })
-      .catch((e) => {
-        setError(e.message);
-        setLoading(false);
-      });
+      .catch((e) => { setError(e.message); setLoading(false); });
   }, [type]);
 
-  const meta = useCallback((fieldName) => {
-    return template?.field_metadata?.[fieldName] || null;
-  }, [template]);
+  const meta = useCallback((fieldName) => template?.field_metadata?.[fieldName] || null, [template]);
 
-  const collectFields = useCallback(() => {
+  // Collect fields grouped by section — keep sections intact in steps
+  const fieldsBySection = useMemo(() => {
     if (!template?.sections) return [];
     const seen = new Set();
-    const allFields = [];
+    const sections = [];
     for (const section of template.sections) {
+      const secFields = [];
       for (const article of section.articles || []) {
         for (const field of article.fields || []) {
           if (!seen.has(field)) {
             seen.add(field);
             const md = meta(field);
-            allFields.push({
+            secFields.push({
               name: field,
               label: lang === "ar" ? (md?.label_ar || field) : (md?.label_fr || field.replace(/[\[\]]/g, "").replace(/_/g, " ")),
               placeholder: lang === "ar" ? (md?.placeholder_ar || "") : (md?.placeholder_fr || ""),
-              sectionId: section.id,
-              sectionTitle: lang === "ar" ? section.title_ar : section.title_fr,
               metadata: md,
             });
           }
         }
       }
+      if (secFields.length > 0) {
+        sections.push({
+          id: section.id,
+          title: lang === "ar" ? section.title_ar : section.title_fr,
+          fields: secFields,
+        });
+      }
     }
-    return allFields;
+    return sections;
   }, [template, lang, meta]);
 
-  const allFields = collectFields();
-  const fieldsPerStep = lang === "ar" ? 4 : 5;
-  const fieldSteps = Math.ceil(allFields.length / fieldsPerStep);
-  const totalSteps = fieldSteps + 1;
-  const isDisclaimerStep = currentStep >= totalSteps - 1;
-  const isPreviewStep = currentStep >= totalSteps;
+  // Build steps so each section stays together; large sections split into sub-steps
+  const steps = useMemo(() => {
+    const s = [];
+    for (const sec of fieldsBySection) {
+      const maxPer = sec.fields.length <= 6 ? sec.fields.length : 6;
+      for (let i = 0; i < sec.fields.length; i += maxPer) {
+        s.push({
+          title: i === 0 ? sec.title : `${sec.title} (${lang === "ar" ? "تابع" : "suite"})`,
+          sectionId: sec.id,
+          fields: sec.fields.slice(i, i + maxPer),
+        });
+      }
+    }
+    return s;
+  }, [fieldsBySection, lang]);
 
-  const currentFields = isDisclaimerStep || isPreviewStep
-    ? []
-    : allFields.slice(currentStep * fieldsPerStep, (currentStep + 1) * fieldsPerStep);
-
-  const fieldsBySection = {};
-  for (const f of currentFields) {
-    if (!fieldsBySection[f.sectionTitle]) fieldsBySection[f.sectionTitle] = [];
-    fieldsBySection[f.sectionTitle].push(f);
-  }
+  const totalSteps = steps.length + 1; // + disclaimer
+  const isDisclaimerStep = currentStep >= steps.length;
+  const isPreviewStep = currentStep > steps.length;
+  const currentSection = !isDisclaimerStep && !isPreviewStep ? steps[currentStep] : null;
 
   const handleBlur = (field) => {
     const value = fieldValues[field.name] || "";
     const err = validateField(value, field.metadata);
     setFieldErrors((prev) => {
       const next = { ...prev };
-      if (err) next[field.name] = err;
-      else delete next[field.name];
+      if (err) next[field.name] = err; else delete next[field.name];
       return next;
     });
   };
@@ -176,25 +168,17 @@ export default function GeneratePage() {
       return;
     }
 
-    // Validate all current fields
     const newErrors = {};
     let errorCount = 0;
-    for (const f of currentFields) {
+    for (const f of currentSection?.fields || []) {
       if (!f.metadata?.required) continue;
       const err = validateField(fieldValues[f.name] || "", f.metadata);
-      if (err) {
-        newErrors[f.name] = err;
-        errorCount++;
-      }
+      if (err) { newErrors[f.name] = err; errorCount++; }
     }
 
     if (errorCount > 0) {
       setFieldErrors(newErrors);
-      setError(
-        lang === "ar"
-          ? `يرجى تصحيح ${errorCount} حقول`
-          : `${errorCount} champ(s) à corriger`
-      );
+      setError(lang === "ar" ? `يرجى تصحيح ${errorCount} حقول` : `${errorCount} champ(s) à corriger`);
       return;
     }
 
@@ -227,7 +211,7 @@ export default function GeneratePage() {
       if (!res.ok) throw new Error((await res.json()).detail || "Generation failed");
       const data = await res.json();
       setGenerated(data);
-      setCurrentStep(totalSteps);
+      setCurrentStep(steps.length + 1);
     } catch (e) {
       setError(e.message);
     } finally {
@@ -251,19 +235,9 @@ export default function GeneratePage() {
       const blob = await res.blob();
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
-      a.href = url;
-      a.download = `${type}-${lang}.pdf`;
-      a.click();
+      a.href = url; a.download = `${type}-${lang}.pdf`; a.click();
       URL.revokeObjectURL(url);
-    } catch (e) {
-      setError(e.message);
-    }
-  };
-
-  const handleCopyJson = () => {
-    if (generated?.contract) {
-      navigator.clipboard.writeText(JSON.stringify(generated.contract, null, 2));
-    }
+    } catch (e) { setError(e.message); }
   };
 
   if (loading) {
@@ -277,12 +251,10 @@ export default function GeneratePage() {
   if (error && !template) {
     return (
       <div className="max-w-container-max mx-auto px-4 py-16 text-center">
-        <h1 className="text-2xl font-bold text-error mb-2">
-          {lang === "ar" ? "خطأ" : "Erreur"}
-        </h1>
+        <h1 className="text-2xl font-bold text-error mb-2">{lang === "ar" ? "خطأ" : "Erreur"}</h1>
         <p className="text-text-secondary">{error}</p>
-        <Link href={`/${lang}/contracts`} className="text-primary hover:underline mt-4 inline-block">
-          {lang === "ar" ? "العودة للقائمة" : "Retour aux modèles"}
+        <Link href={`/${lang}`} className="text-primary hover:underline mt-4 inline-block">
+          {lang === "ar" ? "العودة للرئيسية" : "Retour à l'accueil"}
         </Link>
       </div>
     );
@@ -295,9 +267,7 @@ export default function GeneratePage() {
       {/* Wizard header */}
       <div className="bg-surface border-b border-border-slate px-4 md:px-8 h-14 flex items-center justify-between shrink-0">
         <div className="flex items-center gap-3">
-          <Link href={`/${lang}`} className="text-lg font-bold text-primary">
-            Contraty
-          </Link>
+          <Link href={`/${lang}`} className="text-lg font-bold text-primary">Contraty</Link>
           <span className="w-px h-4 bg-border-slate" />
           <span className="text-sm text-text-secondary truncate max-w-[200px]">{title}</span>
         </div>
@@ -306,17 +276,12 @@ export default function GeneratePage() {
             <Lock size={12} className="text-success-green" />
             {lang === "ar" ? "جلسة آمنة" : "Session sécurisée"}
           </span>
-          <Link
-            href={`/${lang}/contracts`}
-            className="flex items-center gap-1 text-error hover:text-error/80"
-          >
-            <X size={14} />
-            {lang === "ar" ? "خروج" : "Quitter"}
+          <Link href={`/${lang}`} className="flex items-center gap-1 text-error hover:text-error/80">
+            <X size={14} />{lang === "ar" ? "خروج" : "Quitter"}
           </Link>
         </div>
       </div>
 
-      {/* Main content */}
       <div className="flex-1 max-w-[800px] mx-auto w-full px-4 md:px-8 py-8">
         <h1 className="text-xl font-bold text-on-surface mb-1">
           {lang === "ar" ? "إنشاء عقد" : "Créer un contrat"} : {title}
@@ -328,23 +293,13 @@ export default function GeneratePage() {
           <div className="flex items-center justify-center mb-10">
             {Array.from({ length: totalSteps }, (_, i) => (
               <div key={i} className="flex items-center">
-                <div
-                  className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold transition-colors ${
-                    i < currentStep
-                      ? "bg-primary text-on-primary"
-                      : i === currentStep
-                      ? "bg-primary text-on-primary shadow-md"
-                      : "bg-surface-container-highest border border-outline-variant text-on-surface-variant opacity-60"
-                  }`}
-                >
+                <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold transition-colors ${
+                  i < currentStep ? "bg-primary text-on-primary" : i === currentStep ? "bg-primary text-on-primary shadow-md" : "bg-surface-container-highest border border-outline-variant text-on-surface-variant opacity-60"
+                }`}>
                   {i < currentStep ? <CheckCircle2 size={14} /> : i + 1}
                 </div>
                 {i < totalSteps - 1 && (
-                  <div
-                    className={`w-12 md:w-20 h-0.5 transition-colors ${
-                      i < currentStep ? "bg-primary" : "bg-surface-container-highest"
-                    }`}
-                  />
+                  <div className={`w-12 md:w-20 h-0.5 transition-colors ${i < currentStep ? "bg-primary" : "bg-surface-container-highest"}`} />
                 )}
               </div>
             ))}
@@ -352,7 +307,7 @@ export default function GeneratePage() {
         )}
 
         <div className="bg-surface-container-lowest rounded-xl border border-border-slate shadow-sm p-6 md:p-8">
-          {/* Preview mode */}
+          {/* Preview mode — rendered contract */}
           {isPreviewStep && generated ? (
             <div className="space-y-6">
               <div className="flex items-center gap-3 bg-success-light border border-success-green/20 rounded-lg px-4 py-3">
@@ -361,41 +316,30 @@ export default function GeneratePage() {
                   <p className="text-sm font-semibold text-success-green">
                     {lang === "ar" ? "تم إنشاء العقد بنجاح!" : "Contrat généré avec succès!"}
                   </p>
-                  <p className="text-xs text-text-secondary">
-                    {generated.model_used && `${lang === "ar" ? "النموذج" : "Modèle"} : ${generated.model_used}`}
-                    {generated.fallback_attempted && ` (${lang === "ar" ? "احتياطي" : "fallback"})`}
-                  </p>
+                  {generated.review_time_ms > 0 && (
+                    <p className="text-xs text-text-secondary">
+                      {lang === "ar" ? `تمت المراجعة في ${(generated.review_time_ms / 1000).toFixed(1)}s` : `Révisé en ${(generated.review_time_ms / 1000).toFixed(1)}s`}
+                    </p>
+                  )}
                 </div>
               </div>
 
-              {/* AI Review Warnings */}
-              {generated.warnings && generated.warnings.length > 0 && (
+              {/* Warnings */}
+              {generated.warnings?.length > 0 && (
                 <div className="border border-cat-family/40 rounded-lg bg-cat-family/5 p-4 space-y-3">
                   <div className="flex items-center gap-2">
                     <AlertCircle size={16} className="text-cat-family" />
                     <span className="text-sm font-semibold text-on-surface">
-                      {lang === "ar" ? "مراجعة العقد" : "Révision du contrat"} ({generated.warnings.length})
-                    </span>
-                    <span className="text-xs text-text-secondary">
-                      {lang === "ar" ? `تمت المراجعة في ${generated.review_time_ms || 0}ms` : `Révisé en ${generated.review_time_ms || 0}ms`}
+                      {lang === "ar" ? "مراجعة" : "Révision"} ({generated.warnings.length})
                     </span>
                   </div>
-
                   {generated.warnings.map((w, i) => (
-                    <div key={i} className={`text-sm p-3 rounded-lg ${
-                      w.severity === "error"
-                        ? "bg-error/10 border border-error/20"
-                        : "bg-cat-family/10 border border-cat-family/20"
-                    }`}>
+                    <div key={i} className={`text-sm p-3 rounded-lg ${w.severity === "error" ? "bg-error/10 border border-error/20" : "bg-cat-family/10 border border-cat-family/20"}`}>
                       <div className="flex items-start gap-2">
                         <AlertCircle size={14} className={w.severity === "error" ? "text-error shrink-0 mt-0.5" : "text-cat-family shrink-0 mt-0.5"} />
                         <div>
-                          <p className="font-medium text-on-surface">
-                            {lang === "ar" ? w.message_ar : w.message_fr}
-                          </p>
-                          <p className="text-xs text-text-secondary mt-1">
-                            {lang === "ar" ? w.suggestion_ar : w.suggestion_fr}
-                          </p>
+                          <p className="font-medium text-on-surface">{lang === "ar" ? w.message_ar : w.message_fr}</p>
+                          <p className="text-xs text-text-secondary mt-1">{lang === "ar" ? w.suggestion_ar : w.suggestion_fr}</p>
                         </div>
                       </div>
                     </div>
@@ -403,36 +347,27 @@ export default function GeneratePage() {
                 </div>
               )}
 
-              <div className="bg-surface border border-border-slate rounded-lg paper-shadow p-6 max-h-96 overflow-y-auto">
-                <pre className="text-xs font-mono whitespace-pre-wrap text-on-surface">
-                  {JSON.stringify(generated.contract, null, 2)}
-                </pre>
+              {/* Rendered contract preview */}
+              <div className="bg-surface border border-border-slate rounded-lg paper-shadow p-6 max-h-[500px] overflow-y-auto space-y-4">
+                <h2 className="text-lg font-bold text-primary text-center mb-4">{title}</h2>
+                {(generated.contract?.sections || []).map((section) => (
+                  <div key={section.id}>
+                    <h3 className="text-sm font-semibold text-primary border-b border-border-slate pb-1 mb-2">
+                      {lang === "ar" ? section.title_ar : section.title_fr}
+                    </h3>
+                    {(section.articles || []).map((article) => (
+                      <p key={article.id} className="text-sm text-on-surface leading-relaxed mb-2 whitespace-pre-wrap">
+                        {lang === "ar" ? article.text_ar : article.text_fr}
+                      </p>
+                    ))}
+                  </div>
+                ))}
               </div>
 
-              <div className="space-y-3 pt-2">
-                <button onClick={handleDownload} className="w-full flex items-center justify-center gap-2 bg-primary text-on-primary font-semibold py-3 px-4 rounded-lg hover:bg-surface-tint transition-colors shadow-sm">
-                  <Download size={16} />
-                  {lang === "ar" ? "تحميل PDF" : "Télécharger le PDF"}
-                </button>
-                <button onClick={handleCopyJson} className="w-full flex items-center justify-center gap-2 bg-transparent border-2 border-primary text-primary font-semibold py-3 px-4 rounded-lg hover:bg-primary-fixed transition-colors">
-                  <Copy size={16} />
-                  {lang === "ar" ? "نسخ JSON" : "Copier le JSON"}
-                </button>
-                <div className="relative py-2">
-                  <div className="absolute inset-0 flex items-center">
-                    <div className="w-full border-t border-border-slate" />
-                  </div>
-                  <div className="relative flex justify-center">
-                    <span className="bg-surface-container-lowest px-3 text-xs text-text-secondary">
-                      {lang === "ar" ? "ميزة مدفوعة" : "Fonctionnalité premium"}
-                    </span>
-                  </div>
-                </div>
-                <button className="w-full flex items-center justify-center gap-2 bg-cat-family text-on-tertiary-fixed font-semibold py-3 px-4 rounded-lg hover:brightness-110 transition-all">
-                  <Lock size={16} />
-                  {lang === "ar" ? "ترقية للتوقيع الإلكتروني" : "Upgrade pour signature électronique"}
-                </button>
-              </div>
+              <button onClick={handleDownload} className="w-full flex items-center justify-center gap-2 bg-primary text-on-primary font-semibold py-3 px-4 rounded-lg hover:bg-surface-tint transition-colors shadow-sm">
+                <Download size={16} />
+                {lang === "ar" ? "تحميل PDF" : "Télécharger le PDF"}
+              </button>
 
               <button onClick={handlePrevious} className="text-sm text-text-secondary hover:text-primary transition-colors">
                 {isRtl ? "→" : "←"} {lang === "ar" ? "العودة للنموذج" : "Retour au formulaire"}
@@ -469,61 +404,48 @@ export default function GeneratePage() {
 
               <div className="flex gap-3 pt-4 border-t border-border-slate">
                 <button onClick={handlePrevious} className="flex items-center gap-2 border border-primary text-primary font-semibold px-5 py-2.5 rounded-lg hover:bg-primary-fixed transition-colors">
-                  <ArrowLeft size={16} />
-                  {lang === "ar" ? "السابق" : "Retour"}
+                  <ArrowLeft size={16} />{lang === "ar" ? "السابق" : "Retour"}
                 </button>
                 <button onClick={handleGenerate} disabled={generating} className="flex items-center gap-2 bg-primary text-on-primary font-semibold px-5 py-2.5 rounded-lg hover:bg-surface-tint transition-colors shadow-sm disabled:opacity-50">
                   {generating && <Loader2 size={16} className="animate-spin" />}
-                  {lang === "ar" ? "توليد العقد" : "Générer le contrat"}
-                  <ArrowRight size={16} />
+                  {lang === "ar" ? "توليد العقد" : "Générer le contrat"}<ArrowRight size={16} />
                 </button>
               </div>
             </div>
           ) : (
-            /* Form fields */
+            /* Form */
             <div>
-              {Object.entries(fieldsBySection).map(([sectionTitle, fields]) => (
-                <div key={sectionTitle} className="mb-6 last:mb-0">
-                  <h3 className="text-sm font-semibold text-primary mb-3 pb-2 border-b border-border-slate">
-                    {sectionTitle}
+              {currentSection && (
+                <div>
+                  <h3 className="text-sm font-semibold text-primary mb-4 pb-2 border-b border-border-slate">
+                    {currentSection.title}
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {fields.map((field) => {
+                    {(currentSection.fields || []).map((field) => {
                       const errKey = fieldErrors[field.name];
                       const hasError = !!errKey;
-                      const meta = field.metadata;
-                      const inputType = meta ? getInputType(meta.type) : "text";
+                      const md = field.metadata;
+                      const inputType = md ? getInputType(md.type) : "text";
 
                       return (
-                        <div
-                          key={field.name}
-                          className={field.label.length > 25 ? "md:col-span-2" : ""}
-                        >
+                        <div key={field.name} className={field.label.length > 25 ? "md:col-span-2" : ""}>
                           <label className="label-text flex items-center gap-1">
                             {field.label}
-                            {meta?.required !== false && <span className="text-error">*</span>}
-                            {meta?.hint_ar && lang === "ar" && (
-                              <span className="text-xs text-text-secondary font-normal">({meta.hint_ar})</span>
-                            )}
-                            {meta?.hint_fr && lang === "fr" && (
-                              <span className="text-xs text-text-secondary font-normal">({meta.hint_fr})</span>
-                            )}
+                            {md?.required !== false && <span className="text-error">*</span>}
+                            {md?.hint_ar && lang === "ar" && <span className="text-xs text-text-secondary font-normal">({md.hint_ar})</span>}
+                            {md?.hint_fr && lang === "fr" && <span className="text-xs text-text-secondary font-normal">({md.hint_fr})</span>}
                           </label>
                           <input
                             type={inputType}
                             value={fieldValues[field.name] || ""}
-                            onChange={(e) => {
-                              setFieldValues((prev) => ({ ...prev, [field.name]: e.target.value }));
-                              setFieldErrors((prev) => { const n = { ...prev }; delete n[field.name]; return n; });
-                            }}
+                            onChange={(e) => { setFieldValues((prev) => ({ ...prev, [field.name]: e.target.value })); setFieldErrors((prev) => { const n = { ...prev }; delete n[field.name]; return n; }); }}
                             onBlur={() => handleBlur(field)}
                             placeholder={field.placeholder}
                             className={`input-field ${hasError ? "border-error focus:ring-error" : ""}`}
                           />
                           {hasError && (
                             <p className="text-xs text-error mt-1 flex items-center gap-1">
-                              <AlertCircle size={12} />
-                              {msg[errKey] || errKey}
+                              <AlertCircle size={12} />{msg[errKey] || errKey}
                             </p>
                           )}
                         </div>
@@ -531,31 +453,22 @@ export default function GeneratePage() {
                     })}
                   </div>
                 </div>
-              ))}
-
-              {currentFields.length === 0 && (
-                <p className="text-text-secondary text-sm text-center py-8">
-                  {lang === "ar" ? "لا توجد حقول في هذه الخطوة" : "Aucun champ dans cette étape"}
-                </p>
               )}
 
               {error && (
                 <p className="text-sm text-error mt-4 flex items-center gap-1">
-                  <AlertCircle size={14} />
-                  {error}
+                  <AlertCircle size={14} />{error}
                 </p>
               )}
 
               <div className="flex gap-3 pt-6 border-t border-border-slate mt-6">
                 {currentStep > 0 && (
                   <button onClick={handlePrevious} className="flex items-center gap-2 border border-primary text-primary font-semibold px-5 py-2.5 rounded-lg hover:bg-primary-fixed transition-colors">
-                    <ArrowLeft size={16} />
-                    {lang === "ar" ? "السابق" : "Retour"}
+                    <ArrowLeft size={16} />{lang === "ar" ? "السابق" : "Retour"}
                   </button>
                 )}
                 <button onClick={handleNext} className="flex items-center gap-2 bg-primary text-on-primary font-semibold px-5 py-2.5 rounded-lg hover:bg-surface-tint transition-colors shadow-sm ms-auto">
-                  {lang === "ar" ? "التالي" : "Suivant"}
-                  <ArrowRight size={16} />
+                  {lang === "ar" ? "التالي" : "Suivant"}<ArrowRight size={16} />
                 </button>
               </div>
             </div>
