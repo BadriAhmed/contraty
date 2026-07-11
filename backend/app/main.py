@@ -14,10 +14,14 @@ settings = get_settings()
 async def lifespan(app: FastAPI):
     logger.info("Starting Contraty API (env=%s)", settings.app_env)
     from app.services.template_service import ensure_seeded, get_template_repo
-    await ensure_seeded()
+    from app.db.memory import InMemoryTemplateRepository
+
     repo = get_template_repo()
+    if isinstance(repo, InMemoryTemplateRepository):
+        await ensure_seeded()
+
     templates = await repo.list_all()
-    logger.info("Loaded %d templates", len(templates))
+    logger.info("Loaded %d templates (%s)", len(templates), type(repo).__name__)
     yield
     logger.info("Shutting down Contraty API")
 

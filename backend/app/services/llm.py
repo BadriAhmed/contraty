@@ -1,11 +1,9 @@
 import time
-import json
 import logging
-import asyncio
 from openai import OpenAI
 from mistralai.client import Mistral
-from mistralai.client.models import UserMessage, SystemMessage
-import google.generativeai as genai
+from mistralai.client.models import UserMessage
+from google.genai import Client as GenAIClient
 
 from app.core.config import get_settings
 from app.models.contract import Language, Contract, ContractResponse
@@ -36,6 +34,7 @@ class LLMRouter:
         self._openai: OpenAI | None = None
         self._mistral: Mistral | None = None
         self._gemini_configured = False
+        self._gemini_client: GenAIClient | None = None
 
     @property
     def openai_client(self) -> OpenAI:
@@ -51,7 +50,7 @@ class LLMRouter:
 
     def _ensure_gemini(self):
         if not self._gemini_configured:
-            genai.configure(api_key=settings.gemini_api_key)
+            self._gemini_client = GenAIClient(api_key=settings.gemini_api_key)
             self._gemini_configured = True
 
     def _primary_model(self, language: Language) -> str:
@@ -132,11 +131,9 @@ class LLMRouter:
 
     async def _call_gemini(self, prompt: str) -> str:
         self._ensure_gemini()
-        model = genai.GenerativeModel(settings.gemini_model)
-        loop = asyncio.get_event_loop()
-        # google-generativeai doesn't have native async; run in thread pool
-        response = await loop.run_in_executor(
-            None, model.generate_content, prompt
+        response = await self._gemini_client.aio.models.generate_content(
+            model=settings.gemini_model,
+            contents=prompt,
         )
         return response.text
 

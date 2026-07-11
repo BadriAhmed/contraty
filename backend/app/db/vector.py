@@ -1,5 +1,5 @@
+import math
 import logging
-import numpy as np
 from openai import OpenAI
 from app.core.config import get_settings
 
@@ -31,9 +31,12 @@ class VectorStore:
 
     @staticmethod
     def cosine_similarity(a: list[float], b: list[float]) -> float:
-        a_np = np.array(a)
-        b_np = np.array(b)
-        return float(np.dot(a_np, b_np) / (np.linalg.norm(a_np) * np.linalg.norm(b_np)))
+        dot = sum(x * y for x, y in zip(a, b))
+        norm_a = math.sqrt(sum(x * x for x in a))
+        norm_b = math.sqrt(sum(y * y for y in b))
+        if norm_a == 0 or norm_b == 0:
+            return 0.0
+        return dot / (norm_a * norm_b)
 
 
 vector_store = VectorStore()
