@@ -3,24 +3,26 @@ import { fetchTemplates, DOMAINS } from "@/lib/constants";
 import { Home, Briefcase, Coins, Car, Building2, FileText } from "lucide-react";
 
 const domainMeta = {
-  logement: { icon: Home, cat: "real-estate" },
-  travail: { icon: Briefcase, cat: "employment" },
-  argent: { icon: Coins, cat: "family" },
-  vehicules: { icon: Car, cat: "services" },
-  entreprise: { icon: Building2, cat: "business" },
-  demarches: { icon: FileText, cat: "documents" },
+  logement: { icon: Home, cat: "real-estate", color: "var(--cat-real-estate)" },
+  travail: { icon: Briefcase, cat: "employment", color: "var(--cat-employment)" },
+  argent: { icon: Coins, cat: "family", color: "var(--cat-family)" },
+  vehicules: { icon: Car, cat: "services", color: "var(--cat-services)" },
+  entreprise: { icon: Building2, cat: "business", color: "var(--cat-business)" },
+  demarches: { icon: FileText, cat: "documents", color: "var(--cat-documents)" },
 };
 
-export default async function HomePage({ params }) {
+export default async function HomePage({ params, searchParams }) {
   const { lang } = params;
+  const activeDomain = searchParams?.domain || null;
   const templates = await fetchTemplates({ language: lang });
 
-  const byDomain = {};
-  for (const t of templates) {
-    if (!byDomain[t.domain]) byDomain[t.domain] = [];
-    byDomain[t.domain].push(t);
-  }
-  const domainOrder = ["logement", "travail", "argent", "vehicules", "entreprise", "demarches"];
+  const filtered = activeDomain
+    ? templates.filter((t) => t.domain === activeDomain)
+    : templates;
+
+  const domainLabel = activeDomain && DOMAINS[activeDomain]
+    ? (lang === "ar" ? DOMAINS[activeDomain].ar : DOMAINS[activeDomain].fr)
+    : null;
 
   return (
     <div className="max-w-container-max mx-auto px-4 md:px-6">
@@ -52,80 +54,84 @@ export default async function HomePage({ params }) {
         </div>
       </section>
 
-      {/* Template grid header */}
-      <div className="mb-6">
-        <h2 className="text-xl font-bold text-on-surface mb-2">
-          {lang === "ar" ? "نماذج العقود" : "Modèles de contrats"}
-        </h2>
-        <p className="text-sm text-text-secondary">
-          {lang === "ar"
-            ? `${templates.length} نموذجًا قانونيًا بالعربية والفرنسية`
-            : `${templates.length} modèles juridiques bilingues`}
-        </p>
-      </div>
+      {/* Template grid section */}
+      <section>
+        <div className="mb-6">
+          <h2 className="text-xl font-bold text-on-surface mb-2">
+            {domainLabel || (lang === "ar" ? "نماذج العقود" : "Modèles de contrats")}
+          </h2>
+          <p className="text-sm text-text-secondary">
+            {filtered.length} {lang === "ar" ? "نموذج" : "modèle"}{filtered.length > 1 ? "s" : ""}{" "}
+            {lang === "ar" ? "متاح" : "disponible"}{filtered.length > 1 ? "s" : ""}
+          </p>
+        </div>
 
-      {/* Category pill bar */}
-      <div className="flex flex-wrap gap-2 mb-8">
-        <Link href={`/${lang}`}>
-          <button className="filter-pill active">
-            {lang === "ar" ? "الكل" : "Tous"}
-          </button>
-        </Link>
-        {Object.entries(DOMAINS).map(([key, dom]) => (
-          <Link key={key} href={`/${lang}/contracts?domain=${key}`}>
-            <button className="filter-pill">
-              {lang === "ar" ? dom.ar : dom.fr}
+        {/* Category pills */}
+        <div className="flex flex-wrap gap-2 mb-8">
+          <Link href={`/${lang}`}>
+            <button className={`filter-pill ${!activeDomain ? "active" : ""}`}>
+              {lang === "ar" ? "الكل" : "Tous"}
             </button>
           </Link>
-        ))}
-      </div>
+          {Object.entries(DOMAINS).map(([key, dom]) => {
+            const meta = domainMeta[key];
+            const Icon = meta.icon;
+            return (
+              <Link key={key} href={`/${lang}?domain=${key}`}>
+                <button
+                  className={`filter-pill ${activeDomain === key ? "active" : ""}`}
+                  style={activeDomain === key ? {} : { color: "var(--on-surface-variant)" }}
+                >
+                  <Icon size={13} className="inline me-1" style={{ color: activeDomain === key ? undefined : meta.color }} />
+                  {lang === "ar" ? dom.ar : dom.fr}
+                </button>
+              </Link>
+            );
+          })}
+        </div>
 
-      {/* Domains + cards */}
-      {domainOrder.map((domain) => {
-        const items = byDomain[domain];
-        if (!items || items.length === 0) return null;
-        const meta = domainMeta[domain];
-        const Icon = meta.icon;
-        const catColor = `var(--cat-${meta.cat})`;
-        const domainLabel = lang === "ar" ? DOMAINS[domain].ar : DOMAINS[domain].fr;
+        {/* Template cards with icons */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 mb-6">
+          {filtered.map((t) => {
+            const meta = domainMeta[t.domain] || domainMeta.demarches;
+            const Icon = meta.icon;
+            const title = lang === "ar" ? t.title_ar : t.title_fr;
 
-        return (
-          <div key={domain} className="mb-10">
-            <div className="flex items-center gap-2 mb-3">
-              <div
-                className="w-7 h-7 rounded flex items-center justify-center"
-                style={{ background: `${catColor}18` }}
+            return (
+              <Link
+                key={t.slug}
+                href={`/${lang}/contracts/${t.slug}`}
+                className="group bg-surface-container-lowest border border-border-slate rounded-lg p-4 hover:border-primary/40 hover:shadow-sm transition-all duration-150 flex items-start gap-3"
+                style={{ borderInlineStartWidth: "3px", borderInlineStartColor: meta.color }}
               >
-                <Icon size={14} style={{ color: catColor }} />
-              </div>
-              <h2 className="text-base font-bold text-on-surface">{domainLabel}</h2>
-              <span className="text-xs text-text-secondary">({items.length})</span>
-            </div>
+                <div
+                  className="w-8 h-8 rounded flex items-center justify-center shrink-0 mt-0.5"
+                  style={{ background: `${meta.color}15` }}
+                >
+                  <Icon size={14} style={{ color: meta.color }} />
+                </div>
+                <div className="min-w-0">
+                  <h3 className="text-sm font-semibold text-on-surface group-hover:text-primary transition-colors leading-snug">
+                    {title}
+                  </h3>
+                  <p className="text-xs text-text-secondary mt-1">
+                    {t.field_count} {lang === "ar" ? "حقل" : "champs"}
+                  </p>
+                </div>
+              </Link>
+            );
+          })}
+        </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
-              {items.map((t) => {
-                const title = lang === "ar" ? t.title_ar : t.title_fr;
-
-                return (
-                  <Link
-                    key={t.slug}
-                    href={`/${lang}/contracts/${t.slug}`}
-                    className="group bg-surface-container-lowest border border-border-slate rounded-lg p-4 hover:border-primary/40 hover:shadow-sm transition-all duration-150"
-                    style={{ borderInlineStartWidth: "3px", borderInlineStartColor: catColor }}
-                  >
-                    <h3 className="text-sm font-semibold text-on-surface group-hover:text-primary transition-colors leading-snug mb-1">
-                      {title}
-                    </h3>
-                    <p className="text-xs text-text-secondary">
-                      {t.field_count} {lang === "ar" ? "حقل" : "champs"}
-                    </p>
-                  </Link>
-                );
-              })}
-            </div>
-          </div>
-        );
-      })}
+        {/* Legal disclaimer */}
+        <div className="p-3 bg-surface-container rounded-lg border border-outline-variant/50 inline-block mb-8">
+          <p className="text-xs text-on-surface-variant leading-relaxed max-w-2xl">
+            {lang === "ar"
+              ? "جميع النماذج مبنية على القوانين التونسية (مجلة الالتزامات والعقود، مجلة الشغل، مجلة الشركات التجارية)"
+              : "Tous les modèles sont basés sur les codes juridiques tunisiens : Code des Obligations et des Contrats (COC), Code du Travail (CT), Code des Sociétés Commerciales (CS)"}
+          </p>
+        </div>
+      </section>
     </div>
   );
 }
