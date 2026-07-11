@@ -1,7 +1,6 @@
 """Tests for template_service business logic layer."""
 
 import pytest
-from unittest.mock import AsyncMock, patch
 
 from app.db.memory import InMemoryTemplateRepository, InMemoryContractRepository
 from app.services.template_service import (
@@ -70,73 +69,48 @@ async def test_generate_contract_template_not_found():
 
 @pytest.mark.unit
 async def test_generate_contract_success():
-    with patch("app.services.template_service.llm_router.generate", new_callable=AsyncMock) as mock_llm:
-        from app.models.contract import ContractResponse, Contract
-        contract = Contract(**SAMPLE_TEMPLATE)
-        mock_llm.return_value = ContractResponse(
-            success=True,
-            contract=contract,
-            model_used="test-model",
-            language=Language.fr,
-        )
+    req = GenerateRequest(
+        contract_slug="bail-habitation",
+        language=Language.fr,
+        user_fields={"NOM_BAILLEUR": "Ali Ben Salah"},
+    )
+    result = await generate_contract(req)
 
-        req = GenerateRequest(
-            contract_slug="bail-habitation",
-            language=Language.fr,
-            user_fields={"NOM_BAILLEUR": "Ali Ben Salah"},
-        )
-        result = await generate_contract(req)
-
-        assert result["success"] is True
-        assert result["contract"] is not None
-        assert result["model_used"] == "test-model"
-        assert result["generation_time_ms"] >= 0
-        assert result["fallback_attempted"] is False
+    assert result["success"] is True
+    assert result["contract"] is not None
+    assert result["model_used"] == "template-engine"
+    assert result["generation_time_ms"] >= 0
+    assert result["fallback_attempted"] is False
+    assert result["error"] is None
 
 
 @pytest.mark.unit
-async def test_generate_contract_fallback():
-    with patch("app.services.template_service.llm_router.generate", new_callable=AsyncMock) as mock_llm:
-        from app.models.contract import ContractResponse
-        mock_llm.return_value = ContractResponse(
-            success=True,
-            model_used="openai",
-            language=Language.fr,
-            fallback_attempted=True,
-        )
-
-        req = GenerateRequest(
-            contract_slug="bail-habitation",
-            language=Language.fr,
-            user_fields={"NOM_BAILLEUR": "Ali"},
-        )
-        result = await generate_contract(req)
-
-        assert result["success"] is True
-        assert result["model_used"] == "openai"
-        assert result["fallback_attempted"] is True
+async def test_generate_contract_placeholder_substitution():
+    req = GenerateRequest(
+        contract_slug="bail-habitation",
+        language=Language.fr,
+        user_fields={"NOM_BAILLEUR": "Ali Ben Salah"},
+    )
+    result = await generate_contract(req)
+    assert result["success"] is True
+    first_article = result["contract"]["sections"][0]["articles"][0]
+    assert "Ali Ben Salah" in first_article["text_fr"]
+    assert "[NOM_BAILLEUR]" not in first_article["text_fr"]
+    assert first_article["fields"] == []
 
 
 @pytest.mark.unit
-async def test_generate_contract_llm_failure():
-    with patch("app.services.template_service.llm_router.generate", new_callable=AsyncMock) as mock_llm:
-        from app.models.contract import ContractResponse
-        mock_llm.return_value = ContractResponse(
-            success=False,
-            error="Rate limit exceeded",
-            language=Language.fr,
-        )
-
-        req = GenerateRequest(
-            contract_slug="bail-habitation",
-            language=Language.fr,
-            user_fields={"NOM_BAILLEUR": "Ali"},
-        )
-        result = await generate_contract(req)
-
-        assert result["success"] is False
-        assert result["error"] is not None
-        assert result["contract"] is None
+async def test_generate_contract_no_fields_provided():
+    """When no user_fields are provided, placeholders remain."""
+    req = GenerateRequest(
+        contract_slug="bail-habitation",
+        language=Language.fr,
+        user_fields={},
+    )
+    result = await generate_contract(req)
+    assert result["success"] is True
+    first_article = result["contract"]["sections"][0]["articles"][0]
+    assert "[NOM_BAILLEUR]" in first_article["text_fr"]
 
 
 @pytest.mark.unit

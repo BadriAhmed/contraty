@@ -4,9 +4,7 @@ import pytest
 
 
 @pytest.mark.unit
-async def test_generate_success(client, mock_llm):
-    mock_llm.return_value.success = True
-
+async def test_generate_success(client):
     response = await client.post(
         "/api/v1/contracts/generate",
         json={
@@ -24,9 +22,10 @@ async def test_generate_success(client, mock_llm):
     data = response.json()
     assert data["success"] is True
     assert data["contract"] is not None
-    assert data["model_used"] == "test-model"
+    assert data["model_used"] == "template-engine"
     assert data["fallback_attempted"] is False
     assert data["generation_time_ms"] >= 0
+    assert data["error"] is None
 
 
 @pytest.mark.unit
@@ -103,11 +102,8 @@ async def test_generate_arabic(client, mock_llm):
 
 
 @pytest.mark.unit
-async def test_generate_fallback_attempted(client, mock_llm):
-    mock_llm.return_value.success = True
-    mock_llm.return_value.fallback_attempted = True
-    mock_llm.return_value.model_used = "openai"
-
+async def test_generate_no_fallback_needed(client):
+    """Template engine always succeeds — no fallback needed."""
     response = await client.post(
         "/api/v1/contracts/generate",
         json={
@@ -120,26 +116,29 @@ async def test_generate_fallback_attempted(client, mock_llm):
     assert response.status_code == 200
     data = response.json()
     assert data["success"] is True
-    assert data["fallback_attempted"] is True
-    assert data["model_used"] == "openai"
+    assert data["fallback_attempted"] is False
+    assert data["model_used"] == "template-engine"
 
 
 @pytest.mark.unit
-async def test_generate_llm_failure(client, mock_llm):
-    mock_llm.return_value.success = False
-    mock_llm.return_value.error = "LLM timeout"
-
+async def test_generate_placeholder_substitution(client):
+    """Verify placeholders are actually replaced with user values."""
     response = await client.post(
         "/api/v1/contracts/generate",
         json={
             "contract_slug": "bail-habitation",
             "language": "fr",
-            "user_fields": {"NOM_BAILLEUR": "Ali"},
+            "user_fields": {"NOM_BAILLEUR": "Ali Ben Salah"},
         },
     )
 
     assert response.status_code == 200
     data = response.json()
-    assert data["success"] is False
-    assert data["contract"] is None
-    assert data["error"] is not None
+    assert data["success"] is True
+    contract = data["contract"]
+    # Check that placeholder was replaced
+    first_article = contract["sections"][0]["articles"][0]
+    assert "Ali Ben Salah" in first_article["text_fr"]
+    assert "[NOM_BAILLEUR]" not in first_article["text_fr"]
+    # Check that fields array was cleared
+    assert first_article["fields"] == []

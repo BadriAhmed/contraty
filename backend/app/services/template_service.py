@@ -8,6 +8,7 @@ Handles:
 """
 
 import time
+import json
 import logging
 from typing import Optional
 
@@ -96,22 +97,38 @@ async def generate_contract(req: GenerateRequest) -> dict:
         }
 
     contract = Contract(**template)
-    prompt = _build_prompt(contract, req.user_fields, req.language)
     t0 = time.monotonic()
 
-    result: ContractResponse = await llm_router.generate(prompt, req.language)
+    # Simple template engine — direct placeholder substitution, no LLM needed
+    filled = _fill_template(contract, req.user_fields, req.language)
     elapsed_ms = int((time.monotonic() - t0) * 1000)
 
     return {
-        "success": result.success,
-        "contract": result.contract.model_dump() if result.contract else None,
-        "model_used": result.model_used,
-        "language": result.language.value if isinstance(result.language, Language) else result.language,
-        "error": result.error,
-        "fallback_attempted": result.fallback_attempted,
+        "success": True,
+        "contract": filled,
+        "model_used": "template-engine",
+        "language": req.language.value if isinstance(req.language, Language) else req.language,
+        "error": None,
+        "fallback_attempted": False,
         "generation_time_ms": elapsed_ms,
         "tokens_used": 0,
     }
+
+
+def _fill_template(template: Contract, user_fields: dict[str, str], language: Language) -> dict:
+    """Replace [PLACEHOLDER] tokens with user values. No LLM, no latency."""
+    import copy
+
+    data = template.model_dump()
+    for section in data["sections"]:
+        for article in section["articles"]:
+            text_key = "text_ar" if language == Language.ar else "text_fr"
+            text = article[text_key]
+            for key, val in user_fields.items():
+                text = text.replace(f"[{key}]", str(val))
+            article[text_key] = text
+            article["fields"] = []  # clear field markers after substitution
+    return data
 
 
 async def generate_pdf(contract_json: dict, language: str, contract_slug: str) -> bytes:
@@ -127,23 +144,39 @@ async def embed_texts(texts: list[str]) -> list[list[float]]:
 
 
 def _build_prompt(template: Contract, user_fields: dict[str, str], language: Language) -> str:
-    template_text = template.model_dump_json(indent=2)
-    fields_text = "\n".join(f"  {k}: {v}" for k, v in user_fields.items())
+    slim = {
+        "slug": template.slug,
+        "disclaimer": template.disclaimer,
+        "sections": [
+            {
+                "id": s.id,
+                "title_ar": s.title_ar,
+                "title_fr": s.title_fr,
+                "articles": [
+                    {"id": a.id, "text_ar": a.text_ar, "text_fr": a.text_fr, "fields": a.fields}
+                    for a in s.articles
+                ],
+            }
+            for s in template.sections
+        ],
+    }
+    template_text = json.dumps(slim, indent=2, ensure_ascii=False)
+    fields_text = "\n".join(f"  {k}: {v}" for k, v in user_fields.items()) if user_fields else "  (aucun champ fourni)"
 
     match language:
         case Language.fr:
             instruction = (
-                "Tu es un assistant juridique tunisien. Remplis les champs [CHAMP_*] "
-                "du modèle de contrat ci-dessous avec les valeurs fournies. "
-                "Ne modifie pas la structure, n'ajoute pas de clauses, et conserve "
-                "l'avertissement légal tel quel. "
-                "Retourne le contrat au format JSON identique au modèle."
+                "Tu es un assistant juridique tunisien. Remplis chaque [CHAMP] "
+                "avec la valeur correspondante fournie ci-dessous. "
+                "Ne modifie pas la structure, n'ajoute pas de clauses, "
+                "et conserve l'avertissement légal tel quel. "
+                "Retourne uniquement le JSON du contrat complété."
             )
         case Language.ar:
             instruction = (
-                "أنت مساعد قانوني تونسي. املأ الحقول [CHAMP_*] في نموذج العقد أدناه "
-                "بالقيم المقدمة. لا تغير الهيكل، لا تضف بنودًا، واحتفظ بالإخلاء القانوني "
-                "كما هو. أعد العقد بصيغة JSON مطابقة للنموذج."
+                "أنت مساعد قانوني تونسي. استبدل كل [حقل] بالقيمة المناسبة أدناه. "
+                "لا تغير الهيكل، لا تضف بنودًا، واحتفظ بالإخلاء القانوني كما هو. "
+                "أعد فقط JSON العقد المكتمل."
             )
 
     return f"""{instruction}
