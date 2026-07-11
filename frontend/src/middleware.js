@@ -1,14 +1,20 @@
 import { NextResponse } from "next/server";
 
-export function middleware(request) {
-  const { pathname } = request.nextUrl;
+const LANG_PREFIX = /^\/(?:fr|ar)(?:\/|$)/;
 
-  // Already has a lang prefix (/fr/*, /ar/*) or is a static file
-  if (pathname.startsWith("/fr") || pathname.startsWith("/ar") || pathname.includes(".")) {
+export function middleware(request) {
+  const pathname = request.nextUrl.pathname.replace(/\/{2,}/g, "/");
+
+  if (pathname === "/") {
+    const url = request.nextUrl.clone();
+    url.pathname = "/fr";
+    return NextResponse.redirect(url);
+  }
+
+  if (LANG_PREFIX.test(pathname) || pathname.includes(".")) {
     return NextResponse.next();
   }
 
-  // Redirect root to /fr
   const url = request.nextUrl.clone();
   url.pathname = `/fr${pathname}`;
   return NextResponse.redirect(url);
