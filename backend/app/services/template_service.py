@@ -17,7 +17,7 @@ from app.db.repository import TemplateRepository, ContractRepository
 from app.db.memory import InMemoryTemplateRepository, InMemoryContractRepository
 from app.db.supabase_repo import SupabaseTemplateRepository, SupabaseContractRepository
 from app.models.contract import Language, Contract, ContractResponse
-from app.models.generation import GenerateRequest
+from app.models.generation import GenerateRequest, ContractWarning
 from app.services.llm import router as llm_router
 from app.services.pdf import pdf_renderer
 from app.db.vector import vector_store
@@ -141,6 +141,72 @@ async def embed_texts(texts: list[str]) -> list[list[float]]:
     if not settings.openai_api_key:
         raise RuntimeError("OPENAI_API_KEY is required for embeddings")
     return await vector_store.embed(texts)
+
+
+async def review_contract(
+    filled_contract: dict,
+    language: Language,
+    user_fields: dict[str, str],
+) -> list[ContractWarning]:
+    """Review a filled contract with Gemini Flash for common user errors."""
+    if not settings.gemini_api_key:
+        return []
+
+    from google.genai import Client
+
+    lines = []
+    for s in filled_contract.get("sections", []):
+        key = "title_ar" if language == Language.ar else "title_fr"
+        tkey = "text_ar" if language == Language.ar else "text_fr"
+        lines.append(f"[{s.get(key, '')}]")
+        for a in s.get("articles", []):
+            text = a.get(tkey, "")
+            if text.strip():
+                lines.append(text)
+    contract_text = "\n".join(lines)[:3000]
+
+    title = filled_contract.get("title_fr" if language == Language.fr else "title_ar", "")
+    fields_str = ", ".join(f"{k}={v}" for k, v in list(user_fields.items())[:20])
+
+    prompt = f"""Avocat tunisien. Ce contrat vient d'être rempli. Signale UNIQUEMENT les vrais problèmes:
+1. Champs obligatoires vides [CHAMP] dans le texte final
+2. Valeurs incohérentes (ex: loyer 5 TND à Tunis)
+3. Dates passées
+4. Noms incomplets ou identiques entre parties
+5. Incohérences entre type de contrat et valeurs
+
+Ne commente pas les clauses standards, ni les références légales.
+Si tout va bien, réponds exactement: RIEN_A_SIGNALER
+
+Format de réponse pour chaque problème (JSON array uniquement, pas de markdown):
+[{{"field":"NOM","severity":"error","message_fr":"...","message_ar":"...","suggestion_fr":"...","suggestion_ar":"..."}}]
+
+Contrat: {title}
+Champs fournis: {fields_str}
+Texte: {contract_text}"""
+
+    try:
+        client = Client(api_key=settings.gemini_api_key)
+        response = await client.aio.models.generate_content(
+            model=settings.gemini_model,
+            contents=prompt,
+        )
+        text = response.text.strip()
+
+        if "RIEN_A_SIGNALER" in text:
+            return []
+
+        start = text.find("[")
+        end = text.rfind("]")
+        if start != -1 and end != -1 and end > start:
+            raw = json.loads(text[start:end + 1])
+            if isinstance(raw, list):
+                return [ContractWarning(**w) for w in raw if isinstance(w, dict)]
+
+    except Exception as e:
+        logger.warning("Contract review error: %s", str(e)[:200])
+
+    return []
 
 
 def _build_prompt(template: Contract, user_fields: dict[str, str], language: Language) -> str:

@@ -1,3 +1,4 @@
+import time
 import logging
 from fastapi import APIRouter, HTTPException
 from app.models.generation import GenerateRequest, GenerateResponse, PDFRequest, TemplateSummary, TemplateDetail
@@ -7,6 +8,7 @@ from app.services.template_service import (
     get_template,
     generate_contract,
     generate_pdf,
+    review_contract,
 )
 
 router = APIRouter()
@@ -72,7 +74,15 @@ async def generate_contract_endpoint(req: GenerateRequest):
     if not result["success"]:
         return GenerateResponse(**result)
 
-    return GenerateResponse(**result)
+    response = GenerateResponse(**result)
+
+    if req.review and result.get("contract"):
+        t0 = time.monotonic()
+        warnings = await review_contract(result["contract"], req.language, req.user_fields)
+        response.review_time_ms = int((time.monotonic() - t0) * 1000)
+        response.warnings = warnings
+
+    return response
 
 
 @router.post("/generate/pdf")

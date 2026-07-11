@@ -3,6 +3,15 @@ from typing import Optional
 from app.models.contract import Language, ContractResponse, TemplateSection, FieldMetadata
 
 
+class ContractWarning(BaseModel):
+    field: str = ""
+    severity: str = "warning"  # warning | error | info
+    message_ar: str = ""
+    message_fr: str = ""
+    suggestion_ar: str = ""
+    suggestion_fr: str = ""
+
+
 class GenerateRequest(BaseModel):
     contract_slug: str
     language: Language
@@ -11,11 +20,14 @@ class GenerateRequest(BaseModel):
         description="Key-value pairs for template placeholders",
         examples=[{"NOM_LOCATAIRE": "Ali Ben Salah", "ADRESSE_LOGEMENT": "Rue Habib Bourguiba, Tunis"}],
     )
+    review: bool = False
 
 
 class GenerateResponse(ContractResponse):
     generation_time_ms: int = 0
     tokens_used: int = 0
+    review_time_ms: int = 0
+    warnings: list[ContractWarning] = Field(default_factory=list)
 
 
 class PDFRequest(BaseModel):

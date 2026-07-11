@@ -221,6 +221,7 @@ export default function GeneratePage() {
           contract_slug: type,
           language: lang,
           user_fields: fieldValues,
+          review: true,
         }),
       });
       if (!res.ok) throw new Error((await res.json()).detail || "Generation failed");
@@ -366,6 +367,41 @@ export default function GeneratePage() {
                   </p>
                 </div>
               </div>
+
+              {/* AI Review Warnings */}
+              {generated.warnings && generated.warnings.length > 0 && (
+                <div className="border border-cat-family/40 rounded-lg bg-cat-family/5 p-4 space-y-3">
+                  <div className="flex items-center gap-2">
+                    <AlertCircle size={16} className="text-cat-family" />
+                    <span className="text-sm font-semibold text-on-surface">
+                      {lang === "ar" ? "مراجعة العقد" : "Révision du contrat"} ({generated.warnings.length})
+                    </span>
+                    <span className="text-xs text-text-secondary">
+                      {lang === "ar" ? `تمت المراجعة في ${generated.review_time_ms || 0}ms` : `Révisé en ${generated.review_time_ms || 0}ms`}
+                    </span>
+                  </div>
+
+                  {generated.warnings.map((w, i) => (
+                    <div key={i} className={`text-sm p-3 rounded-lg ${
+                      w.severity === "error"
+                        ? "bg-error/10 border border-error/20"
+                        : "bg-cat-family/10 border border-cat-family/20"
+                    }`}>
+                      <div className="flex items-start gap-2">
+                        <AlertCircle size={14} className={w.severity === "error" ? "text-error shrink-0 mt-0.5" : "text-cat-family shrink-0 mt-0.5"} />
+                        <div>
+                          <p className="font-medium text-on-surface">
+                            {lang === "ar" ? w.message_ar : w.message_fr}
+                          </p>
+                          <p className="text-xs text-text-secondary mt-1">
+                            {lang === "ar" ? w.suggestion_ar : w.suggestion_fr}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
 
               <div className="bg-surface border border-border-slate rounded-lg paper-shadow p-6 max-h-96 overflow-y-auto">
                 <pre className="text-xs font-mono whitespace-pre-wrap text-on-surface">
