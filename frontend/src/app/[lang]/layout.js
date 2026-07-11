@@ -11,7 +11,7 @@ export default function LangLayout({ children, params }) {
 
   return (
     <main dir={dir} lang={lang} className="flex flex-col min-h-screen bg-background">
-      <Navbar messages={{}} />
+      <Navbar />
       <div className="flex-1">{children}</div>
       <Footer lang={lang} />
     </main>
