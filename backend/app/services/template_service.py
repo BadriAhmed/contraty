@@ -31,19 +31,19 @@ _contract_repo: Optional[ContractRepository] = None
 def get_template_repo() -> TemplateRepository:
     global _template_repo
     if _template_repo is None:
-        if settings.supabase_url:
+        if settings.supabase_url and settings.supabase_service_key:
             _template_repo = SupabaseTemplateRepository()
             logger.info("Using Supabase template repository")
         else:
             _template_repo = InMemoryTemplateRepository()
-            logger.info("Using in-memory template repository")
+            logger.info("Using in-memory template repository (SUPABASE_SERVICE_KEY not set)")
     return _template_repo
 
 
 def get_contract_repo() -> ContractRepository:
     global _contract_repo
     if _contract_repo is None:
-        if settings.supabase_url:
+        if settings.supabase_url and settings.supabase_service_key:
             _contract_repo = SupabaseContractRepository()
         else:
             _contract_repo = InMemoryContractRepository()
