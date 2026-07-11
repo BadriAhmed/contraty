@@ -101,8 +101,8 @@ module.exports = {
         xl: "var(--radius-xl)",
       },
       fontFamily: {
-        sans: ["Inter", "Noto Naskh Arabic", "sans-serif"],
-        mono: ["JetBrains Mono", "monospace"],
+        sans: ["var(--font-inter)", "var(--font-arabic)", "sans-serif"],
+        mono: ["var(--font-mono)", "monospace"],
       },
       fontSize: {
         "headline-hero": ["48px", { lineHeight: "1.2", fontWeight: "700" }],

@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@400;600;700&family=JetBrains+Mono:wght@400&display=swap");
-
 :root {
   --background: #faf8ff;
   --on-background: #191b23;
@@ -84,7 +82,6 @@
 body {
   background: var(--background);
   color: var(--on-surface);
-  font-family: "Inter", "Noto Naskh Arabic", sans-serif;
   font-size: 16px;
   line-height: 1.6;
 }
