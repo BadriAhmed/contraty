@@ -23,16 +23,44 @@ export default async function HomePage({ params }) {
   const domainOrder = ["logement", "travail", "argent", "vehicules", "entreprise", "demarches"];
 
   return (
-    <div className="max-w-container-max mx-auto px-4 md:px-6 py-8">
-      {/* Compact header */}
+    <div className="max-w-container-max mx-auto px-4 md:px-6">
+      {/* Intro / Hero */}
+      <section className="py-12 md:py-16 border-b border-border-slate mb-8">
+        <div className="max-w-2xl">
+          <h1 className="text-3xl md:text-4xl font-bold text-on-surface mb-4 leading-tight">
+            {lang === "ar" ? (
+              <>كونتراتي — <span className="text-primary">عقود قانونية</span> تونسية في دقائق</>
+            ) : (
+              <>Contraty — vos <span className="text-primary">contrats juridiques</span> tunisiens en quelques minutes</>
+            )}
+          </h1>
+          <p className="text-base text-text-secondary leading-relaxed mb-6">
+            {lang === "ar"
+              ? "أول منصة تونسية لإنشاء العقود القانونية ثنائية اللغة. 22 نموذجًا مبنيًا على القوانين التونسية — مجلة الالتزامات والعقود، مجلة الشغل، ومجلة الشركات التجارية. اختر نموذجك، املأ الحقول، واحصل على عقدك بصيغة PDF جاهز للتوقيع."
+              : "La première plateforme tunisienne de génération de contrats juridiques bilingues. 22 modèles fondés sur les codes tunisiens — Code des Obligations et des Contrats, Code du Travail, et Code des Sociétés Commerciales. Choisissez un modèle, remplissez les champs, et obtenez votre contrat en PDF prêt à signer."}
+          </p>
+          <div className="flex items-center gap-3 text-sm text-text-secondary">
+            <span className="flex items-center gap-1">
+              <FileText size={14} className="text-primary" />
+              {lang === "ar" ? "22 نموذجًا" : "22 modèles"}
+            </span>
+            <span className="text-border-slate">|</span>
+            <span>{lang === "ar" ? "عربي · Français" : "Arabe · Français"}</span>
+            <span className="text-border-slate">|</span>
+            <span>{lang === "ar" ? "PDF جاهز" : "PDF prêt à signer"}</span>
+          </div>
+        </div>
+      </section>
+
+      {/* Template grid header */}
       <div className="mb-6">
-        <h1 className="text-2xl md:text-3xl font-bold text-on-surface mb-2">
-          {lang === "ar" ? "نماذج العقود التونسية" : "Modèles de contrats tunisiens"}
-        </h1>
+        <h2 className="text-xl font-bold text-on-surface mb-2">
+          {lang === "ar" ? "نماذج العقود" : "Modèles de contrats"}
+        </h2>
         <p className="text-sm text-text-secondary">
           {lang === "ar"
-            ? "22 نموذجًا قانونيًا بالعربية والفرنسية — اختر نموذجًا واملأ الحقول واحصل على عقدك الجاهز"
-            : "22 modèles juridiques bilingues — choisissez un type de contrat, remplissez les champs et obtenez votre document prêt à signer"}
+            ? `${templates.length} نموذجًا قانونيًا بالعربية والفرنسية`
+            : `${templates.length} modèles juridiques bilingues`}
         </p>
       </div>
 
