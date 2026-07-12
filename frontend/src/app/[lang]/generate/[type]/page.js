@@ -83,6 +83,7 @@ export default function GeneratePage() {
   const [error, setError] = useState(null);
   const [fieldErrors, setFieldErrors] = useState({});
   const [extraNotes, setExtraNotes] = useState("");
+  const [appliedSuggestions, setAppliedSuggestions] = useState(new Set());
 
   useEffect(() => {
     fetchTemplate(type)
@@ -196,7 +197,14 @@ export default function GeneratePage() {
     setGenerated(null);
   };
 
-  const handleGenerate = async () => {
+  const handleApplySuggestion = (warning) => {
+    if (warning.suggested_value && warning.field) {
+      setFieldValues((prev) => ({ ...prev, [warning.field]: warning.suggested_value }));
+      setAppliedSuggestions((prev) => new Set([...prev, `${warning.field}:${warning.suggested_value}`]));
+    }
+  };
+
+  const handleGenerate = async (skipReview = false) => {
     setGenerating(true);
     setError(null);
     try {
@@ -207,7 +215,8 @@ export default function GeneratePage() {
           contract_slug: type,
           language: lang,
           user_fields: fieldValues,
-          review: true,
+          review: !skipReview,
+          skip_review: skipReview,
           extra_notes: extraNotes,
         }),
       });
@@ -215,6 +224,7 @@ export default function GeneratePage() {
       const data = await res.json();
       setGenerated(data);
       setCurrentStep(steps.length + 2);
+      setAppliedSuggestions(new Set());
     } catch (e) {
       setError(e.message);
     } finally {
@@ -337,17 +347,51 @@ export default function GeneratePage() {
                       {lang === "ar" ? "مراجعة" : "Révision"} ({generated.warnings.length})
                     </span>
                   </div>
-                  {generated.warnings.map((w, i) => (
-                    <div key={i} className={`text-sm p-3 rounded-lg ${w.severity === "error" ? "bg-error/10 border border-error/20" : "bg-cat-family/10 border border-cat-family/20"}`}>
-                      <div className="flex items-start gap-2">
-                        <AlertCircle size={14} className={w.severity === "error" ? "text-error shrink-0 mt-0.5" : "text-cat-family shrink-0 mt-0.5"} />
-                        <div>
-                          <p className="font-medium text-on-surface">{lang === "ar" ? w.message_ar : w.message_fr}</p>
-                          <p className="text-xs text-text-secondary mt-1">{lang === "ar" ? w.suggestion_ar : w.suggestion_fr}</p>
+                  {generated.warnings.map((w, i) => {
+                    const applied = appliedSuggestions.has(`${w.field}:${w.suggested_value}`);
+                    return (
+                      <div key={i} className={`text-sm p-3 rounded-lg ${w.severity === "error" ? "bg-error/10 border border-error/20" : "bg-cat-family/10 border border-cat-family/20"}`}>
+                        <div className="flex items-start gap-2">
+                          <AlertCircle size={14} className={w.severity === "error" ? "text-error shrink-0 mt-0.5" : "text-cat-family shrink-0 mt-0.5"} />
+                          <div className="flex-1 min-w-0">
+                            <p className="font-medium text-on-surface">{lang === "ar" ? w.message_ar : w.message_fr}</p>
+                            <p className="text-xs text-text-secondary mt-1">{lang === "ar" ? w.suggestion_ar : w.suggestion_fr}</p>
+                            {w.suggested_value && (
+                              <div className="flex items-center gap-2 mt-2">
+                                {applied ? (
+                                  <span className="text-xs text-success-green font-medium flex items-center gap-1">
+                                    <CheckCircle2 size={12} />
+                                    {lang === "ar" ? `تم التطبيق: ${w.suggested_value}` : `Appliqué : ${w.suggested_value}`}
+                                  </span>
+                                ) : (
+                                  <button
+                                    onClick={() => handleApplySuggestion(w)}
+                                    className="text-xs bg-primary/10 text-primary font-medium px-2 py-1 rounded hover:bg-primary/20 transition-colors"
+                                  >
+                                    {lang === "ar"
+                                      ? `تطبيق: ${w.suggested_value}`
+                                      : `Appliquer: ${w.suggested_value}`}
+                                  </button>
+                                )}
+                              </div>
+                            )}
+                          </div>
                         </div>
                       </div>
+                    );
+                  })}
+                  {appliedSuggestions.size > 0 && (
+                    <div className="flex gap-3 pt-2">
+                      <button
+                        onClick={() => handleGenerate(true)}
+                        disabled={generating}
+                        className="flex items-center gap-2 bg-primary text-on-primary font-semibold py-2 px-4 rounded-lg hover:bg-surface-tint transition-colors disabled:opacity-50 text-sm"
+                      >
+                        {generating && <Loader2 size={14} className="animate-spin" />}
+                        {lang === "ar" ? "إعادة الإنشاء مع التصحيحات" : "Régénérer avec les corrections"}
+                      </button>
                     </div>
-                  ))}
+                  )}
                 </div>
               )}
 

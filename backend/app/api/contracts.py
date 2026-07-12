@@ -77,7 +77,7 @@ async def generate_contract_endpoint(req: GenerateRequest):
 
     response = GenerateResponse(**result)
 
-    if req.review and result.get("contract"):
+    if req.review and result.get("contract") and not req.skip_review:
         t0 = time.monotonic()
         warnings = await review_contract(result["contract"], req.language, req.user_fields, req.extra_notes)
         response.review_time_ms = int((time.monotonic() - t0) * 1000)

@@ -175,12 +175,17 @@ async def review_contract(
 3. Dates passées
 4. Noms incomplets ou identiques entre parties
 5. Incohérences entre type de contrat et valeurs
+6. Valeurs mal formatées ou améliorables (ex: format de téléphone, majuscules, accents)
 
 Ne commente pas les clauses standards, ni les références légales.
 Si tout va bien, réponds exactement: RIEN_A_SIGNALER
 
+Pour chaque problème, fournis une valeur corrigée dans le champ "value". Si le champ
+est vide, mets la valeur suggérée. Si la valeur est mal formatée, corrige-la.
+Le champ "value" DOIT contenir la valeur exacte à utiliser pour remplacer.
+
 Format de réponse pour chaque problème (JSON array uniquement, pas de markdown):
-[{{"field":"NOM","severity":"error","message_fr":"...","message_ar":"...","suggestion_fr":"...","suggestion_ar":"..."}}]
+[{{"field":"NOM","severity":"error","message_fr":"...","message_ar":"...","suggestion_fr":"...","suggestion_ar":"...","value":"valeur corrigée"}}]
 
 Contrat: {title}
 Champs fournis: {fields_str}{notes_str}
@@ -202,7 +207,13 @@ Texte: {contract_text}"""
         if start != -1 and end != -1 and end > start:
             raw = json.loads(text[start:end + 1])
             if isinstance(raw, list):
-                return [ContractWarning(**w) for w in raw if isinstance(w, dict)]
+                warnings = []
+                for w in raw:
+                    if isinstance(w, dict):
+                        if "value" in w:
+                            w["suggested_value"] = str(w["value"])
+                        warnings.append(ContractWarning(**w))
+                return warnings
 
     except Exception as e:
         logger.warning("Contract review error: %s", str(e)[:200])

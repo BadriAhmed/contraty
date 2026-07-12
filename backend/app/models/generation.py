@@ -10,6 +10,7 @@ class ContractWarning(BaseModel):
     message_fr: str = ""
     suggestion_ar: str = ""
     suggestion_fr: str = ""
+    suggested_value: str = ""  # corrected field value to apply on regeneration
 
 
 class GenerateRequest(BaseModel):
@@ -21,6 +22,7 @@ class GenerateRequest(BaseModel):
         examples=[{"NOM_LOCATAIRE": "Ali Ben Salah", "ADRESSE_LOGEMENT": "Rue Habib Bourguiba, Tunis"}],
     )
     review: bool = False
+    skip_review: bool = False  # when True, skip review even if review=True (used for regeneration after applying suggestions)
     extra_notes: str = ""
 
 
