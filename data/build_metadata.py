@@ -61,6 +61,11 @@ TYPE_PATTERNS = {
     "percentage": r"^\d{1,3}([\.\,]\d+)?$",
 }
 
+# Fields explicitly marked as optional (per template slug)
+OPTIONAL_FIELDS = {
+    "lettre-demission": {"MOTIF_DEMISSION"},
+}
+
 
 def detect_type(name: str) -> str:
     upper = name.upper().replace("[", "").replace("]", "")
@@ -117,7 +122,7 @@ def humanize(name: str) -> tuple[str, str]:
     return ar_label, fr_label
 
 
-def build_metadata(field_name: str) -> dict:
+def build_metadata(field_name: str, template_slug: str = "") -> dict:
     ftype = detect_type(field_name)
     ar_label, fr_label = humanize(field_name)
     placeholder_ar = TYPE_PLACEHOLDERS.get(ftype, {}).get("ar", "")
@@ -126,13 +131,16 @@ def build_metadata(field_name: str) -> dict:
     hint_fr = TYPE_HINTS.get(ftype, {}).get("fr", "")
     pattern = TYPE_PATTERNS.get(ftype)
 
+    is_optional = field_name in OPTIONAL_FIELDS.get(template_slug, set())
+    min_length = 0 if is_optional else 2
+
     meta = {
         "type": ftype,
         "label_ar": ar_label,
         "label_fr": fr_label,
         "placeholder_ar": placeholder_ar,
         "placeholder_fr": placeholder_fr,
-        "required": True,
+        "required": not is_optional,
         "hint_ar": hint_ar,
         "hint_fr": hint_fr,
     }
@@ -150,7 +158,7 @@ def build_metadata(field_name: str) -> dict:
         meta["max_length"] = 8
 
     if ftype == "text":
-        meta["min_length"] = 2
+        meta["min_length"] = min_length
         meta["max_length"] = 500
 
     return meta
@@ -167,12 +175,13 @@ def process_all():
 
         seen = set()
         metadata = {}
+        slug = data.get("slug", "")
         for section in data.get("sections", []):
             for article in section.get("articles", []):
                 for field in article.get("fields", []):
                     if field not in seen:
                         seen.add(field)
-                        metadata[field] = build_metadata(field)
+                        metadata[field] = build_metadata(field, slug)
 
         data["field_metadata"] = metadata
         path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
