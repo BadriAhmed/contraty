@@ -135,6 +135,21 @@ def _fill_template(template: Contract, user_fields: dict[str, str], language: La
     return data
 
 
+def _fill_blank_template(template: Contract, language: Language) -> dict:
+    """Replace [PLACEHOLDER] tokens with dotted lines for a printable blank template."""
+    data = template.model_dump()
+    data["disclaimer"] = ""
+    import re
+    for section in data["sections"]:
+        for article in section["articles"]:
+            text_key = "text_ar" if language == Language.ar else "text_fr"
+            text = article[text_key]
+            text = re.sub(r'\[([A-Z_]+)\]', '..............', text)
+            article[text_key] = text
+            article["fields"] = []
+    return data
+
+
 async def generate_pdf(contract_json: dict, language: str, contract_slug: str) -> bytes:
     lang = Language(language)
     contract = Contract(**contract_json)

@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { fetchTemplate } from "@/lib/constants";
-import { ArrowLeft, ArrowRight, FileText } from "lucide-react";
+import { fetchTemplate, API_BASE } from "@/lib/constants";
+import { ArrowLeft, ArrowRight, FileText, Download } from "lucide-react";
 
 const TYPE_LABELS = {
   ar: {
@@ -128,6 +128,25 @@ export default async function ContractDetailPage({ params }) {
           {lang === "ar" ? "ابدأ الآن" : "Commencer"}
           {isRtl ? <ArrowLeft size={18} /> : <ArrowRight size={18} />}
         </Link>
+
+        <div className="flex flex-col sm:flex-row gap-3 mt-4">
+          <a
+            href={`${API_BASE}/contracts/templates/${template.slug}/download?language=${lang}&format=pdf`}
+            className="inline-flex items-center gap-2 border border-outline-variant text-on-surface font-medium px-5 py-2.5 rounded-lg hover:bg-surface-container transition-colors text-sm"
+            download
+          >
+            <Download size={16} />
+            {lang === "ar" ? "تحميل النموذج فارغاً (PDF)" : "Télécharger le modèle vierge (PDF)"}
+          </a>
+          <a
+            href={`${API_BASE}/contracts/templates/${template.slug}/download?language=${lang}&format=docx`}
+            className="inline-flex items-center gap-2 border border-outline-variant text-on-surface font-medium px-5 py-2.5 rounded-lg hover:bg-surface-container transition-colors text-sm"
+            download
+          >
+            <FileText size={16} />
+            {lang === "ar" ? "تحميل النموذج فارغاً (Word)" : "Télécharger le modèle vierge (Word)"}
+          </a>
+        </div>
 
         <p className="text-xs text-text-secondary mt-4">
           {lang === "ar"

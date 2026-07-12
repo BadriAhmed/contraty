@@ -122,3 +122,46 @@ async def generate_docx_endpoint(req: PDFRequest):
         media_type="application/vnd.openxmlformats-officedocument.wordprocessingml.document",
         headers={"Content-Disposition": f'attachment; filename="{filename}"'},
     )
+
+
+@router.get("/templates/{contract_slug}/download")
+async def download_blank_template_endpoint(
+    contract_slug: str,
+    language: str = "fr",
+    format: str = "pdf",
+):
+    from fastapi.responses import Response
+    from app.services.template_service import _fill_blank_template
+
+    t = await get_template(contract_slug)
+    if t is None:
+        raise HTTPException(status_code=404, detail="Template not found")
+
+    lang = Language(language)
+    contract = Contract(
+        id=t.get("id", f"{contract_slug}-v1"),
+        slug=contract_slug,
+        title_ar=t.get("title_ar", ""),
+        title_fr=t.get("title_fr", ""),
+        sections=t.get("sections", []),
+    )
+
+    blank = _fill_blank_template(contract, lang)
+
+    if format == "docx":
+        doc = Contract(**blank)
+        docx_bytes = _docx.render_contract(doc, lang)
+        filename = f"{contract_slug}-vierge-{language}.docx"
+        return Response(
+            content=docx_bytes,
+            media_type="application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+            headers={"Content-Disposition": f'attachment; filename="{filename}"'},
+        )
+    else:
+        pdf_bytes = await generate_pdf(blank, language, contract_slug)
+        filename = f"{contract_slug}-vierge-{language}.pdf"
+        return Response(
+            content=pdf_bytes,
+            media_type="application/pdf",
+            headers={"Content-Disposition": f'attachment; filename="{filename}"'},
+        )
