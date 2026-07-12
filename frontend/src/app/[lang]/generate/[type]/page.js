@@ -130,6 +130,8 @@ export default function GeneratePage() {
   const [extraNotes, setExtraNotes] = useState("");
   const [appliedSuggestions, setAppliedSuggestions] = useState(new Set());
   const [loadingStep, setLoadingStep] = useState(0);
+  const [editingField, setEditingField] = useState(null);
+  const [inlineValue, setInlineValue] = useState("");
   const initialLoadDone = useRef(false);
 
   /* ---------- localStorage persistence ---------- */
@@ -294,12 +296,14 @@ export default function GeneratePage() {
   };
 
   const handleEditField = (fieldName) => {
-    // Find the step containing this field and go back to it
-    const stepIdx = steps.findIndex((s) => s.fields.some((f) => f.name === fieldName));
-    if (stepIdx >= 0) {
-      setGenerated(null);
-      setCurrentStep(stepIdx + 1); // +1 because step 0 is disclaimer
-    }
+    setEditingField(fieldName);
+    setInlineValue(fieldValues[fieldName] || "");
+  };
+
+  const handleSaveInline = (fieldName) => {
+    setFieldValues((prev) => ({ ...prev, [fieldName]: inlineValue }));
+    setAppliedSuggestions((prev) => new Set([...prev, `accept:${fieldName}:manual`]));
+    setEditingField(null);
   };
 
   const handleGenerate = async (skipReview = false) => {
@@ -470,21 +474,39 @@ export default function GeneratePage() {
                               ) : (
                                 <>
                                   {ctype === "manual" ? (
-                                    <>
-                                      <button
-                                        onClick={() => handleEditField(w.field)}
-                                        className="text-xs bg-cat-family/20 text-cat-family font-medium px-2 py-1 rounded hover:bg-cat-family/30 transition-colors flex items-center gap-1"
-                                      >
-                                        <ArrowLeft size={12} />
-                                        {lang === "ar" ? `تعديل: ${w.field}` : `Modifier: ${w.field}`}
-                                      </button>
-                                      <button
-                                        onClick={() => { setAppliedSuggestions((prev) => new Set([...prev, `accept:${w.field}:manual`])); }}
-                                        className="text-xs bg-success-green/10 text-success-green font-medium px-2 py-1 rounded hover:bg-success-green/20 transition-colors"
-                                      >
-                                        {lang === "ar" ? "قبول كما هو" : "Accepter tel quel"}
-                                      </button>
-                                    </>
+                                    editingField === w.field ? (
+                                      <div className="flex items-center gap-2">
+                                        <input
+                                          type="text"
+                                          value={inlineValue}
+                                          onChange={(e) => setInlineValue(e.target.value)}
+                                          onKeyDown={(e) => { if (e.key === "Enter") handleSaveInline(w.field); if (e.key === "Escape") setEditingField(null); }}
+                                          className="input-field text-xs py-1 px-2 min-w-[180px]"
+                                          autoFocus
+                                        />
+                                        <button onClick={() => handleSaveInline(w.field)} className="text-xs bg-success-green/20 text-success-green font-medium px-2 py-1 rounded hover:bg-success-green/30 transition-colors">
+                                          {lang === "ar" ? "حفظ" : "OK"}
+                                        </button>
+                                        <button onClick={() => setEditingField(null)} className="text-xs text-text-secondary font-medium px-2 py-1 rounded hover:bg-surface-container transition-colors">
+                                          {lang === "ar" ? "إلغاء" : "Annuler"}
+                                        </button>
+                                      </div>
+                                    ) : (
+                                      <>
+                                        <button
+                                          onClick={() => handleEditField(w.field)}
+                                          className="text-xs bg-cat-family/20 text-cat-family font-medium px-2 py-1 rounded hover:bg-cat-family/30 transition-colors"
+                                        >
+                                          {lang === "ar" ? "تعديل" : "Corriger"}
+                                        </button>
+                                        <button
+                                          onClick={() => { setAppliedSuggestions((prev) => new Set([...prev, `accept:${w.field}:manual`])); }}
+                                          className="text-xs bg-success-green/10 text-success-green font-medium px-2 py-1 rounded hover:bg-success-green/20 transition-colors"
+                                        >
+                                          {lang === "ar" ? "قبول كما هو" : "Accepter tel quel"}
+                                        </button>
+                                      </>
+                                    )
                                   ) : w.suggested_value ? (
                                     <button
                                       onClick={() => handleApplySuggestion(w)}
@@ -684,8 +706,8 @@ export default function GeneratePage() {
                               {field.label}
                               {md?.required !== false && <span className="text-error ms-0.5">*</span>}
                             </span>
-                            {md?.hint_ar && lang === "ar" && <span className="text-xs text-text-secondary ms-1">({md.hint_ar})</span>}
-                            {md?.hint_fr && lang === "fr" && <span className="text-xs text-text-secondary ms-1">({md.hint_fr})</span>}
+                            {inputType !== "date" && md?.hint_ar && lang === "ar" && <span className="text-xs text-text-secondary ms-1">({md.hint_ar})</span>}
+                            {inputType !== "date" && md?.hint_fr && lang === "fr" && <span className="text-xs text-text-secondary ms-1">({md.hint_fr})</span>}
                           </label>
                           {help && (
                             <p className="text-xs text-text-secondary mb-1.5 leading-relaxed">{help}</p>
