@@ -11,6 +11,7 @@ class ContractWarning(BaseModel):
     suggestion_ar: str = ""
     suggestion_fr: str = ""
     suggested_value: str = ""  # corrected field value to apply on regeneration
+    correction_type: str = "auto"  # auto (apply-able) | manual (user must provide value) | info (no action needed)
 
 
 class GenerateRequest(BaseModel):

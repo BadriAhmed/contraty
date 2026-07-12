@@ -189,12 +189,15 @@ async def review_contract(
 Ne commente pas les clauses standards, ni les références légales.
 Si tout va bien, réponds exactement: RIEN_A_SIGNALER
 
-Pour chaque problème, fournis une valeur corrigée dans le champ "value". Si le champ
-est vide, mets la valeur suggérée. Si la valeur est mal formatée, corrige-la.
-Le champ "value" DOIT contenir la valeur exacte à utiliser pour remplacer.
+Pour chaque problème, fournis:
+- "value": la valeur corrigée concrète à utiliser. Si tu ne peux pas deviner la valeur
+  (ex: il manque le nom de famille), mets "value" à "" et mets "correction_type": "manual"
+- "correction_type": "auto" si la correction est applicable automatiquement (tu fournis la valeur),
+  "manual" si l'utilisateur doit fournir l'information lui-même (nom manquant, adresse incomplète...),
+  "info" si c'est juste une remarque sans action sur un champ
 
 Format de réponse pour chaque problème (JSON array uniquement, pas de markdown):
-[{{"field":"NOM","severity":"error","message_fr":"...","message_ar":"...","suggestion_fr":"...","suggestion_ar":"...","value":"valeur corrigée"}}]
+[{{"field":"NOM","severity":"error","message_fr":"...","message_ar":"...","suggestion_fr":"...","suggestion_ar":"...","value":"valeur corrigée","correction_type":"auto"}}]
 
 Contrat: {title}
 Champs fournis: {fields_str}{notes_str}
@@ -221,6 +224,8 @@ Texte: {contract_text}"""
                     if isinstance(w, dict):
                         if "value" in w:
                             w["suggested_value"] = str(w["value"])
+                        if "correction_type" not in w:
+                            w["correction_type"] = "auto" if w.get("suggested_value", "") else "manual"
                         warnings.append(ContractWarning(**w))
                 return warnings
 

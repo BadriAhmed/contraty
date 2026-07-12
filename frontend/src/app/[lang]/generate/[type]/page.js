@@ -103,8 +103,8 @@ const ERROR_MSG = {
 };
 
 const LOADING_STEPS = {
-  ar: ["جاري إنشاء العقد...", "جاري المراجعة بالذكاء الاصطناعي...", "اكتمل!"],
-  fr: ["Génération du contrat...", "Révision par l'IA...", "Terminé !"],
+  ar: ["جاري إنشاء العقد...", "جاري المراجعة...", "اكتمل!"],
+  fr: ["Génération du contrat...", "Révision en cours...", "Terminé !"],
 };
 
 /* ------------------------------------------------------------------ */
@@ -293,6 +293,15 @@ export default function GeneratePage() {
     }
   };
 
+  const handleEditField = (fieldName) => {
+    // Find the step containing this field and go back to it
+    const stepIdx = steps.findIndex((s) => s.fields.some((f) => f.name === fieldName));
+    if (stepIdx >= 0) {
+      setGenerated(null);
+      setCurrentStep(stepIdx + 1); // +1 because step 0 is disclaimer
+    }
+  };
+
   const handleGenerate = async (skipReview = false) => {
     setGenerating(true);
     setError(null);
@@ -441,7 +450,10 @@ export default function GeneratePage() {
                     </span>
                   </div>
                   {generated.warnings.map((w, i) => {
+                    const ctype = w.correction_type || "auto";
                     const applied = appliedSuggestions.has(`${w.field}:${w.suggested_value}`);
+                    const dismissed = appliedSuggestions.has(`dismiss:${w.field}:${w.message_fr}`);
+                    if (dismissed && ctype === "info") return null;
                     return (
                       <div key={i} className={`text-sm p-3 rounded-lg ${w.severity === "error" ? "bg-error/10 border border-error/20" : "bg-cat-family/10 border border-cat-family/20"}`}>
                         <div className="flex items-start gap-2">
@@ -449,25 +461,48 @@ export default function GeneratePage() {
                           <div className="flex-1 min-w-0">
                             <p className="font-medium text-on-surface">{lang === "ar" ? w.message_ar : w.message_fr}</p>
                             <p className="text-xs text-text-secondary mt-1">{lang === "ar" ? w.suggestion_ar : w.suggestion_fr}</p>
-                            {w.suggested_value && (
-                              <div className="flex items-center gap-2 mt-2">
-                                {applied ? (
-                                  <span className="text-xs text-success-green font-medium flex items-center gap-1">
-                                    <CheckCircle2 size={12} />
-                                    {lang === "ar" ? `تم التطبيق: ${w.suggested_value}` : `Appliqué : ${w.suggested_value}`}
-                                  </span>
-                                ) : (
-                                  <button
-                                    onClick={() => handleApplySuggestion(w)}
-                                    className="text-xs bg-primary/10 text-primary font-medium px-2 py-1 rounded hover:bg-primary/20 transition-colors"
-                                  >
-                                    {lang === "ar"
-                                      ? `تطبيق: ${w.suggested_value}`
-                                      : `Appliquer: ${w.suggested_value}`}
-                                  </button>
-                                )}
-                              </div>
-                            )}
+                            <div className="flex items-center gap-2 mt-2">
+                              {applied ? (
+                                <span className="text-xs text-success-green font-medium flex items-center gap-1">
+                                  <CheckCircle2 size={12} />
+                                  {lang === "ar" ? (ctype === "manual" ? "تم القبول" : w.suggested_value ? `تم التطبيق: ${w.suggested_value}` : "تم القبول") : (ctype === "manual" ? "Accepté" : w.suggested_value ? `Appliqué : ${w.suggested_value}` : "Accepté")}
+                                </span>
+                              ) : (
+                                <>
+                                  {ctype === "manual" ? (
+                                    <>
+                                      <button
+                                        onClick={() => handleEditField(w.field)}
+                                        className="text-xs bg-cat-family/20 text-cat-family font-medium px-2 py-1 rounded hover:bg-cat-family/30 transition-colors flex items-center gap-1"
+                                      >
+                                        <ArrowLeft size={12} />
+                                        {lang === "ar" ? `تعديل: ${w.field}` : `Modifier: ${w.field}`}
+                                      </button>
+                                      <button
+                                        onClick={() => { setAppliedSuggestions((prev) => new Set([...prev, `accept:${w.field}:manual`])); }}
+                                        className="text-xs bg-success-green/10 text-success-green font-medium px-2 py-1 rounded hover:bg-success-green/20 transition-colors"
+                                      >
+                                        {lang === "ar" ? "قبول كما هو" : "Accepter tel quel"}
+                                      </button>
+                                    </>
+                                  ) : w.suggested_value ? (
+                                    <button
+                                      onClick={() => handleApplySuggestion(w)}
+                                      className="text-xs bg-primary/10 text-primary font-medium px-2 py-1 rounded hover:bg-primary/20 transition-colors"
+                                    >
+                                      {lang === "ar" ? `تطبيق: ${w.suggested_value}` : `Appliquer: ${w.suggested_value}`}
+                                    </button>
+                                  ) : (
+                                    <button
+                                      onClick={() => { setAppliedSuggestions((prev) => new Set([...prev, `dismiss:${w.field}:${w.message_fr}`])); }}
+                                      className="text-xs text-text-secondary font-medium px-2 py-1 rounded hover:bg-surface-container transition-colors"
+                                    >
+                                      {lang === "ar" ? "تجاهل" : "Ignorer"}
+                                    </button>
+                                  )}
+                                </>
+                              )}
+                            </div>
                           </div>
                         </div>
                       </div>
