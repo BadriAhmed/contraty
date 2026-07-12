@@ -120,23 +120,22 @@ export default async function ContractDetailPage({ params }) {
           </div>
         </div>
 
-        {/* Start button */}
-        <Link
-          href={`/${lang}/generate/${template.slug}`}
-          className="inline-flex items-center gap-2 bg-primary text-on-primary font-semibold px-8 py-3.5 rounded-lg hover:bg-surface-tint transition-colors shadow-sm text-base"
-        >
-          {lang === "ar" ? "ابدأ الآن" : "Commencer"}
-          {isRtl ? <ArrowLeft size={18} /> : <ArrowRight size={18} />}
-        </Link>
+        {/* Start + Blank buttons — same line */}
+        <div className="flex items-center gap-3">
+          <Link
+            href={`/${lang}/generate/${template.slug}`}
+            className="inline-flex items-center gap-2 bg-primary text-on-primary font-semibold px-8 py-3.5 rounded-lg hover:bg-surface-tint transition-colors shadow-sm text-base"
+          >
+            {lang === "ar" ? "ابدأ الآن" : "Commencer"}
+            {isRtl ? <ArrowLeft size={18} /> : <ArrowRight size={18} />}
+          </Link>
 
-        <div className="flex flex-col sm:flex-row gap-3 mt-4">
           <Link
             href={`/${lang}/blank/${template.slug}`}
-            target="_blank"
-            className="inline-flex items-center gap-2 border border-outline-variant text-on-surface font-medium px-5 py-2.5 rounded-lg hover:bg-surface-container transition-colors text-sm"
+            className="inline-flex items-center gap-2 border border-primary text-primary font-semibold px-6 py-3.5 rounded-lg hover:bg-primary-fixed transition-colors text-base"
           >
             <Download size={16} />
-            {lang === "ar" ? "تحميل النموذج فارغاً" : "Télécharger le modèle vierge"}
+            {lang === "ar" ? "تحميل فارغاً" : "Modèle vierge"}
           </Link>
         </div>
 

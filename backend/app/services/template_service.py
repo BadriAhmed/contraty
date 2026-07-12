@@ -250,6 +250,83 @@ Texte: {contract_text}"""
     return []
 
 
+async def customize_blank_template(
+    template_slug: str,
+    language: Language,
+    prompt: str,
+) -> dict:
+    """Use Gemini to customize a blank template based on user prompt. One-time use."""
+    if not settings.gemini_api_key:
+        raise RuntimeError("Gemini API key not configured")
+
+    await ensure_seeded()
+    t = await get_template(template_slug)
+    if not t:
+        raise ValueError("Template not found")
+
+    contract = Contract(**t)
+    blank = _fill_blank_template(contract, language)
+
+    # Build the full contract text with section/article markers
+    tkey = "text_ar" if language == Language.ar else "text_fr"
+    sections_data = []
+    full_text_parts = []
+    for s in blank.get("sections", []):
+        for a in s.get("articles", []):
+            text = a.get(tkey, "")
+            if text.strip():
+                sections_data.append(a)
+                full_text_parts.append(text)
+
+    full_text = "\n\n".join(full_text_parts)
+    title = blank.get("title_fr" if language == Language.fr else "title_ar", "")
+
+    gpt_prompt = f"""Avocat tunisien. Voici un modèle de contrat vierge tunisien: {title}.
+L'utilisateur demande la modification suivante: {prompt}
+
+Modifie le contrat selon cette demande. Retourne le texte COMPLET du contrat modifié.
+Garde les ................................ aux mêmes emplacements (ce sont les champs à remplir plus tard).
+Ne change que ce que l'utilisateur demande. Ne retire aucune clause existante sauf demande explicite.
+Respecte le style juridique tunisien.
+
+Retourne UNIQUEMENT le texte modifié, sans commentaires, sans markdown."""
+
+    try:
+        from google.genai import Client
+        client = Client(api_key=settings.gemini_api_key)
+        response = await client.aio.models.generate_content(
+            model=settings.gemini_model,
+            contents=gpt_prompt,
+        )
+        modified_text = response.text.strip()
+
+        # Rebuild section articles from the modified text
+        parts = [p.strip() for p in modified_text.split("\n\n") if p.strip()]
+
+        # Map modified text back to articles by position
+        output_sections = []
+        sec_idx = 0
+        part_idx = 0
+        for s in blank.get("sections", []):
+            new_articles = []
+            for a in s.get("articles", []):
+                if a.get(tkey, "").strip() and part_idx < len(parts):
+                    a[tkey] = parts[part_idx]
+                    part_idx += 1
+                new_articles.append(a)
+            output_sections.append({**s, "articles": new_articles})
+            sec_idx += 1
+
+        # If Gemini returned a different number of paragraphs, keep the remaining as-is
+        blank["sections"] = output_sections
+        blank["modified_by_ai"] = True
+        return blank
+
+    except Exception as e:
+        logger.warning("Blank template customization error: %s", str(e)[:200])
+        raise RuntimeError(f"Customization failed: {str(e)[:200]}")
+
+
 def _build_prompt(template: Contract, user_fields: dict[str, str], language: Language) -> str:
     slim = {
         "slug": template.slug,

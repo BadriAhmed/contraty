@@ -165,3 +165,20 @@ async def download_blank_template_endpoint(
             media_type="application/pdf",
             headers={"Content-Disposition": f'attachment; filename="{filename}"'},
         )
+
+
+@router.post("/templates/{contract_slug}/customize")
+async def customize_blank_template_endpoint(req: GenerateRequest):
+    """Customize a blank template with AI based on user prompt. One-time use only."""
+    from app.services.template_service import customize_blank_template as _customize
+
+    if not req.extra_notes:
+        raise HTTPException(status_code=400, detail="extra_notes (prompt) is required")
+
+    try:
+        result = await _customize(req.contract_slug, req.language, req.extra_notes)
+        return result
+    except RuntimeError as e:
+        raise HTTPException(status_code=500, detail=str(e))
+    except ValueError as e:
+        raise HTTPException(status_code=404, detail=str(e))

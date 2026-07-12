@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import { fetchTemplate, API_BASE } from "@/lib/constants";
-import { ArrowLeft, Download, FileText, Loader2, X, Lock } from "lucide-react";
+import { ArrowLeft, Download, FileText, Loader2, X, Lock, Wand } from "lucide-react";
 
 export default function BlankPreviewPage() {
   const params = useParams();
@@ -14,6 +14,10 @@ export default function BlankPreviewPage() {
   const [template, setTemplate] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [customPrompt, setCustomPrompt] = useState("");
+  const [customizing, setCustomizing] = useState(false);
+  const [customized, setCustomized] = useState(false);
+  const [sections, setSections] = useState(null);
 
   useEffect(() => {
     fetchTemplate(type)
@@ -24,6 +28,82 @@ export default function BlankPreviewPage() {
       })
       .catch((e) => { setError(e.message); setLoading(false); });
   }, [type]);
+
+  // Build blank sections with dots on their own line
+  const buildBlank = (tmpl) => {
+    if (!tmpl) return [];
+    return (tmpl.sections || []).map((section) => ({
+      ...section,
+      articles: (section.articles || []).map((article) => {
+        const rawText = lang === "ar" ? article.text_ar : article.text_fr;
+        const filledText = rawText.replace(/\[([A-Z_]+)\]/g, "\n................................\n");
+        return { ...article, [lang === "ar" ? "text_ar" : "text_fr"]: filledText };
+      }),
+    }));
+  };
+
+  const displaySections = sections || (template ? buildBlank(template) : []);
+
+  const handleCustomize = async () => {
+    if (!customPrompt.trim() || customized) return;
+    setCustomizing(true);
+    setError(null);
+    try {
+      const res = await fetch(`${API_BASE}/contracts/templates/${type}/customize`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          contract_slug: type,
+          language: lang,
+          user_fields: {},
+          extra_notes: customPrompt.trim(),
+        }),
+      });
+      if (!res.ok) throw new Error((await res.json()).detail || "Customization failed");
+      const data = await res.json();
+      // Rebuild sections with dots from the AI-modified template
+      const newSections = buildBlank({ sections: data.sections || [] });
+      setSections(newSections);
+      setCustomized(true);
+    } catch (e) {
+      setError(e.message);
+    } finally {
+      setCustomizing(false);
+    }
+  };
+
+  const flatContract = () => ({
+    id: template?.id || `${type}-v1`,
+    slug: type,
+    title_ar: template?.title_ar || "",
+    title_fr: template?.title_fr || "",
+    sections: displaySections,
+  });
+
+  const handleDownload = async (format) => {
+    try {
+      const endpoint = format === "docx" ? "generate/docx" : "generate/pdf";
+      const res = await fetch(`${API_BASE}/contracts/${endpoint}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          contract_slug: type,
+          language: lang,
+          contract_json: flatContract(),
+        }),
+      });
+      if (!res.ok) throw new Error(`${format} failed`);
+      const blob = await res.blob();
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `${type}-vierge-${lang}.${format}`;
+      a.click();
+      URL.revokeObjectURL(url);
+    } catch (e) {
+      setError(e.message);
+    }
+  };
 
   if (loading) {
     return (
@@ -46,49 +126,6 @@ export default function BlankPreviewPage() {
   }
 
   const title = lang === "ar" ? template.title_ar : template.title_fr;
-
-  // Client-side blank fill: replace [PLACEHOLDER] with dots
-  const blankSections = (template.sections || []).map((section) => ({
-    ...section,
-    articles: (section.articles || []).map((article) => {
-      const rawText = lang === "ar" ? article.text_ar : article.text_fr;
-      const filledText = rawText.replace(/\[([A-Z_]+)\]/g, "................................");
-      return { ...article, [lang === "ar" ? "text_ar" : "text_fr"]: filledText };
-    }),
-  }));
-
-  const blankContract = {
-    id: template.id || `${type}-v1`,
-    slug: type,
-    title_ar: template.title_ar,
-    title_fr: template.title_fr,
-    sections: blankSections,
-  };
-
-  const handleDownload = async (format) => {
-    try {
-      const endpoint = format === "docx" ? "generate/docx" : "generate/pdf";
-      const res = await fetch(`${API_BASE}/contracts/${endpoint}`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          contract_slug: type,
-          language: lang,
-          contract_json: blankContract,
-        }),
-      });
-      if (!res.ok) throw new Error(`${format} failed`);
-      const blob = await res.blob();
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = `${type}-vierge-${lang}.${format}`;
-      a.click();
-      URL.revokeObjectURL(url);
-    } catch (e) {
-      setError(e.message);
-    }
-  };
 
   return (
     <div className="min-h-[calc(100vh-4rem)] flex flex-col">
@@ -122,16 +159,56 @@ export default function BlankPreviewPage() {
         <h1 className="text-xl font-bold text-on-surface mb-1">
           {lang === "ar" ? "نموذج فارغ" : "Modèle vierge"} : {title}
         </h1>
-        <p className="text-sm text-text-secondary mb-8">
+        <p className="text-sm text-text-secondary mb-6">
           {lang === "ar"
             ? "قم بتحميل النموذج واملأه يدوياً"
             : "Téléchargez le modèle et remplissez-le manuellement"}
         </p>
 
+        {/* AI Customization */}
+        {!customized && (
+          <div className="bg-surface-container-lowest rounded-lg border border-cat-family/30 p-4 mb-6">
+            <h3 className="text-sm font-semibold text-primary mb-2 flex items-center gap-1.5">
+              <Wand size={14} />
+              {lang === "ar" ? "تخصيص النموذج عبر الذكاء الاصطناعي" : "Personnaliser avec l'IA"}
+            </h3>
+            <p className="text-xs text-text-secondary mb-3">
+              {lang === "ar"
+                ? "صف التعديلات التي تريدها على النموذج (مرة واحدة فقط). مثال: أضف شرط عدم المنافسة لمدة سنتين."
+                : "Décrivez les modifications souhaitées (une seule fois). Ex: Ajoutez une clause de non-concurrence de 2 ans."}
+            </p>
+            <textarea
+              value={customPrompt}
+              onChange={(e) => setCustomPrompt(e.target.value)}
+              rows={3}
+              className="input-field min-h-[80px] text-sm mb-3"
+              placeholder={lang === "ar"
+                ? "مثال: أضف شرطاً يمنع المستأجر من تغيير النشاط التجاري دون موافقة المالك..."
+                : "Ex: Ajoutez une clause interdisant au locataire de changer l'activité commerciale sans accord du propriétaire..."}
+            />
+            <button
+              onClick={handleCustomize}
+              disabled={!customPrompt.trim() || customizing}
+              className="flex items-center gap-2 bg-cat-family text-white font-medium px-4 py-2 rounded-lg hover:opacity-90 transition-colors disabled:opacity-50 text-sm"
+            >
+              {customizing && <Loader2 size={14} className="animate-spin" />}
+              {customizing
+                ? (lang === "ar" ? "جاري التعديل..." : "Modification en cours...")
+                : (lang === "ar" ? "تطبيق التعديلات" : "Appliquer les modifications")}
+            </button>
+          </div>
+        )}
+
+        {customized && (
+          <div className="bg-success-light border border-success-green/20 rounded-lg px-4 py-2 text-sm text-success-green mb-6">
+            {lang === "ar" ? "✓ تم تعديل النموذج حسب طلبك." : "✓ Modèle modifié selon votre demande."}
+          </div>
+        )}
+
         {/* Contract preview */}
         <div className="bg-surface border border-border-slate rounded-lg p-6 max-h-[500px] overflow-y-auto space-y-4 mb-6">
           <h2 className="text-lg font-bold text-primary text-center mb-4">{title}</h2>
-          {blankSections.map((section) => (
+          {displaySections.map((section) => (
             <div key={section.id}>
               <h3 className="text-sm font-semibold text-primary border-b border-border-slate pb-1 mb-2">
                 {lang === "ar" ? section.title_ar : section.title_fr}
