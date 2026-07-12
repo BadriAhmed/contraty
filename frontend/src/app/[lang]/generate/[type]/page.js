@@ -10,7 +10,7 @@ const PATTERNS = {
   cin: /^\d{8}$/,
   email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
   phone: /^(\+216)?\s?\d[\d\s]{6,10}$/,
-  date: /^\d{1,2}[/\-\.]\d{1,2}[/\-\.]\d{2,4}$/,
+  date: /^(\d{4}-\d{2}-\d{2}|\d{1,2}[/\-.]\d{1,2}[/\-.]\d{2,4})$/,
   number: /^-?\d+([.,]\d+)?$/,
   percentage: /^\d{1,3}([.,]\d+)?$/,
 };
@@ -20,7 +20,7 @@ function getInputType(ftype) {
     case "email": return "email";
     case "number":
     case "percentage": return "number";
-    case "date": return "text";
+    case "date": return "date";
     default: return "text";
   }
 }

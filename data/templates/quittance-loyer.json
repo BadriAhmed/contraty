@@ -215,7 +215,7 @@
       "required": true,
       "hint_ar": "يوم/شهر/سنة",
       "hint_fr": "JJ/MM/AAAA",
-      "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$",
+      "pattern": "^(\\d{4}-\\d{2}-\\d{2}|\\d{1,2}[/\\-.]\\d{1,2}[/\\-.]\\d{2,4})$",
       "help_fr": "Date au format JJ/MM/AAAA pour la signature.",
       "help_ar": "التاريخ بصيغة يوم/شهر/سنة للتوقيع."
     }

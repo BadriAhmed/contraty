@@ -223,7 +223,7 @@
       "required": true,
       "hint_ar": "يوم/شهر/سنة",
       "hint_fr": "JJ/MM/AAAA",
-      "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$",
+      "pattern": "^(\\d{4}-\\d{2}-\\d{2}|\\d{1,2}[/\\-.]\\d{1,2}[/\\-.]\\d{2,4})$",
       "help_fr": "Date à laquelle vous avez été embauché(e) dans cette entreprise.",
       "help_ar": "تاريخ انتدابك في هذه المؤسسة."
     },
@@ -250,7 +250,7 @@
       "required": true,
       "hint_ar": "يوم/شهر/سنة",
       "hint_fr": "JJ/MM/AAAA",
-      "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$",
+      "pattern": "^(\\d{4}-\\d{2}-\\d{2}|\\d{1,2}[/\\-.]\\d{1,2}[/\\-.]\\d{2,4})$",
       "help_fr": "Date à partir de laquelle le préavis commence à courir.",
       "help_ar": "التاريخ الذي يبدأ منه سريان مهلة الإعلام المسبق."
     },
@@ -263,7 +263,7 @@
       "required": true,
       "hint_ar": "يوم/شهر/سنة",
       "hint_fr": "JJ/MM/AAAA",
-      "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$",
+      "pattern": "^(\\d{4}-\\d{2}-\\d{2}|\\d{1,2}[/\\-.]\\d{1,2}[/\\-.]\\d{2,4})$",
       "help_fr": "Date de votre dernier jour de travail (après la période de préavis).",
       "help_ar": "تاريخ آخر يوم عمل لك (بعد انتهاء مهلة الإعلام المسبق)."
     },
@@ -273,10 +273,10 @@
       "label_fr": "Motif Demission",
       "placeholder_ar": "",
       "placeholder_fr": "",
-      "required": true,
+      "required": false,
       "hint_ar": "",
       "hint_fr": "",
-      "min_length": 2,
+      "min_length": 0,
       "max_length": 500,
       "help_fr": "Raison de votre départ (optionnel, peut rester général).",
       "help_ar": "سبب مغادرتك (اختياري، يمكن أن يكون عامًا)."
@@ -304,7 +304,7 @@
       "required": true,
       "hint_ar": "يوم/شهر/سنة",
       "hint_fr": "JJ/MM/AAAA",
-      "pattern": "^\\d{1,2}[/\\-\\.]\\d{1,2}[/\\-\\.]\\d{2,4}$",
+      "pattern": "^(\\d{4}-\\d{2}-\\d{2}|\\d{1,2}[/\\-.]\\d{1,2}[/\\-.]\\d{2,4})$",
       "help_fr": "Date à laquelle vous rédigez cette lettre de démission.",
       "help_ar": "تاريخ تحرير رسالة الاستقالة."
     }
