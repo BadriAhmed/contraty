@@ -144,7 +144,7 @@ def _fill_blank_template(template: Contract, language: Language) -> dict:
         for article in section["articles"]:
             text_key = "text_ar" if language == Language.ar else "text_fr"
             text = article[text_key]
-            text = re.sub(r'\[([A-Z_]+)\]', '..............', text)
+            text = re.sub(r'\[([A-Z_]+)\]', '................................', text)
             article[text_key] = text
             article["fields"] = []
     return data
