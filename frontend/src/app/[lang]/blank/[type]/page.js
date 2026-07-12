@@ -36,7 +36,7 @@ export default function BlankPreviewPage() {
       ...section,
       articles: (section.articles || []).map((article) => {
         const rawText = lang === "ar" ? article.text_ar : article.text_fr;
-        const filledText = rawText.replace(/\[([A-Z_]+)\]/g, "\n................................\n");
+        const filledText = rawText.replace(/\[([A-Z_]+)\]/g, "................................");
         return { ...article, [lang === "ar" ? "text_ar" : "text_fr"]: filledText };
       }),
     }));
