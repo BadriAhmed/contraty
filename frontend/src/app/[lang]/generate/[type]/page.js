@@ -214,7 +214,7 @@ export default function GeneratePage() {
       if (!res.ok) throw new Error((await res.json()).detail || "Generation failed");
       const data = await res.json();
       setGenerated(data);
-      setCurrentStep(steps.length + 1);
+      setCurrentStep(steps.length + 2);
     } catch (e) {
       setError(e.message);
     } finally {
