@@ -21,6 +21,28 @@ const PATTERNS = {
 
 const STORAGE_KEY = "contraty_wizard";
 
+const NOTES_PLACEHOLDER = {
+  "lettre-demission": { fr: "Ex: Je souhaite ajouter une clause de télétravail durant la période de préavis.", ar: "مثال: أرغب في إضافة شرط ينص على مواصلة العمل عن بعد خلال فترة الإعلام المسبق." },
+  "contrat-cdi": { fr: "Ex: Je stipule une période d'essai de 6 mois conformément à l'article 12 du Code du travail.", ar: "مثال: أشترط مدة تجربة 6 أشهر وفق الفصل 12 من مجلة الشغل." },
+  "contrat-cdd": { fr: "Ex: Je souhaite ajouter une clause de priorité d'embauche en cas d'ouverture d'un poste permanent.", ar: "مثال: أرغب في إضافة بند يمنحني أسبقية التوظيف عند فتح منصب قار." },
+  "bail-habitation": { fr: "Ex: Je souhaite ajouter une clause interdisant les animaux domestiques dans le logement.", ar: "مثال: أريد إضافة بند يمنع تربية الحيوانات الأليفة في المسكن." },
+  "rupture-conventionnelle": { fr: "Ex: Une indemnité de départ de 5000 TND a été convenue.", ar: "مثال: تم الاتفاق على منحة مغادرة بقدر 5000 دينار." },
+  "pret-particuliers": { fr: "Ex: Je veux définir un échéancier : 200 TND par mois à partir du 1er janvier 2027.", ar: "مثال: أريد تحديد جدول سداد: 200 دينار شهريًا بداية من 1 جانفي 2027." },
+  "compromis-vente-immobilier": { fr: "Ex: Je stipule une clause de dédit permettant à l'acheteur de se rétracter sous 10 jours.", ar: "مثال: أشترط إدراج بند فسخي يسمح للمشتري بالرجوع خلال 10 أيام." },
+};
+
+function safeStringify(obj) {
+  try { return JSON.stringify(obj); } catch (e) {
+    const seen = new WeakSet();
+    return JSON.stringify(obj, (key, value) => {
+      if (typeof value === "object" && value !== null) {
+        if (seen.has(value)) return undefined; seen.add(value);
+      }
+      return value;
+    });
+  }
+}
+
 function getInputType(ftype) {
   switch (ftype) {
     case "email": return "email";
@@ -35,11 +57,11 @@ function validateField(value, meta) {
   if (!meta) return null;
   const trimmed = (value || "").trim();
   if (meta.required && !trimmed) return "required";
-  if (trimmed && meta.pattern) {
-    try { const re = new RegExp(meta.pattern); if (!re.test(trimmed)) return "pattern"; } catch {}
-  }
+  // Type-based pattern takes priority over template metadata pattern
   if (trimmed && meta.type && PATTERNS[meta.type]) {
     if (!PATTERNS[meta.type].test(trimmed)) return "format";
+  } else if (trimmed && meta.pattern) {
+    try { const re = new RegExp(meta.pattern); if (!re.test(trimmed)) return "pattern"; } catch {}
   }
   if (trimmed && meta.min_length && trimmed.length < meta.min_length) return "min_length";
   if (trimmed && meta.max_length && trimmed.length > meta.max_length) return "max_length";
@@ -128,7 +150,7 @@ export default function GeneratePage() {
   useEffect(() => {
     if (!initialLoadDone.current) return;
     try {
-      localStorage.setItem(`${STORAGE_KEY}_${type}`, JSON.stringify({
+      localStorage.setItem(`${STORAGE_KEY}_${type}`, safeStringify({
         fieldValues, extraNotes, disclaimerAccepted,
       }));
     } catch {}
@@ -280,7 +302,7 @@ export default function GeneratePage() {
       const res = await fetch(`${API_BASE}/contracts/generate`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
+        body: safeStringify({
           contract_slug: type,
           language: lang,
           user_fields: fieldValues,
@@ -308,7 +330,7 @@ export default function GeneratePage() {
       const res = await fetch(`${API_BASE}/contracts/${endpoint}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
+        body: safeStringify({
           contract_slug: type,
           language: lang,
           contract_json: generated.contract,
@@ -574,7 +596,7 @@ export default function GeneratePage() {
                   onChange={(e) => setExtraNotes(e.target.value)}
                   rows={4}
                   className="input-field min-h-[100px]"
-                  placeholder={lang === "ar" ? "مثال: أريد إضافة شرط يمنع تربية الحيوانات في المسكن..." : "Ex: Je souhaite ajouter une clause interdisant les animaux dans le logement..."}
+                  placeholder={(NOTES_PLACEHOLDER[type] || {})[lang] || (lang === "ar" ? "مثال: أريد إضافة بند خاص يوضح تفاصيل إضافية للعقد." : "Ex: Je souhaite ajouter une clause particulière précisant des détails supplémentaires au contrat.")}
                 />
               </div>
 

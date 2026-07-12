@@ -2,6 +2,8 @@ import Link from "next/link";
 import { fetchTemplates, DOMAINS } from "@/lib/constants";
 import { Home, Briefcase, Coins, Car, Building2, FileText } from "lucide-react";
 
+export const dynamic = "force-dynamic";
+
 const domainMeta = {
   logement: { icon: Home, cat: "real-estate", color: "var(--cat-real-estate)" },
   travail: { icon: Briefcase, cat: "employment", color: "var(--cat-employment)" },
