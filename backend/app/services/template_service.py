@@ -267,29 +267,32 @@ async def customize_blank_template(
     contract = Contract(**t)
     blank = _fill_blank_template(contract, language)
 
-    # Build the full contract text with section/article markers
     tkey = "text_ar" if language == Language.ar else "text_fr"
-    sections_data = []
-    full_text_parts = []
+
+    # Format articles with explicit section/article markers
+    formatted = []
+    article_map = {}
     for s in blank.get("sections", []):
         for a in s.get("articles", []):
             text = a.get(tkey, "")
             if text.strip():
-                sections_data.append(a)
-                full_text_parts.append(text)
+                marker = f"ARTICLE::{a['id']}"
+                formatted.append(f"{marker}\n{text}\n{marker}")
+                article_map[a["id"]] = {"section": s, "article": a}
 
-    full_text = "\n\n".join(full_text_parts)
+    full_text = "\n\n".join(formatted)
     title = blank.get("title_fr" if language == Language.fr else "title_ar", "")
 
     gpt_prompt = f"""Avocat tunisien. Voici un modèle de contrat vierge tunisien: {title}.
 L'utilisateur demande la modification suivante: {prompt}
 
-Modifie le contrat selon cette demande. Retourne le texte COMPLET du contrat modifié.
-Garde les ................................ aux mêmes emplacements (ce sont les champs à remplir plus tard).
-Ne change que ce que l'utilisateur demande. Ne retire aucune clause existante sauf demande explicite.
-Respecte le style juridique tunisien.
+Modifie UNIQUEMENT le texte entre les balises ARTICLE::id.
+Garde les balises ARTICLE::id intactes (ne les modifie pas, ne les déplace pas).
+Les ................................ sont des champs à remplir plus tard — garde-les.
+Ne retire aucune clause existante sauf demande explicite de l'utilisateur.
+Respecte le style juridique tunisien. Sois concis.
 
-Retourne UNIQUEMENT le texte modifié, sans commentaires, sans markdown."""
+Retourne TOUT le texte, incluant les balises ARTICLE::id, sans commentaires."""
 
     try:
         from google.genai import Client
@@ -300,24 +303,29 @@ Retourne UNIQUEMENT le texte modifié, sans commentaires, sans markdown."""
         )
         modified_text = response.text.strip()
 
-        # Rebuild section articles from the modified text
-        parts = [p.strip() for p in modified_text.split("\n\n") if p.strip()]
+        # Parse modified text by ARTICLE:: markers
+        import re
+        pattern = re.compile(r"ARTICLE::(\S+)\n(.*?)\nARTICLE::\1", re.DOTALL)
+        matches = pattern.findall(modified_text)
 
-        # Map modified text back to articles by position
+        if not matches:
+            # Fallback: if markers were lost, keep the original blank
+            logger.warning("Customize markers lost, returning original blank")
+            blank["modified_by_ai"] = True
+            return blank
+
+        modified_map = {aid: text.strip() for aid, text in matches}
+
+        # Apply modifications back to the sections
         output_sections = []
-        sec_idx = 0
-        part_idx = 0
         for s in blank.get("sections", []):
             new_articles = []
             for a in s.get("articles", []):
-                if a.get(tkey, "").strip() and part_idx < len(parts):
-                    a[tkey] = parts[part_idx]
-                    part_idx += 1
+                if a["id"] in modified_map:
+                    a[tkey] = modified_map[a["id"]]
                 new_articles.append(a)
             output_sections.append({**s, "articles": new_articles})
-            sec_idx += 1
 
-        # If Gemini returned a different number of paragraphs, keep the remaining as-is
         blank["sections"] = output_sections
         blank["modified_by_ai"] = True
         return blank
