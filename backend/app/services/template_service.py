@@ -119,12 +119,17 @@ def _fill_template(template: Contract, user_fields: dict[str, str], language: La
     """Replace [PLACEHOLDER] tokens with user values. No LLM, no latency."""
     data = template.model_dump()
     data["disclaimer"] = ""  # Remove disclaimer from output — user already accepted it
+    metadata = data.get("field_metadata", {})
     for section in data["sections"]:
         for article in section["articles"]:
             text_key = "text_ar" if language == Language.ar else "text_fr"
             text = article[text_key]
             for key, val in user_fields.items():
                 text = text.replace(f"[{key}]", str(val))
+            # Replace remaining placeholders for optional fields with empty string
+            for key, fm in metadata.items():
+                if key not in user_fields and fm.get("required") == False:
+                    text = text.replace(f"[{key}]", "")
             article[text_key] = text
             article["fields"] = []
     return data
