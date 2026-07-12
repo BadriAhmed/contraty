@@ -1,26 +1,19 @@
 "use client";
 
-import { useEffect } from "react";
-
 export default function GlobalError({ error, reset }) {
-  useEffect(() => {
-    console.error("Contraty global error:", error);
-  }, [error]);
-
   return (
-    <html>
-      <body className="min-h-screen flex items-center justify-center bg-gray-50 font-sans">
+    <html lang="fr">
+      <body className="min-h-screen flex items-center justify-center bg-background font-sans">
         <div className="max-w-md mx-auto p-8 text-center">
-          <h2 className="text-xl font-bold text-red-600 mb-2">Application Error</h2>
-          <p className="text-sm text-gray-600 mb-4">{error?.message || "Unknown error"}</p>
-          <pre className="text-xs text-left bg-gray-100 p-3 rounded overflow-auto max-h-40 mb-4">
-            {error?.stack || "No stack trace"}
-          </pre>
+          <h2 className="text-xl font-bold text-error mb-2">Application Error</h2>
+          <p className="text-sm text-text-secondary mb-4">
+            {error?.message || "Une erreur inattendue s'est produite."}
+          </p>
           <button
             onClick={() => reset()}
-            className="bg-blue-600 text-white px-4 py-2 rounded"
+            className="bg-primary text-on-primary px-4 py-2 rounded-lg hover:bg-surface-tint transition-colors"
           >
-            Try again
+            Réessayer
           </button>
         </div>
       </body>

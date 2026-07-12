@@ -1,4 +1,4 @@
-export const API_BASE = process.env.NEXT_PUBLIC_API_URL || "https://contraty-backend-104286528986.europe-west1.run.app/api/v1";
+export const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000/api/v1";
 
 export const DOMAINS = {
   logement: { ar: "سكن", fr: "Logement", icon: "Home" },

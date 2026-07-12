@@ -166,8 +166,12 @@ async def review_contract(
     contract_text = "\n".join(lines)[:3000]
 
     title = filled_contract.get("title_fr" if language == Language.fr else "title_ar", "")
-    fields_str = ", ".join(f"{k}={v}" for k, v in list(user_fields.items())[:20])
-    notes_str = f"\nNotes de l'utilisateur: {extra_notes}" if extra_notes else ""
+
+    def _safe(v: str) -> str:
+        return v.replace("\n", " ").replace("\r", " ").replace("{", "(").replace("}", ")")[:200]
+
+    fields_str = ", ".join(f"{k}={_safe(v)}" for k, v in list(user_fields.items())[:20])
+    notes_str = f"\nNotes de l'utilisateur: {_safe(extra_notes)}" if extra_notes else ""
 
     prompt = f"""Avocat tunisien. Ce contrat vient d'être rempli. Signale UNIQUEMENT les vrais problèmes:
 1. Champs obligatoires vides [CHAMP] dans le texte final

@@ -1,10 +1,14 @@
 "use client";
 
-import { useState, useEffect, useCallback, useMemo } from "react";
+import { useState, useEffect, useCallback, useMemo, useRef } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import { fetchTemplate, API_BASE } from "@/lib/constants";
-import { Lock, ArrowRight, ArrowLeft, CheckCircle2, Download, FileText, Loader2, X, AlertCircle } from "lucide-react";
+import { Lock, ArrowRight, ArrowLeft, CheckCircle2, Download, FileText, Loader2, X, AlertCircle, ShieldAlert } from "lucide-react";
+
+/* ------------------------------------------------------------------ */
+/*  Constants                                                          */
+/* ------------------------------------------------------------------ */
 
 const PATTERNS = {
   cin: /^\d{8}$/,
@@ -14,6 +18,8 @@ const PATTERNS = {
   number: /^-?\d+([.,]\d+)?$/,
   percentage: /^\d{1,3}([.,]\d+)?$/,
 };
+
+const STORAGE_KEY = "contraty_wizard";
 
 function getInputType(ftype) {
   switch (ftype) {
@@ -46,6 +52,13 @@ function validateField(value, meta) {
   return null;
 }
 
+function formatDate(iso) {
+  if (!iso) return "";
+  const m = iso.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (m) return `${m[3]}/${m[2]}/${m[1]}`;
+  return iso;
+}
+
 const ERROR_MSG = {
   ar: {
     required: "هذا الحقل مطلوب",
@@ -67,11 +80,21 @@ const ERROR_MSG = {
   },
 };
 
+const LOADING_STEPS = {
+  ar: ["جاري إنشاء العقد...", "جاري المراجعة بالذكاء الاصطناعي...", "اكتمل!"],
+  fr: ["Génération du contrat...", "Révision par l'IA...", "Terminé !"],
+};
+
+/* ------------------------------------------------------------------ */
+/*  Component                                                          */
+/* ------------------------------------------------------------------ */
+
 export default function GeneratePage() {
   const params = useParams();
   const { lang, type } = params;
   const isRtl = lang === "ar";
   const msg = ERROR_MSG[lang];
+  const loadingMsgs = LOADING_STEPS[lang];
 
   const [template, setTemplate] = useState(null);
   const [currentStep, setCurrentStep] = useState(0);
@@ -84,7 +107,42 @@ export default function GeneratePage() {
   const [fieldErrors, setFieldErrors] = useState({});
   const [extraNotes, setExtraNotes] = useState("");
   const [appliedSuggestions, setAppliedSuggestions] = useState(new Set());
+  const [loadingStep, setLoadingStep] = useState(0);
+  const initialLoadDone = useRef(false);
 
+  /* ---------- localStorage persistence ---------- */
+  useEffect(() => {
+    if (initialLoadDone.current) return;
+    try {
+      const saved = localStorage.getItem(`${STORAGE_KEY}_${type}`);
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (parsed.fieldValues) setFieldValues(parsed.fieldValues);
+        if (parsed.extraNotes) setExtraNotes(parsed.extraNotes);
+        if (parsed.disclaimerAccepted) setDisclaimerAccepted(true);
+      }
+    } catch {}
+    initialLoadDone.current = true;
+  }, [type]);
+
+  useEffect(() => {
+    if (!initialLoadDone.current) return;
+    try {
+      localStorage.setItem(`${STORAGE_KEY}_${type}`, JSON.stringify({
+        fieldValues, extraNotes, disclaimerAccepted,
+      }));
+    } catch {}
+  }, [fieldValues, extraNotes, disclaimerAccepted, type]);
+
+  /* ---------- Loading step animation ---------- */
+  useEffect(() => {
+    if (!generating) { setLoadingStep(0); return; }
+    const t1 = setTimeout(() => setLoadingStep(1), 800);
+    const t2 = setTimeout(() => setLoadingStep(2), 5000);
+    return () => { clearTimeout(t1); clearTimeout(t2); };
+  }, [generating]);
+
+  /* ---------- Fetch template ---------- */
   useEffect(() => {
     fetchTemplate(type)
       .then((t) => {
@@ -97,7 +155,7 @@ export default function GeneratePage() {
 
   const meta = useCallback((fieldName) => template?.field_metadata?.[fieldName] || null, [template]);
 
-  // Collect fields grouped by section — keep sections intact in steps
+  /* ---------- Field grouping ---------- */
   const fieldsBySection = useMemo(() => {
     if (!template?.sections) return [];
     const seen = new Set();
@@ -129,7 +187,6 @@ export default function GeneratePage() {
     return sections;
   }, [template, lang, meta]);
 
-  // Build steps so each section stays together; large sections split into sub-steps
   const steps = useMemo(() => {
     const s = [];
     for (const sec of fieldsBySection) {
@@ -145,11 +202,15 @@ export default function GeneratePage() {
     return s;
   }, [fieldsBySection, lang]);
 
-  const totalSteps = steps.length + 2; // + extra notes + disclaimer
-  const isExtraNotesStep = currentStep === steps.length;
-  const isDisclaimerStep = currentStep === steps.length + 1;
+  /* ---------- Step logic ---------- */
+  // Step layout: 0=disclaimer, 1..N=fields, N+1=extra notes, >N+1=preview
+  const totalSteps = steps.length + 2; // disclaimer + fields + notes
+  const isDisclaimerStep = currentStep === 0;
+  const isExtraNotesStep = currentStep === steps.length + 1;
   const isPreviewStep = currentStep > steps.length + 1;
-  const currentSection = !isExtraNotesStep && !isDisclaimerStep && !isPreviewStep ? steps[currentStep] : null;
+  const currentSection = !isDisclaimerStep && !isExtraNotesStep && !isPreviewStep
+    ? steps[currentStep - 1]
+    : null;
 
   const handleBlur = (field) => {
     const value = fieldValues[field.name] || "";
@@ -167,6 +228,12 @@ export default function GeneratePage() {
         setError(lang === "ar" ? "يجب الموافقة على إخلاء المسؤولية" : "Vous devez accepter l'avertissement légal");
         return;
       }
+      setError(null);
+      setCurrentStep((s) => s + 1);
+      return;
+    }
+
+    if (isExtraNotesStep) {
       handleGenerate();
       return;
     }
@@ -208,6 +275,8 @@ export default function GeneratePage() {
     setGenerating(true);
     setError(null);
     try {
+      // Clear saved form on success
+      localStorage.removeItem(`${STORAGE_KEY}_${type}`);
       const res = await fetch(`${API_BASE}/contracts/generate`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -253,6 +322,8 @@ export default function GeneratePage() {
       URL.revokeObjectURL(url);
     } catch (e) { setError(e.message); }
   };
+
+  /* ---------- Render ---------- */
 
   if (loading) {
     return (
@@ -302,15 +373,15 @@ export default function GeneratePage() {
         </h1>
         <p className="text-sm text-text-secondary mb-8">{template?.legal_basis}</p>
 
-        {/* Progress stepper */}
+        {/* Progress stepper — RTL-aware */}
         {!isPreviewStep && (
-          <div className="flex items-center justify-center mb-10">
+          <div className={`flex items-center justify-center mb-10 ${isRtl ? "flex-row-reverse" : ""}`}>
             {Array.from({ length: totalSteps }, (_, i) => (
               <div key={i} className="flex items-center">
                 <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold transition-colors ${
                   i < currentStep ? "bg-primary text-on-primary" : i === currentStep ? "bg-primary text-on-primary shadow-md" : "bg-surface-container-highest border border-outline-variant text-on-surface-variant opacity-60"
                 }`}>
-                  {i < currentStep ? <CheckCircle2 size={14} /> : i + 1}
+                  {i < currentStep ? <CheckCircle2 size={14} /> : i === 0 ? <ShieldAlert size={14} /> : i + 1}
                 </div>
                 {i < totalSteps - 1 && (
                   <div className={`w-12 md:w-20 h-0.5 transition-colors ${i < currentStep ? "bg-primary" : "bg-surface-container-highest"}`} />
@@ -321,7 +392,7 @@ export default function GeneratePage() {
         )}
 
         <div className="bg-surface-container-lowest rounded-xl border border-border-slate shadow-sm p-6 md:p-8">
-          {/* Preview mode — rendered contract */}
+          {/* ---------- PREVIEW ---------- */}
           {isPreviewStep && generated ? (
             <div className="space-y-6">
               <div className="flex items-center gap-3 bg-success-light border border-success-green/20 rounded-lg px-4 py-3">
@@ -338,7 +409,7 @@ export default function GeneratePage() {
                 </div>
               </div>
 
-              {/* Warnings */}
+              {/* Warnings + apply suggestions */}
               {generated.warnings?.length > 0 && (
                 <div className="border border-cat-family/40 rounded-lg bg-cat-family/5 p-4 space-y-3">
                   <div className="flex items-center gap-2">
@@ -395,7 +466,7 @@ export default function GeneratePage() {
                 </div>
               )}
 
-              {/* Rendered contract preview */}
+              {/* Contract preview — dates formatted to Tunisian style */}
               <div className="bg-surface border border-border-slate rounded-lg paper-shadow p-6 max-h-[500px] overflow-y-auto space-y-4">
                 <h2 className="text-lg font-bold text-primary text-center mb-4">{title}</h2>
                 {(generated.contract?.sections || []).map((section) => (
@@ -403,11 +474,15 @@ export default function GeneratePage() {
                     <h3 className="text-sm font-semibold text-primary border-b border-border-slate pb-1 mb-2">
                       {lang === "ar" ? section.title_ar : section.title_fr}
                     </h3>
-                    {(section.articles || []).map((article) => (
-                      <p key={article.id} className="text-sm text-on-surface leading-relaxed mb-2 whitespace-pre-wrap">
-                        {lang === "ar" ? article.text_ar : article.text_fr}
-                      </p>
-                    ))}
+                    {(section.articles || []).map((article) => {
+                      const rawText = lang === "ar" ? article.text_ar : article.text_fr;
+                      const displayText = rawText.replace(/\b(\d{4}-\d{2}-\d{2})\b/g, (m) => formatDate(m));
+                      return (
+                        <p key={article.id} className="text-sm text-on-surface leading-relaxed mb-2 whitespace-pre-wrap">
+                          {displayText}
+                        </p>
+                      );
+                    })}
                   </div>
                 ))}
               </div>
@@ -427,6 +502,62 @@ export default function GeneratePage() {
                 {isRtl ? "→" : "←"} {lang === "ar" ? "العودة للنموذج" : "Retour au formulaire"}
               </button>
             </div>
+
+          /* ---------- DISCLAIMER (step 0) ---------- */
+          ) : isDisclaimerStep ? (
+            <div className="space-y-6">
+              <div className="flex items-start gap-3">
+                <ShieldAlert size={24} className="text-error shrink-0 mt-0.5" />
+                <div>
+                  <h3 className="text-lg font-bold text-on-surface mb-2">
+                    {lang === "ar" ? "إخلاء مسؤولية قانونية" : "Avertissement légal"}
+                  </h3>
+                  <div className="text-sm text-on-surface-variant leading-relaxed space-y-3">
+                    <p>
+                      {lang === "ar"
+                        ? "النماذج المقدمة على منصة كونتراتي هي نماذج إرشادية لم يراجعها محامٍ. لا تشكل استشارة قانونية ولا تغني عن مراجعة مختص."
+                        : "Les modèles fournis sur la plateforme Contraty sont des modèles indicatifs qui n'ont pas été révisés par un avocat. Ils ne constituent pas un conseil juridique et ne remplacent pas la consultation d'un professionnel du droit."}
+                    </p>
+                    <p>
+                      {lang === "ar"
+                        ? "تقع مسؤولية التحقق من ملاءمة العقد لحالتك الخاصة عليك وحدك. يُنصح بشدة بمراجعة العقد من قبل محامٍ قبل استخدامه."
+                        : "Il est de votre seule responsabilité de vérifier l'adéquation du contrat à votre situation particulière. Il est fortement recommandé de faire relire le contrat par un avocat avant utilisation."}
+                    </p>
+                    {template?.disclaimer && (
+                      <p className="text-xs opacity-75 border-t border-border-slate pt-3">{template.disclaimer}</p>
+                    )}
+                  </div>
+                </div>
+              </div>
+
+              <label className="flex items-start gap-3 cursor-pointer p-3 bg-surface rounded-lg border border-outline-variant/50">
+                <input
+                  type="checkbox"
+                  checked={disclaimerAccepted}
+                  onChange={(e) => setDisclaimerAccepted(e.target.checked)}
+                  className="mt-0.5 h-4 w-4 rounded border-border-slate text-primary focus:ring-primary"
+                />
+                <span className="text-sm text-on-surface">
+                  {lang === "ar"
+                    ? "أقر بأنني فهمت هذا الإخلاء وأتحمل كامل المسؤولية عن استخدام العقد المُنشأ."
+                    : "Je reconnais avoir pris connaissance de cet avertissement et assume l'entière responsabilité de l'utilisation du contrat généré."}
+                </span>
+              </label>
+
+              {error && <p className="text-sm text-error">{error}</p>}
+
+              <div className="flex gap-3 pt-4 border-t border-border-slate">
+                <button
+                  onClick={handleNext}
+                  disabled={!disclaimerAccepted}
+                  className="flex items-center gap-2 bg-primary text-on-primary font-semibold px-5 py-2.5 rounded-lg hover:bg-surface-tint transition-colors shadow-sm disabled:opacity-50 ms-auto"
+                >
+                  {lang === "ar" ? "متابعة" : "Continuer"}<ArrowRight size={16} />
+                </button>
+              </div>
+            </div>
+
+          /* ---------- EXTRA NOTES (last step before generate) ---------- */
           ) : isExtraNotesStep ? (
             <div className="space-y-5">
               <div>
@@ -447,6 +578,13 @@ export default function GeneratePage() {
                 />
               </div>
 
+              {generating && (
+                <div className="flex flex-col items-center gap-2 py-4 animate-pulse">
+                  <Loader2 size={24} className="animate-spin text-primary" />
+                  <p className="text-sm text-text-secondary">{loadingMsgs[loadingStep] || loadingMsgs[0]}</p>
+                </div>
+              )}
+
               {error && (
                 <p className="text-sm text-error flex items-center gap-1">
                   <AlertCircle size={14} />{error}
@@ -457,52 +595,17 @@ export default function GeneratePage() {
                 <button onClick={handlePrevious} className="flex items-center gap-2 border border-primary text-primary font-semibold px-5 py-2.5 rounded-lg hover:bg-primary-fixed transition-colors">
                   <ArrowLeft size={16} />{lang === "ar" ? "السابق" : "Retour"}
                 </button>
-                <button onClick={handleNext} className="flex items-center gap-2 bg-primary text-on-primary font-semibold px-5 py-2.5 rounded-lg hover:bg-surface-tint transition-colors shadow-sm ms-auto">
-                  {lang === "ar" ? "التالي" : "Suivant"}<ArrowRight size={16} />
-                </button>
-              </div>
-            </div>
-          ) : isDisclaimerStep ? (
-            <div className="space-y-6">
-              <div className="border-2 border-error/30 rounded-lg bg-error/5 p-4">
-                <h3 className="text-sm font-bold text-error mb-2">
-                  {lang === "ar" ? "⚠️ إخلاء مسؤولية قانونية" : "⚠️ Avertissement légal"}
-                </h3>
-                <p className="text-sm text-on-surface leading-relaxed">
-                  {template?.disclaimer || (lang === "ar"
-                    ? "النموذج المقدم إرشادي ولم يراجعه محامٍ. لا يشكل استشارة قانونية."
-                    : "Le modèle fourni est indicatif et n'a pas été révisé par un avocat. Il ne constitue pas un conseil juridique.")}
-                </p>
-              </div>
-
-              <label className="flex items-start gap-3 cursor-pointer">
-                <input
-                  type="checkbox"
-                  checked={disclaimerAccepted}
-                  onChange={(e) => setDisclaimerAccepted(e.target.checked)}
-                  className="mt-0.5 h-4 w-4 rounded border-border-slate text-primary focus:ring-primary"
-                />
-                <span className="text-sm text-on-surface-variant">
-                  {lang === "ar"
-                    ? "أقر بأن هذا النموذج إرشادي ولم يراجعه محامٍ، وأنه لا يغني عن استشارة قانونية."
-                    : "Je reconnais que ce modèle est indicatif, n'a pas été révisé par un avocat, et ne remplace pas une consultation juridique."}
-                </span>
-              </label>
-
-              {error && <p className="text-sm text-error">{error}</p>}
-
-              <div className="flex gap-3 pt-4 border-t border-border-slate">
-                <button onClick={handlePrevious} className="flex items-center gap-2 border border-primary text-primary font-semibold px-5 py-2.5 rounded-lg hover:bg-primary-fixed transition-colors">
-                  <ArrowLeft size={16} />{lang === "ar" ? "السابق" : "Retour"}
-                </button>
-                <button onClick={handleGenerate} disabled={generating} className="flex items-center gap-2 bg-primary text-on-primary font-semibold px-5 py-2.5 rounded-lg hover:bg-surface-tint transition-colors shadow-sm disabled:opacity-50">
+                <button onClick={handleGenerate} disabled={generating} className="flex items-center gap-2 bg-primary text-on-primary font-semibold px-5 py-2.5 rounded-lg hover:bg-surface-tint transition-colors shadow-sm disabled:opacity-50 ms-auto">
                   {generating && <Loader2 size={16} className="animate-spin" />}
-                  {lang === "ar" ? "توليد العقد" : "Générer le contrat"}<ArrowRight size={16} />
+                  {generating
+                    ? (loadingMsgs[loadingStep] || loadingMsgs[0])
+                    : lang === "ar" ? "إنشاء العقد" : "Générer le contrat"}<ArrowRight size={16} />
                 </button>
               </div>
             </div>
+
+          /* ---------- FORM (field steps 1..N) ---------- */
           ) : (
-            /* Form */
             <div>
               {currentSection && (
                 <div>
@@ -535,7 +638,7 @@ export default function GeneratePage() {
                             value={fieldValues[field.name] || ""}
                             onChange={(e) => { setFieldValues((prev) => ({ ...prev, [field.name]: e.target.value })); setFieldErrors((prev) => { const n = { ...prev }; delete n[field.name]; return n; }); }}
                             onBlur={() => handleBlur(field)}
-                            placeholder={field.placeholder}
+                            placeholder={inputType === "date" ? undefined : field.placeholder}
                             className={`input-field ${hasError ? "border-error focus:ring-error" : ""}`}
                           />
                           {hasError && (
@@ -557,7 +660,7 @@ export default function GeneratePage() {
               )}
 
               <div className="flex gap-3 pt-6 border-t border-border-slate mt-6">
-                {currentStep > 0 && (
+                {currentStep > 1 && (
                   <button onClick={handlePrevious} className="flex items-center gap-2 border border-primary text-primary font-semibold px-5 py-2.5 rounded-lg hover:bg-primary-fixed transition-colors">
                     <ArrowLeft size={16} />{lang === "ar" ? "السابق" : "Retour"}
                   </button>
