@@ -1,0 +1,20 @@
+[project]
+name = "contraty-backend"
+version = "0.1.0"
+description = "Générateur de contrats juridiques tunisiens"
+requires-python = ">=3.12"
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["app"]
+
+[tool.mypy]
+strict = true
+ignore_missing_imports = true
+disallow_untyped_defs = false

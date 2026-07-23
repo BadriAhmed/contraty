@@ -11,6 +11,15 @@ from app.models.contract import Language, Contract, ContractResponse
 logger = logging.getLogger(__name__)
 settings = get_settings()
 
+_gemini_client: GenAIClient | None = None
+
+
+def get_gemini_client() -> GenAIClient:
+    global _gemini_client
+    if _gemini_client is None:
+        _gemini_client = GenAIClient(api_key=settings.gemini_api_key)
+    return _gemini_client
+
 
 def _extract_json(text: str) -> str:
     if not text:
@@ -50,7 +59,7 @@ class LLMRouter:
 
     def _ensure_gemini(self):
         if not self._gemini_configured:
-            self._gemini_client = GenAIClient(api_key=settings.gemini_api_key)
+            self._gemini_client = get_gemini_client()
             self._gemini_configured = True
 
     def _primary_model(self, language: Language) -> str:
@@ -69,11 +78,11 @@ class LLMRouter:
             result.model_used = primary
             return result
 
-        for attempt in range(max_attempts):
-            fallback = self._fallback_model(language)
+        fallback = self._fallback_model(language)
+        for attempt in range(max_attempts - 1):
             logger.warning(
                 "Primary model %s failed, falling back to %s (attempt %d/%d)",
-                primary, fallback, attempt + 1, max_attempts,
+                primary, fallback, attempt + 2, max_attempts,
             )
             result = await self._try_model(prompt, language, fallback)
             if result.success:
@@ -83,7 +92,7 @@ class LLMRouter:
 
         return ContractResponse(
             success=False,
-            error=f"All models failed after {max_attempts} fallback attempts",
+            error=f"All models failed after {max_attempts} total attempts",
             language=language,
             fallback_attempted=True,
         )

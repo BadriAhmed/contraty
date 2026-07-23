@@ -26,8 +26,7 @@ async def test_generate_with_both_models_failing(router):
         assert result.success is False
         assert "All models failed" in result.error
         assert result.fallback_attempted is True
-        # Called once for primary + max_attempts fallbacks
-        assert mock_try.call_count == 3
+        assert mock_try.call_count == 2
 
 
 @pytest.mark.unit

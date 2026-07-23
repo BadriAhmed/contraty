@@ -1,3 +1,4 @@
+import html
 import logging
 from pathlib import Path
 from weasyprint import HTML
@@ -48,14 +49,14 @@ class PDFRenderer:
                 body += f'<div class="section-title">{sec_title}</div>'
             for article in section.articles:
                 text = article.text_ar if language == Language.ar else article.text_fr
-                body += f'<div class="article">{text}</div>'
+                body += f'<div class="article">{html.escape(text)}</div>'
             body += '</div>'
 
         return f"""<!DOCTYPE html>
 <html lang="{language.value}" dir="{direction}">
 <head><meta charset="utf-8"><style>{self._base_css}</style></head>
 <body>
-<h1>{title}</h1>
+<h1>{html.escape(title)}</h1>
 {body}
 </body>
 </html>"""

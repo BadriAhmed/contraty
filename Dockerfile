@@ -1,6 +1,8 @@
-# Root Dockerfile for GCP Cloud Run — deploys the backend only
-# Uses project-root context to access data/templates/
-
+# Root Dockerfile — used for GCP Cloud Run backend deployment
+# Build from project root: docker build -f Dockerfile .
+# For local development, use docker-compose.yml (backend/Dockerfile + frontend/Dockerfile)
+#
+# Context: project root (to access data/templates/)
 FROM python:3.12-slim
 
 RUN apt-get update && apt-get install -y --no-install-recommends \

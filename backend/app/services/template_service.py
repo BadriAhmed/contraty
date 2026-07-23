@@ -9,6 +9,7 @@ Handles:
 
 import time
 import json
+import re
 import logging
 from typing import Optional
 
@@ -18,7 +19,7 @@ from app.db.memory import InMemoryTemplateRepository, InMemoryContractRepository
 from app.db.supabase_repo import SupabaseTemplateRepository, SupabaseContractRepository
 from app.models.contract import Language, Contract, ContractResponse
 from app.models.generation import GenerateRequest, ContractWarning
-from app.services.llm import router as llm_router
+from app.services.llm import router as llm_router, get_gemini_client, _extract_json
 from app.services.pdf import pdf_renderer
 from app.db.vector import vector_store
 
@@ -27,6 +28,7 @@ settings = get_settings()
 
 _template_repo: Optional[TemplateRepository] = None
 _contract_repo: Optional[ContractRepository] = None
+_customize_usage: set[str] = set()
 
 
 def get_template_repo() -> TemplateRepository:
@@ -99,7 +101,16 @@ async def generate_contract(req: GenerateRequest) -> dict:
     contract = Contract(**template)
     t0 = time.monotonic()
 
-    # Simple template engine — direct placeholder substitution, no LLM needed
+    if req.use_ai:
+        prompt = _build_prompt(contract, req.user_fields, req.language)
+        result = await llm_router.generate(prompt, req.language)
+        elapsed_ms = int((time.monotonic() - t0) * 1000)
+
+        response = result.model_dump()
+        response["generation_time_ms"] = elapsed_ms
+        response["tokens_used"] = 0
+        return response
+
     filled = _fill_template(contract, req.user_fields, req.language)
     elapsed_ms = int((time.monotonic() - t0) * 1000)
 
@@ -139,7 +150,6 @@ def _fill_blank_template(template: Contract, language: Language) -> dict:
     """Replace [PLACEHOLDER] tokens with dotted lines for a printable blank template."""
     data = template.model_dump()
     data["disclaimer"] = ""
-    import re
     for section in data["sections"]:
         for article in section["articles"]:
             text_key = "text_ar" if language == Language.ar else "text_fr"
@@ -171,8 +181,6 @@ async def review_contract(
     """Review a filled contract with Gemini Flash for common user errors."""
     if not settings.gemini_api_key:
         return []
-
-    from google.genai import Client
 
     lines = []
     for s in filled_contract.get("sections", []):
@@ -219,7 +227,7 @@ Champs fournis: {fields_str}{notes_str}
 Texte: {contract_text}"""
 
     try:
-        client = Client(api_key=settings.gemini_api_key)
+        client = get_gemini_client()
         response = await client.aio.models.generate_content(
             model=settings.gemini_model,
             contents=prompt,
@@ -229,10 +237,9 @@ Texte: {contract_text}"""
         if "RIEN_A_SIGNALER" in text:
             return []
 
-        start = text.find("[")
-        end = text.rfind("]")
-        if start != -1 and end != -1 and end > start:
-            raw = json.loads(text[start:end + 1])
+        clean = _extract_json(text)
+        if clean:
+            raw = json.loads(clean)
             if isinstance(raw, list):
                 warnings = []
                 for w in raw:
@@ -256,6 +263,8 @@ async def customize_blank_template(
     prompt: str,
 ) -> dict:
     """Use Gemini to customize a blank template based on user prompt. One-time use."""
+    if template_slug in _customize_usage:
+        raise RuntimeError("This template has already been customized (one-time limit per session)")
     if not settings.gemini_api_key:
         raise RuntimeError("Gemini API key not configured")
 
@@ -295,16 +304,13 @@ Respecte le style juridique tunisien. Sois concis.
 Retourne TOUT le texte, incluant les balises ARTICLE::id, sans commentaires."""
 
     try:
-        from google.genai import Client
-        client = Client(api_key=settings.gemini_api_key)
+        client = get_gemini_client()
         response = await client.aio.models.generate_content(
             model=settings.gemini_model,
             contents=gpt_prompt,
         )
         modified_text = response.text.strip()
 
-        # Parse modified text by ARTICLE:: markers
-        import re
         pattern = re.compile(r"ARTICLE::(\S+)\n(.*?)\nARTICLE::\1", re.DOTALL)
         matches = pattern.findall(modified_text)
 
@@ -312,6 +318,7 @@ Retourne TOUT le texte, incluant les balises ARTICLE::id, sans commentaires."""
             # Fallback: if markers were lost, keep the original blank
             logger.warning("Customize markers lost, returning original blank")
             blank["modified_by_ai"] = True
+            _customize_usage.add(template_slug)
             return blank
 
         modified_map = {aid: text.strip() for aid, text in matches}
@@ -328,6 +335,7 @@ Retourne TOUT le texte, incluant les balises ARTICLE::id, sans commentaires."""
 
         blank["sections"] = output_sections
         blank["modified_by_ai"] = True
+        _customize_usage.add(template_slug)
         return blank
 
     except Exception as e:

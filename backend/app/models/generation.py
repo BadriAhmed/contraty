@@ -23,8 +23,8 @@ class GenerateRequest(BaseModel):
         examples=[{"NOM_LOCATAIRE": "Ali Ben Salah", "ADRESSE_LOGEMENT": "Rue Habib Bourguiba, Tunis"}],
     )
     review: bool = False
-    skip_review: bool = False  # when True, skip review even if review=True (used for regeneration after applying suggestions)
     extra_notes: str = ""
+    use_ai: bool = False
 
 
 class GenerateResponse(ContractResponse):

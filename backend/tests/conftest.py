@@ -100,6 +100,14 @@ SAMPLE_TEMPLATE_2 = {
 }
 
 
+@pytest.fixture(autouse=True)
+def _reset_rate_limits():
+    """Reset rate limiter storage before each test to avoid 429 responses in test suites."""
+    from app.core.limiter import limiter
+    limiter._storage.reset()
+    yield
+
+
 @pytest.fixture
 def test_template_repo():
     """In-memory template repository with 2 sample templates."""

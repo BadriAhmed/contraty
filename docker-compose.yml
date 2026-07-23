@@ -1,5 +1,9 @@
 version: "3.8"
 
+# Local development compose — uses backend/Dockerfile and frontend/Dockerfile
+# Production deployment: use root Dockerfile for backend (GCP Cloud Run) +
+# frontend/Dockerfile for frontend (Vercel or other Node host)
+
 services:
   backend:
     build:

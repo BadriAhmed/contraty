@@ -135,7 +135,7 @@ export default async function ContractDetailPage({ params }) {
             className="inline-flex items-center gap-2 border border-primary text-primary font-semibold px-6 py-3.5 rounded-lg hover:bg-primary-fixed transition-colors text-base"
           >
             <Download size={16} />
-            {lang === "ar" ? "تحميل فارغاً" : "Modèle vierge"}
+            {lang === "ar" ? "تحميل النموذج فارغاً" : "Télécharger le modèle vierge"}
           </Link>
         </div>
 

@@ -1,6 +1,10 @@
 import time
 import logging
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, Depends, HTTPException, Request
+from fastapi.responses import Response
+from app.core.config import get_settings
+from app.core.limiter import limiter
+from app.api.auth import get_optional_user, UserInfo, AnonymousUser
 from app.models.generation import GenerateRequest, GenerateResponse, PDFRequest, TemplateSummary, TemplateDetail
 from app.models.contract import Language, Contract, TemplateSection, FieldMetadata
 from app.services.template_service import (
@@ -9,11 +13,14 @@ from app.services.template_service import (
     generate_contract,
     generate_pdf,
     review_contract,
+    _fill_blank_template,
+    customize_blank_template,
 )
 from app.services.docx import docx_renderer as _docx
 
 router = APIRouter()
 logger = logging.getLogger(__name__)
+settings = get_settings()
 
 
 def _to_summary(t: dict) -> TemplateSummary:
@@ -65,7 +72,12 @@ async def get_template_endpoint(contract_slug: str):
 
 
 @router.post("/generate", response_model=GenerateResponse)
-async def generate_contract_endpoint(req: GenerateRequest):
+@limiter.limit(f"{settings.rate_limit_requests}/minute")
+async def generate_contract_endpoint(
+    request: Request,
+    req: GenerateRequest,
+    user: UserInfo = Depends(get_optional_user),
+):
     if not req.contract_slug:
         raise HTTPException(status_code=400, detail="contract_slug is required")
     if not req.user_fields:
@@ -77,7 +89,7 @@ async def generate_contract_endpoint(req: GenerateRequest):
 
     response = GenerateResponse(**result)
 
-    if req.review and result.get("contract") and not req.skip_review:
+    if req.review and result.get("contract"):
         t0 = time.monotonic()
         warnings = await review_contract(result["contract"], req.language, req.user_fields, req.extra_notes)
         response.review_time_ms = int((time.monotonic() - t0) * 1000)
@@ -88,8 +100,6 @@ async def generate_contract_endpoint(req: GenerateRequest):
 
 @router.post("/generate/pdf")
 async def generate_pdf_endpoint(req: PDFRequest):
-    from fastapi.responses import Response
-
     try:
         Contract(**req.contract_json)
     except Exception as e:
@@ -107,8 +117,6 @@ async def generate_pdf_endpoint(req: PDFRequest):
 
 @router.post("/generate/docx")
 async def generate_docx_endpoint(req: PDFRequest):
-    from fastapi.responses import Response
-
     try:
         contract = Contract(**req.contract_json)
     except Exception as e:
@@ -127,17 +135,13 @@ async def generate_docx_endpoint(req: PDFRequest):
 @router.get("/templates/{contract_slug}/download")
 async def download_blank_template_endpoint(
     contract_slug: str,
-    language: str = "fr",
+    language: Language = Language.fr,
     format: str = "pdf",
 ):
-    from fastapi.responses import Response
-    from app.services.template_service import _fill_blank_template
-
     t = await get_template(contract_slug)
     if t is None:
         raise HTTPException(status_code=404, detail="Template not found")
 
-    lang = Language(language)
     contract = Contract(
         id=t.get("id", f"{contract_slug}-v1"),
         slug=contract_slug,
@@ -146,20 +150,20 @@ async def download_blank_template_endpoint(
         sections=t.get("sections", []),
     )
 
-    blank = _fill_blank_template(contract, lang)
+    blank = _fill_blank_template(contract, language)
 
     if format == "docx":
         doc = Contract(**blank)
-        docx_bytes = _docx.render_contract(doc, lang)
-        filename = f"{contract_slug}-vierge-{language}.docx"
+        docx_bytes = _docx.render_contract(doc, language)
+        filename = f"{contract_slug}-vierge-{language.value}.docx"
         return Response(
             content=docx_bytes,
             media_type="application/vnd.openxmlformats-officedocument.wordprocessingml.document",
             headers={"Content-Disposition": f'attachment; filename="{filename}"'},
         )
     else:
-        pdf_bytes = await generate_pdf(blank, language, contract_slug)
-        filename = f"{contract_slug}-vierge-{language}.pdf"
+        pdf_bytes = await generate_pdf(blank, language.value, contract_slug)
+        filename = f"{contract_slug}-vierge-{language.value}.pdf"
         return Response(
             content=pdf_bytes,
             media_type="application/pdf",
@@ -168,15 +172,18 @@ async def download_blank_template_endpoint(
 
 
 @router.post("/templates/{contract_slug}/customize")
-async def customize_blank_template_endpoint(req: GenerateRequest):
+@limiter.limit(f"{settings.rate_limit_requests}/minute")
+async def customize_blank_template_endpoint(
+    request: Request,
+    req: GenerateRequest,
+    user: UserInfo = Depends(get_optional_user),
+):
     """Customize a blank template with AI based on user prompt. One-time use only."""
-    from app.services.template_service import customize_blank_template as _customize
-
     if not req.extra_notes:
         raise HTTPException(status_code=400, detail="extra_notes (prompt) is required")
 
     try:
-        result = await _customize(req.contract_slug, req.language, req.extra_notes)
+        result = await customize_blank_template(req.contract_slug, req.language, req.extra_notes)
         return result
     except RuntimeError as e:
         raise HTTPException(status_code=500, detail=str(e))
