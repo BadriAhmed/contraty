@@ -10,10 +10,10 @@ const ERROR_MSG: Record<string, Record<string, string>> = {
     required: "هذا الحقل مطلوب",
     pattern: "الصيغة غير صالحة",
     format: "الصيغة غير صالحة",
-    min_length: "النص قصير جدًا",
-    max_length: "النص طويل جدًا",
-    min_value: "القيمة صغيرة جدًا",
-    max_value: "القيمة كبيرة جدًا",
+    min_length: "النص أقصر من الحد الأدنى المطلوب",
+    max_length: "النص يتجاوز الطول المسموح به",
+    min_value: "القيمة أقل من الحد الأدنى المسموح به",
+    max_value: "القيمة تتجاوز الحد الأقصى المسموح به",
   },
   fr: {
     required: "Ce champ est obligatoire",
@@ -21,8 +21,8 @@ const ERROR_MSG: Record<string, Record<string, string>> = {
     format: "Format invalide",
     min_length: "Texte trop court",
     max_length: "Texte trop long",
-    min_value: "Valeur trop petite",
-    max_value: "Valeur trop grande",
+    min_value: "Valeur inférieure au minimum requis",
+    max_value: "Valeur supérieure au maximum autorisé",
   },
 };
 

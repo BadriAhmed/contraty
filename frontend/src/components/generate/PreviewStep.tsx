@@ -201,7 +201,7 @@ export default function PreviewStep({
                 className="flex items-center gap-2 bg-primary text-on-primary font-semibold py-2 px-4 rounded-lg hover:bg-surface-tint transition-colors disabled:opacity-50 text-sm"
               >
                 {generating && <Loader2 size={14} className="animate-spin" />}
-                {lang === "ar" ? "إعادة الإنشاء مع التصحيحات" : "Régénérer avec les corrections"}
+                {lang === "ar" ? "إعادة الإنشاء بالتعديلات" : "Régénérer avec les corrections"}
               </button>
             </div>
           )}
@@ -249,7 +249,7 @@ export default function PreviewStep({
       </div>
 
       <button onClick={onBack} className="text-sm text-text-secondary hover:text-primary transition-colors">
-        {isRtl ? "→" : "←"} {lang === "ar" ? "العودة للنموذج" : "Retour au formulaire"}
+        {isRtl ? "→" : "←"} {lang === "ar" ? "العودة إلى النموذج" : "Retour au formulaire"}
       </button>
     </div>
   );

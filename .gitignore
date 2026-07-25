@@ -29,3 +29,4 @@ Thumbs.db
 
 # Data (scraper output — keep raw + templates, ignore temp)
 data/tmp/
+.pids/

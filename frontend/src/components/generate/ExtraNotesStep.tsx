@@ -49,7 +49,7 @@ export default function ExtraNotesStep({
         </h3>
         <p className="text-xs text-text-secondary mb-3">
           {lang === "ar"
-            ? "أي تفاصيل أخرى تود إضافتها للعقد؟ (اختياري)"
+            ? "أي تفاصيل أخرى تود إضافتها إلى العقد؟ (اختياري)"
             : "Des détails supplémentaires à ajouter au contrat ? (optionnel)"}
         </p>
         <textarea

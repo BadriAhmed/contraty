@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
+import AdSenseScript from "@/components/ads/AdSenseScript";
 
 export async function generateStaticParams() {
   return [{ lang: "ar" }, { lang: "fr" }];
@@ -14,6 +15,7 @@ export default function LangLayout({ children, params }) {
       <Navbar />
       <div className="flex-1">{children}</div>
       <Footer lang={lang} />
+      <AdSenseScript />
     </main>
   );
 }

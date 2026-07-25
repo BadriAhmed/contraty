@@ -5,6 +5,7 @@ import { useParams } from "next/navigation";
 import Link from "next/link";
 import { fetchTemplate, API_BASE } from "@/lib/constants";
 import { ArrowLeft, Download, FileText, Loader2, X, Lock, Wand } from "lucide-react";
+import DownloadAdPopup from "@/components/generate/DownloadAdPopup";
 
 export default function BlankPreviewPage() {
   const params = useParams();
@@ -18,6 +19,7 @@ export default function BlankPreviewPage() {
   const [customizing, setCustomizing] = useState(false);
   const [customized, setCustomized] = useState(false);
   const [sections, setSections] = useState(null);
+  const [waitingFormat, setWaitingFormat] = useState(null);
 
   useEffect(() => {
     fetchTemplate(type)
@@ -80,7 +82,16 @@ export default function BlankPreviewPage() {
     sections: displaySections,
   });
 
-  const handleDownload = async (format) => {
+  const handleDownloadStart = (format) => {
+    setWaitingFormat(format);
+  };
+
+  const handleDownloadAdComplete = () => {
+    const format = waitingFormat;
+    if (format) doDownload(format);
+  };
+
+  const doDownload = async (format) => {
     try {
       const endpoint = format === "docx" ? "generate/docx" : "generate/pdf";
       const res = await fetch(`${API_BASE}/contracts/${endpoint}`, {
@@ -119,7 +130,7 @@ export default function BlankPreviewPage() {
         <h1 className="text-2xl font-bold text-error mb-2">{lang === "ar" ? "خطأ" : "Erreur"}</h1>
         <p className="text-text-secondary">{error || "Template not found"}</p>
         <Link href={`/${lang}`} className="text-primary hover:underline mt-4 inline-block">
-          {lang === "ar" ? "العودة للرئيسية" : "Retour à l'accueil"}
+          {lang === "ar" ? "العودة إلى الرئيسية" : "Retour à l'accueil"}
         </Link>
       </div>
     );
@@ -142,10 +153,18 @@ export default function BlankPreviewPage() {
             {lang === "ar" ? "نموذج فارغ" : "Modèle vierge"}
           </span>
           <Link href={`/${lang}`} className="flex items-center gap-1 text-error hover:text-error/80">
-            <X size={14} />{lang === "ar" ? "خروج" : "Quitter"}
+            <X size={14} />{lang === "ar" ? "إغلاق" : "Quitter"}
           </Link>
         </div>
       </div>
+
+      {waitingFormat && (
+        <DownloadAdPopup
+          lang={lang}
+          onComplete={handleDownloadAdComplete}
+          onClose={() => setWaitingFormat(null)}
+        />
+      )}
 
       <div className="flex-1 max-w-[800px] mx-auto w-full px-4 md:px-8 py-8">
         <Link
@@ -153,7 +172,7 @@ export default function BlankPreviewPage() {
           className="inline-flex items-center gap-1 text-sm text-text-secondary hover:text-primary mb-6"
         >
           <ArrowLeft size={14} />
-          {lang === "ar" ? "العودة" : "Retour"}
+          {lang === "ar" ? "رجوع" : "Retour"}
         </Link>
 
         <h1 className="text-xl font-bold text-on-surface mb-1">
@@ -224,11 +243,11 @@ export default function BlankPreviewPage() {
 
         {/* Download buttons */}
         <div className="flex gap-3">
-          <button onClick={() => handleDownload("pdf")} className="flex-1 flex items-center justify-center gap-2 bg-primary text-on-primary font-semibold py-3 px-4 rounded-lg hover:bg-surface-tint transition-colors shadow-sm">
+          <button onClick={() => handleDownloadStart("pdf")} className="flex-1 flex items-center justify-center gap-2 bg-primary text-on-primary font-semibold py-3 px-4 rounded-lg hover:bg-surface-tint transition-colors shadow-sm">
             <Download size={16} />
             PDF
           </button>
-          <button onClick={() => handleDownload("docx")} className="flex-1 flex items-center justify-center gap-2 border-2 border-primary text-primary font-semibold py-3 px-4 rounded-lg hover:bg-primary-fixed transition-colors">
+          <button onClick={() => handleDownloadStart("docx")} className="flex-1 flex items-center justify-center gap-2 border-2 border-primary text-primary font-semibold py-3 px-4 rounded-lg hover:bg-primary-fixed transition-colors">
             <FileText size={16} />
             Word
           </button>

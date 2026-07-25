@@ -1,6 +1,6 @@
 import type { Template, FieldMeta } from "@/types";
 
-export const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000/api/v1";
+export const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8001/api/v1";
 
 export const DOMAINS: Record<string, { ar: string; fr: string; icon: string }> = {
   logement: { ar: "سكن", fr: "Logement", icon: "Home" },

@@ -1,6 +1,10 @@
 import Link from "next/link";
 import { fetchTemplate } from "@/lib/constants";
 import { ArrowLeft, ArrowRight, FileText, Download } from "lucide-react";
+import AdBanner from "@/components/ads/AdBanner";
+import VerticalAd from "@/components/ads/VerticalAd";
+
+export const dynamic = "force-dynamic";
 
 const TYPE_LABELS = {
   ar: {
@@ -35,7 +39,7 @@ export default async function ContractDetailPage({ params }) {
           {lang === "ar" ? "العقد غير موجود" : "Contrat introuvable"}
         </h1>
         <Link href={`/${lang}`} className="text-primary hover:underline mt-4 inline-block">
-          {lang === "ar" ? "العودة للرئيسية" : "Retour à l'accueil"}
+          {lang === "ar" ? "العودة إلى الرئيسية" : "Retour à l'accueil"}
         </Link>
       </div>
     );
@@ -88,6 +92,11 @@ export default async function ContractDetailPage({ params }) {
         <p className="text-sm text-text-secondary mb-8">
           {lang === "ar" ? "الأساس القانوني" : "Base légale"} : {template.legal_basis}
         </p>
+      </div>
+
+      {/* Two-col layout: content + vertical ad sidebar */}
+      <div className="lg:flex lg:gap-8">
+        <div className="lg:flex-1 max-w-2xl">
 
         {/* Required fields */}
         <div className="mb-8">
@@ -120,6 +129,8 @@ export default async function ContractDetailPage({ params }) {
           </div>
         </div>
 
+        <AdBanner size="banner" />
+
         {/* Start + Blank buttons — same line */}
         <div className="flex items-center gap-3">
           <Link
@@ -140,10 +151,25 @@ export default async function ContractDetailPage({ params }) {
         </div>
 
         <p className="text-xs text-text-secondary mt-4">
-          {lang === "ar"
-            ? `${template.field_count} حقلاً يجب ملؤها — حوالي ${Math.ceil(template.field_count / 5)} دقائق`
-            : `${template.field_count} champs à remplir — environ ${Math.ceil(template.field_count / 5)} minutes`}
+          {(() => {
+            const count = template.field_count;
+            const mins = Math.ceil(count / 5);
+            if (lang === "ar") {
+              const countStr = count === 1 ? "حقل واحد يجب ملؤه" : count === 2 ? "حقلان يجب ملؤهما" : `${count} حقول يجب ملؤها`;
+              const minsStr = mins === 1 ? "حوالي دقيقة واحدة" : mins === 2 ? "حوالي دقيقتين" : `حوالي ${mins} دقائق`;
+              return `${countStr} — ${minsStr}`;
+            } else {
+              const countStr = `${count} ${count > 1 ? "champs" : "champ"} à remplir`;
+              const minsStr = `environ ${mins} ${mins > 1 ? "minutes" : "minute"}`;
+              return `${countStr} — ${minsStr}`;
+            }
+          })()}
         </p>
+        </div>
+
+        <aside className="hidden lg:block w-[300px] shrink-0">
+          <VerticalAd />
+        </aside>
       </div>
     </div>
   );

@@ -11,6 +11,7 @@ import DisclaimerStep from "@/components/generate/DisclaimerStep";
 import FormStep from "@/components/generate/FormStep";
 import ExtraNotesStep from "@/components/generate/ExtraNotesStep";
 import PreviewStep from "@/components/generate/PreviewStep";
+import LoadingWithAd from "@/components/generate/LoadingWithAd";
 import type { Template, ContractWarning } from "@/types";
 
 export default function GeneratePage() {
@@ -22,6 +23,7 @@ export default function GeneratePage() {
   const [template, setTemplate] = useState<Template | null>(null);
   const [loading, setLoading] = useState(true);
   const [fetchError, setFetchError] = useState<string | null>(null);
+  const [showAdLoading, setShowAdLoading] = useState(false);
 
   const {
     fieldValues,
@@ -93,6 +95,15 @@ export default function GeneratePage() {
     });
   };
 
+  const handleGenerateWithAd = () => {
+    setShowAdLoading(true);
+  };
+
+  const handleAdComplete = () => {
+    setShowAdLoading(false);
+    handleGenerate(false, steps.length, setCurrentStep);
+  };
+
   const handleNext = () => {
     if (isDisclaimerStep) {
       if (!disclaimerAccepted) {
@@ -122,7 +133,13 @@ export default function GeneratePage() {
     if (errorCount > 0) {
       setFieldErrors(newErrors);
       setGenError(
-        lang === "ar" ? `يرجى تصحيح ${errorCount} حقول` : `${errorCount} champ(s) à corriger`,
+        lang === "ar"
+          ? errorCount === 1
+            ? "يرجى تصحيح حقل واحد"
+            : errorCount === 2
+            ? "يرجى تصحيح حقلين"
+            : `يرجى تصحيح ${errorCount} حقول`
+          : `${errorCount} ${errorCount > 1 ? "champs" : "champ"} à corriger`,
       );
       return;
     }
@@ -162,7 +179,7 @@ export default function GeneratePage() {
         </h1>
         <p className="text-text-secondary">{fetchError}</p>
         <Link href={`/${lang}`} className="text-primary hover:underline mt-4 inline-block">
-          {lang === "ar" ? "العودة للرئيسية" : "Retour à l'accueil"}
+          {lang === "ar" ? "العودة إلى الرئيسية" : "Retour à l'accueil"}
         </Link>
       </div>
     );
@@ -187,7 +204,7 @@ export default function GeneratePage() {
           </span>
           <Link href={`/${lang}`} className="flex items-center gap-1 text-error hover:text-error/80">
             <X size={14} />
-            {lang === "ar" ? "خروج" : "Quitter"}
+            {lang === "ar" ? "إغلاق" : "Quitter"}
           </Link>
         </div>
       </div>
@@ -266,17 +283,21 @@ export default function GeneratePage() {
               onNext={handleNext}
             />
           ) : isExtraNotesStep ? (
-            <ExtraNotesStep
-              lang={lang}
-              type={type}
-              extraNotes={extraNotes}
-              generating={generating}
-              error={genError}
-              loadingMsg={loadingMsgs[loadingStep] || loadingMsgs[0]}
-              onNotesChange={setExtraNotes}
-              onGenerate={() => handleGenerate(false, steps.length, setCurrentStep)}
-              onPrevious={handlePrevious}
-            />
+            showAdLoading ? (
+              <LoadingWithAd lang={lang} onComplete={handleAdComplete} />
+            ) : (
+              <ExtraNotesStep
+                lang={lang}
+                type={type}
+                extraNotes={extraNotes}
+                generating={generating}
+                error={genError}
+                loadingMsg={loadingMsgs[loadingStep] || loadingMsgs[0]}
+                onNotesChange={setExtraNotes}
+                onGenerate={handleGenerateWithAd}
+                onPrevious={handlePrevious}
+              />
+            )
           ) : (
             <FormStep
               lang={lang}

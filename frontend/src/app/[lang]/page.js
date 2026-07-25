@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { fetchTemplates, DOMAINS } from "@/lib/constants";
 import { Home, Briefcase, Coins, Car, Building2, FileText } from "lucide-react";
+import Ad from "@/components/ads/Ad";
 
 export const dynamic = "force-dynamic";
 
@@ -51,10 +52,15 @@ export default async function HomePage({ params, searchParams }) {
             <span className="text-border-slate">|</span>
             <span>{lang === "ar" ? "عربي · Français" : "Arabe · Français"}</span>
             <span className="text-border-slate">|</span>
-            <span>{lang === "ar" ? "PDF جاهز" : "PDF prêt à signer"}</span>
+            <span>{lang === "ar" ? "PDF جاهز للتوقيع" : "PDF prêt à signer"}</span>
           </div>
         </div>
       </section>
+
+      {/* Ad placement - after hero */}
+      <div className="my-8 flex justify-center">
+        <Ad size="banner" />
+      </div>
 
       {/* Template grid section */}
       <section>
@@ -63,8 +69,8 @@ export default async function HomePage({ params, searchParams }) {
             {domainLabel || (lang === "ar" ? "نماذج العقود" : "Modèles de contrats")}
           </h2>
           <p className="text-sm text-text-secondary">
-            {filtered.length} {lang === "ar" ? "نموذج" : "modèle"}{filtered.length > 1 ? "s" : ""}{" "}
-            {lang === "ar" ? "متاح" : "disponible"}{filtered.length > 1 ? "s" : ""}
+            {filtered.length} {lang === "ar" ? (filtered.length > 1 ? "نماذج" : "نموذج") : (filtered.length > 1 ? "modèles" : "modèle")}{" "}
+            {lang === "ar" ? "متاحة" : "disponible"}{filtered.length > 1 ? "s" : ""}
           </p>
         </div>
 
@@ -123,6 +129,11 @@ export default async function HomePage({ params, searchParams }) {
               </Link>
             );
           })}
+        </div>
+
+        {/* Ad placement - after template grid */}
+        <div className="my-8 flex justify-center">
+          <Ad size="banner" />
         </div>
 
         {/* Legal disclaimer */}
