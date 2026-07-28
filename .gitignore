@@ -3,7 +3,11 @@ __pycache__/
 *.py[cod]
 *.egg-info/
 dist/
-.env
+.eggs/
+.pytest_cache/
+*.log
+
+# Virtual env
 venv/
 .venv/
 
@@ -29,4 +33,12 @@ Thumbs.db
 
 # Data (scraper output — keep raw + templates, ignore temp)
 data/tmp/
+
+# PIDs (start.sh)
 .pids/
+
+# Design drafts
+design-attempt/
+
+# Build artifacts
+*.pyc
