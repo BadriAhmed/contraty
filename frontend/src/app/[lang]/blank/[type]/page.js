@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import { fetchTemplate, API_BASE } from "@/lib/constants";
-import { ArrowLeft, Download, FileText, Loader2, X, Lock, Wand } from "lucide-react";
+import { ArrowLeft, ArrowRight, Download, FileText, Loader2, X, Lock, Wand } from "lucide-react";
 import DownloadAdPopup from "@/components/generate/DownloadAdPopup";
 
 export default function BlankPreviewPage() {
@@ -171,7 +171,7 @@ export default function BlankPreviewPage() {
           href={`/${lang}/contracts/${type}`}
           className="inline-flex items-center gap-1 text-sm text-text-secondary hover:text-primary mb-6"
         >
-          <ArrowLeft size={14} />
+          {lang === "ar" ? <ArrowRight size={14} /> : <ArrowLeft size={14} />}
           {lang === "ar" ? "رجوع" : "Retour"}
         </Link>
 

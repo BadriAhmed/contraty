@@ -77,7 +77,7 @@ export default function ExtraNotesStep({
           onClick={onPrevious}
           className="flex items-center gap-2 border border-primary text-primary font-semibold px-5 py-2.5 rounded-lg hover:bg-primary-fixed transition-colors"
         >
-          <ArrowLeft size={16} />
+          {lang === "ar" ? <ArrowRight size={16} /> : <ArrowLeft size={16} />}
           {lang === "ar" ? "السابق" : "Retour"}
         </button>
         <button
@@ -87,7 +87,7 @@ export default function ExtraNotesStep({
         >
           {generating && <Loader2 size={16} className="animate-spin" />}
           {generating ? loadingMsg : lang === "ar" ? "إنشاء العقد" : "Générer le contrat"}
-          <ArrowRight size={16} />
+          {lang === "ar" ? <ArrowLeft size={16} /> : <ArrowRight size={16} />}
         </button>
       </div>
     </div>

@@ -77,7 +77,7 @@ export default async function ContractDetailPage({ params }) {
         href={`/${lang}`}
         className="inline-flex items-center gap-1 text-sm text-text-secondary hover:text-primary mb-6"
       >
-        <ArrowLeft size={14} />
+        {isRtl ? <ArrowRight size={14} /> : <ArrowLeft size={14} />}
         {lang === "ar" ? "الرئيسية" : "Accueil"}
       </Link>
 

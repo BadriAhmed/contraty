@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { ShieldAlert } from "lucide-react";
 
 interface Props {
@@ -61,7 +61,7 @@ export default function DisclaimerStep({ lang, disclaimerAccepted, templateDiscl
           className="flex items-center gap-2 bg-primary text-on-primary font-semibold px-5 py-2.5 rounded-lg hover:bg-surface-tint transition-colors shadow-sm disabled:opacity-50 ms-auto"
         >
           {t.cta}
-          <ArrowRight size={16} />
+          {lang === "ar" ? <ArrowLeft size={16} /> : <ArrowRight size={16} />}
         </button>
       </div>
     </div>

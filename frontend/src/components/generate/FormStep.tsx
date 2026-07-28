@@ -120,7 +120,7 @@ export default function FormStep({
             onClick={onPrevious}
             className="flex items-center gap-2 border border-primary text-primary font-semibold px-5 py-2.5 rounded-lg hover:bg-primary-fixed transition-colors"
           >
-            <ArrowLeft size={16} />
+            {lang === "ar" ? <ArrowRight size={16} /> : <ArrowLeft size={16} />}
             {lang === "ar" ? "السابق" : "Retour"}
           </button>
         )}
@@ -129,7 +129,7 @@ export default function FormStep({
           className="flex items-center gap-2 bg-primary text-on-primary font-semibold px-5 py-2.5 rounded-lg hover:bg-surface-tint transition-colors shadow-sm ms-auto"
         >
           {lang === "ar" ? "التالي" : "Suivant"}
-          <ArrowRight size={16} />
+          {lang === "ar" ? <ArrowLeft size={16} /> : <ArrowRight size={16} />}
         </button>
       </div>
     </div>

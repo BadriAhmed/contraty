@@ -216,7 +216,7 @@ export default function GeneratePage() {
         <p className="text-sm text-text-secondary mb-8">{template?.legal_basis}</p>
 
         {!isPreviewStep && (
-          <div className={`flex items-center justify-center mb-10 ${isRtl ? "flex-row-reverse" : ""}`}>
+          <div className="flex items-center justify-center mb-10">
             {Array.from({ length: totalSteps }, (_, i) => (
               <div key={i} className="flex items-center">
                 <div

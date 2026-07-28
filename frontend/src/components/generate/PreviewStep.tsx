@@ -1,6 +1,6 @@
 "use client";
 
-import { AlertCircle, CheckCircle2, Download, FileText, Loader2 } from "lucide-react";
+import { AlertCircle, ArrowLeft, ArrowRight, CheckCircle2, Download, FileText, Loader2 } from "lucide-react";
 import type { GenerateResponse, ContractWarning } from "@/types";
 import { formatDate } from "@/lib/utils";
 
@@ -248,8 +248,9 @@ export default function PreviewStep({
         </button>
       </div>
 
-      <button onClick={onBack} className="text-sm text-text-secondary hover:text-primary transition-colors">
-        {isRtl ? "→" : "←"} {lang === "ar" ? "العودة إلى النموذج" : "Retour au formulaire"}
+      <button onClick={onBack} className="inline-flex items-center gap-1 text-sm text-text-secondary hover:text-primary transition-colors">
+        {lang === "ar" ? <ArrowRight size={14} /> : <ArrowLeft size={14} />}
+        {lang === "ar" ? "العودة إلى النموذج" : "Retour au formulaire"}
       </button>
     </div>
   );
