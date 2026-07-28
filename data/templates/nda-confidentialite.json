@@ -83,7 +83,7 @@
         {
           "id": "art-duree-engagement",
           "text_ar": "يسري التعهد بالسرية ابتداءً من [DATE_EFFET] ويبقى نافذاً لمدة [DUREE_ANNEE] سنوات من تاريخ انتهاء المناقشات بين الطرفين.",
-          "text_fr": "Le présent accord prend effet à compter du [DATE_EFFET] et reste en vigueur pendant une durée de [DUREE] ans. Nonobstant l'expiration ou la résiliation du présent accord pour quelque cause que ce soit, les obligations de confidentialité et de non-utilisation des Informations Confidentielles survivront et resteront pleinement applicables pour une durée de [DUREE] ans à compter de la date de cette expiration ou résiliation.",
+          "text_fr": "Le présent accord prend effet à compter du [DATE_EFFET] et reste en vigueur pendant une durée de [DUREE_ANNEE] ans. Nonobstant l'expiration ou la résiliation du présent accord pour quelque cause que ce soit, les obligations de confidentialité et de non-utilisation des Informations Confidentielles survivront et resteront pleinement applicables pour une durée de [DUREE_ANNEE] ans à compter de la date de cette expiration ou résiliation.",
           "fields": [
             "DATE_EFFET",
             "DUREE_ANNEE"
@@ -166,8 +166,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Nom complet (prénom et nom de famille) de la partie concernée.",
-      "help_ar": "الاسم الكامل (الاسم واللقب) للطرف المعني."
+      "help_fr": "Nom (raison sociale) de la société partie A.",
+      "help_ar": "اسم (السبب الاجتماعي) للشركة الطرف أ."
     },
     "ADRESSE_PARTIE_A": {
       "type": "text",
@@ -208,8 +208,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Nom complet (prénom et nom de famille) de la partie concernée.",
-      "help_ar": "الاسم الكامل (الاسم واللقب) للطرف المعني."
+      "help_fr": "Nom (raison sociale) de la société partie B.",
+      "help_ar": "اسم (السبب الاجتماعي) للشركة الطرف ب."
     },
     "ADRESSE_PARTIE_B": {
       "type": "text",

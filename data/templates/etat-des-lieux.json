@@ -23,7 +23,9 @@
           "text_fr": "Bailleur : M./Mme [NOM_BAILLEUR], titulaire de la CIN n° [CIN_BAILLEUR] délivrée le [DATE_DELIVRANCE_CIN_B] à [LIEU_DELIVRANCE_CIN_B].",
           "fields": [
             "NOM_BAILLEUR",
-            "CIN_BAILLEUR"
+            "CIN_BAILLEUR",
+            "DATE_DELIVRANCE_CIN_B",
+            "LIEU_DELIVRANCE_CIN_B"
           ]
         },
         {
@@ -32,7 +34,9 @@
           "text_fr": "Preneur : M./Mme [NOM_PRENEUR], titulaire de la CIN n° [CIN_PRENEUR] délivrée le [DATE_DELIVRANCE_CIN_P] à [LIEU_DELIVRANCE_CIN_P].",
           "fields": [
             "NOM_PRENEUR",
-            "CIN_PRENEUR"
+            "CIN_PRENEUR",
+            "DATE_DELIVRANCE_CIN_P",
+            "LIEU_DELIVRANCE_CIN_P"
           ]
         }
       ]
@@ -44,8 +48,8 @@
       "articles": [
         {
           "id": "art-adresse",
-          "text_ar": "العقار الكائن بـ [ADRESSE_BIEN]. طبيعة الكشف: [عند تسلّم الأماكن / عند إرجاع الأماكن].",
-          "text_fr": "Bien situé à [ADRESSE_BIEN]. Type d'état des lieux : [TYPE_ETAT] (Entrée / Sortie).",
+          "text_ar": "العقار الكائن بـ [ADRESSE_BIEN]. طبيعة الكشف: [TYPE_ETAT].",
+          "text_fr": "Bien situé à [ADRESSE_BIEN]. Type d'état des lieux : [TYPE_ETAT].",
           "fields": [
             "ADRESSE_BIEN",
             "TYPE_ETAT"
@@ -242,8 +246,8 @@
       "help_ar": "العنوان الكامل للمسكن موضوع عقد الكراء."
     },
     "TYPE_ETAT": {
-      "type": "text",
-      "label_ar": "نوع مساهمة الدولة",
+      "type": "select",
+      "label_ar": "نوع محضر المعاينة",
       "label_fr": "Type Etat",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -253,7 +257,15 @@
       "min_length": 2,
       "max_length": 500,
       "help_fr": "Précisez s'il s'agit d'un état des lieux d'entrée ou de sortie.",
-      "help_ar": "حدد ما إذا كان محضر معاينة دخول أو خروج."
+      "help_ar": "حدد ما إذا كان محضر معاينة دخول أو خروج.",
+      "options_fr": [
+        "Entrée",
+        "Sortie"
+      ],
+      "options_ar": [
+        "دخول",
+        "خروج"
+      ]
     },
     "SOL_SALON": {
       "type": "text",
@@ -560,8 +572,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Conditions ou modalités particulières .",
-      "help_ar": "شروط أو كيفيات خاصة ."
+      "help_fr": "Autres pièces du logement (ex: bureau, buanderie).",
+      "help_ar": "الأجزاء الأخرى بالمسكن (مثال: مكتب، مخزن)."
     },
     "DESCRIPTION_AUTRES_PIECES": {
       "type": "text",
@@ -574,8 +586,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Conditions ou modalités particulières .",
-      "help_ar": "شروط أو كيفيات خاصة ."
+      "help_fr": "Description détaillée des autres pièces du logement.",
+      "help_ar": "وصف مفصّل للأجزاء الأخرى بالمسكن."
     },
     "INDEX_ELEC": {
       "type": "text",
@@ -701,6 +713,74 @@
       "pattern": "^(\\d{4}-\\d{2}-\\d{2}|\\d{1,2}[/\\-.]\\d{1,2}[/\\-.]\\d{2,4})$",
       "help_fr": "Date au format JJ/MM/AAAA .",
       "help_ar": "التاريخ بصيغة يوم/شهر/سنة للتوقيع."
+    },
+    "DATE_DELIVRANCE_CIN_B": {
+      "type": "date",
+      "label_fr": "Date de délivrance CIN bailleur",
+      "label_ar": "تاريخ منح بطاقة التعريف للمؤجر",
+      "placeholder_fr": "JJ/MM/AAAA",
+      "placeholder_ar": "يوم/شهر/سنة",
+      "required": true,
+      "pattern": null,
+      "min_length": null,
+      "max_length": null,
+      "min_value": null,
+      "max_value": null,
+      "hint_fr": "",
+      "hint_ar": "",
+      "help_fr": "Date de délivrance de la carte d'identité nationale du bailleur.",
+      "help_ar": "تاريخ منح بطاقة التعريف الوطنية للمؤجر."
+    },
+    "LIEU_DELIVRANCE_CIN_B": {
+      "type": "text",
+      "label_fr": "Lieu de délivrance CIN bailleur",
+      "label_ar": "مكان منح بطاقة التعريف للمؤجر",
+      "placeholder_fr": "Tunis",
+      "placeholder_ar": "تونس",
+      "required": true,
+      "pattern": null,
+      "min_length": null,
+      "max_length": 100,
+      "min_value": null,
+      "max_value": null,
+      "hint_fr": "",
+      "hint_ar": "",
+      "help_fr": "Ville de délivrance de la carte d'identité nationale du bailleur.",
+      "help_ar": "مدينة منح بطاقة التعريف الوطنية للمؤجر."
+    },
+    "DATE_DELIVRANCE_CIN_P": {
+      "type": "date",
+      "label_fr": "Date de délivrance CIN preneur",
+      "label_ar": "تاريخ منح بطاقة التعريف للمكتري",
+      "placeholder_fr": "JJ/MM/AAAA",
+      "placeholder_ar": "يوم/شهر/سنة",
+      "required": true,
+      "pattern": null,
+      "min_length": null,
+      "max_length": null,
+      "min_value": null,
+      "max_value": null,
+      "hint_fr": "",
+      "hint_ar": "",
+      "help_fr": "Date de délivrance de la carte d'identité nationale du preneur.",
+      "help_ar": "تاريخ منح بطاقة التعريف الوطنية للمكتري."
+    },
+    "LIEU_DELIVRANCE_CIN_P": {
+      "type": "text",
+      "label_fr": "Lieu de délivrance CIN preneur",
+      "label_ar": "مكان منح بطاقة التعريف للمكتري",
+      "placeholder_fr": "Tunis",
+      "placeholder_ar": "تونس",
+      "required": true,
+      "pattern": null,
+      "min_length": null,
+      "max_length": 100,
+      "min_value": null,
+      "max_value": null,
+      "hint_fr": "",
+      "hint_ar": "",
+      "help_fr": "Ville de délivrance de la carte d'identité nationale du preneur.",
+      "help_ar": "مدينة منح بطاقة التعريف الوطنية للمكتري."
     }
   },
   "description_ar": "ورقة توصف حالة الدار بالتفصيل قبل ما تسكن والا كي تخرج، باش تحمي حقك في الماكول والضمان.",

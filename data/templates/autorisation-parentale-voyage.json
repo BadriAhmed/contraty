@@ -44,7 +44,8 @@
             "DATE_NAISSANCE_ENFANT",
             "LIEU_NAISSANCE_ENFANT",
             "NUM_EXTRAIT_NAISSANCE",
-            "NUM_PIECE_ENFANT"
+            "NUM_PIECE_ENFANT",
+            "NUM_PASSEPORT_ENFANT"
           ]
         }
       ]
@@ -63,7 +64,8 @@
             "NOM_ACCOMPAGNATEUR",
             "CIN_ACCOMPAGNATEUR",
             "DATE_DEPART",
-            "DATE_RETOUR"
+            "DATE_RETOUR",
+            "NUM_PIECE_ACCOMPAGNATEUR"
           ]
         }
       ]
@@ -227,7 +229,7 @@
     },
     "DESTINATION": {
       "type": "text",
-      "label_ar": "التخصيص",
+      "label_ar": "الوجهة",
       "label_fr": "Destination",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -236,8 +238,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "But ou usage prévu pour ce document.",
-      "help_ar": "الغرض أو الاستعمال المقصود لهذه الوثيقة."
+      "help_fr": "Pays et ville de destination du voyage de l'enfant.",
+      "help_ar": "البلد والمدينة الوجهة لسفر الطفل."
     },
     "NOM_ACCOMPAGNATEUR": {
       "type": "text",
@@ -320,6 +322,40 @@
       "pattern": "^(\\d{4}-\\d{2}-\\d{2}|\\d{1,2}[/\\-.]\\d{1,2}[/\\-.]\\d{2,4})$",
       "help_fr": "Date au format JJ/MM/AAAA pour la signature.",
       "help_ar": "التاريخ بصيغة يوم/شهر/سنة للتوقيع."
+    },
+    "NUM_PASSEPORT_ENFANT": {
+      "type": "text",
+      "label_fr": "N° Passeport de l'enfant",
+      "label_ar": "رقم جواز سفر الطفل",
+      "placeholder_fr": "AB123456",
+      "placeholder_ar": "AB123456",
+      "required": true,
+      "pattern": null,
+      "min_length": null,
+      "max_length": 20,
+      "min_value": null,
+      "max_value": null,
+      "hint_fr": "",
+      "hint_ar": "",
+      "help_fr": "Numéro du passeport de l'enfant qui voyage.",
+      "help_ar": "رقم جواز سفر الطفل المسافر."
+    },
+    "NUM_PIECE_ACCOMPAGNATEUR": {
+      "type": "text",
+      "label_fr": "N° CIN/Passeport de l'accompagnateur",
+      "label_ar": "رقم بطاقة التعريف/جواز سفر المرافق",
+      "placeholder_fr": "12345678",
+      "placeholder_ar": "12345678",
+      "required": true,
+      "pattern": null,
+      "min_length": null,
+      "max_length": 20,
+      "min_value": null,
+      "max_value": null,
+      "hint_fr": "",
+      "hint_ar": "",
+      "help_fr": "Numéro de la carte d'identité ou du passeport de l'accompagnateur.",
+      "help_ar": "رقم بطاقة التعريف أو جواز سفر المرافق."
     }
   },
   "description_ar": "ترخيص مصحح ومصادق عليه من الولي يسمح للطفل القاصر بالسفر لبرا وحده أو مع غيره.",

@@ -25,7 +25,8 @@
             "NOM_ENTREPRISE",
             "RNE",
             "ADRESSE_ENTREPRISE",
-            "REPRESENTANT"
+            "REPRESENTANT",
+            "QUALITE"
           ]
         },
         {
@@ -36,7 +37,9 @@
             "NOM_SALARIE",
             "CIN_SALARIE",
             "DATE_CDI",
-            "POSTE"
+            "POSTE",
+            "DATE_CIN",
+            "ADRESSE_SALARIE"
           ]
         }
       ]
@@ -255,14 +258,14 @@
       "help_ar": "التاريخ بصيغة يوم/شهر/سنة ."
     },
     "INDEMNITE": {
-      "type": "text",
+      "type": "number",
       "label_ar": "التعويض",
       "label_fr": "Indemnite",
-      "placeholder_ar": "",
-      "placeholder_fr": "",
+      "placeholder_ar": "0",
+      "placeholder_fr": "0",
       "required": true,
-      "hint_ar": "",
-      "hint_fr": "",
+      "hint_ar": "رقم",
+      "hint_fr": "Nombre",
       "min_length": 2,
       "max_length": 500,
       "help_fr": "Montant de l'indemnité de rupture en dinars tunisiens.",
@@ -322,6 +325,57 @@
       "pattern": "^(\\d{4}-\\d{2}-\\d{2}|\\d{1,2}[/\\-.]\\d{1,2}[/\\-.]\\d{2,4})$",
       "help_fr": "Date au format JJ/MM/AAAA .",
       "help_ar": "التاريخ بصيغة يوم/شهر/سنة للتوقيع."
+    },
+    "QUALITE": {
+      "type": "text",
+      "label_fr": "Qualité du représentant employeur",
+      "label_ar": "صفة ممثل المؤجر",
+      "placeholder_fr": "Gérant",
+      "placeholder_ar": "مدير",
+      "required": true,
+      "pattern": null,
+      "min_length": null,
+      "max_length": 100,
+      "min_value": null,
+      "max_value": null,
+      "hint_fr": "",
+      "hint_ar": "",
+      "help_fr": "Fonction/qualité du représentant de l'employeur (ex: Gérant, Directeur).",
+      "help_ar": "صفة/وظيفة ممثل المؤجر (مثال: مدير، رئيس)."
+    },
+    "DATE_CIN": {
+      "type": "date",
+      "label_fr": "Date de délivrance CIN salarié",
+      "label_ar": "تاريخ منح بطاقة التعريف للأجير",
+      "placeholder_fr": "JJ/MM/AAAA",
+      "placeholder_ar": "يوم/شهر/سنة",
+      "required": true,
+      "pattern": null,
+      "min_length": null,
+      "max_length": null,
+      "min_value": null,
+      "max_value": null,
+      "hint_fr": "",
+      "hint_ar": "",
+      "help_fr": "Date de délivrance de la carte d'identité nationale du salarié.",
+      "help_ar": "تاريخ منح بطاقة التعريف الوطنية للأجير."
+    },
+    "ADRESSE_SALARIE": {
+      "type": "text",
+      "label_fr": "Adresse du salarié",
+      "label_ar": "عنوان الأجير",
+      "placeholder_fr": "12 rue, Ville",
+      "placeholder_ar": "12 شارع، المدينة",
+      "required": true,
+      "pattern": null,
+      "min_length": null,
+      "max_length": 200,
+      "min_value": null,
+      "max_value": null,
+      "hint_fr": "",
+      "hint_ar": "",
+      "help_fr": "Adresse complète du salarié (rue, ville).",
+      "help_ar": "العنوان الكامل للأجير (شارع، مدينة)."
     }
   },
   "description_ar": "إتفاق بالتراضي بين الخدّام والشركة باش يقصو الخدمة مع تحديد الهبوط والتعويضات.",

@@ -74,7 +74,10 @@ export default function PreviewStep({
           {generated.warnings.map((w, i) => {
             const ctype = w.correction_type || "auto";
             const applied = appliedSuggestions.has(`${w.field}:${w.suggested_value}`);
+            const corrected = appliedSuggestions.has(`corrected:${w.field}`);
+            const accepted = appliedSuggestions.has(`accepted:${w.field}`);
             const dismissed = appliedSuggestions.has(`dismiss:${w.field}:${w.message_fr}`);
+            const resolved = applied || corrected || accepted;
             if (dismissed && ctype === "info") return null;
             return (
               <div
@@ -102,20 +105,22 @@ export default function PreviewStep({
                       {lang === "ar" ? w.suggestion_ar : w.suggestion_fr}
                     </p>
                     <div className="flex items-center gap-2 mt-2">
-                      {applied ? (
+                      {resolved ? (
                         <span className="text-xs text-success-green font-medium flex items-center gap-1">
                           <CheckCircle2 size={12} />
-                          {lang === "ar"
-                            ? ctype === "manual"
-                              ? "تم القبول"
+                          {applied
+                            ? ctype === "manual" || !w.suggested_value
+                              ? lang === "ar" ? "تم القبول" : "Accepté"
                               : w.suggested_value
-                                ? `تم التطبيق: ${w.suggested_value}`
-                                : "تم القبول"
-                            : ctype === "manual"
-                              ? "Accepté"
-                              : w.suggested_value
-                                ? `Appliqué : ${w.suggested_value}`
-                                : "Accepté"}
+                                ? lang === "ar" ? `تم التطبيق: ${w.suggested_value}` : `Appliqué : ${w.suggested_value}`
+                                : lang === "ar" ? "تم القبول" : "Accepté"
+                            : corrected
+                              ? lang === "ar" ? "تم التصحيح" : "Corrigé"
+                              : lang === "ar" ? "تم القبول" : "Accepté"}
+                        </span>
+                      ) : dismissed ? (
+                        <span className="text-xs text-text-secondary font-medium">
+                          {lang === "ar" ? "تم التجاهل" : "Ignoré"}
                         </span>
                       ) : (
                         <>
@@ -155,9 +160,7 @@ export default function PreviewStep({
                                   {lang === "ar" ? "تعديل" : "Corriger"}
                                 </button>
                                 <button
-                                  onClick={() => {
-                                    onSetApplied((prev) => new Set([...prev, `accept:${w.field}:manual`]));
-                                  }}
+                                  onClick={() => onSetApplied((prev) => new Set([...prev, `accepted:${w.field}`]))}
                                   className="text-xs bg-success-green/10 text-success-green font-medium px-2 py-1 rounded hover:bg-success-green/20 transition-colors"
                                 >
                                   {lang === "ar" ? "قبول كما هو" : "Accepter tel quel"}
@@ -217,6 +220,7 @@ export default function PreviewStep({
             </h3>
             {(section.articles || []).map((article) => {
               const rawText = lang === "ar" ? article.text_ar : article.text_fr;
+              if (!rawText || !rawText.trim()) return null;
               const displayText = rawText.replace(/\b(\d{4}-\d{2}-\d{2})\b/g, (m) => formatDate(m));
               return (
                 <p

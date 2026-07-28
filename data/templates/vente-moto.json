@@ -315,8 +315,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Durée en années ou mois .",
-      "help_ar": "المدة بالسنوات أو الأشهر في العقد."
+      "help_fr": "Année de première mise en circulation de la moto.",
+      "help_ar": "سنة أول جولان للدراجة النارية."
     },
     "KILOMETRAGE": {
       "type": "text",
@@ -347,18 +347,18 @@
       "help_ar": "المبلغ بالدينار التونسي ."
     },
     "DELAI_JOURS": {
-      "type": "text",
+      "type": "number",
       "label_ar": "الأجل بالأيام",
       "label_fr": "Delai Jours",
-      "placeholder_ar": "",
-      "placeholder_fr": "",
+      "placeholder_ar": "30",
+      "placeholder_fr": "30",
       "required": true,
-      "hint_ar": "",
-      "hint_fr": "",
+      "hint_ar": "رقم",
+      "hint_fr": "Nombre",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Durée en années ou mois .",
-      "help_ar": "المدة بالسنوات أو الأشهر ."
+      "help_fr": "Délai en jours pour procéder à la mutation de propriété.",
+      "help_ar": "الأجل بالأيام لإتمام نقل الملكية."
     },
     "LIEU_SIGNATURE": {
       "type": "text",

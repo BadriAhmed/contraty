@@ -24,7 +24,8 @@
           "fields": [
             "NOM_BAILLEUR",
             "CIN_BAILLEUR",
-            "NOM_PRENEUR"
+            "NOM_PRENEUR",
+            "CIN_PRENEUR"
           ]
         }
       ]
@@ -43,7 +44,10 @@
             "MOIS",
             "ANNEE",
             "ADRESSE_BIEN",
-            "MODE_PAIEMENT"
+            "MODE_PAIEMENT",
+            "MONTANT_EN_CHIFFRES",
+            "MONTANT_EN_LETTRES",
+            "DATE_CONTRAT_BAIL"
           ]
         }
       ]
@@ -151,18 +155,18 @@
       "help_ar": "الشهر المعني (مثال: جانفي، فيفري)."
     },
     "ANNEE": {
-      "type": "text",
+      "type": "number",
       "label_ar": "السنة",
       "label_fr": "Annee",
-      "placeholder_ar": "",
-      "placeholder_fr": "",
+      "placeholder_ar": "2024",
+      "placeholder_fr": "2024",
       "required": true,
-      "hint_ar": "",
-      "hint_fr": "",
+      "hint_ar": "رقم",
+      "hint_fr": "Nombre",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Durée en années ou mois pour cette période de location.",
-      "help_ar": "المدة بالسنوات أو الأشهر عن فترة الكراء."
+      "help_fr": "Année civile correspondant au loyer (ex: 2024).",
+      "help_ar": "السنة المدنية المقابلة للكراء (مثال: 2024)."
     },
     "ADRESSE_BIEN": {
       "type": "text",
@@ -218,6 +222,74 @@
       "pattern": "^(\\d{4}-\\d{2}-\\d{2}|\\d{1,2}[/\\-.]\\d{1,2}[/\\-.]\\d{2,4})$",
       "help_fr": "Date au format JJ/MM/AAAA pour la signature.",
       "help_ar": "التاريخ بصيغة يوم/شهر/سنة للتوقيع."
+    },
+    "CIN_PRENEUR": {
+      "type": "cin",
+      "label_fr": "CIN du preneur",
+      "label_ar": "بطاقة تعريف المكتري",
+      "placeholder_fr": "12345678",
+      "placeholder_ar": "12345678",
+      "required": true,
+      "pattern": null,
+      "min_length": 8,
+      "max_length": 8,
+      "min_value": null,
+      "max_value": null,
+      "hint_fr": "8 chiffres",
+      "hint_ar": "8 أرقام",
+      "help_fr": "Numéro de la carte d'identité nationale du preneur (locataire).",
+      "help_ar": "رقم بطاقة التعريف الوطنية للمكتري."
+    },
+    "MONTANT_EN_CHIFFRES": {
+      "type": "number",
+      "label_fr": "Montant en chiffres (DT)",
+      "label_ar": "المبلغ بالأرقام (د.ت)",
+      "placeholder_fr": "500",
+      "placeholder_ar": "500",
+      "required": true,
+      "pattern": null,
+      "min_length": null,
+      "max_length": null,
+      "min_value": 0,
+      "max_value": null,
+      "hint_fr": "Nombre",
+      "hint_ar": "رقم",
+      "help_fr": "Montant du loyer en chiffres (dinars tunisiens).",
+      "help_ar": "مبلغ الكراء بالأرقام (دينار تونسي)."
+    },
+    "MONTANT_EN_LETTRES": {
+      "type": "text",
+      "label_fr": "Montant en lettres",
+      "label_ar": "المبلغ بالحروف",
+      "placeholder_fr": "cinq cents",
+      "placeholder_ar": "خمسمائة",
+      "required": true,
+      "pattern": null,
+      "min_length": null,
+      "max_length": 200,
+      "min_value": null,
+      "max_value": null,
+      "hint_fr": "",
+      "hint_ar": "",
+      "help_fr": "Montant du loyer écrit en toutes lettres (dinars tunisiens).",
+      "help_ar": "مبلغ الكراء مكتوب بالحروف (دينار تونسي)."
+    },
+    "DATE_CONTRAT_BAIL": {
+      "type": "date",
+      "label_fr": "Date du contrat de bail",
+      "label_ar": "تاريخ عقد الكراء",
+      "placeholder_fr": "JJ/MM/AAAA",
+      "placeholder_ar": "يوم/شهر/سنة",
+      "required": true,
+      "pattern": null,
+      "min_length": null,
+      "max_length": null,
+      "min_value": null,
+      "max_value": null,
+      "hint_fr": "",
+      "hint_ar": "",
+      "help_fr": "Date du contrat de bail initial auquel se réfère la quittance.",
+      "help_ar": "تاريخ عقد الكراء الأصلي الذي تشير إليه الوصل."
     }
   },
   "description_ar": "توصيل يصحح فيه الملاك يثبت إلي الكاري خلص كراه في وقتو وبدون مشاكل.",

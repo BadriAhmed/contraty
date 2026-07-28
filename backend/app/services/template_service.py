@@ -126,8 +126,19 @@ async def generate_contract(req: GenerateRequest) -> dict:
     }
 
 
+_COND_RE = re.compile(r'\{\{#([A-Z0-9_]+)\}\}(.*?)\{\{/\1\}\}', re.DOTALL)
+_ORPHAN_RE = re.compile(r'\[[A-Z][A-Z0-9_]*[A-Z0-9]\]')
+
+
 def _fill_template(template: Contract, user_fields: dict[str, str], language: Language) -> dict:
-    """Replace [PLACEHOLDER] tokens with user values. No LLM, no latency."""
+    """Replace [PLACEHOLDER] tokens with user values. No LLM, no latency.
+
+    Handles optional clauses via ``{{#FIELD}}...{{/FIELD}}`` blocks: when the
+    field is empty/absent the whole block is removed, otherwise the inner text
+    is kept (with the placeholder already substituted). Any unreplaced
+    ``[PLACEHOLDER]`` token is stripped as a safety net so raw field keys never
+    reach the final contract text.
+    """
     data = template.model_dump()
     data["disclaimer"] = ""  # Remove disclaimer from output — user already accepted it
     metadata = data.get("field_metadata", {})
@@ -139,8 +150,15 @@ def _fill_template(template: Contract, user_fields: dict[str, str], language: La
                 text = text.replace(f"[{key}]", str(val))
             # Replace remaining placeholders for optional fields with empty string
             for key, fm in metadata.items():
-                if key not in user_fields and fm.get("required") == False:
+                if key not in user_fields and fm.get("required") is False:
                     text = text.replace(f"[{key}]", "")
+            # Conditional blocks: drop the whole clause when the field is empty
+            def _cond(match):
+                field_key = match.group(1)
+                return match.group(2) if user_fields.get(field_key, "") else ""
+            text = _COND_RE.sub(_cond, text)
+            # Safety net: strip any leftover [PLACEHOLDER] tokens
+            text = _ORPHAN_RE.sub("", text)
             article[text_key] = text
             article["fields"] = []
     return data

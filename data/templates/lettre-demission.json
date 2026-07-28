@@ -68,8 +68,8 @@
         },
         {
           "id": "art-preavis",
-          "text_ar": "سأحترم أجل الإعلام المسبق القانوني وقدره [DUREE_PREAVIS]، الذي يبدأ سريانه من [DATE_EFFET_PREAVIS]. وبالتالي سيكون آخر يوم عمل لي هو [DATE_DERNIER_JOUR].",
-          "text_fr": "Conformément aux dispositions régissant mon contrat de travail [Optionnel : et à la Convention Collective applicable], je respecterai un préavis de [DUREE_PREAVIS], qui prendra effet à compter de la date de notification de la présente lettre. Par conséquent, mon contrat de travail prendra fin le [DATE_DERNIER_JOUR] au soir.",
+          "text_ar": "وفقاً لأحكام عقد شغلي والاتفاقية المهنية المعمول بها، سأحترم أجل الإعلام المسبق القانوني وقدره [DUREE_PREAVIS]، الذي يبدأ سريانه من [DATE_EFFET_PREAVIS]. وبالتالي سيكون آخر يوم عمل لي هو [DATE_DERNIER_JOUR].",
+          "text_fr": "Conformément aux dispositions régissant mon contrat de travail et à la Convention Collective applicable, je respecterai un préavis de [DUREE_PREAVIS], qui prendra effet à compter de la date de notification de la présente lettre. Par conséquent, mon contrat de travail prendra fin le [DATE_DERNIER_JOUR] au soir.",
           "fields": [
             "DUREE_PREAVIS",
             "DATE_EFFET_PREAVIS",
@@ -78,8 +78,8 @@
         },
         {
           "id": "art-motif",
-          "text_ar": "(اختياري) أغادر المؤسسة للسبب التالي: [MOTIF_DEMISSION].",
-          "text_fr": "(Facultatif) Je quitte l'entreprise pour le motif suivant : [MOTIF_DEMISSION].",
+          "text_ar": "{{#MOTIF_DEMISSION}}أغادر المؤسسة للسبب التالي: [MOTIF_DEMISSION].{{/MOTIF_DEMISSION}}",
+          "text_fr": "{{#MOTIF_DEMISSION}}Je quitte l'entreprise pour le motif suivant : [MOTIF_DEMISSION].{{/MOTIF_DEMISSION}}",
           "fields": [
             "MOTIF_DEMISSION"
           ]
@@ -105,11 +105,12 @@
       "articles": [
         {
           "id": "art-date-lieu",
-          "text_ar": "حرر بـ [LIEU]، بتاريخ [DATE].\n\n[NOM_SALARIE]\n(إمضاء)",
-          "text_fr": "Fait à [LIEU], le [DATE].\n\nEnvoyé par [Lettre recommandée avec accusé de réception / Remise en main propre contre décharge]\n\n[NOM_SALARIE]\n(Signature)",
+          "text_ar": "حرر بـ [LIEU]، بتاريخ [DATE].\n\nأُرسلت بواسطة [MODE_ENVOI]\n\n[NOM_SALARIE]\n(إمضاء)",
+          "text_fr": "Fait à [LIEU], le [DATE].\n\nEnvoyé par [MODE_ENVOI]\n\n[NOM_SALARIE]\n(Signature)",
           "fields": [
             "LIEU",
-            "DATE"
+            "DATE",
+            "MODE_ENVOI"
           ]
         }
       ]
@@ -307,6 +308,31 @@
       "pattern": "^(\\d{4}-\\d{2}-\\d{2}|\\d{1,2}[/\\-.]\\d{1,2}[/\\-.]\\d{2,4})$",
       "help_fr": "Date à laquelle vous rédigez cette lettre de démission.",
       "help_ar": "تاريخ تحرير رسالة الاستقالة."
+    },
+    "MODE_ENVOI": {
+      "type": "select",
+      "label_fr": "Mode d'envoi",
+      "label_ar": "طريقة الإرسال",
+      "placeholder_fr": "",
+      "placeholder_ar": "",
+      "required": true,
+      "pattern": null,
+      "min_length": null,
+      "max_length": null,
+      "min_value": null,
+      "max_value": null,
+      "hint_fr": "",
+      "hint_ar": "",
+      "help_fr": "Mode d'envoi de la lettre de démission.",
+      "help_ar": "طريقة إرسال رسالة الاستقالة.",
+      "options_fr": [
+        "Lettre recommandée avec accusé de réception",
+        "Remise en main propre contre décharge"
+      ],
+      "options_ar": [
+        "رسالة موصى عليها مع وصل استلام",
+        "تسليم يد بيد مقابل وصل"
+      ]
     }
   },
   "description_ar": "جواب رسمي تبعثو للعرفك باش تعلمو بوقوفك على الخدمة وتحدد فيه تاريخ الخروج والمهلة.",

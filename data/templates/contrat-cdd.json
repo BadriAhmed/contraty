@@ -67,7 +67,8 @@
           "fields": [
             "POSTE",
             "CLASSIFICATION",
-            "DATE_DEBUT"
+            "DATE_DEBUT",
+            "CONVENTION_COLLECTIVE"
           ]
         },
         {
@@ -382,8 +383,8 @@
       "hint_fr": "Nombre",
       "pattern": "^-?\\d+([\\.\\,]\\d+)?$",
       "min_value": 0,
-      "help_fr": "Montant en dinars tunisiens du contrat.",
-      "help_ar": "المبلغ بالدينار التونسي للعقد."
+      "help_fr": "Pourcentage d'indemnité (% du total des salaires bruts).",
+      "help_ar": "نسبة المنحة (% من مجموع الأجور الخام)."
     },
     "SALAIRE": {
       "type": "number",
@@ -439,6 +440,23 @@
       "pattern": "^(\\d{4}-\\d{2}-\\d{2}|\\d{1,2}[/\\-.]\\d{1,2}[/\\-.]\\d{2,4})$",
       "help_fr": "Date au format JJ/MM/AAAA .",
       "help_ar": "التاريخ بصيغة يوم/شهر/سنة للتوقيع."
+    },
+    "CONVENTION_COLLECTIVE": {
+      "type": "text",
+      "label_fr": "Convention Collective Sectorielle",
+      "label_ar": "الاتفاقية المهنية القطاعية",
+      "placeholder_fr": "Commerce",
+      "placeholder_ar": "التجارة",
+      "required": true,
+      "pattern": null,
+      "min_length": null,
+      "max_length": 100,
+      "min_value": null,
+      "max_value": null,
+      "hint_fr": "",
+      "hint_ar": "",
+      "help_fr": "Nom de la Convention Collective Sectorielle applicable au secteur d'activité de l'entreprise.",
+      "help_ar": "اسم الاتفاقية المهنية القطاعية المعمول بها في قطاع نشاط المؤسسة."
     }
   },
   "description_ar": "كونترا خدمة بوقت معين لخدمة مؤقتة، يحدد الشهريّة والمدة وشروط توقيف الخدمة.",

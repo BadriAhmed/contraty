@@ -56,7 +56,8 @@
             "ADRESSE_BIEN",
             "TITRE_FONCIER",
             "SUPERFICIE",
-            "ORIGINE_PROPRIETE"
+            "ORIGINE_PROPRIETE",
+            "CPF_LIEU"
           ]
         }
       ]
@@ -164,8 +165,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Nom complet du vendeur du véhicule.",
-      "help_ar": "الاسم الكامل للبائع صاحب العربة."
+      "help_fr": "Nom complet du vendeur du bien immobilier.",
+      "help_ar": "الاسم الكامل للبائع العقاري."
     },
     "CIN_VENDEUR": {
       "type": "cin",
@@ -297,7 +298,7 @@
     },
     "ADRESSE_BIEN": {
       "type": "text",
-      "label_ar": "عنوان العقار المسوغ",
+      "label_ar": "عنوان العقار المبيع",
       "label_fr": "Adresse Bien",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -306,8 +307,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Adresse complète du logement concerné par ce contrat.",
-      "help_ar": "العنوان الكامل للمسكن موضوع عقد الكراء."
+      "help_fr": "Adresse complète du bien immobilier concerné par la vente.",
+      "help_ar": "العنوان الكامل للعقار موضوع البيع."
     },
     "TITRE_FONCIER": {
       "type": "text",
@@ -366,28 +367,28 @@
       "help_ar": "المبلغ بالدينار التونسي ."
     },
     "AVANCE": {
-      "type": "text",
+      "type": "number",
       "label_ar": "التسبيق",
       "label_fr": "Avance",
-      "placeholder_ar": "",
-      "placeholder_fr": "",
+      "placeholder_ar": "0",
+      "placeholder_fr": "0",
       "required": true,
-      "hint_ar": "",
-      "hint_fr": "",
+      "hint_ar": "رقم",
+      "hint_fr": "Nombre",
       "min_length": 2,
       "max_length": 500,
       "help_fr": "Montant en dinars tunisiens .",
       "help_ar": "المبلغ بالدينار التونسي ."
     },
     "SOLDE": {
-      "type": "text",
+      "type": "number",
       "label_ar": "باقي الثمن",
       "label_fr": "Solde",
-      "placeholder_ar": "",
-      "placeholder_fr": "",
+      "placeholder_ar": "0",
+      "placeholder_fr": "0",
       "required": true,
-      "hint_ar": "",
-      "hint_fr": "",
+      "hint_ar": "رقم",
+      "hint_fr": "Nombre",
       "min_length": 2,
       "max_length": 500,
       "help_fr": "Montant en dinars tunisiens .",
@@ -473,6 +474,23 @@
       "pattern": "^(\\d{4}-\\d{2}-\\d{2}|\\d{1,2}[/\\-.]\\d{1,2}[/\\-.]\\d{2,4})$",
       "help_fr": "Date au format JJ/MM/AAAA .",
       "help_ar": "التاريخ بصيغة يوم/شهر/سنة للتوقيع."
+    },
+    "CPF_LIEU": {
+      "type": "text",
+      "label_fr": "Lieu - Conservation de la Propriété Foncière",
+      "label_ar": "مكتب حفظ الأملاك العقارية",
+      "placeholder_fr": "Tunis",
+      "placeholder_ar": "تونس",
+      "required": true,
+      "pattern": null,
+      "min_length": null,
+      "max_length": 100,
+      "min_value": null,
+      "max_value": null,
+      "hint_fr": "",
+      "hint_ar": "",
+      "help_fr": "Ville du bureau de la Conservation de la Propriété Foncière où le bien est immatriculé.",
+      "help_ar": "المدينة التي يقع بها مكتب حفظ الأملاك العقارية المسجل بها العقار."
     }
   },
   "description_ar": "كاتب يربط الشاري والبايع قبل العقد النهائي، يحدد السوم، العربون وأجل الخلاص.",

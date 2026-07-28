@@ -160,8 +160,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Nom complet (prénom et nom de famille) .",
-      "help_ar": "الاسم الكامل (الاسم واللقب) ."
+      "help_fr": "Dénomination sociale (raison sociale) de la société.",
+      "help_ar": "التسمية الاجتماعية (السبب الاجتماعي) للشركة."
     },
     "OBJET_SOCIAL": {
       "type": "text",
@@ -234,18 +234,18 @@
       "help_ar": "العدد الكلي للحصص الاجتماعية للشركة."
     },
     "VALEUR_NOMINALE": {
-      "type": "text",
+      "type": "number",
       "label_ar": "القيمة الاسمية للحصة",
       "label_fr": "Valeur Nominale",
-      "placeholder_ar": "",
-      "placeholder_fr": "",
+      "placeholder_ar": "10",
+      "placeholder_fr": "10",
       "required": true,
-      "hint_ar": "",
-      "hint_fr": "",
+      "hint_ar": "رقم",
+      "hint_fr": "Nombre",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Nom complet (prénom et nom de famille) de la société.",
-      "help_ar": "الاسم الكامل (الاسم واللقب) للشركة."
+      "help_fr": "Valeur nominale d'une action en dinars tunisiens.",
+      "help_ar": "القيمة الاسمية للسهم الواحد بالدينار التونسي."
     },
     "REPARTITION_PARTS": {
       "type": "text",

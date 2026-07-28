@@ -319,8 +319,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Durée en années ou mois du contrat.",
-      "help_ar": "المدة بالسنوات أو الأشهر في العقد."
+      "help_fr": "Année de première mise en circulation du véhicule.",
+      "help_ar": "سنة أول جولان للعربة."
     },
     "CARBURANT": {
       "type": "text",
@@ -379,18 +379,18 @@
       "help_ar": "المبلغ بالدينار التونسي لعملية البيع."
     },
     "DELAI_MUTATION_JOURS": {
-      "type": "text",
+      "type": "number",
       "label_ar": "أجل نقل الملكية بالأيام",
       "label_fr": "Delai Mutation Jours",
-      "placeholder_ar": "",
-      "placeholder_fr": "",
+      "placeholder_ar": "30",
+      "placeholder_fr": "30",
       "required": true,
-      "hint_ar": "",
-      "hint_fr": "",
+      "hint_ar": "رقم",
+      "hint_fr": "Nombre",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Durée en années ou mois .",
-      "help_ar": "المدة بالسنوات أو الأشهر ."
+      "help_fr": "Délai en jours pour procéder à la mutation de propriété.",
+      "help_ar": "الأجل بالأيام لإتمام نقل الملكية."
     },
     "LIEU_SIGNATURE": {
       "type": "text",

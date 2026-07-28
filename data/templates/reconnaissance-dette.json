@@ -250,8 +250,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Montant en dinars tunisiens .",
-      "help_ar": "المبلغ بالدينار التونسي ."
+      "help_fr": "Motif ou origine de la dette (ex: prêt, vente, service).",
+      "help_ar": "سبب أو أصل الدين (مثال: قرض، بيع، خدمة)."
     },
     "DATE_REMISE": {
       "type": "date",

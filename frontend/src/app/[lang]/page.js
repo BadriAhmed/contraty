@@ -63,7 +63,7 @@ export default async function HomePage({ params, searchParams }) {
       </div>
 
       {/* Template grid section */}
-      <section>
+      <section className="flex flex-col h-[65vh]">
         <div className="mb-6">
           <h2 className="text-xl font-bold text-on-surface mb-2">
             {domainLabel || (lang === "ar" ? "نماذج العقود" : "Modèles de contrats")}
@@ -99,7 +99,7 @@ export default async function HomePage({ params, searchParams }) {
         </div>
 
         {/* Template cards with icons */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 mb-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 mb-6 overflow-y-auto flex-1">
           {filtered.map((t) => {
             const meta = domainMeta[t.domain] || domainMeta.demarches;
             const Icon = meta.icon;
@@ -109,20 +109,20 @@ export default async function HomePage({ params, searchParams }) {
               <Link
                 key={t.slug}
                 href={`/${lang}/contracts/${t.slug}`}
-                className="group bg-surface-container-lowest border border-border-slate rounded-lg p-4 hover:border-primary/40 hover:shadow-sm transition-all duration-150 flex items-start gap-3"
+                className="group bg-surface-container-lowest border border-border-slate rounded-lg p-4 hover:border-primary/40 hover:shadow-sm transition-all duration-150 flex items-center gap-3 h-[96px]"
                 style={{ borderInlineStartWidth: "3px", borderInlineStartColor: meta.color }}
               >
                 <div
-                  className="w-8 h-8 rounded flex items-center justify-center shrink-0 mt-0.5"
+                  className="w-8 h-8 rounded flex items-center justify-center shrink-0"
                   style={{ background: `${meta.color}15` }}
                 >
                   <Icon size={14} style={{ color: meta.color }} />
                 </div>
                 <div className="min-w-0">
-                  <h3 className="text-sm font-semibold text-on-surface group-hover:text-primary transition-colors leading-snug">
+                  <h3 className="text-sm font-semibold text-on-surface group-hover:text-primary transition-colors leading-snug line-clamp-2">
                     {title}
                   </h3>
-                  <p className="text-xs text-text-secondary mt-1">
+                  <p className="text-xs text-text-secondary mt-0.5">
                     {t.field_count} {lang === "ar" ? "حقل" : "champs"}
                   </p>
                 </div>
@@ -130,21 +130,21 @@ export default async function HomePage({ params, searchParams }) {
             );
           })}
         </div>
+      </section>
 
-        {/* Ad placement - after template grid */}
-        <div className="my-8 flex justify-center">
-          <Ad size="banner" />
-        </div>
+      {/* Ad placement - after template grid */}
+      <div className="my-8 flex justify-center">
+        <Ad size="banner" />
+      </div>
 
-        {/* Legal disclaimer */}
-        <div className="p-3 bg-surface-container rounded-lg border border-outline-variant/50 inline-block mb-8">
+      {/* Legal disclaimer */}
+      <div className="p-3 bg-surface-container rounded-lg border border-outline-variant/50 inline-block mb-8">
           <p className="text-xs text-on-surface-variant leading-relaxed max-w-2xl">
             {lang === "ar"
               ? "جميع النماذج مبنية على القوانين التونسية (مجلة الالتزامات والعقود، مجلة الشغل، مجلة الشركات التجارية)"
               : "Tous les modèles sont basés sur les codes juridiques tunisiens : Code des Obligations et des Contrats (COC), Code du Travail (CT), Code des Sociétés Commerciales (CS)"}
           </p>
         </div>
-      </section>
     </div>
   );
 }

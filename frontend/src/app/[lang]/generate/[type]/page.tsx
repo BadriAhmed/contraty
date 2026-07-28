@@ -258,11 +258,15 @@ export default function GeneratePage() {
               appliedSuggestions={appliedSuggestions}
               generating={generating}
               onApplySuggestion={handleApplySuggestionWrapper}
-              onEditField={setEditingField}
+              onEditField={(fieldName) => {
+                setEditingField(fieldName);
+                setInlineValue(fieldValues[fieldName] || "");
+              }}
               onSaveInline={(fieldName) => {
                 setFieldValues((prev) => ({ ...prev, [fieldName]: inlineValue }));
-                setAppliedSuggestions((prev) => new Set([...prev, `accept:${fieldName}:manual`]));
+                setAppliedSuggestions((prev) => new Set([...prev, `corrected:${fieldName}`]));
                 setEditingField(null);
+                setInlineValue("");
               }}
               onSetApplied={setAppliedSuggestions}
               onRegenerate={() => handleGenerate(true, steps.length, setCurrentStep)}

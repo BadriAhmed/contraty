@@ -55,9 +55,11 @@
         },
         {
           "id": "art-destination",
-          "text_ar": "العقار المكرى مخصص حصراً لسكن المكتري وعائلته.",
-          "text_fr": "Le bien loué est destiné exclusivement à l'habitation du Preneur et de sa famille. Conformément à la législation tunisienne en vigueur, le présent contrat sera enregistré auprès de la Recette des Finances compétente, les frais d'enregistrement étant à la charge du [Bailleur/Preneur ou partagés].",
-          "fields": []
+          "text_ar": "العقار المكرى مخصص حصراً لسكن المكتري وعائلته. وبمقتضى التشريع التونسي المعمول به، سيتم تسجيل هذا العقد لدى قبضة المالية المختصة، وتكون مصاريف التسجيل على عاتق [CHARGES_PARTIES].",
+          "text_fr": "Le bien loué est destiné exclusivement à l'habitation du Preneur et de sa famille. Conformément à la législation tunisienne en vigueur, le présent contrat sera enregistré auprès de la Recette des Finances compétente, les frais d'enregistrement étant à la charge du [CHARGES_PARTIES].",
+          "fields": [
+            "CHARGES_PARTIES"
+          ]
         }
       ]
     },
@@ -459,6 +461,33 @@
       "pattern": "^(\\d{4}-\\d{2}-\\d{2}|\\d{1,2}[/\\-.]\\d{1,2}[/\\-.]\\d{2,4})$",
       "help_fr": "Date au format JJ/MM/AAAA .",
       "help_ar": "التاريخ بصيغة يوم/شهر/سنة للتوقيع."
+    },
+    "CHARGES_PARTIES": {
+      "type": "select",
+      "label_fr": "Frais d'enregistrement à la charge de",
+      "label_ar": "مصاريف التسجيل على عاتق",
+      "placeholder_fr": "",
+      "placeholder_ar": "",
+      "required": true,
+      "pattern": null,
+      "min_length": null,
+      "max_length": null,
+      "min_value": null,
+      "max_value": null,
+      "hint_fr": "",
+      "hint_ar": "",
+      "help_fr": "Partie qui supporte les frais d'enregistrement du bail.",
+      "help_ar": "الطرف الذي يتحمل مصاريف تسجيل عقد الكراء.",
+      "options_fr": [
+        "Bailleur",
+        "Preneur",
+        "Bailleur et Preneur (partagés)"
+      ],
+      "options_ar": [
+        "المؤجر",
+        "المكتري",
+        "المؤجر والمكتري (مشترك)"
+      ]
     }
   },
   "description_ar": "إتفاقية بين الملاك والكاري تحدد السوم الشهري، الضمان وشروط السكنى في الدار.",

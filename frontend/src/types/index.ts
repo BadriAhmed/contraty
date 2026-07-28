@@ -1,5 +1,5 @@
 export interface FieldMeta {
-  type: "text" | "number" | "cin" | "email" | "phone" | "date" | "percentage";
+  type: "text" | "number" | "cin" | "email" | "phone" | "date" | "percentage" | "select";
   label_ar: string;
   label_fr: string;
   placeholder_ar: string;
@@ -14,6 +14,8 @@ export interface FieldMeta {
   hint_fr: string;
   help_ar: string;
   help_fr: string;
+  options_fr?: string[];
+  options_ar?: string[];
 }
 
 export interface TemplateArticle {

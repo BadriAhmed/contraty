@@ -38,16 +38,16 @@ export default function Ad({ size = "banner", className = "" }: Props) {
 
 function MockAdPlaceholder({ size }: { size: string }) {
   const configs: Record<string, { width: string; height: string; label: string }> = {
-    banner: { width: "100%", height: "90px", label: "728x90" },
-    rectangle: { width: "100%", height: "250px", label: "300x250" },
-    mobile: { width: "100%", height: "60px", label: "320x60" },
+    banner: { width: "728px", height: "90px", label: "728x90" },
+    rectangle: { width: "300px", height: "250px", label: "300x250" },
+    mobile: { width: "320px", height: "50px", label: "320x50" },
   };
   const { width, height, label } = configs[size] || configs.banner;
 
   return (
     <div
-      className="bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 border-2 border-dashed border-gray-300 dark:border-gray-700 rounded-lg flex items-center justify-center"
-      style={{ width, height, maxWidth: "100%", minHeight: height }}
+      className="bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 border-2 border-dashed border-gray-300 dark:border-gray-700 rounded-lg flex items-center justify-center mx-auto"
+      style={{ width, maxWidth: "100%", height, minHeight: height }}
     >
       <div className="text-center">
         <div className="text-xs text-gray-500 dark:text-gray-400 font-mono mb-1">إعلان · PUBLICITÉ</div>

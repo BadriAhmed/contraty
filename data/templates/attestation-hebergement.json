@@ -198,8 +198,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Adresse internet (URL) du document ou du site de référence.",
-      "help_ar": "رابط الإنترنت للمرجع أو الوثيقة."
+      "help_fr": "Lien de parenté avec la personne hébergée (ex: conjoint, ascendant).",
+      "help_ar": "صلة القرابة بالشخص المستضاف (مثال: قرين، أصل)."
     },
     "DESTINATION": {
       "type": "text",

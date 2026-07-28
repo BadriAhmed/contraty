@@ -24,7 +24,9 @@
           "fields": [
             "NOM_PRETEUR",
             "CIN_PRETEUR",
-            "ADRESSE_PRETEUR"
+            "ADRESSE_PRETEUR",
+            "NATIONALITE_PRETEUR",
+            "DATE_CIN_PRETEUR"
           ]
         },
         {
@@ -34,7 +36,9 @@
           "fields": [
             "NOM_EMPRUNTEUR",
             "CIN_EMPRUNTEUR",
-            "ADRESSE_EMPRUNTEUR"
+            "ADRESSE_EMPRUNTEUR",
+            "NATIONALITE_EMPRUNTEUR",
+            "DATE_CIN_EMPRUNTEUR"
           ]
         }
       ]
@@ -324,7 +328,7 @@
     },
     "AVEC_INTERET": {
       "type": "text",
-      "label_ar": "بالفائض",
+      "label_ar": "بفائدة",
       "label_fr": "Avec Interet",
       "placeholder_ar": "",
       "placeholder_fr": "",
@@ -404,6 +408,74 @@
       "pattern": "^(\\d{4}-\\d{2}-\\d{2}|\\d{1,2}[/\\-.]\\d{1,2}[/\\-.]\\d{2,4})$",
       "help_fr": "Date au format JJ/MM/AAAA .",
       "help_ar": "التاريخ بصيغة يوم/شهر/سنة للتوقيع."
+    },
+    "NATIONALITE_PRETEUR": {
+      "type": "text",
+      "label_fr": "Nationalité du prêteur",
+      "label_ar": "جنسية المُقرِض",
+      "placeholder_fr": "Tunisienne",
+      "placeholder_ar": "تونسية",
+      "required": true,
+      "pattern": null,
+      "min_length": null,
+      "max_length": 60,
+      "min_value": null,
+      "max_value": null,
+      "hint_fr": "",
+      "hint_ar": "",
+      "help_fr": "Nationalité de la personne qui prête l'argent.",
+      "help_ar": "جنسية الشخص الذي يُقرِض المال."
+    },
+    "DATE_CIN_PRETEUR": {
+      "type": "date",
+      "label_fr": "Date de délivrance CIN prêteur",
+      "label_ar": "تاريخ منح بطاقة التعريف للمُقرِض",
+      "placeholder_fr": "JJ/MM/AAAA",
+      "placeholder_ar": "يوم/شهر/سنة",
+      "required": true,
+      "pattern": null,
+      "min_length": null,
+      "max_length": null,
+      "min_value": null,
+      "max_value": null,
+      "hint_fr": "",
+      "hint_ar": "",
+      "help_fr": "Date de délivrance de la carte d'identité nationale du prêteur.",
+      "help_ar": "تاريخ منح بطاقة التعريف الوطنية للمُقرِض."
+    },
+    "NATIONALITE_EMPRUNTEUR": {
+      "type": "text",
+      "label_fr": "Nationalité de l'emprunteur",
+      "label_ar": "جنسية المُقترِض",
+      "placeholder_fr": "Tunisienne",
+      "placeholder_ar": "تونسية",
+      "required": true,
+      "pattern": null,
+      "min_length": null,
+      "max_length": 60,
+      "min_value": null,
+      "max_value": null,
+      "hint_fr": "",
+      "hint_ar": "",
+      "help_fr": "Nationalité de la personne qui emprunte l'argent.",
+      "help_ar": "جنسية الشخص الذي يُقترِض المال."
+    },
+    "DATE_CIN_EMPRUNTEUR": {
+      "type": "date",
+      "label_fr": "Date de délivrance CIN emprunteur",
+      "label_ar": "تاريخ منح بطاقة التعريف للمُقترِض",
+      "placeholder_fr": "JJ/MM/AAAA",
+      "placeholder_ar": "يوم/شهر/سنة",
+      "required": true,
+      "pattern": null,
+      "min_length": null,
+      "max_length": null,
+      "min_value": null,
+      "max_value": null,
+      "hint_fr": "",
+      "hint_ar": "",
+      "help_fr": "Date de délivrance de la carte d'identité nationale de l'emprunteur.",
+      "help_ar": "تاريخ منح بطاقة التعريف الوطنية للمُقترِض."
     }
   },
   "description_ar": "كاتب سلف يضمن حق الزوز من الناس، يوثق قداش تسلفت، كيفاش ومتى باش ترجع الفلوس.",

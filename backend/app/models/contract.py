@@ -25,6 +25,7 @@ class FieldType(str, Enum):
     phone = "phone"
     date = "date"
     percentage = "percentage"
+    select = "select"
 
 
 class FieldMetadata(BaseModel):
@@ -43,6 +44,8 @@ class FieldMetadata(BaseModel):
     hint_fr: str = ""
     help_ar: str = ""
     help_fr: str = ""
+    options_fr: list[str] = Field(default_factory=list)
+    options_ar: list[str] = Field(default_factory=list)
 
 
 class TemplateArticle(BaseModel):

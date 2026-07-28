@@ -203,8 +203,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Nom complet (prénom et nom de famille) .",
-      "help_ar": "الاسم الكامل (الاسم واللقب) ."
+      "help_fr": "Adresse complète du destinataire de la mise en demeure.",
+      "help_ar": "العنوان الكامل للموجّه إليه الإنذار."
     },
     "SOCIETE_DESTINATAIRE": {
       "type": "text",
@@ -217,8 +217,8 @@
       "hint_fr": "",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Nom complet (prénom et nom de famille) .",
-      "help_ar": "الاسم الكامل (الاسم واللقب) ."
+      "help_fr": "Nom de la société destinataire de la mise en demeure.",
+      "help_ar": "اسم الشركة الموجّه إليها الإنذار."
     },
     "OBJET_SOMMAIRE": {
       "type": "text",
@@ -304,18 +304,18 @@
       "help_ar": "صف بإيجاز التنبيه بالإيفاء ."
     },
     "DELAI_JOURS": {
-      "type": "text",
+      "type": "number",
       "label_ar": "الأجل بالأيام",
       "label_fr": "Delai Jours",
-      "placeholder_ar": "",
-      "placeholder_fr": "",
+      "placeholder_ar": "15",
+      "placeholder_fr": "15",
       "required": true,
-      "hint_ar": "",
-      "hint_fr": "",
+      "hint_ar": "رقم",
+      "hint_fr": "Nombre",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Durée en années ou mois .",
-      "help_ar": "المدة بالسنوات أو الأشهر ."
+      "help_fr": "Délai accordé en jours pour l'exécution (ex: 15 jours).",
+      "help_ar": "الأجل الممنوح بالأيام للتنفيذ (مثال: 15 يومًا)."
     },
     "LIEU": {
       "type": "text",

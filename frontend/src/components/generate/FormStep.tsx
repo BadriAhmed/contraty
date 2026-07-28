@@ -74,6 +74,8 @@ export default function FormStep({
           const md = field.metadata;
           const inputType = md ? getInputType(md.type) : "text";
           const help = lang === "ar" ? md?.help_ar || "" : md?.help_fr || "";
+          const isSelect = md?.type === "select";
+          const options = isSelect ? (lang === "ar" ? md?.options_ar || [] : md?.options_fr || []) : [];
 
           return (
             <div key={field.name}>
@@ -90,14 +92,28 @@ export default function FormStep({
                 )}
               </label>
               {help && <p className="text-xs text-text-secondary mb-1.5 leading-relaxed">{help}</p>}
-              <input
-                type={inputType}
-                value={fieldValues[field.name] || ""}
-                onChange={(e) => onFieldChange(field.name, e.target.value)}
-                onBlur={() => onBlur(field)}
-                placeholder={inputType === "date" ? undefined : field.placeholder}
-                className={`input-field ${hasError ? "border-error focus:ring-error" : ""}`}
-              />
+              {isSelect ? (
+                <select
+                  value={fieldValues[field.name] || ""}
+                  onChange={(e) => onFieldChange(field.name, e.target.value)}
+                  onBlur={() => onBlur(field)}
+                  className={`input-field ${hasError ? "border-error focus:ring-error" : ""}`}
+                >
+                  <option value="">{field.placeholder || (lang === "ar" ? "اختر..." : "Sélectionner...")}</option>
+                  {options.map((opt) => (
+                    <option key={opt} value={opt}>{opt}</option>
+                  ))}
+                </select>
+              ) : (
+                <input
+                  type={inputType}
+                  value={fieldValues[field.name] || ""}
+                  onChange={(e) => onFieldChange(field.name, e.target.value)}
+                  onBlur={() => onBlur(field)}
+                  placeholder={inputType === "date" ? undefined : field.placeholder}
+                  className={`input-field ${hasError ? "border-error focus:ring-error" : ""}`}
+                />
+              )}
               {hasError && (
                 <p className="text-xs text-error mt-1 flex items-center gap-1">
                   <AlertCircle size={12} />

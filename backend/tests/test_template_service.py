@@ -101,7 +101,7 @@ async def test_generate_contract_placeholder_substitution():
 
 @pytest.mark.unit
 async def test_generate_contract_no_fields_provided():
-    """When no user_fields are provided, placeholders remain."""
+    """When no user_fields are provided, the safety net strips placeholders."""
     req = GenerateRequest(
         contract_slug="bail-habitation",
         language=Language.fr,
@@ -110,7 +110,7 @@ async def test_generate_contract_no_fields_provided():
     result = await generate_contract(req)
     assert result["success"] is True
     first_article = result["contract"]["sections"][0]["articles"][0]
-    assert "[NOM_BAILLEUR]" in first_article["text_fr"]
+    assert "[NOM_BAILLEUR]" not in first_article["text_fr"]
 
 
 @pytest.mark.unit
@@ -142,3 +142,91 @@ async def test_list_templates_does_not_mutate(seeded_repo):
     after = await seeded_repo.list_all()
     assert len(before) == len(after)
     assert len(templates) == len(before)
+
+
+@pytest.mark.unit
+async def test_fill_template_conditional_block_kept_when_filled():
+    """Optional clause wrapped in {{#FIELD}}...{{/FIELD}} is kept when the field has a value."""
+    from app.services.template_service import _fill_template
+    from app.models.contract import Contract, TemplateSection, TemplateArticle, FieldMetadata
+
+    contract = Contract(
+        id="test-cond",
+        slug="test-cond",
+        title_fr="Test",
+        sections=[
+            TemplateSection(
+                id="s1",
+                title_fr="Section",
+                articles=[
+                    TemplateArticle(
+                        id="a1",
+                        text_fr="Bonjour{{#MOTIF}} pour motif : [MOTIF].{{/MOTIF}} Fin.",
+                        fields=["MOTIF"],
+                    )
+                ],
+            )
+        ],
+        field_metadata={"MOTIF": FieldMetadata(label_fr="Motif", required=False)},
+    )
+    result = _fill_template(contract, {"MOTIF": "départ"}, Language.fr)
+    text = result["sections"][0]["articles"][0]["text_fr"]
+    assert "pour motif : départ." in text
+    assert "{{" not in text and "}}" not in text
+
+
+@pytest.mark.unit
+async def test_fill_template_conditional_block_removed_when_empty():
+    """Optional clause is removed entirely when the field is omitted."""
+    from app.services.template_service import _fill_template
+    from app.models.contract import Contract, TemplateSection, TemplateArticle, FieldMetadata
+
+    contract = Contract(
+        id="test-cond",
+        slug="test-cond",
+        title_fr="Test",
+        sections=[
+            TemplateSection(
+                id="s1",
+                title_fr="Section",
+                articles=[
+                    TemplateArticle(
+                        id="a1",
+                        text_fr="Bonjour{{#MOTIF}} pour motif : [MOTIF].{{/MOTIF}} Fin.",
+                        fields=["MOTIF"],
+                    )
+                ],
+            )
+        ],
+        field_metadata={"MOTIF": FieldMetadata(label_fr="Motif", required=False)},
+    )
+    result = _fill_template(contract, {}, Language.fr)
+    text = result["sections"][0]["articles"][0]["text_fr"]
+    assert "pour motif" not in text
+    assert "[MOTIF]" not in text
+    assert "{{" not in text and "}}" not in text
+
+
+@pytest.mark.unit
+async def test_fill_template_strips_orphan_placeholders():
+    """Unreplaced [PLACEHOLDER] tokens are stripped by the safety net."""
+    from app.services.template_service import _fill_template
+    from app.models.contract import Contract, TemplateSection, TemplateArticle
+
+    contract = Contract(
+        id="test-orphan",
+        slug="test-orphan",
+        title_fr="Test",
+        sections=[
+            TemplateSection(
+                id="s1",
+                title_fr="Section",
+                articles=[
+                    TemplateArticle(id="a1", text_fr="Salut [GHOST_FIELD] bye.", fields=[]),
+                ],
+            )
+        ],
+    )
+    result = _fill_template(contract, {}, Language.fr)
+    text = result["sections"][0]["articles"][0]["text_fr"]
+    assert "[GHOST_FIELD]" not in text

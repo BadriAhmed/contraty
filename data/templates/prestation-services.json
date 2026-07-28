@@ -20,21 +20,27 @@
         {
           "id": "art-client",
           "text_ar": "شركة [NOM_CLIENT]، الكائنة بـ [ADRESSE_CLIENT]، ممثلة في شخص مُمثلها القانوني السيد/ة [REPRESENTANT_CLIENT] بصفته/ا [QUALITE_REPRESENTANT_CLIENT]، يشار إليها بـ « الحريف ».",
-          "text_fr": "La société [NOM_CLIENT], (indiquer la forme sociale, ex: SARL/SUARL), au capital de [Montant] DT, sise à [ADRESSE_CLIENT], immatriculée au Registre National des Entreprises (RNE) sous le numéro [Numéro RNE], représentée par M./Mme [REPRESENTANT_CLIENT], en sa qualité de [Fonction], ci-après dénommée « le Client ».",
+          "text_fr": "La société [NOM_CLIENT], (indiquer la forme sociale, ex: SARL/SUARL), au capital de [CAPITAL_SOCIAL_CLIENT] DT, sise à [ADRESSE_CLIENT], immatriculée au Registre National des Entreprises (RNE) sous le numéro [NUM_RNE_CLIENT], représentée par M./Mme [REPRESENTANT_CLIENT], en sa qualité de [QUALITE_REPRESENTANT_CLIENT], ci-après dénommée « le Client ».",
           "fields": [
             "NOM_CLIENT",
             "ADRESSE_CLIENT",
-            "REPRESENTANT_CLIENT"
+            "REPRESENTANT_CLIENT",
+            "QUALITE_REPRESENTANT_CLIENT",
+            "CAPITAL_SOCIAL_CLIENT",
+            "NUM_RNE_CLIENT"
           ]
         },
         {
           "id": "art-prestataire",
           "text_ar": "شركة [NOM_PRESTATAIRE]، الكائنة بـ [ADRESSE_PRESTATAIRE]، ممثلة في شخص مُمثلها القانوني السيد/ة [REPRESENTANT_PRESTATAIRE] بصفته/ا [QUALITE_REPRESENTANT_PRESTATAIRE]، يشار إليها بـ « مقدم الخدمات ».",
-          "text_fr": "La société [NOM_PRESTATAIRE], (indiquer la forme sociale, ex: SARL/SUARL), au capital de [Montant] DT, sise à [ADRESSE_PRESTATAIRE], immatriculée au Registre National des Entreprises (RNE) sous le numéro [Numéro RNE], représentée par M./Mme [REPRESENTANT_PRESTATAIRE], en sa qualité de [Fonction], ci-après dénommée « le Prestataire ».",
+          "text_fr": "La société [NOM_PRESTATAIRE], (indiquer la forme sociale, ex: SARL/SUARL), au capital de [CAPITAL_SOCIAL_PRESTATAIRE] DT, sise à [ADRESSE_PRESTATAIRE], immatriculée au Registre National des Entreprises (RNE) sous le numéro [NUM_RNE_PRESTATAIRE], représentée par M./Mme [REPRESENTANT_PRESTATAIRE], en sa qualité de [QUALITE_REPRESENTANT_PRESTATAIRE], ci-après dénommée « le Prestataire ».",
           "fields": [
             "NOM_PRESTATAIRE",
             "ADRESSE_PRESTATAIRE",
-            "REPRESENTANT_PRESTATAIRE"
+            "REPRESENTANT_PRESTATAIRE",
+            "QUALITE_REPRESENTANT_PRESTATAIRE",
+            "CAPITAL_SOCIAL_PRESTATAIRE",
+            "NUM_RNE_PRESTATAIRE"
           ]
         }
       ]
@@ -293,8 +299,8 @@
       "hint_fr": "Nombre",
       "pattern": "^-?\\d+([\\.\\,]\\d+)?$",
       "min_value": 0,
-      "help_fr": "Montant en dinars tunisiens du salaire et des avantages.",
-      "help_ar": "المبلغ بالدينار التونسي للأجر والامتيازات."
+      "help_fr": "Montant total de la prestation en dinars tunisiens (HT).",
+      "help_ar": "المبلغ الإجمالي للخدمة بالدينار التونسي (دون الأداء)."
     },
     "MODALITES_PAIEMENT": {
       "type": "text",
@@ -338,18 +344,18 @@
       "help_ar": "التاريخ بصيغة يوم/شهر/سنة للعقد."
     },
     "PREAVIS_JOURS": {
-      "type": "text",
+      "type": "number",
       "label_ar": "مهلة الإعلام",
       "label_fr": "Preavis Jours",
-      "placeholder_ar": "",
-      "placeholder_fr": "",
+      "placeholder_ar": "30",
+      "placeholder_fr": "30",
       "required": true,
-      "hint_ar": "",
-      "hint_fr": "",
+      "hint_ar": "رقم",
+      "hint_fr": "Nombre",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Durée en années ou mois en cas de résiliation.",
-      "help_ar": "المدة بالسنوات أو الأشهر عند فسخ العقد."
+      "help_fr": "Préavis en jours en cas de résiliation (ex: 30 jours).",
+      "help_ar": "مهلة الإعلام بالأيام عند فسخ العقد (مثال: 30 يومًا)."
     },
     "TRIBUNAL": {
       "type": "text",
@@ -391,6 +397,108 @@
       "pattern": "^(\\d{4}-\\d{2}-\\d{2}|\\d{1,2}[/\\-.]\\d{1,2}[/\\-.]\\d{2,4})$",
       "help_fr": "Date au format JJ/MM/AAAA .",
       "help_ar": "التاريخ بصيغة يوم/شهر/سنة للتوقيع."
+    },
+    "QUALITE_REPRESENTANT_CLIENT": {
+      "type": "text",
+      "label_fr": "Qualité du représentant du client",
+      "label_ar": "صفة ممثل الحريف",
+      "placeholder_fr": "Gérant",
+      "placeholder_ar": "مدير",
+      "required": true,
+      "pattern": null,
+      "min_length": null,
+      "max_length": 100,
+      "min_value": null,
+      "max_value": null,
+      "hint_fr": "",
+      "hint_ar": "",
+      "help_fr": "Fonction/qualité du représentant du client (ex: Gérant, Directeur).",
+      "help_ar": "صفة/وظيفة ممثل الحريف (مثال: مدير، رئيس)."
+    },
+    "QUALITE_REPRESENTANT_PRESTATAIRE": {
+      "type": "text",
+      "label_fr": "Qualité du représentant du prestataire",
+      "label_ar": "صفة ممثل مقدم الخدمات",
+      "placeholder_fr": "Gérant",
+      "placeholder_ar": "مدير",
+      "required": true,
+      "pattern": null,
+      "min_length": null,
+      "max_length": 100,
+      "min_value": null,
+      "max_value": null,
+      "hint_fr": "",
+      "hint_ar": "",
+      "help_fr": "Fonction/qualité du représentant du prestataire (ex: Gérant, Directeur).",
+      "help_ar": "صفة/وظيفة ممثل مقدم الخدمات (مثال: مدير، رئيس)."
+    },
+    "CAPITAL_SOCIAL_CLIENT": {
+      "type": "number",
+      "label_fr": "Capital social du client (DT)",
+      "label_ar": "رأس مال الحريف (د.ت)",
+      "placeholder_fr": "10000",
+      "placeholder_ar": "10000",
+      "required": true,
+      "pattern": null,
+      "min_length": null,
+      "max_length": null,
+      "min_value": 0,
+      "max_value": null,
+      "hint_fr": "Nombre",
+      "hint_ar": "رقم",
+      "help_fr": "Montant du capital social de la société cliente en dinars tunisiens.",
+      "help_ar": "مبلغ رأس مال شركة الحريف بالدينار التونسي."
+    },
+    "CAPITAL_SOCIAL_PRESTATAIRE": {
+      "type": "number",
+      "label_fr": "Capital social du prestataire (DT)",
+      "label_ar": "رأس مال مقدم الخدمات (د.ت)",
+      "placeholder_fr": "10000",
+      "placeholder_ar": "10000",
+      "required": true,
+      "pattern": null,
+      "min_length": null,
+      "max_length": null,
+      "min_value": 0,
+      "max_value": null,
+      "hint_fr": "Nombre",
+      "hint_ar": "رقم",
+      "help_fr": "Montant du capital social de la société prestataire en dinars tunisiens.",
+      "help_ar": "مبلغ رأس مال شركة مقدم الخدمات بالدينار التونسي."
+    },
+    "NUM_RNE_CLIENT": {
+      "type": "text",
+      "label_fr": "N° RNE du client",
+      "label_ar": "رقم السجل الوطني للمؤسسات للحريف",
+      "placeholder_fr": "B123456789",
+      "placeholder_ar": "B123456789",
+      "required": true,
+      "pattern": null,
+      "min_length": null,
+      "max_length": 20,
+      "min_value": null,
+      "max_value": null,
+      "hint_fr": "",
+      "hint_ar": "",
+      "help_fr": "Numéro d'immatriculation au Registre National des Entreprises de la société cliente.",
+      "help_ar": "رقم التسجيل بالسجل الوطني للمؤسسات لشركة الحريف."
+    },
+    "NUM_RNE_PRESTATAIRE": {
+      "type": "text",
+      "label_fr": "N° RNE du prestataire",
+      "label_ar": "رقم السجل الوطني للمؤسسات لمقدم الخدمات",
+      "placeholder_fr": "B123456789",
+      "placeholder_ar": "B123456789",
+      "required": true,
+      "pattern": null,
+      "min_length": null,
+      "max_length": 20,
+      "min_value": null,
+      "max_value": null,
+      "hint_fr": "",
+      "hint_ar": "",
+      "help_fr": "Numéro d'immatriculation au Registre National des Enterprises de la société prestataire.",
+      "help_ar": "رقم التسجيل بالسجل الوطني للمؤسسات لشركة مقدم الخدمات."
     }
   },
   "description_ar": "كونترا خدمة بين شكون يقدم في خدمة وحريف، يحدد شنوة المطلوب، الوقت، وسوم الخلاص.",

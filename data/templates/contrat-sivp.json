@@ -274,18 +274,18 @@
       "help_ar": "الشهادة المتحصل عليها (مثال: إجازة في الإعلامية)."
     },
     "ANNEE_DIPLOME": {
-      "type": "text",
+      "type": "number",
       "label_ar": "سنة الحصول على الشهادة",
       "label_fr": "Annee Diplome",
-      "placeholder_ar": "",
-      "placeholder_fr": "",
+      "placeholder_ar": "2020",
+      "placeholder_fr": "2020",
       "required": true,
-      "hint_ar": "",
-      "hint_fr": "",
+      "hint_ar": "رقم",
+      "hint_fr": "Nombre",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Durée en années ou mois de la partie concernée.",
-      "help_ar": "المدة بالسنوات أو الأشهر للطرف المعني."
+      "help_fr": "Année d'obtention du diplôme (ex: 2020).",
+      "help_ar": "سنة الحصول على الشهادة (مثال: 2020)."
     },
     "ADRESSE_STAGIAIRE": {
       "type": "text",
@@ -398,18 +398,18 @@
       "help_ar": "نسبة المنحة التي تتحملها المؤسسة (%)."
     },
     "PREAVIS_JOURS": {
-      "type": "text",
+      "type": "number",
       "label_ar": "مهلة الإعلام",
       "label_fr": "Preavis Jours",
-      "placeholder_ar": "",
-      "placeholder_fr": "",
+      "placeholder_ar": "30",
+      "placeholder_fr": "30",
       "required": true,
-      "hint_ar": "",
-      "hint_fr": "",
+      "hint_ar": "رقم",
+      "hint_fr": "Nombre",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Durée en années ou mois en cas de fin de contrat.",
-      "help_ar": "المدة بالسنوات أو الأشهر عند إنهاء العقد."
+      "help_fr": "Préavis en jours en cas de fin de contrat (ex: 30 jours).",
+      "help_ar": "مهلة الإعلام بالأيام عند إنهاء العقد (مثال: 30 يومًا)."
     },
     "LIEU_SIGNATURE": {
       "type": "text",

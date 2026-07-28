@@ -38,7 +38,9 @@
             "NOM_ENTREPRISE",
             "RNE",
             "ADRESSE_ENTREPRISE",
-            "REPRESENTANT"
+            "REPRESENTANT",
+            "MATRICULE_FISCAL",
+            "NUM_CNSS"
           ]
         },
         {
@@ -50,7 +52,8 @@
             "CIN_SALARIE",
             "DATE_NAISSANCE",
             "ADRESSE_SALARIE",
-            "NUM_DEMANDEUR"
+            "NUM_DEMANDEUR",
+            "LIEU_BUREAU"
           ]
         }
       ]
@@ -88,7 +91,7 @@
         {
           "id": "art-salaire",
           "text_ar": "الأجر الشهري الخام: [SALAIRE] دينار تونسي. تتحمل الدولة جزءاً من هذا الأجر قدره [SUBVENTION_ETAT] دينار تونسي شهرياً طيلة مدة العقد. والجزء المكمل المقدر بـ [COMPLEMENT_ENTREPRISE] دينار تونسي على عاتق المؤجر. يتمتع الأجير بالتغطية الاجتماعية لدى الصندوق الوطني للضمان الاجتماعي (مرض، حوادث شغل، تقاعد).",
-          "text_fr": "La rémunération mensuelle nette globale est fixée à [SALAIRE_NET] DT (minimum 600 DT net). Conformément aux dispositions du Programme Karama, cette rémunération est composée de : - Une indemnité de prise en charge directe versée par l'ANETI au Salarié d'un montant de 400 DT net par mois. - Un complément de salaire net de [COMPLEMENT_ENTREPRISE_NET] DT par mois versé par l'Employeur. Le Salarié bénéficie de la couverture sociale CNSS (maladie, accidents du travail, retraite).",
+          "text_fr": "La rémunération mensuelle nette globale est fixée à [SALAIRE] DT (minimum 600 DT net). Conformément aux dispositions du Programme Karama, cette rémunération est composée de : - Une indemnité de prise en charge directe versée par l'ANETI au Salarié d'un montant de 400 DT net par mois. - Un complément de salaire net de [COMPLEMENT_ENTREPRISE] DT par mois versé par l'Employeur. Le Salarié bénéficie de la couverture sociale CNSS (maladie, accidents du travail, retraite).",
           "fields": [
             "SALAIRE",
             "SUBVENTION_ETAT",
@@ -155,7 +158,8 @@
           "text_fr": "Fait à [LIEU_SIGNATURE], le [DATE_SIGNATURE], en trois exemplaires (Entreprise, Salarié, Bureau de l'Emploi).",
           "fields": [
             "LIEU_SIGNATURE",
-            "DATE_SIGNATURE"
+            "DATE_SIGNATURE",
+            "LIEU_BUREAU"
           ]
         },
         {
@@ -437,6 +441,57 @@
       "pattern": "^(\\d{4}-\\d{2}-\\d{2}|\\d{1,2}[/\\-.]\\d{1,2}[/\\-.]\\d{2,4})$",
       "help_fr": "Date au format JJ/MM/AAAA .",
       "help_ar": "التاريخ بصيغة يوم/شهر/سنة للتوقيع."
+    },
+    "MATRICULE_FISCAL": {
+      "type": "text",
+      "label_fr": "Matricule Fiscal (employeur)",
+      "label_ar": "المعرّف الجبائي (المؤجر)",
+      "placeholder_fr": "0000000A",
+      "placeholder_ar": "0000000A",
+      "required": true,
+      "pattern": null,
+      "min_length": null,
+      "max_length": 20,
+      "min_value": null,
+      "max_value": null,
+      "hint_fr": "",
+      "hint_ar": "",
+      "help_fr": "Numéro du Matricule Fiscal de l'entreprise employeur.",
+      "help_ar": "رقم المعرّف الجبائي للمؤسسة المشغّلة."
+    },
+    "NUM_CNSS": {
+      "type": "text",
+      "label_fr": "N° CNSS (employeur)",
+      "label_ar": "رقم الضمان الاجتماعي (المؤجر)",
+      "placeholder_fr": "0000000",
+      "placeholder_ar": "0000000",
+      "required": true,
+      "pattern": null,
+      "min_length": null,
+      "max_length": 20,
+      "min_value": null,
+      "max_value": null,
+      "hint_fr": "",
+      "hint_ar": "",
+      "help_fr": "Numéro d'affiliation de l'employeur à la Caisse Nationale de Sécurité Sociale.",
+      "help_ar": "رقم انتماء المؤجر للصندوق الوطني للضمان الاجتماعي."
+    },
+    "LIEU_BUREAU": {
+      "type": "text",
+      "label_fr": "Lieu du bureau de l'emploi",
+      "label_ar": "مكان مكتب التشغيل",
+      "placeholder_fr": "Tunis",
+      "placeholder_ar": "تونس",
+      "required": true,
+      "pattern": null,
+      "min_length": null,
+      "max_length": 100,
+      "min_value": null,
+      "max_value": null,
+      "hint_fr": "",
+      "hint_ar": "",
+      "help_fr": "Ville du bureau de l'emploi et du travail indépendant (programme Karama).",
+      "help_ar": "مدينة مكتب التشغيل والعمل المستقل (برنامج كرامة)."
     }
   },
   "description_ar": "كونترا خدمة مدعم من الدولة وموجه لحاملي الشهادات العليا باش يسهل دخولهم لسوق الشغل.",

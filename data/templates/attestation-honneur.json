@@ -20,7 +20,7 @@
         {
           "id": "art-declarant",
           "text_ar": "أنا الممضي أسفله، السيد/ة [NOM]، مولود/ة بتاريخ [DATE_NAISSANCE] بـ [LIEU_NAISSANCE]، [NATIONALITE] الجنسية، ب.ت.و عدد [CIN]، المسلمة بتاريخ [DATE_CIN]، القاطن/ة بـ [ADRESSE]، والمزاول/ة لمهنة [PROFESSION].",
-          "text_fr": "Je soussigné(e), M./Mme [NOM], né(e) le [DATE_NAISSANCE] à [LIEU_NAISSANCE], de nationalité [NATIONALITE], titulaire de la CIN n° [CIN], délivrée le [DATE_CIN] par [AUTORITÉ DE DÉLIVRANCE], demeurant à [ADRESSE], exerçant la profession de [PROFESSION],",
+          "text_fr": "Je soussigné(e), M./Mme [NOM], né(e) le [DATE_NAISSANCE] à [LIEU_NAISSANCE], de nationalité [NATIONALITE], titulaire de la CIN n° [CIN], délivrée le [DATE_CIN] par [AUTORITE_DELIVRANCE], demeurant à [ADRESSE], exerçant la profession de [PROFESSION],",
           "fields": [
             "NOM",
             "DATE_NAISSANCE",
@@ -29,7 +29,8 @@
             "CIN",
             "DATE_CIN",
             "ADRESSE",
-            "PROFESSION"
+            "PROFESSION",
+            "AUTORITE_DELIVRANCE"
           ]
         }
       ]
@@ -159,19 +160,19 @@
       "help_ar": "رقم بطاقة التعريف الوطنية المكون من 8 أرقام ."
     },
     "DATE_CIN": {
-      "type": "cin",
+      "type": "date",
       "label_ar": "تاريخ",
       "label_fr": "Date Cin",
-      "placeholder_ar": "12345678",
-      "placeholder_fr": "12345678",
+      "placeholder_ar": "يوم/شهر/سنة",
+      "placeholder_fr": "JJ/MM/AAAA",
       "required": true,
-      "hint_ar": "8 أرقام",
-      "hint_fr": "8 chiffres",
+      "hint_ar": "يوم/شهر/سنة",
+      "hint_fr": "JJ/MM/AAAA",
       "pattern": "^\\d{8}$",
       "min_length": 8,
       "max_length": 8,
-      "help_fr": "Numéro à 8 chiffres de la carte d'identité nationale .",
-      "help_ar": "رقم بطاقة التعريف الوطنية المكون من 8 أرقام ."
+      "help_fr": "Date de délivrance de la carte d'identité nationale.",
+      "help_ar": "تاريخ منح بطاقة التعريف الوطنية."
     },
     "ADRESSE": {
       "type": "text",
@@ -255,6 +256,23 @@
       "pattern": "^(\\d{4}-\\d{2}-\\d{2}|\\d{1,2}[/\\-.]\\d{1,2}[/\\-.]\\d{2,4})$",
       "help_fr": "Date au format JJ/MM/AAAA pour la signature.",
       "help_ar": "التاريخ بصيغة يوم/شهر/سنة للتوقيع."
+    },
+    "AUTORITE_DELIVRANCE": {
+      "type": "text",
+      "label_fr": "Autorité de délivrance CIN",
+      "label_ar": "السلطة المانحة لبطاقة التعريف",
+      "placeholder_fr": "Gouvernorat de Tunis",
+      "placeholder_ar": "ولاية تونس",
+      "required": true,
+      "pattern": null,
+      "min_length": null,
+      "max_length": 100,
+      "min_value": null,
+      "max_value": null,
+      "hint_fr": "",
+      "hint_ar": "",
+      "help_fr": "Autorité ayant délivré la carte d'identité nationale (ex: Gouvernorat de Tunis).",
+      "help_ar": "السلطة التي منحت بطاقة التعريف الوطنية (مثال: ولاية تونس)."
     }
   },
   "description_ar": "تصريح مصحح ومصادق عليه تشهد فيه بصحة معلومة تهمك لقضاء شؤون إدارية.",

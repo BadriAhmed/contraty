@@ -460,18 +460,18 @@
       "help_ar": "عدد أيام الراحة مدفوعة الأجر في السنة (مثال: 30)."
     },
     "PREAVIS_MOIS": {
-      "type": "text",
-      "label_ar": "أجل الإعلام المسبق بإنهاء الكراء (بالأشهر)",
+      "type": "number",
+      "label_ar": "أجل الإعلام المسبق بإنهاء عقد العمل (بالأشهر)",
       "label_fr": "Preavis Mois",
-      "placeholder_ar": "",
-      "placeholder_fr": "",
+      "placeholder_ar": "1",
+      "placeholder_fr": "1",
       "required": true,
-      "hint_ar": "",
-      "hint_fr": "",
+      "hint_ar": "رقم",
+      "hint_fr": "Nombre",
       "min_length": 2,
       "max_length": 500,
-      "help_fr": "Durée en années ou mois .",
-      "help_ar": "المدة بالسنوات أو الأشهر عند إنهاء العقد."
+      "help_fr": "Préavis de rupture en mois (ex: 1 mois).",
+      "help_ar": "أجل الإعلام بالفسخ بالأشهر (مثال: شهر واحد)."
     },
     "LIEU_SIGNATURE": {
       "type": "text",

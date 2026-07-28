@@ -49,6 +49,8 @@ class PDFRenderer:
                 body += f'<div class="section-title">{sec_title}</div>'
             for article in section.articles:
                 text = article.text_ar if language == Language.ar else article.text_fr
+                if not text or not text.strip():
+                    continue
                 body += f'<div class="article">{html.escape(text)}</div>'
             body += '</div>'
 
