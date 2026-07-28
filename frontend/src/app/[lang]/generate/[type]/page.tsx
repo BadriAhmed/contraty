@@ -97,11 +97,11 @@ export default function GeneratePage() {
 
   const handleGenerateWithAd = () => {
     setShowAdLoading(true);
+    handleGenerate(false, steps.length, setCurrentStep);
   };
 
   const handleAdComplete = () => {
     setShowAdLoading(false);
-    handleGenerate(false, steps.length, setCurrentStep);
   };
 
   const handleNext = () => {
@@ -284,7 +284,7 @@ export default function GeneratePage() {
             />
           ) : isExtraNotesStep ? (
             showAdLoading ? (
-              <LoadingWithAd lang={lang} onComplete={handleAdComplete} />
+              <LoadingWithAd lang={lang} isReady={!generating} onComplete={handleAdComplete} />
             ) : (
               <ExtraNotesStep
                 lang={lang}
