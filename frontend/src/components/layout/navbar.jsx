@@ -11,15 +11,23 @@ export function Navbar() {
   const lang = pathname.startsWith("/ar") ? "ar" : "fr";
   const otherLang = lang === "ar" ? "fr" : "ar";
   const switchPath = pathname.replace(`/${lang}`, `/${otherLang}`);
+  const isV2 = pathname.includes("/v2");
+  const homeLink = isV2 ? `/${lang}/v2` : `/${lang}`;
 
   return (
     <header className="sticky top-0 z-50 bg-surface border-b border-border-slate h-14">
       <div className="max-w-container-max mx-auto px-4 md:px-6 h-full flex items-center justify-between">
-        <Link href={`/${lang}`} className="text-lg font-bold text-primary tracking-tight shrink-0">
+        <Link href={homeLink} className="text-lg font-bold text-primary tracking-tight shrink-0">
           Contraty
         </Link>
 
         <div className="flex items-center gap-3">
+          <Link
+            href={`/${lang}/v2`}
+            className="text-[10px] font-bold text-on-primary bg-primary px-2 py-0.5 rounded-md hover:bg-surface-tint transition-colors"
+          >
+            V2
+          </Link>
           <button
             onClick={() => setSearchOpen(!searchOpen)}
             className="p-1.5 text-on-surface-variant hover:text-primary transition-colors rounded-lg hover:bg-surface-container"
@@ -47,7 +55,8 @@ export function Navbar() {
               className="flex-1 bg-transparent outline-none text-sm text-on-surface placeholder:text-text-secondary"
               onKeyDown={(e) => {
                 if (e.key === "Enter") {
-                  window.location.href = `/${lang}/contracts?q=${encodeURIComponent(e.target.value)}`;
+                  const q = encodeURIComponent(e.target.value);
+                  window.location.href = isV2 ? `/${lang}/v2#templates` : `/${lang}/contracts?q=${q}`;
                 }
               }}
             />

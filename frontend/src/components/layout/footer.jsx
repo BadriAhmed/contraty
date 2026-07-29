@@ -1,8 +1,14 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { getMessages } from "@/lib/i18n";
 
 export function Footer({ lang, disclaimer }) {
   const msg = getMessages(lang);
+  const pathname = usePathname();
+  const isV2 = pathname?.includes("/v2") ?? false;
+  const base = isV2 ? `/${lang}/v2` : `/${lang}`;
 
   return (
     <footer className="bg-inverse-surface text-inverse-on-surface mt-auto">
@@ -17,7 +23,7 @@ export function Footer({ lang, disclaimer }) {
         {/* Links + brand */}
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-8">
           <div className="col-span-2">
-            <Link href={`/${lang}`} className="text-lg font-bold text-inverse-on-surface">
+            <Link href={base} className="text-lg font-bold text-inverse-on-surface">
               Contraty
             </Link>
             <p className="text-sm text-inverse-on-surface/60 mt-2 max-w-xs">
@@ -30,13 +36,13 @@ export function Footer({ lang, disclaimer }) {
           <div>
             <h4 className="text-sm font-semibold mb-3">{lang === "ar" ? "نماذج" : "Modèles"}</h4>
             <div className="space-y-2 text-sm text-inverse-on-surface/60">
-              <Link href={`/${lang}/contracts?domain=logement`} className="block hover:text-inverse-on-surface transition-colors">
+              <Link href={`${base}${isV2 ? "#templates" : "/contracts?domain=logement"}`} className="block hover:text-inverse-on-surface transition-colors">
                 {lang === "ar" ? "سكن" : "Logement"}
               </Link>
-              <Link href={`/${lang}/contracts?domain=travail`} className="block hover:text-inverse-on-surface transition-colors">
+              <Link href={`${base}${isV2 ? "#templates" : "/contracts?domain=travail"}`} className="block hover:text-inverse-on-surface transition-colors">
                 {lang === "ar" ? "عمل" : "Travail"}
               </Link>
-              <Link href={`/${lang}/contracts?domain=entreprise`} className="block hover:text-inverse-on-surface transition-colors">
+              <Link href={`${base}${isV2 ? "#templates" : "/contracts?domain=entreprise"}`} className="block hover:text-inverse-on-surface transition-colors">
                 {lang === "ar" ? "مؤسسة" : "Entreprise"}
               </Link>
             </div>
