@@ -109,13 +109,13 @@ export default async function V2ContractDetail({ params }: { params: { lang: str
       </div>
 
       {/* Hero header */}
-      <div className="max-w-5xl mx-auto px-4 md:px-6 py-8">
-        <div className="flex items-start gap-4 mb-6">
+      <div className="max-w-5xl mx-auto px-4 md:px-6 py-6 md:py-8">
+        <div className="flex items-start gap-3 md:gap-4 mb-4 md:mb-6">
           <div
-            className="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0"
+            className="w-12 h-12 md:w-14 md:h-14 rounded-xl md:rounded-2xl flex items-center justify-center shrink-0"
             style={{ backgroundColor: `color-mix(in srgb, ${domainColor} 15%, transparent)` }}
           >
-            <DomainIcon size={28} style={{ color: domainColor }} />
+            <DomainIcon size={22} className="md:size-[28px]" style={{ color: domainColor }} />
           </div>
           <div className="flex-1">
             <span
@@ -221,17 +221,17 @@ export default async function V2ContractDetail({ params }: { params: { lang: str
               <p className="text-sm text-text-secondary mb-5">
                 {lang === "ar" ? "أنشئ عقدك في دقائق — مجانًا تمامًا" : "Créez votre contrat en quelques minutes — entièrement gratuit"}
               </p>
-              <div className="flex flex-wrap items-center gap-3">
+              <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3">
                 <Link
                   href={`/${lang}/v2/generate/${template.slug}`}
-                  className="inline-flex items-center gap-2 bg-primary text-on-primary font-semibold px-7 py-3.5 rounded-xl hover:bg-surface-tint transition-all shadow-lg shadow-primary/20 text-base"
+                  className="flex-1 inline-flex items-center justify-center gap-2 bg-primary text-on-primary font-semibold px-7 py-3.5 rounded-xl hover:bg-surface-tint transition-all shadow-lg shadow-primary/20 text-base"
                 >
                   {lang === "ar" ? "ابدأ الآن" : "Commencer"}
                   {isRtl ? <ArrowLeft size={18} /> : <ArrowRight size={18} />}
                 </Link>
                 <Link
                   href={`/${lang}/v2/blank/${template.slug}`}
-                  className="inline-flex items-center gap-2 border-2 border-primary text-primary font-semibold px-6 py-3.5 rounded-xl hover:bg-primary-fixed transition-colors text-base"
+                  className="flex-1 inline-flex items-center justify-center gap-2 border-2 border-primary text-primary font-semibold px-6 py-3.5 rounded-xl hover:bg-primary-fixed transition-colors text-base"
                 >
                   <Download size={16} />
                   {lang === "ar" ? "تحميل فارغ" : "Modèle vierge"}

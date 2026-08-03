@@ -220,7 +220,7 @@ export default function V2BlankPage() {
         </div>
 
         {/* Download buttons */}
-        <div className="grid grid-cols-2 gap-3">
+        <div className="flex flex-col sm:grid sm:grid-cols-2 gap-3">
           <button onClick={() => handleDownloadStart("pdf")} className="flex items-center justify-center gap-2 bg-primary text-on-primary font-semibold py-4 rounded-2xl hover:bg-surface-tint transition-colors shadow-lg shadow-primary/20 text-base">
             <Download size={18} />
             PDF

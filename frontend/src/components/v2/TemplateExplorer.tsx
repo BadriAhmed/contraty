@@ -49,18 +49,18 @@ export default function TemplateExplorer({ lang, templates }: Props) {
         </div>
 
         {/* Domain filter pills */}
-        <div className="flex flex-wrap justify-center gap-3 mb-10">
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 md:mb-10 px-1">
           <button
             onClick={() => { setActiveDomain(null); setShowAll(false); }}
-            className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium transition-all ${
+            className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-medium transition-all ${
               activeDomain === null
                 ? "bg-primary text-on-primary shadow-md shadow-primary/20"
                 : "bg-surface border border-outline-variant/40 text-on-surface-variant hover:border-primary/30"
             }`}
           >
-            <LayoutGrid size={15} />
+            <LayoutGrid size={14} className="sm:size-[15px]" />
             {lang === "ar" ? "الكل" : "Tous"}
-            <span className={`text-xs ${activeDomain === null ? "text-on-primary/70" : "text-text-secondary"}`}>
+            <span className={`text-[10px] sm:text-xs ${activeDomain === null ? "text-on-primary/70" : "text-text-secondary"}`}>
               {templates.length}
             </span>
           </button>
@@ -75,16 +75,16 @@ export default function TemplateExplorer({ lang, templates }: Props) {
               <button
                 key={key}
                 onClick={() => { setActiveDomain(isActive ? null : key); setShowAll(false); }}
-                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium transition-all ${
+                className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-medium transition-all ${
                   isActive
                     ? "text-on-primary shadow-md"
                     : "bg-surface border border-outline-variant/40 text-on-surface-variant hover:border-transparent hover:shadow-sm"
                 }`}
                 style={isActive ? { backgroundColor: meta.color } : {}}
               >
-                <Icon size={15} style={isActive ? { color: "var(--on-primary)" } : { color: meta.color }} />
+                <Icon size={14} className="sm:size-[15px]" style={isActive ? { color: "var(--on-primary)" } : { color: meta.color }} />
                 {lang === "ar" ? domain.ar : domain.fr}
-                <span className={`text-xs ${isActive ? "text-on-primary/70" : "text-text-secondary"}`}>
+                <span className={`text-[10px] sm:text-xs ${isActive ? "text-on-primary/70" : "text-text-secondary"}`}>
                   {count}
                 </span>
               </button>

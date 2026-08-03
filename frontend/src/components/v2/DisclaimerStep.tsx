@@ -33,13 +33,13 @@ export default function DisclaimerStep({ lang, disclaimerAccepted, templateDiscl
   const isRtl = lang === "ar";
 
   return (
-    <div className="max-w-2xl mx-auto">
-      <div className="bg-primary-fixed/30 rounded-2xl p-6 md:p-8 mb-6">
-        <div className="flex items-start gap-3 mb-4">
-          <div className="w-10 h-10 rounded-xl bg-error/10 flex items-center justify-center shrink-0">
-            <ShieldAlert size={20} className="text-error" />
+    <div className="w-full">
+      <div className="bg-primary-fixed/30 rounded-2xl p-4 md:p-6 lg:p-8 mb-4 md:mb-6">
+        <div className="flex items-start gap-3 mb-3 md:mb-4">
+          <div className="w-8 h-8 md:w-10 md:h-10 rounded-xl bg-error/10 flex items-center justify-center shrink-0">
+            <ShieldAlert size={16} className="md:size-[20px] text-error" />
           </div>
-          <h2 className="text-xl font-bold text-on-surface pt-1">{t.title}</h2>
+          <h2 className="text-lg md:text-xl font-bold text-on-surface pt-0.5 md:pt-1">{t.title}</h2>
         </div>
         <div className="text-sm text-on-surface-variant leading-relaxed space-y-3 ps-0">
           <p>{t.p1}</p>
@@ -50,7 +50,7 @@ export default function DisclaimerStep({ lang, disclaimerAccepted, templateDiscl
         </div>
       </div>
 
-      <label className="flex items-start gap-3 cursor-pointer p-4 bg-surface rounded-2xl border border-outline-variant/40 mb-6">
+      <label className="flex items-start gap-3 cursor-pointer p-3 md:p-4 bg-surface rounded-2xl border border-outline-variant/40 mb-4 md:mb-6">
         <input
           type="checkbox"
           checked={disclaimerAccepted}
@@ -65,7 +65,7 @@ export default function DisclaimerStep({ lang, disclaimerAccepted, templateDiscl
       <button
         onClick={onNext}
         disabled={!disclaimerAccepted}
-        className="w-full flex items-center justify-center gap-2 bg-primary text-on-primary font-semibold py-4 rounded-2xl hover:bg-surface-tint transition-colors shadow-lg shadow-primary/20 disabled:opacity-40 disabled:shadow-none text-base"
+        className="w-full flex items-center justify-center gap-2 bg-primary text-on-primary font-semibold py-3.5 md:py-4 rounded-2xl hover:bg-surface-tint transition-colors shadow-lg shadow-primary/20 disabled:opacity-40 disabled:shadow-none text-sm md:text-base"
       >
         {t.cta}
         {isRtl ? <ArrowLeft size={18} /> : <ArrowRight size={18} />}

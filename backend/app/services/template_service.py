@@ -227,6 +227,8 @@ async def review_contract(
 5. Incohérences entre type de contrat et valeurs
 6. Valeurs mal formatées ou améliorables (ex: format de téléphone, majuscules, accents)
 
+{"7. Translittération : si des champs contiennent du texte en alphabet latin qui devrait être en arabe (ex: 'ismi Ahmed' → 'اسمي أحمد'), fournis la version arabe corrigée." if language == Language.ar else ""}
+
 Ne commente pas les clauses standards, ni les références légales.
 Si tout va bien, réponds exactement: RIEN_A_SIGNALER
 

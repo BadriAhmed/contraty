@@ -27,6 +27,7 @@ export default function V2GeneratePage() {
   const [loading, setLoading] = useState(true);
   const [fetchError, setFetchError] = useState<string | null>(null);
   const [showAdLoading, setShowAdLoading] = useState(false);
+  const [showMobileSidebar, setShowMobileSidebar] = useState(false);
 
   const {
     fieldValues, setFieldValues, currentStep, setCurrentStep,
@@ -131,6 +132,8 @@ export default function V2GeneratePage() {
 
   const progressPercent = isPreviewStep ? 100 : Math.round((currentStep / (totalFields + 2)) * 100);
 
+  const answeredTotal = flatFields.filter((f) => (fieldValues[f.name] || "").trim() !== "").length;
+
   const handleConfirm = () => {
     if (!currentField) return;
     const md = currentField.metadata;
@@ -213,7 +216,7 @@ export default function V2GeneratePage() {
             <Link href={detailLink} className="text-sm text-text-secondary truncate max-w-[200px] hover:text-primary transition-colors">{title}</Link>
           </div>
           <div className="flex items-center gap-4 text-xs text-text-secondary">
-            <span className="flex items-center gap-1">
+            <span className="hidden sm:flex items-center gap-1">
               <Lock size={12} className="text-success-green" />
               {lang === "ar" ? "جلسة آمنة" : "Session sécurisée"}
             </span>
@@ -264,8 +267,8 @@ export default function V2GeneratePage() {
         )}
 
         {/* Main area */}
-        <div className="flex-1 overflow-y-auto">
-          <div className="max-w-2xl mx-auto px-4 md:px-8 py-8 md:py-12">
+        <div className={`flex-1 overflow-y-auto ${isFormStep ? "pb-24 lg:pb-0" : ""}`}>
+          <div className="max-w-2xl mx-auto px-4 md:px-8 py-6 md:py-12">
             {isPreviewStep && generated ? (
               <PreviewStep
                 lang={lang}
@@ -332,6 +335,67 @@ export default function V2GeneratePage() {
                 onBack={handleBack}
               />
             ) : null}
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile: sticky bottom progress bar */}
+      {isFormStep && (
+        <div className="lg:hidden fixed bottom-0 start-0 end-0 z-30 bg-surface/95 backdrop-blur-sm border-t border-border-slate/60 px-4 py-2.5 safe-bottom">
+          <button
+            onClick={() => setShowMobileSidebar(true)}
+            className="w-full flex items-center gap-3"
+          >
+            <span className="flex-1 h-1.5 rounded-full bg-outline-variant/40 overflow-hidden">
+              <span
+                className="block h-full rounded-full bg-primary transition-all duration-500"
+                style={{ width: `${progressPercent}%` }}
+              />
+            </span>
+            <span className="text-xs font-medium text-text-secondary tabular-nums whitespace-nowrap">
+              {answeredTotal}/{totalFields} · {progressPercent}%
+            </span>
+          </button>
+        </div>
+      )}
+
+      {/* Mobile: sidebar modal */}
+      <div
+        className={`lg:hidden fixed inset-0 z-50 transition-opacity duration-300 ${
+          showMobileSidebar ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        }`}
+      >
+        <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" onClick={() => setShowMobileSidebar(false)} />
+        <div
+          className={`absolute bottom-0 start-0 end-0 max-h-[85vh] bg-surface-container-lowest rounded-t-3xl overflow-hidden shadow-2xl transition-transform duration-300 ${
+            showMobileSidebar ? "translate-y-0" : "translate-y-full"
+          }`}
+        >
+          <div className="flex items-center justify-center pt-3 pb-2">
+            <div className="w-10 h-1 rounded-full bg-outline-variant" />
+          </div>
+          <div className="flex items-center justify-between px-5 pb-3 border-b border-border-slate/50">
+            <span className="font-semibold text-sm">
+              {lang === "ar" ? "التقدم" : "Progression"} · {progressPercent}%
+            </span>
+            <button
+              onClick={() => setShowMobileSidebar(false)}
+              className="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center hover:bg-surface-container-high transition-colors"
+            >
+              <X size={14} className="text-text-secondary" />
+            </button>
+          </div>
+          <div className="overflow-y-auto max-h-[calc(85vh-72px)] p-4">
+            <SummarySidebar
+              lang={lang}
+              sections={sidebarSections}
+              fieldValues={fieldValues}
+              currentFieldIndex={fieldIndex}
+              onJumpTo={(idx) => {
+                handleJumpTo(idx);
+                setShowMobileSidebar(false);
+              }}
+            />
           </div>
         </div>
       </div>

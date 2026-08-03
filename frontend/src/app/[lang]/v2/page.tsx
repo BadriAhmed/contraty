@@ -55,11 +55,11 @@ export default async function V2HomePage({ params }: { params: { lang: string } 
           2. HERO
       ─────────────────────────────────────────────── */}
       <section className="relative overflow-hidden bg-gradient-to-b from-primary-fixed/60 to-background">
-        <div className="max-w-7xl mx-auto px-4 md:px-6 py-16 md:py-24">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 py-12 sm:py-16 md:py-24">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
             {/* Left: copy */}
             <div className={lang === "ar" ? "text-right" : "text-left"}>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-on-surface leading-[1.1] tracking-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-on-surface leading-[1.1] tracking-tight">
                 {t(
                   lang,
                   <>
@@ -155,7 +155,7 @@ export default async function V2HomePage({ params }: { params: { lang: string } 
       ─────────────────────────────────────────────── */}
       <section className="border-y border-border-slate bg-surface">
         <div className="max-w-7xl mx-auto px-4 md:px-6 py-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-12">
             {[
               {
                 icon: Zap,
@@ -192,8 +192,8 @@ export default async function V2HomePage({ params }: { params: { lang: string } 
       ─────────────────────────────────────────────── */}
       <section className="py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 md:px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-on-surface tracking-tight">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-on-surface tracking-tight">
               {t(lang, "لماذا كونتراتي؟", "Pourquoi Contraty ?")}
             </h2>
             <p className="mt-3 text-text-secondary max-w-2xl mx-auto">
@@ -255,8 +255,8 @@ export default async function V2HomePage({ params }: { params: { lang: string } 
             return (
               <div
                 key={i}
-                className={`flex flex-col ${reverse ? "md:flex-row-reverse" : "md:flex-row"} items-center gap-10 md:gap-16 ${
-                  i > 0 ? "mt-20" : ""
+                className={`flex flex-col ${reverse ? "md:flex-row-reverse" : "md:flex-row"} items-center gap-6 md:gap-10 lg:gap-16 ${
+                  i > 0 ? "mt-14 sm:mt-16 md:mt-20" : ""
                 }`}
               >
                 {/* Text */}
@@ -300,14 +300,14 @@ export default async function V2HomePage({ params }: { params: { lang: string } 
       {/* ────────────────────────────────────────────
           6. HOW IT WORKS (3 steps)
       ─────────────────────────────────────────────── */}
-      <section className="py-16 md:py-24">
+      <section className="py-12 md:py-24">
         <div className="max-w-7xl mx-auto px-4 md:px-6">
-          <div className="text-center mb-14">
-            <h2 className="text-3xl md:text-4xl font-bold text-on-surface tracking-tight">
+          <div className="text-center mb-10 md:mb-14">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-on-surface tracking-tight">
               {t(lang, "كيف تعمل المنصة", "Comment ça marche")}
             </h2>
           </div>
-          <div className="grid md:grid-cols-3 gap-8 md:gap-6">
+          <div className="grid md:grid-cols-3 gap-6 md:gap-6">
             {[
               {
                 icon: Search,
@@ -366,9 +366,9 @@ export default async function V2HomePage({ params }: { params: { lang: string } 
       {/* ────────────────────────────────────────────
           7. STATS BAND
       ─────────────────────────────────────────────── */}
-      <section className="bg-primary text-on-primary py-16 md:py-20">
+      <section className="bg-primary text-on-primary py-12 md:py-20">
         <div className="max-w-7xl mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 text-center">
             {[
               { num: "22", label: t(lang, "نموذج قانوني", "modèles juridiques") },
               { num: "6", label: t(lang, "مجالات قانونية", "domaines juridiques") },
@@ -376,8 +376,8 @@ export default async function V2HomePage({ params }: { params: { lang: string } 
               { num: "0", label: t(lang, "د.ت — مجاني", "DT — gratuit") },
             ].map((s, i) => (
               <div key={i}>
-                <p className="text-4xl md:text-5xl font-extrabold">{s.num}</p>
-                <p className="text-sm text-on-primary/70 mt-2">{s.label}</p>
+                <p className="text-3xl sm:text-4xl md:text-5xl font-extrabold">{s.num}</p>
+                <p className="text-xs sm:text-sm text-on-primary/70 mt-2">{s.label}</p>
               </div>
             ))}
           </div>
@@ -387,10 +387,10 @@ export default async function V2HomePage({ params }: { params: { lang: string } 
       {/* ────────────────────────────────────────────
           8. FAQ
       ─────────────────────────────────────────────── */}
-      <section className="py-16 md:py-24">
+      <section className="py-12 md:py-24">
         <div className="max-w-7xl mx-auto px-4 md:px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-on-surface tracking-tight">
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-on-surface tracking-tight">
               {t(lang, "أسئلة شائعة", "Questions fréquentes")}
             </h2>
           </div>
@@ -401,12 +401,12 @@ export default async function V2HomePage({ params }: { params: { lang: string } 
       {/* ────────────────────────────────────────────
           9. FINAL CTA
       ─────────────────────────────────────────────── */}
-      <section className="py-16 md:py-24 bg-gradient-to-b from-primary-fixed/40 to-background">
+      <section className="py-12 md:py-24 bg-gradient-to-b from-primary-fixed/40 to-background">
         <div className="max-w-3xl mx-auto px-4 md:px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-on-surface tracking-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-on-surface tracking-tight">
             {t(lang, "جاهز لبدء عقدك؟", "Prêt à créer votre contrat ?")}
           </h2>
-          <p className="mt-4 text-text-secondary text-lg">
+          <p className="mt-3 md:mt-4 text-text-secondary text-base md:text-lg">
             {t(
               lang,
               "اختر نموذجًا وأنشئ عقدك القانوني في دقائق — مجانًا تمامًا",

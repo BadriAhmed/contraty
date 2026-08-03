@@ -4,6 +4,7 @@ import { ArrowLeft, ArrowRight, AlertCircle, Check } from "lucide-react";
 import type { FieldMeta } from "@/types";
 import { validateField } from "@/lib/constants";
 import { getInputType } from "@/lib/utils";
+import TransliterateChip from "@/components/v2/TransliterateChip";
 
 const ERROR_MSG: Record<string, Record<string, string>> = {
   ar: {
@@ -80,23 +81,23 @@ export default function FormStep({
   };
 
   return (
-    <div className="max-w-2xl mx-auto">
+    <div className="w-full">
       {/* Section breadcrumb */}
-      <div className="mb-4 flex items-center gap-2">
-        <span className="text-xs font-medium text-text-secondary">
+      <div className="mb-3 md:mb-4 flex items-center gap-2">
+        <span className="text-xs font-medium text-text-secondary truncate max-w-[180px] sm:max-w-none">
           {field.sectionTitle}
         </span>
-        <span className="text-xs text-text-secondary">·</span>
-        <span className="text-xs text-text-secondary">
+        <span className="text-xs text-text-secondary hidden sm:inline">·</span>
+        <span className="text-xs text-text-secondary hidden sm:inline">
           {lang === "ar" ? `سؤال ${fieldIndex + 1} من ${totalFields}` : `Question ${fieldIndex + 1} sur ${totalFields}`}
         </span>
       </div>
 
       {/* Question card */}
-      <div className="bg-primary-fixed/20 rounded-2xl p-6 md:p-8 mb-4">
+      <div className="bg-primary-fixed/20 rounded-2xl p-4 md:p-6 lg:p-8 mb-3 md:mb-4">
         <div className="flex items-start gap-3 mb-1">
           <div className="flex-1">
-            <h2 className="text-lg md:text-xl font-bold text-on-surface leading-snug">
+            <h2 className="text-base md:text-lg lg:text-xl font-bold text-on-surface leading-snug">
               {field.label}
               {md?.required !== false && <span className="text-error ms-1">*</span>}
             </h2>
@@ -109,12 +110,12 @@ export default function FormStep({
           </div>
         </div>
         {help && (
-          <p className="text-sm text-text-secondary leading-relaxed mb-5 mt-2">{help}</p>
+          <p className="text-sm text-text-secondary leading-relaxed mt-2">{help}</p>
         )}
       </div>
 
       {/* Answer area */}
-      <div className="bg-surface rounded-2xl border border-outline-variant/40 p-5 md:p-6 mb-4">
+      <div className="bg-surface rounded-2xl border border-outline-variant/40 p-4 md:p-5 lg:p-6 mb-3 md:mb-4">
         {isSelect ? (
           <select
             value={value || ""}
@@ -142,27 +143,31 @@ export default function FormStep({
         )}
 
         {error && (
-          <p className="text-sm text-error mt-3 flex items-center gap-1.5">
+          <p className="text-sm text-error mt-2 md:mt-3 flex items-center gap-1.5">
             <AlertCircle size={14} />
             {msg[error] || error}
           </p>
         )}
+
+        <TransliterateChip lang={lang} value={value || ""} />
       </div>
 
       {/* Navigation */}
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-2 md:gap-3">
         <button
           onClick={onBack}
-          className="flex items-center gap-1.5 text-sm font-medium text-text-secondary hover:text-on-surface transition-colors px-4 py-3 rounded-xl hover:bg-surface-container"
+          className="flex items-center gap-1 text-sm font-medium text-text-secondary hover:text-on-surface transition-colors px-3 py-3 md:px-4 rounded-xl hover:bg-surface-container shrink-0"
         >
           {isRtl ? <ArrowRight size={16} /> : <ArrowLeft size={16} />}
-          {lang === "ar" ? "رجوع" : "Retour"}
+          <span className="hidden sm:inline">{lang === "ar" ? "رجوع" : "Retour"}</span>
         </button>
         <button
           onClick={onConfirm}
-          className="flex-1 flex items-center justify-center gap-2 bg-primary text-on-primary font-semibold py-4 rounded-2xl hover:bg-surface-tint transition-colors shadow-lg shadow-primary/20 text-base"
+          className="flex-1 flex items-center justify-center gap-2 bg-primary text-on-primary font-semibold py-3.5 md:py-4 rounded-2xl hover:bg-surface-tint transition-colors shadow-lg shadow-primary/20 text-sm md:text-base"
         >
-          {confirmLabel}
+          {isLastField
+            ? (lang === "ar" ? "تأكيد ومتابعة" : "Confirmer")
+            : (lang === "ar" ? "تأكيد ومتابعة" : "Confirmer")}
           {isRtl ? <ArrowLeft size={18} /> : <ArrowRight size={18} />}
         </button>
       </div>
