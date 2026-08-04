@@ -1,5 +1,6 @@
 import datetime
 import logging
+from typing import Optional
 from fastapi import APIRouter, Request
 from app.core.limiter import limiter
 from app.models.analytics import (
@@ -21,7 +22,7 @@ def _store_event(name: str, props: dict) -> None:
     event = AnalyticsEvent(
         name=name,
         props=props,
-        created_at=datetime.datetime.utcnow().isoformat(),
+        created_at=datetime.datetime.now(datetime.timezone.utc).isoformat(),
     )
     _events.append(event)
 
@@ -54,33 +55,88 @@ async def log_event(request: Request, body: AnalyticsEventRequest):
     return {"ok": True}
 
 
-@router.get("/analytics/summary", response_model=AnalyticsSummary)
-async def get_summary():
-    """Get a simple summary of tracked events."""
+def _aggregate(rows: list[dict]) -> AnalyticsSummary:
+    """Aggregate raw rows (Supabase dicts) into a summary."""
     events_by_name: dict[str, int] = {}
     slug_counts: dict[str, int] = {}
     by_lang: dict[str, int] = {}
     by_format: dict[str, int] = {}
 
-    for e in _events:
-        events_by_name[e.name] = events_by_name.get(e.name, 0) + 1
-        slug = e.props.get("slug")
+    for r in rows:
+        name = r.get("event_name", "")
+        if not name:
+            continue
+        events_by_name[name] = events_by_name.get(name, 0) + 1
+
+        slug = r.get("slug") or ""
         if slug:
-            slug_counts[str(slug)] = slug_counts.get(str(slug), 0) + 1
-        lang_val = e.props.get("lang")
+            slug_counts[slug] = slug_counts.get(slug, 0) + 1
+
+        lang_val = r.get("lang") or ""
         if lang_val:
-            by_lang[str(lang_val)] = by_lang.get(str(lang_val), 0) + 1
-        fmt = e.props.get("format")
+            by_lang[lang_val] = by_lang.get(lang_val, 0) + 1
+
+        fmt = r.get("format") or ""
         if fmt:
-            by_format[str(fmt)] = by_format.get(str(fmt), 0) + 1
+            by_format[fmt] = by_format.get(fmt, 0) + 1
 
     top = sorted(slug_counts.items(), key=lambda x: -x[1])[:10]
 
+    recent = [
+        AnalyticsEvent(
+            name=r.get("event_name", ""),
+            props=r.get("props") or {},
+            created_at=r.get("created_at", ""),
+        )
+        for r in rows[:20]
+    ]
+
     return AnalyticsSummary(
-        total_events=len(_events),
+        total_events=len(rows),
         events_by_name=events_by_name,
         top_slugs=[(k, v) for k, v in top],
         by_lang=by_lang,
         by_format=by_format,
-        recent=list(reversed(_events[-20:])),
+        recent=recent,
     )
+
+
+@router.get("/analytics/summary", response_model=AnalyticsSummary)
+async def get_summary(days: int = 7):
+    """Get a simple summary of tracked events.
+
+    Reads from Supabase analytics_events (source of truth).
+    Falls back to in-memory events if Supabase is unavailable.
+    """
+    client = get_supabase()
+    if client is not None:
+        try:
+            since = datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(days=days)
+            result = (
+                client.table("analytics_events")
+                .select("*")
+                .gte("created_at", since.isoformat())
+                .order("created_at", desc=True)
+                .limit(10000)
+                .execute()
+            )
+            rows = result.data or []
+            return _aggregate(rows)
+        except Exception as e:
+            logger.warning("Supabase analytics read failed: %s", str(e))
+            # fall through to in-memory
+
+    since = datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(days=days)
+    rows = [
+        {
+            "event_name": e.name,
+            "props": e.props,
+            "slug": e.props.get("slug", ""),
+            "lang": e.props.get("lang", ""),
+            "format": e.props.get("format", ""),
+            "created_at": e.created_at,
+        }
+        for e in _events
+        if e.created_at >= since.isoformat()
+    ]
+    return _aggregate(rows)

@@ -38,11 +38,15 @@ async def lifespan(app: FastAPI):
     logger.info("Shutting down Contraty API")
 
 
+docs_enabled = settings.app_env == "development"
 app = FastAPI(
     title="Contraty API",
     description="Générateur de contrats juridiques tunisiens",
     version="0.1.0",
     lifespan=lifespan,
+    docs_url="/docs" if docs_enabled else None,
+    redoc_url="/redoc" if docs_enabled else None,
+    openapi_url="/openapi.json" if docs_enabled else None,
 )
 
 origins = settings.cors_origin_list

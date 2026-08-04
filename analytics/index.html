@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>Contraty Analytics</title>
+<style>
+  :root {
+    --primary: #004ac6;
+    --surface: #ffffff;
+    --bg: #faf8ff;
+    --border: #e2e0ea;
+    --text: #191b23;
+    --muted: #6b7280;
+    --green: #16a34a;
+    --cat-documents: #2563eb;
+    --cat-services: #0d9488;
+    --cat-family: #9333ea;
+    --cat-employment: #16a34a;
+    --cat-business: #c2410c;
+    --cat-real-estate: #b45309;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 24px 16px 60px; }
+  header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 20px; }
+  h1 { font-size: 22px; }
+  .sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .days button {
+    padding: 6px 12px; border-radius: 8px; border: 1px solid var(--border);
+    background: var(--surface); color: var(--text); font-size: 12px; cursor: pointer; margin-left: 6px;
+  }
+  .days button.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-bottom: 20px; }
+  .stat { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 14px; }
+  .stat b { font-size: 24px; display: block; }
+  .stat span { font-size: 11px; color: var(--muted); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 14px; }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 16px; margin-bottom: 14px; }
+  .card h2 { font-size: 13px; margin-bottom: 12px; }
+  .bar-row { display: flex; align-items: center; gap: 8px; margin-bottom: 7px; font-size: 12px; }
+  .bar-row .label { width: 180px; text-align: right; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .bar { flex: 1; height: 18px; background: #f1f0f6; border-radius: 6px; overflow: hidden; }
+  .bar div { height: 100%; border-radius: 6px; transition: width .4s; }
+  .bar-row .val { width: 36px; font-weight: 600; text-align: right; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th { text-align: left; color: var(--muted); font-weight: 500; font-size: 11px; padding-bottom: 8px; }
+  td { padding: 8px 0; border-top: 1px solid #efeef4; }
+  td.num { text-align: right; font-weight: 600; }
+  .recent { max-height: 320px; overflow-y: auto; }
+  .recent .row { display: flex; gap: 8px; align-items: center; font-size: 12px; padding: 6px 0; border-bottom: 1px solid #f3f2f8; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  .row .name { font-weight: 600; width: 180px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex-shrink: 0; }
+  .row .meta { color: var(--muted); flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .row .time { color: #9ca3af; flex-shrink: 0; }
+  .error { background: #fef2f2; border: 1px solid #fecaca; color: #b91c1c; border-radius: 12px; padding: 12px; font-size: 13px; margin-bottom: 14px; display: none; }
+  .empty { color: var(--muted); font-size: 12px; }
+  @media (max-width: 640px) { .bar-row .label { width: 110px; } .row .name { width: 110px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <h1>Contraty Analytics</h1>
+      <div class="sub" id="sub">Loading…</div>
+    </div>
+    <div class="days">
+      <button data-days="7" class="active">7d</button>
+      <button data-days="30">30d</button>
+      <button data-days="90">90d</button>
+    </div>
+  </header>
+
+  <div class="error" id="error"></div>
+
+  <div class="stats" id="stats"></div>
+
+  <div class="grid">
+    <div class="card">
+      <h2>Events by type</h2>
+      <div id="byType"></div>
+    </div>
+    <div>
+      <div class="card">
+        <h2>Language</h2>
+        <div id="byLang"></div>
+      </div>
+      <div class="card">
+        <h2>Downloaded format</h2>
+        <div id="byFormat"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Funnel (wizard → generate → download)</h2>
+    <div id="funnel"></div>
+  </div>
+
+  <div class="card">
+    <h2>Top contracts</h2>
+    <div id="top"></div>
+  </div>
+
+  <div class="card">
+    <h2>Recent events</h2>
+    <div class="recent" id="recent"></div>
+  </div>
+</div>
+
+<script>
+const API = "https://contraty-backend-ngy2lxla7q-ew.a.run.app/api/v1";
+const EVENT_LABELS = {
+  template_view: "Template views", template_click: "Template clicks",
+  domain_filter: "Domain filter", wizard_start: "Wizard started",
+  contract_generate: "Contracts generated", contract_download: "Downloads",
+  blank_download: "Blank downloaded", blank_customize: "AI customization"
+};
+const EVENT_COLORS = {
+  template_view: "var(--cat-documents)", template_click: "var(--cat-services)",
+  domain_filter: "var(--cat-family)", wizard_start: "var(--cat-employment)",
+  contract_generate: "var(--cat-business)", contract_download: "var(--green)",
+  blank_download: "var(--cat-real-estate)", blank_customize: "var(--primary)"
+};
+let days = 7;
+
+function bars(data, colorFn, labelFn) {
+  const max = Math.max(1, ...data.map(d => d[1]));
+  return data.map(([k, v]) =>
+    `<div class="bar-row"><span class="label">${labelFn(k)}</span>` +
+    `<div class="bar"><div style="width:${(v/max*100).toFixed(1)}%;background:${colorFn(k)}"></div></div>` +
+    `<span class="val">${v}</span></div>`).join("");
+}
+
+async function load() {
+  try {
+    const res = await fetch(`${API}/analytics/summary?days=${days}`, { cache: "no-store" });
+    if (!res.ok) throw new Error("HTTP " + res.status);
+    const s = await res.json();
+    document.getElementById("error").style.display = "none";
+
+    const gen = s.events_by_name["contract_generate"] || 0;
+    const dl = s.events_by_name["contract_download"] || 0;
+    const rate = gen > 0 ? Math.round(dl/gen*100) + "%" : "0%";
+
+    document.getElementById("stats").innerHTML =
+      stat(`Events (${days}d)`, s.total_events, "var(--primary)") +
+      stat("Contracts generated", gen, "var(--cat-business)") +
+      stat("Downloads (PDF/Word)", dl, "var(--green)") +
+      stat("Generated → downloaded", rate, "var(--cat-family)");
+
+    const byName = Object.entries(s.events_by_name).sort((a,b) => b[1]-a[1]);
+    document.getElementById("byType").innerHTML = byName.length
+      ? bars(byName, k => EVENT_COLORS[k] || "var(--primary)", k => EVENT_LABELS[k] || k)
+      : `<span class="empty">No events in this period.</span>`;
+
+    document.getElementById("byLang").innerHTML = bars(
+      Object.entries(s.by_lang),
+      k => k === "ar" ? "var(--cat-documents)" : "var(--cat-business)",
+      k => k === "ar" ? "Arabic" : k === "fr" ? "French" : k);
+
+    document.getElementById("byFormat").innerHTML = bars(
+      Object.entries(s.by_format),
+      () => "var(--primary)",
+      k => k.toUpperCase());
+
+    document.getElementById("funnel").innerHTML = bars(
+      [["wizard_start", s.events_by_name["wizard_start"] || 0],
+       ["contract_generate", gen], ["contract_download", dl]],
+      k => EVENT_COLORS[k] || "var(--primary)",
+      k => EVENT_LABELS[k] || k);
+
+    document.getElementById("top").innerHTML = s.top_slugs.length
+      ? `<table><thead><tr><th>Template</th><th>Slug</th><th class="num">Engagements</th></tr></thead><tbody>` +
+        s.top_slugs.map(([slug, c]) =>
+          `<tr><td>${escapeHtml(slug)}</td><td style="color:var(--muted);font-size:12px">${escapeHtml(slug)}</td><td class="num">${c}</td></tr>`).join("") +
+        `</tbody></table>`
+      : `<span class="empty">No data.</span>`;
+
+    document.getElementById("recent").innerHTML = s.recent.length
+      ? s.recent.map(e =>
+          `<div class="row"><span class="dot" style="background:${EVENT_COLORS[e.name] || "var(--primary)"}"></span>` +
+          `<span class="name">${EVENT_LABELS[e.name] || e.name}</span>` +
+          `<span class="meta">${e.props.slug || ""}${e.props.lang ? " · " + String(e.props.lang).toUpperCase() : ""}${e.props.format ? " · " + String(e.props.format).toUpperCase() : ""}</span>` +
+          `<span class="time">${new Date(e.created_at).toLocaleString("en-GB", {day:"2-digit",month:"2-digit",hour:"2-digit",minute:"2-digit"})}</span></div>`).join("")
+      : `<span class="empty">No recent events.</span>`;
+
+    document.getElementById("sub").textContent = "Last refresh: " + new Date().toLocaleTimeString() + " · auto-refresh 30s";
+  } catch (e) {
+    document.getElementById("error").style.display = "block";
+    document.getElementById("error").textContent = "Failed to load analytics: " + e.message;
+  }
+}
+
+function stat(label, value, color) {
+  return `<div class="stat"><b style="color:${color}">${value}</b><span>${label}</span></div>`;
+}
+function escapeHtml(s) {
+  return s.replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+}
+
+document.querySelectorAll(".days button").forEach(b => b.onclick = () => {
+  days = +b.dataset.days;
+  document.querySelectorAll(".days button").forEach(x => x.classList.remove("active"));
+  b.classList.add("active");
+  load();
+});
+
+load();
+setInterval(load, 30000);
+</script>
+</body>
+</html>

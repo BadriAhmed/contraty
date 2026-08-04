@@ -376,3 +376,55 @@ Returned in `TemplateSummary.complexity`. Indicates how many fields and sections
 | `low` | ≤ 12 | ≤ 5 | Quittance loyer, Attestation hébergement |
 | `medium` | 13–20 | 6–8 | Bail habitation, CDI, CDD |
 | `high` | ≥ 21 | ≥ 9 | Compromis vente immobilier, Statuts SARL |
+
+---
+
+## 6. POST /analytics/event
+
+Log a product analytics event from the frontend. Fire-and-forget (sendBeacon).
+
+```
+POST /analytics/event
+```
+
+**Request `200`**
+```json
+{ "name": "contract_generate", "props": { "slug": "bail-habitation", "lang": "fr", "field_count": 8 } }
+```
+
+| Field | Type | Notes |
+|---|---|---|
+| `name` | string | `template_view`, `template_click`, `domain_filter`, `wizard_start`, `contract_generate`, `contract_download`, `blank_download`, `blank_customize` |
+| `props` | object | Free-form: `slug`, `lang`, `domain`, `format` (pdf/docx), `field_count`… |
+
+Rate-limited: 120/minute.
+
+## 7. GET /analytics/summary
+
+Aggregated analytics from the Supabase `analytics_events` table (in-memory fallback if Supabase unavailable).
+
+```
+GET /analytics/summary?days=7
+```
+
+| Param | Type | Default | Notes |
+|---|---|---|---|
+| `days` | int | 7 | Filter events newer than N days |
+
+**Response `200`**
+```json
+{
+  "total_events": 42,
+  "events_by_name": { "contract_generate": 10, "contract_download": 6 },
+  "top_slugs": [["bail-habitation", 12]],
+  "by_lang": { "fr": 30, "ar": 12 },
+  "by_format": { "pdf": 4, "docx": 2 },
+  "recent": [{ "name": "contract_generate", "props": {}, "created_at": "2026-08-04T21:00:00+00:00" }]
+}
+```
+
+## Notes
+
+- Swagger UI (`/docs`, `/redoc`, `/openapi.json`) is **disabled in production** (`APP_ENV=production`), enabled in development.
+- Dashboard analytics: service séparé `analytics/` (nginx + HTTP Basic Auth, `X-Robots-Tag: noindex`), interroge `/analytics/summary`.
+- Base de données: `backend/migrations/003_analytics_events.sql` crée la table `analytics_events`.

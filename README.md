@@ -8,10 +8,11 @@ Générateur de contrats juridiques tunisiens — bilingue arabe/français.
 
 ```
 contraty/
-├── backend/       FastAPI — génération IA, embedding search, PDF
+├── backend/       FastAPI — génération IA, embedding search, PDF, analytics API
 ├── frontend/      Next.js 14 App Router — wizard multilingue, SSG
+├── analytics/     Dashboard analytics autonome (nginx + page statique, auth basique)
 ├── data/          Codes juridiques scrapés + templates JSON
-└── planning/      Docs de conception et de produit
+└── backend/migrations/  Schémas SQL Supabase (001 → 003)
 ```
 
 ## Stack
@@ -19,11 +20,11 @@ contraty/
 | Couche | Technologie |
 |---|---|
 | Backend | FastAPI (Python 3.12), Supabase (PostgreSQL + pgvector) |
-| Frontend | Next.js 14, Tailwind CSS, shadcn/ui (RTL) |
-| LLM | Mistral Large (FR), Gemini 2.5 Pro (AR), GPT-4o-mini (fallback) |
+| Frontend | Next.js 14, Tailwind CSS, RTL |
+| LLM | Mistral Large (FR), Gemini Flash (AR), GPT-4o-mini (fallback) |
 | PDF | WeasyPrint |
-| Paiement | Paddle |
-| Déploiement | Railway (backend), Vercel (frontend) |
+| Analytics | Backend Supabase (`analytics_events`) + dashboard nginx (`analytics/`) |
+| Déploiement | GCP Cloud Run (backend, frontend, analytics) — europe-west1 |
 
 ## Démarrage rapide
 
@@ -33,13 +34,26 @@ cd backend
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 cp .env.example .env  # remplir les clés API
-uvicorn app.main:app --reload
+uvicorn app.main:app --reload   # docs Swagger actives en développement uniquement
 
 # Frontend
 cd frontend
 npm install
 cp .env.local.example .env.local
 npm run dev
+```
+
+## Déploiement (GCP Cloud Run)
+
+```bash
+# Backend (maintient 1 instance chaude — min-instances=1)
+gcloud run deploy contraty-backend --source . --region=europe-west1 --min-instances=1
+
+# Frontend
+gcloud run deploy contraty-frontend --source ./frontend --region=europe-west1
+
+# Dashboard analytics (auth basique, non indexé)
+gcloud run deploy contraty-analytics --source ./analytics --region=europe-west1 --allow-unauthenticated
 ```
 
 ## Phase actuelle
