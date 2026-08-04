@@ -40,13 +40,17 @@ class PDFRenderer:
     def _build_html(self, contract: Contract, language: Language) -> str:
         direction = "rtl" if language == Language.ar else "ltr"
         title = contract.title_ar if language == Language.ar else contract.title_fr
+        subtitle = "contraty.tn" if language == Language.fr else "كونتراتي — contraty.tn"
+        sig_label_1 = "الطرف الأول" if language == Language.ar else "Partie 1"
+        sig_label_2 = "الطرف الثاني" if language == Language.ar else "Partie 2"
+        sig_title = "التواقيع" if language == Language.ar else "Signatures"
 
         body = ""
         for section in contract.sections:
             sec_title = section.title_ar if language == Language.ar else section.title_fr
-            body += f'<div class="section">'
+            body += '<div class="section">'
             if sec_title:
-                body += f'<div class="section-title">{sec_title}</div>'
+                body += f'<div class="section-title">{html.escape(sec_title)}</div>'
             for article in section.articles:
                 text = article.text_ar if language == Language.ar else article.text_fr
                 if not text or not text.strip():
@@ -54,12 +58,29 @@ class PDFRenderer:
                 body += f'<div class="article">{html.escape(text)}</div>'
             body += '</div>'
 
+        signature_block = f"""
+        <div class="signatures">
+            <div class="signatures-title">{sig_title}</div>
+            <div class="signature-grid">
+                <div class="signature-box">
+                    <div class="signature-line"></div>
+                    <div class="signature-label">{sig_label_1}</div>
+                </div>
+                <div class="signature-box">
+                    <div class="signature-line"></div>
+                    <div class="signature-label">{sig_label_2}</div>
+                </div>
+            </div>
+        </div>"""
+
         return f"""<!DOCTYPE html>
 <html lang="{language.value}" dir="{direction}">
 <head><meta charset="utf-8"><style>{self._base_css}</style></head>
 <body>
 <h1>{html.escape(title)}</h1>
+<div class="contract-subtitle">{subtitle}</div>
 {body}
+{signature_block}
 </body>
 </html>"""
 

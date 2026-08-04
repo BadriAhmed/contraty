@@ -1,28 +1,30 @@
 # Migrations
 
-Run `001_initial_schema.sql` against your Supabase PostgreSQL database.
+Run each file in order (001 → 002 → 003) against your Supabase PostgreSQL database.
 
 ## Supabase SQL Editor
 
 1. Go to your Supabase project → SQL Editor → New query
-2. Paste the contents of `001_initial_schema.sql`
+2. Paste the contents of each migration file (in order)
 3. Click Run
 
 Or via CLI:
 
 ```bash
 psql "$DATABASE_URL" -f backend/migrations/001_initial_schema.sql
+psql "$DATABASE_URL" -f backend/migrations/002_fix_metadata.sql
+psql "$DATABASE_URL" -f backend/migrations/003_analytics_events.sql
 ```
 
-## What it creates
+## What each migration creates
 
-| Table | Purpose |
+| File | Purpose |
 |---|---|
-| `templates` | 22 contract templates (titles, descriptions, sections, field metadata) |
-| `template_chunks` | One row per article, ready for pgvector embedding search |
-| `contracts` | Every generated contract (audit trail, re-download) |
+| `001_initial_schema.sql` | `templates`, `template_chunks` (pgvector), `contracts` tables + updated_at trigger |
+| `002_fix_metadata.sql` | Metadata fixes for existing template rows |
+| `003_analytics_events.sql` | `analytics_events` table for product analytics (template_view, contract_generate, contract_download, ...) |
 
-## After running
+## After running 001
 
 Seed the templates from JSON files:
 

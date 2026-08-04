@@ -8,8 +8,10 @@ RUN npm ci
 COPY . .
 
 ARG NEXT_PUBLIC_API_URL=https://contraty-backend-ngy2lxla7q-ew.a.run.app/api/v1
+ARG NEXT_PUBLIC_SITE_URL=https://contraty.tn
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL
+ENV NEXT_PUBLIC_SITE_URL=$NEXT_PUBLIC_SITE_URL
 RUN npm run build
 
 # Production image

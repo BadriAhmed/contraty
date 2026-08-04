@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 import Ad from "@/components/ads/Ad";
 import type { FieldMeta } from "@/types";
+import TrackOnMount from "@/components/v2/TrackOnMount";
 
 export const dynamic = "force-dynamic";
 
@@ -55,7 +56,7 @@ export default async function V2ContractDetail({ params }: { params: { lang: str
         <h1 className="text-2xl font-bold text-error mb-2">
           {lang === "ar" ? "العقد غير موجود" : "Contrat introuvable"}
         </h1>
-        <Link href={`/${lang}/v2`} className="text-primary hover:underline mt-4 inline-block">
+        <Link href={`/${lang}`} className="text-primary hover:underline mt-4 inline-block">
           {lang === "ar" ? "العودة إلى الرئيسية" : "Retour à l'accueil"}
         </Link>
       </div>
@@ -97,10 +98,11 @@ export default async function V2ContractDetail({ params }: { params: { lang: str
 
   return (
     <div className="bg-background">
+      <TrackOnMount event="template_view" props={{ slug: type, domain: template.domain, lang }} />
       {/* Breadcrumb */}
       <div className="max-w-5xl mx-auto px-4 md:px-6 pt-6">
         <nav className="flex items-center gap-1.5 text-sm text-text-secondary">
-          <Link href={`/${lang}/v2`} className="hover:text-primary transition-colors">
+          <Link href={`/${lang}`} className="hover:text-primary transition-colors">
             {lang === "ar" ? "الرئيسية" : "Accueil"}
           </Link>
           <ChevronRight size={14} className={isRtl ? "rotate-180" : ""} />
@@ -157,6 +159,16 @@ export default async function V2ContractDetail({ params }: { params: { lang: str
               {lang === "ar" ? "مجاني" : "Gratuit"}
             </span>
           </div>
+          {template.generation_count !== undefined && template.generation_count > 0 && (
+            <div className="flex items-center gap-2 bg-primary/8 rounded-xl border border-primary/15 px-3.5 py-2">
+              <span className="text-xs font-semibold text-primary">
+                {template.generation_count}
+              </span>
+              <span className="text-xs text-text-secondary">
+                {lang === "ar" ? "عقد مُنشأ" : "contrats générés"}
+              </span>
+            </div>
+          )}
         </div>
 
         {/* Legal basis detail */}
@@ -223,14 +235,14 @@ export default async function V2ContractDetail({ params }: { params: { lang: str
               </p>
               <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3">
                 <Link
-                  href={`/${lang}/v2/generate/${template.slug}`}
+                  href={`/${lang}/generate/${template.slug}`}
                   className="flex-1 inline-flex items-center justify-center gap-2 bg-primary text-on-primary font-semibold px-7 py-3.5 rounded-xl hover:bg-surface-tint transition-all shadow-lg shadow-primary/20 text-base"
                 >
                   {lang === "ar" ? "ابدأ الآن" : "Commencer"}
                   {isRtl ? <ArrowLeft size={18} /> : <ArrowRight size={18} />}
                 </Link>
                 <Link
-                  href={`/${lang}/v2/blank/${template.slug}`}
+                  href={`/${lang}/blank/${template.slug}`}
                   className="flex-1 inline-flex items-center justify-center gap-2 border-2 border-primary text-primary font-semibold px-6 py-3.5 rounded-xl hover:bg-primary-fixed transition-colors text-base"
                 >
                   <Download size={16} />

@@ -68,3 +68,4 @@ class TemplateDetail(TemplateSummary):
     disclaimer: str = ""
     sections: list[TemplateSection] = Field(default_factory=list)
     field_metadata: dict[str, FieldMetadata] = Field(default_factory=dict)
+    generation_count: int = 0

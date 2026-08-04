@@ -5,6 +5,7 @@ import { useParams } from "next/navigation";
 import Link from "next/link";
 import { fetchTemplate, API_BASE } from "@/lib/constants";
 import { ArrowLeft, ArrowRight, Download, FileText, Loader2, X, Wand, ChevronLeft } from "lucide-react";
+import { trackEvent } from "@/lib/analytics";
 import DownloadAdPopup from "@/components/v2/DownloadAdPopup";
 
 export default function V2BlankPage() {
@@ -48,6 +49,7 @@ export default function V2BlankPage() {
   const handleCustomize = async () => {
     if (!customPrompt.trim() || customized) return;
     setCustomizing(true); setError(null);
+    trackEvent("blank_customize", { slug: type, lang });
     try {
       const res = await fetch(`${API_BASE}/contracts/templates/${type}/customize`, {
         method: "POST",
@@ -71,7 +73,10 @@ export default function V2BlankPage() {
     sections: displaySections,
   });
 
-  const handleDownloadStart = (format) => setWaitingFormat(format);
+  const handleDownloadStart = (format) => {
+    trackEvent("blank_download", { slug: type, lang, format });
+    setWaitingFormat(format);
+  };
   const handleDownloadAdComplete = () => {
     const format = waitingFormat;
     if (format) doDownload(format);
@@ -111,7 +116,7 @@ export default function V2BlankPage() {
       <div className="max-w-7xl mx-auto px-4 py-24 text-center">
         <h1 className="text-2xl font-bold text-error mb-2">{lang === "ar" ? "خطأ" : "Erreur"}</h1>
         <p className="text-text-secondary">{error || "Template not found"}</p>
-        <Link href={`/${lang}/v2`} className="text-primary hover:underline mt-4 inline-block">
+        <Link href={`/${lang}`} className="text-primary hover:underline mt-4 inline-block">
           {lang === "ar" ? "العودة إلى الرئيسية" : "Retour à l'accueil"}
         </Link>
       </div>
@@ -119,9 +124,9 @@ export default function V2BlankPage() {
   }
 
   const title = lang === "ar" ? template.title_ar : template.title_fr;
-  const homeLink = `/${lang}/v2`;
-  const detailLink = `/${lang}/v2/contracts/${type}`;
-  const generateLink = `/${lang}/v2/generate/${type}`;
+  const homeLink = `/${lang}`;
+  const detailLink = `/${lang}/contracts/${type}`;
+  const generateLink = `/${lang}/generate/${type}`;
 
   return (
     <div className="min-h-screen flex flex-col bg-background">

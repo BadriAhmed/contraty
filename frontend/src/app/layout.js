@@ -6,8 +6,21 @@ const notoNaskhArabic = Noto_Naskh_Arabic({ subsets: ["arabic"], weight: ["400",
 const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], weight: ["400"], variable: "--font-mono" });
 
 export const metadata = {
-  title: "Contraty",
-  description: "Contrats juridiques tunisiens bilingues",
+  title: {
+    default: "Contraty — Contrats juridiques tunisiens",
+    template: "%s | Contraty",
+  },
+  description: "Générez des contrats juridiques tunisiens en quelques minutes. 22 modèles bilingues (arabe/français) fondés sur le droit tunisien.",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://contraty.tn"),
+  icons: {
+    icon: "/favicon.svg",
+  },
+  openGraph: {
+    siteName: "Contraty",
+    locale: "fr_FR",
+    alternateLocale: ["ar_TN"],
+    type: "website",
+  },
 };
 
 export default function RootLayout({ children }) {

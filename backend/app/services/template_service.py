@@ -29,6 +29,26 @@ settings = get_settings()
 _template_repo: Optional[TemplateRepository] = None
 _contract_repo: Optional[ContractRepository] = None
 _customize_usage: set[str] = set()
+_generation_counts: dict[str, int] = {}
+
+# Simple TTL cache for template reads (templates change rarely)
+_template_cache: dict[str, tuple] = {}  # key -> (data, timestamp)
+_CACHE_TTL = 60  # seconds
+
+
+def _cache_get(key: str):
+    entry = _template_cache.get(key)
+    if entry is None:
+        return None
+    data, ts = entry
+    if time.monotonic() - ts > _CACHE_TTL:
+        del _template_cache[key]
+        return None
+    return data
+
+
+def _cache_set(key: str, data) -> None:
+    _template_cache[key] = (data, time.monotonic())
 
 
 def get_template_repo() -> TemplateRepository:
@@ -73,13 +93,26 @@ async def ensure_seeded():
 
 
 async def list_templates(domain: Optional[str] = None, language: Optional[str] = None) -> list[dict]:
+    cache_key = f"list:{domain or 'all'}:{language or 'all'}"
+    cached = _cache_get(cache_key)
+    if cached is not None:
+        return cached
     await ensure_seeded()
-    return await get_template_repo().list_all(domain=domain, language=language)
+    result = await get_template_repo().list_all(domain=domain, language=language)
+    _cache_set(cache_key, result)
+    return result
 
 
 async def get_template(slug: str) -> Optional[dict]:
+    cache_key = f"tpl:{slug}"
+    cached = _cache_get(cache_key)
+    if cached is not None:
+        return cached
     await ensure_seeded()
-    return await get_template_repo().get_by_slug(slug)
+    result = await get_template_repo().get_by_slug(slug)
+    if result is not None:
+        _cache_set(cache_key, result)
+    return result
 
 
 async def generate_contract(req: GenerateRequest) -> dict:
@@ -99,6 +132,7 @@ async def generate_contract(req: GenerateRequest) -> dict:
         }
 
     contract = Contract(**template)
+    _generation_counts[req.contract_slug] = _generation_counts.get(req.contract_slug, 0) + 1
     t0 = time.monotonic()
 
     if req.use_ai:

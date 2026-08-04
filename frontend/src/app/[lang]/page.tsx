@@ -83,14 +83,14 @@ export default async function V2HomePage({ params }: { params: { lang: string } 
               </p>
               <div className="mt-8 flex flex-wrap gap-4 items-center">
                 <Link
-                  href={`/${lang}/v2#templates`}
+                  href={`/${lang}#templates`}
                   className="inline-flex items-center gap-2 bg-primary text-on-primary font-semibold px-7 py-3.5 rounded-xl hover:bg-surface-tint transition-all shadow-lg shadow-primary/20 text-base"
                 >
                   {t(lang, "ابدأ مجاناً", "Commencer gratuitement")}
                   {lang === "ar" ? null : <ArrowRight size={18} />}
                 </Link>
                 <Link
-                  href={`/${lang}/v2#templates`}
+                  href={`/${lang}#templates`}
                   className="inline-flex items-center gap-2 text-primary font-semibold px-5 py-3.5 rounded-xl hover:bg-primary-fixed/50 transition-colors text-base"
                 >
                   {t(lang, "تصفح النماذج", "Voir les modèles")}
@@ -414,7 +414,7 @@ export default async function V2HomePage({ params }: { params: { lang: string } 
             )}
           </p>
           <Link
-            href={`/${lang}/v2#templates`}
+            href={`/${lang}#templates`}
             className="mt-8 inline-flex items-center gap-2 bg-primary text-on-primary font-semibold px-8 py-4 rounded-xl hover:bg-surface-tint transition-all shadow-lg shadow-primary/20 text-base"
           >
             {t(lang, "ابدأ الآن", "Commencer maintenant")}

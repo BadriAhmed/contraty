@@ -46,6 +46,7 @@ export interface Template {
   disclaimer?: string;
   sections: TemplateSection[];
   field_metadata: Record<string, FieldMeta>;
+  generation_count?: number;
 }
 
 export interface ContractWarning {

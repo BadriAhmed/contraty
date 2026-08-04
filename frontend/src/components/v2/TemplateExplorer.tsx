@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { DOMAINS } from "@/lib/constants";
 import { Home, Briefcase, Coins, Car, Building2, FileText, ArrowRight, LayoutGrid } from "lucide-react";
+import { trackEvent } from "@/lib/analytics";
 import type { Template } from "@/types";
 
 const domainMeta: Record<string, { icon: typeof Home; color: string }> = {
@@ -51,7 +52,7 @@ export default function TemplateExplorer({ lang, templates }: Props) {
         {/* Domain filter pills */}
         <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 md:mb-10 px-1">
           <button
-            onClick={() => { setActiveDomain(null); setShowAll(false); }}
+            onClick={() => { setActiveDomain(null); setShowAll(false); trackEvent("domain_filter", { domain: "all", lang }); }}
             className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-medium transition-all ${
               activeDomain === null
                 ? "bg-primary text-on-primary shadow-md shadow-primary/20"
@@ -74,7 +75,7 @@ export default function TemplateExplorer({ lang, templates }: Props) {
             return (
               <button
                 key={key}
-                onClick={() => { setActiveDomain(isActive ? null : key); setShowAll(false); }}
+                onClick={() => { setActiveDomain(isActive ? null : key); setShowAll(false); trackEvent("domain_filter", { domain: key, lang }); }}
                 className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-medium transition-all ${
                   isActive
                     ? "text-on-primary shadow-md"
@@ -113,7 +114,8 @@ export default function TemplateExplorer({ lang, templates }: Props) {
               return (
                 <Link
                   key={tpl.slug}
-                  href={`/${lang}/v2/contracts/${tpl.slug}`}
+                  href={`/${lang}/contracts/${tpl.slug}`}
+                  onClick={() => trackEvent("template_click", { slug: tpl.slug, domain: tpl.domain, lang })}
                   className="group bg-surface rounded-2xl border border-outline-variant/40 p-5 hover:shadow-lg hover:border-transparent transition-all hover:-translate-y-0.5 flex flex-col"
                 >
                   <div className="flex items-center gap-3 mb-3">

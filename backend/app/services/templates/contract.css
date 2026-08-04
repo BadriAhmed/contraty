@@ -1,6 +1,22 @@
 @page {
-    margin: 2cm;
+    margin: 2cm 2.5cm 3cm;
     size: A4;
+    @bottom-center {
+        content: counter(page) " / " counter(pages);
+        font-size: 8pt;
+        color: #9ca3af;
+    }
+    @bottom-right {
+        content: "Contraty — contraty.tn";
+        font-size: 7pt;
+        color: #d1d5db;
+    }
+}
+
+@page :first {
+    margin-top: 3cm;
+    @bottom-center { content: ""; }
+    @bottom-right { content: ""; }
 }
 
 body {
@@ -14,8 +30,15 @@ h1 {
     text-align: center;
     font-size: 16pt;
     color: #1a365d;
-    margin-bottom: 1.5em;
-    padding-bottom: 0.5em;
+    margin-bottom: 0.3em;
+}
+
+.contract-subtitle {
+    text-align: center;
+    font-size: 9pt;
+    color: #6b7280;
+    margin-bottom: 2em;
+    padding-bottom: 1em;
     border-bottom: 2px solid #1a365d;
 }
 
@@ -27,13 +50,13 @@ h2 {
 }
 
 .disclaimer {
-    border: 2px solid #dc2626;
-    padding: 0.8em;
+    border: 1px solid #fbbf24;
+    background: #fffbeb;
+    padding: 0.8em 1em;
     margin-bottom: 2em;
-    background: #fef2f2;
     font-size: 8pt;
-    font-weight: bold;
-    color: #991b1b;
+    color: #92400e;
+    border-radius: 4px;
 }
 
 .section {
@@ -52,7 +75,44 @@ h2 {
 .article {
     white-space: pre-wrap;
     margin-bottom: 0.5em;
-    padding-start: 1em;
+    text-align: justify;
+}
+
+/* Signature area */
+.signatures {
+    margin-top: 3em;
+    page-break-inside: avoid;
+}
+
+.signatures-title {
+    font-weight: bold;
+    font-size: 10pt;
+    color: #1a365d;
+    margin-bottom: 1.5em;
+    text-align: center;
+}
+
+.signature-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 2em;
+}
+
+.signature-box {
+    flex: 1;
+    text-align: center;
+}
+
+.signature-line {
+    border-top: 1px solid #1a1a1a;
+    margin-top: 3em;
+    margin-bottom: 0.3em;
+    padding-top: 0.3em;
+}
+
+.signature-label {
+    font-size: 9pt;
+    color: #6b7280;
 }
 
 [dir="rtl"] {
@@ -61,7 +121,9 @@ h2 {
 }
 
 [dir="rtl"] h1,
-[dir="rtl"] .section-title {
+[dir="rtl"] .section-title,
+[dir="rtl"] .signatures-title,
+[dir="rtl"] .signature-label {
     font-family: 'Noto Naskh Arabic', 'Arial', sans-serif;
 }
 

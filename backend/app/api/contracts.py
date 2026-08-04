@@ -15,6 +15,7 @@ from app.services.template_service import (
     review_contract,
     _fill_blank_template,
     customize_blank_template,
+    _generation_counts,
 )
 from app.services.docx import docx_renderer as _docx
 
@@ -54,6 +55,7 @@ def _to_detail(t: dict) -> TemplateDetail:
         disclaimer=t.get("disclaimer", ""),
         sections=sections,
         field_metadata=field_metadata,
+        generation_count=_generation_counts.get(t.get("slug", ""), 0),
     )
 
 

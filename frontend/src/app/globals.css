@@ -89,6 +89,7 @@ body {
 /* RTL support */
 [dir="rtl"] {
   text-align: right;
+  font-family: var(--font-arabic), var(--font-inter), sans-serif;
 }
 
 [dir="rtl"] .material-symbols-outlined {

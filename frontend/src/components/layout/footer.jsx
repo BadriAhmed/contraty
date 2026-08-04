@@ -1,64 +1,50 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { getMessages } from "@/lib/i18n";
 
 export function Footer({ lang, disclaimer }) {
   const msg = getMessages(lang);
-  const pathname = usePathname();
-  const isV2 = pathname?.includes("/v2") ?? false;
-  const base = isV2 ? `/${lang}/v2` : `/${lang}`;
+  const base = `/${lang}`;
 
   return (
-    <footer className="bg-inverse-surface text-inverse-on-surface mt-auto">
-      <div className="max-w-container-max mx-auto px-4 py-12">
-        {/* Disclaimer */}
-        <div className="border border-error/40 rounded-lg bg-error/15 p-4 mb-10">
-          <p className="text-xs text-error font-semibold leading-relaxed opacity-90">
-            {disclaimer || msg.site?.disclaimer}
-          </p>
-        </div>
-
-        {/* Links + brand */}
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-8">
-          <div className="col-span-2">
+    <footer className="bg-surface-container-high text-on-surface-container">
+      <div className="max-w-container-max mx-auto px-4 md:px-6 py-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+          <div>
             <Link href={base} className="text-lg font-bold text-inverse-on-surface">
               Contraty
             </Link>
-            <p className="text-sm text-inverse-on-surface/60 mt-2 max-w-xs">
+            <p className="text-xs text-inverse-on-surface/60 mt-2 leading-relaxed">
               {lang === "ar"
-                ? "عقود قانونية تونسية ثنائية اللغة — أنشئ عقدك في دقائق"
-                : "Contrats juridiques tunisiens bilingues — créez votre contrat en quelques minutes"}
+                ? "منصة العقود القانونية التونسية"
+                : "La plateforme des contrats juridiques tunisiens"}
             </p>
           </div>
 
           <div>
             <h4 className="text-sm font-semibold mb-3">{lang === "ar" ? "نماذج" : "Modèles"}</h4>
             <div className="space-y-2 text-sm text-inverse-on-surface/60">
-              <Link href={`${base}${isV2 ? "#templates" : "/contracts?domain=logement"}`} className="block hover:text-inverse-on-surface transition-colors">
+              <Link href={`${base}#templates`} className="block hover:text-inverse-on-surface transition-colors">
                 {lang === "ar" ? "سكن" : "Logement"}
               </Link>
-              <Link href={`${base}${isV2 ? "#templates" : "/contracts?domain=travail"}`} className="block hover:text-inverse-on-surface transition-colors">
+              <Link href={`${base}#templates`} className="block hover:text-inverse-on-surface transition-colors">
                 {lang === "ar" ? "عمل" : "Travail"}
               </Link>
-              <Link href={`${base}${isV2 ? "#templates" : "/contracts?domain=entreprise"}`} className="block hover:text-inverse-on-surface transition-colors">
+              <Link href={`${base}#templates`} className="block hover:text-inverse-on-surface transition-colors">
                 {lang === "ar" ? "مؤسسة" : "Entreprise"}
               </Link>
             </div>
           </div>
 
           <div>
-            <h4 className="text-sm font-semibold mb-3">{lang === "ar" ? "الشركة" : "Société"}</h4>
+            <h4 className="text-sm font-semibold mb-3">{lang === "ar" ? "روابط" : "Liens"}</h4>
             <div className="space-y-2 text-sm text-inverse-on-surface/60">
-              <Link href={`/${lang}/about`} className="block hover:text-inverse-on-surface transition-colors">
-                {lang === "ar" ? "من نحن" : "À propos"}
+              <Link href={`${base}#templates`} className="block hover:text-inverse-on-surface transition-colors">
+                {lang === "ar" ? "كل النماذج" : "Tous les modèles"}
               </Link>
-              <Link href={`/${lang}/pricing`} className="block hover:text-inverse-on-surface transition-colors">
-                {lang === "ar" ? "الأسعار" : "Tarifs"}
-              </Link>
-              <Link href={`/${lang}/contact`} className="block hover:text-inverse-on-surface transition-colors">
-                {lang === "ar" ? "اتصل بنا" : "Contact"}
+              <Link href={`${base}#templates`} className="block hover:text-inverse-on-surface transition-colors">
+                {lang === "ar" ? "كيف يعمل" : "Comment ça marche"}
               </Link>
             </div>
           </div>
@@ -66,19 +52,15 @@ export function Footer({ lang, disclaimer }) {
           <div>
             <h4 className="text-sm font-semibold mb-3">{lang === "ar" ? "قانوني" : "Légal"}</h4>
             <div className="space-y-2 text-sm text-inverse-on-surface/60">
-              <Link href={`/${lang}/terms`} className="block hover:text-inverse-on-surface transition-colors">
-                {lang === "ar" ? "شروط الاستخدام" : "Conditions"}
-              </Link>
-              <Link href={`/${lang}/privacy`} className="block hover:text-inverse-on-surface transition-colors">
-                {lang === "ar" ? "الخصوصية" : "Confidentialité"}
-              </Link>
+              <p className="leading-relaxed">{disclaimer || msg.disclaimer}</p>
             </div>
           </div>
         </div>
 
-        {/* Copyright */}
-        <div className="border-t border-on-secondary-fixed/20 pt-6 text-center text-xs text-inverse-on-surface/60">
-          &copy; {new Date().getFullYear()} Contraty. {lang === "ar" ? "جميع الحقوق محفوظة" : "Tous droits réservés."}
+        <div className="border-t border-inverse-on-surface/10 pt-6 text-center">
+          <p className="text-xs text-inverse-on-surface/50">
+            © {new Date().getFullYear()} Contraty — {lang === "ar" ? "جميع الحقوق محفوظة" : "Tous droits réservés"}
+          </p>
         </div>
       </div>
     </footer>
