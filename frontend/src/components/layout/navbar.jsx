@@ -22,14 +22,14 @@ export function Navbar() {
         <div className="flex items-center gap-3">
           <button
             onClick={() => setSearchOpen(!searchOpen)}
-            className="p-1.5 text-on-surface-variant hover:text-primary transition-colors rounded-lg hover:bg-surface-container"
+            className="flex items-center justify-center min-w-[44px] min-h-[44px] text-on-surface-variant hover:text-primary transition-colors rounded-lg hover:bg-surface-container"
             aria-label={lang === "ar" ? "بحث" : "Rechercher"}
           >
-            <Search size={18} />
+            <Search size={20} />
           </button>
           <Link
             href={switchPath}
-            className="text-xs text-text-secondary hover:text-on-surface transition-colors font-medium"
+            className="inline-flex items-center min-h-[44px] px-2 text-sm text-text-secondary hover:text-on-surface transition-colors font-medium"
           >
             {otherLang === "ar" ? "العربية" : "FR"}
           </Link>
@@ -44,7 +44,7 @@ export function Navbar() {
               type="text"
               autoFocus
               placeholder={lang === "ar" ? "ابحث عن نموذج..." : "Rechercher un modèle..."}
-              className="flex-1 bg-transparent outline-none text-sm text-on-surface placeholder:text-text-secondary"
+              className="flex-1 bg-transparent outline-none text-base text-on-surface placeholder:text-text-secondary"
               onKeyDown={(e) => {
                 if (e.key === "Enter") {
                   const q = e.currentTarget.value.trim();

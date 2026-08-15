@@ -110,6 +110,15 @@ body {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06);
 }
 
+/* Safe-area padding for notched mobile devices (works with viewport-fit=cover) */
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.safe-top {
+  padding-top: env(safe-area-inset-top);
+}
+
 /* Input field base */
 .input-field {
   width: 100%;

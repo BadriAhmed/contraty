@@ -5,6 +5,12 @@ const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "600", "700"], 
 const notoNaskhArabic = Noto_Naskh_Arabic({ subsets: ["arabic"], weight: ["400", "600", "700"], variable: "--font-arabic" });
 const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], weight: ["400"], variable: "--font-mono" });
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+};
+
 export const metadata = {
   title: {
     default: "Contraty — Contrats juridiques tunisiens",
