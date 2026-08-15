@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 import FAQAccordion from "@/components/v2/FAQAccordion";
 import TemplateExplorer from "@/components/v2/TemplateExplorer";
+import FeatureIllustration from "@/components/v2/FeatureIllustration";
 import type { ReactNode } from "react";
 
 export const dynamic = "force-dynamic";
@@ -231,7 +232,7 @@ export default async function V2HomePage({
                 "Remplissez les champs avec vos informations, le système s'occupe du reste. Aucune expertise juridique requise.",
               ),
               color: "var(--cat-real-estate)",
-              image: "/images/features/simple.svg",
+              variant: "simple" as const,
             },
             {
               icon: Scale,
@@ -243,7 +244,7 @@ export default async function V2HomePage({
                 "Chaque modèle se réfère au Code des Obligations et des Contrats, au Code du Travail ou au Code des Sociétés Commerciales.",
               ),
               color: "var(--cat-employment)",
-              image: "/images/features/legal.svg",
+              variant: "legal" as const,
             },
             {
               icon: Languages,
@@ -255,7 +256,7 @@ export default async function V2HomePage({
                 "Basculez entre l'arabe et le français en un clic. Chaque modèle est disponible dans les deux langues avec un support RTL complet.",
               ),
               color: "var(--cat-business)",
-              image: "/images/features/bilingual.svg",
+              variant: "bilingual" as const,
             },
             {
               icon: ShieldCheck,
@@ -267,7 +268,7 @@ export default async function V2HomePage({
                 "La génération se fait en session uniquement. Une fois le contrat téléchargé, vos données sont effacées. Pas de compte, pas de suivi.",
               ),
               color: "var(--cat-services)",
-              image: "/images/features/secure.svg",
+              variant: "secure" as const,
             },
           ].map((feat, i) => {
             const reverse = i % 2 === 1;
@@ -297,13 +298,7 @@ export default async function V2HomePage({
                 {/* Visual */}
                 <div className="flex-1 max-w-sm w-full">
                   <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-outline-variant/40 bg-surface">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={feat.image}
-                      alt={feat.title as string}
-                      className="w-full h-full object-cover"
-                      loading="lazy"
-                    />
+                    <FeatureIllustration variant={feat.variant} />
                   </div>
                 </div>
               </div>
