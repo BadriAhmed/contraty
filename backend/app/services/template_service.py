@@ -115,6 +115,54 @@ async def get_template(slug: str) -> Optional[dict]:
     return result
 
 
+def validate_user_fields(metadata: dict, user_fields: dict[str, str]) -> list[str]:
+    """Server-side mirror of the frontend validateField rules.
+
+    Returns a list of human-readable error strings (field name + reason).
+    Empty list means the fields are valid. Used as defence-in-depth: the
+    browser wizard already enforces these, but a non-browser client could
+    bypass them.
+    """
+    errors: list[str] = []
+    for name, fm in (metadata or {}).items():
+        value = str(user_fields.get(name, "") or "").strip()
+        if fm.get("required", True) and not value:
+            errors.append(f"{name}: required")
+            continue
+        if not value:
+            continue
+
+        pattern = fm.get("pattern")
+        if pattern:
+            try:
+                if not re.search(pattern, value):
+                    errors.append(f"{name}: invalid format")
+            except re.error:
+                pass  # invalid regex from data — skip
+
+        min_length = fm.get("min_length")
+        max_length = fm.get("max_length")
+        if min_length and len(value) < min_length:
+            errors.append(f"{name}: too short")
+        if max_length and len(value) > max_length:
+            errors.append(f"{name}: too long")
+
+        if fm.get("type") in ("number", "percentage"):
+            try:
+                n = float(value.replace(",", "."))
+            except ValueError:
+                errors.append(f"{name}: not a number")
+                continue
+            min_value = fm.get("min_value")
+            max_value = fm.get("max_value")
+            if min_value is not None and n < min_value:
+                errors.append(f"{name}: below minimum")
+            if max_value is not None and n > max_value:
+                errors.append(f"{name}: above maximum")
+
+    return errors
+
+
 async def generate_contract(req: GenerateRequest) -> dict:
     await ensure_seeded()
     repo = get_template_repo()
@@ -126,6 +174,19 @@ async def generate_contract(req: GenerateRequest) -> dict:
             "model_used": "",
             "language": req.language,
             "error": f"Template '{req.contract_slug}' not found",
+            "fallback_attempted": False,
+            "generation_time_ms": 0,
+            "tokens_used": 0,
+        }
+
+    validation_errors = validate_user_fields(template.get("field_metadata", {}), req.user_fields)
+    if validation_errors:
+        return {
+            "success": False,
+            "contract": None,
+            "model_used": "",
+            "language": req.language,
+            "error": "Validation failed: " + "; ".join(validation_errors),
             "fallback_attempted": False,
             "generation_time_ms": 0,
             "tokens_used": 0,

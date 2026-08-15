@@ -12,6 +12,7 @@ from app.services.template_service import (
     get_template,
     generate_contract,
     generate_pdf,
+    validate_user_fields,
 )
 from app.models.generation import GenerateRequest
 from app.models.contract import Language
@@ -365,3 +366,72 @@ async def test_review_contract_rien_a_signal_returns_empty(monkeypatch):
     )
 
     assert warnings == []
+
+
+@pytest.mark.unit
+def test_validate_user_fields_required_pattern_and_ranges():
+    metadata = {
+        "CIN": {"type": "cin", "required": True, "pattern": r"^\d{8}$"},
+        "AGE": {"type": "number", "min_value": 0, "max_value": 120},
+        "NOTE": {"type": "text", "required": False},
+    }
+
+    # Valid
+    assert validate_user_fields(metadata, {"CIN": "12345678", "AGE": "30"}) == []
+
+    # Missing required field
+    errors = validate_user_fields(metadata, {"AGE": "30"})
+    assert any("CIN" in e and "required" in e for e in errors)
+
+    # Pattern violation
+    errors = validate_user_fields(metadata, {"CIN": "abc", "AGE": "30"})
+    assert any("CIN" in e and "invalid format" in e for e in errors)
+
+    # Number out of range / not a number
+    errors = validate_user_fields(metadata, {"CIN": "12345678", "AGE": "-5"})
+    assert any("AGE" in e and "below minimum" in e for e in errors)
+    errors = validate_user_fields(metadata, {"CIN": "12345678", "AGE": "abc"})
+    assert any("AGE" in e and "not a number" in e for e in errors)
+
+    # Optional field left empty is fine
+    assert validate_user_fields(metadata, {"CIN": "12345678", "AGE": "30", "NOTE": ""}) == []
+
+    # Empty metadata -> no validation
+    assert validate_user_fields({}, {}) == []
+
+
+@pytest.mark.unit
+async def test_generate_contract_rejects_invalid_fields(seeded_repo):
+    """generate_contract validates user_fields against field_metadata server-side."""
+    from app.services.template_service import set_template_repo
+
+    tmpl = {
+        **SAMPLE_TEMPLATE,
+        "slug": "test-validation",
+        "field_metadata": {
+            "NOM_BAILLEUR": {"type": "text", "required": True},
+            "CIN_BAILLEUR": {"type": "cin", "required": True, "pattern": r"^\d{8}$"},
+        },
+    }
+    await seeded_repo.upsert(tmpl)
+    set_template_repo(seeded_repo)
+
+    # Missing required + invalid pattern
+    result = await generate_contract(
+        GenerateRequest(contract_slug="test-validation", language=Language.fr, user_fields={"CIN_BAILLEUR": "abc"})
+    )
+    assert result["success"] is False
+    assert "Validation failed" in result["error"]
+    assert "NOM_BAILLEUR" in result["error"]
+    assert "CIN_BAILLEUR" in result["error"]
+
+    # Valid fields pass and produce a contract
+    result = await generate_contract(
+        GenerateRequest(
+            contract_slug="test-validation",
+            language=Language.fr,
+            user_fields={"NOM_BAILLEUR": "Ali Ben Salah", "CIN_BAILLEUR": "12345678"},
+        )
+    )
+    assert result["success"] is True
+    assert result["contract"] is not None
