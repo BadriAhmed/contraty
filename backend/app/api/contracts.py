@@ -196,7 +196,8 @@ async def generate_contract_endpoint(
 
 
 @router.post("/generate/pdf")
-async def generate_pdf_endpoint(req: PDFRequest):
+@limiter.limit(f"{settings.rate_limit_requests}/minute")
+async def generate_pdf_endpoint(request: Request, req: PDFRequest):
     try:
         Contract(**req.contract_json)
     except Exception as e:
@@ -213,7 +214,8 @@ async def generate_pdf_endpoint(req: PDFRequest):
 
 
 @router.post("/generate/docx")
-async def generate_docx_endpoint(req: PDFRequest):
+@limiter.limit(f"{settings.rate_limit_requests}/minute")
+async def generate_docx_endpoint(request: Request, req: PDFRequest):
     try:
         contract = Contract(**req.contract_json)
     except Exception as e:
@@ -230,7 +232,9 @@ async def generate_docx_endpoint(req: PDFRequest):
 
 
 @router.get("/templates/{contract_slug}/download")
+@limiter.limit(f"{settings.rate_limit_requests}/minute")
 async def download_blank_template_endpoint(
+    request: Request,
     contract_slug: str,
     language: Language = Language.fr,
     format: str = "pdf",

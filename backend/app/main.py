@@ -67,6 +67,7 @@ app.include_router(api_router, prefix="/api/v1")
 
 
 @app.get("/health")
+@limiter.exempt
 async def health():
     from app.services.template_service import list_templates, get_template_repo
     templates = await list_templates()
