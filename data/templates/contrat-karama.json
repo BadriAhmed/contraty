@@ -321,7 +321,7 @@
       "autocomplete": "professions"
     },
     "DUREE_ANNEE": {
-      "type": "text",
+      "type": "number",
       "label_ar": "المدة",
       "label_fr": "Duree Annee",
       "placeholder_ar": "",
@@ -329,10 +329,10 @@
       "required": true,
       "hint_ar": "",
       "hint_fr": "",
-      "min_length": 2,
-      "max_length": 500,
       "help_fr": "Durée en années ou mois .",
-      "help_ar": "المدة بالسنوات أو الأشهر في العقد."
+      "help_ar": "المدة بالسنوات أو الأشهر في العقد.",
+      "min_value": 1,
+      "max_value": 99
     },
     "DATE_DEBUT": {
       "type": "date",
@@ -405,7 +405,7 @@
       "help_ar": "تكملة الأجر التي تدفعها المؤسسة."
     },
     "JOURS_CONGES": {
-      "type": "text",
+      "type": "number",
       "label_ar": "أيام الإجازة",
       "label_fr": "Jours Conges",
       "placeholder_ar": "",
@@ -413,10 +413,10 @@
       "required": true,
       "hint_ar": "الحد الأدنى القانوني: يوم ونصف عن كل شهر عمل — 18 يوم عمل سنويًا (الفصل 113 مجلة الشغل)",
       "hint_fr": "min. légal : 1,5 jour par mois travaillé — 18 jours ouvrables/an (art. 113 CT)",
-      "min_length": 2,
-      "max_length": 500,
       "help_fr": "Nombre de jours de congés payés par an (ex: 30).",
-      "help_ar": "عدد أيام الراحة مدفوعة الأجر في السنة (مثال: 30)."
+      "help_ar": "عدد أيام الراحة مدفوعة الأجر في السنة (مثال: 30).",
+      "min_value": 1,
+      "max_value": 60
     },
     "LIEU_SIGNATURE": {
       "type": "text",

@@ -283,8 +283,6 @@
       "required": true,
       "hint_ar": "رقم",
       "hint_fr": "Nombre",
-      "min_length": 2,
-      "max_length": 500,
       "help_fr": "Année d'obtention du diplôme (ex: 2020).",
       "help_ar": "سنة الحصول على الشهادة (مثال: 2020).",
       "min_value": 1950
@@ -318,7 +316,7 @@
       "help_ar": "مجال الدراسة أو الاختصاص."
     },
     "DUREE_MOIS": {
-      "type": "text",
+      "type": "number",
       "label_ar": "المدة",
       "label_fr": "Duree Mois",
       "placeholder_ar": "",
@@ -326,10 +324,10 @@
       "required": true,
       "hint_ar": "",
       "hint_fr": "",
-      "min_length": 2,
-      "max_length": 500,
       "help_fr": "Durée en années ou mois du contrat.",
-      "help_ar": "المدة بالسنوات أو الأشهر للعقد."
+      "help_ar": "المدة بالسنوات أو الأشهر للعقد.",
+      "min_value": 1,
+      "max_value": 60
     },
     "DATE_DEBUT": {
       "type": "date",
@@ -408,8 +406,6 @@
       "required": true,
       "hint_ar": "رقم",
       "hint_fr": "Nombre",
-      "min_length": 2,
-      "max_length": 500,
       "help_fr": "Préavis en jours en cas de fin de contrat (ex: 30 jours).",
       "help_ar": "مهلة الإعلام بالأيام عند إنهاء العقد (مثال: 30 يومًا).",
       "min_value": 1

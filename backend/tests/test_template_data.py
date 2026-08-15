@@ -108,3 +108,18 @@ def test_number_fields_have_ranges():
                 has_min = meta.get("min_value") is not None
                 has_max = meta.get("max_value") is not None
                 assert has_min or has_max, f"{name}: number field {field!r} has no min/max range"
+
+
+@pytest.mark.unit
+def test_number_fields_have_no_text_length_constraints():
+    """min_length/max_length are text-only constraints.
+
+    A min_length of 2 on a number field would reject single-digit values
+    (e.g. DELAI_JOURS = "1") with "Texte trop court".
+    """
+    for name, d in _load_all():
+        for field, meta in d.get("field_metadata", {}).items():
+            if meta.get("type") in ("number", "percentage"):
+                assert "min_length" not in meta and "max_length" not in meta, (
+                    f"{name}: number field {field!r} has text length constraints"
+                )

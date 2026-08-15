@@ -327,7 +327,7 @@
       "help_ar": "رقم الرسم العقاري للعقار."
     },
     "SUPERFICIE": {
-      "type": "text",
+      "type": "number",
       "label_ar": "المساحة",
       "label_fr": "Superficie",
       "placeholder_ar": "",
@@ -335,10 +335,10 @@
       "required": true,
       "hint_ar": "",
       "hint_fr": "",
-      "min_length": 2,
-      "max_length": 500,
       "help_fr": "Surface du bien en mètres carrés.",
-      "help_ar": "مساحة العقار بالمتر المربع."
+      "help_ar": "مساحة العقار بالمتر المربع.",
+      "min_value": 1,
+      "max_value": null
     },
     "ORIGINE_PROPRIETE": {
       "type": "text",
@@ -377,8 +377,6 @@
       "required": true,
       "hint_ar": "رقم",
       "hint_fr": "Nombre",
-      "min_length": 2,
-      "max_length": 500,
       "help_fr": "Montant en dinars tunisiens .",
       "help_ar": "المبلغ بالدينار التونسي .",
       "min_value": 0
@@ -392,8 +390,6 @@
       "required": true,
       "hint_ar": "رقم",
       "hint_fr": "Nombre",
-      "min_length": 2,
-      "max_length": 500,
       "help_fr": "Montant en dinars tunisiens .",
       "help_ar": "المبلغ بالدينار التونسي .",
       "min_value": 0

@@ -281,7 +281,7 @@
       "help_ar": "التاريخ بصيغة يوم/شهر/سنة للعقد."
     },
     "DUREE_ANNEE": {
-      "type": "text",
+      "type": "number",
       "label_ar": "المدة",
       "label_fr": "Duree Annee",
       "placeholder_ar": "",
@@ -289,10 +289,10 @@
       "required": true,
       "hint_ar": "",
       "hint_fr": "",
-      "min_length": 2,
-      "max_length": 500,
       "help_fr": "Durée en années ou mois du contrat.",
-      "help_ar": "المدة بالسنوات أو الأشهر للعقد."
+      "help_ar": "المدة بالسنوات أو الأشهر للعقد.",
+      "min_value": 1,
+      "max_value": 99
     },
     "TRIBUNAL": {
       "type": "text",

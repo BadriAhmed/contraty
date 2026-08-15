@@ -146,7 +146,7 @@
       "help_ar": "عنوانك الشخصي الحالي."
     },
     "TEL_SALARIE": {
-      "type": "text",
+      "type": "phone",
       "label_ar": "الهاتف",
       "label_fr": "Tel Salarie",
       "placeholder_ar": "",
@@ -154,10 +154,9 @@
       "required": true,
       "hint_ar": "",
       "hint_fr": "",
-      "min_length": 2,
-      "max_length": 500,
       "help_fr": "Votre numéro de téléphone pour vous joindre si nécessaire.",
-      "help_ar": "رقم هاتفك للاتصال بك عند الحاجة."
+      "help_ar": "رقم هاتفك للاتصال بك عند الحاجة.",
+      "pattern": "^\\+?[0-9 ]{8,15}$"
     },
     "POSTE": {
       "type": "text",

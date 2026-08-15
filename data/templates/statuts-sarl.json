@@ -192,7 +192,7 @@
       "help_ar": "العنوان الكامل (النهج، الرقم، المدينة) ."
     },
     "DUREE_ANNEE": {
-      "type": "text",
+      "type": "number",
       "label_ar": "المدة",
       "label_fr": "Duree Annee",
       "placeholder_ar": "",
@@ -200,10 +200,10 @@
       "required": true,
       "hint_ar": "",
       "hint_fr": "",
-      "min_length": 2,
-      "max_length": 500,
       "help_fr": "Durée en années ou mois .",
-      "help_ar": "المدة بالسنوات أو الأشهر ."
+      "help_ar": "المدة بالسنوات أو الأشهر .",
+      "min_value": 1,
+      "max_value": 99
     },
     "CAPITAL": {
       "type": "number",
@@ -242,8 +242,6 @@
       "required": true,
       "hint_ar": "رقم",
       "hint_fr": "Nombre",
-      "min_length": 2,
-      "max_length": 500,
       "help_fr": "Valeur nominale d'une action en dinars tunisiens.",
       "help_ar": "القيمة الاسمية للسهم الواحد بالدينار التونسي.",
       "min_value": 0

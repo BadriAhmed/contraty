@@ -365,7 +365,7 @@
       "autocomplete": "places"
     },
     "DUREE_ESSAI": {
-      "type": "text",
+      "type": "number",
       "label_ar": "المدة",
       "label_fr": "Duree Essai",
       "placeholder_ar": "",
@@ -373,10 +373,10 @@
       "required": true,
       "hint_ar": "",
       "hint_fr": "",
-      "min_length": 2,
-      "max_length": 500,
       "help_fr": "Durée en années ou mois pour la période d'essai.",
-      "help_ar": "المدة بالسنوات أو الأشهر لفترة التجربة."
+      "help_ar": "المدة بالسنوات أو الأشهر لفترة التجربة.",
+      "min_value": 0,
+      "max_value": 24
     },
     "SALAIRE": {
       "type": "number",
@@ -449,7 +449,7 @@
       "help_ar": "أوقات العمل اليومية (مثال: 8ص-5م)."
     },
     "JOURS_CONGES": {
-      "type": "text",
+      "type": "number",
       "label_ar": "أيام الإجازة",
       "label_fr": "Jours Conges",
       "placeholder_ar": "",
@@ -457,10 +457,10 @@
       "required": true,
       "hint_ar": "الحد الأدنى القانوني: يوم ونصف عن كل شهر عمل — 18 يوم عمل سنويًا (الفصل 113 مجلة الشغل)",
       "hint_fr": "min. légal : 1,5 jour par mois travaillé — 18 jours ouvrables/an (art. 113 CT)",
-      "min_length": 2,
-      "max_length": 500,
       "help_fr": "Nombre de jours de congés payés par an (ex: 30).",
-      "help_ar": "عدد أيام الراحة مدفوعة الأجر في السنة (مثال: 30)."
+      "help_ar": "عدد أيام الراحة مدفوعة الأجر في السنة (مثال: 30).",
+      "min_value": 1,
+      "max_value": 60
     },
     "PREAVIS_MOIS": {
       "type": "number",
@@ -471,8 +471,6 @@
       "required": true,
       "hint_ar": "الحد الأدنى القانوني: شهر واحد (أقل من 5 سنوات أقدمية)، شهران (5-10 سنوات)، 3 أشهر (أكثر من 10 سنوات) — الفصل 15 مجلة الشغل",
       "hint_fr": "min. légal : 1 mois (< 5 ans d'ancienneté), 2 mois (5-10 ans), 3 mois (> 10 ans) — art. 15 CT",
-      "min_length": 2,
-      "max_length": 500,
       "help_fr": "Préavis de rupture en mois (ex: 1 mois).",
       "help_ar": "أجل الإعلام بالفسخ بالأشهر (مثال: شهر واحد).",
       "min_value": 0,

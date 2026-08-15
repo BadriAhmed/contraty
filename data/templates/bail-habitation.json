@@ -340,7 +340,7 @@
       "help_ar": "التاريخ بصيغة يوم/شهر/سنة للعقد."
     },
     "PREAVIS_MOIS": {
-      "type": "text",
+      "type": "number",
       "label_ar": "أجل الإعلام المسبق بإنهاء الكراء (بالأشهر)",
       "label_fr": "Preavis Mois",
       "placeholder_ar": "",
@@ -348,10 +348,10 @@
       "required": true,
       "hint_ar": "",
       "hint_fr": "",
-      "min_length": 2,
-      "max_length": 500,
       "help_fr": "Durée en années ou mois du contrat.",
-      "help_ar": "المدة بالسنوات أو الأشهر للعقد."
+      "help_ar": "المدة بالسنوات أو الأشهر للعقد.",
+      "min_value": 0,
+      "max_value": 24
     },
     "MONTANT_LOYER": {
       "type": "number",
