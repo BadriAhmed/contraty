@@ -46,8 +46,8 @@ const TYPE_LABELS: Record<string, Record<string, string>> = {
   fr: { text: "Texte", number: "Nombre", cin: "CIN", email: "Email", phone: "Téléphone", date: "Date", percentage: "Pourcentage", select: "Choix" },
 };
 
-export default async function V2ContractDetail({ params }: { params: { lang: string; type: string } }) {
-  const { lang, type } = params;
+export default async function V2ContractDetail({ params }: { params: Promise<{ lang: string; type: string }> }) {
+  const { lang, type } = await params;
   let template = null;
   let loadError = false;
   try {

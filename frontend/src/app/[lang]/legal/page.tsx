@@ -1,8 +1,9 @@
 import Link from "next/link";
 import { ShieldCheck, Lock, Scale, Mail, Globe } from "lucide-react";
 
-export async function generateMetadata({ params }: { params: { lang: string } }) {
-  const isAr = params.lang === "ar";
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+  const isAr = lang === "ar";
   return {
     title: isAr ? "إشعارات قانونية والخصوصية" : "Mentions légales & confidentialité",
     robots: { index: true, follow: true },
@@ -37,8 +38,9 @@ function Section({
   );
 }
 
-export default function LegalPage({ params }: { params: { lang: string } }) {
-  const lang = params.lang === "ar" ? "ar" : "fr";
+export default async function LegalPage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang: langParam } = await params;
+  const lang = langParam === "ar" ? "ar" : "fr";
   const isAr = lang === "ar";
   const base = `/${lang}`;
 

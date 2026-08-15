@@ -1,7 +1,8 @@
 import Link from "next/link";
 
-export default function NotFound({ params }) {
-  const lang = params?.lang || "fr";
+export default async function NotFound({ params }) {
+  const resolved = params ? await params : {};
+  const lang = resolved?.lang || "fr";
 
   return (
     <div className="min-h-[60vh] flex items-center justify-center bg-background px-4">

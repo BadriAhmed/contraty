@@ -38,12 +38,13 @@ export default async function V2HomePage({
   params,
   searchParams,
 }: {
-  params: { lang: string };
-  searchParams?: { q?: string; domain?: string };
+  params: Promise<{ lang: string }>;
+  searchParams?: Promise<{ q?: string; domain?: string }>;
 }) {
-  const { lang } = params;
-  const initialQuery = searchParams?.q || "";
-  const initialDomain = searchParams?.domain || "";
+  const { lang } = await params;
+  const sp = await searchParams;
+  const initialQuery = sp?.q || "";
+  const initialDomain = sp?.domain || "";
   let templates = [];
   let loadError = false;
   try {

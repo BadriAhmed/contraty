@@ -10,7 +10,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }) {
-  const { lang } = params;
+  const { lang } = await params;
   const isAr = lang === "ar";
   const title = isAr ? "كونتراتي — عقود قانونية تونسية" : "Contraty — Contrats juridiques tunisiens";
   const description = isAr
@@ -43,8 +43,8 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default function LangLayout({ children, params }) {
-  const { lang } = params;
+export default async function LangLayout({ children, params }) {
+  const { lang } = await params;
   const dir = lang === "ar" ? "rtl" : "ltr";
 
   return (
