@@ -62,7 +62,7 @@
       "articles": [
         {
           "id": "art-poste",
-          "text_ar": "يلتحق الأجير بعمله بصفة [POSTE]، تصنيف [CLASSIFICATION]، ابتداءً من [DATE_DEBUT].",
+          "text_ar": "يلتحق الأجير بعمله بصفة [POSTE]، تصنيف [CLASSIFICATION]، وفقاً لأحكام الاتفاقية المشتركة القطاعية [CONVENTION_COLLECTIVE] ومجلة الشغل التونسية، ابتداءً من [DATE_DEBUT].",
           "text_fr": "Le Salarié est engagé en qualité de [POSTE], classification [CLASSIFICATION], conformément aux dispositions de la Convention Collective Sectorielle de [CONVENTION_COLLECTIVE] et du Code du Travail Tunisien, à compter du [DATE_DEBUT].",
           "fields": [
             "POSTE",

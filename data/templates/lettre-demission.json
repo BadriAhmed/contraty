@@ -69,7 +69,7 @@
         {
           "id": "art-preavis",
           "text_ar": "وفقاً لأحكام عقد شغلي والاتفاقية المهنية المعمول بها، سأحترم أجل الإعلام المسبق القانوني وقدره [DUREE_PREAVIS]، الذي يبدأ سريانه من [DATE_EFFET_PREAVIS]. وبالتالي سيكون آخر يوم عمل لي هو [DATE_DERNIER_JOUR].",
-          "text_fr": "Conformément aux dispositions régissant mon contrat de travail et à la Convention Collective applicable, je respecterai un préavis de [DUREE_PREAVIS], qui prendra effet à compter de la date de notification de la présente lettre. Par conséquent, mon contrat de travail prendra fin le [DATE_DERNIER_JOUR] au soir.",
+          "text_fr": "Conformément aux dispositions régissant mon contrat de travail et à la Convention Collective applicable, je respecterai un préavis de [DUREE_PREAVIS], qui prendra effet à compter du [DATE_EFFET_PREAVIS]. Par conséquent, mon contrat de travail prendra fin le [DATE_DERNIER_JOUR] au soir.",
           "fields": [
             "DUREE_PREAVIS",
             "DATE_EFFET_PREAVIS",

@@ -19,7 +19,7 @@
       "articles": [
         {
           "id": "art-declarant",
-          "text_ar": "أنا الممضي أسفله، السيد/ة [NOM]، مولود/ة بتاريخ [DATE_NAISSANCE] بـ [LIEU_NAISSANCE]، [NATIONALITE] الجنسية، ب.ت.و عدد [CIN]، المسلمة بتاريخ [DATE_CIN]، القاطن/ة بـ [ADRESSE]، والمزاول/ة لمهنة [PROFESSION].",
+          "text_ar": "أنا الممضي أسفله، السيد/ة [NOM]، مولود/ة بتاريخ [DATE_NAISSANCE] بـ [LIEU_NAISSANCE]، [NATIONALITE] الجنسية، ب.ت.و عدد [CIN]، المسلمة بتاريخ [DATE_CIN] من [AUTORITE_DELIVRANCE]، القاطن/ة بـ [ADRESSE]، والمزاول/ة لمهنة [PROFESSION].",
           "text_fr": "Je soussigné(e), M./Mme [NOM], né(e) le [DATE_NAISSANCE] à [LIEU_NAISSANCE], de nationalité [NATIONALITE], titulaire de la CIN n° [CIN], délivrée le [DATE_CIN] par [AUTORITE_DELIVRANCE], demeurant à [ADRESSE], exerçant la profession de [PROFESSION],",
           "fields": [
             "NOM",

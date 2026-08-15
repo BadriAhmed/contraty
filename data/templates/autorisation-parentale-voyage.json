@@ -20,7 +20,7 @@
         {
           "id": "art-parent",
           "text_ar": "أنا الممضي أسفله، السيد/ة [NOM_PARENT]، ب.ت.و عدد [CIN_PARENT]، القاطن/ة بـ [ADRESSE_PARENT]، بصفتي [QUALITE] (أب / أم / ولي شرعي) للطفل القاصر المذكور أسفله.",
-          "text_fr": "Je soussigné(e), M./Mme [NOM_PARENT], CIN n° [CIN_PARENT], demeurant à [ADRESSE_PARENT], agissant en qualité de tuteur légal (le père, ou le représentant légal désigné par décision de justice) de l'enfant mineur désigné ci-dessous.",
+          "text_fr": "Je soussigné(e), M./Mme [NOM_PARENT], CIN n° [CIN_PARENT], demeurant à [ADRESSE_PARENT], agissant en qualité de [QUALITE] (père / mère / tuteur légal) de l'enfant mineur désigné ci-dessous.",
           "fields": [
             "NOM_PARENT",
             "CIN_PARENT",
@@ -38,14 +38,13 @@
         {
           "id": "art-enfant",
           "text_ar": "الاسم واللقب: [NOM_ENFANT]\nتاريخ الولادة: [DATE_NAISSANCE_ENFANT] بـ [LIEU_NAISSANCE_ENFANT]\nعدد مضمون الولادة: [NUM_EXTRAIT_NAISSANCE]\nالجنسية: تونسية\nجواز سفر / ب.ت.و عدد: [NUM_PIECE_ENFANT]",
-          "text_fr": "Nom et prénom : [NOM_ENFANT]\nNé(e) le : [DATE_NAISSANCE_ENFANT] à [LIEU_NAISSANCE_ENFANT]\nN° extrait de naissance : [NUM_EXTRAIT_NAISSANCE]\nNationalité : Tunisienne\nPasseport n° : [NUM_PASSEPORT_ENFANT]",
+          "text_fr": "Nom et prénom : [NOM_ENFANT]\nNé(e) le : [DATE_NAISSANCE_ENFANT] à [LIEU_NAISSANCE_ENFANT]\nN° extrait de naissance : [NUM_EXTRAIT_NAISSANCE]\nNationalité : Tunisienne\nCIN / Passeport n° : [NUM_PIECE_ENFANT]",
           "fields": [
             "NOM_ENFANT",
             "DATE_NAISSANCE_ENFANT",
             "LIEU_NAISSANCE_ENFANT",
             "NUM_EXTRAIT_NAISSANCE",
-            "NUM_PIECE_ENFANT",
-            "NUM_PASSEPORT_ENFANT"
+            "NUM_PIECE_ENFANT"
           ]
         }
       ]
@@ -57,12 +56,11 @@
       "articles": [
         {
           "id": "art-autorisation",
-          "text_ar": "آذن لابني/لابنتي بالسفر إلى [DESTINATION]، مرفوقاً/ة بالسيد/ة [NOM_ACCOMPAGNATEUR]، ب.ت.و عدد [CIN_ACCOMPAGNATEUR]، من [DATE_DEPART] إلى [DATE_RETOUR].",
+          "text_ar": "آذن لابني/لابنتي بالسفر إلى [DESTINATION]، مرفوقاً/ة بالسيد/ة [NOM_ACCOMPAGNATEUR]، ب.ت.و / جواز سفر عدد [NUM_PIECE_ACCOMPAGNATEUR]، من [DATE_DEPART] إلى [DATE_RETOUR].",
           "text_fr": "J'autorise mon enfant à voyager à destination de [DESTINATION], accompagné(e) de M./Mme [NOM_ACCOMPAGNATEUR], CIN ou Passeport n° : [NUM_PIECE_ACCOMPAGNATEUR], du [DATE_DEPART] au [DATE_RETOUR].",
           "fields": [
             "DESTINATION",
             "NOM_ACCOMPAGNATEUR",
-            "CIN_ACCOMPAGNATEUR",
             "DATE_DEPART",
             "DATE_RETOUR",
             "NUM_PIECE_ACCOMPAGNATEUR"
@@ -256,22 +254,6 @@
       "help_fr": "Nom complet (prénom et nom de famille) .",
       "help_ar": "الاسم الكامل (الاسم واللقب) ."
     },
-    "CIN_ACCOMPAGNATEUR": {
-      "type": "cin",
-      "label_ar": "بطاقة التعريف",
-      "label_fr": "Cin Accompagnateur",
-      "placeholder_ar": "12345678",
-      "placeholder_fr": "12345678",
-      "required": true,
-      "hint_ar": "8 أرقام",
-      "hint_fr": "8 chiffres",
-      "pattern": "^\\d{8}$",
-      "min_length": 8,
-      "max_length": 8,
-      "help_fr": "Numéro à 8 chiffres de la carte d'identité nationale .",
-      "help_ar": "رقم بطاقة التعريف الوطنية المكون من 8 أرقام .",
-      "image": "/images/help/cin.jpg"
-    },
     "DATE_DEPART": {
       "type": "date",
       "label_ar": "تاريخ",
@@ -325,23 +307,6 @@
       "pattern": "^(\\d{4}-\\d{2}-\\d{2}|\\d{1,2}[/\\-.]\\d{1,2}[/\\-.]\\d{2,4})$",
       "help_fr": "Date au format JJ/MM/AAAA pour la signature.",
       "help_ar": "التاريخ بصيغة يوم/شهر/سنة للتوقيع."
-    },
-    "NUM_PASSEPORT_ENFANT": {
-      "type": "text",
-      "label_fr": "N° Passeport de l'enfant",
-      "label_ar": "رقم جواز سفر الطفل",
-      "placeholder_fr": "AB123456",
-      "placeholder_ar": "AB123456",
-      "required": true,
-      "pattern": null,
-      "min_length": null,
-      "max_length": 20,
-      "min_value": null,
-      "max_value": null,
-      "hint_fr": "",
-      "hint_ar": "",
-      "help_fr": "Numéro du passeport de l'enfant qui voyage.",
-      "help_ar": "رقم جواز سفر الطفل المسافر."
     },
     "NUM_PIECE_ACCOMPAGNATEUR": {
       "type": "text",

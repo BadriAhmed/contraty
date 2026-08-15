@@ -48,7 +48,7 @@
       "articles": [
         {
           "id": "art-bien",
-          "text_ar": "يتعهد الواعد ببيع العقار التالي للموعود له الذي يتعهد بشرائه:\nالنوع: [NATURE] ([NB_PIECES] غرف)\nالعنوان: [ADRESSE_BIEN]\nالرسم العقاري عدد: [TITRE_FONCIER]\nالمساحة: [SUPERFICIE] م²\nأصل الملكية: [ORIGINE_PROPRIETE]",
+          "text_ar": "يتعهد الواعد ببيع العقار التالي للموعود له الذي يتعهد بشرائه:\nالنوع: [NATURE] ([NB_PIECES] غرف)\nالعنوان: [ADRESSE_BIEN]\nالرسم العقاري عدد: [TITRE_FONCIER] التابع للمحافظة على الملكية العقارية بـ [CPF_LIEU]\nالمساحة: [SUPERFICIE] م²\nأصل الملكية: [ORIGINE_PROPRIETE]",
           "text_fr": "Le Promettant s'engage à vendre au Bénéficiaire, qui s'engage à acquérir, sous réserve des conditions suspensives stipulées ci-après, le bien immobilier suivant :\n- Nature : [NATURE] ([NB_PIECES] pièces)\n- Adresse : [ADRESSE_BIEN]\n- Numéro du Titre Foncier (Titre Bleu) : [TITRE_FONCIER] dépendant de la Conservation de la Propriété Foncière de [CPF_LIEU]\n- Superficie : [SUPERFICIE] m²\n- Origine de propriété : [ORIGINE_PROPRIETE]",
           "fields": [
             "NATURE",
@@ -87,7 +87,7 @@
         {
           "id": "art-conditions",
           "text_ar": "يعلق البيع النهائي على تحقق الشروط التالية:\nأ) حصول الموعود له على قرض بنكي قدره [MONTANT_PRET] د.ت قبل [DATE_LIMITE_PRET]؛\nب) تسليم شهادة تقسيم معماري مواتية؛\nج) إسقاط حق الشفعة عند الاقتضاء؛\nد) [AUTRES_CONDITIONS]",
-          "text_fr": "La vente définitive est subordonnée à la réalisation des conditions suspensives suivantes :\na) Obtention par le Bénéficiaire d'un prêt bancaire d'un montant de [MONTANT_PRET] DT au plus tard le [DATE_LIMITE_PRET] ;\nb) Obtention de l'autorisation préalable du Gouverneur territorialement compétent (condition impérative d'ordre public si le Bénéficiaire est de nationalité étrangère), conformément à la loi n° 77-56 du 30 août 1977 ;\nc) Absence de toute inscription d'hypothèque, de charge ou de privilège grevant le bien au jour de la vente, autre que celles déclarées et devant être purgées ;\nd) Non-exercice d'un éventuel droit de préemption ou de retrait foncier (Chof'â) conformément aux dispositions du Code des Droits Réels.",
+          "text_fr": "La vente définitive est subordonnée à la réalisation des conditions suspensives suivantes :\na) Obtention par le Bénéficiaire d'un prêt bancaire d'un montant de [MONTANT_PRET] DT au plus tard le [DATE_LIMITE_PRET] ;\nb) Obtention de l'autorisation préalable du Gouverneur territorialement compétent (condition impérative d'ordre public si le Bénéficiaire est de nationalité étrangère), conformément à la loi n° 77-56 du 30 août 1977 ;\nc) Absence de toute inscription d'hypothèque, de charge ou de privilège grevant le bien au jour de la vente, autre que celles déclarées et devant être purgées ;\nd) Non-exercice d'un éventuel droit de préemption ou de retrait foncier (Chof'â) conformément aux dispositions du Code des Droits Réels ;\ne) Autres conditions : [AUTRES_CONDITIONS]",
           "fields": [
             "MONTANT_PRET",
             "DATE_LIMITE_PRET",

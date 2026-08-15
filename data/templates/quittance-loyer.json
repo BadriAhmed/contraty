@@ -19,7 +19,7 @@
       "articles": [
         {
           "id": "art-bailleur",
-          "text_ar": "أنا الممضي أسفله، السيد/ة [NOM_BAILLEUR]، ب.ت.و عدد [CIN_BAILLEUR]، المكري، أشهد بأني تسلمت من السيد/ة [NOM_PRENEUR]، المكتري.",
+          "text_ar": "أنا الممضي أسفله، السيد/ة [NOM_BAILLEUR]، ب.ت.و عدد [CIN_BAILLEUR]، المكري، أشهد بأني تسلمت من السيد/ة [NOM_PRENEUR]، ب.ت.و عدد [CIN_PRENEUR]، المكتري.",
           "text_fr": "Je soussigné(e), M./Mme [NOM_BAILLEUR], titulaire de la CIN n° [CIN_BAILLEUR], agissant en qualité de Bailleur, reconnais avoir reçu de M./Mme [NOM_PRENEUR], titulaire de la CIN n° [CIN_PRENEUR], en sa qualité de Preneur,",
           "fields": [
             "NOM_BAILLEUR",
@@ -37,10 +37,9 @@
       "articles": [
         {
           "id": "art-paiement",
-          "text_ar": "مبلغ [MONTANT] ديناراً تونسياً، مقابل معين كراء شهر [MOIS] [ANNEE]، للعقار الكائن بـ [ADRESSE_BIEN]. طريقة الدفع: [MODE_PAIEMENT].",
+          "text_ar": "مبلغ [MONTANT_EN_CHIFFRES] ديناراً تونسياً (أي [MONTANT_EN_LETTRES] د.ت)، مقابل معين كراء شهر [MOIS] [ANNEE]، للعقار الكائن بـ [ADRESSE_BIEN]، وذلك وفقاً لعقد الكراء المؤرخ في [DATE_CONTRAT_BAIL]. طريقة الدفع: [MODE_PAIEMENT].",
           "text_fr": "la somme de [MONTANT_EN_CHIFFRES] dinars tunisiens (soit [MONTANT_EN_LETTRES] DT), correspondant au loyer du mois de [MOIS] [ANNEE], pour le bien sis à [ADRESSE_BIEN], et ce, conformément au contrat de bail en date du [DATE_CONTRAT_BAIL]. Mode de paiement : [MODE_PAIEMENT].",
           "fields": [
-            "MONTANT",
             "MOIS",
             "ANNEE",
             "ADRESSE_BIEN",
@@ -126,20 +125,6 @@
       "max_length": 500,
       "help_fr": "Nom complet du locataire qui occupera le logement.",
       "help_ar": "الاسم الكامل للمكتري الذي سيسكن في الدار."
-    },
-    "MONTANT": {
-      "type": "number",
-      "label_ar": "المبلغ",
-      "label_fr": "Montant",
-      "placeholder_ar": "0",
-      "placeholder_fr": "0",
-      "required": true,
-      "hint_ar": "رقم",
-      "hint_fr": "Nombre",
-      "pattern": "^-?\\d+([\\.\\,]\\d+)?$",
-      "min_value": 0,
-      "help_fr": "Montant en dinars tunisiens pour cette période de location.",
-      "help_ar": "المبلغ بالدينار التونسي عن فترة الكراء."
     },
     "MOIS": {
       "type": "text",

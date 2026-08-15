@@ -19,7 +19,7 @@
       "articles": [
         {
           "id": "art-bailleur",
-          "text_ar": "المكري: السيد/ة [NOM_BAILLEUR]، ب.ت.و عدد [CIN_BAILLEUR].",
+          "text_ar": "المكري: السيد/ة [NOM_BAILLEUR]، ب.ت.و عدد [CIN_BAILLEUR] المسلمة بتاريخ [DATE_DELIVRANCE_CIN_B] بـ [LIEU_DELIVRANCE_CIN_B].",
           "text_fr": "Bailleur : M./Mme [NOM_BAILLEUR], titulaire de la CIN n° [CIN_BAILLEUR] délivrée le [DATE_DELIVRANCE_CIN_B] à [LIEU_DELIVRANCE_CIN_B].",
           "fields": [
             "NOM_BAILLEUR",
@@ -30,7 +30,7 @@
         },
         {
           "id": "art-preneur",
-          "text_ar": "المكتري: السيد/ة [NOM_PRENEUR]، ب.ت.و عدد [CIN_PRENEUR].",
+          "text_ar": "المكتري: السيد/ة [NOM_PRENEUR]، ب.ت.و عدد [CIN_PRENEUR] المسلمة بتاريخ [DATE_DELIVRANCE_CIN_P] بـ [LIEU_DELIVRANCE_CIN_P].",
           "text_fr": "Preneur : M./Mme [NOM_PRENEUR], titulaire de la CIN n° [CIN_PRENEUR] délivrée le [DATE_DELIVRANCE_CIN_P] à [LIEU_DELIVRANCE_CIN_P].",
           "fields": [
             "NOM_PRENEUR",

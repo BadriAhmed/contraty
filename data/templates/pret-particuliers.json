@@ -19,7 +19,7 @@
       "articles": [
         {
           "id": "art-preteur",
-          "text_ar": "السيد/ة [NOM_PRETEUR]، حامل لبطاقة التعريف الوطنية عدد [CIN_PRETEUR]، القاطن/ة بـ [ADRESSE_PRETEUR]، يشار إليه/ا بـ « المقرض ».",
+          "text_ar": "السيد/ة [NOM_PRETEUR]، [NATIONALITE_PRETEUR] الجنسية، الحامل(ة) لبطاقة التعريف الوطنية عدد [CIN_PRETEUR] المسلمة بتاريخ [DATE_CIN_PRETEUR]، القاطن/ة بـ [ADRESSE_PRETEUR]، يشار إليه/ا بـ « المقرض ».",
           "text_fr": "M./Mme [NOM_PRETEUR], de nationalité [NATIONALITE_PRETEUR], titulaire de la carte d'identité nationale n° [CIN_PRETEUR] délivrée le [DATE_CIN_PRETEUR], demeurant à [ADRESSE_PRETEUR], agissant en qualité de Prêteur, ci-après dénommé(e) « le Prêteur ».",
           "fields": [
             "NOM_PRETEUR",
@@ -31,7 +31,7 @@
         },
         {
           "id": "art-emprunteur",
-          "text_ar": "السيد/ة [NOM_EMPRUNTEUR]، حامل لبطاقة التعريف الوطنية عدد [CIN_EMPRUNTEUR]، القاطن/ة بـ [ADRESSE_EMPRUNTEUR]، يشار إليه/ا بـ « المقترض ».",
+          "text_ar": "السيد/ة [NOM_EMPRUNTEUR]، [NATIONALITE_EMPRUNTEUR] الجنسية، الحامل(ة) لبطاقة التعريف الوطنية عدد [CIN_EMPRUNTEUR] المسلمة بتاريخ [DATE_CIN_EMPRUNTEUR]، القاطن/ة بـ [ADRESSE_EMPRUNTEUR]، يشار إليه/ا بـ « المقترض ».",
           "text_fr": "M./Mme [NOM_EMPRUNTEUR], de nationalité [NATIONALITE_EMPRUNTEUR], titulaire de la carte d'identité nationale n° [CIN_EMPRUNTEUR] délivrée le [DATE_CIN_EMPRUNTEUR], demeurant à [ADRESSE_EMPRUNTEUR], agissant en qualité d'Emprunteur, ci-après dénommé(e) « l'Emprunteur ».",
           "fields": [
             "NOM_EMPRUNTEUR",

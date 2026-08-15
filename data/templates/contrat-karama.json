@@ -32,7 +32,7 @@
       "articles": [
         {
           "id": "art-employeur",
-          "text_ar": "شركة [NOM_ENTREPRISE]، المسجلة بالسجل الوطني للمؤسسات تحت المعرف الوحيد رقم [RNE]، الكائنة بـ [ADRESSE_ENTREPRISE]، يمثلها [REPRESENTANT]، يشار إليها بـ « المؤجر ».",
+          "text_ar": "شركة [NOM_ENTREPRISE]، المسجلة بالسجل الوطني للمؤسسات تحت المعرف الوحيد رقم [RNE]، والمعرف الجبائي عدد [MATRICULE_FISCAL]، والمنخرطة بالصندوق الوطني للضمان الاجتماعي تحت عدد [NUM_CNSS]، الكائنة بـ [ADRESSE_ENTREPRISE]، يمثلها [REPRESENTANT]، يشار إليها بـ « المؤجر ».",
           "text_fr": "La société [NOM_ENTREPRISE], immatriculée au Registre National des Entreprises (RNE) sous le numéro [RNE], titulaire du Matricule Fiscal n° [MATRICULE_FISCAL], affiliée à la CNSS sous le n° [NUM_CNSS], sise [ADRESSE_ENTREPRISE], représentée par [REPRESENTANT], ci-après « l'Employeur ».",
           "fields": [
             "NOM_ENTREPRISE",
@@ -46,7 +46,7 @@
         {
           "id": "art-salarie",
           "text_ar": "السيد/ة [NOM_SALARIE]، بطاقة التعريف الوطنية عدد [CIN_SALARIE]، مولود/ة بـ [DATE_NAISSANCE]، القاطن/ة بـ [ADRESSE_SALARIE]، مسجل/ة بمكتب التشغيل والعمل المستقل بـ [LIEU_BUREAU] تحت عدد [NUM_DEMANDEUR]، يشار إليه/ا بـ « الأجير ».",
-          "text_fr": "M./Mme [NOM_SALARIE], CIN n° [CIN_SALARIE], né(e) le [DATE_NAISSANCE], demeurant à [ADRESSE_SALARIE], inscrit(e) au Bureau de l'Emploi sous le n° [NUM_DEMANDEUR], ci-après « le Salarié ».",
+          "text_fr": "M./Mme [NOM_SALARIE], CIN n° [CIN_SALARIE], né(e) le [DATE_NAISSANCE], demeurant à [ADRESSE_SALARIE], inscrit(e) au Bureau de l'Emploi de [LIEU_BUREAU] sous le n° [NUM_DEMANDEUR], ci-après « le Salarié ».",
           "fields": [
             "NOM_SALARIE",
             "CIN_SALARIE",
@@ -66,7 +66,7 @@
         {
           "id": "art-engagement",
           "text_ar": "يشغل المؤجر الأجير في إطار برنامج التشغيل المدعم بصفة [POSTE]، لمدة [DUREE_ANNEE] سنوات، ابتداءً من [DATE_DEBUT].",
-          "text_fr": "L'Employeur engage le Salarié, dans le cadre du programme de l'emploi aidé (Karama), en qualité de [POSTE], pour une durée déterminée de deux (2) ans non renouvelable, à compter du [DATE_DEBUT].",
+          "text_fr": "L'Employeur engage le Salarié, dans le cadre du programme de l'emploi aidé (Karama), en qualité de [POSTE], pour une durée déterminée de [DUREE_ANNEE] ans non renouvelable, à compter du [DATE_DEBUT].",
           "fields": [
             "POSTE",
             "DUREE_ANNEE",
@@ -91,7 +91,7 @@
         {
           "id": "art-salaire",
           "text_ar": "الأجر الشهري الخام: [SALAIRE] دينار تونسي. تتحمل الدولة جزءاً من هذا الأجر قدره [SUBVENTION_ETAT] دينار تونسي شهرياً طيلة مدة العقد. والجزء المكمل المقدر بـ [COMPLEMENT_ENTREPRISE] دينار تونسي على عاتق المؤجر. يتمتع الأجير بالتغطية الاجتماعية لدى الصندوق الوطني للضمان الاجتماعي (مرض، حوادث شغل، تقاعد).",
-          "text_fr": "La rémunération mensuelle nette globale est fixée à [SALAIRE] DT (minimum 600 DT net). Conformément aux dispositions du Programme Karama, cette rémunération est composée de : - Une indemnité de prise en charge directe versée par l'ANETI au Salarié d'un montant de 400 DT net par mois. - Un complément de salaire net de [COMPLEMENT_ENTREPRISE] DT par mois versé par l'Employeur. Le Salarié bénéficie de la couverture sociale CNSS (maladie, accidents du travail, retraite).",
+          "text_fr": "La rémunération mensuelle nette globale est fixée à [SALAIRE] DT (minimum 600 DT net). Conformément aux dispositions du Programme Karama, cette rémunération est composée de : - Une indemnité de prise en charge directe versée par l'ANETI au Salarié d'un montant de [SUBVENTION_ETAT] DT net par mois. - Un complément de salaire net de [COMPLEMENT_ENTREPRISE] DT par mois versé par l'Employeur. Le Salarié bénéficie de la couverture sociale CNSS (maladie, accidents du travail, retraite).",
           "fields": [
             "SALAIRE",
             "SUBVENTION_ETAT",
@@ -155,7 +155,7 @@
         {
           "id": "art-date-lieu",
           "text_ar": "حرر بـ [LIEU_SIGNATURE]، بتاريخ [DATE_SIGNATURE]، في ثلاثة أصول (المؤسسة، الأجير، مكتب التشغيل والعمل المستقل بـ [LIEU_BUREAU]).",
-          "text_fr": "Fait à [LIEU_SIGNATURE], le [DATE_SIGNATURE], en trois exemplaires (Entreprise, Salarié, Bureau de l'Emploi).",
+          "text_fr": "Fait à [LIEU_SIGNATURE], le [DATE_SIGNATURE], en trois exemplaires (Entreprise, Salarié, Bureau de l'Emploi de [LIEU_BUREAU]).",
           "fields": [
             "LIEU_SIGNATURE",
             "DATE_SIGNATURE",
