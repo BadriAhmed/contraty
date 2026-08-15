@@ -84,7 +84,7 @@ async def test_contract_repo_save_and_get(test_contract_repo):
         "language": "fr",
         "user_fields": {"NOM": "Ali"},
         "generated_json": {},
-        "model_used": "mistral",
+        "model_used": "gemini",
     }
     saved = await test_contract_repo.save(contract)
     assert saved["id"] is not None

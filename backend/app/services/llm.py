@@ -1,8 +1,4 @@
-import time
 import logging
-from openai import OpenAI
-from mistralai.client import Mistral
-from mistralai.client.models import UserMessage
 from google.genai import Client as GenAIClient
 
 from app.core.config import get_settings
@@ -39,23 +35,11 @@ def _extract_json(text: str) -> str:
 
 
 class LLMRouter:
+    """Gemini-only LLM router (single model, with retry)."""
+
     def __init__(self):
-        self._openai: OpenAI | None = None
-        self._mistral: Mistral | None = None
         self._gemini_configured = False
         self._gemini_client: GenAIClient | None = None
-
-    @property
-    def openai_client(self) -> OpenAI:
-        if self._openai is None:
-            self._openai = OpenAI(api_key=settings.openai_api_key)
-        return self._openai
-
-    @property
-    def mistral_client(self) -> Mistral:
-        if self._mistral is None:
-            self._mistral = Mistral(api_key=settings.mistral_api_key)
-        return self._mistral
 
     def _ensure_gemini(self):
         if not self._gemini_configured:
@@ -63,10 +47,10 @@ class LLMRouter:
             self._gemini_configured = True
 
     def _primary_model(self, language: Language) -> str:
-        return "mistral" if language == Language.fr else "gemini"
+        return "gemini"
 
     def _fallback_model(self, language: Language) -> str:
-        return "openai"
+        return "gemini"
 
     async def generate(
         self, prompt: str, language: Language, max_attempts: int = 3
@@ -81,8 +65,8 @@ class LLMRouter:
         fallback = self._fallback_model(language)
         for attempt in range(max_attempts - 1):
             logger.warning(
-                "Primary model %s failed, falling back to %s (attempt %d/%d)",
-                primary, fallback, attempt + 2, max_attempts,
+                "Model %s failed, retrying (attempt %d/%d)",
+                primary, attempt + 2, max_attempts,
             )
             result = await self._try_model(prompt, language, fallback)
             if result.success:
@@ -101,12 +85,8 @@ class LLMRouter:
         self, prompt: str, language: Language, model: str
     ) -> ContractResponse:
         try:
-            if model == "mistral":
-                response = await self._call_mistral(prompt)
-            elif model == "gemini":
+            if model == "gemini":
                 response = await self._call_gemini(prompt)
-            elif model == "openai":
-                response = await self._call_openai(prompt)
             else:
                 return ContractResponse(
                     success=False,
@@ -130,14 +110,6 @@ class LLMRouter:
                 success=False, error=str(e), language=language
             )
 
-    async def _call_mistral(self, prompt: str) -> str:
-        response = await self.mistral_client.chat.complete_async(
-            model=settings.mistral_model,
-            messages=[UserMessage(content=prompt)],
-            temperature=0.3,
-        )
-        return response.choices[0].message.content
-
     async def _call_gemini(self, prompt: str) -> str:
         self._ensure_gemini()
         response = await self._gemini_client.aio.models.generate_content(
@@ -145,14 +117,6 @@ class LLMRouter:
             contents=prompt,
         )
         return response.text
-
-    async def _call_openai(self, prompt: str) -> str:
-        response = self.openai_client.chat.completions.create(
-            model=settings.openai_model,
-            messages=[{"role": "user", "content": prompt}],
-            temperature=0.3,
-        )
-        return response.choices[0].message.content or ""
 
     def _parse_contract_json(self, text: str) -> Contract | None:
         try:

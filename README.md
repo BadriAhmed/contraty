@@ -20,8 +20,8 @@ contraty/
 | Couche | Technologie |
 |---|---|
 | Backend | FastAPI (Python 3.12), Supabase (PostgreSQL + pgvector) |
-| Frontend | Next.js 14, Tailwind CSS, RTL |
-| LLM | Mistral Large (FR), Gemini Flash (AR), GPT-4o-mini (fallback) |
+| Frontend | Next.js 16, Tailwind CSS, RTL |
+| LLM | Gemini Flash (FR + AR) |
 | PDF | WeasyPrint |
 | Analytics | Backend Supabase (`analytics_events`) + dashboard nginx (`analytics/`) |
 | Déploiement | GCP Cloud Run (backend, frontend, analytics) — europe-west1 |

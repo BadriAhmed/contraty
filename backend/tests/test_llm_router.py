@@ -1,7 +1,7 @@
 """Tests for LLM router — model selection, fallback, error handling."""
 
 import pytest
-from unittest.mock import AsyncMock, patch, MagicMock
+from unittest.mock import AsyncMock, patch
 from app.models.contract import Language, ContractResponse
 
 
@@ -13,7 +13,7 @@ def router():
 
 @pytest.mark.unit
 def test_primary_model_french(router):
-    assert router._primary_model(Language.fr) == "mistral"
+    assert router._primary_model(Language.fr) == "gemini"
 
 
 @pytest.mark.unit
@@ -23,20 +23,16 @@ def test_primary_model_arabic(router):
 
 @pytest.mark.unit
 def test_fallback_model(router):
-    assert router._fallback_model(Language.fr) == "openai"
-    assert router._fallback_model(Language.ar) == "openai"
+    assert router._fallback_model(Language.fr) == "gemini"
+    assert router._fallback_model(Language.ar) == "gemini"
 
 
 @pytest.mark.unit
-async def test_mistral_call_success(router):
-    mock_response = MagicMock()
-    mock_response.choices = [MagicMock()]
-    mock_response.choices[0].message.content = '{"id": "test-v1", "slug": "test", "title_ar": "", "title_fr": "", "domain": "logement"}'
+async def test_gemini_call_success(router):
+    with patch.object(router, "_call_gemini", new_callable=AsyncMock) as mock_call:
+        mock_call.return_value = '{"id": "test-v1", "slug": "test", "title_ar": "", "title_fr": "", "domain": "logement"}'
 
-    with patch.object(router, "_call_mistral", new_callable=AsyncMock) as mock_call:
-        mock_call.return_value = mock_response.choices[0].message.content
-
-        result = await router._try_model("test prompt", Language.fr, "mistral")
+        result = await router._try_model("test prompt", Language.fr, "gemini")
         assert result.success is True
         assert result.language == Language.fr
 

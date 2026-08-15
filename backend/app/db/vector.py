@@ -1,6 +1,6 @@
 import math
 import logging
-from openai import OpenAI
+from google.genai import Client as GenAIClient
 from app.core.config import get_settings
 
 logger = logging.getLogger(__name__)
@@ -8,22 +8,23 @@ settings = get_settings()
 
 
 class VectorStore:
+    """Gemini-powered text embeddings (text-embedding-004, 768 dims)."""
+
     def __init__(self):
-        self._openai: OpenAI | None = None
+        self._gemini: GenAIClient | None = None
 
     @property
-    def client(self) -> OpenAI:
-        if self._openai is None:
-            self._openai = OpenAI(api_key=settings.openai_api_key)
-        return self._openai
+    def client(self) -> GenAIClient:
+        if self._gemini is None:
+            self._gemini = GenAIClient(api_key=settings.gemini_api_key)
+        return self._gemini
 
     async def embed(self, texts: list[str]) -> list[list[float]]:
-        response = self.client.embeddings.create(
+        response = await self.client.aio.models.embed_content(
             model=settings.embedding_model,
-            input=texts,
-            dimensions=settings.embedding_dimensions,
+            contents=texts,
         )
-        return [d.embedding for d in response.data]
+        return [e.values for e in response.embeddings]
 
     async def embed_single(self, text: str) -> list[float]:
         results = await self.embed([text])

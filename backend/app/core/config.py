@@ -6,8 +6,6 @@ class Settings(BaseSettings):
     app_env: str = "development"
     cors_origins: str = "http://localhost:3001"
 
-    openai_api_key: str = ""
-    mistral_api_key: str = ""
     gemini_api_key: str = ""
 
     supabase_url: str = ""
@@ -15,12 +13,10 @@ class Settings(BaseSettings):
     supabase_service_key: str = ""
     database_url: str = ""
 
-    openai_model: str = "gpt-4o-mini"
-    mistral_model: str = "mistral-large-latest"
     gemini_model: str = "gemini-flash-latest"
 
-    embedding_model: str = "text-embedding-3-small"
-    embedding_dimensions: int = 1536
+    embedding_model: str = "text-embedding-004"
+    embedding_dimensions: int = 768
     vector_similarity_threshold: float = 0.75
 
     max_template_results: int = 3

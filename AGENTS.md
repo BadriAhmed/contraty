@@ -23,13 +23,13 @@ npm run dev                                  # dev server (port 3000)
 | Layer | Tech |
 |---|---|
 | Backend | FastAPI (Python 3.12), Supabase REST, WeasyPrint PDF |
-| Frontend | Next.js 14 App Router, Tailwind CSS, shadcn/ui (RTL) |
-| LLM | Mistral Large (FR), Gemini 2.0 Flash (AR), GPT-4o-mini (fallback) |
+| Frontend | Next.js 16 App Router, Tailwind CSS, shadcn/ui (RTL) |
+| LLM | Gemini 2.0 Flash (FR + AR) |
 
 ## Key files
 - `backend/app/main.py` — FastAPI app, lifespan, middleware
 - `backend/app/api/contracts.py` — API endpoints (templates, generate, PDF, docx, customize)
-- `backend/app/services/llm.py` — multi-model LLM router
+- `backend/app/services/llm.py` — Gemini LLM router
 - `backend/app/services/template_service.py` — business logic (fill templates, review, customize)
 - `backend/app/db/memory.py` — in-memory repository (dev/testing fallback)
 - `backend/app/db/supabase_repo.py` — Supabase-backed repository (prod)

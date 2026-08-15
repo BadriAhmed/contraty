@@ -8,7 +8,7 @@
 | ORM | **SQLAlchemy 2.0 + Alembic** | Mature, async support via asyncpg, migrations built-in. |
 | Task queue | **Celery + Redis** | For async PDF generation, email sending, AI retries. Lightweight alternative: ARQ. |
 | PDF generation | **WeasyPrint** | Pure Python, CSS-based templating. Generates Unicode Arabic text correctly. |
-| AI integration | **Mistral SDK + google-genai + OpenAI SDK** | Multi-model routing for contract generation (see AI Architecture). |
+| AI integration | **google-genai (Gemini)** | Gemini-only routing for contract generation, review, and embeddings (see AI Architecture). |
 | Validation | **Pydantic v2** | Built into FastAPI, handles all request/response schemas and AI output validation. |
 | Auth | **Supabase Auth** | Free tier (50k MAU), handles email/password + OAuth. JWT validation in FastAPI via middleware. |
 | API docs | **OpenAPI (auto-generated)** | FastAPI auto-generates Swagger + ReDoc. |
@@ -54,29 +54,22 @@
 
 ---
 
-## API Keys — Runtime (3 keys only)
+## API Keys — Runtime (1 key only)
 
-The backend ships with exactly 3 API keys. No key sprawl.
+The backend ships with exactly 1 API key. No key sprawl.
 
 | Key | Used for |
 |---|---|
-| **OpenAI** | Embeddings (`text-embedding-3-small`) + GPT-4o-mini as shared fallback for both languages |
-| **Mistral** | Primary model for French contract generation (Mistral Small 4) |
-| **Gemini** | Primary model for Arabic contract generation (Gemini 2.0 Flash) |
+| **Gemini** | Contract generation (FR + AR), review, customization, and embeddings |
 
-**Offline/manual-only models (no key in the app):**
-- **Claude Opus/Sonnet** — Used interactively during Phase 0 for prompt engineering, template pattern analysis, validation spot-checks. Not programmatic.
-- **GPT-4o** — Same purpose: quality cross-check of generated prompts and outputs.
+## AI Architecture — Gemini-only
 
-## AI Architecture — Multi-Model Routing
-
-### Embedding Layer (always OpenAI)
+### Embedding Layer (Gemini)
 
 ```
-text-embedding-3-small
-  ├── 1536 dimensions
+text-embedding-004
+  ├── 768 dimensions
   ├── Multilingual (Arabic + French in one index)
-  ├── $0.02 / 1M tokens
   └── Chunks embedded once, stored in pgvector
 ```
 
@@ -85,20 +78,10 @@ text-embedding-3-small
 ```
 Contract generation request
   │
-  ├── Language = FR
-  │     ├── 1st: Mistral Small 4    ← native French legal, cheapest good French
-  │     ├── 2nd: GPT-4o-mini        ← reliable fallback
-  │     └── 3rd: GPT-4o-mini        ← retry with stricter prompt
-  │
-  ├── Language = AR
-  │     ├── 1st: Gemini 2.0 Flash   ← best Arabic (Google's multilingual edge)
-  │     ├── 2nd: GPT-4o-mini        ← best Arabic among non-Google models
-  │     └── 3rd: GPT-4o-mini        ← retry with stricter prompt
-  │
-  └── Language = BOTH
-        ├── FR pass: Mistral Small 4 → Pydantic validation
-        ├── AR pass: Gemini 2.0 Flash → Pydantic validation
-        └── Merge → single bilingual contract (two-column PDF)
+  └── Any language (FR or AR)
+        ├── 1st: Gemini 2.0 Flash   ← strong French + Arabic
+        ├── 2nd: Gemini 2.0 Flash   ← retry
+        └── 3rd: Gemini 2.0 Flash   ← retry with stricter prompt
 ```
 
 ### Cost per attempt (~2K tokens/contract)
@@ -106,10 +89,8 @@ Contract generation request
 | Model | Input (cached) | Output | Per attempt |
 |---|---|---|---|
 | Gemini 2.0 Flash | $0.075/1M | $0.30/1M | ~$0.0006 |
-| Mistral Small 4 | ~$0.20/1M | ~$0.60/1M | ~$0.0012 |
-| GPT-4o-mini | $0.075/1M | $0.60/1M | ~$0.0011 |
 
-**Worst case** (3 attempts all fail, needed all retries): ~$0.003/contract. At 10,000 contracts/month: **$30.** Margin on a 10 TND single-purchase contract: still enormous.
+**Worst case** (3 attempts all fail): ~$0.002/contract. At 10,000 contracts/month: **$20.** Margin on a 10 TND single-purchase contract: still enormous.
 
 ### Validation Gate (Pydantic)
 
@@ -137,14 +118,14 @@ pgvector retrieves top-5 most relevant template clauses
 Prompt assembled: system_prompt + retrieved_clauses + user_fields + output_schema
         │
         ▼
-Model router: pick primary model by language → generate
+Gemini generates the contract JSON
         │
         ▼
 Pydantic validates JSON structure (sections, articles, clauses, signatures)
         │
         ▼
   ┌─ Pass? → WeasyPrint renders PDF → download
-  └─ Fail? → fallback model → retry (max 3 total attempts)
+  └─ Fail? → retry Gemini (max 3 total attempts)
         │
         ▼
 PDF stored on Supabase Storage → URL returned
@@ -158,7 +139,7 @@ cd backend
 python -m venv .venv
 pip install fastapi uvicorn sqlalchemy asyncpg alembic \
   celery redis weasyprint pydantic python-jose \
-  mistralai google-genai openai supabase
+  google-genai supabase
 
 # Frontend
 cd frontend
@@ -174,10 +155,8 @@ npm install next-intl react-pdf react-hook-form zod @supabase/supabase-js
 SUPABASE_URL=https://xxxxx.supabase.co
 SUPABASE_SERVICE_KEY=sb-xxxxx
 
-# AI — runtime (3 keys)
-OPENAI_API_KEY=sk-xxxxx          # embeddings + GPT-4o-mini fallback
-MISTRAL_API_KEY=xxxxx            # French contracts
-GEMINI_API_KEY=xxxxx             # Arabic contracts
+# AI — runtime (1 key)
+GEMINI_API_KEY=xxxxx             # generation, review, customization, embeddings
 
 # Payments
 PADDLE_API_KEY=xxxxx

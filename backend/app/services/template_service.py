@@ -290,8 +290,8 @@ async def generate_pdf(contract_json: dict, language: str, contract_slug: str) -
 
 
 async def embed_texts(texts: list[str]) -> list[list[float]]:
-    if not settings.openai_api_key:
-        raise RuntimeError("OPENAI_API_KEY is required for embeddings")
+    if not settings.gemini_api_key:
+        raise RuntimeError("GEMINI_API_KEY is required for embeddings")
     return await vector_store.embed(texts)
 
 
@@ -488,7 +488,7 @@ async def customize_blank_template(
     full_text = "\n\n".join(formatted)
     title = blank.get("title_fr" if language == Language.fr else "title_ar", "")
 
-    gpt_prompt = f"""Avocat tunisien. Voici un modèle de contrat vierge tunisien: {title}.
+    gemini_prompt = f"""Avocat tunisien. Voici un modèle de contrat vierge tunisien: {title}.
 L'utilisateur demande la modification suivante: {prompt}
 
 Modifie UNIQUEMENT le texte entre les balises ARTICLE::id.
@@ -503,7 +503,7 @@ Retourne TOUT le texte, incluant les balises ARTICLE::id, sans commentaires."""
         client = get_gemini_client()
         response = await client.aio.models.generate_content(
             model=settings.gemini_model,
-            contents=gpt_prompt,
+            contents=gemini_prompt,
         )
         modified_text = response.text.strip()
 

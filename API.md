@@ -207,7 +207,7 @@ Content-Type: application/json
       }
     ]
   },
-  "model_used": "mistral",
+  "model_used": "gemini",
   "language": "fr",
   "error": null,
   "fallback_attempted": false,
@@ -221,7 +221,7 @@ Content-Type: application/json
 {
   "success": true,
   "contract": { "..." },
-  "model_used": "openai",
+  "model_used": "gemini",
   "language": "ar",
   "error": null,
   "fallback_attempted": true,
@@ -255,9 +255,9 @@ Content-Type: application/json
 
 - **Placeholder substitution**: The returned `contract.sections[].articles[].text_ar` and `text_fr` have `[PLACEHOLDER]` tokens replaced with user-provided values. No brackets remain.
 - **`fields` array**: Will be `[]` in the generated response (placeholders already substituted). The template endpoint is your source of truth for field definitions.
-- **`model_used`**: `"mistral"` | `"gemini"` | `"openai"`. Show this in a debug footer or generation info tooltip.
-- **`fallback_attempted: true`**: If primary model failed and a secondary model succeeded. The generated contract is still valid, but the FE might want to show a subtle warning ("généré avec un modèle de secours").
-- **Generation time**: For French contracts (Mistral), expect 1.5–3 seconds. For Arabic (Gemini), expect 3–5 seconds.
+- **`model_used`**: `"gemini"`. Show this in a debug footer or generation info tooltip.
+- **`fallback_attempted: true`**: If the first Gemini attempt failed and a retry succeeded. The generated contract is still valid, but the FE might want to show a subtle warning ("généré après un nouvel essai").
+- **Generation time**: For both languages (Gemini Flash), expect 2–4 seconds.
 
 ---
 
