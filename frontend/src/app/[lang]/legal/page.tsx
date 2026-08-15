@@ -1,12 +1,13 @@
 import Link from "next/link";
 import { ShieldCheck, Lock, Scale, Mail, Globe } from "lucide-react";
 
-export const metadata = {
-  title: {
-    fr: "Mentions légales & confidentialité",
-    ar: "إشعارات قانونية والخصوصية",
-  },
-};
+export async function generateMetadata({ params }: { params: { lang: string } }) {
+  const isAr = params.lang === "ar";
+  return {
+    title: isAr ? "إشعارات قانونية والخصوصية" : "Mentions légales & confidentialité",
+    robots: { index: true, follow: true },
+  };
+}
 
 const COMPANY = {
   name: "Imarisys",
