@@ -1,6 +1,10 @@
 """Tests for contract generation endpoint."""
 
+from pathlib import Path
+
 import pytest
+
+from app.api.contracts import _find_data_dir
 
 
 @pytest.mark.unit
@@ -166,3 +170,33 @@ async def test_reference_endpoints(client):
         assert len(data.get("ar", [])) >= min_len
     resp = await client.get("/api/v1/contracts/reference/nope")
     assert resp.status_code == 404
+
+
+@pytest.mark.unit
+def test_find_data_dir_repo_layout():
+    """_find_data_dir locates data/ when walking up from the source tree."""
+    api_dir = Path(__file__).resolve().parents[2] / "app" / "api"  # backend/app/api
+    data_dir = _find_data_dir(api_dir)
+    assert data_dir.is_dir()
+    assert (data_dir / "reference").is_dir()
+    assert (data_dir / "vehicles" / "tn_cars.json").is_file()
+
+
+@pytest.mark.unit
+def test_find_data_dir_docker_layout(tmp_path):
+    """Regression: data/ must be found in the Cloud Run image layout too.
+
+    In the image, contracts.py sits at /app/app/api/ while data/ is at /app,
+    so a fixed parents[3] lookup resolved to the filesystem root and the
+    reference/vehicle endpoints silently returned empty lists in production.
+    """
+    image_app = tmp_path / "app" / "app" / "api"
+    image_app.mkdir(parents=True)
+    (tmp_path / "app" / "data" / "reference").mkdir(parents=True)
+    (tmp_path / "app" / "data" / "vehicles").mkdir(parents=True)
+    (tmp_path / "app" / "data" / "vehicles" / "tn_cars.json").write_text("[]")
+
+    data_dir = _find_data_dir(image_app)
+    assert data_dir == (tmp_path / "app" / "data")
+    assert (data_dir / "reference").is_dir()
+    assert (data_dir / "vehicles" / "tn_cars.json").is_file()

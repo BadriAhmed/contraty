@@ -25,10 +25,29 @@ router = APIRouter()
 logger = logging.getLogger(__name__)
 settings = get_settings()
 
-_VEHICLES_PATH = Path(__file__).resolve().parents[3] / "data" / "vehicles" / "tn_cars.json"
+def _find_data_dir(start: Path | None = None) -> Path:
+    """Locate the repo ``data/`` dir in both source-tree and Docker layouts.
+
+    This module lives at ``backend/app/api/`` in the source tree but at
+    ``/app/app/api/`` inside the Cloud Run image, while ``data/`` sits at the
+    repo root / image ``/app``. Walk up from this module until a directory
+    containing ``data/`` is found so the same code works in both layouts.
+    """
+    current = start or Path(__file__).resolve().parent
+    for _ in range(6):
+        if (current / "data").is_dir():
+            return current / "data"
+        if current.parent == current:
+            break
+        current = current.parent
+    return Path(__file__).resolve().parents[3] / "data"
+
+
+_DATA_DIR = _find_data_dir()
+_VEHICLES_PATH = _DATA_DIR / "vehicles" / "tn_cars.json"
 _vehicles_cache: list[dict] | None = None
 
-_REFERENCE_DIR = Path(__file__).resolve().parents[3] / "data" / "reference"
+_REFERENCE_DIR = _DATA_DIR / "reference"
 _reference_cache: dict[str, dict] = {}
 
 
