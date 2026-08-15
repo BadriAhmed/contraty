@@ -13,6 +13,12 @@ import os
 import pytest
 
 TEMPLATES_DIR = os.path.join(os.path.dirname(__file__), "..", "..", "data", "templates")
+RAW_DIR = os.path.join(os.path.dirname(__file__), "..", "..", "data", "raw")
+
+
+def _load_scraped(name: str) -> dict[int, str]:
+    path = os.path.join(RAW_DIR, f"{name}_clean.json")
+    return {x["number"]: x["text"] for x in json.load(open(path, encoding="utf-8"))}
 
 VALID_AUTOCOMPLETE = {
     "years",
@@ -123,3 +129,20 @@ def test_number_fields_have_no_text_length_constraints():
                 assert "min_length" not in meta and "max_length" not in meta, (
                     f"{name}: number field {field!r} has text length constraints"
                 )
+
+
+@pytest.mark.unit
+def test_verified_legal_citations_resolve_in_scraped_corpus():
+    """The articles cited in template text/hints must exist in the scraped
+    codes with matching subject matter. Guards against citation regressions."""
+    ct = _load_scraped("ct")
+    cs = _load_scraped("cs")
+
+    # préavis (délai-congé) — art. 16 CT
+    assert 16 in ct and "délai" in ct[16].lower()
+    # certificat de travail — art. 21 CT
+    assert 21 in ct and "certificat" in ct[21].lower()
+    # congés annuels — art. 113 CT
+    assert 113 in ct and "congé" in ct[113].lower()
+    # capital minimum SARL — art. 92 CSC
+    assert 92 in cs and "capital" in cs[92].lower()
