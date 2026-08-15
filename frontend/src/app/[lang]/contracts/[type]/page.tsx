@@ -48,8 +48,30 @@ const TYPE_LABELS: Record<string, Record<string, string>> = {
 
 export default async function V2ContractDetail({ params }: { params: { lang: string; type: string } }) {
   const { lang, type } = params;
-  const template = await fetchTemplate(type);
+  let template = null;
+  let loadError = false;
+  try {
+    template = await fetchTemplate(type);
+  } catch {
+    loadError = true;
+  }
   const isRtl = lang === "ar";
+
+  if (loadError) {
+    return (
+      <div className="max-w-7xl mx-auto px-4 py-24 text-center">
+        <h1 className="text-2xl font-bold text-error mb-2">
+          {lang === "ar" ? "تعذر تحميل العقد" : "Impossible de charger le contrat"}
+        </h1>
+        <p className="text-text-secondary mb-4">
+          {lang === "ar" ? "يرجى إعادة المحاولة." : "Veuillez réessayer."}
+        </p>
+        <a href={`/${lang}/contracts/${type}`} className="text-primary hover:underline">
+          {lang === "ar" ? "إعادة المحاولة" : "Réessayer"}
+        </a>
+      </div>
+    );
+  }
 
   if (!template) {
     return (

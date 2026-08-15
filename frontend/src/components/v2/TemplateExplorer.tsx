@@ -19,15 +19,24 @@ const domainMeta: Record<string, { icon: typeof Home; color: string }> = {
 interface Props {
   lang: string;
   templates: Template[];
+  initialQuery?: string;
 }
 
-export default function TemplateExplorer({ lang, templates }: Props) {
+export default function TemplateExplorer({ lang, templates, initialQuery = "" }: Props) {
   const [activeDomain, setActiveDomain] = useState<string | null>(null);
   const [showAll, setShowAll] = useState(false);
+  const [query, setQuery] = useState(initialQuery || "");
 
-  const filtered = activeDomain
-    ? templates.filter((t) => t.domain === activeDomain)
-    : templates;
+  const q = query.trim().toLowerCase();
+  const filtered = templates.filter((t) => {
+    if (activeDomain && t.domain !== activeDomain) return false;
+    if (!q) return true;
+    const hay = [t.title_fr, t.title_ar, t.description_fr, t.description_ar, t.slug, t.domain]
+      .filter(Boolean)
+      .join(" ")
+      .toLowerCase();
+    return hay.includes(q);
+  });
 
   const visible = showAll || activeDomain ? filtered : filtered.slice(0, 9);
   const hasMore = !showAll && !activeDomain && filtered.length > 9;
@@ -48,6 +57,23 @@ export default function TemplateExplorer({ lang, templates }: Props) {
               : `${templates.length} modèles couvrant vos besoins juridiques`}
           </p>
         </div>
+
+        {/* Search query indicator */}
+        {q && (
+          <div className="flex items-center justify-center gap-2 mb-6">
+            <p className="text-sm text-text-secondary">
+              {lang === "ar"
+                ? `${filtered.length} نتيجة عن «${query.trim()}»`
+                : `${filtered.length} résultat${filtered.length === 1 ? "" : "s"} pour «${query.trim()}»`}
+            </p>
+            <button
+              onClick={() => setQuery("")}
+              className="text-sm font-semibold text-primary hover:underline"
+            >
+              {lang === "ar" ? "مسح البحث" : "Effacer"}
+            </button>
+          </div>
+        )}
 
         {/* Domain filter pills */}
         <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 md:mb-10 px-1">
@@ -97,7 +123,9 @@ export default function TemplateExplorer({ lang, templates }: Props) {
         {visible.length === 0 ? (
           <div className="text-center py-16">
             <p className="text-text-secondary">
-              {lang === "ar" ? "لا توجد نماذج في هذا المجال" : "Aucun modèle dans ce domaine"}
+              {q
+                ? (lang === "ar" ? "لا توجد نماذج تطابق بحثك" : "Aucun modèle ne correspond à votre recherche")
+                : (lang === "ar" ? "لا توجد نماذج في هذا المجال" : "Aucun modèle dans ce domaine")}
             </p>
           </div>
         ) : (

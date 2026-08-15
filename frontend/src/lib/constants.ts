@@ -12,26 +12,19 @@ export const DOMAINS: Record<string, { ar: string; fr: string; icon: string }> =
 };
 
 export async function fetchTemplates(params?: { domain?: string; language?: string }): Promise<Template[]> {
-  try {
-    const searchParams = new URLSearchParams();
-    if (params?.domain) searchParams.set("domain", params.domain);
-    if (params?.language) searchParams.set("language", params.language);
-    const res = await fetch(`${API_BASE}/contracts/templates?${searchParams}`, { cache: "no-store" });
-    if (!res.ok) return [];
-    return res.json();
-  } catch {
-    return [];
-  }
+  const searchParams = new URLSearchParams();
+  if (params?.domain) searchParams.set("domain", params.domain);
+  if (params?.language) searchParams.set("language", params.language);
+  const res = await fetch(`${API_BASE}/contracts/templates?${searchParams}`, { cache: "no-store" });
+  if (!res.ok) throw new Error(`Failed to load templates (${res.status})`);
+  return res.json();
 }
 
 export async function fetchTemplate(slug: string): Promise<Template | null> {
-  try {
-    const res = await fetch(`${API_BASE}/contracts/templates/${slug}`, { cache: "no-store" });
-    if (!res.ok) return null;
-    return res.json();
-  } catch {
-    return null;
-  }
+  const res = await fetch(`${API_BASE}/contracts/templates/${slug}`, { cache: "no-store" });
+  if (res.status === 404) return null;
+  if (!res.ok) throw new Error(`Failed to load template (${res.status})`);
+  return res.json();
 }
 
 export function validateField(value: string, meta: FieldMeta | null): string | null {

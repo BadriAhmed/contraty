@@ -34,9 +34,22 @@ const domainMeta: Record<string, { icon: typeof Home; cat: string; color: string
 
 const t = (lang: string, ar: ReactNode, fr: ReactNode): ReactNode => (lang === "ar" ? ar : fr);
 
-export default async function V2HomePage({ params }: { params: { lang: string } }) {
+export default async function V2HomePage({
+  params,
+  searchParams,
+}: {
+  params: { lang: string };
+  searchParams?: { q?: string };
+}) {
   const { lang } = params;
-  const templates = await fetchTemplates({ language: lang });
+  const initialQuery = searchParams?.q || "";
+  let templates = [];
+  let loadError = false;
+  try {
+    templates = await fetchTemplates({ language: lang });
+  } catch {
+    loadError = true;
+  }
 
   return (
     <div className="bg-background">
@@ -295,7 +308,26 @@ export default async function V2HomePage({ params }: { params: { lang: string } 
       {/* ────────────────────────────────────────────
           5. DOMAIN SHOWCASE + TEMPLATE GRID
       ─────────────────────────────────────────────── */}
-      <TemplateExplorer lang={lang} templates={templates} />
+      {loadError ? (
+        <section id="templates" className="py-16 md:py-24 bg-surface-container-low/50 scroll-mt-20">
+          <div className="max-w-7xl mx-auto px-4 md:px-6 text-center">
+            <h2 className="text-2xl md:text-3xl font-bold text-on-surface tracking-tight mb-3">
+              {t(lang, "تعذر تحميل النماذج", "Impossible de charger les modèles")}
+            </h2>
+            <p className="text-text-secondary mb-6">
+              {t(lang, "يرجى التحقق من اتصالك وإعادة المحاولة.", "Veuillez vérifier votre connexion et réessayer.")}
+            </p>
+            <a
+              href={`/${lang}`}
+              className="inline-flex items-center gap-2 bg-primary text-on-primary font-semibold px-6 py-3 rounded-xl hover:bg-surface-tint transition-colors"
+            >
+              {t(lang, "إعادة المحاولة", "Réessayer")}
+            </a>
+          </div>
+        </section>
+      ) : (
+        <TemplateExplorer lang={lang} templates={templates} initialQuery={initialQuery} />
+      )}
 
       {/* ────────────────────────────────────────────
           6. HOW IT WORKS (3 steps)

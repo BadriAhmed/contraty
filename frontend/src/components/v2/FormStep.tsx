@@ -235,11 +235,13 @@ export default function FormStep({
             value={value || ""}
             options={acOptions}
             placeholder={field.placeholder}
+            ariaLabel={field.label}
             onChange={onChange}
           />
         ) : isSelect ? (
           <select
             ref={inputRef as React.Ref<HTMLSelectElement>}
+            aria-label={field.label}
             value={value || ""}
             onChange={(e) => onChange(e.target.value)}
             onKeyDown={handleKeyDown}
@@ -256,6 +258,7 @@ export default function FormStep({
               ref={inputRef as React.Ref<HTMLInputElement>}
               type={inputType}
               inputMode={inputMode}
+              aria-label={field.label}
               value={value || ""}
               onChange={(e) => onChange(e.target.value)}
               onKeyDown={handleKeyDown}

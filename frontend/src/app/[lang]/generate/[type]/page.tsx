@@ -27,6 +27,7 @@ export default function V2GeneratePage() {
   const [template, setTemplate] = useState<Template | null>(null);
   const [loading, setLoading] = useState(true);
   const [fetchError, setFetchError] = useState<string | null>(null);
+  const [reloadKey, setReloadKey] = useState(0);
   const [showAdLoading, setShowAdLoading] = useState(false);
   const [showMobileSidebar, setShowMobileSidebar] = useState(false);
   const mainRef = useRef<HTMLDivElement>(null);
@@ -60,7 +61,7 @@ export default function V2GeneratePage() {
         trackEvent("wizard_start", { slug: type, lang, domain: t.domain });
       })
       .catch((e) => { setFetchError(e instanceof Error ? e.message : "Template not found"); setLoading(false); });
-  }, [type]);
+  }, [type, reloadKey]);
 
   // Flatten all fields into a single array with section info
   const flatFields = useMemo(() => {
@@ -211,9 +212,17 @@ export default function V2GeneratePage() {
       <div className="max-w-7xl mx-auto px-4 py-24 text-center">
         <h1 className="text-2xl font-bold text-error mb-2">{lang === "ar" ? "خطأ" : "Erreur"}</h1>
         <p className="text-text-secondary">{fetchError}</p>
-        <Link href={`/${lang}`} className="text-primary hover:underline mt-4 inline-block">
-          {lang === "ar" ? "العودة إلى الرئيسية" : "Retour à l'accueil"}
-        </Link>
+        <div className="mt-4 flex items-center justify-center gap-3">
+          <button
+            onClick={() => { setFetchError(null); setLoading(true); setReloadKey((r) => r + 1); }}
+            className="bg-primary text-on-primary font-semibold px-5 py-2.5 rounded-xl hover:bg-surface-tint transition-colors"
+          >
+            {lang === "ar" ? "إعادة المحاولة" : "Réessayer"}
+          </button>
+          <Link href={`/${lang}`} className="text-primary hover:underline">
+            {lang === "ar" ? "العودة إلى الرئيسية" : "Retour à l'accueil"}
+          </Link>
+        </div>
       </div>
     );
   }

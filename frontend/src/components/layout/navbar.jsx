@@ -47,7 +47,10 @@ export function Navbar() {
               className="flex-1 bg-transparent outline-none text-sm text-on-surface placeholder:text-text-secondary"
               onKeyDown={(e) => {
                 if (e.key === "Enter") {
-                  window.location.href = `/${lang}#templates`;
+                  const q = e.currentTarget.value.trim();
+                  window.location.href = q
+                    ? `/${lang}?q=${encodeURIComponent(q)}#templates`
+                    : `/${lang}#templates`;
                 }
               }}
             />

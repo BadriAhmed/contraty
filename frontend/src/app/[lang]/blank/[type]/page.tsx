@@ -17,6 +17,7 @@ export default function V2BlankPage() {
   const [template, setTemplate] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [reloadKey, setReloadKey] = useState(0);
   const [customPrompt, setCustomPrompt] = useState("");
   const [customizing, setCustomizing] = useState(false);
   const [customized, setCustomized] = useState(false);
@@ -30,7 +31,7 @@ export default function V2BlankPage() {
         setTemplate(t); setLoading(false);
       })
       .catch((e) => { setError(e.message); setLoading(false); });
-  }, [type]);
+  }, [type, reloadKey]);
 
   const buildBlank = (tmpl) => {
     if (!tmpl) return [];
@@ -116,9 +117,17 @@ export default function V2BlankPage() {
       <div className="max-w-7xl mx-auto px-4 py-24 text-center">
         <h1 className="text-2xl font-bold text-error mb-2">{lang === "ar" ? "خطأ" : "Erreur"}</h1>
         <p className="text-text-secondary">{error || "Template not found"}</p>
-        <Link href={`/${lang}`} className="text-primary hover:underline mt-4 inline-block">
-          {lang === "ar" ? "العودة إلى الرئيسية" : "Retour à l'accueil"}
-        </Link>
+        <div className="mt-4 flex items-center justify-center gap-3">
+          <button
+            onClick={() => { setError(null); setLoading(true); setReloadKey((r) => r + 1); }}
+            className="bg-primary text-on-primary font-semibold px-5 py-2.5 rounded-xl hover:bg-surface-tint transition-colors"
+          >
+            {lang === "ar" ? "إعادة المحاولة" : "Réessayer"}
+          </button>
+          <Link href={`/${lang}`} className="text-primary hover:underline">
+            {lang === "ar" ? "العودة إلى الرئيسية" : "Retour à l'accueil"}
+          </Link>
+        </div>
       </div>
     );
   }

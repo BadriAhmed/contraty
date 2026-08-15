@@ -8,9 +8,10 @@ interface Props {
   options: string[];
   placeholder?: string;
   onChange: (value: string) => void;
+  ariaLabel?: string;
 }
 
-export default function AutocompleteInput({ value, options, placeholder, onChange }: Props) {
+export default function AutocompleteInput({ value, options, placeholder, onChange, ariaLabel }: Props) {
   const [opened, setOpened] = useState(false);
   const [highlight, setHighlight] = useState(-1);
   const boxRef = useRef<HTMLDivElement>(null);
@@ -63,6 +64,7 @@ export default function AutocompleteInput({ value, options, placeholder, onChang
       <input
         type="text"
         value={value}
+        aria-label={ariaLabel}
         onChange={(e) => {
           onChange(e.target.value);
           setOpened(true);
