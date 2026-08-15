@@ -231,6 +231,7 @@ export default async function V2HomePage({
                 "Remplissez les champs avec vos informations, le système s'occupe du reste. Aucune expertise juridique requise.",
               ),
               color: "var(--cat-real-estate)",
+              image: "/images/features/simple.svg",
             },
             {
               icon: Scale,
@@ -242,6 +243,7 @@ export default async function V2HomePage({
                 "Chaque modèle se réfère au Code des Obligations et des Contrats, au Code du Travail ou au Code des Sociétés Commerciales.",
               ),
               color: "var(--cat-employment)",
+              image: "/images/features/legal.svg",
             },
             {
               icon: Languages,
@@ -253,6 +255,7 @@ export default async function V2HomePage({
                 "Basculez entre l'arabe et le français en un clic. Chaque modèle est disponible dans les deux langues avec un support RTL complet.",
               ),
               color: "var(--cat-business)",
+              image: "/images/features/bilingual.svg",
             },
             {
               icon: ShieldCheck,
@@ -264,6 +267,7 @@ export default async function V2HomePage({
                 "La génération se fait en session uniquement. Une fois le contrat téléchargé, vos données sont effacées. Pas de compte, pas de suivi.",
               ),
               color: "var(--cat-services)",
+              image: "/images/features/secure.svg",
             },
           ].map((feat, i) => {
             const reverse = i % 2 === 1;
@@ -292,13 +296,14 @@ export default async function V2HomePage({
                 </div>
                 {/* Visual */}
                 <div className="flex-1 max-w-sm w-full">
-                  <div
-                    className="aspect-[4/3] rounded-2xl flex items-center justify-center"
-                    style={{
-                      background: `linear-gradient(135deg, color-mix(in srgb, ${feat.color} 12%, var(--surface)), var(--surface-container-low))`,
-                    }}
-                  >
-                    <feat.icon size={72} style={{ color: feat.color }} className="opacity-80" />
+                  <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-outline-variant/40 bg-surface">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={feat.image}
+                      alt={feat.title as string}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
                   </div>
                 </div>
               </div>
