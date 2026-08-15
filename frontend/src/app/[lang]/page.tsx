@@ -19,7 +19,6 @@ import {
 } from "lucide-react";
 import FAQAccordion from "@/components/v2/FAQAccordion";
 import TemplateExplorer from "@/components/v2/TemplateExplorer";
-import FeatureIllustration from "@/components/v2/FeatureIllustration";
 import type { ReactNode } from "react";
 
 export const dynamic = "force-dynamic";
@@ -298,7 +297,13 @@ export default async function V2HomePage({
                 {/* Visual */}
                 <div className="flex-1 max-w-sm w-full">
                   <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-outline-variant/40 bg-surface">
-                    <FeatureIllustration variant={feat.variant} />
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={`/images/features/${feat.variant}.png`}
+                      alt={feat.title as string}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
                   </div>
                 </div>
               </div>
