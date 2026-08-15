@@ -132,6 +132,29 @@ def validate_user_fields(metadata: dict, user_fields: dict[str, str]) -> list[st
         if not value:
             continue
 
+        ftype = fm.get("type")
+
+        # Date inputs always submit ISO YYYY-MM-DD; ignore text-oriented
+        # pattern/length constraints in the metadata.
+        if ftype == "date":
+            if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", value):
+                errors.append(f"{name}: invalid date (expected YYYY-MM-DD)")
+            continue
+
+        if ftype in ("number", "percentage"):
+            try:
+                n = float(value.replace(",", "."))
+            except ValueError:
+                errors.append(f"{name}: not a number")
+                continue
+            min_value = fm.get("min_value")
+            max_value = fm.get("max_value")
+            if min_value is not None and n < min_value:
+                errors.append(f"{name}: below minimum")
+            if max_value is not None and n > max_value:
+                errors.append(f"{name}: above maximum")
+            continue
+
         pattern = fm.get("pattern")
         if pattern:
             try:
@@ -146,19 +169,6 @@ def validate_user_fields(metadata: dict, user_fields: dict[str, str]) -> list[st
             errors.append(f"{name}: too short")
         if max_length and len(value) > max_length:
             errors.append(f"{name}: too long")
-
-        if fm.get("type") in ("number", "percentage"):
-            try:
-                n = float(value.replace(",", "."))
-            except ValueError:
-                errors.append(f"{name}: not a number")
-                continue
-            min_value = fm.get("min_value")
-            max_value = fm.get("max_value")
-            if min_value is not None and n < min_value:
-                errors.append(f"{name}: below minimum")
-            if max_value is not None and n > max_value:
-                errors.append(f"{name}: above maximum")
 
     return errors
 

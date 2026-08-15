@@ -31,25 +31,35 @@ export function validateField(value: string, meta: FieldMeta | null): string | n
   if (!meta) return null;
   const trimmed = (value || "").trim();
   if (meta.required && !trimmed) return "required";
+  if (!trimmed) return null;
 
-  if (trimmed && meta.pattern) {
-    try {
-      const re = new RegExp(meta.pattern);
-      if (!re.test(trimmed)) return "pattern";
-    } catch {
-      /* invalid regex from backend, skip */
-    }
+  const type = meta.type;
+
+  // <input type="date"> always yields ISO YYYY-MM-DD; validate it directly and
+  // ignore any text-oriented pattern/length constraints in the metadata.
+  if (type === "date") {
+    return /^\d{4}-\d{2}-\d{2}$/.test(trimmed) ? null : "format";
   }
 
-  if (trimmed && meta.min_length && trimmed.length < meta.min_length) return "min_length";
-  if (trimmed && meta.max_length && trimmed.length > meta.max_length) return "max_length";
-
-  if (trimmed && (meta.type === "number" || meta.type === "percentage")) {
+  // number/percentage come from <input type="number"> — parse and check ranges.
+  if (type === "number" || type === "percentage") {
     const n = parseFloat(trimmed.replace(",", "."));
     if (isNaN(n)) return "format";
     if (meta.min_value !== undefined && meta.min_value !== null && n < meta.min_value) return "min_value";
     if (meta.max_value !== undefined && meta.max_value !== null && n > meta.max_value) return "max_value";
+    return null;
   }
+
+  // text, cin, email, phone, select: pattern + length checks.
+  if (meta.pattern) {
+    try {
+      if (!new RegExp(meta.pattern).test(trimmed)) return "pattern";
+    } catch {
+      /* invalid regex from backend, skip */
+    }
+  }
+  if (meta.min_length && trimmed.length < meta.min_length) return "min_length";
+  if (meta.max_length && trimmed.length > meta.max_length) return "max_length";
 
   return null;
 }

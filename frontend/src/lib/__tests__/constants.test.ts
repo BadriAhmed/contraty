@@ -61,6 +61,23 @@ describe("validateField", () => {
     expect(validateField("", meta({ type: "number", min_value: 1 }))).toBeNull();
     expect(validateField("", meta({ pattern: "^\\d{8}$" }))).toBeNull();
   });
+
+  it("validates date fields as ISO and ignores text patterns/lengths", () => {
+    // Regression: DATE_CIN was typed "date" but carried an 8-digit CIN pattern,
+    // so picking a date (ISO) failed validation with "Format invalide".
+    const buggy = meta({ type: "date", pattern: "^\\d{8}$", min_length: 8, max_length: 8 });
+    expect(validateField("2026-08-15", buggy)).toBeNull();
+    // Non-ISO input is rejected for date fields
+    expect(validateField("15/08/2026", buggy)).toBe("format");
+    expect(validateField("not-a-date", buggy)).toBe("format");
+  });
+
+  it("validates number fields by range, ignoring text patterns", () => {
+    const amount = meta({ type: "number", pattern: "^-?\\d+([\\.\\,]\\d+)?$", min_value: 0 });
+    expect(validateField("1500", amount)).toBeNull();
+    expect(validateField("12.5", amount)).toBeNull();
+    expect(validateField("-3", amount)).toBe("min_value");
+  });
 });
 
 describe("fetchTemplates / fetchTemplate error handling", () => {

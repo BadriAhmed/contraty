@@ -84,6 +84,23 @@ def test_autocomplete_values_are_canonical():
 
 
 @pytest.mark.unit
+def test_date_field_patterns_accept_iso():
+    """Date fields render <input type="date"> which submits ISO YYYY-MM-DD.
+
+    A date field whose pattern rejects ISO (e.g. an 8-digit CIN pattern) would
+    make the wizard show "Format invalide" on a valid date.
+    """
+    import re
+
+    for name, d in _load_all():
+        for field, meta in d.get("field_metadata", {}).items():
+            if meta.get("type") == "date" and meta.get("pattern"):
+                assert re.search(meta["pattern"], "2026-08-15"), (
+                    f"{name}: date field {field!r} pattern {meta['pattern']!r} rejects ISO dates"
+                )
+
+
+@pytest.mark.unit
 def test_number_fields_have_ranges():
     for name, d in _load_all():
         for field, meta in d.get("field_metadata", {}).items():

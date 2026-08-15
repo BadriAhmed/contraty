@@ -435,3 +435,18 @@ async def test_generate_contract_rejects_invalid_fields(seeded_repo):
     )
     assert result["success"] is True
     assert result["contract"] is not None
+
+
+@pytest.mark.unit
+def test_validate_user_fields_date_ignores_text_pattern():
+    """Date fields are validated as ISO; text patterns/lengths are ignored.
+
+    Regression for DATE_CIN: it was typed "date" but carried an 8-digit CIN
+    pattern, so an ISO date value failed validation.
+    """
+    metadata = {
+        "DATE_SIGNATURE": {"type": "date", "required": True, "pattern": r"^\d{8}$", "min_length": 8, "max_length": 8},
+    }
+    assert validate_user_fields(metadata, {"DATE_SIGNATURE": "2026-08-15"}) == []
+    errors = validate_user_fields(metadata, {"DATE_SIGNATURE": "15/08/2026"})
+    assert any("DATE_SIGNATURE" in e and "invalid date" in e for e in errors)
