@@ -74,7 +74,7 @@
         {
           "id": "art-essai",
           "text_ar": "يخضع الأجير لفترة تجربة مدتها [DUREE_ESSAI] أشهر، يمكن خلالها لكل من الطرفين إنهاء العقد دون تعويض.",
-          "text_fr": "Le Salarié est soumis à une période d'essai de [DUREE_ESSAI] mois, conformément à la convention collective applicable ou, à défaut, à l'article 16 du Code du Travail tunisien. Au cours de cette période, chacune des parties pourra mettre fin au contrat à tout moment, sans préavis ni indemnité de rupture.",
+          "text_fr": "Le Salarié est soumis à une période d'essai de [DUREE_ESSAI] mois, conformément à la convention collective applicable. Au cours de cette période, chacune des parties pourra mettre fin au contrat à tout moment, sans préavis ni indemnité de rupture.",
           "fields": [
             "DUREE_ESSAI"
           ]
@@ -470,7 +470,7 @@
       "placeholder_fr": "1",
       "required": true,
       "hint_ar": "الحد الأدنى القانوني: شهر واحد (أقل من 5 سنوات أقدمية)، شهران (5-10 سنوات)، 3 أشهر (أكثر من 10 سنوات) — الفصل 15 مجلة الشغل",
-      "hint_fr": "min. légal : 1 mois (< 5 ans d'ancienneté), 2 mois (5-10 ans), 3 mois (> 10 ans) — art. 15 CT",
+      "hint_fr": "min. légal : 1 mois (< 5 ans d'ancienneté), 2 mois (5-10 ans), 3 mois (> 10 ans) — art. 16 CT",
       "help_fr": "Préavis de rupture en mois (ex: 1 mois).",
       "help_ar": "أجل الإعلام بالفسخ بالأشهر (مثال: شهر واحد).",
       "min_value": 0,
