@@ -16,6 +16,9 @@ RAW_DIR = Path(__file__).resolve().parent / "raw"
 CODES = ["coc", "ct", "cs"]
 
 
+_LEAD_MARKERS = re.compile(r"^(?:\*\*\s*|-\s*|\u2022\s*|\u00b7\s*)+")
+
+
 def _is_junk(text: str) -> bool:
     """True when the text has no meaningful content (markers/punctuation only)."""
     t = text.strip()
@@ -24,6 +27,16 @@ def _is_junk(text: str) -> bool:
     cleaned = re.sub(r"#BeginEditable|#EndEditable|texte", "", t)
     cleaned = re.sub(r"[\s\.\-/\*\u2026«»\"'«»]+", "", cleaned)
     return cleaned == ""
+
+
+def _strip(text: str) -> str:
+    """Strip leading bullet/emphasis markers (e.g. '- ', '** ') and whitespace.
+
+    Also normalizes non-breaking spaces (U+00A0) to regular spaces, matching
+    the original clean step.
+    """
+    t = text.replace("\u00a0", " ").strip()
+    return _LEAD_MARKERS.sub("", t).strip()
 
 
 def clean(raw: dict) -> list[dict]:
@@ -35,29 +48,27 @@ def clean(raw: dict) -> list[dict]:
             if not isinstance(a, dict) or "number" not in a:
                 continue
             num = a["number"]
-            text = (a.get("text") or "").strip()
+            text = _strip(a.get("text") or "")
             # drop empty / placeholder-only / editable-marker entries
             if _is_junk(text):
                 continue
 
+            entry = {
+                "number": num,
+                "text": text,
+                "is_modified": bool(a.get("is_modified")),
+                "references": a.get("references", []),
+            }
             cur = best.get(num)
-            score_new = (bool(a.get("is_modified")), len(text))
             if cur is None:
-                best[num] = a
+                best[num] = entry
             else:
-                score_cur = (bool(cur.get("is_modified")), len(cur.get("text") or ""))
+                score_new = (entry["is_modified"], len(entry["text"]))
+                score_cur = (cur["is_modified"], len(cur["text"]))
                 if score_new > score_cur:
-                    best[num] = a
+                    best[num] = entry
 
-    return [
-        {
-            "number": num,
-            "text": v.get("text", "").strip(),
-            "is_modified": bool(v.get("is_modified")),
-            "references": v.get("references", []),
-        }
-        for num, v in sorted(best.items())
-    ]
+    return [v for _, v in sorted(best.items())]
 
 
 if __name__ == "__main__":
