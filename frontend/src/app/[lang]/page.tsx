@@ -296,7 +296,7 @@ export default async function V2HomePage({
                 </div>
                 {/* Visual */}
                 <div className="flex-1 max-w-sm w-full">
-                  <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-outline-variant/40 bg-surface">
+                  <div className="aspect-[4/3] overflow-hidden">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={`/images/features/${feat.variant}.png`}
