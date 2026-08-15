@@ -39,10 +39,11 @@ export default async function V2HomePage({
   searchParams,
 }: {
   params: { lang: string };
-  searchParams?: { q?: string };
+  searchParams?: { q?: string; domain?: string };
 }) {
   const { lang } = params;
   const initialQuery = searchParams?.q || "";
+  const initialDomain = searchParams?.domain || "";
   let templates = [];
   let loadError = false;
   try {
@@ -326,7 +327,7 @@ export default async function V2HomePage({
           </div>
         </section>
       ) : (
-        <TemplateExplorer lang={lang} templates={templates} initialQuery={initialQuery} />
+        <TemplateExplorer lang={lang} templates={templates} initialQuery={initialQuery} initialDomain={initialDomain} />
       )}
 
       {/* ────────────────────────────────────────────

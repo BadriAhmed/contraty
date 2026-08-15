@@ -45,6 +45,13 @@ describe("TemplateExplorer", () => {
     expect(screen.queryByText("Vente de Voiture")).not.toBeInTheDocument();
   });
 
+  it("filters by the initial domain", () => {
+    render(<TemplateExplorer lang="fr" templates={templates} initialDomain="logement" />);
+    expect(screen.getByText("Contrat de Bail d'Habitation")).toBeInTheDocument();
+    expect(screen.queryByText("Contrat de Travail (CDI)")).not.toBeInTheDocument();
+    expect(screen.queryByText("Vente de Voiture")).not.toBeInTheDocument();
+  });
+
   it("shows a result count and clears the query", async () => {
     render(<TemplateExplorer lang="fr" templates={templates} initialQuery="contrat" />);
     // "contrat" matches the two contracts but not the car sale

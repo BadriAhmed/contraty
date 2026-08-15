@@ -20,10 +20,11 @@ interface Props {
   lang: string;
   templates: Template[];
   initialQuery?: string;
+  initialDomain?: string;
 }
 
-export default function TemplateExplorer({ lang, templates, initialQuery = "" }: Props) {
-  const [activeDomain, setActiveDomain] = useState<string | null>(null);
+export default function TemplateExplorer({ lang, templates, initialQuery = "", initialDomain = "" }: Props) {
+  const [activeDomain, setActiveDomain] = useState<string | null>(initialDomain || null);
   const [showAll, setShowAll] = useState(false);
   const [query, setQuery] = useState(initialQuery || "");
 
