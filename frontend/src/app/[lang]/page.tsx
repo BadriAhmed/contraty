@@ -231,7 +231,6 @@ export default async function V2HomePage({
                 "Remplissez les champs avec vos informations, le système s'occupe du reste. Aucune expertise juridique requise.",
               ),
               color: "var(--cat-real-estate)",
-              variant: "simple" as const,
             },
             {
               icon: Scale,
@@ -243,7 +242,6 @@ export default async function V2HomePage({
                 "Chaque modèle se réfère au Code des Obligations et des Contrats, au Code du Travail ou au Code des Sociétés Commerciales.",
               ),
               color: "var(--cat-employment)",
-              variant: "legal" as const,
             },
             {
               icon: Languages,
@@ -255,7 +253,6 @@ export default async function V2HomePage({
                 "Basculez entre l'arabe et le français en un clic. Chaque modèle est disponible dans les deux langues avec un support RTL complet.",
               ),
               color: "var(--cat-business)",
-              variant: "bilingual" as const,
             },
             {
               icon: ShieldCheck,
@@ -267,7 +264,6 @@ export default async function V2HomePage({
                 "La génération se fait en session uniquement. Une fois le contrat téléchargé, vos données sont effacées. Pas de compte, pas de suivi.",
               ),
               color: "var(--cat-services)",
-              variant: "secure" as const,
             },
           ].map((feat, i) => {
             const reverse = i % 2 === 1;
@@ -297,16 +293,12 @@ export default async function V2HomePage({
                 {/* Visual */}
                 <div className="flex-1 max-w-sm w-full">
                   <div
-                    className="aspect-[4/3] rounded-2xl overflow-hidden"
-                    style={{ backgroundColor: `color-mix(in srgb, ${feat.color} 15%, transparent)` }}
+                    className="aspect-[4/3] rounded-2xl flex items-center justify-center"
+                    style={{
+                      background: `linear-gradient(135deg, color-mix(in srgb, ${feat.color} 12%, var(--surface)), var(--surface-container-low))`,
+                    }}
                   >
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={`/images/features/${feat.variant}.png`}
-                      alt={feat.title as string}
-                      className="w-full h-full object-cover"
-                      loading="lazy"
-                    />
+                    <feat.icon size={72} style={{ color: feat.color }} className="opacity-80" />
                   </div>
                 </div>
               </div>
