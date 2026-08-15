@@ -167,7 +167,8 @@
       "min_length": 2,
       "max_length": 500,
       "help_fr": "Année civile correspondant au loyer (ex: 2024).",
-      "help_ar": "السنة المدنية المقابلة للكراء (مثال: 2024)."
+      "help_ar": "السنة المدنية المقابلة للكراء (مثال: 2024).",
+      "min_value": 2000
     },
     "ADRESSE_BIEN": {
       "type": "text",

@@ -245,7 +245,8 @@
       "min_length": 2,
       "max_length": 500,
       "help_fr": "Valeur nominale d'une action en dinars tunisiens.",
-      "help_ar": "القيمة الاسمية للسهم الواحد بالدينار التونسي."
+      "help_ar": "القيمة الاسمية للسهم الواحد بالدينار التونسي.",
+      "min_value": 0
     },
     "REPARTITION_PARTS": {
       "type": "text",

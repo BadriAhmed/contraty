@@ -380,7 +380,8 @@
       "min_length": 2,
       "max_length": 500,
       "help_fr": "Montant en dinars tunisiens .",
-      "help_ar": "المبلغ بالدينار التونسي ."
+      "help_ar": "المبلغ بالدينار التونسي .",
+      "min_value": 0
     },
     "SOLDE": {
       "type": "number",
@@ -394,7 +395,8 @@
       "min_length": 2,
       "max_length": 500,
       "help_fr": "Montant en dinars tunisiens .",
-      "help_ar": "المبلغ بالدينار التونسي ."
+      "help_ar": "المبلغ بالدينار التونسي .",
+      "min_value": 0
     },
     "MONTANT_PRET": {
       "type": "number",

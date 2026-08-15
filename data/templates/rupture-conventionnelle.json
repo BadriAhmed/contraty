@@ -271,7 +271,8 @@
       "min_length": 2,
       "max_length": 500,
       "help_fr": "Montant de l'indemnité de rupture en dinars tunisiens.",
-      "help_ar": "مبلغ تعويض الإنهاء بالدينار التونسي."
+      "help_ar": "مبلغ تعويض الإنهاء بالدينار التونسي.",
+      "min_value": 0
     },
     "BASE_CALCUL": {
       "type": "text",

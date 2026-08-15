@@ -286,7 +286,8 @@
       "min_length": 2,
       "max_length": 500,
       "help_fr": "Année d'obtention du diplôme (ex: 2020).",
-      "help_ar": "سنة الحصول على الشهادة (مثال: 2020)."
+      "help_ar": "سنة الحصول على الشهادة (مثال: 2020).",
+      "min_value": 1950
     },
     "ADRESSE_STAGIAIRE": {
       "type": "text",
@@ -410,7 +411,8 @@
       "min_length": 2,
       "max_length": 500,
       "help_fr": "Préavis en jours en cas de fin de contrat (ex: 30 jours).",
-      "help_ar": "مهلة الإعلام بالأيام عند إنهاء العقد (مثال: 30 يومًا)."
+      "help_ar": "مهلة الإعلام بالأيام عند إنهاء العقد (مثال: 30 يومًا).",
+      "min_value": 1
     },
     "LIEU_SIGNATURE": {
       "type": "text",

@@ -355,7 +355,8 @@
       "min_length": 2,
       "max_length": 500,
       "help_fr": "Préavis en jours en cas de résiliation (ex: 30 jours).",
-      "help_ar": "مهلة الإعلام بالأيام عند فسخ العقد (مثال: 30 يومًا)."
+      "help_ar": "مهلة الإعلام بالأيام عند فسخ العقد (مثال: 30 يومًا).",
+      "min_value": 1
     },
     "TRIBUNAL": {
       "type": "text",

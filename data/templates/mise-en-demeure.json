@@ -317,7 +317,8 @@
       "min_length": 2,
       "max_length": 500,
       "help_fr": "Délai accordé en jours pour l'exécution (ex: 15 jours).",
-      "help_ar": "الأجل الممنوح بالأيام للتنفيذ (مثال: 15 يومًا)."
+      "help_ar": "الأجل الممنوح بالأيام للتنفيذ (مثال: 15 يومًا).",
+      "min_value": 1
     },
     "LIEU": {
       "type": "text",

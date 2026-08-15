@@ -363,7 +363,8 @@
       "min_length": 2,
       "max_length": 500,
       "help_fr": "Délai en jours pour procéder à la mutation de propriété.",
-      "help_ar": "الأجل بالأيام لإتمام نقل الملكية."
+      "help_ar": "الأجل بالأيام لإتمام نقل الملكية.",
+      "min_value": 1
     },
     "LIEU_SIGNATURE": {
       "type": "text",
