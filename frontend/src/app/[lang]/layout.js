@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import AdSenseScript from "@/components/ads/AdSenseScript";
+import HtmlDirSync from "@/components/layout/HtmlDirSync";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://contraty.tn";
 
@@ -48,6 +49,7 @@ export default function LangLayout({ children, params }) {
 
   return (
     <main dir={dir} lang={lang} className="flex flex-col min-h-screen bg-background">
+      <HtmlDirSync lang={lang} />
       <Navbar />
       <div className="flex-1">{children}</div>
       <Footer lang={lang} />
