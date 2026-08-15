@@ -75,6 +75,9 @@ export function Footer({ lang, disclaimer }) {
               <a href={`mailto:${COMPANY_EMAIL}`} className="block hover:text-inverse-on-surface transition-colors">
                 {lang === "ar" ? "اتصل بنا" : "Contact"}
               </a>
+              <Link href={`${base}/legal`} className="block hover:text-inverse-on-surface transition-colors">
+                {lang === "ar" ? "إشعارات قانونية" : "Mentions légales"}
+              </Link>
             </div>
           </div>
 

@@ -22,7 +22,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/contracts/autorisation-parentale-voyage",
     "/contracts/attestation-hebergement",
     "/contracts/attestation-honneur",
-    "/contracts/bail-commercial",
     "/contracts/contrat-karama",
     "/contracts/contrat-sivp",
     "/contracts/reconnaissance-dette",
