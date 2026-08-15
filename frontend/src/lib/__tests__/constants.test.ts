@@ -1,5 +1,5 @@
-import { describe, it, expect } from "vitest";
-import { validateField } from "@/lib/constants";
+import { describe, it, expect, vi, afterEach } from "vitest";
+import { validateField, fetchTemplates, fetchTemplate } from "@/lib/constants";
 import type { FieldMeta } from "@/types";
 
 function meta(overrides: Partial<FieldMeta> = {}): FieldMeta {
@@ -60,5 +60,26 @@ describe("validateField", () => {
   it("skips value checks when the value is empty (non-required)", () => {
     expect(validateField("", meta({ type: "number", min_value: 1 }))).toBeNull();
     expect(validateField("", meta({ pattern: "^\\d{8}$" }))).toBeNull();
+  });
+});
+
+describe("fetchTemplates / fetchTemplate error handling", () => {
+  afterEach(() => {
+    vi.unstubAllGlobals();
+  });
+
+  it("fetchTemplates throws on a non-OK response instead of silently returning []", async () => {
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValue({ ok: false, status: 500 }));
+    await expect(fetchTemplates()).rejects.toThrow("Failed to load templates (500)");
+  });
+
+  it("fetchTemplate returns null on 404 (missing slug)", async () => {
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValue({ ok: false, status: 404 }));
+    await expect(fetchTemplate("nope")).resolves.toBeNull();
+  });
+
+  it("fetchTemplate throws on a server error", async () => {
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValue({ ok: false, status: 503 }));
+    await expect(fetchTemplate("bail-habitation")).rejects.toThrow("Failed to load template (503)");
   });
 });
