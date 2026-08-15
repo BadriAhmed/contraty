@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import { fetchTemplate, API_BASE } from "@/lib/constants";
-import { ArrowLeft, ArrowRight, Download, FileText, Loader2, X, Wand, ChevronLeft } from "lucide-react";
+import { ArrowLeft, ArrowRight, Download, FileText, Loader2, X, Wand, ChevronLeft, Zap } from "lucide-react";
 import { trackEvent } from "@/lib/analytics";
 import DownloadAdPopup from "@/components/v2/DownloadAdPopup";
 
@@ -166,7 +166,52 @@ export default function V2BlankPage() {
           {lang === "ar" ? "قم بتحميل النموذج واملأه يدوياً، أو استخدم الذكاء الاصطناعي لتخصيصه" : "Téléchargez le modèle et remplissez-le manuellement, ou utilisez l'IA pour le personnaliser"}
         </p>
 
-        {/* AI Customization */}
+        {/* Incentive: guided flow */}
+        <div className="bg-primary text-on-primary rounded-2xl p-5 md:p-6 mb-6 shadow-lg shadow-primary/25">
+          <div>
+            <div className="flex-1">
+              <h3 className="text-base font-extrabold text-on-primary mb-1.5 flex items-center gap-1.5">
+                <Zap size={17} />
+                {lang === "ar" ? (
+                  <>متأكد؟ التعبئة المسبقة تخليها أسهل بزاف عليك</>
+                ) : (
+                  <>Vous êtes sûr ? Le pré-remplissage rend tout bien plus facile</>
+                )}
+              </h3>
+              <p className="text-sm text-on-primary/90 leading-relaxed">
+                {lang === "ar"
+                  ? "معلوماتك تتدخل وحدها، العقد يتتراجع ويصير جاهز للتوقيع في دقائق — بلا كتابة يدوية."
+                  : "Vos informations sont insérées automatiquement, le contrat est révisé et prêt à signer en quelques minutes — sans aucune écriture manuelle."}
+              </p>
+            </div>
+            <Link
+              href={generateLink}
+              className="mt-4 inline-flex items-center justify-center gap-2 bg-white text-primary font-semibold px-6 py-3.5 rounded-xl hover:bg-primary-fixed transition-colors shadow-md text-sm"
+            >
+              {lang === "ar" ? "ابدأ الآن" : "Commencer"}
+              {isRtl ? <ArrowLeft size={16} /> : <ArrowRight size={16} />}
+            </Link>
+          </div>
+        </div>
+
+        {/* Contract preview */}
+        <div className="bg-surface rounded-2xl border border-outline-variant/40 shadow-sm p-6 md:p-8 max-h-[500px] overflow-y-auto space-y-4 mb-6">
+          <h2 className="text-lg font-bold text-primary text-center mb-4">{title}</h2>
+          {displaySections.map((section) => (
+            <div key={section.id}>
+              <h3 className="text-sm font-semibold text-primary border-b border-border-slate pb-1 mb-2">
+                {lang === "ar" ? section.title_ar : section.title_fr}
+              </h3>
+              {(section.articles || []).map((article) => (
+                <p key={article.id} className="text-sm text-on-surface leading-relaxed mb-2 whitespace-pre-wrap">
+                  {lang === "ar" ? article.text_ar : article.text_fr}
+                </p>
+              ))}
+            </div>
+          ))}
+        </div>
+
+        {/* AI Customization — one-time use, after the preview */}
         {!customized && (
           <div className="bg-primary-fixed/20 rounded-2xl p-5 md:p-6 mb-6">
             <h3 className="text-sm font-semibold text-primary mb-2 flex items-center gap-1.5">
@@ -206,23 +251,6 @@ export default function V2BlankPage() {
             {lang === "ar" ? "تم تعديل النموذج حسب طلبك." : "Modèle modifié selon votre demande."}
           </div>
         )}
-
-        {/* Contract preview */}
-        <div className="bg-surface rounded-2xl border border-outline-variant/40 shadow-sm p-6 md:p-8 max-h-[500px] overflow-y-auto space-y-4 mb-6">
-          <h2 className="text-lg font-bold text-primary text-center mb-4">{title}</h2>
-          {displaySections.map((section) => (
-            <div key={section.id}>
-              <h3 className="text-sm font-semibold text-primary border-b border-border-slate pb-1 mb-2">
-                {lang === "ar" ? section.title_ar : section.title_fr}
-              </h3>
-              {(section.articles || []).map((article) => (
-                <p key={article.id} className="text-sm text-on-surface leading-relaxed mb-2 whitespace-pre-wrap">
-                  {lang === "ar" ? article.text_ar : article.text_fr}
-                </p>
-              ))}
-            </div>
-          ))}
-        </div>
 
         {/* Download buttons */}
         <div className="flex flex-col sm:grid sm:grid-cols-2 gap-3">

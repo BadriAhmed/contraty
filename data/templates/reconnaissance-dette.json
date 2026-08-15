@@ -166,7 +166,8 @@
       "min_length": 8,
       "max_length": 8,
       "help_fr": "Numéro à 8 chiffres de la carte d'identité nationale de la partie concernée.",
-      "help_ar": "رقم بطاقة التعريف الوطنية المكون من 8 أرقام للطرف المعني."
+      "help_ar": "رقم بطاقة التعريف الوطنية المكون من 8 أرقام للطرف المعني.",
+      "image": "/images/help/cin.jpg"
     },
     "ADRESSE_DEBITEUR": {
       "type": "text",
@@ -209,7 +210,8 @@
       "min_length": 8,
       "max_length": 8,
       "help_fr": "Numéro à 8 chiffres de la carte d'identité nationale de la partie concernée.",
-      "help_ar": "رقم بطاقة التعريف الوطنية المكون من 8 أرقام للطرف المعني."
+      "help_ar": "رقم بطاقة التعريف الوطنية المكون من 8 أرقام للطرف المعني.",
+      "image": "/images/help/cin.jpg"
     },
     "ADRESSE_CREANCIER": {
       "type": "text",
@@ -300,8 +302,8 @@
       "placeholder_ar": "0",
       "placeholder_fr": "0",
       "required": true,
-      "hint_ar": "رقم",
-      "hint_fr": "Nombre",
+      "hint_ar": "التعويل على نسبة الفائدة القانونية المعمول بها (الفصل 1101 مجلة الالتزامات والعقود)",
+      "hint_fr": "taux d'intérêt légal en vigueur (art. 1101 COC)",
       "pattern": "^-?\\d+([\\.\\,]\\d+)?$",
       "min_value": 0,
       "help_fr": "Taux d'intérêt annuel en pourcentage (ex: 5 pour 5%).",
@@ -346,7 +348,8 @@
       "min_length": 2,
       "max_length": 500,
       "help_fr": "Adresse complète (rue, numéro, ville) .",
-      "help_ar": "العنوان الكامل (النهج، الرقم، المدينة) للتوقيع."
+      "help_ar": "العنوان الكامل (النهج، الرقم، المدينة) للتوقيع.",
+      "autocomplete": "tn-place"
     },
     "DATE_SIGNATURE": {
       "type": "date",

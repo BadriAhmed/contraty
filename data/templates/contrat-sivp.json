@@ -257,7 +257,8 @@
       "min_length": 8,
       "max_length": 8,
       "help_fr": "Numéro CIN du stagiaire SIVP.",
-      "help_ar": "رقم بطاقة تعريف المتربص."
+      "help_ar": "رقم بطاقة تعريف المتربص.",
+      "image": "/images/help/cin.jpg"
     },
     "DIPLOME": {
       "type": "text",
@@ -362,8 +363,8 @@
       "placeholder_ar": "0",
       "placeholder_fr": "0",
       "required": true,
-      "hint_ar": "رقم",
-      "hint_fr": "Nombre",
+      "hint_ar": "الحد الأدنى القانوني: 80% من الأجر الأدنى المضمون (أمر عدد 349 لسنة 2009)",
+      "hint_fr": "min. légal : 80 % du SMIG (décret n° 2009-349)",
       "pattern": "^-?\\d+([\\.\\,]\\d+)?$",
       "min_value": 0,
       "help_fr": "Montant de la bourse mensuelle en dinars tunisiens.",
@@ -423,7 +424,8 @@
       "min_length": 2,
       "max_length": 500,
       "help_fr": "Adresse complète (rue, numéro, ville) .",
-      "help_ar": "العنوان الكامل (النهج، الرقم، المدينة) للتوقيع."
+      "help_ar": "العنوان الكامل (النهج، الرقم، المدينة) للتوقيع.",
+      "autocomplete": "tn-place"
     },
     "DATE_SIGNATURE": {
       "type": "date",

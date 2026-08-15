@@ -1,0 +1,4227 @@
+[
+ {
+  "brand": "Audi",
+  "models": [
+   {
+    "model": "Audi A3 Berline",
+    "trim": "Audi A3 Berline 35 TFSI Dynamic Edition",
+    "body_type": "Berline",
+    "fuel": "Essence",
+    "price_tnd": 149990,
+    "year": "2025",
+    "transmission": "Traction",
+    "doors": "4",
+    "seats": "5"
+   },
+   {
+    "model": "Audi A3 Sportback",
+    "trim": "Audi A3 Sportback 35 TFSI Tech Line",
+    "body_type": "Compacte",
+    "fuel": "Essence",
+    "price_tnd": 139990,
+    "year": "2025",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Audi A5",
+    "trim": "Audi A5 TFSI Advanced",
+    "body_type": "Berline",
+    "fuel": "Essence",
+    "price_tnd": 219990,
+    "year": "2025",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Audi A6 Sportback e-tron",
+    "trim": "Audi A6 Sportback e-tron 100 kWh Performance",
+    "body_type": "Berline",
+    "fuel": "Electrique",
+    "price_tnd": 209990,
+    "year": "2025",
+    "transmission": "Propulsion",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Audi Q2",
+    "trim": "Audi Q2 35 TFSI Black Limited BVA",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 145000,
+    "year": "2026",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Audi Q3",
+    "trim": "Audi Q3 1.4 TFSI Advanced Line S-tronic",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 209000,
+    "year": "2026",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Audi Q3 Sportback",
+    "trim": "Audi Q3 Sportback 1.4 TFSI S-Line S-tronic",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 229000,
+    "year": "2026",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Audi Q6 e-tron",
+    "trim": "Audi Q6 e-tron 100 kWh Quattro S-line",
+    "body_type": "SUV",
+    "fuel": "Electrique",
+    "price_tnd": 234990,
+    "year": "2025",
+    "transmission": "Intégrale",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Audi Q6 Sportback e-tron",
+    "trim": "Audi Q6 Sportback e-tron 100 kWh Quattro S-line",
+    "body_type": "SUV",
+    "fuel": "Electrique",
+    "price_tnd": 279000,
+    "year": "2025",
+    "transmission": "Intégrale",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Audi Q8",
+    "trim": "Audi Q8 55 TFSI Quattro",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 525000,
+    "year": "2025",
+    "transmission": "Intégrale",
+    "doors": "5",
+    "seats": "5"
+   }
+  ]
+ },
+ {
+  "brand": "Avantier",
+  "models": [
+   {
+    "model": "Avantier Avantier C",
+    "trim": "Avantier Avantier C 14 KWH",
+    "body_type": "Utilitaire",
+    "fuel": "Electrique",
+    "price_tnd": 28700,
+    "year": "2025",
+    "transmission": "Propulsion",
+    "doors": "3",
+    "seats": "2"
+   },
+   {
+    "model": "Avantier Commuter",
+    "trim": "Avantier Commuter 31 KWH LFP",
+    "body_type": "Citadine",
+    "fuel": "Electrique",
+    "price_tnd": 37800,
+    "year": "2025",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "4"
+   }
+  ]
+ },
+ {
+  "brand": "Bako",
+  "models": [
+   {
+    "model": "Bee",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Bako Bee neuve - A partir de 18 260 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Evan",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Bako B-Van neuve - A partir de 22 586 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   }
+  ]
+ },
+ {
+  "brand": "BMW",
+  "models": [
+   {
+    "model": "BMW iX3",
+    "trim": "BMW iX3 50 xDrive Pack M Pro",
+    "body_type": "SUV",
+    "fuel": "Electrique",
+    "price_tnd": 299900,
+    "year": "2026",
+    "transmission": "Intégrale",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "BMW Série 4 Coupé",
+    "trim": "BMW Série 4 Coupé 420i Pack M Pro",
+    "body_type": "Coupé",
+    "fuel": "Essence",
+    "price_tnd": 366900,
+    "year": "2025",
+    "transmission": "Propulsion",
+    "doors": "2",
+    "seats": "4"
+   },
+   {
+    "model": "BMW X4",
+    "trim": "BMW X4 20i xDrive Pack M",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 299900,
+    "year": "2024",
+    "transmission": "Intégrale",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "I4",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix BMW i4 neuve - A partir de 219 900 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "I5",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix BMW i5 neuve - A partir de 289 900 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Ix2",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix BMW iX2 neuve - A partir de 232 900 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Serie 1 5P",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix BMW Série 1 neuve - A partir de 139 900 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Serie 2 Gran Coupe",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix BMW Série 2 Gran Coupé neuve - A partir de 149 900 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Serie 3",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix BMW Série 3 neuve - A partir de 189 900 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Serie 3 Hybride",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix BMW Série 3 Hybride neuve - A partir de 204 900 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Serie 4 Gran Coupe",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix BMW Série 4 Gran Coupé neuve - A partir de 259 900 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Serie 5",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix BMW Série 5 neuve - A partir de 249 900 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Serie 5 Hybride",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix BMW Série 5 Hybride neuve - A partir de 254 900 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "X1",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix BMW X1 neuve - A partir de 169 900 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "X1 Hybride",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix BMW X1 Hybride neuve - A partir de 179 900 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "X2",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix BMW X2 neuve - A partir de 179 900 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "X3 Hybride Rechargeable",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix BMW X3 Hybride neuve - A partir de 264 900 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "X5 Hybride",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix BMW X5 Hybride neuve - A partir de 379 900 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   }
+  ]
+ },
+ {
+  "brand": "BYD",
+  "models": [
+   {
+    "model": "BYD Atto 3",
+    "trim": "BYD Atto 3 60.48 kWh",
+    "body_type": "SUV",
+    "fuel": "Electrique",
+    "price_tnd": 123990,
+    "year": "2024",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "BYD Dolphin",
+    "trim": "BYD Dolphin 44.9 kWh",
+    "body_type": "Compacte",
+    "fuel": "Electrique",
+    "price_tnd": 94990,
+    "year": "2024",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "BYD Qin Plus",
+    "trim": "BYD Qin Plus 1.5 L DM-i",
+    "body_type": "Berline",
+    "fuel": "Essence",
+    "price_tnd": 69990,
+    "year": "2026",
+    "transmission": "Traction",
+    "doors": "4",
+    "seats": "5"
+   },
+   {
+    "model": "BYD Song Plus",
+    "trim": "BYD Song Plus 1.5 L DM-i",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 115990,
+    "year": "2024",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "BYD Tang EV",
+    "trim": "BYD Tang EV 108.8 kWh",
+    "body_type": "SUV",
+    "fuel": "Electrique",
+    "price_tnd": 229990,
+    "year": "2024",
+    "transmission": "Intégrale",
+    "doors": "5",
+    "seats": "7"
+   },
+   {
+    "model": "Dolphin Surf",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix BYD Dolphin Surf neuve - A partir de 51 000 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   }
+  ]
+ },
+ {
+  "brand": "Cenntro",
+  "models": [
+   {
+    "model": "Cenntro Logistar 100",
+    "trim": "Cenntro Logistar 100 16 kWh",
+    "body_type": "Utilitaire",
+    "fuel": "Electrique",
+    "price_tnd": 32800,
+    "year": "2025",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "2"
+   },
+   {
+    "model": "Cenntro Logistar 210",
+    "trim": "Cenntro Logistar 210 41.85 kWh",
+    "body_type": "Utilitaire",
+    "fuel": "Electrique",
+    "price_tnd": 66900,
+    "year": "2025",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "2"
+   },
+   {
+    "model": "Cenntro Logistar 210 Pickup",
+    "trim": "Cenntro Logistar 210 Pickup 41.85 kWh",
+    "body_type": "Pick up",
+    "fuel": "Electrique",
+    "price_tnd": 63200,
+    "year": "2026",
+    "transmission": "Traction",
+    "doors": "2",
+    "seats": "2"
+   },
+   {
+    "model": "Cenntro Logistar 260",
+    "trim": "Cenntro Logistar 260 43.5 kWh",
+    "body_type": "Utilitaire",
+    "fuel": "Electrique",
+    "price_tnd": 88600,
+    "year": "2025",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "2"
+   }
+  ]
+ },
+ {
+  "brand": "Changan",
+  "models": [
+   {
+    "model": "Changan Hunter",
+    "trim": "Changan Hunter 1.9 L Turbo Diesel 4x4",
+    "body_type": "Pick up",
+    "fuel": "Diesel",
+    "price_tnd": 123046,
+    "year": "2022",
+    "transmission": "Intégrale",
+    "doors": "4",
+    "seats": "5"
+   },
+   {
+    "model": "Changan New Star Van",
+    "trim": "Changan New Star Van 1.2 L",
+    "body_type": "Utilitaire",
+    "fuel": "Essence",
+    "price_tnd": 39900,
+    "year": "2022",
+    "transmission": "Propulsion",
+    "doors": "3",
+    "seats": "2"
+   },
+   {
+    "model": "Changan Star Truck Double Cabine",
+    "trim": "Changan Star Truck Double Cabine 1.2 L",
+    "body_type": "Pick up",
+    "fuel": "Essence",
+    "price_tnd": 49900,
+    "year": "2021",
+    "transmission": "Propulsion",
+    "doors": "4",
+    "seats": "5"
+   }
+  ]
+ },
+ {
+  "brand": "Chery",
+  "models": [
+   {
+    "model": "Chery Arrizo 8",
+    "trim": "Chery Arrizo 8 1.6 T-GDi Luxury BVA",
+    "body_type": "Berline",
+    "fuel": "Essence",
+    "price_tnd": 100000,
+    "year": "2025",
+    "transmission": "Traction",
+    "doors": "4",
+    "seats": "5"
+   },
+   {
+    "model": "Chery Arrizo 8 PHEV",
+    "trim": "Chery Arrizo 8 PHEV 1.5 T DHT",
+    "body_type": "Berline",
+    "fuel": "Essence",
+    "price_tnd": 89900,
+    "year": "2026",
+    "transmission": "Traction",
+    "doors": "4",
+    "seats": "5"
+   },
+   {
+    "model": "Chery Tiggo 1X populaire",
+    "trim": "Chery Tiggo 1X populaire 1.0 L Turbo CVT",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 32340,
+    "year": "2025",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Chery Tiggo 2 Pro Max",
+    "trim": "Chery Tiggo 2 Pro Max 1.0 T CVT",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 66990,
+    "year": "2026",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Chery Tiggo 4 HEV",
+    "trim": "Chery Tiggo 4 HEV 1.5 L",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 79900,
+    "year": "2026",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Chery Tiggo 7 PHEV",
+    "trim": "Chery Tiggo 7 PHEV 1.5 T DHT Hybrid",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 88900,
+    "year": "2026",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Chery Tiggo 8 PHEV",
+    "trim": "Chery Tiggo 8 PHEV 1.5 T DHT",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 102990,
+    "year": "2026",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "7"
+   },
+   {
+    "model": "Chery Tiggo 9 PHEV",
+    "trim": "Chery Tiggo 9 PHEV 1.5 T DHT AWD",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 129900,
+    "year": "2026",
+    "transmission": "Intégrale",
+    "doors": "5",
+    "seats": "7"
+   },
+   {
+    "model": "Himla",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Chery Himla neuve - A partir de 89 900 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "I03",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Chery I03 neuve - A partir de 76 900 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   }
+  ]
+ },
+ {
+  "brand": "Chevrolet",
+  "models": [
+   {
+    "model": "Captiva",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Chevrolet Captiva neuve - A partir de 93 920 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Chevrolet Groove",
+    "trim": "Chevrolet Groove 1.5 L Premier",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 85825,
+    "year": "2022",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   }
+  ]
+ },
+ {
+  "brand": "Citroën",
+  "models": [
+   {
+    "model": "C4 X",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Citroën C4 X neuve - A partir de 84 900 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Citroën Berlingo",
+    "trim": "Citroën Berlingo 1.6 L HDI You",
+    "body_type": "Monospace",
+    "fuel": "Diesel",
+    "price_tnd": 99900,
+    "year": "2024",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Citroën Berlingo Van",
+    "trim": "Citroën Berlingo Van 1.6 L HDI 630 KG Pro Edition 3 places",
+    "body_type": "Utilitaire",
+    "fuel": "Diesel",
+    "price_tnd": 67490,
+    "year": "2024",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "3"
+   },
+   {
+    "model": "Citroën C3",
+    "trim": "Citroën C3 1.2 L Plus",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 59900,
+    "year": "2026",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Citroën C3 Populaire",
+    "trim": "Citroën C3 Populaire 1.2 L You",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 35000,
+    "year": "2026",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Citroën Jumpy Combi",
+    "trim": "Citroën Jumpy Combi 2.0 L HDI 9 places",
+    "body_type": "Monospace",
+    "fuel": "Diesel",
+    "price_tnd": 151900,
+    "year": "2025",
+    "transmission": "Traction",
+    "doors": "4",
+    "seats": "9"
+   },
+   {
+    "model": "Citroën Jumpy Fourgon",
+    "trim": "Citroën Jumpy Fourgon 2.0 L HDI",
+    "body_type": "Utilitaire",
+    "fuel": "Diesel",
+    "price_tnd": 88900,
+    "year": "2025",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "3"
+   },
+   {
+    "model": "Jumper",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Citroën Jumper neuve - A partir de 97 900 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   }
+  ]
+ },
+ {
+  "brand": "Cupra",
+  "models": [
+   {
+    "model": "Cupra Formentor Hybride",
+    "trim": "Cupra Formentor Hybride 1.5 DSG",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 129980,
+    "year": "2026",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Leon",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Cupra Leon neuve - A partir de 119 980 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Terramar",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Cupra Terramar neuve - A partir de 168 980 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   }
+  ]
+ },
+ {
+  "brand": "Dacia",
+  "models": [
+   {
+    "model": "Dacia Duster",
+    "trim": "Dacia Duster 1.5 L dCi 4x2",
+    "body_type": "SUV",
+    "fuel": "Diesel",
+    "price_tnd": 106950,
+    "year": "2025",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Dacia Logan",
+    "trim": "Dacia Logan 1.0 L TCE Écran tactile",
+    "body_type": "Berline",
+    "fuel": "Essence",
+    "price_tnd": 62980,
+    "year": "2026",
+    "transmission": "Traction",
+    "doors": "4",
+    "seats": "5"
+   },
+   {
+    "model": "Dacia Sandero",
+    "trim": "Dacia Sandero 1.0 L TCE",
+    "body_type": "Citadine",
+    "fuel": "Essence",
+    "price_tnd": 58450,
+    "year": "2026",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Sandero Stepway",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Dacia Sandero Stepway neuve - A partir de 62 990 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   }
+  ]
+ },
+ {
+  "brand": "Deepal",
+  "models": [
+   {
+    "model": "Deepal G318",
+    "trim": "Deepal G318 1.5 L Reev 35.07 kWh",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 129980,
+    "year": "2026",
+    "transmission": "Intégrale",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Deepal S05",
+    "trim": "Deepal S05 1.5 L Reev 27.28 kWh",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 85980,
+    "year": "2026",
+    "transmission": "Propulsion",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Deepal S07",
+    "trim": "Deepal S07 1.5 L Reev 31.73 kWh",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 104980,
+    "year": "2026",
+    "transmission": "Propulsion",
+    "doors": "5",
+    "seats": "5"
+   }
+  ]
+ },
+ {
+  "brand": "DFSK",
+  "models": [
+   {
+    "model": "DFSK C31",
+    "trim": "DFSK C31 1.5 L Simple Cabine DLX",
+    "body_type": "Pick up",
+    "fuel": "Essence",
+    "price_tnd": 44900,
+    "year": "2024",
+    "transmission": "Propulsion",
+    "doors": "2",
+    "seats": "2"
+   },
+   {
+    "model": "DFSK C32",
+    "trim": "DFSK C32 1.5 L Double Cabine DLX",
+    "body_type": "Pick up",
+    "fuel": "Essence",
+    "price_tnd": 52900,
+    "year": "2024",
+    "transmission": "Propulsion",
+    "doors": "4",
+    "seats": "5"
+   },
+   {
+    "model": "DFSK C35",
+    "trim": "DFSK C35 1.5 L",
+    "body_type": "Utilitaire",
+    "fuel": "Essence",
+    "price_tnd": 49900,
+    "year": "2026",
+    "transmission": "Propulsion",
+    "doors": "5",
+    "seats": "2"
+   },
+   {
+    "model": "DFSK EC75",
+    "trim": "DFSK EC75 50.38 kWh",
+    "body_type": "Utilitaire",
+    "fuel": "Electrique",
+    "price_tnd": 79900,
+    "year": "2025",
+    "transmission": "Traction",
+    "doors": "2 portes latérales coulissantes",
+    "seats": "2"
+   },
+   {
+    "model": "DFSK Glory 580",
+    "trim": "DFSK Glory 580 1.5 T Luxury CVT",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 99900,
+    "year": "2022",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "7"
+   },
+   {
+    "model": "DFSK Glory iX5",
+    "trim": "DFSK Glory iX5 1.5 T Deluxe CVT",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 89900,
+    "year": "2024",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "E5",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix DFSK E5 PHEV neuve - A partir de 76 900 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Glory 500",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix DFSK Glory 500 neuve - A partir de 69 900 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "K01H",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix DFSK K01H neuve - A partir de 35 900 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "K01S",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix DFSK K01S neuve - A partir de 32 900 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "K02S",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix DFSK K02S neuve - A partir de 40 900 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   }
+  ]
+ },
+ {
+  "brand": "Dongfeng",
+  "models": [
+   {
+    "model": "Box",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Dongfeng Box neuve - A partir de 49 990 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Dongfeng Forthing T5 EVO",
+    "trim": "Dongfeng Forthing T5 EVO 1.5 L Turbo",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 118900,
+    "year": "2023",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Dongfeng Shine Max Hybride",
+    "trim": "Dongfeng Shine Max Hybride 1.5 T HEV E-CVT",
+    "body_type": "Berline",
+    "fuel": "Essence",
+    "price_tnd": 85900,
+    "year": "2025",
+    "transmission": "Traction",
+    "doors": "4",
+    "seats": "5"
+   },
+   {
+    "model": "Rich 6",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Dongfeng Rich 6 neuve - A partir de 88 700 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Shine",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Dongfeng Shine neuve - A partir de 64 990 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   }
+  ]
+ },
+ {
+  "brand": "FAW",
+  "models": [
+   {
+    "model": "Faw Bestune B70",
+    "trim": "Faw Bestune B70 1.5 l Turbo Luxury BVA",
+    "body_type": "Berline",
+    "fuel": "Essence",
+    "price_tnd": 94970,
+    "year": "2025",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Faw Bestune T77 Pro",
+    "trim": "Faw Bestune T77 Pro 1.5 l Essentiel BVA",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 95777,
+    "year": "2026",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Faw Bestune T90",
+    "trim": "Faw Bestune T90 1.5 l Turbo Premium BVA",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 99990,
+    "year": "2025",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   }
+  ]
+ },
+ {
+  "brand": "Fiat",
+  "models": [
+   {
+    "model": "Doblo",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Fiat Doblo neuve - A partir de 65 990 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Fiat Doblo Combi",
+    "trim": "Fiat Doblo Combi 1.6 L HDI",
+    "body_type": "Monospace",
+    "fuel": "Diesel",
+    "price_tnd": 104900,
+    "year": "2025",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Fiat Ducato",
+    "trim": "Fiat Ducato 2.2 HDI 11.5 m3 L2H2",
+    "body_type": "Utilitaire",
+    "fuel": "Diesel",
+    "price_tnd": 84000,
+    "year": "2025",
+    "transmission": "Traction",
+    "doors": "2 portes latérales coulissantes",
+    "seats": "3"
+   },
+   {
+    "model": "Fiat Scudo Fourgon",
+    "trim": "Fiat Scudo Fourgon 2.0 L HDI",
+    "body_type": "Utilitaire",
+    "fuel": "Diesel",
+    "price_tnd": 86400,
+    "year": "2025",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "3"
+   },
+   {
+    "model": "Scudo Combi",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Fiat Scudo Combi neuve - A partir de 153 900 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   }
+  ]
+ },
+ {
+  "brand": "Foday",
+  "models": [
+   {
+    "model": "Foday F22 D",
+    "trim": "Foday F22 D 1.9 L TID4 Luxury",
+    "body_type": "Pick up",
+    "fuel": "Diesel",
+    "price_tnd": 109800,
+    "year": "2020",
+    "transmission": "Intégrale",
+    "doors": "4",
+    "seats": "5"
+   },
+   {
+    "model": "Foday F22 Max",
+    "trim": "Foday F22 Max 1.9 L TID4 Luxury",
+    "body_type": "Pick up",
+    "fuel": "Diesel",
+    "price_tnd": 116800,
+    "year": "2020",
+    "transmission": "Intégrale",
+    "doors": "4",
+    "seats": "5"
+   },
+   {
+    "model": "Foday F22 S",
+    "trim": "Foday F22 S 1.9 T 4WD",
+    "body_type": "Pick up",
+    "fuel": "Diesel",
+    "price_tnd": 99500,
+    "year": "2024",
+    "transmission": "Intégrale",
+    "doors": "2",
+    "seats": "2"
+   }
+  ]
+ },
+ {
+  "brand": "Ford",
+  "models": [
+   {
+    "model": "Everest",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Ford Everest neuve - A partir de 249 000 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Ford Ranger Raptor",
+    "trim": "Ford Ranger Raptor 2.0 L TDCI 210 ch 4x4 BVA",
+    "body_type": "Pick up",
+    "fuel": "Diesel",
+    "price_tnd": 330000,
+    "year": "2024",
+    "transmission": "Intégrale",
+    "doors": "4",
+    "seats": "5"
+   },
+   {
+    "model": "Ford Transit Minibus",
+    "trim": "Ford Transit Minibus 2.0 l D Ecoblue 18 Places",
+    "body_type": "Minibus",
+    "fuel": "Diesel",
+    "price_tnd": 176500,
+    "year": "2026",
+    "transmission": "Propulsion",
+    "doors": "5",
+    "seats": "18"
+   },
+   {
+    "model": "Ranger",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Ford Ranger neuve - A partir de 156 500 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Territory",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Ford Territory neuve - A partir de 125 900 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   }
+  ]
+ },
+ {
+  "brand": "Foton",
+  "models": [
+   {
+    "model": "Foton TM5 3.4T Chassis Cabine",
+    "trim": "Foton TM5 3.4T Chassis Cabine 2.2 l Turbo",
+    "body_type": "Pick up",
+    "fuel": "Diesel",
+    "price_tnd": 58300,
+    "year": "2025",
+    "transmission": "Propulsion",
+    "doors": "2",
+    "seats": "2"
+   },
+   {
+    "model": "Foton Tunland G7 Simple Cabine",
+    "trim": "Foton Tunland G7 Simple Cabine 2.0 l Turbo 4x2",
+    "body_type": "Pick up",
+    "fuel": "Diesel",
+    "price_tnd": 72700,
+    "year": "2025",
+    "transmission": "Propulsion",
+    "doors": "2",
+    "seats": "2"
+   },
+   {
+    "model": "Foton View CS2 Van 16 places",
+    "trim": "Foton View CS2 Van 16 places 2.0 l Turbo",
+    "body_type": "Minibus",
+    "fuel": "Diesel",
+    "price_tnd": 130700,
+    "year": "2025",
+    "transmission": "Traction",
+    "doors": "3",
+    "seats": "16"
+   },
+   {
+    "model": "Tunland G7 Double Cabine",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Foton Tunland G7 Double Cabine neuve - A partir de 99 900 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   }
+  ]
+ },
+ {
+  "brand": "GAC Motor",
+  "models": [
+   {
+    "model": "Emzoom",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix GAC Emzoom neuve - A partir de 82 900 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "GAC Emkoo",
+    "trim": "GAC Emkoo 1.5T GDI GL BVA",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 99900,
+    "year": "2025",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   }
+  ]
+ },
+ {
+  "brand": "Geely",
+  "models": [
+   {
+    "model": "Coolray",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Geely Coolray neuve - A partir de 72 800 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Emgrand",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Geely Emgrand neuve - A partir de 67 800 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Geely Azkarra",
+    "trim": "Geely Azkarra 1.5 L Turbo Mild Hybrid 4WD",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 99800,
+    "year": "2023",
+    "transmission": "Intégrale",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Geely Cityray",
+    "trim": "Geely Cityray 1.5 L Turbo",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 98800,
+    "year": "2026",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Geely EX2",
+    "trim": "Geely EX2 39.4 kWh  Max",
+    "body_type": "Compacte",
+    "fuel": "Electrique",
+    "price_tnd": 54000,
+    "year": "2025",
+    "transmission": "Propulsion",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Geely EX5",
+    "trim": "Geely EX5 60.2 kWh  Max",
+    "body_type": "SUV",
+    "fuel": "Electrique",
+    "price_tnd": 92000,
+    "year": "2025",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Geely EX5 Hybride",
+    "trim": "Geely EX5 Hybride 1.5 EM-i",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 89800,
+    "year": "2026",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Geely Monjaro",
+    "trim": "Geely Monjaro 2.0 L Turbo 4WD GF+",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 199800,
+    "year": "2024",
+    "transmission": "Intégrale",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Geely Starray",
+    "trim": "Geely Starray 1.5 L Turbo GF+",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 122800,
+    "year": "2024",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Geely Tugella",
+    "trim": "Geely Tugella 2.0 L Turbo 4WD GF+",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 179000,
+    "year": "2024",
+    "transmission": "Intégrale",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Gx3 Pro",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Geely GX3 Pro neuve - A partir de 62 300 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   }
+  ]
+ },
+ {
+  "brand": "Great Wall",
+  "models": [
+   {
+    "model": "GWM Haval H6 Hybride",
+    "trim": "GWM Haval H6 Hybride 1.5 T HEV",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 129900,
+    "year": "2025",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "GWM Haval Jolion",
+    "trim": "GWM Haval Jolion 1.5 T",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 95900,
+    "year": "2024",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "GWM Poer AT",
+    "trim": "GWM Poer AT 2.0 L Diesel 4x4",
+    "body_type": "Pick up",
+    "fuel": "Diesel",
+    "price_tnd": 136900,
+    "year": "2023",
+    "transmission": "Intégrale",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "GWM Poer MT",
+    "trim": "GWM Poer MT 2.0 L Diesel 4x4",
+    "body_type": "Pick up",
+    "fuel": "Diesel",
+    "price_tnd": 107900,
+    "year": "2021",
+    "transmission": "Intégrale",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "GWM Tank 300 HEV",
+    "trim": "GWM Tank 300 HEV 2.0 L",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 187900,
+    "year": "2025",
+    "transmission": "Intégrale",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "GWM Tank 500 HEV",
+    "trim": "GWM Tank 500 HEV 2.0 L",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 232900,
+    "year": "2025",
+    "transmission": "Intégrale",
+    "doors": "5",
+    "seats": "7"
+   },
+   {
+    "model": "GWM Wingle 5 Double Cabine",
+    "trim": "GWM Wingle 5 Double Cabine 2.0 L Diesel 4x2",
+    "body_type": "Pick up",
+    "fuel": "Diesel",
+    "price_tnd": 87500,
+    "year": "2023",
+    "transmission": "Propulsion",
+    "doors": "4",
+    "seats": "5"
+   },
+   {
+    "model": "GWM Wingle 5 Simple Cabine",
+    "trim": "GWM Wingle 5 Simple Cabine 2.0 L Diesel 4x4",
+    "body_type": "Pick up",
+    "fuel": "Diesel",
+    "price_tnd": 80900,
+    "year": "2025",
+    "transmission": "Intégrale",
+    "doors": "2",
+    "seats": "2"
+   }
+  ]
+ },
+ {
+  "brand": "Honda",
+  "models": [
+   {
+    "model": "City",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Honda City neuve - A partir de 78 980 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Honda Accord",
+    "trim": "Honda Accord 1.5 L CVT",
+    "body_type": "Berline",
+    "fuel": "Essence",
+    "price_tnd": 179980,
+    "year": "2024",
+    "transmission": "Traction",
+    "doors": "4",
+    "seats": "5"
+   },
+   {
+    "model": "Honda Civic",
+    "trim": "Honda Civic 1.5 l CVT",
+    "body_type": "Berline",
+    "fuel": "Essence",
+    "price_tnd": 139980,
+    "year": "2024",
+    "transmission": "Traction",
+    "doors": "4",
+    "seats": "5"
+   },
+   {
+    "model": "Honda Civic Hybride",
+    "trim": "Honda Civic Hybride 2.0 l e-HEV",
+    "body_type": "Berline",
+    "fuel": "Essence",
+    "price_tnd": 159980,
+    "year": "2024",
+    "transmission": "Traction",
+    "doors": "4",
+    "seats": "5"
+   },
+   {
+    "model": "Honda Civic Type R",
+    "trim": "Honda Civic Type R 2.0 l Turbo",
+    "body_type": "Berline",
+    "fuel": "Essence",
+    "price_tnd": 255000,
+    "year": "2024",
+    "transmission": "Traction",
+    "doors": "4",
+    "seats": "4"
+   },
+   {
+    "model": "Honda CR-V",
+    "trim": "Honda CR-V 1.5 T CVT",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 179980,
+    "year": "2025",
+    "transmission": "Intégrale",
+    "doors": "5",
+    "seats": "7"
+   },
+   {
+    "model": "Honda CR-V Hybride",
+    "trim": "Honda CR-V Hybride 2.0 L e-HEV",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 184990,
+    "year": "2025",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Honda HR-V",
+    "trim": "Honda HR-V 1.5 L CVT EX",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 114980,
+    "year": "2023",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Honda Jazz",
+    "trim": "Honda Jazz 1.5 L e-HEV",
+    "body_type": "Citadine",
+    "fuel": "Essence",
+    "price_tnd": 79980,
+    "year": "2024",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Honda ZR-V",
+    "trim": "Honda ZR-V 1.5 L CVT",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 139980,
+    "year": "2024",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   }
+  ]
+ },
+ {
+  "brand": "Hyundai",
+  "models": [
+   {
+    "model": "Bayon",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Hyundai Bayon neuve - A partir de 79 950 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Grand I10",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Hyundai Grand i10 neuve - A partir de 51 950 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Hyundai Creta",
+    "trim": "Hyundai Creta 1.5 l BVA",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 114950,
+    "year": "2026",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Hyundai Grand i10 Populaire",
+    "trim": "Hyundai Grand i10 Populaire 1.0 L",
+    "body_type": "Citadine",
+    "fuel": "Essence",
+    "price_tnd": 32343,
+    "year": "2021",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Hyundai Grand i10 Sedan",
+    "trim": "Hyundai Grand i10 Sedan 1.2 L",
+    "body_type": "Berline",
+    "fuel": "Essence",
+    "price_tnd": 56950,
+    "year": "2023",
+    "transmission": "Traction",
+    "doors": "4",
+    "seats": "5"
+   },
+   {
+    "model": "Hyundai Ioniq 5 N",
+    "trim": "Hyundai Ioniq 5 N 84 kWh 4WD",
+    "body_type": "SUV",
+    "fuel": "Electrique",
+    "price_tnd": 249950,
+    "year": "2025",
+    "transmission": "Intégrale",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Hyundai Kona Electric",
+    "trim": "Hyundai Kona Electric 39 kWh",
+    "body_type": "SUV",
+    "fuel": "Electrique",
+    "price_tnd": 123900,
+    "year": "2023",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Hyundai Staria 11 places",
+    "trim": "Hyundai Staria 11 places 2.2 CRDI",
+    "body_type": "Monospace",
+    "fuel": "Diesel",
+    "price_tnd": 159600,
+    "year": "2022",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "11"
+   },
+   {
+    "model": "Hyundai Tucson",
+    "trim": "Hyundai Tucson 1.6 l T-GDI 7-DCT 4WD Top Grade",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 170000,
+    "year": "2021",
+    "transmission": "Intégrale",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Hyundai Tucson Hybride",
+    "trim": "Hyundai Tucson Hybride 1.6 l T-GDI 2WD Intuitive BVA 6",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 159950,
+    "year": "2025",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Hyundai Venue",
+    "trim": "Hyundai Venue 1.0 L Turbo BVA",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 90000,
+    "year": "2023",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "I20",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Hyundai i20 neuve - A partir de 66 950 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "I30 Fastback",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Hyundai i30 Fastback neuve - A partir de 94 950 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Ioniq 5",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Hyundai Ioniq 5 neuve - A partir de 168 950 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Ioniq 6",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Hyundai Ioniq 6 neuve - A partir de 199 950 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Kona",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Hyundai Kona neuve - A partir de 137 000 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Staria 9 Places",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Hyundai Staria 9 places neuve - A partir de 199 950 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   }
+  ]
+ },
+ {
+  "brand": "IM Motors",
+  "models": [
+   {
+    "model": "Im5",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix IM Motors IM5 neuve - A partir de 136 900 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Im6",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix IM Motors IM6 neuve - A partir de 147 900 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   }
+  ]
+ },
+ {
+  "brand": "JAC",
+  "models": [
+   {
+    "model": "JAC T8 Pro Double Cabine",
+    "trim": "JAC T8 Pro Double Cabine 2.0 L CTI Diesel 4x4",
+    "body_type": "Pick up",
+    "fuel": "Diesel",
+    "price_tnd": 105000,
+    "year": "2024",
+    "transmission": "Intégrale",
+    "doors": "4",
+    "seats": "5"
+   }
+  ]
+ },
+ {
+  "brand": "Jaguar",
+  "models": [
+   {
+    "model": "Jaguar E-Pace",
+    "trim": "Jaguar E-Pace 2.0 D 163 R-Dynamic S",
+    "body_type": "SUV",
+    "fuel": "Diesel",
+    "price_tnd": 305000,
+    "year": "2025",
+    "transmission": "Intégrale",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Jaguar F-Pace",
+    "trim": "Jaguar F-Pace 2.0 T 250 R-Dynamic S",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 425000,
+    "year": "2025",
+    "transmission": "Intégrale",
+    "doors": "5",
+    "seats": "5"
+   }
+  ]
+ },
+ {
+  "brand": "Jeep",
+  "models": [
+   {
+    "model": "Jeep Compass",
+    "trim": "Jeep Compass 1.3 T 4X2 Limited BVA",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 136500,
+    "year": "2026",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Jeep Renegade",
+    "trim": "Jeep Renegade 1.4 Turbo 4x2 Limited BVA",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 126500,
+    "year": "2019",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Jeep Wrangler",
+    "trim": "Jeep Wrangler 2.0 L Rubicon",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 327000,
+    "year": "2021",
+    "transmission": "Intégrale",
+    "doors": "3",
+    "seats": "5"
+   },
+   {
+    "model": "Wrangler Unlimited",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Jeep Wrangler Unlimited neuve - A partir de 375 000 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   }
+  ]
+ },
+ {
+  "brand": "Jetour",
+  "models": [
+   {
+    "model": "Jetour Dashing",
+    "trim": "Jetour Dashing 1.5 Turbo BVA",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 109500,
+    "year": "2025",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Jetour T2",
+    "trim": "Jetour T2 2.0 Turbo",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 198000,
+    "year": "2025",
+    "transmission": "Intégrale",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Jetour X70 Plus",
+    "trim": "Jetour X70 Plus 1.5 Turbo",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 119500,
+    "year": "2026",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "7"
+   }
+  ]
+ },
+ {
+  "brand": "Jmc",
+  "models": [
+   {
+    "model": "JMC Vigus Simple Cabine",
+    "trim": "JMC Vigus Simple Cabine 2.5 l Diesel 4x2",
+    "body_type": "Pick up",
+    "fuel": "Diesel",
+    "price_tnd": 69900,
+    "year": "2025",
+    "transmission": "Propulsion",
+    "doors": "2",
+    "seats": "2"
+   },
+   {
+    "model": "Vigus Double Cabine",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix JMC Vigus Double Cabine neuve - A partir de 82 900 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   }
+  ]
+ },
+ {
+  "brand": "JMEV",
+  "models": [
+   {
+    "model": "JMEV Elight",
+    "trim": "JMEV Elight 63 KWH Comfort",
+    "body_type": "Berline",
+    "fuel": "Electrique",
+    "price_tnd": 74950,
+    "year": "2025",
+    "transmission": "Traction",
+    "doors": "4",
+    "seats": "5"
+   },
+   {
+    "model": "JMEV EV3",
+    "trim": "JMEV EV3 31 KWH",
+    "body_type": "Citadine",
+    "fuel": "Electrique",
+    "price_tnd": 39950,
+    "year": "2025",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "4"
+   }
+  ]
+ },
+ {
+  "brand": "Kia",
+  "models": [
+   {
+    "model": "Ev3",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix KIA EV3 neuve - A partir de 104 980 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Ev6",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix KIA EV6 neuve - A partir de 179 980 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Ev9",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix KIA EV9 neuve - A partir de 299 980 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "KIA EV6 GT",
+    "trim": "KIA EV6 GT AWD",
+    "body_type": "SUV",
+    "fuel": "Electrique",
+    "price_tnd": 262980,
+    "year": "2024",
+    "transmission": "Intégrale",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "KIA Picanto Populaire",
+    "trim": "KIA Picanto Populaire 1.0 L",
+    "body_type": "Citadine",
+    "fuel": "Essence",
+    "price_tnd": 32794,
+    "year": "2024",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "KIA Seltos",
+    "trim": "KIA Seltos 1.4 T-GDI Top Grade",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 120980,
+    "year": "2024",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "KIA Sorento Hybride",
+    "trim": "KIA Sorento Hybride 1.6 T-GDi HEV",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 249980,
+    "year": "2025",
+    "transmission": "Intégrale",
+    "doors": "5",
+    "seats": "7"
+   },
+   {
+    "model": "KIA Sportage",
+    "trim": "KIA Sportage 1.6 l T-GDI 7-DCT Signature",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 167980,
+    "year": "2026",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Niro",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix KIA Niro Hybride neuve - A partir de 129 980 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Picanto",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix KIA Picanto neuve - A partir de 53 480 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Sonet",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix KIA Sonet neuve - A partir de 89 480 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   }
+  ]
+ },
+ {
+  "brand": "Land Rover",
+  "models": [
+   {
+    "model": "Defender",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Land Rover Defender 110 neuve - A partir de 299 000 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Land Rover Discovery Sport",
+    "trim": "Land Rover Discovery Sport 1.5 L P300e PHEV Dynamic SE",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 248000,
+    "year": "2025",
+    "transmission": "Intégrale",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Land Rover Range Rover",
+    "trim": "Land Rover Range Rover 3.0 L P460 PHEV SE",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 469900,
+    "year": "2025",
+    "transmission": "Intégrale",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Land Rover Range Rover Velar",
+    "trim": "Land Rover Range Rover Velar 2.0 l P250 Dynamic SE",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 395000,
+    "year": "2025",
+    "transmission": "Intégrale",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Range Rover Evoque",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Land Rover Range Rover Evoque neuve - A partir de 225 000 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Range Rover Sport",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Land Rover Range Rover Sport neuve - A partir de 399 000 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   }
+  ]
+ },
+ {
+  "brand": "Lynk & Co",
+  "models": [
+   {
+    "model": "Lynk & Co 01",
+    "trim": "Lynk & Co 01 1.5 L More",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 104900,
+    "year": "2026",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Lynk & Co 02",
+    "trim": "Lynk & Co 02 66 kWh More",
+    "body_type": "SUV",
+    "fuel": "Electrique",
+    "price_tnd": 101900,
+    "year": "2026",
+    "transmission": "Propulsion",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Lynk & Co 08",
+    "trim": "Lynk & Co 08 1.5 L More",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 134900,
+    "year": "2026",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   }
+  ]
+ },
+ {
+  "brand": "M-Hero",
+  "models": [
+   {
+    "model": "2 Ii M817",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix M-Hero 817 neuve - A partir de 173 000 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "M-Hero 917",
+    "trim": "M-Hero 917 1.5 L Reev 65.9 kWh AWD",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 365000,
+    "year": "2026",
+    "transmission": "Intégrale",
+    "doors": "5",
+    "seats": "5"
+   }
+  ]
+ },
+ {
+  "brand": "Mahindra",
+  "models": [
+   {
+    "model": "3Xo",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Mahindra XUV 3XO neuve - A partir de 57 800 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Mahindra KUV 100",
+    "trim": "Mahindra KUV 100 1.2 l K8",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 43900,
+    "year": "2018",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Mahindra Pick-up SC",
+    "trim": "Mahindra Pick-up SC 2.2 l Diesel 4x4 Plateau Simple",
+    "body_type": "Pick up",
+    "fuel": "Diesel",
+    "price_tnd": 63055,
+    "year": "2025",
+    "transmission": "Intégrale",
+    "doors": "2",
+    "seats": "2"
+   },
+   {
+    "model": "Pick Up Dc",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Mahindra Pick-up DC neuve - A partir de 69 900 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   }
+  ]
+ },
+ {
+  "brand": "Mercedes Benz",
+  "models": [
+   {
+    "model": "Cla",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Mercedes-Benz CLA neuve - A partir de 186 900 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Classe A",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Mercedes-Benz Classe A neuve - A partir de 154 000 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Classe A Berline",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Mercedes-Benz Classe A Berline neuve - A partir de 167 000 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Classe C",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Mercedes-Benz Classe C neuve - A partir de 209 900 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Classe C Hybride",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Mercedes-Benz Classe C Plug-in Hybride neuve - A partir de 239 900 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Classe E",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Mercedes-Benz Classe E neuve - A partir de 269 900 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Classe E Plug In Hybride",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Mercedes-Benz Classe E Plug-in Hybride neuve - A partir de 269 900 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Classe G Electric",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Mercedes-Benz Classe G Electrique neuve - A partir de 599 000 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Gla",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Mercedes-Benz GLA neuve - A partir de 189 900 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Glc Coupe Plug In Hybride",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Mercedes-Benz GLC Coupé Plug-in Hybride neuve - A partir de 299 900 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Glc Hybride",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Mercedes-Benz GLC Plug-in Hybride neuve - A partir de 284 900 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Mercedes-Benz Classe S",
+    "trim": "Mercedes-Benz Classe S 450 4Matic Limousine",
+    "body_type": "Berline",
+    "fuel": "Essence",
+    "price_tnd": 699000,
+    "year": "2024",
+    "transmission": "Intégrale",
+    "doors": "4",
+    "seats": "5"
+   },
+   {
+    "model": "Mercedes-Benz Classe V",
+    "trim": "Mercedes-Benz Classe V 250 d",
+    "body_type": "Monospace",
+    "fuel": "Diesel",
+    "price_tnd": 468000,
+    "year": "2024",
+    "transmission": "Propulsion",
+    "doors": "3",
+    "seats": "6"
+   },
+   {
+    "model": "Mercedes-Benz CLE Coupé",
+    "trim": "Mercedes-Benz CLE Coupé 200 AMG +",
+    "body_type": "Coupé",
+    "fuel": "Essence",
+    "price_tnd": 315000,
+    "year": "2024",
+    "transmission": "Propulsion",
+    "doors": "2",
+    "seats": "4"
+   },
+   {
+    "model": "Mercedes-Benz EQB",
+    "trim": "Mercedes-Benz EQB 250+ AMG",
+    "body_type": "SUV",
+    "fuel": "Electrique",
+    "price_tnd": 226900,
+    "year": "2025",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Mercedes-Benz EQE Berline",
+    "trim": "Mercedes-Benz EQE Berline 300 AMG",
+    "body_type": "Berline",
+    "fuel": "Electrique",
+    "price_tnd": 309000,
+    "year": "2026",
+    "transmission": "Propulsion",
+    "doors": "4",
+    "seats": "5"
+   },
+   {
+    "model": "Mercedes-Benz EQE SUV",
+    "trim": "Mercedes-Benz EQE SUV 350 4Matic AMG",
+    "body_type": "SUV",
+    "fuel": "Electrique",
+    "price_tnd": 399900,
+    "year": "2025",
+    "transmission": "Intégrale",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Mercedes-Benz EQS Berline",
+    "trim": "Mercedes-Benz EQS Berline 450 4Matic AMG",
+    "body_type": "Berline",
+    "fuel": "Electrique",
+    "price_tnd": 469900,
+    "year": "2025",
+    "transmission": "Intégrale",
+    "doors": "4",
+    "seats": "5"
+   },
+   {
+    "model": "Mercedes-Benz GLB",
+    "trim": "Mercedes-Benz GLB 200 AMG",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 197900,
+    "year": "2024",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Mercedes-Benz GLC",
+    "trim": "Mercedes-Benz GLC 200 4Matic AMG",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 284900,
+    "year": "2023",
+    "transmission": "Intégrale",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Mercedes-Benz GLC Coupé",
+    "trim": "Mercedes-Benz GLC Coupé 200 4Matic AMG",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 299900,
+    "year": "2023",
+    "transmission": "Intégrale",
+    "doors": "5",
+    "seats": "5"
+   }
+  ]
+ },
+ {
+  "brand": "MG",
+  "models": [
+   {
+    "model": "3",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix MG 3 neuve - A partir de 58 950 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "4 Urban",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix MG 4 Urban neuve - A partir de 54 950 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "5",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix MG 5 neuve - A partir de 63 950 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "7",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix MG 7 neuve - A partir de 109 950 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "MG 3 Hybrid+",
+    "trim": "MG 3 Hybrid+ 1.5 L CVT  Luxury",
+    "body_type": "Citadine",
+    "fuel": "Essence",
+    "price_tnd": 77950,
+    "year": "2024",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "MG Cyberster",
+    "trim": "MG Cyberster 77 kWh RWD",
+    "body_type": "Cabriolet",
+    "fuel": "Electrique",
+    "price_tnd": 179950,
+    "year": "2025",
+    "transmission": "Propulsion",
+    "doors": "2",
+    "seats": "2"
+   },
+   {
+    "model": "MG HS",
+    "trim": "MG HS 1.5L Turbo Luxury",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 104950,
+    "year": "2025",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "MG HS Hybrid+",
+    "trim": "MG HS Hybrid+ 1.5L Turbo",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 114950,
+    "year": "2025",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "MG RX9",
+    "trim": "MG RX9 2.0 T Ultimate",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 164950,
+    "year": "2025",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "7"
+   },
+   {
+    "model": "MG S5",
+    "trim": "MG S5 64 kWh",
+    "body_type": "SUV",
+    "fuel": "Electrique",
+    "price_tnd": 84950,
+    "year": "2025",
+    "transmission": "Propulsion",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "MG ZS Hybrid+",
+    "trim": "MG ZS Hybrid+ 1.5 L CVT Luxury",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 97950,
+    "year": "2025",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "S6",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix MG S6 neuve - A partir de 99 950 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Zs",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix MG ZS neuve - A partir de 79 950 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   }
+  ]
+ },
+ {
+  "brand": "MINI",
+  "models": [
+   {
+    "model": "5 Portes",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Mini Cooper 5 portes neuve - A partir de 149 900 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Aceman",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Mini Aceman Electric neuve - A partir de 124 900 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Countryman",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Mini Countryman neuve - A partir de 149 900 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Mini Cooper 3 portes",
+    "trim": "Mini Cooper 3 portes 1.5 l John Cooper Works",
+    "body_type": "Citadine",
+    "fuel": "Essence",
+    "price_tnd": 185900,
+    "year": "2025",
+    "transmission": "Traction",
+    "doors": "3",
+    "seats": "5"
+   },
+   {
+    "model": "Mini Cooper Cabriolet",
+    "trim": "Mini Cooper Cabriolet 2.0 l Favoured",
+    "body_type": "Cabriolet",
+    "fuel": "Essence",
+    "price_tnd": 199900,
+    "year": "2025",
+    "transmission": "Traction",
+    "doors": "2",
+    "seats": "5"
+   },
+   {
+    "model": "Mini Cooper Electric",
+    "trim": "Mini Cooper Electric 36.6 kWh Classic",
+    "body_type": "Citadine",
+    "fuel": "Electrique",
+    "price_tnd": 114900,
+    "year": "2025",
+    "transmission": "Traction",
+    "doors": "3",
+    "seats": "4"
+   },
+   {
+    "model": "Mini Countryman Electric",
+    "trim": "Mini Countryman Electric 42.5 kWh Favoured",
+    "body_type": "SUV",
+    "fuel": "Electrique",
+    "price_tnd": 179900,
+    "year": "2025",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   }
+  ]
+ },
+ {
+  "brand": "Mitsubishi",
+  "models": [
+   {
+    "model": "Mitsubishi ASX",
+    "trim": "Mitsubishi ASX 2.0 L BVA",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 131700,
+    "year": "2015",
+    "transmission": "Intégrale",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Mitsubishi Attrage Populaire",
+    "trim": "Mitsubishi Attrage Populaire 1.2 L GLX BVM",
+    "body_type": "Berline",
+    "fuel": "Essence",
+    "price_tnd": 34876,
+    "year": "2019",
+    "transmission": "Traction",
+    "doors": "4",
+    "seats": "5"
+   },
+   {
+    "model": "Mitsubishi Eclipse Cross",
+    "trim": "Mitsubishi Eclipse Cross 1.5 T-MIVEC CVT",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 107000,
+    "year": "2021",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Mitsubishi L200 Double Cabine",
+    "trim": "Mitsubishi L200 Double Cabine 2.5 L DiD GL",
+    "body_type": "Pick up",
+    "fuel": "Diesel",
+    "price_tnd": 137000,
+    "year": "2024",
+    "transmission": "Intégrale",
+    "doors": "4",
+    "seats": "5"
+   },
+   {
+    "model": "Mitsubishi Pajero",
+    "trim": "Mitsubishi Pajero 2.8 l",
+    "body_type": "SUV",
+    "fuel": "Diesel",
+    "price_tnd": 196500,
+    "year": "2022",
+    "transmission": "Intégrale",
+    "doors": "5",
+    "seats": "7"
+   },
+   {
+    "model": "Pajero Sport",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Mitsubishi Pajero Sport neuve - A partir de 243 567 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   }
+  ]
+ },
+ {
+  "brand": "Nissan",
+  "models": [
+   {
+    "model": "Magnite",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Nissan Magnite neuve - A partir de 62 400 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Nissan Juke",
+    "trim": "Nissan Juke 1.0 L DIG-T DCT",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 92900,
+    "year": "2026",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Nissan Navara",
+    "trim": "Nissan Navara 2.5 dCi 4X4 Double Cabine BVA",
+    "body_type": "Pick up",
+    "fuel": "Diesel",
+    "price_tnd": 159000,
+    "year": "2025",
+    "transmission": "Intégrale",
+    "doors": "4",
+    "seats": "5"
+   },
+   {
+    "model": "Nissan Qashqai e-Power",
+    "trim": "Nissan Qashqai e-Power 1.5 L N-Connecta",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 152900,
+    "year": "2024",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   }
+  ]
+ },
+ {
+  "brand": "Omoda-Jaecoo",
+  "models": [
+   {
+    "model": "Omoda & Jaecoo C5",
+    "trim": "Omoda & Jaecoo C5 1.5 TGDI HEV",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 93900,
+    "year": "2026",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Omoda & Jaecoo E5",
+    "trim": "Omoda & Jaecoo E5 61 kWh Premium",
+    "body_type": "SUV",
+    "fuel": "Electrique",
+    "price_tnd": 83900,
+    "year": "2026",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Omoda & Jaecoo J7",
+    "trim": "Omoda & Jaecoo J7 1.5 TGDI SHS",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 105900,
+    "year": "2025",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Omoda & Jaecoo J8",
+    "trim": "Omoda & Jaecoo J8 1.5 TGDI SHS 4WD",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 146900,
+    "year": "2025",
+    "transmission": "Intégrale",
+    "doors": "5",
+    "seats": "5"
+   }
+  ]
+ },
+ {
+  "brand": "Opel",
+  "models": [
+   {
+    "model": "Combo",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Opel Combo Cargo neuve - A partir de 61 400 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Corsa",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Opel Corsa neuve - A partir de 62 900 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Opel Crossland",
+    "trim": "Opel Crossland 1.2 L 110 ch AT6 Elegance",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 84900,
+    "year": "2024",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Opel Grandland",
+    "trim": "Opel Grandland 1.6 L Turbo GS Line BVA",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 95900,
+    "year": "2025",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Opel Mokka",
+    "trim": "Opel Mokka 1.2 L Turbo 130 ch AT8 GS Special Edition",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 89900,
+    "year": "2025",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   }
+  ]
+ },
+ {
+  "brand": "Peugeot",
+  "models": [
+   {
+    "model": "2008",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Peugeot 2008 neuve - A partir de 88 900 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Boxer",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Peugeot Boxer neuve - A partir de 97 900 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Landtrek Double Cabine",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Peugeot Landtrek Double Cabine neuve - A partir de 85 990 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Landtrek Simple Cabine",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Peugeot Landtrek Simple Cabine neuve - A partir de 70 490 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Partner",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Peugeot Partner neuve - A partir de 63 990 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Peugeot 208",
+    "trim": "Peugeot 208 1.2 L Style",
+    "body_type": "Citadine",
+    "fuel": "Essence",
+    "price_tnd": 64900,
+    "year": "2025",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Peugeot Boxer Double Cabine",
+    "trim": "Peugeot Boxer Double Cabine Plateau 350 L2",
+    "body_type": "Utilitaire",
+    "fuel": "Diesel",
+    "price_tnd": 114900,
+    "year": "2014",
+    "transmission": "Traction",
+    "doors": "4",
+    "seats": "7"
+   },
+   {
+    "model": "Peugeot Expert",
+    "trim": "Peugeot Expert 2.0 L HDI",
+    "body_type": "Utilitaire",
+    "fuel": "Diesel",
+    "price_tnd": 88900,
+    "year": "2025",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "3"
+   },
+   {
+    "model": "Peugeot Expert Combi",
+    "trim": "Peugeot Expert Combi 2.0 L HDI  9 places",
+    "body_type": "Monospace",
+    "fuel": "Diesel",
+    "price_tnd": 148900,
+    "year": "2025",
+    "transmission": "Traction",
+    "doors": "4",
+    "seats": "9"
+   },
+   {
+    "model": "Peugeot Rifter",
+    "trim": "Peugeot Rifter 1.6 L HDI 92ch",
+    "body_type": "Monospace",
+    "fuel": "Diesel",
+    "price_tnd": 104900,
+    "year": "2025",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Peugeot Traveller",
+    "trim": "Peugeot Traveller 2.0 L HDI  9 places",
+    "body_type": "Monospace",
+    "fuel": "Diesel",
+    "price_tnd": 169900,
+    "year": "2025",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "9"
+   }
+  ]
+ },
+ {
+  "brand": "Porsche",
+  "models": [
+   {
+    "model": "Cayenne E Hybrid",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Porsche Cayenne E-Hybrid neuve - A partir de 395 000 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Cayenne E Hybrid Coupe",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Porsche Cayenne E-Hybrid Coupé neuve - A partir de 405 000 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Cayenne Electric",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Porsche Cayenne Electric neuve - A partir de 398 000 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Macan Electric",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Porsche Macan Electric neuve - A partir de 295 000 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Porsche 911",
+    "trim": "Porsche 911 Carrera",
+    "body_type": "Coupé",
+    "fuel": "Essence",
+    "price_tnd": 845000,
+    "year": "2024",
+    "transmission": "Propulsion",
+    "doors": "2",
+    "seats": "4"
+   },
+   {
+    "model": "Porsche Panamera 4 E-Hybrid",
+    "trim": "Porsche Panamera 4 E-Hybrid Panamera 4 E-Hybrid",
+    "body_type": "Berline",
+    "fuel": "Essence",
+    "price_tnd": 529000,
+    "year": "2026",
+    "transmission": "Intégrale",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Porsche Taycan Cross Turismo",
+    "trim": "Porsche Taycan Cross Turismo 4",
+    "body_type": "Berline",
+    "fuel": "Electrique",
+    "price_tnd": 475000,
+    "year": "2025",
+    "transmission": "Intégrale",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Taycan",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Porsche Taycan neuve - A partir de 448 000 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   }
+  ]
+ },
+ {
+  "brand": "Renault",
+  "models": [
+   {
+    "model": "Clio",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Renault Clio neuve - A partir de 66 950 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Express Van",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Renault Express Van neuve - A partir de 60 700 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Master",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Renault Master neuve - A partir de 84 900 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Renault Austral",
+    "trim": "Renault Austral 1.3 L",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 134900,
+    "year": "2023",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Renault Express Combi",
+    "trim": "Renault Express Combi 1.5 L dCi",
+    "body_type": "Monospace",
+    "fuel": "Diesel",
+    "price_tnd": 88900,
+    "year": "2024",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Renault Kwid Populaire",
+    "trim": "Renault Kwid Populaire 1.0 L",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 30095,
+    "year": "2025",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   }
+  ]
+ },
+ {
+  "brand": "SEAT",
+  "models": [
+   {
+    "model": "Arona",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Seat Arona neuve - A partir de 79 980 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Ateca",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Seat Ateca neuve - A partir de 119 980 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Ibiza",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Seat Ibiza neuve - A partir de 66 980 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Leon",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Seat Leon neuve - A partir de 108 980 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   }
+  ]
+ },
+ {
+  "brand": "Skoda",
+  "models": [
+   {
+    "model": "Fabia",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Skoda Fabia neuve - A partir de 66 980 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Kamiq",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Skoda Kamiq neuve - A partir de 89 980 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Octavia",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Skoda Octavia neuve - A partir de 124 980 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Scala",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Skoda Scala neuve - A partir de 91 980 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Skoda Kushaq",
+    "trim": "Skoda Kushaq 1.0 TSI Style BVA",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 92980,
+    "year": "2023",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Superb",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Skoda Superb neuve - A partir de 155 980 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   }
+  ]
+ },
+ {
+  "brand": "SsangYong",
+  "models": [
+   {
+    "model": "Ssangyong Korando",
+    "trim": "Ssangyong Korando 1.5 L GDI Limited BVA",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 114800,
+    "year": "2020",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Ssangyong Musso",
+    "trim": "Ssangyong Musso 2.2 l Diesel 4WD CRM",
+    "body_type": "Pick up",
+    "fuel": "Diesel",
+    "price_tnd": 119000,
+    "year": "2024",
+    "transmission": "Intégrale",
+    "doors": "4",
+    "seats": "5"
+   },
+   {
+    "model": "Ssangyong Rexton",
+    "trim": "Ssangyong Rexton 2.2 L Diesel 5 places BVA",
+    "body_type": "SUV",
+    "fuel": "Diesel",
+    "price_tnd": 290000,
+    "year": "2022",
+    "transmission": "Intégrale",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Ssangyong Tivoli",
+    "trim": "Ssangyong Tivoli 1.5 T iLOVIT BVA",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 88000,
+    "year": "2024",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   }
+  ]
+ },
+ {
+  "brand": "Suzuki",
+  "models": [
+   {
+    "model": "Baleno",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Suzuki Baleno neuve - A partir de 67 900 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Dzire",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Suzuki Dzire neuve - A partir de 57 900 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Fronx",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Suzuki Fronx neuve - A partir de 76 900 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Suzuki Celerio Populaire",
+    "trim": "Suzuki Celerio Populaire 1.0 L GL",
+    "body_type": "Citadine",
+    "fuel": "Essence",
+    "price_tnd": 28457,
+    "year": "2022",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Swift",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Suzuki Swift neuve - A partir de 57 900 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   }
+  ]
+ },
+ {
+  "brand": "Tata",
+  "models": [
+   {
+    "model": "Tata Super Ace Simple Cabine",
+    "trim": "Tata Super Ace Simple Cabine 1.4 L Turbo Diesel",
+    "body_type": "Pick up",
+    "fuel": "Diesel",
+    "price_tnd": 39900,
+    "year": "2023",
+    "transmission": "Propulsion",
+    "doors": "2",
+    "seats": "2"
+   },
+   {
+    "model": "Tata Xenon X2 Double Cabine 4x2",
+    "trim": "Tata Xenon X2 Double Cabine 4x2 2.2 l Turbo",
+    "body_type": "Pick up",
+    "fuel": "Diesel",
+    "price_tnd": 74900,
+    "year": "2023",
+    "transmission": "Propulsion",
+    "doors": "4",
+    "seats": "5"
+   },
+   {
+    "model": "Tata Xenon X2 Double Cabine 4x4",
+    "trim": "Tata Xenon X2 Double Cabine 4x4 2.2 l Turbo",
+    "body_type": "Pick up",
+    "fuel": "Diesel",
+    "price_tnd": 81900,
+    "year": "2024",
+    "transmission": "Intégrale",
+    "doors": "4",
+    "seats": "5"
+   },
+   {
+    "model": "Tata Xenon X2 Simple Cabine",
+    "trim": "Tata Xenon X2 Simple Cabine 2.2l Turbo",
+    "body_type": "Pick up",
+    "fuel": "Diesel",
+    "price_tnd": 58900,
+    "year": "2022",
+    "transmission": "Propulsion",
+    "doors": "2",
+    "seats": "2"
+   }
+  ]
+ },
+ {
+  "brand": "Toyota",
+  "models": [
+   {
+    "model": "Hilux",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Toyota Hilux Double Cabine neuve - A partir de 159 800 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Land Cruiser 300",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Toyota Land Cruiser 300 neuve - A partir de 530 000 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Prado",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Toyota Prado neuve - A partir de 324 000 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Toyota Ace 14 places",
+    "trim": "Toyota Ace 14 places 2.8 L Diesel",
+    "body_type": "Minibus",
+    "fuel": "Diesel",
+    "price_tnd": 184000,
+    "year": "2026",
+    "transmission": "Propulsion",
+    "doors": "4",
+    "seats": "14"
+   },
+   {
+    "model": "Toyota bZ4X",
+    "trim": "Toyota bZ4X 73.1 kWh",
+    "body_type": "SUV",
+    "fuel": "Electrique",
+    "price_tnd": 129800,
+    "year": "2026",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Toyota Coaster",
+    "trim": "Toyota Coaster 4.2 L Diesel 23 places",
+    "body_type": "Minibus",
+    "fuel": "Diesel",
+    "price_tnd": 248000,
+    "year": "2019",
+    "transmission": "Propulsion",
+    "doors": "2",
+    "seats": "23"
+   },
+   {
+    "model": "Toyota Fortuner",
+    "trim": "Toyota Fortuner 2.4 L D-4D 7 places BVA",
+    "body_type": "SUV",
+    "fuel": "Diesel",
+    "price_tnd": 274800,
+    "year": "2024",
+    "transmission": "Intégrale",
+    "doors": "5",
+    "seats": "7"
+   },
+   {
+    "model": "Toyota Hiace 16 places",
+    "trim": "Toyota Hiace 16 places 2.5 L Diesel",
+    "body_type": "Minibus",
+    "fuel": "Diesel",
+    "price_tnd": 149800,
+    "year": "2019",
+    "transmission": "Propulsion",
+    "doors": "4",
+    "seats": "16"
+   },
+   {
+    "model": "Toyota Hiace Van",
+    "trim": "Toyota Hiace Van 3.0 L Diesel",
+    "body_type": "Utilitaire",
+    "fuel": "Diesel",
+    "price_tnd": 83900,
+    "year": "2022",
+    "transmission": "Propulsion",
+    "doors": "3",
+    "seats": "3"
+   },
+   {
+    "model": "Toyota Hilux Simple Cabine",
+    "trim": "Toyota Hilux Simple Cabine 2.4 L Diesel D-4D 4x4",
+    "body_type": "Pick up",
+    "fuel": "Diesel",
+    "price_tnd": 124800,
+    "year": "2024",
+    "transmission": "Intégrale",
+    "doors": "2",
+    "seats": "2"
+   },
+   {
+    "model": "Toyota RAV 4 Hybride",
+    "trim": "Toyota RAV 4 Hybride 2.5 L",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 204800,
+    "year": "2026",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Toyota Yaris Cross Hybride",
+    "trim": "Toyota Yaris Cross Hybride 1.5 L CVT",
+    "body_type": "SUV",
+    "fuel": "Essence",
+    "price_tnd": 112800,
+    "year": "2023",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   },
+   {
+    "model": "Toyota Yaris Hybride",
+    "trim": "Toyota Yaris Hybride 1.5 L CVT France",
+    "body_type": "Citadine",
+    "fuel": "Essence",
+    "price_tnd": 84900,
+    "year": "2023",
+    "transmission": "Traction",
+    "doors": "5",
+    "seats": "5"
+   }
+  ]
+ },
+ {
+  "brand": "Volkswagen",
+  "models": [
+   {
+    "model": "Golf 8",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Volkswagen Golf 8 neuve - A partir de 117 980 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Polo",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Volkswagen Polo neuve - A partir de 86 980 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "T Cross",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Volkswagen T-Cross neuve - A partir de 74 980 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Tiguan",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Volkswagen Tiguan neuve - A partir de 154 980 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Virtus",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Volkswagen Virtus neuve - A partir de 67 980 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Volkswagen Amarok",
+    "trim": "Volkswagen Amarok 2.0 L TDI 210 ch 4x4 Aventura BVA",
+    "body_type": "Pick up",
+    "fuel": "Diesel",
+    "price_tnd": 242980,
+    "year": "2024",
+    "transmission": "Intégrale",
+    "doors": "4",
+    "seats": "5"
+   },
+   {
+    "model": "Volkswagen Caddy Cargo",
+    "trim": "Volkswagen Caddy Cargo 2.0 L TDI Business",
+    "body_type": "Utilitaire",
+    "fuel": "Diesel",
+    "price_tnd": 84980,
+    "year": "2021",
+    "transmission": "Traction",
+    "doors": "4",
+    "seats": "2"
+   },
+   {
+    "model": "Volkswagen Crafter",
+    "trim": "Volkswagen Crafter 11.3 m3 L3H3",
+    "body_type": "Utilitaire",
+    "fuel": "Diesel",
+    "price_tnd": 124980,
+    "year": "2026",
+    "transmission": "Propulsion",
+    "doors": "4",
+    "seats": "3"
+   }
+  ]
+ },
+ {
+  "brand": "Volvo",
+  "models": [
+   {
+    "model": "Ec40 Recharge",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Volvo EC40 neuve - A partir de 179 900 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Es90",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Volvo ES90 neuve - A partir de 229 900 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Ex30",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Volvo EX30 neuve - A partir de 109 900 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Volvo EX90",
+    "trim": "Volvo EX90 Twin Motor Performance Ultra",
+    "body_type": "SUV",
+    "fuel": "Electrique",
+    "price_tnd": 329900,
+    "year": "2026",
+    "transmission": "Intégrale",
+    "doors": "5",
+    "seats": "6"
+   },
+   {
+    "model": "Xc40",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Volvo XC40 neuve - A partir de 174 900 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Xc60",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Volvo XC60 neuve - A partir de 239 900 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Xc90",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Volvo XC90 neuve - A partir de 349 900 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   }
+  ]
+ },
+ {
+  "brand": "Voyah",
+  "models": [
+   {
+    "model": "Courage",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Voyah Courage neuve - A partir de 121 000 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Free",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Voyah Free neuve - A partir de 155 000 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Voyah Dream",
+    "trim": "Voyah Dream 1.5 L PHEV AWD",
+    "body_type": "Monospace",
+    "fuel": "Essence",
+    "price_tnd": 260000,
+    "year": "2026",
+    "transmission": "Intégrale",
+    "doors": "5",
+    "seats": "7"
+   }
+  ]
+ },
+ {
+  "brand": "WallysCar",
+  "models": [
+   {
+    "model": "Annibal",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Wallyscar Annibal neuve - A partir de 91 700 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "Annibal Xxl",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Wallyscar Annibal XXL neuve - A partir de 142 200 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   }
+  ]
+ },
+ {
+  "brand": "Xpeng",
+  "models": [
+   {
+    "model": "G6",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Xpeng G6 neuve - A partir de 114 950 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "G9",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Xpeng G9 neuve - A partir de 169 950 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   },
+   {
+    "model": "P7Plus",
+    "trim": "",
+    "body_type": "",
+    "fuel": "",
+    "price_tnd": "Prix Xpeng P7+ neuve - A partir de 127 950 DT",
+    "year": "",
+    "transmission": "",
+    "doors": "",
+    "seats": "",
+    "source": "title"
+   }
+  ]
+ }
+]

@@ -40,7 +40,6 @@ class PDFRenderer:
     def _build_html(self, contract: Contract, language: Language) -> str:
         direction = "rtl" if language == Language.ar else "ltr"
         title = contract.title_ar if language == Language.ar else contract.title_fr
-        subtitle = "contraty.tn" if language == Language.fr else "كونتراتي — contraty.tn"
         sig_label_1 = "الطرف الأول" if language == Language.ar else "Partie 1"
         sig_label_2 = "الطرف الثاني" if language == Language.ar else "Partie 2"
         sig_title = "التواقيع" if language == Language.ar else "Signatures"
@@ -78,7 +77,6 @@ class PDFRenderer:
 <head><meta charset="utf-8"><style>{self._base_css}</style></head>
 <body>
 <h1>{html.escape(title)}</h1>
-<div class="contract-subtitle">{subtitle}</div>
 {body}
 {signature_block}
 </body>

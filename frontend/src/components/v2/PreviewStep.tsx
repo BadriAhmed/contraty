@@ -1,6 +1,6 @@
 "use client";
 
-import { AlertCircle, ArrowLeft, ArrowRight, CheckCircle2, Download, FileText, Loader2, RefreshCw } from "lucide-react";
+import { AlertCircle, ArrowLeft, ArrowRight, CheckCircle2, Download, FileText, Languages, Loader2, RefreshCw } from "lucide-react";
 import type { GenerateResponse, ContractWarning } from "@/types";
 import { formatDate } from "@/lib/utils";
 
@@ -53,13 +53,19 @@ export default function PreviewStep({
 
       {/* Warnings / Review */}
       {generated.warnings?.length > 0 && (
-        <div className="border border-cat-family/30 rounded-2xl bg-cat-family/5 p-4 mb-6 space-y-3">
-          <div className="flex items-center gap-2">
-            <AlertCircle size={16} className="text-cat-family" />
-            <span className="text-sm font-semibold text-on-surface">
-              {lang === "ar" ? "مراجعة" : "Révision"} ({generated.warnings.length})
+        <div className="border border-cat-family/40 rounded-2xl bg-surface overflow-hidden mb-6 shadow-sm">
+          <div className="flex items-center justify-between gap-2 px-5 py-3.5 bg-cat-family/10 border-b border-cat-family/30">
+            <div className="flex items-center gap-2">
+              <AlertCircle size={18} className="text-cat-family" />
+              <span className="text-sm font-bold text-on-surface">
+                {lang === "ar" ? "مراجعة" : "Révision"}
+              </span>
+            </div>
+            <span className="text-xs font-bold text-cat-family bg-cat-family/15 px-2.5 py-1 rounded-full">
+              {generated.warnings.length}
             </span>
           </div>
+          <div className="p-4 md:p-5 space-y-3">
           {generated.warnings.map((w, i) => {
             const ctype = w.correction_type || "auto";
             const applied = appliedSuggestions.has(`${w.field}:${w.suggested_value}`);
@@ -67,28 +73,62 @@ export default function PreviewStep({
             const accepted = appliedSuggestions.has(`accepted:${w.field}`);
             const dismissed = appliedSuggestions.has(`dismiss:${w.field}:${w.message_fr}`);
             const resolved = applied || corrected || accepted;
+            const isError = w.severity === "error";
+            const isTranslation = w.severity === "info" && !!w.suggested_value;
             if (dismissed && ctype === "info") return null;
             return (
               <div
                 key={i}
-                className={`text-sm p-4 rounded-xl ${
-                  w.severity === "error"
-                    ? "bg-error/8 border border-error/20"
-                    : "bg-cat-family/8 border border-cat-family/20"
+                className={`text-sm rounded-xl border overflow-hidden ${
+                  isError
+                    ? "border-error/30 bg-error/5"
+                    : isTranslation
+                      ? "border-primary/25 bg-primary/5"
+                      : "border-cat-family/25 bg-cat-family/5"
                 }`}
               >
-                <div className="flex items-start gap-2">
-                  <AlertCircle
-                    size={14}
-                    className={w.severity === "error" ? "text-error shrink-0 mt-0.5" : "text-cat-family shrink-0 mt-0.5"}
-                  />
+                <div className="flex items-start gap-2.5 p-4">
+                  {isTranslation ? (
+                    <Languages
+                      size={16}
+                      className="text-primary shrink-0 mt-0.5"
+                    />
+                  ) : (
+                    <AlertCircle
+                      size={16}
+                      className={isError ? "text-error shrink-0 mt-0.5" : "text-cat-family shrink-0 mt-0.5"}
+                    />
+                  )}
                   <div className="flex-1 min-w-0">
-                    <p className="font-medium text-on-surface">{lang === "ar" ? w.message_ar : w.message_fr}</p>
-                    <p className="text-xs text-text-secondary mt-1">{lang === "ar" ? w.suggestion_ar : w.suggestion_fr}</p>
-                    <div className="flex items-center gap-2 mt-3">
+                    <div className="flex items-center gap-2 mb-1">
+                      <p className="font-semibold text-on-surface">{lang === "ar" ? w.message_ar : w.message_fr}</p>
+                      <span
+                        className={`text-[10px] font-bold uppercase tracking-wide px-2 py-0.5 rounded-full shrink-0 ${
+                          isError
+                            ? "bg-error/10 text-error"
+                            : isTranslation
+                              ? "bg-primary/10 text-primary"
+                              : "bg-cat-family/15 text-cat-family"
+                        }`}
+                      >
+                        {isError
+                          ? (lang === "ar" ? "خطأ" : "Erreur")
+                          : isTranslation
+                            ? (lang === "ar" ? "تحويل" : "Conversion")
+                            : (lang === "ar" ? "تنبيه" : "Avertissement")}
+                      </span>
+                    </div>
+                    {w.suggestion_ar || w.suggestion_fr ? (
+                      <p className="text-xs text-text-secondary mt-1">
+                        {isTranslation
+                          ? (lang === "ar" ? `سيُكتب: ${w.suggestion_ar}` : `Écrit en arabe : ${w.suggestion_fr}`)
+                          : (lang === "ar" ? w.suggestion_ar : w.suggestion_fr)}
+                      </p>
+                    ) : null}
+                    <div className="flex flex-wrap items-center gap-2 mt-3">
                       {resolved ? (
-                        <span className="text-xs text-success-green font-medium flex items-center gap-1">
-                          <CheckCircle2 size={12} />
+                        <span className="text-sm text-success-green font-semibold flex items-center gap-1.5 bg-success-green/10 px-3 py-1.5 rounded-lg">
+                          <CheckCircle2 size={15} />
                           {applied
                             ? (lang === "ar" ? "تم التطبيق" : "Appliqué")
                             : corrected
@@ -96,14 +136,14 @@ export default function PreviewStep({
                               : (lang === "ar" ? "تم القبول" : "Accepté")}
                         </span>
                       ) : dismissed ? (
-                        <span className="text-xs text-text-secondary font-medium">
+                        <span className="text-sm text-text-secondary font-semibold flex items-center gap-1.5 border border-outline-variant/60 px-3 py-1.5 rounded-lg">
                           {lang === "ar" ? "تم التجاهل" : "Ignoré"}
                         </span>
                       ) : (
                         <>
                           {ctype === "manual" ? (
                             editingField === w.field ? (
-                              <div className="flex items-center gap-2">
+                              <div className="flex flex-wrap items-center gap-2">
                                 <input
                                   type="text"
                                   value={inlineValue}
@@ -112,32 +152,32 @@ export default function PreviewStep({
                                     if (e.key === "Enter") onSaveInline(w.field);
                                     if (e.key === "Escape") setEditingField(null);
                                   }}
-                                  className="input-field text-xs py-1.5 px-3 min-w-[180px] rounded-lg"
+                                  className="input-field text-sm py-2 px-3 min-w-[180px] rounded-lg"
                                   autoFocus
                                 />
-                                <button onClick={() => onSaveInline(w.field)} className="text-xs bg-success-green/20 text-success-green font-medium px-3 py-1.5 rounded-lg hover:bg-success-green/30 transition-colors">
+                                <button onClick={() => onSaveInline(w.field)} className="text-sm bg-success-green text-white font-semibold px-4 py-2 rounded-lg hover:opacity-90 transition-colors">
                                   {lang === "ar" ? "حفظ" : "OK"}
                                 </button>
-                                <button onClick={() => setEditingField(null)} className="text-xs text-text-secondary font-medium px-3 py-1.5 rounded-lg hover:bg-surface-container transition-colors">
+                                <button onClick={() => setEditingField(null)} className="text-sm text-text-secondary font-medium px-4 py-2 rounded-lg border border-outline-variant/60 hover:bg-surface-container transition-colors">
                                   {lang === "ar" ? "إلغاء" : "Annuler"}
                                 </button>
                               </div>
                             ) : (
                               <>
-                                <button onClick={() => onEditField(w.field)} className="text-xs bg-cat-family/15 text-cat-family font-medium px-3 py-1.5 rounded-lg hover:bg-cat-family/25 transition-colors">
+                                <button onClick={() => onEditField(w.field)} className="text-sm bg-cat-family text-white font-semibold px-4 py-2 rounded-lg hover:opacity-90 transition-colors shadow-sm">
                                   {lang === "ar" ? "تعديل" : "Corriger"}
                                 </button>
-                                <button onClick={() => onSetApplied((prev) => new Set([...prev, `accepted:${w.field}`]))} className="text-xs bg-success-green/10 text-success-green font-medium px-3 py-1.5 rounded-lg hover:bg-success-green/20 transition-colors">
+                                <button onClick={() => onSetApplied((prev) => new Set([...prev, `accepted:${w.field}`]))} className="text-sm bg-success-green text-white font-semibold px-4 py-2 rounded-lg hover:opacity-90 transition-colors shadow-sm">
                                   {lang === "ar" ? "قبول كما هو" : "Accepter tel quel"}
                                 </button>
                               </>
                             )
                           ) : w.suggested_value ? (
-                            <button onClick={() => onApplySuggestion(w)} className="text-xs bg-primary/10 text-primary font-medium px-3 py-1.5 rounded-lg hover:bg-primary/20 transition-colors">
+                            <button onClick={() => onApplySuggestion(w)} className="text-sm bg-primary text-on-primary font-semibold px-4 py-2 rounded-lg hover:bg-surface-tint transition-colors shadow-sm">
                               {lang === "ar" ? `تطبيق: ${w.suggested_value}` : `Appliquer: ${w.suggested_value}`}
                             </button>
                           ) : (
-                            <button onClick={() => onSetApplied((prev) => new Set([...prev, `dismiss:${w.field}:${w.message_fr}`]))} className="text-xs text-text-secondary font-medium px-3 py-1.5 rounded-lg hover:bg-surface-container transition-colors">
+                            <button onClick={() => onSetApplied((prev) => new Set([...prev, `dismiss:${w.field}:${w.message_fr}`]))} className="text-sm text-text-secondary font-medium px-4 py-2 rounded-lg border border-outline-variant/60 hover:bg-surface-container transition-colors">
                               {lang === "ar" ? "تجاهل" : "Ignorer"}
                             </button>
                           )}
@@ -153,12 +193,13 @@ export default function PreviewStep({
             <button
               onClick={onRegenerate}
               disabled={generating}
-              className="flex items-center gap-2 bg-primary text-on-primary font-semibold py-2.5 px-4 rounded-xl hover:bg-surface-tint transition-colors disabled:opacity-50 text-sm"
+              className="w-full flex items-center justify-center gap-2 bg-primary text-on-primary font-semibold py-3.5 px-5 rounded-xl hover:bg-surface-tint transition-colors disabled:opacity-50 text-sm md:text-base shadow-lg shadow-primary/20"
             >
-              {generating ? <Loader2 size={14} className="animate-spin" /> : <RefreshCw size={14} />}
+              {generating ? <Loader2 size={18} className="animate-spin" /> : <RefreshCw size={18} />}
               {lang === "ar" ? "إعادة الإنشاء بالتعديلات" : "Régénérer avec les corrections"}
             </button>
           )}
+          </div>
         </div>
       )}
 

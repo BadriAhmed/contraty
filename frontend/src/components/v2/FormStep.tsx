@@ -1,10 +1,14 @@
 "use client";
 
-import { ArrowLeft, ArrowRight, AlertCircle, Check } from "lucide-react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { ArrowLeft, ArrowRight, AlertCircle, Check, Eye, CalendarCheck, Info, X } from "lucide-react";
 import type { FieldMeta } from "@/types";
 import { validateField } from "@/lib/constants";
 import { getInputType } from "@/lib/utils";
 import TransliterateChip from "@/components/v2/TransliterateChip";
+import AutocompleteInput from "@/components/v2/AutocompleteInput";
+import { fetchVehicles, type VehicleBrand } from "@/lib/vehicles";
+import { fetchReference, yearOptions, type ReferenceKind } from "@/lib/reference";
 
 const ERROR_MSG: Record<string, Record<string, string>> = {
   ar: {
@@ -46,6 +50,7 @@ interface Props {
   onChange: (value: string) => void;
   onConfirm: () => void;
   onBack: () => void;
+  relatedValues?: Record<string, string>;
 }
 
 export default function FormStep({
@@ -59,6 +64,7 @@ export default function FormStep({
   onChange,
   onConfirm,
   onBack,
+  relatedValues = {},
 }: Props) {
   const isRtl = lang === "ar";
   const msg = ERROR_MSG[lang] || ERROR_MSG.fr;
@@ -68,6 +74,57 @@ export default function FormStep({
   const isSelect = md?.type === "select";
   const options = isSelect ? (lang === "ar" ? md?.options_ar || [] : md?.options_fr || []) : [];
   const isLastField = fieldIndex === totalFields - 1;
+  const inputRef = useRef<HTMLInputElement | HTMLSelectElement>(null);
+  const [showImage, setShowImage] = useState(false);
+  const [showLightbox, setShowLightbox] = useState(false);
+
+  const isDate = inputType === "date";
+  const isBirthdate = field.name.toUpperCase().includes("NAISSANCE");
+
+  const todayStr = () => {
+    const d = new Date();
+    const m = String(d.getMonth() + 1).padStart(2, "0");
+    const day = String(d.getDate()).padStart(2, "0");
+    return `${d.getFullYear()}-${m}-${day}`;
+  };
+
+  // Focus without scrolling — the page container handles its own scroll reset
+  useEffect(() => {
+    inputRef.current?.focus({ preventScroll: true });
+  }, []);
+
+  const isAutocomplete = !!md?.autocomplete;
+  const isVehicleField = md?.autocomplete === "vehicle-brand" || md?.autocomplete === "vehicle-model";
+  const [catalog, setCatalog] = useState<VehicleBrand[]>([]);
+  const [reference, setReference] = useState<{ fr: string[]; ar: string[] } | null>(null);
+  useEffect(() => {
+    if (isVehicleField) {
+      fetchVehicles().then(setCatalog);
+    }
+  }, [isVehicleField]);
+  useEffect(() => {
+    if (!isVehicleField && md?.autocomplete && md.autocomplete !== "years") {
+      fetchReference(md.autocomplete as ReferenceKind).then(setReference);
+    }
+  }, [isVehicleField, md?.autocomplete]);
+
+  const acOptions = useMemo(() => {
+    if (!isAutocomplete) return [];
+    if (md?.autocomplete === "years") return yearOptions();
+    if (md?.autocomplete === "vehicle-brand") {
+      return catalog.map((b) => b.brand).sort();
+    }
+    if (md?.autocomplete === "vehicle-model") {
+      const brandValue = (relatedValues.MARQUE || "").trim();
+      const brand = catalog.find((b) => b.brand.toLowerCase() === brandValue.toLowerCase());
+      const models = brand ? brand.models : catalog.flatMap((b) => b.models);
+      return Array.from(new Set(models)).sort();
+    }
+    if (reference) {
+      return (lang === "ar" ? reference.ar : reference.fr) || [];
+    }
+    return [];
+  }, [catalog, reference, isAutocomplete, md?.autocomplete, relatedValues.MARQUE, lang]);
 
   const confirmLabel = isLastField
     ? (lang === "ar" ? "متابعة إلى المراجعة" : "Continuer vers les notes")
@@ -108,20 +165,83 @@ export default function FormStep({
               <span className="text-xs text-text-secondary">({md.hint_ar})</span>
             )}
           </div>
+          {md?.image && (
+            <button
+              type="button"
+              onClick={() => setShowImage((s) => !s)}
+              aria-label={lang === "ar" ? "مساعدة" : "Aide"}
+              title={lang === "ar" ? "فين نلقاها؟" : "Où le trouver ?"}
+              className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 transition-colors ${
+                showImage
+                  ? "bg-primary text-on-primary shadow-md shadow-primary/25"
+                  : "bg-primary/10 text-primary hover:bg-primary/20"
+              }`}
+            >
+              <Info size={18} />
+            </button>
+          )}
         </div>
         {help && (
           <p className="text-sm text-text-secondary leading-relaxed mt-2">{help}</p>
         )}
+        {md?.image && showImage && (
+          <div className="mt-3 bg-surface rounded-xl border border-outline-variant/40 p-2">
+            <button
+              type="button"
+              onClick={() => setShowLightbox(true)}
+              aria-label={lang === "ar" ? "تكبير الصورة" : "Agrandir l'image"}
+              className="block w-full cursor-zoom-in"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={md.image}
+                alt={lang === "ar" ? "صورة توضيحية" : "Illustration d'aide"}
+                className="w-full max-w-sm mx-auto rounded-lg"
+              />
+            </button>
+          </div>
+        )}
       </div>
+
+      {/* Lightbox */}
+      {showLightbox && md?.image && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 cursor-zoom-out"
+          onClick={() => setShowLightbox(false)}
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={md.image}
+            alt={lang === "ar" ? "صورة توضيحية" : "Illustration d'aide"}
+            className="max-h-[90vh] max-w-[92vw] w-auto h-auto rounded-xl shadow-2xl cursor-zoom-out"
+            onClick={(e) => e.stopPropagation()}
+          />
+          <button
+            type="button"
+            onClick={() => setShowLightbox(false)}
+            aria-label={lang === "ar" ? "إغلاق" : "Fermer"}
+            className="absolute top-4 end-4 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors"
+          >
+            <X size={20} />
+          </button>
+        </div>
+      )}
 
       {/* Answer area */}
       <div className="bg-surface rounded-2xl border border-outline-variant/40 p-4 md:p-5 lg:p-6 mb-3 md:mb-4">
-        {isSelect ? (
+        {isAutocomplete ? (
+          <AutocompleteInput
+            value={value || ""}
+            options={acOptions}
+            placeholder={field.placeholder}
+            onChange={onChange}
+          />
+        ) : isSelect ? (
           <select
+            ref={inputRef as React.Ref<HTMLSelectElement>}
             value={value || ""}
             onChange={(e) => onChange(e.target.value)}
             onKeyDown={handleKeyDown}
-            autoFocus
             className="input-field text-base rounded-xl"
           >
             <option value="">{field.placeholder || (lang === "ar" ? "اختر..." : "Sélectionner...")}</option>
@@ -130,16 +250,28 @@ export default function FormStep({
             ))}
           </select>
         ) : (
-          <input
-            type={inputType}
-            value={value || ""}
-            onChange={(e) => onChange(e.target.value)}
-            onKeyDown={handleKeyDown}
-            onBlur={() => {}}
-            placeholder={inputType === "date" ? undefined : field.placeholder}
-            autoFocus
-            className="input-field text-base rounded-xl"
-          />
+          <div className="flex items-start gap-2">
+            <input
+              ref={inputRef as React.Ref<HTMLInputElement>}
+              type={inputType}
+              value={value || ""}
+              onChange={(e) => onChange(e.target.value)}
+              onKeyDown={handleKeyDown}
+              onBlur={() => {}}
+              placeholder={isDate ? undefined : field.placeholder}
+              className="input-field text-base rounded-xl flex-1 min-w-0"
+            />
+            {isDate && !isBirthdate && (
+              <button
+                type="button"
+                onClick={() => onChange(todayStr())}
+                className="shrink-0 inline-flex items-center gap-1.5 text-sm font-semibold text-primary border-2 border-primary rounded-xl px-3.5 py-3 hover:bg-primary-fixed transition-colors"
+              >
+                <CalendarCheck size={15} />
+                {lang === "ar" ? "اليوم" : "Aujourd'hui"}
+              </button>
+            )}
+          </div>
         )}
 
         {error && (

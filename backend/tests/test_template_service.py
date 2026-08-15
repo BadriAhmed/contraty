@@ -1,5 +1,6 @@
 """Tests for template_service business logic layer."""
 
+import json
 import pytest
 
 from app.db.memory import InMemoryTemplateRepository, InMemoryContractRepository
@@ -230,3 +231,137 @@ async def test_fill_template_strips_orphan_placeholders():
     result = _fill_template(contract, {}, Language.fr)
     text = result["sections"][0]["articles"][0]["text_fr"]
     assert "[GHOST_FIELD]" not in text
+
+
+def _fake_gemini(text: str):
+    """Return a fake Gemini client whose aio API returns the given text."""
+    from types import SimpleNamespace
+    from unittest.mock import AsyncMock
+
+    response = SimpleNamespace(text=text)
+    content = AsyncMock(return_value=response)
+    models = SimpleNamespace(generate_content=content)
+    aio = SimpleNamespace(models=models)
+    return SimpleNamespace(aio=aio)
+
+
+@pytest.mark.unit
+async def test_review_contract_parses_two_part_response(monkeypatch):
+    """Issues + translations parsed from one structured response."""
+    from app.services.template_service import review_contract
+    from app.services import template_service
+
+    monkeypatch.setattr(template_service.settings, "gemini_api_key", "test-key")
+    payload = json.dumps(
+        {
+            "issues": [
+                {
+                    "field": "DATE_DEBUT",
+                    "severity": "error",
+                    "message_fr": "Date passée",
+                    "message_ar": "تاريخ منقضٍ",
+                    "suggestion_fr": "Mettre à jour",
+                    "suggestion_ar": "حدّث التاريخ",
+                    "value": "",
+                    "correction_type": "manual",
+                }
+            ],
+            "translations": [{"field": "NOM_BAILLEUR", "value": "علي بن صالح"}],
+        }
+    )
+    monkeypatch.setattr(template_service, "get_gemini_client", lambda: _fake_gemini(payload))
+
+    warnings = await review_contract(
+        {"title_fr": "Test", "sections": []},
+        Language.ar,
+        {"NOM_BAILLEUR": "Ali Ben Salah"},
+    )
+
+    assert len(warnings) == 2
+    issue = warnings[0]
+    assert issue.field == "DATE_DEBUT"
+    assert issue.severity == "error"
+    assert issue.correction_type == "manual"
+    translation = warnings[1]
+    assert translation.field == "NOM_BAILLEUR"
+    assert translation.severity == "info"
+    assert translation.correction_type == "auto"
+    assert translation.suggested_value == "علي بن صالح"
+
+
+@pytest.mark.unit
+async def test_review_contract_translations_even_when_no_issues(monkeypatch):
+    """Translations are kept even when the issues array is empty."""
+    from app.services.template_service import review_contract
+    from app.services import template_service
+
+    monkeypatch.setattr(template_service.settings, "gemini_api_key", "test-key")
+    payload = json.dumps(
+        {
+            "issues": [],
+            "translations": [{"field": "ADRESSE_BIEN", "value": "نهج الحبيب بورقيبة 5، تونس"}],
+        }
+    )
+    monkeypatch.setattr(template_service, "get_gemini_client", lambda: _fake_gemini(payload))
+
+    warnings = await review_contract(
+        {"title_fr": "Test", "sections": []},
+        Language.ar,
+        {"ADRESSE_BIEN": "Rue Habib Bourguiba 5, Tunis"},
+    )
+
+    assert len(warnings) == 1
+    assert warnings[0].severity == "info"
+    assert warnings[0].suggested_value == "نهج الحبيب بورقيبة 5، تونس"
+
+
+@pytest.mark.unit
+async def test_review_contract_legacy_array_format(monkeypatch):
+    """Old single-array responses still parse as issues only."""
+    from app.services.template_service import review_contract
+    from app.services import template_service
+
+    monkeypatch.setattr(template_service.settings, "gemini_api_key", "test-key")
+    payload = json.dumps(
+        [
+            {
+                "field": "CIN_BAILLEUR",
+                "severity": "error",
+                "message_fr": "CIN invalide",
+                "message_ar": "بطاقة تعريف غير صالحة",
+                "suggestion_fr": "",
+                "suggestion_ar": "",
+                "value": "01234567",
+                "correction_type": "auto",
+            }
+        ]
+    )
+    monkeypatch.setattr(template_service, "get_gemini_client", lambda: _fake_gemini(payload))
+
+    warnings = await review_contract(
+        {"title_fr": "Test", "sections": []},
+        Language.fr,
+        {"CIN_BAILLEUR": "12345"},
+    )
+
+    assert len(warnings) == 1
+    assert warnings[0].field == "CIN_BAILLEUR"
+    assert warnings[0].suggested_value == "01234567"
+
+
+@pytest.mark.unit
+async def test_review_contract_rien_a_signal_returns_empty(monkeypatch):
+    """RIEN_A_SIGNALER response returns no warnings."""
+    from app.services.template_service import review_contract
+    from app.services import template_service
+
+    monkeypatch.setattr(template_service.settings, "gemini_api_key", "test-key")
+    monkeypatch.setattr(template_service, "get_gemini_client", lambda: _fake_gemini("RIEN_A_SIGNALER"))
+
+    warnings = await review_contract(
+        {"title_fr": "Test", "sections": []},
+        Language.fr,
+        {"NOM_BAILLEUR": "Ali"},
+    )
+
+    assert warnings == []

@@ -115,7 +115,8 @@
       "min_length": 8,
       "max_length": 8,
       "help_fr": "Numéro CIN de la personne qui héberge (le propriétaire du logement).",
-      "help_ar": "رقم بطاقة تعريف الشخص المستضيف (صاحب المسكن)."
+      "help_ar": "رقم بطاقة تعريف الشخص المستضيف (صاحب المسكن).",
+      "image": "/images/help/cin.jpg"
     },
     "ADRESSE_HEBERGEANT": {
       "type": "text",
@@ -172,7 +173,8 @@
       "min_length": 8,
       "max_length": 8,
       "help_fr": "Numéro CIN de la personne hébergée (celle qui est logée).",
-      "help_ar": "رقم بطاقة تعريف الشخص المستضاف (الساكن)."
+      "help_ar": "رقم بطاقة تعريف الشخص المستضاف (الساكن).",
+      "image": "/images/help/cin.jpg"
     },
     "DATE_DEBUT_HEBERGEMENT": {
       "type": "date",
@@ -227,7 +229,8 @@
       "min_length": 2,
       "max_length": 500,
       "help_fr": "Adresse complète (rue, numéro, ville) pour la signature.",
-      "help_ar": "العنوان الكامل (النهج، الرقم، المدينة) للتوقيع."
+      "help_ar": "العنوان الكامل (النهج، الرقم، المدينة) للتوقيع.",
+      "autocomplete": "tn-place"
     },
     "DATE": {
       "type": "date",

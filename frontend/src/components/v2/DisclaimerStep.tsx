@@ -1,6 +1,6 @@
 "use client";
 
-import { ShieldAlert, ArrowLeft, ArrowRight } from "lucide-react";
+import { ShieldAlert, ArrowLeft, ArrowRight, Languages } from "lucide-react";
 
 interface Props {
   lang: string;
@@ -34,6 +34,20 @@ export default function DisclaimerStep({ lang, disclaimerAccepted, templateDiscl
 
   return (
     <div className="w-full">
+      {lang === "ar" && (
+        <div className="bg-primary text-on-primary rounded-2xl p-4 md:p-6 mb-4 md:mb-6 shadow-lg shadow-primary/25">
+          <h2 className="text-base md:text-lg font-extrabold text-on-primary mb-2 flex items-center gap-2">
+            <Languages size={18} />
+            اكتب باللغة اللي تريحك — احنا نحولوه لصيغة قانونية
+          </h2>
+          <p className="text-sm text-on-primary/90 leading-relaxed">
+            تونّسها كيما تحب، بالعرّبي، بالفرنساوي، ولا حتى بالدارجة
+            (مثال: «ismi Ahmed»، «العمارة رقم 5»، «هو يخلّص في آخر الشهر»).
+            Contrati يحوّل إجاباتك لصيغ قانونية صحيحة ومريڤلة في العقد النهائي.
+          </p>
+        </div>
+      )}
+
       <div className="bg-primary-fixed/30 rounded-2xl p-4 md:p-6 lg:p-8 mb-4 md:mb-6">
         <div className="flex items-start gap-3 mb-3 md:mb-4">
           <div className="w-8 h-8 md:w-10 md:h-10 rounded-xl bg-error/10 flex items-center justify-center shrink-0">

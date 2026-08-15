@@ -260,7 +260,8 @@
       "min_length": 8,
       "max_length": 8,
       "help_fr": "Numéro CIN du salarié en CDD.",
-      "help_ar": "رقم بطاقة تعريف الأجير بعقد محدد المدة."
+      "help_ar": "رقم بطاقة تعريف الأجير بعقد محدد المدة.",
+      "image": "/images/help/cin.jpg"
     },
     "ADRESSE_SALARIE": {
       "type": "text",
@@ -302,7 +303,8 @@
       "min_length": 2,
       "max_length": 500,
       "help_fr": "Intitulé exact du poste ou de la fonction occupée.",
-      "help_ar": "التسمية الدقيقة للمنصب أو الوظيفة المشغولة."
+      "help_ar": "التسمية الدقيقة للمنصب أو الوظيفة المشغولة.",
+      "autocomplete": "profession"
     },
     "CLASSIFICATION": {
       "type": "text",
@@ -343,7 +345,8 @@
       "min_length": 2,
       "max_length": 500,
       "help_fr": "Adresse complète (rue, numéro, ville) .",
-      "help_ar": "العنوان الكامل (النهج، الرقم، المدينة) للمنصب وظروف العمل."
+      "help_ar": "العنوان الكامل (النهج، الرقم، المدينة) للمنصب وظروف العمل.",
+      "autocomplete": "tn-place"
     },
     "DUREE": {
       "type": "text",
@@ -393,8 +396,8 @@
       "placeholder_ar": "0",
       "placeholder_fr": "0",
       "required": true,
-      "hint_ar": "رقم",
-      "hint_fr": "Nombre",
+      "hint_ar": "الحد الأدنى القانوني: الأجر الأدنى المضمون ≈ 528 د/شهر (48 ساعة/أسبوع، 2025)",
+      "hint_fr": "min. légal : SMIG ≈ 528 DT/mois (48 h/sem., 2025)",
       "pattern": "^-?\\d+([\\.\\,]\\d+)?$",
       "min_value": 0,
       "help_fr": "Montant en dinars tunisiens du salaire et des avantages.",
@@ -426,7 +429,8 @@
       "min_length": 2,
       "max_length": 500,
       "help_fr": "Adresse complète (rue, numéro, ville) .",
-      "help_ar": "العنوان الكامل (النهج، الرقم، المدينة) للتوقيع."
+      "help_ar": "العنوان الكامل (النهج، الرقم، المدينة) للتوقيع.",
+      "autocomplete": "tn-place"
     },
     "DATE_SIGNATURE": {
       "type": "date",

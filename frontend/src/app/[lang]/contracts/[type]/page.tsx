@@ -9,6 +9,7 @@ import {
   Clock,
   ListChecks,
   PenLine,
+  Search,
   Home,
   Briefcase,
   Coins,
@@ -95,6 +96,33 @@ export default async function V2ContractDetail({ params }: { params: { lang: str
 
   const fieldCount = template.field_count || seen.size;
   const estMinutes = Math.ceil(fieldCount / 5);
+
+  const steps = [
+    {
+      icon: PenLine,
+      step: "1",
+      title: lang === "ar" ? "املأ الحقول" : "Remplissez les champs",
+      desc: lang === "ar"
+        ? "أدخل معلوماتك خطوة بخطوة مع تلميحات وتحقق فوري"
+        : "Saisissez vos informations étape par étape avec indices et validation instantanée",
+    },
+    {
+      icon: Search,
+      step: "2",
+      title: lang === "ar" ? "راجع العقد" : "Révisez le contrat",
+      desc: lang === "ar"
+        ? "تحقق من البنود والاقتراحات قبل التحميل"
+        : "Vérifiez les clauses et suggestions avant téléchargement",
+    },
+    {
+      icon: Download,
+      step: "3",
+      title: lang === "ar" ? "حمّل العقد" : "Téléchargez le contrat",
+      desc: lang === "ar"
+        ? "PDF أو Word جاهز للتوقيع — في ثوانٍ"
+        : "PDF ou Word prêt à signer — en quelques secondes",
+    },
+  ];
 
   return (
     <div className="bg-background">
@@ -184,6 +212,24 @@ export default async function V2ContractDetail({ params }: { params: { lang: str
       <div className="max-w-5xl mx-auto px-4 md:px-6 pb-16">
         <div className="lg:flex lg:gap-8">
           <div className="lg:flex-1 min-w-0">
+            {/* Quick actions */}
+            <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3 mb-8">
+              <Link
+                href={`/${lang}/generate/${template.slug}`}
+                className="flex-1 inline-flex items-center justify-center gap-2 bg-primary text-on-primary font-semibold px-7 py-3.5 rounded-xl hover:bg-surface-tint transition-all shadow-lg shadow-primary/20 text-base"
+              >
+                {lang === "ar" ? "ابدأ الآن" : "Commencer"}
+                {isRtl ? <ArrowLeft size={18} /> : <ArrowRight size={18} />}
+              </Link>
+              <Link
+                href={`/${lang}/blank/${template.slug}`}
+                className="flex-1 inline-flex items-center justify-center gap-2 border-2 border-primary text-primary font-semibold px-6 py-3.5 rounded-xl hover:bg-primary-fixed transition-colors text-base"
+              >
+                <Download size={16} />
+                {lang === "ar" ? "تحميل فارغ" : "Modèle vierge"}
+              </Link>
+            </div>
+
             {/* Required fields */}
             <div className="mb-8">
               <h2 className="text-lg font-bold text-on-surface mb-1">
@@ -260,22 +306,26 @@ export default async function V2ContractDetail({ params }: { params: { lang: str
           {/* Sidebar */}
           <aside className="hidden lg:block w-[300px] shrink-0">
             <div className="sticky top-20 space-y-4">
-              <div className="bg-surface rounded-2xl border border-outline-variant/40 p-5">
-                <h4 className="text-sm font-semibold text-on-surface mb-3 flex items-center gap-2">
-                  <PenLine size={14} className="text-primary" />
-                  {lang === "ar" ? "كيف يعمل" : "Comment ça marche"}
-                </h4>
-                <ol className="space-y-2.5 text-sm text-text-secondary">
-                  {[
-                    lang === "ar" ? "اختر الحقول واملأها" : "Choisissez et remplissez les champs",
-                    lang === "ar" ? "راجع العقد المُنشأ" : "Révisez le contrat généré",
-                    lang === "ar" ? "حمّل بصيغة PDF أو Word" : "Téléchargez en PDF ou Word",
-                  ].map((step, i) => (
-                    <li key={i} className="flex items-start gap-2">
-                      <span className="w-5 h-5 rounded-full bg-primary/10 text-primary text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">
-                        {i + 1}
+              <div className="bg-primary text-on-primary rounded-2xl p-6 shadow-lg shadow-primary/25 text-center">
+                <div className="inline-flex items-center gap-2 mb-3 px-3 py-1.5 rounded-full bg-on-primary/10 text-on-primary text-xs font-semibold uppercase tracking-wide">
+                  <PenLine size={14} />
+                  {lang === "ar" ? "ثلاث خطوات" : "3 étapes"}
+                </div>
+                <h2 className="text-2xl font-extrabold text-on-primary tracking-tight">
+                  {lang === "ar" ? "كيف يعمل؟" : "Comment ça marche"}
+                </h2>
+              </div>
+              <div className="bg-background rounded-2xl border border-outline-variant/40 p-5 shadow-lg">
+                <ol className="space-y-4">
+                  {steps.map((s, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <span className="w-6 h-6 rounded-full bg-primary text-on-primary text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">
+                        {s.step}
                       </span>
-                      {step}
+                      <div className="min-w-0">
+                        <p className="text-sm font-bold text-on-surface">{s.title}</p>
+                        <p className="text-xs text-text-secondary leading-relaxed mt-0.5">{s.desc}</p>
+                      </div>
                     </li>
                   ))}
                 </ol>
@@ -285,6 +335,42 @@ export default async function V2ContractDetail({ params }: { params: { lang: str
           </aside>
         </div>
       </div>
+
+      {/* How it works (mobile only — sidebar version shows on lg+) */}
+      <section className="py-12 md:py-24 lg:hidden">
+        <div className="max-w-7xl mx-auto px-4 md:px-6">
+          <div className="bg-primary text-on-primary rounded-2xl px-8 py-10 md:px-12 md:py-12 text-center shadow-xl shadow-primary/25 mb-10 md:mb-14">
+            <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full bg-on-primary/10 text-on-primary text-sm font-semibold uppercase tracking-wide">
+              <PenLine size={16} />
+              {lang === "ar" ? "ثلاث خطوات بسيطة" : "3 étapes simples"}
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-on-primary tracking-tight">
+              {lang === "ar" ? "كيف يعمل؟" : "Comment ça marche"}
+            </h2>
+          </div>
+          <div className="grid sm:grid-cols-3 gap-6">
+            {steps.map((s, i) => (
+              <div key={i} className="relative">
+                {i < 2 && (
+                  <div className="hidden sm:block absolute top-14 start-full w-full h-0.5 border-t-2 border-dashed border-primary/30 -z-0" />
+                )}
+                <div className="relative bg-background rounded-2xl border border-outline-variant/40 p-10 text-center shadow-lg">
+                  <div className="relative inline-flex mb-6">
+                    <div className="w-16 h-16 rounded-2xl bg-primary text-on-primary flex items-center justify-center font-bold text-2xl shadow-md shadow-primary/25">
+                      {s.step}
+                    </div>
+                    <div className="absolute -top-1 -end-1 w-7 h-7 rounded-full bg-background border border-primary/20 flex items-center justify-center">
+                      <s.icon size={14} className="text-primary" />
+                    </div>
+                  </div>
+                  <h3 className="text-lg font-bold text-on-surface mb-2">{s.title}</h3>
+                  <p className="text-sm text-text-secondary leading-relaxed">{s.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

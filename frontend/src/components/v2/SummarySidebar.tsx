@@ -51,11 +51,20 @@ export default function SummarySidebar({ lang, sections, fieldValues, currentFie
   );
   const overallPercent = totalFields > 0 ? Math.round((answeredTotal / totalFields) * 100) : 0;
 
-  // Auto-scroll to current field when it changes
+  // Auto-scroll to current field when it changes — scroll ONLY the sidebar list,
+  // never the page (scrollIntoView would scroll every scrollable ancestor)
   useEffect(() => {
-    if (currentRef.current && scrollRef.current) {
-      currentRef.current.scrollIntoView({ behavior: "smooth", block: "center" });
-    }
+    const container = scrollRef.current;
+    const el = currentRef.current;
+    if (!container || !el) return;
+    const elTop =
+      el.getBoundingClientRect().top -
+      container.getBoundingClientRect().top +
+      container.scrollTop;
+    container.scrollTo({
+      top: Math.max(0, elTop - container.clientHeight / 2 + el.clientHeight / 2),
+      behavior: "smooth",
+    });
   }, [currentFieldIndex]);
 
   return (

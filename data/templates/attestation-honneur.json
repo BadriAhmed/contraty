@@ -128,7 +128,8 @@
       "min_length": 2,
       "max_length": 500,
       "help_fr": "Adresse complète (rue, numéro, ville) .",
-      "help_ar": "العنوان الكامل (النهج، الرقم، المدينة) ."
+      "help_ar": "العنوان الكامل (النهج، الرقم، المدينة) .",
+      "autocomplete": "tn-place"
     },
     "NATIONALITE": {
       "type": "text",
@@ -142,7 +143,8 @@
       "min_length": 2,
       "max_length": 500,
       "help_fr": "Nationalité de la personne concernée (ex: Tunisienne).",
-      "help_ar": "جنسية الشخص المعني (مثال: تونسية)."
+      "help_ar": "جنسية الشخص المعني (مثال: تونسية).",
+      "autocomplete": "nationality"
     },
     "CIN": {
       "type": "cin",
@@ -157,7 +159,8 @@
       "min_length": 8,
       "max_length": 8,
       "help_fr": "Numéro à 8 chiffres de la carte d'identité nationale .",
-      "help_ar": "رقم بطاقة التعريف الوطنية المكون من 8 أرقام ."
+      "help_ar": "رقم بطاقة التعريف الوطنية المكون من 8 أرقام .",
+      "image": "/images/help/cin.jpg"
     },
     "DATE_CIN": {
       "type": "date",
@@ -242,7 +245,8 @@
       "min_length": 2,
       "max_length": 500,
       "help_fr": "Adresse complète (rue, numéro, ville) pour la signature.",
-      "help_ar": "العنوان الكامل (النهج، الرقم، المدينة) للتوقيع."
+      "help_ar": "العنوان الكامل (النهج، الرقم، المدينة) للتوقيع.",
+      "autocomplete": "tn-place"
     },
     "DATE": {
       "type": "date",

@@ -20,7 +20,7 @@ export default function TransliterateChip({ lang, value }: Props) {
   return (
     <span className="inline-flex items-center gap-1.5 text-xs text-primary font-medium bg-primary/5 border border-primary/15 px-2.5 py-1.5 rounded-lg mt-2">
       <Sparkles size={12} />
-      سيتم تحويل النص إلى العربية تلقائياً عند المراجعة
+      باش يتحوّل النصّ للعربيّة وحدو وقت المراجعة
     </span>
   );
 }

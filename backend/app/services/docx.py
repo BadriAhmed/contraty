@@ -3,9 +3,24 @@ from io import BytesIO
 from docx import Document
 from docx.shared import Pt, Inches, RGBColor
 from docx.enum.text import WD_ALIGN_PARAGRAPH
+from docx.oxml import OxmlElement
+from docx.oxml.ns import qn
 from app.models.contract import Language, Contract
 
 logger = logging.getLogger(__name__)
+
+
+def _add_bottom_border(paragraph, color: str = "1a365d", size: str = "12"):
+    """Draw a horizontal line under the paragraph via a bottom border."""
+    pPr = paragraph._p.get_or_add_pPr()
+    pBdr = OxmlElement("w:pBdr")
+    bottom = OxmlElement("w:bottom")
+    bottom.set(qn("w:val"), "single")
+    bottom.set(qn("w:sz"), size)
+    bottom.set(qn("w:space"), "6")
+    bottom.set(qn("w:color"), color)
+    pBdr.append(bottom)
+    pPr.append(pBdr)
 
 
 class DOCXRenderer:
@@ -19,6 +34,7 @@ class DOCXRenderer:
         heading.alignment = WD_ALIGN_PARAGRAPH.CENTER
         if language == Language.ar:
             heading.runs[0].font.rtl = True
+        _add_bottom_border(heading)
 
         # Sections
         for section in contract.sections:

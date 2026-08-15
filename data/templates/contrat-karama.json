@@ -261,7 +261,8 @@
       "min_length": 8,
       "max_length": 8,
       "help_fr": "Numéro CIN du bénéficiaire.",
-      "help_ar": "رقم بطاقة تعريف المنتفع."
+      "help_ar": "رقم بطاقة تعريف المنتفع.",
+      "image": "/images/help/cin.jpg"
     },
     "DATE_NAISSANCE": {
       "type": "date",
@@ -316,7 +317,8 @@
       "min_length": 2,
       "max_length": 500,
       "help_fr": "Intitulé exact du poste ou de la fonction occupée.",
-      "help_ar": "التسمية الدقيقة للمنصب أو الوظيفة المشغولة."
+      "help_ar": "التسمية الدقيقة للمنصب أو الوظيفة المشغولة.",
+      "autocomplete": "profession"
     },
     "DUREE_ANNEE": {
       "type": "text",
@@ -357,7 +359,8 @@
       "min_length": 2,
       "max_length": 500,
       "help_fr": "Adresse complète (rue, numéro, ville) .",
-      "help_ar": "العنوان الكامل (النهج، الرقم، المدينة) في العقد."
+      "help_ar": "العنوان الكامل (النهج، الرقم، المدينة) في العقد.",
+      "autocomplete": "tn-place"
     },
     "SALAIRE": {
       "type": "number",
@@ -366,8 +369,8 @@
       "placeholder_ar": "0",
       "placeholder_fr": "0",
       "required": true,
-      "hint_ar": "رقم",
-      "hint_fr": "Nombre",
+      "hint_ar": "الحد الأدنى القانوني: الأجر الأدنى المضمون ≈ 528 د/شهر (48 ساعة/أسبوع، 2025)",
+      "hint_fr": "min. légal : SMIG ≈ 528 DT/mois (48 h/sem., 2025)",
       "pattern": "^-?\\d+([\\.\\,]\\d+)?$",
       "min_value": 0,
       "help_fr": "Montant en dinars tunisiens du salaire et des avantages.",
@@ -408,8 +411,8 @@
       "placeholder_ar": "",
       "placeholder_fr": "",
       "required": true,
-      "hint_ar": "",
-      "hint_fr": "",
+      "hint_ar": "الحد الأدنى القانوني: يوم ونصف عن كل شهر عمل — 18 يوم عمل سنويًا (الفصل 113 مجلة الشغل)",
+      "hint_fr": "min. légal : 1,5 jour par mois travaillé — 18 jours ouvrables/an (art. 113 CT)",
       "min_length": 2,
       "max_length": 500,
       "help_fr": "Nombre de jours de congés payés par an (ex: 30).",
@@ -427,7 +430,8 @@
       "min_length": 2,
       "max_length": 500,
       "help_fr": "Adresse complète (rue, numéro, ville) .",
-      "help_ar": "العنوان الكامل (النهج، الرقم، المدينة) للتوقيع."
+      "help_ar": "العنوان الكامل (النهج، الرقم، المدينة) للتوقيع.",
+      "autocomplete": "tn-place"
     },
     "DATE_SIGNATURE": {
       "type": "date",

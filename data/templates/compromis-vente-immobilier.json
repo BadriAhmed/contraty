@@ -181,7 +181,8 @@
       "min_length": 8,
       "max_length": 8,
       "help_fr": "Numéro à 8 chiffres de la carte d'identité nationale de la partie concernée.",
-      "help_ar": "رقم بطاقة التعريف الوطنية المكون من 8 أرقام للطرف المعني."
+      "help_ar": "رقم بطاقة التعريف الوطنية المكون من 8 أرقام للطرف المعني.",
+      "image": "/images/help/cin.jpg"
     },
     "ETAT_CIVIL_VENDEUR": {
       "type": "text",
@@ -238,7 +239,8 @@
       "min_length": 8,
       "max_length": 8,
       "help_fr": "Numéro à 8 chiffres de la carte d'identité nationale de la partie concernée.",
-      "help_ar": "رقم بطاقة التعريف الوطنية المكون من 8 أرقام للطرف المعني."
+      "help_ar": "رقم بطاقة التعريف الوطنية المكون من 8 أرقام للطرف المعني.",
+      "image": "/images/help/cin.jpg"
     },
     "ETAT_CIVIL_ACQUEREUR": {
       "type": "text",
@@ -460,7 +462,8 @@
       "min_length": 2,
       "max_length": 500,
       "help_fr": "Adresse complète (rue, numéro, ville) .",
-      "help_ar": "العنوان الكامل (النهج، الرقم، المدينة) للتوقيع."
+      "help_ar": "العنوان الكامل (النهج، الرقم، المدينة) للتوقيع.",
+      "autocomplete": "tn-place"
     },
     "DATE_SIGNATURE": {
       "type": "date",

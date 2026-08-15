@@ -1,5 +1,7 @@
 import time
+import json
 import logging
+from pathlib import Path
 from fastapi import APIRouter, Depends, HTTPException, Request
 from fastapi.responses import Response
 from app.core.config import get_settings
@@ -22,6 +24,39 @@ from app.services.docx import docx_renderer as _docx
 router = APIRouter()
 logger = logging.getLogger(__name__)
 settings = get_settings()
+
+_VEHICLES_PATH = Path(__file__).resolve().parents[3] / "data" / "vehicles" / "tn_cars.json"
+_vehicles_cache: list[dict] | None = None
+
+_REFERENCE_DIR = Path(__file__).resolve().parents[3] / "data" / "reference"
+_reference_cache: dict[str, dict] = {}
+
+
+def _load_reference(kind: str) -> dict:
+    """Load a bilingual reference list (fr/ar) once, e.g. governorates, cities, tribunals."""
+    if kind not in _reference_cache:
+        try:
+            _reference_cache[kind] = json.loads((_REFERENCE_DIR / f"{kind}.json").read_text(encoding="utf-8"))
+        except FileNotFoundError:
+            _reference_cache[kind] = {"fr": [], "ar": []}
+    return _reference_cache[kind]
+
+
+def _load_vehicles() -> list[dict]:
+    """Load the Tunisia vehicle catalog once (brand + model names only)."""
+    global _vehicles_cache
+    if _vehicles_cache is None:
+        try:
+            raw = json.loads(_VEHICLES_PATH.read_text(encoding="utf-8"))
+            _vehicles_cache = [
+                {"brand": b.get("brand", ""), "models": [m.get("model", "") for m in b.get("models", [])]}
+                for b in raw
+                if b.get("brand")
+            ]
+        except FileNotFoundError:
+            logger.warning("Vehicle catalog not found at %s", _VEHICLES_PATH)
+            _vehicles_cache = []
+    return _vehicles_cache
 
 
 def _to_summary(t: dict) -> TemplateSummary:
@@ -57,6 +92,38 @@ def _to_detail(t: dict) -> TemplateDetail:
         field_metadata=field_metadata,
         generation_count=_generation_counts.get(t.get("slug", ""), 0),
     )
+
+
+@router.get("/vehicles")
+async def list_vehicles_endpoint():
+    """Tunisia market vehicle catalog (brands + model names) for autocomplete."""
+    return _load_vehicles()
+
+
+_REFERENCE_KINDS = {
+    "governorates",
+    "cities",
+    "places",
+    "tribunals",
+    "nationalities",
+    "professions",
+    "carburants",
+}
+
+
+@router.get("/reference/{kind}")
+async def reference_endpoint(kind: str):
+    """Bilingual reference lists (fr/ar) for autocomplete fields."""
+    if kind not in _REFERENCE_KINDS:
+        raise HTTPException(status_code=404, detail=f"Unknown reference kind: {kind}")
+    if kind == "places":
+        gov = _load_reference("governorates")
+        cities = _load_reference("cities")
+        return {
+            "fr": sorted(set(gov.get("fr", []) + cities.get("fr", [])), key=str.lower),
+            "ar": list(dict.fromkeys(gov.get("ar", []) + cities.get("ar", []))),
+        }
+    return _load_reference(kind)
 
 
 @router.get("/templates", response_model=list[TemplateSummary])

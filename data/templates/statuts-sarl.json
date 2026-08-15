@@ -212,8 +212,8 @@
       "placeholder_ar": "0",
       "placeholder_fr": "0",
       "required": true,
-      "hint_ar": "رقم",
-      "hint_fr": "Nombre",
+      "hint_ar": "الحد الأدنى القانوني: 1000 دينار (شركة ذات مسؤولية محدودة، الفصل 92 مجلة الشركات)",
+      "hint_fr": "min. légal : 1 000 DT (SARL, art. 92 CSC)",
       "pattern": "^-?\\d+([\\.\\,]\\d+)?$",
       "min_value": 0,
       "help_fr": "Montant en dinars tunisiens de la société.",
@@ -301,7 +301,8 @@
       "min_length": 2,
       "max_length": 500,
       "help_fr": "Adresse complète (rue, numéro, ville) .",
-      "help_ar": "العنوان الكامل (النهج، الرقم، المدينة) للتوقيع."
+      "help_ar": "العنوان الكامل (النهج، الرقم، المدينة) للتوقيع.",
+      "autocomplete": "tn-place"
     },
     "DATE_SIGNATURE": {
       "type": "date",

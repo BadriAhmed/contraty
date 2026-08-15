@@ -171,7 +171,8 @@
       "min_length": 2,
       "max_length": 500,
       "help_fr": "Le poste que vous occupez actuellement dans l'entreprise.",
-      "help_ar": "المنصب الذي تشغله حاليًا في المؤسسة."
+      "help_ar": "المنصب الذي تشغله حاليًا في المؤسسة.",
+      "autocomplete": "profession"
     },
     "DESTINATAIRE": {
       "type": "text",
@@ -294,7 +295,8 @@
       "min_length": 2,
       "max_length": 500,
       "help_fr": "Lieu (ville) où vous rédigez cette lettre.",
-      "help_ar": "المكان (المدينة) الذي تحرر فيه هذه الرسالة."
+      "help_ar": "المكان (المدينة) الذي تحرر فيه هذه الرسالة.",
+      "autocomplete": "tn-place"
     },
     "DATE": {
       "type": "date",

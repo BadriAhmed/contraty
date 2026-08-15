@@ -16,6 +16,8 @@ export interface FieldMeta {
   help_fr: string;
   options_fr?: string[];
   options_ar?: string[];
+  autocomplete?: "vehicle-brand" | "vehicle-model" | string;
+  image?: string;
 }
 
 export interface TemplateArticle {

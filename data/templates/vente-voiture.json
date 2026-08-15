@@ -193,7 +193,8 @@
       "min_length": 8,
       "max_length": 8,
       "help_fr": "Numéro à 8 chiffres de la carte d'identité nationale de la partie concernée.",
-      "help_ar": "رقم بطاقة التعريف الوطنية المكون من 8 أرقام للطرف المعني."
+      "help_ar": "رقم بطاقة التعريف الوطنية المكون من 8 أرقام للطرف المعني.",
+      "image": "/images/help/cin.jpg"
     },
     "ADRESSE_VENDEUR": {
       "type": "text",
@@ -236,7 +237,8 @@
       "min_length": 8,
       "max_length": 8,
       "help_fr": "Numéro à 8 chiffres de la carte d'identité nationale de la partie concernée.",
-      "help_ar": "رقم بطاقة التعريف الوطنية المكون من 8 أرقام للطرف المعني."
+      "help_ar": "رقم بطاقة التعريف الوطنية المكون من 8 أرقام للطرف المعني.",
+      "image": "/images/help/cin.jpg"
     },
     "ADRESSE_ACQUEREUR": {
       "type": "text",
@@ -264,7 +266,8 @@
       "min_length": 2,
       "max_length": 500,
       "help_fr": "Caractéristique du véhicule du contrat.",
-      "help_ar": "خاصية فنية للعربة في العقد."
+      "help_ar": "خاصية فنية للعربة في العقد.",
+      "autocomplete": "vehicle-brand"
     },
     "MODELE": {
       "type": "text",
@@ -278,7 +281,8 @@
       "min_length": 2,
       "max_length": 500,
       "help_fr": "Caractéristique du véhicule du contrat.",
-      "help_ar": "خاصية فنية للعربة في العقد."
+      "help_ar": "خاصية فنية للعربة في العقد.",
+      "autocomplete": "vehicle-model"
     },
     "IMMATRICULATION": {
       "type": "text",
@@ -292,7 +296,8 @@
       "min_length": 2,
       "max_length": 500,
       "help_fr": "Caractéristique du véhicule du contrat.",
-      "help_ar": "خاصية فنية للعربة في العقد."
+      "help_ar": "خاصية فنية للعربة في العقد.",
+      "image": "/images/help/immatriculation-arriere.jpg"
     },
     "NUM_CHASSIS": {
       "type": "text",
@@ -306,7 +311,8 @@
       "min_length": 2,
       "max_length": 500,
       "help_fr": "Numéro d'identification officiel du contrat.",
-      "help_ar": "رقم تعريف رسمي في العقد."
+      "help_ar": "رقم تعريف رسمي في العقد.",
+      "image": "/images/help/chassis-voiture.jpg"
     },
     "ANNEE_MEC": {
       "type": "text",
@@ -320,10 +326,11 @@
       "min_length": 2,
       "max_length": 500,
       "help_fr": "Année de première mise en circulation du véhicule.",
-      "help_ar": "سنة أول جولان للعربة."
+      "help_ar": "سنة أول جولان للعربة.",
+      "autocomplete": "years"
     },
     "CARBURANT": {
-      "type": "text",
+      "type": "select",
       "label_ar": "نوع الوقود",
       "label_fr": "Carburant",
       "placeholder_ar": "",
@@ -334,7 +341,21 @@
       "min_length": 2,
       "max_length": 500,
       "help_fr": "Caractéristique du véhicule du contrat.",
-      "help_ar": "خاصية فنية للعربة في العقد."
+      "help_ar": "خاصية فنية للعربة في العقد.",
+      "options_fr": [
+        "Essence",
+        "Diesel",
+        "Électrique",
+        "Hybride",
+        "GPL"
+      ],
+      "options_ar": [
+        "بنزين",
+        "مازوت",
+        "كهربائي",
+        "هجين",
+        "غاز"
+      ]
     },
     "PUISSANCE_FISCALE": {
       "type": "text",
@@ -348,7 +369,8 @@
       "min_length": 2,
       "max_length": 500,
       "help_fr": "Caractéristique du véhicule du contrat.",
-      "help_ar": "خاصية فنية للعربة في العقد."
+      "help_ar": "خاصية فنية للعربة في العقد.",
+      "image": "/images/help/carte-grise.jpg"
     },
     "KILOMETRAGE": {
       "type": "text",
@@ -404,7 +426,8 @@
       "min_length": 2,
       "max_length": 500,
       "help_fr": "Adresse complète (rue, numéro, ville) .",
-      "help_ar": "العنوان الكامل (النهج، الرقم، المدينة) للتوقيع."
+      "help_ar": "العنوان الكامل (النهج، الرقم، المدينة) للتوقيع.",
+      "autocomplete": "tn-place"
     },
     "DATE_SIGNATURE": {
       "type": "date",

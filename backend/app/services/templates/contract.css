@@ -6,17 +6,11 @@
         font-size: 8pt;
         color: #9ca3af;
     }
-    @bottom-right {
-        content: "Contraty — contraty.tn";
-        font-size: 7pt;
-        color: #d1d5db;
-    }
 }
 
-@page :first {
+    @page :first {
     margin-top: 3cm;
     @bottom-center { content: ""; }
-    @bottom-right { content: ""; }
 }
 
 body {
@@ -30,15 +24,8 @@ h1 {
     text-align: center;
     font-size: 16pt;
     color: #1a365d;
-    margin-bottom: 0.3em;
-}
-
-.contract-subtitle {
-    text-align: center;
-    font-size: 9pt;
-    color: #6b7280;
-    margin-bottom: 2em;
-    padding-bottom: 1em;
+    margin-bottom: 0.6em;
+    padding-bottom: 0.4em;
     border-bottom: 2px solid #1a365d;
 }
 

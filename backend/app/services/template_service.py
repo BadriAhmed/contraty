@@ -230,7 +230,12 @@ async def review_contract(
     user_fields: dict[str, str],
     extra_notes: str = "",
 ) -> list[ContractWarning]:
-    """Review a filled contract with Gemini Flash for common user errors."""
+    """Review a filled contract with Gemini Flash for common user errors.
+
+    Single LLM call: the model returns both real issues and (for Arabic)
+    transliterations of Latin-script field values in one structured response,
+    so transliteration is never dropped when other issues are present.
+    """
     if not settings.gemini_api_key:
         return []
 
@@ -253,6 +258,16 @@ async def review_contract(
     fields_str = ", ".join(f"{k}={_safe(v)}" for k, v in list(user_fields.items())[:20])
     notes_str = f"\nNotes de l'utilisateur: {_safe(extra_notes)}" if extra_notes else ""
 
+    translit_rule = """
+7. TRANSLATIONS: pour chaque champ fourni dont la valeur contient du texte en alphabet latin (ex: 'ismi Ahmed', 'Rue 5 Janvier'), fournis la version arabe correcte. Ceci est OBLIGATOIRE, même si tu trouves d'autres problèmes.
+""" if language == Language.ar else ""
+
+    translations_schema = (
+        "- \"translations\": TOUJOURS rempli — pour chaque champ en alphabet latin, sa version arabe (vide si aucun)."
+        if language == Language.ar
+        else "- \"translations\": laisse ce tableau vide."
+    )
+
     prompt = f"""Avocat tunisien. Ce contrat vient d'être rempli. Signale UNIQUEMENT les vrais problèmes:
 1. Champs obligatoires vides [CHAMP] dans le texte final
 2. Valeurs incohérentes (ex: loyer 5 TND à Tunis)
@@ -260,21 +275,26 @@ async def review_contract(
 4. Noms incomplets ou identiques entre parties
 5. Incohérences entre type de contrat et valeurs
 6. Valeurs mal formatées ou améliorables (ex: format de téléphone, majuscules, accents)
-
-{"7. Translittération : si des champs contiennent du texte en alphabet latin qui devrait être en arabe (ex: 'ismi Ahmed' → 'اسمي أحمد'), fournis la version arabe corrigée." if language == Language.ar else ""}
-
+{translit_rule}
+IMPORTANT: ne signale PAS dans "issues" les champs dont le texte est en alphabet latin
+(français/darja) à convertir en arabe — ces conversions vont UNIQUEMENT dans "translations".
 Ne commente pas les clauses standards, ni les références légales.
-Si tout va bien, réponds exactement: RIEN_A_SIGNALER
 
-Pour chaque problème, fournis:
+Pour chaque problème (issues), fournis:
 - "value": la valeur corrigée concrète à utiliser. Si tu ne peux pas deviner la valeur
   (ex: il manque le nom de famille), mets "value" à "" et mets "correction_type": "manual"
 - "correction_type": "auto" si la correction est applicable automatiquement (tu fournis la valeur),
   "manual" si l'utilisateur doit fournir l'information lui-même (nom manquant, adresse incomplète...),
   "info" si c'est juste une remarque sans action sur un champ
 
-Format de réponse pour chaque problème (JSON array uniquement, pas de markdown):
-[{{"field":"NOM","severity":"error","message_fr":"...","message_ar":"...","suggestion_fr":"...","suggestion_ar":"...","value":"valeur corrigée","correction_type":"auto"}}]
+Réponds UNIQUEMENT avec un objet JSON (pas de markdown), contenant deux tableaux:
+{{
+  "issues": [{{"field":"NOM","severity":"error","message_fr":"...","message_ar":"...","suggestion_fr":"...","suggestion_ar":"...","value":"valeur corrigée","correction_type":"auto"}}],
+  "translations": [{{"field":"NOM","value":"version arabe"}}]
+}}
+- "issues": les vrais problèmes (vide si tout va bien).
+{translations_schema}
+{"Tu es en mode arabe : les traductions doivent être en arabe." if language == Language.ar else ""}
 
 Contrat: {title}
 Champs fournis: {fields_str}{notes_str}
@@ -292,18 +312,69 @@ Texte: {contract_text}"""
             return []
 
         clean = _extract_json(text)
-        if clean:
-            raw = json.loads(clean)
-            if isinstance(raw, list):
-                warnings = []
-                for w in raw:
-                    if isinstance(w, dict):
-                        if "value" in w:
-                            w["suggested_value"] = str(w["value"])
-                        if "correction_type" not in w:
-                            w["correction_type"] = "auto" if w.get("suggested_value", "") else "manual"
-                        warnings.append(ContractWarning(**w))
-                return warnings
+        if not clean:
+            return []
+        raw = json.loads(clean)
+
+        warnings: list[ContractWarning] = []
+
+        if isinstance(raw, list):
+            # Legacy format: issues only
+            for w in raw:
+                if isinstance(w, dict):
+                    if "value" in w:
+                        w["suggested_value"] = str(w["value"])
+                    if "correction_type" not in w:
+                        w["correction_type"] = "auto" if w.get("suggested_value", "") else "manual"
+                    warnings.append(ContractWarning(**w))
+        elif isinstance(raw, dict):
+            for w in raw.get("issues", []) or []:
+                if isinstance(w, dict):
+                    if "value" in w:
+                        w["suggested_value"] = str(w["value"])
+                    if "correction_type" not in w:
+                        w["correction_type"] = "auto" if w.get("suggested_value", "") else "manual"
+                    warnings.append(ContractWarning(**w))
+            # Translations: informational warnings, never errors.
+            # Arabic mode only — a French contract must keep its values as typed.
+            if language == Language.ar:
+                translated_fields = {
+                    item.get("field", "")
+                    for item in raw.get("translations", []) or []
+                    if isinstance(item, dict) and item.get("value")
+                }
+                # Safety net: drop issue entries that merely flag Latin-script text for
+                # a field already covered by translations (avoids duplicate corrections)
+                if translated_fields:
+                    warnings = [
+                        w
+                        for w in warnings
+                        if not (
+                            w.field in translated_fields
+                            and ("latin" in (w.message_fr or "").lower() or "لاتينية" in (w.message_ar or ""))
+                        )
+                    ]
+                for item in raw.get("translations", []) or []:
+                    if not isinstance(item, dict):
+                        continue
+                    field_key = item.get("field", "")
+                    arabic = str(item.get("value", "")).strip()
+                    original = user_fields.get(field_key, "")
+                    if not field_key or not arabic or not original or arabic == original:
+                        continue
+                    warnings.append(
+                        ContractWarning(
+                            field=field_key,
+                            severity="info",
+                            message_ar="تحويل تلقائي إلى العربية",
+                            message_fr="Conversion automatique en arabe",
+                            suggestion_ar=f"«{original}» ← «{arabic}»",
+                            suggestion_fr=f"«{original}» → «{arabic}»",
+                            suggested_value=arabic,
+                            correction_type="auto",
+                        )
+                    )
+        return warnings
 
     except Exception as e:
         logger.warning("Contract review error: %s", str(e)[:200])

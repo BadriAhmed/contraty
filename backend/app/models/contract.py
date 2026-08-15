@@ -46,6 +46,8 @@ class FieldMetadata(BaseModel):
     help_fr: str = ""
     options_fr: list[str] = Field(default_factory=list)
     options_ar: list[str] = Field(default_factory=list)
+    autocomplete: Optional[str] = None  # e.g. "vehicle-brand" / "vehicle-model"
+    image: Optional[str] = None  # helper image path (e.g. "/images/help/chassis-voiture.jpg")
 
 
 class TemplateArticle(BaseModel):

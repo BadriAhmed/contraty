@@ -302,8 +302,12 @@ export default async function V2HomePage({ params }: { params: { lang: string } 
       ─────────────────────────────────────────────── */}
       <section className="py-12 md:py-24">
         <div className="max-w-7xl mx-auto px-4 md:px-6">
-          <div className="text-center mb-10 md:mb-14">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-on-surface tracking-tight">
+          <div className="bg-primary text-on-primary rounded-2xl px-8 py-10 md:px-12 md:py-12 text-center shadow-xl shadow-primary/25 mb-10 md:mb-14">
+            <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full bg-on-primary/10 text-on-primary text-sm font-semibold uppercase tracking-wide">
+              <Zap size={16} />
+              {t(lang, "ثلاث خطوات بسيطة", "3 étapes simples")}
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-on-primary tracking-tight">
               {t(lang, "كيف تعمل المنصة", "Comment ça marche")}
             </h2>
           </div>
@@ -343,18 +347,18 @@ export default async function V2HomePage({ params }: { params: { lang: string } 
               <div key={i} className="relative">
                 {/* Connector line */}
                 {i < 2 && (
-                  <div className="hidden md:block absolute top-12 start-full w-full h-0.5 border-t-2 border-dashed border-outline-variant/40 -z-0" />
+                  <div className="hidden md:block absolute top-14 start-full w-full h-0.5 border-t-2 border-dashed border-primary/30 -z-0" />
                 )}
-                <div className="relative bg-surface rounded-2xl border border-outline-variant/40 p-8 text-center">
-                  <div className="relative inline-flex mb-5">
-                    <div className="w-14 h-14 rounded-2xl bg-primary text-on-primary flex items-center justify-center font-bold text-xl">
+                <div className="relative bg-background rounded-2xl border border-outline-variant/40 p-10 text-center shadow-lg">
+                  <div className="relative inline-flex mb-6">
+                    <div className="w-16 h-16 rounded-2xl bg-primary text-on-primary flex items-center justify-center font-bold text-2xl shadow-md shadow-primary/25">
                       {s.step}
                     </div>
-                    <div className="absolute -top-1 -end-1 w-6 h-6 rounded-full bg-surface border border-outline-variant/40 flex items-center justify-center">
-                      <s.icon size={12} className="text-primary" />
+                    <div className="absolute -top-1 -end-1 w-7 h-7 rounded-full bg-background border border-primary/20 flex items-center justify-center">
+                      <s.icon size={14} className="text-primary" />
                     </div>
                   </div>
-                  <h3 className="font-bold text-on-surface mb-2">{s.title}</h3>
+                  <h3 className="text-lg font-bold text-on-surface mb-2">{s.title}</h3>
                   <p className="text-sm text-text-secondary leading-relaxed">{s.desc}</p>
                 </div>
               </div>

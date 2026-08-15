@@ -110,7 +110,8 @@
       "min_length": 8,
       "max_length": 8,
       "help_fr": "Numéro à 8 chiffres de la CIN du propriétaire (celui qui loue).",
-      "help_ar": "رقم بطاقة التعريف الوطنية للمكري (صاحب الدار)."
+      "help_ar": "رقم بطاقة التعريف الوطنية للمكري (صاحب الدار).",
+      "image": "/images/help/cin.jpg"
     },
     "NOM_PRENEUR": {
       "type": "text",
@@ -208,7 +209,8 @@
       "min_length": 2,
       "max_length": 500,
       "help_fr": "Adresse complète (rue, numéro, ville) pour la signature.",
-      "help_ar": "العنوان الكامل (النهج، الرقم، المدينة) للتوقيع."
+      "help_ar": "العنوان الكامل (النهج، الرقم، المدينة) للتوقيع.",
+      "autocomplete": "tn-place"
     },
     "DATE": {
       "type": "date",
@@ -238,7 +240,8 @@
       "hint_fr": "8 chiffres",
       "hint_ar": "8 أرقام",
       "help_fr": "Numéro de la carte d'identité nationale du preneur (locataire).",
-      "help_ar": "رقم بطاقة التعريف الوطنية للمكتري."
+      "help_ar": "رقم بطاقة التعريف الوطنية للمكتري.",
+      "image": "/images/help/cin.jpg"
     },
     "MONTANT_EN_CHIFFRES": {
       "type": "number",

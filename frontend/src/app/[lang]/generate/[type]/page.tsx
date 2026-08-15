@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import { fetchTemplate, validateField } from "@/lib/constants";
@@ -29,6 +29,7 @@ export default function V2GeneratePage() {
   const [fetchError, setFetchError] = useState<string | null>(null);
   const [showAdLoading, setShowAdLoading] = useState(false);
   const [showMobileSidebar, setShowMobileSidebar] = useState(false);
+  const mainRef = useRef<HTMLDivElement>(null);
 
   const {
     fieldValues, setFieldValues, currentStep, setCurrentStep,
@@ -36,6 +37,14 @@ export default function V2GeneratePage() {
     extraNotes, setExtraNotes, editingField, setEditingField,
     inlineValue, setInlineValue, clearPersistence, handleFieldChange,
   } = useWizardState(type, lang);
+
+  // Keep the form area scrolled to top when navigating between steps.
+  // The window is the actual scroll container (the inner div only overflows
+  // when its own content does), so reset both.
+  useEffect(() => {
+    mainRef.current?.scrollTo({ top: 0 });
+    window.scrollTo({ top: 0 });
+  }, [currentStep]);
 
   const {
     generating, generated, setGenerated, error: genError, setError: setGenError,
@@ -275,7 +284,7 @@ export default function V2GeneratePage() {
         )}
 
         {/* Main area */}
-        <div className={`flex-1 overflow-y-auto ${isFormStep ? "pb-24 lg:pb-0" : ""}`}>
+        <div ref={mainRef} className={`flex-1 overflow-y-auto ${isFormStep ? "pb-24 lg:pb-0" : ""}`}>
           <div className="max-w-2xl mx-auto px-4 md:px-8 py-6 md:py-12">
             {isPreviewStep && generated ? (
               <PreviewStep
@@ -341,6 +350,7 @@ export default function V2GeneratePage() {
                 onChange={(value) => handleFieldChange(currentField.name, value)}
                 onConfirm={handleConfirm}
                 onBack={handleBack}
+                relatedValues={fieldValues}
               />
             ) : null}
           </div>

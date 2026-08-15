@@ -20,6 +20,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY backend/app ./app
 COPY data/templates ./data/templates
+COPY data/reference ./data/reference
+COPY data/vehicles ./data/vehicles
 
 EXPOSE 8000
 
