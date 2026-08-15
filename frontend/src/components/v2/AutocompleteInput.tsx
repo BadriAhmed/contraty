@@ -69,7 +69,6 @@ export default function AutocompleteInput({ value, options, placeholder, onChang
         }}
         onClick={() => setOpened(true)}
         onKeyDown={onKeyDown}
-        onBlur={() => {}}
         placeholder={placeholder}
         autoComplete="off"
         className="input-field text-base rounded-xl pe-10"

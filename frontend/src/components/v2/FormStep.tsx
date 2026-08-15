@@ -70,6 +70,7 @@ export default function FormStep({
   const msg = ERROR_MSG[lang] || ERROR_MSG.fr;
   const md = field.metadata;
   const inputType = md ? getInputType(md.type) : "text";
+  const inputMode = md?.type === "cin" ? "numeric" : md?.type === "phone" ? "tel" : undefined;
   const help = lang === "ar" ? md?.help_ar || "" : md?.help_fr || "";
   const isSelect = md?.type === "select";
   const options = isSelect ? (lang === "ar" ? md?.options_ar || [] : md?.options_fr || []) : [];
@@ -254,10 +255,10 @@ export default function FormStep({
             <input
               ref={inputRef as React.Ref<HTMLInputElement>}
               type={inputType}
+              inputMode={inputMode}
               value={value || ""}
               onChange={(e) => onChange(e.target.value)}
               onKeyDown={handleKeyDown}
-              onBlur={() => {}}
               placeholder={isDate ? undefined : field.placeholder}
               className="input-field text-base rounded-xl flex-1 min-w-0"
             />
@@ -297,9 +298,7 @@ export default function FormStep({
           onClick={onConfirm}
           className="flex-1 flex items-center justify-center gap-2 bg-primary text-on-primary font-semibold py-3.5 md:py-4 rounded-2xl hover:bg-surface-tint transition-colors shadow-lg shadow-primary/20 text-sm md:text-base"
         >
-          {isLastField
-            ? (lang === "ar" ? "تأكيد ومتابعة" : "Confirmer")
-            : (lang === "ar" ? "تأكيد ومتابعة" : "Confirmer")}
+          {confirmLabel}
           {isRtl ? <ArrowLeft size={18} /> : <ArrowRight size={18} />}
         </button>
       </div>
