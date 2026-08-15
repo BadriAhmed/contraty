@@ -244,7 +244,7 @@
       "max_length": 500,
       "help_fr": "Intitulé exact du poste ou de la fonction occupée.",
       "help_ar": "التسمية الدقيقة للمنصب أو الوظيفة المشغولة.",
-      "autocomplete": "profession"
+      "autocomplete": "professions"
     },
     "DATE_RUPTURE": {
       "type": "date",
@@ -314,7 +314,7 @@
       "max_length": 500,
       "help_fr": "Adresse complète (rue, numéro, ville) .",
       "help_ar": "العنوان الكامل (النهج، الرقم، المدينة) للتوقيع.",
-      "autocomplete": "tn-place"
+      "autocomplete": "places"
     },
     "DATE": {
       "type": "date",

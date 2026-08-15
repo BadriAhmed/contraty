@@ -168,6 +168,20 @@ async def test_reference_endpoints(client):
         data = resp.json()
         assert len(data.get("fr", [])) >= min_len
         assert len(data.get("ar", [])) >= min_len
+
+    # Legacy autocomplete aliases used by seeded templates resolve to canonical kinds.
+    for alias, canonical in [
+        ("tn-place", "places"),
+        ("tn-tribunal", "tribunals"),
+        ("profession", "professions"),
+        ("nationality", "nationalities"),
+    ]:
+        resp = await client.get(f"/api/v1/contracts/reference/{alias}")
+        assert resp.status_code == 200
+        data = resp.json()
+        assert len(data.get("fr", [])) > 0
+        assert data == (await client.get(f"/api/v1/contracts/reference/{canonical}")).json()
+
     resp = await client.get("/api/v1/contracts/reference/nope")
     assert resp.status_code == 404
 

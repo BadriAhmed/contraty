@@ -349,7 +349,7 @@
       "max_length": 500,
       "help_fr": "Adresse complète (rue, numéro, ville) .",
       "help_ar": "العنوان الكامل (النهج، الرقم، المدينة) للتوقيع.",
-      "autocomplete": "tn-place"
+      "autocomplete": "places"
     },
     "DATE_SIGNATURE": {
       "type": "date",

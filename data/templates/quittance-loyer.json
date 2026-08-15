@@ -210,7 +210,7 @@
       "max_length": 500,
       "help_fr": "Adresse complète (rue, numéro, ville) pour la signature.",
       "help_ar": "العنوان الكامل (النهج، الرقم، المدينة) للتوقيع.",
-      "autocomplete": "tn-place"
+      "autocomplete": "places"
     },
     "DATE": {
       "type": "date",
@@ -232,7 +232,7 @@
       "placeholder_fr": "12345678",
       "placeholder_ar": "12345678",
       "required": true,
-      "pattern": null,
+      "pattern": "^\\d{8}$",
       "min_length": 8,
       "max_length": 8,
       "min_value": null,

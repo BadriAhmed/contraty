@@ -436,7 +436,7 @@
       "max_length": 500,
       "help_fr": "Tribunal territorialement compétent en cas de litige (ex: Tribunal de Tunis).",
       "help_ar": "المحكمة المختصة ترابيًا في حالة النزاع (مثال: المحكمة الابتدائية بتونس).",
-      "autocomplete": "tn-tribunal"
+      "autocomplete": "tribunals"
     },
     "LIEU_SIGNATURE": {
       "type": "text",
@@ -451,7 +451,7 @@
       "max_length": 500,
       "help_fr": "Adresse complète (rue, numéro, ville) .",
       "help_ar": "العنوان الكامل (النهج، الرقم، المدينة) للتوقيع.",
-      "autocomplete": "tn-place"
+      "autocomplete": "places"
     },
     "DATE_SIGNATURE": {
       "type": "date",

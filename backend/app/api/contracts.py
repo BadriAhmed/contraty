@@ -129,10 +129,19 @@ _REFERENCE_KINDS = {
     "carburants",
 }
 
+# Templates seeded with an earlier convention still reference these aliases.
+_REFERENCE_ALIASES = {
+    "tn-place": "places",
+    "tn-tribunal": "tribunals",
+    "profession": "professions",
+    "nationality": "nationalities",
+}
+
 
 @router.get("/reference/{kind}")
 async def reference_endpoint(kind: str):
     """Bilingual reference lists (fr/ar) for autocomplete fields."""
+    kind = _REFERENCE_ALIASES.get(kind, kind)
     if kind not in _REFERENCE_KINDS:
         raise HTTPException(status_code=404, detail=f"Unknown reference kind: {kind}")
     if kind == "places":

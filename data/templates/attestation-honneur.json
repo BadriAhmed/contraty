@@ -129,7 +129,7 @@
       "max_length": 500,
       "help_fr": "Adresse complète (rue, numéro, ville) .",
       "help_ar": "العنوان الكامل (النهج، الرقم، المدينة) .",
-      "autocomplete": "tn-place"
+      "autocomplete": "places"
     },
     "NATIONALITE": {
       "type": "text",
@@ -144,7 +144,7 @@
       "max_length": 500,
       "help_fr": "Nationalité de la personne concernée (ex: Tunisienne).",
       "help_ar": "جنسية الشخص المعني (مثال: تونسية).",
-      "autocomplete": "nationality"
+      "autocomplete": "nationalities"
     },
     "CIN": {
       "type": "cin",
@@ -246,7 +246,7 @@
       "max_length": 500,
       "help_fr": "Adresse complète (rue, numéro, ville) pour la signature.",
       "help_ar": "العنوان الكامل (النهج، الرقم، المدينة) للتوقيع.",
-      "autocomplete": "tn-place"
+      "autocomplete": "places"
     },
     "DATE": {
       "type": "date",
