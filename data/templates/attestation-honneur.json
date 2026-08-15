@@ -171,9 +171,7 @@
       "required": true,
       "hint_ar": "يوم/شهر/سنة",
       "hint_fr": "JJ/MM/AAAA",
-      "pattern": "^\\d{8}$",
-      "min_length": 8,
-      "max_length": 8,
+      "pattern": "^(\\d{4}-\\d{2}-\\d{2}|\\d{1,2}[/\\-.]\\d{1,2}[/\\-.]\\d{2,4})$",
       "help_fr": "Date de délivrance de la carte d'identité nationale.",
       "help_ar": "تاريخ منح بطاقة التعريف الوطنية."
     },
