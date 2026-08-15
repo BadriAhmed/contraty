@@ -4,6 +4,7 @@ Handles multiple article formats: COC, CT, CS.
 Recursively discovers all leaf .htm pages from menu structure.
 """
 import json
+import os
 import re
 import time
 import requests
@@ -13,7 +14,7 @@ from dataclasses import dataclass, field, asdict
 from typing import Optional
 
 BASE_URL = "https://www.jurisitetunisie.com/tunisie/codes"
-OUTPUT_DIR = Path("/home/imari/IdeaProjects/Contraty/data/raw")
+OUTPUT_DIR = Path(os.environ.get("CONTRATY_OUTPUT_DIR", "/home/imari/IdeaProjects/Contraty/data/raw"))
 DELAY = 0.25
 UA = "Contraty/1.0 (legal research)"
 
