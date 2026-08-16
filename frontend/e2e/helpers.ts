@@ -5,6 +5,13 @@ export const API = `${BACKEND}/api/v1`;
 
 export type FieldMeta = Record<string, any>;
 
+export interface TemplateSummary {
+  slug: string;
+  title_ar?: string;
+  title_fr?: string;
+  field_count?: number;
+}
+
 export interface TemplateDetail {
   slug: string;
   title_ar?: string;
@@ -27,6 +34,12 @@ export interface FlatField {
 export async function fetchTemplate(request: APIRequestContext, slug: string): Promise<TemplateDetail> {
   const res = await request.get(`${API}/contracts/templates/${slug}`);
   expect(res.ok(), `GET /templates/${slug} returned ${res.status()}`).toBeTruthy();
+  return res.json();
+}
+
+export async function listTemplates(request: APIRequestContext): Promise<TemplateSummary[]> {
+  const res = await request.get(`${API}/contracts/templates`);
+  expect(res.ok(), `GET /templates returned ${res.status()}`).toBeTruthy();
   return res.json();
 }
 
@@ -78,8 +91,14 @@ export function valueFor(field: FlatField, lang: string): string {
       const options = lang === "ar" ? meta.options_ar || [] : meta.options_fr || [];
       return options[0] || "";
     }
-    default:
-      return `Test ${field.name.toLowerCase().replace(/_/g, " ")}`.slice(0, 80);
+    default: {
+      const min = typeof meta.min_length === "number" ? meta.min_length : 0;
+      const max = typeof meta.max_length === "number" ? meta.max_length : 80;
+      let base = `Test ${field.name.toLowerCase().replace(/_/g, " ")}`;
+      if (base.length > max) base = base.slice(0, max);
+      if (base.length < min) base = base.padEnd(min, "x");
+      return base;
+    }
   }
 }
 
@@ -114,6 +133,24 @@ export function confirmName(lang: string, isLast: boolean): string {
 
 export function disclaimerContinueName(lang: string): string {
   return lang === "ar" ? "متابعة" : "Continuer";
+}
+
+/**
+ * Fill fields [0..index-1] validly so the wizard lands on fields[index],
+ * assuming the disclaimer has already been accepted.
+ */
+export async function advanceToField(
+  page: Page,
+  fields: FlatField[],
+  lang: string,
+  index: number,
+): Promise<void> {
+  for (let i = 0; i < index; i++) {
+    await fillField(page, fields[i], lang);
+    await page
+      .getByRole("button", { name: confirmName(lang, i === fields.length - 1), exact: true })
+      .click();
+  }
 }
 
 /**

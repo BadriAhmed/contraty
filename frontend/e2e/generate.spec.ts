@@ -1,31 +1,39 @@
 import { test, expect } from "@playwright/test";
+import { TEMPLATE_SLUGS, LANGS } from "./catalog";
 import { fillWizardToNotes } from "./helpers";
 
 /**
- * Live LLM flow — hits Gemini (costs quota) and WeasyPrint, so it is skipped
- * by default. Run explicitly with:
+ * Live LLM flow — hits Gemini (costs quota) + WeasyPrint on every template in
+ * both languages. Skipped by default; run explicitly with:
  *
  *   E2E_GENERATE=1 npm run test:e2e -- generate
  */
-const SLUG = "pret-particuliers";
-const LANG = "fr";
-
-test.describe("contract generation", () => {
+test.describe("contract generation (live)", () => {
   test.skip(!process.env.E2E_GENERATE, "set E2E_GENERATE=1 to run the live LLM flow");
 
-  test("generates a contract and downloads the PDF", async ({ page, request }) => {
-    test.setTimeout(180_000);
-    await fillWizardToNotes(page, request, SLUG, LANG);
+  // One at a time — Gemini + WeasyPrint are expensive and rate-limited.
+  test.describe.configure({ mode: "serial" });
 
-    await page.getByRole("button", { name: "Générer le contrat", exact: true }).click();
+  for (const lang of LANGS) {
+    const isAr = lang === "ar";
+    for (const slug of TEMPLATE_SLUGS) {
+      test(`${slug} (${lang}): generates and downloads PDF`, async ({ page, request }) => {
+        test.setTimeout(240_000);
+        await fillWizardToNotes(page, request, slug, lang);
 
-    await expect(
-      page.getByText("Contrat généré avec succès !"),
-    ).toBeVisible({ timeout: 150_000 });
+        await page
+          .getByRole("button", { name: isAr ? "إنشاء العقد" : "Générer le contrat", exact: true })
+          .click();
 
-    const downloadPromise = page.waitForEvent("download");
-    await page.getByRole("button", { name: "PDF", exact: true }).click();
-    const download = await downloadPromise;
-    expect(download.suggestedFilename()).toMatch(/\.pdf$/);
-  });
+        await expect(
+          page.getByText(isAr ? "تم إنشاء العقد بنجاح!" : "Contrat généré avec succès !"),
+        ).toBeVisible({ timeout: 180_000 });
+
+        const downloadPromise = page.waitForEvent("download");
+        await page.getByRole("button", { name: "PDF", exact: true }).click();
+        const download = await downloadPromise;
+        expect(download.suggestedFilename()).toMatch(/\.pdf$/);
+      });
+    }
+  }
 });

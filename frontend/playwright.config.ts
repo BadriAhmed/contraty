@@ -2,6 +2,10 @@ import { defineConfig, devices } from "@playwright/test";
 
 const PORT = 3001;
 const API_PORT = 8001;
+// The live generation matrix makes many generate/pdf calls in a short time,
+// which would trip the backend's default 5/min rate limit. Relax it for the
+// live run only — normal runs keep the production value.
+const RATE_LIMIT_REQUESTS = process.env.E2E_GENERATE ? "1000" : "5";
 
 export default defineConfig({
   testDir: "./e2e",
@@ -22,7 +26,7 @@ export default defineConfig({
   ],
   webServer: [
     {
-      command: `.venv/bin/uvicorn app.main:app --host 0.0.0.0 --port ${API_PORT}`,
+      command: `rate_limit_requests=${RATE_LIMIT_REQUESTS} .venv/bin/uvicorn app.main:app --host 0.0.0.0 --port ${API_PORT}`,
       cwd: "../backend",
       url: `http://localhost:${API_PORT}/health`,
       reuseExistingServer: !process.env.CI,
