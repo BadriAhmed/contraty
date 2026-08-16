@@ -7,7 +7,7 @@ RUN npm ci
 
 COPY . .
 
-ARG NEXT_PUBLIC_API_URL=https://contraty-backend-104286528986.europe-west1.run.app/api/v1
+ARG NEXT_PUBLIC_API_URL=https://contraty-backend-ngy2lxla7q-ew.a.run.app/api/v1
 ARG NEXT_PUBLIC_SITE_URL=https://contraty.tn
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL

@@ -1,3 +1,13 @@
 # Dependencies
 node_modules/
 .next/
+
+# Local env (never bake local values into the image — use Dockerfile ARG/ENV)
+.env*
+!.env.example
+!.env.local.example
+
+# Tests / tooling
+e2e/
+playwright-report/
+test-results/
