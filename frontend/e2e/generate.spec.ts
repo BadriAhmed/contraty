@@ -17,7 +17,7 @@ test.describe("contract generation (live)", () => {
   for (const lang of LANGS) {
     const isAr = lang === "ar";
     for (const slug of TEMPLATE_SLUGS) {
-      test(`${slug} (${lang}): generates and downloads PDF`, async ({ page, request }) => {
+      test(`${slug} (${lang}): generates and downloads PDF + DOCX`, async ({ page, request }) => {
         test.setTimeout(240_000);
         await fillWizardToNotes(page, request, slug, lang);
 
@@ -29,10 +29,15 @@ test.describe("contract generation (live)", () => {
           page.getByText(isAr ? "تم إنشاء العقد بنجاح!" : "Contrat généré avec succès !"),
         ).toBeVisible({ timeout: 180_000 });
 
-        const downloadPromise = page.waitForEvent("download");
+        const pdfPromise = page.waitForEvent("download");
         await page.getByRole("button", { name: "PDF", exact: true }).click();
-        const download = await downloadPromise;
-        expect(download.suggestedFilename()).toMatch(/\.pdf$/);
+        const pdf = await pdfPromise;
+        expect(pdf.suggestedFilename()).toMatch(/\.pdf$/);
+
+        const docxPromise = page.waitForEvent("download");
+        await page.getByRole("button", { name: "Word", exact: true }).click();
+        const docx = await docxPromise;
+        expect(docx.suggestedFilename()).toMatch(/\.docx$/);
       });
     }
   }

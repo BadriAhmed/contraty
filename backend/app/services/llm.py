@@ -1,8 +1,9 @@
 import logging
+
 from google.genai import Client as GenAIClient
 
 from app.core.config import get_settings
-from app.models.contract import Language, Contract, ContractResponse
+from app.models.contract import Contract, ContractResponse, Language
 
 logger = logging.getLogger(__name__)
 settings = get_settings()
@@ -13,7 +14,10 @@ _gemini_client: GenAIClient | None = None
 def get_gemini_client() -> GenAIClient:
     global _gemini_client
     if _gemini_client is None:
-        _gemini_client = GenAIClient(api_key=settings.gemini_api_key)
+        _gemini_client = GenAIClient(
+            api_key=settings.gemini_api_key,
+            http_options={"timeout": settings.gemini_timeout_ms},
+        )
     return _gemini_client
 
 
