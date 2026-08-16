@@ -4,6 +4,7 @@ type EventProps = Record<string, string | number | boolean | undefined>;
 
 export function trackEvent(name: string, props: EventProps = {}) {
   if (typeof window === "undefined") return;
+  if (process.env.NEXT_PUBLIC_ANALYTICS_DISABLED === "true") return;
 
   const body = JSON.stringify({ name, props });
 
