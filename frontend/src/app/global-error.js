@@ -1,6 +1,6 @@
 "use client";
 
-export default function GlobalError({ error, reset }) {
+export default function GlobalError({ error }) {
   return (
     <html lang="fr">
       <body className="min-h-screen flex items-center justify-center bg-background font-sans">
@@ -10,7 +10,7 @@ export default function GlobalError({ error, reset }) {
             {error?.message || "Une erreur inattendue s'est produite."}
           </p>
           <button
-            onClick={() => reset()}
+            onClick={() => window.location.reload()}
             className="bg-primary text-on-primary px-4 py-2 rounded-lg hover:bg-surface-tint transition-colors"
           >
             Réessayer

@@ -2,7 +2,7 @@
 
 import { useParams } from "next/navigation";
 
-export default function Error({ error, reset }) {
+export default function Error({ error }) {
   const params = useParams();
   const lang = params?.lang || "fr";
 
@@ -23,7 +23,7 @@ export default function Error({ error, reset }) {
           {error?.message || (lang === "ar" ? "يرجى المحاولة مرة أخرى" : "Veuillez réessayer")}
         </p>
         <button
-          onClick={() => reset()}
+          onClick={() => window.location.reload()}
           className="bg-primary text-on-primary font-semibold px-6 py-3 rounded-xl hover:bg-surface-tint transition-colors shadow-lg shadow-primary/20"
         >
           {lang === "ar" ? "إعادة المحاولة" : "Réessayer"}
