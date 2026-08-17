@@ -1,4 +1,6 @@
+import collections
 import datetime
+import json
 import logging
 from typing import Optional
 from fastapi import APIRouter, Request
@@ -7,6 +9,7 @@ from app.models.analytics import (
     AnalyticsEventRequest,
     AnalyticsEvent,
     AnalyticsSummary,
+    DaySeries,
 )
 from app.db.client import get_supabase
 
@@ -55,12 +58,30 @@ async def log_event(request: Request, body: AnalyticsEventRequest):
     return {"ok": True}
 
 
+def _as_dict(props) -> dict:
+    """Normalize a props value (dict, JSON string, or None) to a dict."""
+    if isinstance(props, dict):
+        return props
+    if isinstance(props, str):
+        try:
+            return json.loads(props)
+        except Exception:
+            return {}
+    return {}
+
+
 def _aggregate(rows: list[dict]) -> AnalyticsSummary:
     """Aggregate raw rows (Supabase dicts) into a summary."""
     events_by_name: dict[str, int] = {}
     slug_counts: dict[str, int] = {}
     by_lang: dict[str, int] = {}
     by_format: dict[str, int] = {}
+    by_domain: dict[str, int] = {}
+    sessions: set[str] = set()
+    day_map: dict[str, dict] = collections.defaultdict(
+        lambda: {"total": 0, "page_view": 0, "wizard_start": 0,
+                 "contract_generate": 0, "contract_download": 0}
+    )
 
     for r in rows:
         name = r.get("event_name", "")
@@ -80,23 +101,55 @@ def _aggregate(rows: list[dict]) -> AnalyticsSummary:
         if fmt:
             by_format[fmt] = by_format.get(fmt, 0) + 1
 
+        props = _as_dict(r.get("props"))
+        domain = r.get("domain") or props.get("domain", "") or ""
+        if domain:
+            by_domain[domain] = by_domain.get(domain, 0) + 1
+
+        sid = str(props.get("session_id", "") or "")
+        if sid:
+            sessions.add(sid)
+
+        day = (r.get("created_at") or "")[:10]
+        if day:
+            d = day_map[day]
+            d["total"] += 1
+            if name in d:
+                d[name] += 1
+
     top = sorted(slug_counts.items(), key=lambda x: -x[1])[:10]
 
+    days = [
+        DaySeries(
+            date=k,
+            total=v["total"],
+            page_view=v["page_view"],
+            wizard_start=v["wizard_start"],
+            contract_generate=v["contract_generate"],
+            contract_download=v["contract_download"],
+        )
+        for k, v in sorted(day_map.items())
+    ]
+
+    recent_rows = sorted(rows, key=lambda r: r.get("created_at") or "", reverse=True)[:20]
     recent = [
         AnalyticsEvent(
             name=r.get("event_name", ""),
-            props=r.get("props") or {},
+            props=_as_dict(r.get("props")),
             created_at=r.get("created_at", ""),
         )
-        for r in rows[:20]
+        for r in recent_rows
     ]
 
     return AnalyticsSummary(
         total_events=len(rows),
+        unique_sessions=len(sessions),
         events_by_name=events_by_name,
         top_slugs=[(k, v) for k, v in top],
         by_lang=by_lang,
         by_format=by_format,
+        by_domain=by_domain,
+        days=days,
         recent=recent,
     )
 

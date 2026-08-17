@@ -4,68 +4,114 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow, noarchive">
-<title>Contraty Analytics</title>
+<title>Contraty · Analytics</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <style>
   :root {
     --primary: #004ac6;
+    --primary-soft: #eef2ff;
+    --bg: #f6f7fb;
     --surface: #ffffff;
-    --bg: #faf8ff;
-    --border: #e2e0ea;
-    --text: #191b23;
+    --border: #e7e9f2;
+    --text: #16192c;
     --muted: #6b7280;
     --green: #16a34a;
-    --cat-documents: #2563eb;
-    --cat-services: #0d9488;
-    --cat-family: #9333ea;
-    --cat-employment: #16a34a;
-    --cat-business: #c2410c;
-    --cat-real-estate: #b45309;
+    --teal: #0d9488;
+    --purple: #9333ea;
+    --amber: #b45309;
+    --orange: #c2410c;
+    --blue: #2563eb;
+    --red: #dc2626;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: -apple-system, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); }
-  .wrap { max-width: 960px; margin: 0 auto; padding: 24px 16px 60px; }
-  header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 20px; }
-  h1 { font-size: 22px; }
-  .sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
-  .days button {
-    padding: 6px 12px; border-radius: 8px; border: 1px solid var(--border);
-    background: var(--surface); color: var(--text); font-size: 12px; cursor: pointer; margin-left: 6px;
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--text);
+    -webkit-font-smoothing: antialiased;
   }
-  .days button.active { background: var(--primary); color: #fff; border-color: var(--primary); }
-  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-bottom: 20px; }
-  .stat { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 14px; }
-  .stat b { font-size: 24px; display: block; }
-  .stat span { font-size: 11px; color: var(--muted); }
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 14px; }
-  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 16px; margin-bottom: 14px; }
-  .card h2 { font-size: 13px; margin-bottom: 12px; }
-  .bar-row { display: flex; align-items: center; gap: 8px; margin-bottom: 7px; font-size: 12px; }
-  .bar-row .label { width: 180px; text-align: right; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .bar { flex: 1; height: 18px; background: #f1f0f6; border-radius: 6px; overflow: hidden; }
-  .bar div { height: 100%; border-radius: 6px; transition: width .4s; }
-  .bar-row .val { width: 36px; font-weight: 600; text-align: right; }
-  table { width: 100%; border-collapse: collapse; font-size: 13px; }
-  th { text-align: left; color: var(--muted); font-weight: 500; font-size: 11px; padding-bottom: 8px; }
-  td { padding: 8px 0; border-top: 1px solid #efeef4; }
-  td.num { text-align: right; font-weight: 600; }
-  .recent { max-height: 320px; overflow-y: auto; }
-  .recent .row { display: flex; gap: 8px; align-items: center; font-size: 12px; padding: 6px 0; border-bottom: 1px solid #f3f2f8; }
-  .dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
-  .row .name { font-weight: 600; width: 180px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex-shrink: 0; }
+  .wrap { max-width: 1240px; margin: 0 auto; padding: 24px 20px 72px; }
+
+  header { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-bottom: 22px; }
+  .brand {
+    width: 42px; height: 42px; border-radius: 10px; background: var(--primary);
+    color: #fff; font-weight: 800; font-size: 24px; display: flex;
+    align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  header h1 { font-size: 20px; font-weight: 700; letter-spacing: -0.02em; }
+  header .sub { font-size: 12px; color: var(--muted); margin-top: 1px; }
+  .spacer { flex: 1; }
+  .days { display: flex; gap: 4px; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 3px; }
+  .days button {
+    padding: 7px 14px; border: 0; border-radius: 8px; background: transparent;
+    color: var(--muted); font-size: 13px; font-weight: 600; cursor: pointer;
+  }
+  .days button.active { background: var(--primary); color: #fff; }
+  .refresh { font-size: 12px; color: var(--muted); }
+
+  .error {
+    background: #fef2f2; border: 1px solid #fecaca; color: #b91c1c;
+    border-radius: 12px; padding: 14px 16px; font-size: 13px; margin-bottom: 16px; display: none;
+  }
+
+  .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin-bottom: 18px; }
+  .kpi {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
+    padding: 16px 18px; position: relative; overflow: hidden;
+  }
+  .kpi::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--accent, var(--primary)); }
+  .kpi .label { font-size: 12px; color: var(--muted); font-weight: 500; }
+  .kpi .value { font-size: 30px; font-weight: 800; letter-spacing: -0.03em; margin-top: 6px; color: var(--text); }
+  .kpi .hint { font-size: 11px; color: var(--muted); margin-top: 4px; }
+
+  .card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
+    padding: 18px 20px; margin-bottom: 16px;
+  }
+  .card h2 { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+  .card .desc { font-size: 12px; color: var(--muted); margin-bottom: 14px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .grid .card { margin-bottom: 0; }
+  .full { grid-column: 1 / -1; }
+  .canvas-box { position: relative; height: 280px; }
+  .canvas-box.small { height: 220px; }
+
+  .funnel-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+  .funnel-row .step { width: 170px; font-size: 12px; color: var(--muted); text-align: right; flex-shrink: 0; }
+  .funnel-row .track { flex: 1; height: 30px; background: #f1f2f7; border-radius: 7px; overflow: hidden; }
+  .funnel-row .track .fill {
+    height: 100%; border-radius: 7px; background: var(--c, var(--primary));
+    display: flex; align-items: center; justify-content: flex-end; padding-right: 8px;
+    color: #fff; font-size: 12px; font-weight: 700; transition: width .5s ease;
+  }
+  .funnel-row .conv { width: 70px; font-size: 11px; color: var(--muted); text-align: left; flex-shrink: 0; }
+
+  .recent { max-height: 340px; overflow-y: auto; }
+  .recent .row { display: flex; gap: 10px; align-items: center; font-size: 12.5px; padding: 8px 0; border-bottom: 1px solid #f2f3f8; }
+  .recent .row:last-child { border-bottom: 0; }
+  .dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+  .row .name { font-weight: 600; width: 190px; flex-shrink: 0; }
   .row .meta { color: var(--muted); flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .row .time { color: #9ca3af; flex-shrink: 0; }
-  .error { background: #fef2f2; border: 1px solid #fecaca; color: #b91c1c; border-radius: 12px; padding: 12px; font-size: 13px; margin-bottom: 14px; display: none; }
-  .empty { color: var(--muted); font-size: 12px; }
-  @media (max-width: 640px) { .bar-row .label { width: 110px; } .row .name { width: 110px; } }
+  .row .time { color: #9ca3af; flex-shrink: 0; font-size: 11.5px; }
+
+  .empty { color: var(--muted); font-size: 13px; padding: 20px 0; }
+
+  @media (max-width: 820px) {
+    .grid { grid-template-columns: 1fr; }
+    .funnel-row .step { width: 120px; }
+    .row .name { width: 120px; }
+  }
 </style>
 </head>
 <body>
 <div class="wrap">
   <header>
+    <div class="brand">C</div>
     <div>
-      <h1>Contraty Analytics</h1>
-      <div class="sub" id="sub">Loading…</div>
+      <h1>Contraty · Analytics</h1>
+      <div class="sub">Product engagement &amp; conversion</div>
     </div>
+    <div class="spacer"></div>
+    <span class="refresh" id="refresh">—</span>
     <div class="days">
       <button data-days="7" class="active">7d</button>
       <button data-days="30">30d</button>
@@ -75,130 +121,243 @@
 
   <div class="error" id="error"></div>
 
-  <div class="stats" id="stats"></div>
+  <div class="kpis" id="kpis"></div>
+
+  <div class="card">
+    <h2>Activity over time</h2>
+    <div class="desc">Daily visits, contracts generated and downloads</div>
+    <div class="canvas-box"><canvas id="growth"></canvas></div>
+  </div>
 
   <div class="grid">
     <div class="card">
-      <h2>Events by type</h2>
-      <div id="byType"></div>
+      <h2>Conversion funnel</h2>
+      <div class="desc">From visit to downloaded contract</div>
+      <div id="funnel"></div>
     </div>
-    <div>
-      <div class="card">
-        <h2>Language</h2>
-        <div id="byLang"></div>
-      </div>
-      <div class="card">
-        <h2>Downloaded format</h2>
-        <div id="byFormat"></div>
-      </div>
+    <div class="card">
+      <h2>Language</h2>
+      <div class="desc">French vs Arabic usage</div>
+      <div class="canvas-box small"><canvas id="byLang"></canvas></div>
+    </div>
+    <div class="card">
+      <h2>Top contracts</h2>
+      <div class="desc">Most engaged templates</div>
+      <div class="canvas-box small"><canvas id="top"></canvas></div>
+    </div>
+    <div class="card">
+      <h2>Domains</h2>
+      <div class="desc">Legal categories</div>
+      <div class="canvas-box small"><canvas id="byDomain"></canvas></div>
     </div>
   </div>
 
   <div class="card">
-    <h2>Funnel (wizard → generate → download)</h2>
-    <div id="funnel"></div>
-  </div>
-
-  <div class="card">
-    <h2>Top contracts</h2>
-    <div id="top"></div>
-  </div>
-
-  <div class="card">
-    <h2>Recent events</h2>
+    <h2>Recent activity</h2>
+    <div class="desc">Live event stream</div>
     <div class="recent" id="recent"></div>
   </div>
 </div>
 
 <script>
 const API = "https://contraty-backend-ngy2lxla7q-ew.a.run.app/api/v1";
+let days = 7;
+let charts = [];
+const SLUG_TITLES = {};
+let templatesLoaded = false;
+
 const EVENT_LABELS = {
-  template_view: "Template views", template_click: "Template clicks",
-  domain_filter: "Domain filter", wizard_start: "Wizard started",
+  page_view: "Visits", template_view: "Template views", template_click: "Template clicks",
+  domain_filter: "Domain filters", wizard_start: "Wizards started",
   contract_generate: "Contracts generated", contract_download: "Downloads",
-  blank_download: "Blank downloaded", blank_customize: "AI customization"
+  blank_download: "Blank downloads", blank_customize: "AI customizations"
 };
 const EVENT_COLORS = {
-  template_view: "var(--cat-documents)", template_click: "var(--cat-services)",
-  domain_filter: "var(--cat-family)", wizard_start: "var(--cat-employment)",
-  contract_generate: "var(--cat-business)", contract_download: "var(--green)",
-  blank_download: "var(--cat-real-estate)", blank_customize: "var(--primary)"
+  page_view: "#004ac6", template_view: "#2563eb", template_click: "#0d9488",
+  domain_filter: "#9333ea", wizard_start: "#16a34a",
+  contract_generate: "#c2410c", contract_download: "#0d9488",
+  blank_download: "#b45309", blank_customize: "#2563eb"
 };
-let days = 7;
+const DOMAIN_LABELS = {
+  logement: "Logement", travail: "Travail", argent: "Argent & Prêt",
+  vehicules: "Véhicules", entreprise: "Entreprise", demarches: "Démarches"
+};
+const DOMAIN_COLORS = {
+  logement: "#b45309", travail: "#16a34a", argent: "#9333ea",
+  vehicules: "#0d9488", entreprise: "#c2410c", demarches: "#2563eb"
+};
 
-function bars(data, colorFn, labelFn) {
-  const max = Math.max(1, ...data.map(d => d[1]));
-  return data.map(([k, v]) =>
-    `<div class="bar-row"><span class="label">${labelFn(k)}</span>` +
-    `<div class="bar"><div style="width:${(v/max*100).toFixed(1)}%;background:${colorFn(k)}"></div></div>` +
-    `<span class="val">${v}</span></div>`).join("");
+const fmt = n => (n ?? 0).toLocaleString("en-US");
+const pct = (a, b) => (b > 0 ? Math.round((a / b) * 100) + "%" : "—");
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+
+function destroyCharts() { charts.forEach(c => c.destroy()); charts = []; }
+function chart(id, cfg) { const el = document.getElementById(id); if (!el || typeof Chart === "undefined") return; charts.push(new Chart(el, cfg)); }
+
+function baseOpts() {
+  return {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { labels: { boxWidth: 10, boxHeight: 10, font: { size: 12 }, color: "#6b7280" } } },
+  };
+}
+
+async function loadTemplates() {
+  if (templatesLoaded) return;
+  try {
+    const r = await fetch(`${API}/contracts/templates`);
+    if (r.ok) {
+      const t = await r.json();
+      t.forEach(x => { SLUG_TITLES[x.slug] = x.title_fr || x.slug; });
+      templatesLoaded = true;
+    }
+  } catch (e) { /* non-fatal */ }
+}
+
+function kpi(label, value, accent, hint) {
+  return `<div class="kpi" style="--accent:${accent}">
+    <div class="label">${label}</div>
+    <div class="value">${value}</div>
+    ${hint ? `<div class="hint">${hint}</div>` : ""}
+  </div>`;
+}
+
+function renderStats(s) {
+  const gen = s.events_by_name["contract_generate"] || 0;
+  const dl = s.events_by_name["contract_download"] || 0;
+  const pv = s.events_by_name["page_view"] || 0;
+  const daysN = s.days.length || 1;
+  document.getElementById("kpis").innerHTML =
+    kpi("Visits", fmt(pv), "#004ac6", `page views (${days}d)`) +
+    kpi("Unique visitors", fmt(s.unique_sessions), "#2563eb", "per-tab sessions") +
+    kpi("Contracts generated", fmt(gen), "#c2410c", "wizard completions") +
+    kpi("Downloads", fmt(dl), "#0d9488", "PDF + Word") +
+    kpi("Conversion", pct(dl, gen), "#16a34a", "generated → downloaded") +
+    kpi("Activity", fmt(Math.round(s.total_events / daysN)), "#9333ea", "avg events / day");
+}
+
+function renderGrowth(s) {
+  const labels = s.days.map(d => d.date.slice(5)); // MM-DD
+  const pv = s.days.map(d => d.page_view);
+  const gen = s.days.map(d => d.contract_generate);
+  const dl = s.days.map(d => d.contract_download);
+  chart("growth", {
+    type: "line",
+    data: {
+      labels,
+      datasets: [
+        { label: "Visits", data: pv, borderColor: "#004ac6", backgroundColor: "rgba(0,74,198,.08)", fill: true, tension: .35, pointRadius: 2, borderWidth: 2 },
+        { label: "Generated", data: gen, borderColor: "#c2410c", backgroundColor: "rgba(194,65,12,.06)", fill: false, tension: .35, pointRadius: 2, borderWidth: 2 },
+        { label: "Downloads", data: dl, borderColor: "#0d9488", backgroundColor: "rgba(13,148,136,.06)", fill: false, tension: .35, pointRadius: 2, borderWidth: 2 },
+      ],
+    },
+    options: {
+      ...baseOpts(),
+      interaction: { mode: "index", intersect: false },
+      scales: {
+        x: { grid: { display: false }, ticks: { font: { size: 11 }, color: "#9ca3af", maxTicksLimit: 12 } },
+        y: { beginAtZero: true, grid: { color: "#f1f2f7" }, ticks: { font: { size: 11 }, color: "#9ca3af", precision: 0 } },
+      },
+    },
+  });
+}
+
+function renderFunnel(s) {
+  const steps = ["page_view", "template_view", "wizard_start", "contract_generate", "contract_download"];
+  const max = Math.max(1, ...steps.map(k => s.events_by_name[k] || 0));
+  let html = "";
+  for (let i = 0; i < steps.length; i++) {
+    const k = steps[i];
+    const v = s.events_by_name[k] || 0;
+    const prev = i > 0 ? (s.events_by_name[steps[i - 1]] || 0) : v;
+    const conv = i > 0 ? pct(v, prev) : "";
+    html += `<div class="funnel-row">
+      <span class="step">${EVENT_LABELS[k]}</span>
+      <div class="track"><div class="fill" style="--c:${EVENT_COLORS[k]};width:${(v / max * 100).toFixed(1)}%">${fmt(v)}</div></div>
+      <span class="conv">${conv}</span>
+    </div>`;
+  }
+  document.getElementById("funnel").innerHTML = html || `<span class="empty">No data yet.</span>`;
+}
+
+function renderSplits(s) {
+  const lang = Object.entries(s.by_lang || {});
+  chart("byLang", {
+    type: "doughnut",
+    data: {
+      labels: lang.map(([k]) => k === "ar" ? "Arabic" : k === "fr" ? "French" : k),
+      datasets: [{ data: lang.map(([, v]) => v), backgroundColor: ["#2563eb", "#9333ea", "#0d9488", "#b45309"], borderWidth: 0 }],
+    },
+    options: { ...baseOpts(), cutout: "62%", plugins: { legend: { position: "bottom", labels: { boxWidth: 10, boxHeight: 10, font: { size: 12 }, color: "#6b7280" } } } },
+  });
+
+  const top = s.top_slugs || [];
+  chart("top", {
+    type: "bar",
+    data: {
+      labels: top.map(([slug]) => (SLUG_TITLES[slug] || slug).length > 26 ? (SLUG_TITLES[slug] || slug).slice(0, 26) + "…" : (SLUG_TITLES[slug] || slug)),
+      datasets: [{ data: top.map(([, v]) => v), backgroundColor: "#004ac6", borderRadius: 5, barThickness: 16 }],
+    },
+    options: {
+      ...baseOpts(),
+      indexAxis: "y",
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { beginAtZero: true, grid: { color: "#f1f2f7" }, ticks: { font: { size: 11 }, color: "#9ca3af", precision: 0 } },
+        y: { grid: { display: false }, ticks: { font: { size: 11 }, color: "#374151" } },
+      },
+    },
+  });
+
+  const dom = Object.entries(s.by_domain || {});
+  chart("byDomain", {
+    type: "bar",
+    data: {
+      labels: dom.map(([k]) => DOMAIN_LABELS[k] || k),
+      datasets: [{ data: dom.map(([, v]) => v), backgroundColor: dom.map(([k]) => DOMAIN_COLORS[k] || "#2563eb"), borderRadius: 5, barThickness: 20 }],
+    },
+    options: {
+      ...baseOpts(),
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { grid: { display: false }, ticks: { font: { size: 11 }, color: "#374151" } },
+        y: { beginAtZero: true, grid: { color: "#f1f2f7" }, ticks: { font: { size: 11 }, color: "#9ca3af", precision: 0 } },
+      },
+    },
+  });
+}
+
+function renderRecent(s) {
+  const rows = s.recent || [];
+  document.getElementById("recent").innerHTML = rows.length
+    ? rows.map(e => {
+        const p = e.props || {};
+        const meta = [p.slug || "", p.lang ? String(p.lang).toUpperCase() : "", p.format ? String(p.format).toUpperCase() : "", p.domain || ""]
+          .filter(Boolean).join(" · ");
+        return `<div class="row"><span class="dot" style="background:${EVENT_COLORS[e.name] || "#004ac6"}"></span>
+          <span class="name">${EVENT_LABELS[e.name] || e.name}</span>
+          <span class="meta">${esc(meta)}</span>
+          <span class="time">${new Date(e.created_at).toLocaleString("en-GB", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" })}</span></div>`;
+      }).join("")
+    : `<span class="empty">No events yet — activity will appear here after launch.</span>`;
 }
 
 async function load() {
   try {
-    const res = await fetch(`${API}/analytics/summary?days=${days}`, { cache: "no-store" });
+    const [res] = await Promise.all([fetch(`${API}/analytics/summary?days=${days}`, { cache: "no-store" }), loadTemplates()]);
     if (!res.ok) throw new Error("HTTP " + res.status);
     const s = await res.json();
     document.getElementById("error").style.display = "none";
-
-    const gen = s.events_by_name["contract_generate"] || 0;
-    const dl = s.events_by_name["contract_download"] || 0;
-    const rate = gen > 0 ? Math.round(dl/gen*100) + "%" : "0%";
-
-    document.getElementById("stats").innerHTML =
-      stat(`Events (${days}d)`, s.total_events, "var(--primary)") +
-      stat("Contracts generated", gen, "var(--cat-business)") +
-      stat("Downloads (PDF/Word)", dl, "var(--green)") +
-      stat("Generated → downloaded", rate, "var(--cat-family)");
-
-    const byName = Object.entries(s.events_by_name).sort((a,b) => b[1]-a[1]);
-    document.getElementById("byType").innerHTML = byName.length
-      ? bars(byName, k => EVENT_COLORS[k] || "var(--primary)", k => EVENT_LABELS[k] || k)
-      : `<span class="empty">No events in this period.</span>`;
-
-    document.getElementById("byLang").innerHTML = bars(
-      Object.entries(s.by_lang),
-      k => k === "ar" ? "var(--cat-documents)" : "var(--cat-business)",
-      k => k === "ar" ? "Arabic" : k === "fr" ? "French" : k);
-
-    document.getElementById("byFormat").innerHTML = bars(
-      Object.entries(s.by_format),
-      () => "var(--primary)",
-      k => k.toUpperCase());
-
-    document.getElementById("funnel").innerHTML = bars(
-      [["wizard_start", s.events_by_name["wizard_start"] || 0],
-       ["contract_generate", gen], ["contract_download", dl]],
-      k => EVENT_COLORS[k] || "var(--primary)",
-      k => EVENT_LABELS[k] || k);
-
-    document.getElementById("top").innerHTML = s.top_slugs.length
-      ? `<table><thead><tr><th>Template</th><th>Slug</th><th class="num">Engagements</th></tr></thead><tbody>` +
-        s.top_slugs.map(([slug, c]) =>
-          `<tr><td>${escapeHtml(slug)}</td><td style="color:var(--muted);font-size:12px">${escapeHtml(slug)}</td><td class="num">${c}</td></tr>`).join("") +
-        `</tbody></table>`
-      : `<span class="empty">No data.</span>`;
-
-    document.getElementById("recent").innerHTML = s.recent.length
-      ? s.recent.map(e =>
-          `<div class="row"><span class="dot" style="background:${EVENT_COLORS[e.name] || "var(--primary)"}"></span>` +
-          `<span class="name">${EVENT_LABELS[e.name] || e.name}</span>` +
-          `<span class="meta">${e.props.slug || ""}${e.props.lang ? " · " + String(e.props.lang).toUpperCase() : ""}${e.props.format ? " · " + String(e.props.format).toUpperCase() : ""}</span>` +
-          `<span class="time">${new Date(e.created_at).toLocaleString("en-GB", {day:"2-digit",month:"2-digit",hour:"2-digit",minute:"2-digit"})}</span></div>`).join("")
-      : `<span class="empty">No recent events.</span>`;
-
-    document.getElementById("sub").textContent = "Last refresh: " + new Date().toLocaleTimeString() + " · auto-refresh 30s";
+    destroyCharts();
+    renderStats(s);
+    renderGrowth(s);
+    renderFunnel(s);
+    renderSplits(s);
+    renderRecent(s);
+    document.getElementById("refresh").textContent = "Live · updated " + new Date().toLocaleTimeString();
   } catch (e) {
     document.getElementById("error").style.display = "block";
     document.getElementById("error").textContent = "Failed to load analytics: " + e.message;
   }
-}
-
-function stat(label, value, color) {
-  return `<div class="stat"><b style="color:${color}">${value}</b><span>${label}</span></div>`;
-}
-function escapeHtml(s) {
-  return s.replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 }
 
 document.querySelectorAll(".days button").forEach(b => b.onclick = () => {
