@@ -235,7 +235,7 @@ export default async function V2HomePage({
             {
               icon: Scale,
               eyebrow: t(lang, "خبرة قانونية", "Expertise juridique"),
-              title: t(lang, "مبنى على المجلات التونسية", "Fondé sur les codes tunisiens"),
+              title: t(lang, "مبني على المجلات التونسية", "Fondé sur les codes tunisiens"),
               desc: t(
                 lang,
                 "كل نموذج يستند إلى مجلة الالتزامات والعقود، مجلة الشغل، أو مجلة الشركات التجارية مع ذكر الأساس القانوني.",
